@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures as cf
 import json
 import re
 from dataclasses import dataclass
@@ -163,6 +164,17 @@ def to_numeric_frame(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def decimate_frame(df: pd.DataFrame, decimation_factor: int) -> pd.DataFrame:
+    if decimation_factor <= 1:
+        return df
+    if df.empty:
+        return df
+    mod = np.mod(df["Frame"].to_numpy(dtype=float), float(decimation_factor))
+    mask = np.isclose(mod, 0.0)
+    out = df.loc[mask].copy()
+    return out
+
+
 def describe_series(s: pd.Series) -> dict[str, float]:
     x = s.dropna().to_numpy(dtype=float)
     if x.size == 0:
@@ -258,46 +270,77 @@ def load_existing_summary(summary_csv: Path) -> pd.DataFrame | None:
     return summary
 
 
-def build_trial_feature_table(
-    trials: pd.DataFrame,
-    frame_rate_hz: float,
-    existing_summary: pd.DataFrame | None = None,
-) -> pd.DataFrame:
-    rows: list[dict[str, object]] = []
-    for _, row in trials.iterrows():
-        record: dict[str, object] = {
-            "group": row["group"],
-            "participant": row["participant"],
-            "pace_condition": row["pace_condition"],
-            "file_name": row["file_name"],
-            "file_stem_lower": row["file_stem_lower"],
-            "file_path": str(row["file_path"]),
-            "unknown_pace_flag": row["unknown_pace_flag"],
-        }
-        valid_sheets = 0
-        missing_sheets = 0
-        max_frames = np.nan
-        for sheet in SHEETS:
-            try:
-                sdf = pd.read_excel(row["file_path"], sheet_name=sheet)
-                sdf = to_numeric_frame(sdf)
-                if sdf.empty:
-                    missing_sheets += 1
-                    continue
-                valid_sheets += 1
-                max_frames = max(max_frames, float(sdf["Frame"].max()))
-                record.update(extract_sheet_features(sdf, sheet))
-            except Exception:
+def _process_trial_row(args: tuple[dict[str, object], float, int]) -> dict[str, object]:
+    row, source_hz, decimation_factor = args
+    record: dict[str, object] = {
+        "group": row["group"],
+        "participant": row["participant"],
+        "pace_condition": row["pace_condition"],
+        "file_name": row["file_name"],
+        "file_stem_lower": row["file_stem_lower"],
+        "file_path": str(row["file_path"]),
+        "unknown_pace_flag": row["unknown_pace_flag"],
+    }
+    valid_sheets = 0
+    missing_sheets = 0
+    max_count_original = 0
+    max_count_resampled = 0
+    for sheet in SHEETS:
+        try:
+            sdf = pd.read_excel(row["file_path"], sheet_name=sheet)
+            sdf = to_numeric_frame(sdf)
+            if sdf.empty:
                 missing_sheets += 1
                 continue
+            max_count_original = max(max_count_original, int(len(sdf)))
+            sdf = decimate_frame(sdf, decimation_factor=decimation_factor)
+            if sdf.empty:
+                missing_sheets += 1
+                continue
+            valid_sheets += 1
+            max_count_resampled = max(max_count_resampled, int(len(sdf)))
+            record.update(extract_sheet_features(sdf, sheet))
+        except Exception:
+            missing_sheets += 1
+            continue
 
-        trial_frames = int(max_frames + 1) if np.isfinite(max_frames) else 0
-        record["trial_n_frames"] = trial_frames
-        record["trial_duration_s"] = float(trial_frames / frame_rate_hz) if trial_frames > 0 else np.nan
-        record["valid_sheet_count"] = valid_sheets
-        record["missing_sheet_count"] = missing_sheets
-        record["frame_rate_hz"] = frame_rate_hz
-        rows.append(record)
+    trial_frames_original = int(max_count_original)
+    trial_frames_resampled = int(max_count_resampled)
+    record["trial_n_frames_original"] = trial_frames_original
+    record["trial_n_frames_resampled"] = trial_frames_resampled
+    record["trial_n_frames"] = trial_frames_resampled
+    # duration is intentionally kept in original time scale
+    record["trial_duration_s"] = float(trial_frames_original / source_hz) if trial_frames_original > 0 else np.nan
+    record["valid_sheet_count"] = valid_sheets
+    record["missing_sheet_count"] = missing_sheets
+    record["source_hz"] = source_hz
+    record["decimation_factor"] = decimation_factor
+    return record
+
+
+def build_trial_feature_table(
+    trials: pd.DataFrame,
+    source_hz: float,
+    target_hz: float,
+    decimation_factor: int,
+    existing_summary: pd.DataFrame | None = None,
+    workers: int = 1,
+    verbose: bool = False,
+) -> pd.DataFrame:
+    input_rows = trials.to_dict(orient="records")
+    rows: list[dict[str, object]] = []
+    if workers <= 1:
+        for i, r in enumerate(input_rows, start=1):
+            rows.append(_process_trial_row((r, source_hz, decimation_factor)))
+            if verbose and i % 25 == 0:
+                print(f"processed trials: {i}/{len(input_rows)}")
+    else:
+        mapped = [(r, source_hz, decimation_factor) for r in input_rows]
+        with cf.ProcessPoolExecutor(max_workers=workers) as ex:
+            for i, out_row in enumerate(ex.map(_process_trial_row, mapped), start=1):
+                rows.append(out_row)
+                if verbose and i % 25 == 0:
+                    print(f"processed trials: {i}/{len(input_rows)}")
 
     out = pd.DataFrame(rows)
 
@@ -366,15 +409,18 @@ def aggregate_participant_features(trial_features: pd.DataFrame) -> pd.DataFrame
     participant["pace_coverage_count"] = participant[[f"pace_{p}__trial_count" for p in PACE_ORDER]].gt(0).sum(axis=1)
     participant["missing_pace_any"] = (participant["pace_coverage_count"] < len(PACE_ORDER)).astype(int)
 
+    across_blocks: dict[str, pd.Series] = {}
     for base_col in numeric_cols:
         pace_cols = [f"pace_{p}__{base_col}" for p in PACE_ORDER if f"pace_{p}__{base_col}" in participant.columns]
         if not pace_cols:
             continue
-        participant[f"across_pace__{base_col}__mean"] = participant[pace_cols].mean(axis=1, skipna=True)
-        participant[f"across_pace__{base_col}__std"] = participant[pace_cols].std(axis=1, skipna=True, ddof=0)
-        participant[f"across_pace__{base_col}__range"] = participant[pace_cols].max(axis=1, skipna=True) - participant[
+        across_blocks[f"across_pace__{base_col}__mean"] = participant[pace_cols].mean(axis=1, skipna=True)
+        across_blocks[f"across_pace__{base_col}__std"] = participant[pace_cols].std(axis=1, skipna=True, ddof=0)
+        across_blocks[f"across_pace__{base_col}__range"] = participant[pace_cols].max(axis=1, skipna=True) - participant[
             pace_cols
         ].min(axis=1, skipna=True)
+    if across_blocks:
+        participant = pd.concat([participant, pd.DataFrame(across_blocks)], axis=1)
     return participant
 
 
@@ -529,6 +575,9 @@ def write_manifest(
     model_info: dict[str, object],
     umap_info: dict[str, object],
     random_state: int,
+    source_hz: float,
+    target_hz: float,
+    decimation_factor: int,
 ) -> None:
     used_sheets = [s for s in SHEETS]
     manifest = {
@@ -537,6 +586,12 @@ def write_manifest(
         "metadata_path": str(metadata_path),
         "summary_path": str(summary_path),
         "random_state": random_state,
+        "sampling": {
+            "source_hz": source_hz,
+            "target_hz": target_hz,
+            "decimation_factor": decimation_factor,
+            "duration_policy": "original_time",
+        },
         "sheets": used_sheets,
         "pace_order": PACE_ORDER,
         "counts": {
@@ -574,10 +629,25 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-dir", type=Path, default=Path("artifacts"))
     parser.add_argument("--summary-csv", type=Path, default=Path("notebooks") / "gait_analysis_global.csv")
     parser.add_argument("--random-state", type=int, default=42)
-    parser.add_argument("--frame-rate-hz", type=float, default=100.0)
+    parser.add_argument("--source-hz", type=float, default=100.0)
+    parser.add_argument("--target-hz", type=float, default=50.0)
     parser.add_argument("--max-trials", type=int, default=None)
+    parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--verbose", action="store_true")
     return parser.parse_args()
+
+
+def validate_sampling_args(source_hz: float, target_hz: float) -> int:
+    if source_hz <= 0 or target_hz <= 0:
+        raise ValueError("source_hz and target_hz must be positive.")
+    if target_hz > source_hz:
+        raise ValueError(f"target_hz({target_hz}) must be <= source_hz({source_hz}).")
+    ratio = source_hz / target_hz
+    if not np.isclose(ratio, round(ratio)):
+        raise ValueError(
+            f"source_hz({source_hz}) must be divisible by target_hz({target_hz}) for integer decimation."
+        )
+    return int(round(ratio))
 
 
 def main() -> None:
@@ -588,6 +658,7 @@ def main() -> None:
 
     if not metadata_path.exists():
         raise FileNotFoundError(f"Missing metadata file: {metadata_path}")
+    decimation_factor = validate_sampling_args(args.source_hz, args.target_hz)
 
     ensure_dir(out_dir)
     ensure_dir(out_dir / "models")
@@ -597,8 +668,12 @@ def main() -> None:
     existing_summary = load_existing_summary(args.summary_csv.resolve())
     trial_features = build_trial_feature_table(
         trials=trials,
-        frame_rate_hz=args.frame_rate_hz,
+        source_hz=args.source_hz,
+        target_hz=args.target_hz,
+        decimation_factor=decimation_factor,
         existing_summary=existing_summary,
+        workers=max(1, args.workers),
+        verbose=args.verbose,
     )
     participant_table = aggregate_participant_features(trial_features)
     participant_table = merge_metadata(participant_table, metadata)
@@ -641,6 +716,9 @@ def main() -> None:
         model_info=model_info,
         umap_info=umap_info,
         random_state=args.random_state,
+        source_hz=args.source_hz,
+        target_hz=args.target_hz,
+        decimation_factor=decimation_factor,
     )
 
     if args.verbose:
@@ -649,6 +727,10 @@ def main() -> None:
         print(f"trial features rows: {len(trial_features)}")
         print(f"participant rows: {len(participant_table)}")
         print(f"embedding dims: {len([c for c in embeddings.columns if c.startswith('emb_')])}")
+        print(
+            "sampling:"
+            f" source_hz={args.source_hz}, target_hz={args.target_hz}, decimation_factor={decimation_factor}"
+        )
         print(f"saved: {embeddings_path}")
         print(f"saved: {umap_path}")
         print(f"saved: {manifest_path}")
