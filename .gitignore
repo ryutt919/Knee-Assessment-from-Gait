@@ -1,0 +1,17 @@
+.agent/
+# notebooks/ (분석용 노트북 유지)
+data/
+mds/
+misc/
+zip/
+agent_temp/
+
+*.md
+**/*.md
+__pycache__/
+*.py[cod]
+
+.ipynb_checkpoints/
+
+.DS_Store
+Thumbs.db
