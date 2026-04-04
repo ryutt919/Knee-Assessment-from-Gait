@@ -15,48 +15,72 @@ META_COLS = ["time_ms", "group", "subject_id", "speed", "file_name"]
 SENSOR_PREFIXES = ("sensorFreeAcceleration", "sensorOrientation")
 
 
-def load_parquet(input_path: Path) -> pd.DataFrame:
-    """
-    Parquet 파일을 로드하고 결측치가 많은 센서 계열 컬럼을 자동 제거.
-    """
-    print(f"⏳ 데이터 로딩 중: {input_path.name}")
-    df = pd.read_parquet(input_path)
-    
-    # 결측치 70개 이상인 센서 계열 컬럼 자동 제외
-    sensor_cols = [c for c in df.columns if c.startswith(SENSOR_PREFIXES)]
-    if sensor_cols:
-        df = df.drop(columns=sensor_cols)
-        print(f"  ✂️  센서 Raw 컬럼 {len(sensor_cols)}개 제거 완료 (결측 처리)")
-    
-    # 남아있는 결측치 전방/후방 보간 처리
-    feature_cols = [c for c in df.columns if c not in META_COLS]
-    df[feature_cols] = df[feature_cols].interpolate(method="linear", limit_direction="both")
-    
-    print(f"  ✅ 로딩 완료: {df.shape[0]:,}행 × {df.shape[1]}열")
-    return df
+import pyarrow.parquet as pq
+from collections import defaultdict
+import gc
 
-
-def split_by_trial(df: pd.DataFrame) -> List[Dict]:
+def load_trials_chunked(input_path: Path) -> List[Dict]:
     """
-    file_name 기준으로 데이터를 Trial 단위로 분리.
-    각 Trial을 dict 형태로 반환 (data, meta).
+    Parquet 파일을 Row Group(Chunk) 단위로 읽어 메모리를 최소화하며
+    Trial(subject_id + file_name) 단위의 시계열 데이터(Numpy) 리스트로 실시간 변환.
     """
-    trials = []
-    feature_cols = [c for c in df.columns if c not in META_COLS]
+    print(f"⏳ 데이터 로딩 중 (Chunk Streaming): {input_path.name}")
+    pf = pq.ParquetFile(input_path)
     
-    for file_name, group_df in df.groupby("file_name"):
-        meta = {
-            "file_name": file_name,
-            "subject_id": group_df["subject_id"].iloc[0],
-            "group": group_df["group"].iloc[0],
-        }
-        if "speed" in group_df.columns:
-            meta["speed"] = group_df["speed"].iloc[0]
+    trials_buffer = defaultdict(list)
+    meta_buffer = {}
+    
+    for i in range(pf.num_row_groups):
+        print(f"  [Chunking] Row Group {i+1}/{pf.num_row_groups} 읽기 및 처리...")
+        df = pf.read_row_group(i).to_pandas()
         
-        data = group_df[feature_cols].values.astype(np.float32)
-        trials.append({"meta": meta, "data": data})
+        # 메모리 최적화: 수치형 float32 캐스팅
+        numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
+        df[numeric_cols] = df[numeric_cols].astype('float32')
+        
+        # 센서 결측치 제거
+        sensor_cols = [c for c in df.columns if c.startswith(SENSOR_PREFIXES)]
+        if sensor_cols:
+            df = df.drop(columns=sensor_cols)
+            
+        feature_cols = [c for c in df.columns if c not in META_COLS]
+        
+        # 보간 처리 (float32 유지)
+        df[feature_cols] = df[feature_cols].interpolate(method="linear", limit_direction="both").astype('float32')
+        
+        # 추출 및 버퍼링
+        for (sub_id, f_name), group_df in df.groupby(["subject_id", "file_name"]):
+            key = (sub_id, f_name)
+            if key not in meta_buffer:
+                meta = {
+                    "file_name": f_name,
+                    "subject_id": sub_id,
+                    "group": group_df["group"].iloc[0],
+                }
+                if "speed" in group_df.columns:
+                    meta["speed"] = group_df["speed"].iloc[0]
+                meta_buffer[key] = meta
+                
+            # 순수 Numpy 데이터(float32)만 버퍼에 추가하여 Pandas 객체 의존성 탈피
+            data = group_df[feature_cols].values.astype(np.float32)
+            trials_buffer[key].append(data)
+            
+        # 명시적 메모리 해제 - 6.3GB 데이터가 한 방에 터지는 것을 방지
+        del df
+        gc.collect()
+        
+    print(f"  ✅ 청크 스캔 완료! 분할된 Trial 병합 중...")
     
-    return trials
+    # 조각난 Numpy 배열들을 하나로 이어 붙이기
+    final_trials = []
+    for key, data_chunks in trials_buffer.items():
+        merged_data = np.concatenate(data_chunks, axis=0)
+        final_trials.append({
+            "meta": meta_buffer[key],
+            "data": merged_data
+        })
+        
+    return final_trials
 
 
 def downsample(data: np.ndarray, source_hz: int = 100, target_hz: int = 100) -> np.ndarray:

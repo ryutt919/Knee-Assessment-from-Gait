@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(git -C /c/Users/kimt9/OneDrive/Desktop/Gal4_PM/ryutt/Walking log --oneline -20)",
+      "Bash(wc -l /c/Users/kimt9/OneDrive/Desktop/Gal4_PM/ryutt/Walking/scripts/*.py /c/Users/kimt9/OneDrive/Desktop/Gal4_PM/ryutt/Walking/utils/*.py)",
+      "Bash(ls -lh /c/Users/kimt9/OneDrive/Desktop/Gal4_PM/ryutt/Walking/data/processed/*.parquet)",
+      "Bash(ls:*)",
+      "Bash(ls -lh:*)",
+      "Bash(find:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)",
+      "Bash(pip install:*)",
+      "Bash(pip list:*)",
+      "Bash(pip show:*)",
+      "Bash(python3 -c:*)",
+      "Bash(du -sh:*)",
+      "Bash(jupyter nbconvert:*)",
+      "Bash(claude --version)",
+      "Bash(where claude:*)",
+      "Bash(claude skills:*)"
+    ]
+  }
+}
