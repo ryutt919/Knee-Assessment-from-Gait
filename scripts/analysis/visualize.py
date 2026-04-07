@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib
-matplotlib.use("Agg")  # 헤드리스 환경 대응
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import seaborn as sns
@@ -14,11 +12,30 @@ warnings.filterwarnings("ignore")
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
 
+# Jupyter 환경 감지 및 display 함수 준비
+try:
+    from IPython.display import display as ipy_display
+    _IN_JUPYTER = True
+except ImportError:
+    _IN_JUPYTER = False
+
+
+def _show_or_save(fig, out_path: str, dpi: int, inline: bool):
+    """Jupyter inline 표시 또는 파일 저장 분기.
+    inline=True : Jupyter 내 display() + 파일 저장
+    inline=False: 파일 저장만 수행 (헤드리스 환경)
+    """
+    fig.savefig(out_path, dpi=dpi, bbox_inches="tight")
+    log.info(f"  저장: {out_path}")
+    if inline and _IN_JUPYTER:
+        ipy_display(fig)
+    plt.close(fig)
+
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if not os.path.exists(os.path.join(BASE_DIR, "mds")):
     BASE_DIR = os.getcwd()
 MDS_DIR     = os.path.join(BASE_DIR, "mds")
-FIG_DIR     = os.path.join(MDS_DIR, "figures")
+FIG_DIR     = os.path.join(BASE_DIR, "artifacts")
 PATH_DATA   = os.path.join(MDS_DIR, "analysis_data.csv")
 PATH_STATS  = os.path.join(MDS_DIR, "stats_result.csv")
 PATH_CORR   = os.path.join(MDS_DIR, "correlation_result.csv")
@@ -65,7 +82,7 @@ def add_stat_bracket(ax, x1: float, x2: float, y: float, h: float, p: float):
     ax.plot([x1, x1, x2, x2], [y, y + h, y + h, y], lw=1.2, c="black")
     ax.text((x1 + x2) / 2, y + h, mark, ha="center", va="bottom", fontsize=9)
 
-def plot_boxplot(data: pd.DataFrame, stats_df: pd.DataFrame, feature: str):
+def plot_boxplot(data: pd.DataFrame, stats_df: pd.DataFrame, feature: str, inline: bool = True):
     if feature not in data.columns: return
 
     label = FEAT_LABEL.get(feature, feature)
@@ -118,11 +135,9 @@ def plot_boxplot(data: pd.DataFrame, stats_df: pd.DataFrame, feature: str):
     plt.tight_layout()
     safe_name = feature.replace("/", "_").replace(" ", "_")
     out_path  = os.path.join(FIG_DIR, f"boxplot_{safe_name}.png")
-    fig.savefig(out_path, dpi=FIG_DPI, bbox_inches="tight")
-    plt.close(fig)
-    log.info(f"  저장: {out_path}")
+    _show_or_save(fig, out_path, FIG_DPI, inline)
 
-def plot_correlation_heatmap(corr_df: pd.DataFrame):
+def plot_correlation_heatmap(corr_df: pd.DataFrame, inline: bool = True):
     dummy_cols  = ["is_ACLD", "is_ACLR", "is_Healthy"]
     r_cols      = [f"r_{d}" for d in dummy_cols]
     sig_cols    = [f"sig_{d}" for d in dummy_cols]
@@ -153,11 +168,13 @@ def plot_correlation_heatmap(corr_df: pd.DataFrame):
 
     plt.tight_layout()
     out_path = os.path.join(FIG_DIR, "correlation_heatmap.png")
-    fig.savefig(out_path, dpi=FIG_DPI, bbox_inches="tight")
-    plt.close(fig)
-    log.info(f"  저장: {out_path}")
+    _show_or_save(fig, out_path, FIG_DPI, inline)
 
-def run_visualize():
+def run_visualize(inline: bool = True):
+    """시각화 파이프라인 실행.
+    inline=True  : Jupyter에서 셀 내 바로 표시 (기본값) + artifacts/ 저장
+    inline=False : 파일 저장만 수행 (스크립트 실행 / 헤드리스 환경)
+    """
     log.info("▶ 시각화 파이프라인 시작 (분리된 모듈)")
     if not (os.path.exists(PATH_DATA) and os.path.exists(PATH_STATS) and os.path.exists(PATH_CORR)):
         log.error("분석 파일들이 누락되었습니다. preprocess와 statistics를 먼저 실행하세요.")
@@ -167,9 +184,9 @@ def run_visualize():
     stats_df = pd.read_csv(PATH_STATS)
     corr_df  = pd.read_csv(PATH_CORR)
 
-    for feat in FEAT_LABEL.keys():
-        if feat in data.columns:
-            plot_boxplot(data, stats_df, feat)
-            
-    plot_correlation_heatmap(corr_df)
+    # for feat in FEAT_LABEL.keys(): # boxplot안그리기
+    #     if feat in data.columns:
+    #         plot_boxplot(data, stats_df, feat, inline=inline)
+
+    plot_correlation_heatmap(corr_df, inline=inline)
     log.info(f"✅ 모든 도표 생성 완료 → {FIG_DIR}")

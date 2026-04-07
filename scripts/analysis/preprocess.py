@@ -33,6 +33,13 @@ JOINT_COLS = {
     "ankle_dorsiflexion" : ("jointAngle_48", "jointAngle_60"),
 }
 
+# footContacts 컬럼 매핑
+# mvnx footContactDefinition 순서: 0=LeftHeel, 1=LeftToe, 2=RightHeel, 3=RightToe
+FOOT_CONTACT_COLS = {
+    "Right": "footContacts_2",  # RightFoot_Heel
+    "Left" : "footContacts_0",  # LeftFoot_Heel
+}
+
 PEAK_DIRECTION = {
     "hip_flexion"        : "max",
     "hip_adduction"      : "min",
@@ -53,34 +60,61 @@ def extract_mean_peak(signal: np.ndarray, direction: str,
                       distance: int = 100,
                       prominence: float = 1.0,
                       iqr_lower_bound: float = 1.5,
-                      iqr_upper_bound: float = 2.5) -> float:
-    
+                      iqr_upper_bound: float = 2.5,
+                      contact_signal: np.ndarray = None) -> float:
+    """
+    contact_signal: footContacts 배열 (1=stance, 0=swing).
+                    주어지면 stance phase(1인 구간) 내 피크만 추출.
+                    None이면 전체 신호에서 find_peaks로 추정 (기존 방식).
+    """
     if len(signal) < distance * 2:
         return np.nan
 
-    if direction == "max":
-        peaks, _ = find_peaks(signal, distance=distance, prominence=prominence)
+    if contact_signal is not None and len(contact_signal) == len(signal):
+        # ── Stance phase 기반 피크 추출 ──────────────────────────────
+        # contact == 1 인 인덱스만 추려서, 그 위에서 find_peaks 실행
+        stance_idx = np.where(contact_signal == 1)[0]
+
+        if len(stance_idx) < distance * 2:
+            return np.nan
+
+        stance_signal = signal[stance_idx]
+
+        if direction == "max":
+            local_peaks, _ = find_peaks(stance_signal, distance=distance, prominence=prominence)
+        else:
+            local_peaks, _ = find_peaks(-stance_signal, distance=distance, prominence=prominence)
+
+        if len(local_peaks) == 0:
+            return np.nan
+
+        # stance_signal 내 local index → 원래 signal의 global index로 변환
+        peaks = stance_idx[local_peaks]
+
     else:
-        # 극소값 탐지: 신호를 뒤집어 find_peaks 적용
-        peaks, _ = find_peaks(-signal, distance=distance, prominence=prominence)
+        # ── 기존 방식: find_peaks로 전체 신호에서 추정 ───────────────
+        if direction == "max":
+            peaks, _ = find_peaks(signal, distance=distance, prominence=prominence)
+        else:
+            peaks, _ = find_peaks(-signal, distance=distance, prominence=prominence)
 
-    if len(peaks) == 0:
-        return np.nan
+        if len(peaks) == 0:
+            return np.nan
 
-    # 비대칭 IQR 필터링
+    # 비대칭 IQR 필터링 (피크 수 >= 4 일 때)
     if len(peaks) >= 4:
         target_signal = signal if direction == "max" else -signal
         peak_heights = target_signal[peaks]
-        
+
         Q1 = np.percentile(peak_heights, 25)
         Q3 = np.percentile(peak_heights, 75)
         IQR = Q3 - Q1
-        
+
         lower_threshold = Q1 - (iqr_lower_bound * IQR)
         upper_threshold = Q3 + (iqr_upper_bound * IQR)
-        
+
         valid_peaks = [p for p in peaks if lower_threshold <= target_signal[p] <= upper_threshold]
-        
+
         if len(valid_peaks) > 0:
             return float(np.mean(signal[valid_peaks]))
         else:
@@ -104,7 +138,10 @@ def match_subjects(path_id: str):
     return matched, healthy
 
 def load_joint_data(path_raw: str, subject_ids: list, needed_cols: list) -> pd.DataFrame:
-    select_cols = ["subject_id", "speed", "time_ms"] + needed_cols
+    contact_cols = list(FOOT_CONTACT_COLS.values())  # footContacts_0, footContacts_2
+    select_cols = ["subject_id", "speed", "time_ms"] + needed_cols + contact_cols
+    # 중복 제거
+    select_cols = list(dict.fromkeys(select_cols))
     dataset = ds.dataset(path_raw, format="parquet")
     filter_expr = pc.field("subject_id").isin(subject_ids)
     table = dataset.to_table(columns=select_cols, filter=filter_expr)
@@ -114,23 +151,32 @@ def load_joint_data(path_raw: str, subject_ids: list, needed_cols: list) -> pd.D
 
 def compute_features_for_subject(sub_df: pd.DataFrame, subject_id: str, group_label: str, injured_leg: str, limits: dict) -> list:
     records = []
+    contra_leg = "Left" if injured_leg == "Right" else "Right"
+
     for speed in ["fast", "normal", "slow"]:
-        speed_df = sub_df[sub_df["speed"] == speed]
+        speed_df = sub_df[sub_df["speed"] == speed].reset_index(drop=True)
         if len(speed_df) < limits['distance'] * 2:
             continue
-        
+
         rec = {"subject_id": subject_id, "group": group_label, "speed": speed, "injured_leg": injured_leg}
-        
+
+        # 환측/건측 footContacts 신호 (Heel 기준)
+        inj_contact_col   = FOOT_CONTACT_COLS[injured_leg]
+        contra_contact_col = FOOT_CONTACT_COLS[contra_leg]
+        inj_contact   = speed_df[inj_contact_col].values   if inj_contact_col   in speed_df.columns else None
+        contra_contact = speed_df[contra_contact_col].values if contra_contact_col in speed_df.columns else None
+
         for feat, (r_col, l_col) in JOINT_COLS.items():
             direction = PEAK_DIRECTION[feat]
             injured_col = r_col if injured_leg == "Right" else l_col
-            contra_col = l_col if injured_leg == "Right" else r_col
-            
-            inj_signal = speed_df[injured_col].dropna().values
-            contra_signal = speed_df[contra_col].dropna().values
-            
-            rec[f"{feat}_injured"] = extract_mean_peak(inj_signal, direction, **limits)
-            rec[f"{feat}_contralateral"] = extract_mean_peak(contra_signal, direction, **limits)
+            contra_col  = l_col if injured_leg == "Right" else r_col
+
+            inj_signal    = speed_df[injured_col].values
+            contra_signal = speed_df[contra_col].values
+
+            # stance phase 기반 피크 추출 (contact_signal 전달)
+            rec[f"{feat}_injured"]       = extract_mean_peak(inj_signal,    direction, **limits, contact_signal=inj_contact)
+            rec[f"{feat}_contralateral"] = extract_mean_peak(contra_signal, direction, **limits, contact_signal=contra_contact)
 
         # LSI
         for feat in LSI_FEATURES:
