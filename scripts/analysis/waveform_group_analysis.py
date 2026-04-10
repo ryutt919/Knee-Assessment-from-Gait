@@ -92,6 +92,7 @@ HEEL_CONTACT_COLS = {
     "Right": "footContacts_2",
     "Left": "footContacts_0",
 }
+MAX_TIME_GAP_MS = 100.0
 
 GAIT_PHASES = {
     "loading_response": (0, 10),
@@ -280,6 +281,26 @@ def detect_heel_strikes(contact_signal: np.ndarray, min_gap: int = 30) -> list[i
     return kept
 
 
+def split_trial_on_time_gaps(trial_df: pd.DataFrame, max_gap_ms: float = MAX_TIME_GAP_MS) -> list[pd.DataFrame]:
+    """Split one trial into contiguous chunks using the time axis."""
+    ordered = trial_df.sort_values("time_ms").reset_index(drop=True)
+    if ordered.empty:
+        return []
+
+    time_ms = pd.to_numeric(ordered["time_ms"], errors="coerce")
+    dt = time_ms.diff()
+    split_points = np.where((dt > max_gap_ms) | dt.isna())[0].tolist()
+
+    chunks: list[pd.DataFrame] = []
+    start = 0
+    for stop in split_points[1:] + [len(ordered)]:
+        chunk = ordered.iloc[start:stop].reset_index(drop=True)
+        if not chunk.empty:
+            chunks.append(chunk)
+        start = stop
+    return chunks
+
+
 def build_stride_segments(trial_df: pd.DataFrame, leg: str) -> list[tuple[int, int]]:
     """Split a trial into heel-strike-to-heel-strike strides for one leg."""
     heel_col = HEEL_CONTACT_COLS[leg]
@@ -342,20 +363,20 @@ def waveform_rows_for_variant(
             stride_count = 0
 
             for _, trial_df in subject_speed_df.groupby("file_name", sort=False):
-                trial_df = trial_df.sort_values("time_ms").reset_index(drop=True)
-                base_segments = build_stride_segments(trial_df, actual_leg)
-                segments = select_stride_segments(base_segments, variant)
-                if not segments:
-                    continue
+                for chunk_df in split_trial_on_time_gaps(trial_df, max_gap_ms=MAX_TIME_GAP_MS):
+                    base_segments = build_stride_segments(chunk_df, actual_leg)
+                    segments = select_stride_segments(base_segments, variant)
+                    if not segments:
+                        continue
 
-                for start, stop in segments:
-                    stride_count += 1
-                    for feature_name, spec in joint_specs[actual_leg].items():
-                        signal = pd.to_numeric(trial_df[spec.column], errors="coerce").to_numpy(dtype=float)
-                        try:
-                            feature_waves[feature_name].append(interpolate_stride(signal, start, stop))
-                        except ValueError:
-                            continue
+                    for start, stop in segments:
+                        stride_count += 1
+                        for feature_name, spec in joint_specs[actual_leg].items():
+                            signal = pd.to_numeric(chunk_df[spec.column], errors="coerce").to_numpy(dtype=float)
+                            try:
+                                feature_waves[feature_name].append(interpolate_stride(signal, start, stop))
+                            except ValueError:
+                                continue
 
             if stride_count == 0:
                 continue

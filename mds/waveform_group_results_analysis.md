@@ -75,6 +75,16 @@ Healthy adult는 실제 injured side가 없기 때문에, ACLD의 injured-leg �
 - 총 9,828행
 - `subject × speed × side_basis × feature` 단위의 평균 파형
 - 각 행에 `point_000`부터 `point_100`까지 101포인트가 들어 있음
+- 원시 데이터에서 같은 `subject × speed` 안의 여러 보행 집합은 `file_name` 기준으로 trial을 구분해 처리함
+- 현재 데이터셋에서는 대부분 `subject × speed`마다 3개 trial이 있고, 일부는 2개 또는 4개, 드물게 6개 trial이 있음
+- trial 사이에 시간 간격이 있어도 서로 이어 붙이지 않고, 각 trial 내부에서만 heel strike를 검출해 stride를 분할함
+- trial 내부에서도 `time_ms`가 100ms를 초과해 불연속이면 그 지점에서 contiguous chunk로 분할하고, gap을 가로지르는 stride는 분석에 포함하지 않음
+- 이후 같은 `subject × speed × side_basis × feature`에 속하는 모든 stride를 한데 모아 101포인트로 정규화한 뒤 평균 waveform을 계산함
+- 즉 현재 파이프라인은 `trial 평균의 평균`이 아니라 `해당 speed의 모든 유효 stride를 pooled average`한 결과를 저장함
+- `trial_count`는 사용된 trial 수, `stride_count`는 그 trial들에서 추출되어 평균에 들어간 총 stride 수를 뜻함
+
+현재 성인 raw 데이터에서는 `file_name` 내부 최대 time gap이 20ms였기 때문에 실제 제외된 stride는 없었지만,
+이 규칙은 향후 불연속 trial이 들어와도 잘못된 long stride가 생성되지 않도록 하기 위한 안전장치다.
 
 이 파일은 “분석의 원재료”에 해당한다.
 실제 파형 그림을 그릴 때 가장 먼저 보는 파일이다.
