@@ -327,10 +327,10 @@ def select_stride_segments(segments: list[tuple[int, int]], variant: str) -> lis
     """Return the segment list for the primary or sensitivity analysis."""
     if variant == "full":
         return segments
-    if variant == "midtrial":
-        if len(segments) > 2:
-            return segments[1:-1]
-        return segments
+    if variant == "trimmed":
+        if len(segments) > 4:
+            return segments[2:-2]
+        return []
     raise ValueError(f"알 수 없는 analysis_variant: {variant}")
 
 
@@ -761,7 +761,7 @@ def region_masks_from_spm(spm_results: pd.DataFrame) -> dict[tuple[str, str, str
     """Build speed/side/feature union masks from significant primary SPM clusters."""
     masks: dict[tuple[str, str, str], np.ndarray] = {}
     sig = spm_results[
-        (spm_results["analysis_variant"] == "full")
+        (spm_results["analysis_variant"] == "trimmed")
         & (spm_results["comparison_scope"] == "primary")
         & (spm_results["significant_fdr"])
         & spm_results["start_pct"].notna()
@@ -801,7 +801,7 @@ def build_feature_table(
     spm_results: pd.DataFrame,
 ) -> pd.DataFrame:
     """Convert waveform rows into a wide subject-speed feature table."""
-    primary_waves = waveforms_df[waveforms_df["analysis_variant"] == "full"].copy()
+    primary_waves = waveforms_df[waveforms_df["analysis_variant"] == "trimmed"].copy()
     region_masks = region_masks_from_spm(spm_results)
 
     base_rows: dict[tuple[str, str], dict[str, object]] = {}
@@ -886,7 +886,7 @@ def build_feature_table(
 
 def candidate_feature_columns(feature_df: pd.DataFrame, spm_results: pd.DataFrame) -> list[str]:
     """Select candidate wide features from significant waveform findings."""
-    sig = spm_results[(spm_results["analysis_variant"] == "full") & (spm_results["comparison_scope"] == "primary") & (spm_results["significant_fdr"])]
+    sig = spm_results[(spm_results["analysis_variant"] == "trimmed") & (spm_results["comparison_scope"] == "primary") & (spm_results["significant_fdr"])]
     base_features = sorted(sig["feature"].dropna().unique().tolist())
     if not base_features:
         base_features = sorted({col.split("_injured_")[0] for col in feature_df.columns if "_injured_" in col})
@@ -1189,7 +1189,20 @@ def build_validation_summary(
 
 
 def build_sensitivity_comparison(spm_results: pd.DataFrame) -> pd.DataFrame:
-    """Compare full-trial and mid-trial omnibus decisions."""
+    """Compare trimmed-primary and full-trial omnibus decisions."""
+    trimmed = (
+        spm_results[
+            (spm_results["analysis_variant"] == "trimmed") & (spm_results["comparison_scope"] == "primary") & (spm_results["test_type"] == "omnibus")
+        ][["speed", "side_basis", "feature", "test_p_raw", "test_p_fdr", "significant_fdr"]]
+        .drop_duplicates(subset=["speed", "side_basis", "feature"])
+        .rename(
+            columns={
+                "test_p_raw": "trimmed_p_raw",
+                "test_p_fdr": "trimmed_p_fdr",
+                "significant_fdr": "trimmed_sig_fdr",
+            }
+        )
+    )
     full = (
         spm_results[
             (spm_results["analysis_variant"] == "full") & (spm_results["comparison_scope"] == "primary") & (spm_results["test_type"] == "omnibus")
@@ -1203,22 +1216,9 @@ def build_sensitivity_comparison(spm_results: pd.DataFrame) -> pd.DataFrame:
             }
         )
     )
-    mid = (
-        spm_results[
-            (spm_results["analysis_variant"] == "midtrial") & (spm_results["comparison_scope"] == "primary") & (spm_results["test_type"] == "omnibus")
-        ][["speed", "side_basis", "feature", "test_p_raw", "test_p_fdr", "significant_fdr"]]
-        .drop_duplicates(subset=["speed", "side_basis", "feature"])
-        .rename(
-            columns={
-                "test_p_raw": "mid_p_raw",
-                "test_p_fdr": "mid_p_fdr",
-                "significant_fdr": "mid_sig_fdr",
-            }
-        )
-    )
 
-    merged = full.merge(mid, on=["speed", "side_basis", "feature"], how="outer")
-    merged["same_fdr_decision"] = merged["full_sig_fdr"].fillna(False) == merged["mid_sig_fdr"].fillna(False)
+    merged = trimmed.merge(full, on=["speed", "side_basis", "feature"], how="outer")
+    merged["same_fdr_decision"] = merged["trimmed_sig_fdr"].fillna(False) == merged["full_sig_fdr"].fillna(False)
     return merged.sort_values(["feature", "side_basis", "speed"]).reset_index(drop=True)
 
 
@@ -1261,14 +1261,14 @@ def run_waveform_group_analysis() -> dict[str, pd.DataFrame]:
     joint_specs = build_joint_feature_specs(sample_mvnx)
     raw_df = load_adult_raw(metadata, joint_specs)
 
+    wave_trimmed = waveform_rows_for_variant(raw_df, joint_specs, variant="trimmed")
     wave_full = waveform_rows_for_variant(raw_df, joint_specs, variant="full")
-    wave_mid = waveform_rows_for_variant(raw_df, joint_specs, variant="midtrial")
-    waveforms_df = pd.concat([wave_full, wave_mid], ignore_index=True)
+    waveforms_df = pd.concat([wave_trimmed, wave_full], ignore_index=True)
 
+    primary_spm_trimmed = run_primary_spm(wave_trimmed, analysis_set="trimmed")
     primary_spm_full = run_primary_spm(wave_full, analysis_set="full")
-    primary_spm_mid = run_primary_spm(wave_mid, analysis_set="midtrial")
-    paired_spm = run_paired_spm(wave_full, analysis_set="full")
-    spm_results = apply_fdr_to_spm(pd.concat([primary_spm_full, primary_spm_mid, paired_spm], ignore_index=True))
+    paired_spm = run_paired_spm(wave_trimmed, analysis_set="trimmed")
+    spm_results = apply_fdr_to_spm(pd.concat([primary_spm_trimmed, primary_spm_full, paired_spm], ignore_index=True))
 
     feature_df = build_feature_table(waveforms_df, metadata, spm_results)
     primary_candidates = candidate_feature_columns(feature_df, spm_results)

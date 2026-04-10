@@ -60,6 +60,8 @@ Healthy adult는 실제 injured side가 없기 때문에, ACLD의 injured-leg �
 - Right stride: `R heel strike -> next R heel strike`
 
 그리고 각 stride를 101포인트로 보간해 `0-100% gait cycle`로 정규화했다.
+논문 기준을 따라 primary analysis에서는 각 trial에서 앞 2개와 뒤 2개 stride를 제외하고, 남은 steady-state stride만 사용했다.
+즉, 현재 결과 해석의 기본 기준은 `trimmed` 분석이며 `full`은 sensitivity 비교용으로만 남겨 두었다.
 
 ### 4. 왜 speed별로 따로 분석했는가
 
@@ -91,7 +93,7 @@ Healthy adult는 실제 injured side가 없기 때문에, ACLD의 injured-leg �
 
 ### [`spm_results.csv`](/Users/ryutt/Desktop/mini_ryutt/Walking/data/processed/waveform_based/spm_results.csv)
 
-- 총 346행
+- 총 348행
 - primary omnibus, primary post-hoc, paired ACL 결과가 모두 포함됨
 - 각 행은 유의 cluster 하나 또는 비유의 test 하나를 나타냄
 
@@ -119,7 +121,7 @@ Healthy adult는 실제 injured side가 없기 때문에, ACLD의 injured-leg �
 
 ### [`feature_ranking.csv`](/Users/ryutt/Desktop/mini_ryutt/Walking/data/processed/waveform_based/feature_ranking.csv)
 
-- 총 44행
+- 총 49행
 - elastic-net 기준 상위 설명 feature 순위표
 
 이 파일은 “가장 설명력이 큰 feature가 무엇인가”를 한눈에 보기 위한 테이블이다.
@@ -132,16 +134,16 @@ Healthy adult는 실제 injured side가 없기 때문에, ACLD의 injured-leg �
 ### [`sensitivity_comparison.csv`](/Users/ryutt/Desktop/mini_ryutt/Walking/data/processed/waveform_based/sensitivity_comparison.csv)
 
 - 총 54행
-- full-trial과 mid-trial sensitivity 결과의 FDR 결정이 같은지 비교
+- `trimmed` primary와 `full` sensitivity 결과의 FDR 결정이 같은지 비교
 
 ## 1차 결과: SPM waveform 결과 해석
 
 ### 전체 요약
 
-full-trial 기준 primary FDR 유의 결과는 총 63개 cluster였다.
+논문 기준의 `trimmed` primary analysis에서 FDR 유의 결과는 총 58개 cluster였다.
 
-- omnibus: 27개
-- post-hoc: 36개
+- omnibus: 28개
+- post-hoc: 30개
 
 이 숫자는 “그룹 간 waveform 차이가 생각보다 여러 곳에서 관찰되었다”는 뜻이지만,
 동시에 모든 관절이 골고루 중요했다는 뜻은 아니다.
@@ -199,7 +201,7 @@ peak 하나만 보면 이런 방향성 반전을 놓치기 쉽다.
 
 ### post-hoc에서 보인 패턴
 
-post-hoc 결과를 보면 가장 자주 반복적으로 유의한 비교는 `HA vs ACLR`였다.
+trimmed post-hoc 결과에서도 가장 자주 반복적으로 유의한 비교는 `HA vs ACLR`였다.
 
 예시:
 
@@ -242,7 +244,7 @@ post-hoc 결과를 보면 가장 자주 반복적으로 유의한 비교는 `HA 
 
 ## 2차 결과: LMM 해석
 
-primary subset에서 group main effect 또는 interaction FDR 기준으로 살아남은 feature는 44개였다.
+primary subset에서 group main effect 또는 interaction FDR 기준으로 살아남은 feature는 49개였다.
 
 ### 가장 강한 LMM 신호
 
@@ -356,22 +358,14 @@ ranking 테이블에서 상위 feature는 아래와 같았다.
 
 ## sensitivity 결과 해석
 
-full-trial과 mid-trial sensitivity를 비교했을 때,
-54개 비교 중 FDR 결정이 달랐던 경우는 1개뿐이었다.
+논문 기준 `trimmed` primary와 `full` sensitivity를 비교했을 때,
+54개 비교 중 FDR 결정이 달랐던 경우는 없었다.
 
-불일치한 항목은 아래였다.
+이 결과는 현재 데이터셋에서는 앞 2개/뒤 2개 stride를 제외해도,
+유의한 waveform 결론의 방향성이 full-trial 대비 크게 흔들리지 않았다는 뜻이다.
 
-- `normal / contralateral / knee_flexion`
-  - full: 비유의
-  - midtrial: 유의
-
-이 결과는 두 가지를 의미한다.
-
-1. 전체적으로는 trimming 유무에 따라 결론이 크게 흔들리지 않았다.
-2. 그러나 일부 borderline feature는 stride 선택 방식에 민감할 수 있다.
-
-따라서 최종 결론은 full-trial 기준으로 두되,
-`normal contralateral knee_flexion` 같은 경계 사례는 과도하게 강한 결론을 피하는 것이 좋다.
+따라서 최종 결론은 논문 기준에 맞춘 `trimmed` primary 분석을 기준으로 두고,
+`full` 결과는 robustness 확인 자료로 해석하는 것이 적절하다.
 
 ## 최종 해석
 
