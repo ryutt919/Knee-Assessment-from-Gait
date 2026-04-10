@@ -10,6 +10,7 @@ from scipy.stats import shapiro, levene, kruskal, pointbiserialr
 from sklearn.preprocessing import StandardScaler
 from statsmodels.formula.api import mixedlm
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
+from statsmodels.stats.multitest import multipletests
 
 warnings.filterwarnings("ignore")
 
@@ -17,12 +18,14 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-if not os.path.exists(os.path.join(BASE_DIR, "mds")):
+if not os.path.exists(os.path.join(BASE_DIR, "data")):
     BASE_DIR = os.getcwd()
-MDS_DIR = os.path.join(BASE_DIR, "mds")
-PATH_DATA = os.path.join(MDS_DIR, "analysis_data.csv")
-PATH_STATS = os.path.join(MDS_DIR, "stats_result.csv")
-PATH_CORR = os.path.join(MDS_DIR, "correlation_result.csv")
+OUT_DIR = os.path.join(BASE_DIR, "data", "processed")
+os.makedirs(OUT_DIR, exist_ok=True)
+PATH_DATA = os.path.join(OUT_DIR, "analysis_data.csv")
+PATH_STATS = os.path.join(OUT_DIR, "stats_result.csv")
+PATH_CORR = os.path.join(OUT_DIR, "correlation_result.csv")
+
 
 ALPHA = 0.05
 
@@ -33,7 +36,7 @@ KINEMATIC_PEAKS = [
     "knee_flexion_injured",
     "knee_adduction_injured",
     "knee_int_rotation_injured",
-    "ankle_dorsiflexion_injured",
+    "ankle_dorsiflexion_injured",  # todo : ankle 각도 계산 방식 (0도가 어떤 상태인지 )
     "ankle_adduction_injured",
     "ankle_int_rotation_injured",
     "hip_flexion_contralateral",
@@ -70,6 +73,7 @@ ALL_FEATURES = KINEMATIC_PEAKS + LSI_FEATURES + SPATIOTEMPORAL
 
 
 # 부분 에타 제곱 (Partial Eta Squared) 계산 함수 (효과 크기)
+# todo : 왜 필요한지 추가 설명 필요
 def partial_eta_squared(df: pd.DataFrame, feature: str) -> float:
     # 전체 평균 계산
     grand_mean = df[feature].mean()
@@ -79,9 +83,7 @@ def partial_eta_squared(df: pd.DataFrame, feature: str) -> float:
     ss_between = sum(len(g) * (g.mean() - grand_mean) ** 2 for g in groups)
     # 총 제곱합 (SS_total) 계산
     ss_total = sum((x - grand_mean) ** 2 for g in groups for x in g)
-    return (
-        round(ss_between / ss_total, 4) if ss_total > 0 else np.nan
-    )  # SS_between / SS_total 반환, 0으로 나누는 경우 방지
+    return round(ss_between / ss_total, 4) if ss_total > 0 else np.nan  # SS_between / SS_total 반환, 0으로 나누는 경우 방지
 
 
 # 엡실론 제곱 (Epsilon Squared) 계산 함수 (크루스칼-월리스의 효과 크기)
@@ -105,26 +107,26 @@ def run_preliminary_tests(df: pd.DataFrame, feature: str) -> dict:
 
 
 # 터키의 HSD 사후 분석 실행 함수
+# todo : 왜 필요한지 추가 설명 필요
 def run_post_hoc_tukey(df: pd.DataFrame, feature: str) -> dict:
     # 결과를 저장할 딕셔너리 초기화
     result = {}
     try:  # 터키의 HSD 검정 실행
         tukey = pairwise_tukeyhsd(df[feature], df["group"])
         # 검정 결과를 데이터프레임으로 변환
-        t_df = pd.DataFrame(
-            data=tukey._results_table.data[1:], columns=tukey._results_table.data[0]
-        )
+        t_df = pd.DataFrame(data=tukey._results_table.data[1:], columns=tukey._results_table.data[0])
         # 각 그룹 쌍에 대한 조정된 p-value 저장
         for _, r in t_df.iterrows():
-            result[f"tukey_p_{r['group1']}_vs_{r['group2']}"] = round(
-                float(r["p-adj"]), 4
-            )
+            result[f"tukey_p_{r['group1']}_vs_{r['group2']}"] = round(float(r["p-adj"]), 4)
     except Exception as e:  # 오류 발생 시 오류 메시지 저장
         result["tukey_error"] = str(e)
     return result  # 결과 딕셔너리 반환
 
 
 # 던(Dunn)의 사후 분석 실행 함수 (크루스칼-월리스 후 비모수 사후 분석)
+# todo : 왜 필요한지 추가 설명 필요
+
+
 def run_post_hoc_dunn(df: pd.DataFrame, feature: str) -> dict:
     # 결과를 저장할 딕셔너리 초기화
     result = {}
@@ -162,9 +164,7 @@ def analyze_feature(df: pd.DataFrame, feature: str) -> dict:
     # 예비 검정 실행 (정규성, 등분산성)
     pre = run_preliminary_tests(sub_df, feature)
     # 예비 검정 결과 업데이트
-    result.update(
-        {"shapiro_normal": pre["is_normal"], "levene_equal_var": pre["is_equal_var"]}
-    )
+    result.update({"shapiro_normal": pre["is_normal"], "levene_equal_var": pre["is_equal_var"]})
 
     # 정규성과 등분산성을 만족하면 혼합 효과 모델 (LMM) 사용
     if pre["is_normal"] and pre["is_equal_var"]:
@@ -182,28 +182,12 @@ def analyze_feature(df: pd.DataFrame, feature: str) -> dict:
             fitted = model.fit(reml=True, method="lbfgs", disp=False)
 
             # 그룹 주 효과의 p-value 추출
-            group_keys = [
-                k
-                for k in fitted.pvalues.index
-                if "group" in k.lower() and "speed" not in k.lower()
-            ]
-            result["p_group_main"] = (
-                round(float(np.min([fitted.pvalues[k] for k in group_keys])), 4)
-                if group_keys
-                else np.nan
-            )
+            group_keys = [k for k in fitted.pvalues.index if "group" in k.lower() and "speed" not in k.lower()]
+            result["p_group_main"] = round(float(np.min([fitted.pvalues[k] for k in group_keys])), 4) if group_keys else np.nan
 
             # 상호작용 효과의 p-value 추출
-            int_keys = [
-                k
-                for k in fitted.pvalues.index
-                if "group" in k.lower() and "speed" in k.lower()
-            ]
-            result["p_interaction"] = (
-                round(float(np.min([fitted.pvalues[k] for k in int_keys])), 4)
-                if int_keys
-                else np.nan
-            )
+            int_keys = [k for k in fitted.pvalues.index if "group" in k.lower() and "speed" in k.lower()]
+            result["p_interaction"] = round(float(np.min([fitted.pvalues[k] for k in int_keys])), 4) if int_keys else np.nan
 
             # 효과 크기 (부분 에타 제곱) 계산 및 업데이트
             result.update(
@@ -241,11 +225,7 @@ def run_correlation_analysis(df: pd.DataFrame, features: list) -> pd.DataFrame:
     # 데이터프레임에 존재하는 피처 컬럼만 선택
     feat_cols = [f for f in features if f in df.columns]
     # subject_id별로 피처의 평균과 그룹 정보를 집계
-    agg = (
-        df.groupby("subject_id")[feat_cols + ["group"]]
-        .agg({**{f: "mean" for f in feat_cols}, "group": "first"})
-        .reset_index()
-    )
+    agg = df.groupby("subject_id")[feat_cols + ["group"]].agg({**{f: "mean" for f in feat_cols}, "group": "first"}).reset_index()
 
     # StandardScaler 초기화
     scaler = StandardScaler()
@@ -262,10 +242,8 @@ def run_correlation_analysis(df: pd.DataFrame, features: list) -> pd.DataFrame:
         for dummy in ["is_ACLD", "is_ACLR", "is_Healthy"]:  # 각 더미 변수에 대해 반복
             # 점이분 상관계수 (point-biserial correlation) 계산
             r, p = pointbiserialr(agg[dummy], agg[feat])
-            # 유의 수준에 따른 별표 표시
-            sig = (
-                "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
-            )
+            # 보정 전 유의 수준 별표
+            sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
             # 결과 딕셔너리 업데이트
             rec.update(
                 {
@@ -275,34 +253,72 @@ def run_correlation_analysis(df: pd.DataFrame, features: list) -> pd.DataFrame:
                 }
             )
         records.append(rec)  # 레코드 추가
-    return pd.DataFrame(records)  # 결과 데이터프레임 반환
+
+    result_df = pd.DataFrame(records)
+
+    # FDR 보정 (Benjamini-Hochberg) + 절대값 상관계수 + 그룹별 순위 추가
+    # todo : 왜 필요한지 추가 설명 필요
+
+    for dummy in ["is_ACLD", "is_ACLR", "is_Healthy"]:
+        pvals = result_df[f"p_{dummy}"].values
+        _, p_fdr, _, _ = multipletests(pvals, method="fdr_bh")
+        result_df[f"p_fdr_{dummy}"] = p_fdr.round(4)
+        result_df[f"sig_fdr_{dummy}"] = np.where(p_fdr < 0.001, "***", np.where(p_fdr < 0.01, "**", np.where(p_fdr < 0.05, "*", "ns")))
+        result_df[f"r_abs_{dummy}"] = result_df[f"r_{dummy}"].abs()
+        result_df[f"rank_{dummy}"] = result_df[f"r_abs_{dummy}"].rank(ascending=False).astype(int)
+
+    return result_df
 
 
 # 통계 분석 파이프라인 실행 메인 함수
 def run_statistics():
     # 파이프라인 시작 로깅
     log.info("▶ 통계 분석 파이프라인 시작 (분리된 모듈)")
+    log.info(f"입력 파일: {PATH_DATA}")
     # 데이터 파일 존재 여부 확인
     if not os.path.exists(PATH_DATA):
         log.error(f"데이터 파일 누락: {PATH_DATA}")
-        return
+        return None, None
 
     # 데이터 파일 로드
-    df = pd.read_csv(PATH_DATA)
+    try:
+        df = pd.read_csv(PATH_DATA)
+    except Exception as e:
+        log.error(f"데이터 로드 실패: {e}")
+        return None, None
+
+    if df.empty:
+        log.error("analysis_data.csv가 비어 있어 통계 분석을 중단합니다.")
+        return None, None
+
+    available_features = [feat for feat in ALL_FEATURES if feat in df.columns]
+    missing_features = [feat for feat in ALL_FEATURES if feat not in df.columns]
+    log.info(f"분석 대상 피처: {len(available_features)}/{len(ALL_FEATURES)}")
+    if missing_features:
+        log.info(f"입력 파일에 없는 피처 수: {len(missing_features)}")
+
+    if len(available_features) == 0:
+        log.error("분석 가능한 피처가 없어 통계 분석을 중단합니다.")
+        return None, None
+
     # 모든 피처에 대해 analyze_feature 함수 실행
-    stat_records = [
-        analyze_feature(df, feat) for feat in ALL_FEATURES if feat in df.columns
-    ]
+    stat_records = [analyze_feature(df, feat) for feat in available_features]
     # 통계 결과 데이터프레임 생성
     stats_df = pd.DataFrame(stat_records)
     # 통계 결과 CSV 파일로 저장
     stats_df.to_csv(PATH_STATS, index=False, encoding="utf-8-sig")
-    log.info(f"✅ 통계 분석 완료. 결과 저장됨: {PATH_STATS}")
+    log.info(f"✅ 통계 분석 완료. 결과 저장됨: {PATH_STATS} (rows={len(stats_df)})")
 
     # 상관관계 분석 실행
-    corr_df = run_correlation_analysis(df, ALL_FEATURES)
+    corr_df = run_correlation_analysis(df, available_features)
     # 상관관계 결과 CSV 파일로 저장
     corr_df.to_csv(PATH_CORR, index=False, encoding="utf-8-sig")
-    log.info(f"✅ 상관관계 분석 완료. 결과 저장됨: {PATH_CORR}")
+    log.info(f"✅ 상관관계 분석 완료. 결과 저장됨: {PATH_CORR} (rows={len(corr_df)})")
+
+    log.info("✅ 통계 파이프라인 정상 완료")
 
     return stats_df, corr_df  # 통계 및 상관관계 데이터프레임 반환
+
+
+if __name__ == "__main__":
+    run_statistics()
