@@ -69,13 +69,14 @@ PROCESSED_DIR = DATA_DIR / "processed"
 
 PATH_RAW = PROCESSED_DIR / "raw_merged.parquet"
 PATH_ID = DATA_DIR / "ID.csv"
-PATH_OUT_WAVEFORMS = PROCESSED_DIR / "subject_speed_waveforms.csv"
-PATH_OUT_SPM = PROCESSED_DIR / "spm_results.csv"
-PATH_OUT_FEATURES = PROCESSED_DIR / "feature_table.csv"
-PATH_OUT_LMM = PROCESSED_DIR / "lmm_results.csv"
-PATH_OUT_RANKING = PROCESSED_DIR / "feature_ranking.csv"
-PATH_OUT_VALIDATION = PROCESSED_DIR / "validation_summary.csv"
-PATH_OUT_SENS = PROCESSED_DIR / "sensitivity_comparison.csv"
+OUT_DIR = PROCESSED_DIR / "waveform_based"
+PATH_OUT_WAVEFORMS = OUT_DIR / "subject_speed_waveforms.csv"
+PATH_OUT_SPM = OUT_DIR / "spm_results.csv"
+PATH_OUT_FEATURES = OUT_DIR / "feature_table.csv"
+PATH_OUT_LMM = OUT_DIR / "lmm_results.csv"
+PATH_OUT_RANKING = OUT_DIR / "feature_ranking.csv"
+PATH_OUT_VALIDATION = OUT_DIR / "validation_summary.csv"
+PATH_OUT_SENS = OUT_DIR / "sensitivity_comparison.csv"
 
 SUBJECT_ID_ALIASES = {
     "ACLR38": "ACLR36",
@@ -192,6 +193,7 @@ def build_joint_feature_specs(sample_mvnx: Path) -> dict[str, dict[str, FeatureS
 
 def load_metadata() -> pd.DataFrame:
     """Load adult metadata and assign pseudo injured side for healthy adults."""
+
     def to_person_id(subject_id: str) -> str:
         if subject_id.startswith("ACL"):
             match = re.search(r"(\d+)$", subject_id)
@@ -244,13 +246,7 @@ def load_metadata() -> pd.DataFrame:
 def load_adult_raw(metadata: pd.DataFrame, joint_specs: dict[str, dict[str, FeatureSpec]]) -> pd.DataFrame:
     """Load adult raw parquet rows with the columns required for waveform analysis."""
     subject_ids = metadata["subject_id"].tolist()
-    joint_cols = sorted(
-        {
-            spec.column
-            for side_specs in joint_specs.values()
-            for spec in side_specs.values()
-        }
-    )
+    joint_cols = sorted({spec.column for side_specs in joint_specs.values() for spec in side_specs.values()})
     columns = ["subject_id", "group", "speed", "time_ms", "file_name"] + joint_cols + list(HEEL_CONTACT_COLS.values())
 
     dataset = ds.dataset(PATH_RAW, format="parquet")
@@ -616,11 +612,7 @@ def run_paired_spm(waveforms_df: pd.DataFrame, analysis_set: str) -> pd.DataFram
     for speed in PRIMARY_SPEEDS:
         for side_basis in ("injured", "contralateral"):
             for feature in sorted(acl_wave["feature"].unique()):
-                subset = acl_wave[
-                    (acl_wave["speed"] == speed)
-                    & (acl_wave["side_basis"] == side_basis)
-                    & (acl_wave["feature"] == feature)
-                ].copy()
+                subset = acl_wave[(acl_wave["speed"] == speed) & (acl_wave["side_basis"] == side_basis) & (acl_wave["feature"] == feature)].copy()
                 if subset.empty:
                     continue
 
@@ -737,7 +729,9 @@ def apply_fdr_to_spm(spm_results: pd.DataFrame) -> pd.DataFrame:
         tests["significant_fdr"] = reject
         correction_tables.append(tests[test_keys + ["test_p_fdr", "significant_fdr"]])
 
-    corrected = pd.concat(correction_tables, ignore_index=True) if correction_tables else pd.DataFrame(columns=test_keys + ["test_p_fdr", "significant_fdr"])
+    corrected = (
+        pd.concat(correction_tables, ignore_index=True) if correction_tables else pd.DataFrame(columns=test_keys + ["test_p_fdr", "significant_fdr"])
+    )
     result = result.merge(corrected, on=test_keys, how="left")
     return result
 
@@ -871,11 +865,7 @@ def build_feature_table(
 
 def candidate_feature_columns(feature_df: pd.DataFrame, spm_results: pd.DataFrame) -> list[str]:
     """Select candidate wide features from significant waveform findings."""
-    sig = spm_results[
-        (spm_results["analysis_variant"] == "full")
-        & (spm_results["comparison_scope"] == "primary")
-        & (spm_results["significant_fdr"])
-    ]
+    sig = spm_results[(spm_results["analysis_variant"] == "full") & (spm_results["comparison_scope"] == "primary") & (spm_results["significant_fdr"])]
     base_features = sorted(sig["feature"].dropna().unique().tolist())
     if not base_features:
         base_features = sorted({col.split("_injured_")[0] for col in feature_df.columns if "_injured_" in col})
@@ -883,7 +873,12 @@ def candidate_feature_columns(feature_df: pd.DataFrame, spm_results: pd.DataFram
     candidates: list[str] = []
     for base in base_features:
         for col in feature_df.columns:
-            if col.startswith(f"{base}_injured_") or col.startswith(f"{base}_contralateral_") or col.startswith(f"{base}_diff_") or col.startswith(f"{base}_lsi_"):
+            if (
+                col.startswith(f"{base}_injured_")
+                or col.startswith(f"{base}_contralateral_")
+                or col.startswith(f"{base}_diff_")
+                or col.startswith(f"{base}_lsi_")
+            ):
                 candidates.append(col)
     return sorted(dict.fromkeys(candidates))
 
@@ -986,13 +981,14 @@ def run_lmm_suite(feature_df: pd.DataFrame, features: list[str], subset_name: st
 
 def run_feature_ranking(feature_df: pd.DataFrame, lmm_results: pd.DataFrame, spm_results: pd.DataFrame) -> pd.DataFrame:
     """Rank explanatory features with grouped multinomial elastic-net."""
-    candidate = lmm_results[
-        (lmm_results["analysis_subset"] == "primary")
-        & (
-            lmm_results["p_group_main_sig_fdr"].fillna(False)
-            | lmm_results["p_interaction_sig_fdr"].fillna(False)
-        )
-    ]["feature"].dropna().tolist()
+    candidate = (
+        lmm_results[
+            (lmm_results["analysis_subset"] == "primary")
+            & (lmm_results["p_group_main_sig_fdr"].fillna(False) | lmm_results["p_interaction_sig_fdr"].fillna(False))
+        ]["feature"]
+        .dropna()
+        .tolist()
+    )
 
     if not candidate:
         candidate = candidate_feature_columns(feature_df, spm_results)[:20]
@@ -1066,16 +1062,20 @@ def run_feature_ranking(feature_df: pd.DataFrame, lmm_results: pd.DataFrame, spm
     clf = final_pipe.named_steps["clf"]
     importance = np.abs(clf.coef_).mean(axis=0)
 
-    ranking = pd.DataFrame(
-        {
-            "feature": candidate,
-            "importance": importance,
-            "rank": pd.Series(importance).rank(ascending=False, method="dense").astype(int),
-            "best_params": str(best["params"]),
-            "cv_macro_f1": best["macro_f1"],
-            "cv_accuracy": best["accuracy"],
-        }
-    ).sort_values(["rank", "feature"]).reset_index(drop=True)
+    ranking = (
+        pd.DataFrame(
+            {
+                "feature": candidate,
+                "importance": importance,
+                "rank": pd.Series(importance).rank(ascending=False, method="dense").astype(int),
+                "best_params": str(best["params"]),
+                "cv_macro_f1": best["macro_f1"],
+                "cv_accuracy": best["accuracy"],
+            }
+        )
+        .sort_values(["rank", "feature"])
+        .reset_index(drop=True)
+    )
     return ranking
 
 
@@ -1169,31 +1169,31 @@ def build_validation_summary(
 
 def build_sensitivity_comparison(spm_results: pd.DataFrame) -> pd.DataFrame:
     """Compare full-trial and mid-trial omnibus decisions."""
-    full = spm_results[
-        (spm_results["analysis_variant"] == "full")
-        & (spm_results["comparison_scope"] == "primary")
-        & (spm_results["test_type"] == "omnibus")
-    ][["speed", "side_basis", "feature", "test_p_raw", "test_p_fdr", "significant_fdr"]].drop_duplicates(
-        subset=["speed", "side_basis", "feature"]
-    ).rename(
-        columns={
-            "test_p_raw": "full_p_raw",
-            "test_p_fdr": "full_p_fdr",
-            "significant_fdr": "full_sig_fdr",
-        }
+    full = (
+        spm_results[
+            (spm_results["analysis_variant"] == "full") & (spm_results["comparison_scope"] == "primary") & (spm_results["test_type"] == "omnibus")
+        ][["speed", "side_basis", "feature", "test_p_raw", "test_p_fdr", "significant_fdr"]]
+        .drop_duplicates(subset=["speed", "side_basis", "feature"])
+        .rename(
+            columns={
+                "test_p_raw": "full_p_raw",
+                "test_p_fdr": "full_p_fdr",
+                "significant_fdr": "full_sig_fdr",
+            }
+        )
     )
-    mid = spm_results[
-        (spm_results["analysis_variant"] == "midtrial")
-        & (spm_results["comparison_scope"] == "primary")
-        & (spm_results["test_type"] == "omnibus")
-    ][["speed", "side_basis", "feature", "test_p_raw", "test_p_fdr", "significant_fdr"]].drop_duplicates(
-        subset=["speed", "side_basis", "feature"]
-    ).rename(
-        columns={
-            "test_p_raw": "mid_p_raw",
-            "test_p_fdr": "mid_p_fdr",
-            "significant_fdr": "mid_sig_fdr",
-        }
+    mid = (
+        spm_results[
+            (spm_results["analysis_variant"] == "midtrial") & (spm_results["comparison_scope"] == "primary") & (spm_results["test_type"] == "omnibus")
+        ][["speed", "side_basis", "feature", "test_p_raw", "test_p_fdr", "significant_fdr"]]
+        .drop_duplicates(subset=["speed", "side_basis", "feature"])
+        .rename(
+            columns={
+                "test_p_raw": "mid_p_raw",
+                "test_p_fdr": "mid_p_fdr",
+                "significant_fdr": "mid_sig_fdr",
+            }
+        )
     )
 
     merged = full.merge(mid, on=["speed", "side_basis", "feature"], how="outer")
@@ -1211,6 +1211,18 @@ def save_outputs(
     sensitivity_df: pd.DataFrame,
 ) -> None:
     """Persist analysis outputs."""
+    output_paths = [
+        PATH_OUT_WAVEFORMS,
+        PATH_OUT_SPM,
+        PATH_OUT_FEATURES,
+        PATH_OUT_LMM,
+        PATH_OUT_RANKING,
+        PATH_OUT_VALIDATION,
+        PATH_OUT_SENS,
+    ]
+    for parent in {path.parent for path in output_paths}:
+        parent.mkdir(parents=True, exist_ok=True)
+
     waveforms_df.to_csv(PATH_OUT_WAVEFORMS, index=False, encoding="utf-8-sig")
     spm_results.to_csv(PATH_OUT_SPM, index=False, encoding="utf-8-sig")
     feature_df.to_csv(PATH_OUT_FEATURES, index=False, encoding="utf-8-sig")
@@ -1241,11 +1253,7 @@ def run_waveform_group_analysis() -> dict[str, pd.DataFrame]:
     primary_candidates = candidate_feature_columns(feature_df, spm_results)
     lmm_primary = run_lmm_suite(feature_df, primary_candidates, subset_name="primary", groups=PRIMARY_GROUPS)
 
-    matched_acl_ids = (
-        feature_df[feature_df["group"].isin(["ACLD", "ACLR"])]
-        .groupby("person_id")["group"]
-        .nunique()
-    )
+    matched_acl_ids = feature_df[feature_df["group"].isin(["ACLD", "ACLR"])].groupby("person_id")["group"].nunique()
     matched_person_ids = matched_acl_ids[matched_acl_ids == 2].index.tolist()
     acl_paired_df = feature_df[(feature_df["group"].isin(["ACLD", "ACLR"])) & (feature_df["person_id"].isin(matched_person_ids))].copy()
     lmm_paired = run_lmm_suite(acl_paired_df, primary_candidates, subset_name="paired_acl", groups=["ACLD", "ACLR"])
