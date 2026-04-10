@@ -10,12 +10,12 @@
 
 | Index | Category | Feature | 컬럼명 (raw_merged.parquet) | 추출 방식 | 선정 근거 |
 |---|---|---|---|---|---|
-| 1 | Joint kinematic | Knee sagittal plane kinematics | `jointAngle_45` (R_Knee_x) / `jointAngle_57` (L_Knee_x) | 환측/건측에 맞춰 해당 컬럼의 **Max (Peak Flexion)** 추출 | 11개 연구에서 보고된 핵심 지표. ACLR 그룹의 굴곡 감소 패턴(모더레이트 수준 근거) |
-| 2 | Joint kinematic | Knee frontal plane kinematics | `jointAngle_46` (R_Knee_y) / `jointAngle_58` (L_Knee_y) | 환측/건측에 맞춰 해당 컬럼의 **Min (Peak Adduction)** 추출 | ACLR 환측의 내전 모멘트 감소는 무릎 불안정성의 전형적 징후 |
-| 3 | Joint kinematic | Knee transverse plane kinematics | `jointAngle_47` (R_Knee_z) / `jointAngle_59` (L_Knee_z) | 환측/건측에 맞춰 해당 컬럼의 **Max (Peak Internal Rotation)** 추출 | 부하 단계(Loading phase)에서 내측 경골 회전 감소가 강한 근거로 보고됨 |
-| 4 | Joint kinematic | Hip & Ankle kinematics | Hip: `jointAngle_42`/`43` (R_Hip_x/y) / `jointAngle_54`/`55` (L_Hip_x/y) | Hip: Peak Flexion (Max), Peak Adduction (Min) | 고관절 및 발목은 무릎 불안정 보상 전략(Hip/Ankle strategy)의 핵심 |
-| | | | Ankle: `jointAngle_48` (R_Ankle_x) / `jointAngle_60` (L_Ankle_x) | Ankle: Peak Dorsiflexion (Max) | |
-| 5 | Derived | Bilateral kinematic asymmetry (LSI) | 위 1~4번 피처에서 환측(I)값과 건측(C)값을 사용 | **LSI = 100 × (I / C)** — 무릎/고관절/발목 굴곡 각도 모두에 개별 적용. Healthy는 우측=I, 좌측=C | 좌우 운동학적 비대칭은 복귀 수행 능력(RTP)의 핵심 예측 지표 |
+| 1 | Joint kinematic | Knee sagittal plane kinematics | `jointAngle_47` (R_Knee Flex/Ext) / `jointAngle_59` (L_Knee Flex/Ext) | 환측/건측에 맞춰 해당 컬럼의 **Max (Peak Flexion)** 추출 | 11개 연구에서 보고된 핵심 지표. ACLR 그룹의 굴곡 감소 패턴(모더레이트 수준 근거) |
+| 2 | Joint kinematic | Knee frontal plane kinematics | `jointAngle_45` (R_Knee Abd/Add) / `jointAngle_57` (L_Knee Abd/Add) | 환측/건측에 맞춰 해당 컬럼의 **Min (Peak Adduction)** 추출 | ACLR 환측의 내전 모멘트 감소는 무릎 불안정성의 전형적 징후 |
+| 3 | Joint kinematic | Knee transverse plane kinematics | `jointAngle_46` (R_Knee Int/Ext Rot) / `jointAngle_58` (L_Knee Int/Ext Rot) | 환측/건측에 맞춰 해당 컬럼의 **Max (Peak Internal Rotation)** 추출 | 부하 단계(Loading phase)에서 내측 경골 회전 감소가 강한 근거로 보고됨 |
+| 4 | Joint kinematic | Hip & Ankle kinematics | Hip: `jointAngle_42/43/44` (R_Hip Abd/Add, Int/Ext Rot, Flex/Ext) / `jointAngle_54/55/56` (L_Hip Abd/Add, Int/Ext Rot, Flex/Ext) | Hip: Peak Adduction (Min), Peak Internal Rotation (Max), Peak Flexion (Max) | 고관절 및 발목은 무릎 불안정 보상 전략(Hip/Ankle strategy)의 핵심 |
+| | | | Ankle: `jointAngle_48/49/50` (R_Ankle Abd/Add, Int/Ext Rot, Dorsi/Plantar) / `jointAngle_60/61/62` (L_Ankle Abd/Add, Int/Ext Rot, Dorsi/Plantar) | Ankle: Peak Adduction (Min), Peak Internal Rotation (Max), Peak Dorsiflexion (Max) | |
+| 5 | Derived | Bilateral kinematic asymmetry (LSI) | 위 1~4번 피처에서 환측(I)값과 건측(C)값을 사용 | **LSI = 100 × (I / C)** — 하체 관절각 9개(hip/knee/ankle의 adduction, int_rotation, flexion/dorsiflexion)에 개별 적용. Healthy는 우측=I, 좌측=C | 좌우 운동학적 비대칭은 복귀 수행 능력(RTP)의 핵심 예측 지표 |
 | 6 | Derived | Phase-specific gait features | — | **우선 제외(보류)** — 보행 주기 정규화 및 입각기 구간 분할 알고리즘이 별도 필요 | 차후 단계에서 구현 예정 |
 | 7 | Spatiotemporal | Spatiotemporal features | `gait_speed_mps`, `cadence_spm`, `stride_length_mean_m`, `step_width_mean_m_orth`, `double_support_pct`, `single_support_L_pct`, `single_support_R_pct` | `gait_analysis_global.csv`에서 직접 추출 (group × pace_condition 별) | 속도/보폭/케이던스: 보행 효율. 지지기 비율: 환측 체중 부하 대칭성. 기저면 폭: 불안정 보상 여부 |
 | 8 | Speed-related | Robustness to speed changes | pace_condition: `fast`, `normal`, `slow` (gait_analysis_global.csv) | 1~7번 피처를 속도 조건(fast/normal/slow) 별로 분리하여 **Two-way Mixed ANOVA** (Group × Speed) 상호작용 검증 | 보행 속도는 무릎 내측 모멘트와 고관절 굴곡 로딩에 직접 상관. 느린 속도→관절 부하 저감 보상 전략 확인 |
@@ -27,18 +27,24 @@
 ### Joint Angle 컬럼 매핑
 | 컬럼명 | 관절 | 축 (의미) | 분석 피처 |
 |---|---|---|---|
-| `jointAngle_42` | jRightHip | x (굴곡/신전) | Right Hip Flexion |
-| `jointAngle_43` | jRightHip | y (내전/외전) | Right Hip Adduction |
-| `jointAngle_45` | jRightKnee | x (굴곡/신전) | Right Knee Flexion |
-| `jointAngle_46` | jRightKnee | y (내전/외전) | Right Knee Adduction |
-| `jointAngle_47` | jRightKnee | z (내/외회전) | Right Knee Internal Rotation |
-| `jointAngle_48` | jRightAnkle | x (족배굴곡/족저굴곡) | Right Ankle Dorsiflexion |
-| `jointAngle_54` | jLeftHip | x (굴곡/신전) | Left Hip Flexion |
-| `jointAngle_55` | jLeftHip | y (내전/외전) | Left Hip Adduction |
-| `jointAngle_57` | jLeftKnee | x (굴곡/신전) | Left Knee Flexion |
-| `jointAngle_58` | jLeftKnee | y (내전/외전) | Left Knee Adduction |
-| `jointAngle_59` | jLeftKnee | z (내/외회전) | Left Knee Internal Rotation |
-| `jointAngle_60` | jLeftAnkle | x (족배굴곡/족저굴곡) | Left Ankle Dorsiflexion |
+| `jointAngle_42` | jRightHip | Abduction/Adduction | Right Hip Adduction (`hip_adduction`) |
+| `jointAngle_43` | jRightHip | Internal/External Rotation | Right Hip Internal Rotation (`hip_int_rotation`) |
+| `jointAngle_44` | jRightHip | Flexion/Extension | Right Hip Flexion (`hip_flexion`) |
+| `jointAngle_45` | jRightKnee | Abduction/Adduction | Right Knee Adduction (`knee_adduction`) |
+| `jointAngle_46` | jRightKnee | Internal/External Rotation | Right Knee Internal Rotation (`knee_int_rotation`) |
+| `jointAngle_47` | jRightKnee | Flexion/Extension | Right Knee Flexion (`knee_flexion`) |
+| `jointAngle_48` | jRightAnkle | Abduction/Adduction | Right Ankle Adduction (`ankle_adduction`) |
+| `jointAngle_49` | jRightAnkle | Internal/External Rotation | Right Ankle Internal Rotation (`ankle_int_rotation`) |
+| `jointAngle_50` | jRightAnkle | Dorsiflexion/Plantarflexion | Right Ankle Dorsiflexion (`ankle_dorsiflexion`) |
+| `jointAngle_54` | jLeftHip | Abduction/Adduction | Left Hip Adduction (`hip_adduction`) |
+| `jointAngle_55` | jLeftHip | Internal/External Rotation | Left Hip Internal Rotation (`hip_int_rotation`) |
+| `jointAngle_56` | jLeftHip | Flexion/Extension | Left Hip Flexion (`hip_flexion`) |
+| `jointAngle_57` | jLeftKnee | Abduction/Adduction | Left Knee Adduction (`knee_adduction`) |
+| `jointAngle_58` | jLeftKnee | Internal/External Rotation | Left Knee Internal Rotation (`knee_int_rotation`) |
+| `jointAngle_59` | jLeftKnee | Flexion/Extension | Left Knee Flexion (`knee_flexion`) |
+| `jointAngle_60` | jLeftAnkle | Abduction/Adduction | Left Ankle Adduction (`ankle_adduction`) |
+| `jointAngle_61` | jLeftAnkle | Internal/External Rotation | Left Ankle Internal Rotation (`ankle_int_rotation`) |
+| `jointAngle_62` | jLeftAnkle | Dorsiflexion/Plantarflexion | Left Ankle Dorsiflexion (`ankle_dorsiflexion`) |
 
 ### Spatiotemporal 컬럼 매핑 (gait_analysis_global.csv)
 | 컬럼명 | 의미 | 선정/제외 |

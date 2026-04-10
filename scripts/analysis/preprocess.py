@@ -43,23 +43,26 @@ SUBJECT_ID_ALIASES = {
 
 # 관절 피처명과 원본 컬럼(오른쪽, 왼쪽) 매핑 테이블이다.
 JOINT_COLS = {
-    "hip_flexion": ("jointAngle_42", "jointAngle_54"),
-    "hip_adduction": ("jointAngle_43", "jointAngle_55"),
-    "hip_int_rotation": ("jointAngle_44", "jointAngle_56"),
-    "knee_flexion": ("jointAngle_45", "jointAngle_57"),
-    "knee_adduction": ("jointAngle_46", "jointAngle_58"),
-    "knee_int_rotation": ("jointAngle_47", "jointAngle_59"),
-    "ankle_dorsiflexion": ("jointAngle_48", "jointAngle_60"),
-    "ankle_adduction": ("jointAngle_49", "jointAngle_61"),
-    "ankle_int_rotation": ("jointAngle_50", "jointAngle_62"),
+    "hip_adduction": ("jointAngle_42", "jointAngle_54"),
+    "hip_int_rotation": ("jointAngle_43", "jointAngle_55"),
+    "hip_flexion": ("jointAngle_44", "jointAngle_56"),
+    "knee_adduction": ("jointAngle_45", "jointAngle_57"),
+    "knee_int_rotation": ("jointAngle_46", "jointAngle_58"),
+    "knee_flexion": ("jointAngle_47", "jointAngle_59"),
+    "ankle_adduction": ("jointAngle_48", "jointAngle_60"),
+    "ankle_int_rotation": ("jointAngle_49", "jointAngle_61"),
+    "ankle_dorsiflexion": ("jointAngle_50", "jointAngle_62"),
 }
 
-# footContacts 컬럼 매핑(발뒤꿈치 접촉 기준)이다.
+# footContacts 컬럼 매핑(발뒤꿈치/발가락 접촉 기준)이다.
 # mvnx footContactDefinition 순서: 0=LeftHeel, 1=LeftToe, 2=RightHeel, 3=RightToe
-FOOT_CONTACT_COLS = {
-    "Right": "footContacts_2",  # 오른발 뒤꿈치 접촉(환측/건측 분기에서 사용)
-    "Left": "footContacts_0",  # 왼발 뒤꿈치 접촉(환측/건측 분기에서 사용)
+FOOT_CONTACT_PAIR_COLS = {
+    "Right": ("footContacts_2", "footContacts_3"),  # (RightHeel, RightToe)
+    "Left": ("footContacts_0", "footContacts_1"),  # (LeftHeel, LeftToe)
 }
+
+# stance 판정 기준: heel_toe_or = 동측 heel 또는 toe가 접지면 stance(권장).
+STANCE_CONTACT_MODE = "heel_toe_or"
 
 # 피처별 피크 방향 규칙(최대값/최소값)을 정의한다.
 PEAK_DIRECTION = {
@@ -97,6 +100,41 @@ SPATIOTEMPORAL_COLS = [
     "single_support_L_pct",
     "single_support_R_pct",
 ]
+
+
+def _contact_array_from_df(df: pd.DataFrame, col: str) -> np.ndarray | None:
+    """contact 컬럼을 이진 배열로 변환하고, 컬럼이 없으면 None을 반환한다."""
+    if col not in df.columns:
+        return None
+    return pd.to_numeric(df[col], errors="coerce").fillna(0).to_numpy(dtype=int)
+
+
+def build_stance_contact_signal(speed_df: pd.DataFrame, leg: str, mode: str = STANCE_CONTACT_MODE) -> tuple[np.ndarray | None, str]:
+    """다리별 stance contact 신호(heel/toe/heel|toe)를 생성하고 사용 컬럼 정보를 반환한다."""
+    if leg not in FOOT_CONTACT_PAIR_COLS:
+        raise ValueError(f"알 수 없는 leg 값: {leg}")
+
+    heel_col, toe_col = FOOT_CONTACT_PAIR_COLS[leg]
+    heel_contact = _contact_array_from_df(speed_df, heel_col)
+    toe_contact = _contact_array_from_df(speed_df, toe_col)
+
+    if mode == "heel_only":
+        return heel_contact, heel_col
+
+    if mode == "toe_only":
+        return toe_contact, toe_col
+
+    if mode == "heel_toe_or":
+        if heel_contact is None and toe_contact is None:
+            return None, f"{heel_col}|{toe_col}"
+
+        length = len(speed_df)
+        heel_binary = np.zeros(length, dtype=int) if heel_contact is None else (heel_contact == 1).astype(int)
+        toe_binary = np.zeros(length, dtype=int) if toe_contact is None else (toe_contact == 1).astype(int)
+        merged = ((heel_binary == 1) | (toe_binary == 1)).astype(int)
+        return merged, f"{heel_col}|{toe_col}"
+
+    raise ValueError(f"지원하지 않는 mode 값: {mode}")
 
 
 def get_stance_segments(contact_signal: np.ndarray) -> list:
@@ -418,8 +456,8 @@ def match_subjects(path_id: str):
 
 def load_joint_data(path_raw: str, subject_ids: list, needed_cols: list) -> pd.DataFrame:
     """Parquet 원시 관절 데이터를 subject_id 기준으로 필터링해 로드한다."""
-    # 발 접촉 신호 컬럼(좌/우 heel) 목록을 준비한다.
-    contact_cols = list(FOOT_CONTACT_COLS.values())
+    # 발 접촉 신호 컬럼(좌/우 heel/toe) 목록을 준비한다.
+    contact_cols = list(dict.fromkeys([col for pair in FOOT_CONTACT_PAIR_COLS.values() for col in pair]))
 
     # 기본 대상 ID 집합을 set으로 만든다(빠른 포함 검사/중복 제거 목적).
     load_subject_ids = set(subject_ids)
@@ -488,14 +526,9 @@ def compute_features_for_subject(
             "injured_leg": injured_leg,
         }
 
-        # 환측 heel contact 컬럼명을 가져온다.
-        inj_contact_col = FOOT_CONTACT_COLS[injured_leg]
-        # 건측 heel contact 컬럼명을 가져온다.
-        contra_contact_col = FOOT_CONTACT_COLS[contra_leg]
-        # 환측 contact 신호 배열을 추출하고 컬럼이 없으면 None으로 둔다.
-        inj_contact = speed_df[inj_contact_col].values if inj_contact_col in speed_df.columns else None
-        # 건측 contact 신호 배열을 추출하고 컬럼이 없으면 None으로 둔다.
-        contra_contact = speed_df[contra_contact_col].values if contra_contact_col in speed_df.columns else None
+        # 환측/건측 stance 신호를 동측 heel|toe(OR) 기준으로 생성한다.
+        inj_contact, inj_contact_col = build_stance_contact_signal(speed_df, injured_leg)
+        contra_contact, contra_contact_col = build_stance_contact_signal(speed_df, contra_leg)
         # 개별 피크 레코드에 넣기 위한 시간축 배열을 뽑는다.
         time_ms = pd.to_numeric(speed_df["time_ms"], errors="coerce").values
 
