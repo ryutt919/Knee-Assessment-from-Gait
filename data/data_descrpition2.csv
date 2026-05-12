@@ -1,0 +1,694 @@
+﻿parquet_column,source_sheet,xlsx_header,body_or_joint,axis_or_component,description
+time_ms,metadata,time_ms,time,ms,Frame timestamp in milliseconds
+orientation_0,Segment Orientation - Quat,Pelvis q0,Pelvis,q0,Segment Orientation Quaternion - Pelvis q0
+orientation_1,Segment Orientation - Quat,Pelvis q1,Pelvis,q1,Segment Orientation Quaternion - Pelvis q1
+orientation_2,Segment Orientation - Quat,Pelvis q2,Pelvis,q2,Segment Orientation Quaternion - Pelvis q2
+orientation_3,Segment Orientation - Quat,Pelvis q3,Pelvis,q3,Segment Orientation Quaternion - Pelvis q3
+orientation_4,Segment Orientation - Quat,L5 q0,L5,q0,Segment Orientation Quaternion - L5 q0
+orientation_5,Segment Orientation - Quat,L5 q1,L5,q1,Segment Orientation Quaternion - L5 q1
+orientation_6,Segment Orientation - Quat,L5 q2,L5,q2,Segment Orientation Quaternion - L5 q2
+orientation_7,Segment Orientation - Quat,L5 q3,L5,q3,Segment Orientation Quaternion - L5 q3
+orientation_8,Segment Orientation - Quat,L3 q0,L3,q0,Segment Orientation Quaternion - L3 q0
+orientation_9,Segment Orientation - Quat,L3 q1,L3,q1,Segment Orientation Quaternion - L3 q1
+orientation_10,Segment Orientation - Quat,L3 q2,L3,q2,Segment Orientation Quaternion - L3 q2
+orientation_11,Segment Orientation - Quat,L3 q3,L3,q3,Segment Orientation Quaternion - L3 q3
+orientation_12,Segment Orientation - Quat,T12 q0,T12,q0,Segment Orientation Quaternion - T12 q0
+orientation_13,Segment Orientation - Quat,T12 q1,T12,q1,Segment Orientation Quaternion - T12 q1
+orientation_14,Segment Orientation - Quat,T12 q2,T12,q2,Segment Orientation Quaternion - T12 q2
+orientation_15,Segment Orientation - Quat,T12 q3,T12,q3,Segment Orientation Quaternion - T12 q3
+orientation_16,Segment Orientation - Quat,T8 q0,T8,q0,Segment Orientation Quaternion - T8 q0
+orientation_17,Segment Orientation - Quat,T8 q1,T8,q1,Segment Orientation Quaternion - T8 q1
+orientation_18,Segment Orientation - Quat,T8 q2,T8,q2,Segment Orientation Quaternion - T8 q2
+orientation_19,Segment Orientation - Quat,T8 q3,T8,q3,Segment Orientation Quaternion - T8 q3
+orientation_20,Segment Orientation - Quat,Neck q0,Neck,q0,Segment Orientation Quaternion - Neck q0
+orientation_21,Segment Orientation - Quat,Neck q1,Neck,q1,Segment Orientation Quaternion - Neck q1
+orientation_22,Segment Orientation - Quat,Neck q2,Neck,q2,Segment Orientation Quaternion - Neck q2
+orientation_23,Segment Orientation - Quat,Neck q3,Neck,q3,Segment Orientation Quaternion - Neck q3
+orientation_24,Segment Orientation - Quat,Head q0,Head,q0,Segment Orientation Quaternion - Head q0
+orientation_25,Segment Orientation - Quat,Head q1,Head,q1,Segment Orientation Quaternion - Head q1
+orientation_26,Segment Orientation - Quat,Head q2,Head,q2,Segment Orientation Quaternion - Head q2
+orientation_27,Segment Orientation - Quat,Head q3,Head,q3,Segment Orientation Quaternion - Head q3
+orientation_28,Segment Orientation - Quat,Right Shoulder q0,Right Shoulder,q0,Segment Orientation Quaternion - Right Shoulder q0
+orientation_29,Segment Orientation - Quat,Right Shoulder q1,Right Shoulder,q1,Segment Orientation Quaternion - Right Shoulder q1
+orientation_30,Segment Orientation - Quat,Right Shoulder q2,Right Shoulder,q2,Segment Orientation Quaternion - Right Shoulder q2
+orientation_31,Segment Orientation - Quat,Right Shoulder q3,Right Shoulder,q3,Segment Orientation Quaternion - Right Shoulder q3
+orientation_32,Segment Orientation - Quat,Right Upper Arm q0,Right Upper Arm,q0,Segment Orientation Quaternion - Right Upper Arm q0
+orientation_33,Segment Orientation - Quat,Right Upper Arm q1,Right Upper Arm,q1,Segment Orientation Quaternion - Right Upper Arm q1
+orientation_34,Segment Orientation - Quat,Right Upper Arm q2,Right Upper Arm,q2,Segment Orientation Quaternion - Right Upper Arm q2
+orientation_35,Segment Orientation - Quat,Right Upper Arm q3,Right Upper Arm,q3,Segment Orientation Quaternion - Right Upper Arm q3
+orientation_36,Segment Orientation - Quat,Right Forearm q0,Right Forearm,q0,Segment Orientation Quaternion - Right Forearm q0
+orientation_37,Segment Orientation - Quat,Right Forearm q1,Right Forearm,q1,Segment Orientation Quaternion - Right Forearm q1
+orientation_38,Segment Orientation - Quat,Right Forearm q2,Right Forearm,q2,Segment Orientation Quaternion - Right Forearm q2
+orientation_39,Segment Orientation - Quat,Right Forearm q3,Right Forearm,q3,Segment Orientation Quaternion - Right Forearm q3
+orientation_40,Segment Orientation - Quat,Right Hand q0,Right Hand,q0,Segment Orientation Quaternion - Right Hand q0
+orientation_41,Segment Orientation - Quat,Right Hand q1,Right Hand,q1,Segment Orientation Quaternion - Right Hand q1
+orientation_42,Segment Orientation - Quat,Right Hand q2,Right Hand,q2,Segment Orientation Quaternion - Right Hand q2
+orientation_43,Segment Orientation - Quat,Right Hand q3,Right Hand,q3,Segment Orientation Quaternion - Right Hand q3
+orientation_44,Segment Orientation - Quat,Left Shoulder q0,Left Shoulder,q0,Segment Orientation Quaternion - Left Shoulder q0
+orientation_45,Segment Orientation - Quat,Left Shoulder q1,Left Shoulder,q1,Segment Orientation Quaternion - Left Shoulder q1
+orientation_46,Segment Orientation - Quat,Left Shoulder q2,Left Shoulder,q2,Segment Orientation Quaternion - Left Shoulder q2
+orientation_47,Segment Orientation - Quat,Left Shoulder q3,Left Shoulder,q3,Segment Orientation Quaternion - Left Shoulder q3
+orientation_48,Segment Orientation - Quat,Left Upper Arm q0,Left Upper Arm,q0,Segment Orientation Quaternion - Left Upper Arm q0
+orientation_49,Segment Orientation - Quat,Left Upper Arm q1,Left Upper Arm,q1,Segment Orientation Quaternion - Left Upper Arm q1
+orientation_50,Segment Orientation - Quat,Left Upper Arm q2,Left Upper Arm,q2,Segment Orientation Quaternion - Left Upper Arm q2
+orientation_51,Segment Orientation - Quat,Left Upper Arm q3,Left Upper Arm,q3,Segment Orientation Quaternion - Left Upper Arm q3
+orientation_52,Segment Orientation - Quat,Left Forearm q0,Left Forearm,q0,Segment Orientation Quaternion - Left Forearm q0
+orientation_53,Segment Orientation - Quat,Left Forearm q1,Left Forearm,q1,Segment Orientation Quaternion - Left Forearm q1
+orientation_54,Segment Orientation - Quat,Left Forearm q2,Left Forearm,q2,Segment Orientation Quaternion - Left Forearm q2
+orientation_55,Segment Orientation - Quat,Left Forearm q3,Left Forearm,q3,Segment Orientation Quaternion - Left Forearm q3
+orientation_56,Segment Orientation - Quat,Left Hand q0,Left Hand,q0,Segment Orientation Quaternion - Left Hand q0
+orientation_57,Segment Orientation - Quat,Left Hand q1,Left Hand,q1,Segment Orientation Quaternion - Left Hand q1
+orientation_58,Segment Orientation - Quat,Left Hand q2,Left Hand,q2,Segment Orientation Quaternion - Left Hand q2
+orientation_59,Segment Orientation - Quat,Left Hand q3,Left Hand,q3,Segment Orientation Quaternion - Left Hand q3
+orientation_60,Segment Orientation - Quat,Right Upper Leg q0,Right Upper Leg,q0,Segment Orientation Quaternion - Right Upper Leg q0
+orientation_61,Segment Orientation - Quat,Right Upper Leg q1,Right Upper Leg,q1,Segment Orientation Quaternion - Right Upper Leg q1
+orientation_62,Segment Orientation - Quat,Right Upper Leg q2,Right Upper Leg,q2,Segment Orientation Quaternion - Right Upper Leg q2
+orientation_63,Segment Orientation - Quat,Right Upper Leg q3,Right Upper Leg,q3,Segment Orientation Quaternion - Right Upper Leg q3
+orientation_64,Segment Orientation - Quat,Right Lower Leg q0,Right Lower Leg,q0,Segment Orientation Quaternion - Right Lower Leg q0
+orientation_65,Segment Orientation - Quat,Right Lower Leg q1,Right Lower Leg,q1,Segment Orientation Quaternion - Right Lower Leg q1
+orientation_66,Segment Orientation - Quat,Right Lower Leg q2,Right Lower Leg,q2,Segment Orientation Quaternion - Right Lower Leg q2
+orientation_67,Segment Orientation - Quat,Right Lower Leg q3,Right Lower Leg,q3,Segment Orientation Quaternion - Right Lower Leg q3
+orientation_68,Segment Orientation - Quat,Right Foot q0,Right Foot,q0,Segment Orientation Quaternion - Right Foot q0
+orientation_69,Segment Orientation - Quat,Right Foot q1,Right Foot,q1,Segment Orientation Quaternion - Right Foot q1
+orientation_70,Segment Orientation - Quat,Right Foot q2,Right Foot,q2,Segment Orientation Quaternion - Right Foot q2
+orientation_71,Segment Orientation - Quat,Right Foot q3,Right Foot,q3,Segment Orientation Quaternion - Right Foot q3
+orientation_72,Segment Orientation - Quat,Right Toe q0,Right Toe,q0,Segment Orientation Quaternion - Right Toe q0
+orientation_73,Segment Orientation - Quat,Right Toe q1,Right Toe,q1,Segment Orientation Quaternion - Right Toe q1
+orientation_74,Segment Orientation - Quat,Right Toe q2,Right Toe,q2,Segment Orientation Quaternion - Right Toe q2
+orientation_75,Segment Orientation - Quat,Right Toe q3,Right Toe,q3,Segment Orientation Quaternion - Right Toe q3
+orientation_76,Segment Orientation - Quat,Left Upper Leg q0,Left Upper Leg,q0,Segment Orientation Quaternion - Left Upper Leg q0
+orientation_77,Segment Orientation - Quat,Left Upper Leg q1,Left Upper Leg,q1,Segment Orientation Quaternion - Left Upper Leg q1
+orientation_78,Segment Orientation - Quat,Left Upper Leg q2,Left Upper Leg,q2,Segment Orientation Quaternion - Left Upper Leg q2
+orientation_79,Segment Orientation - Quat,Left Upper Leg q3,Left Upper Leg,q3,Segment Orientation Quaternion - Left Upper Leg q3
+orientation_80,Segment Orientation - Quat,Left Lower Leg q0,Left Lower Leg,q0,Segment Orientation Quaternion - Left Lower Leg q0
+orientation_81,Segment Orientation - Quat,Left Lower Leg q1,Left Lower Leg,q1,Segment Orientation Quaternion - Left Lower Leg q1
+orientation_82,Segment Orientation - Quat,Left Lower Leg q2,Left Lower Leg,q2,Segment Orientation Quaternion - Left Lower Leg q2
+orientation_83,Segment Orientation - Quat,Left Lower Leg q3,Left Lower Leg,q3,Segment Orientation Quaternion - Left Lower Leg q3
+orientation_84,Segment Orientation - Quat,Left Foot q0,Left Foot,q0,Segment Orientation Quaternion - Left Foot q0
+orientation_85,Segment Orientation - Quat,Left Foot q1,Left Foot,q1,Segment Orientation Quaternion - Left Foot q1
+orientation_86,Segment Orientation - Quat,Left Foot q2,Left Foot,q2,Segment Orientation Quaternion - Left Foot q2
+orientation_87,Segment Orientation - Quat,Left Foot q3,Left Foot,q3,Segment Orientation Quaternion - Left Foot q3
+orientation_88,Segment Orientation - Quat,Left Toe q0,Left Toe,q0,Segment Orientation Quaternion - Left Toe q0
+orientation_89,Segment Orientation - Quat,Left Toe q1,Left Toe,q1,Segment Orientation Quaternion - Left Toe q1
+orientation_90,Segment Orientation - Quat,Left Toe q2,Left Toe,q2,Segment Orientation Quaternion - Left Toe q2
+orientation_91,Segment Orientation - Quat,Left Toe q3,Left Toe,q3,Segment Orientation Quaternion - Left Toe q3
+position_0,Segment Position,Pelvis x,Pelvis,x,Segment Position - Pelvis x
+position_1,Segment Position,Pelvis y,Pelvis,y,Segment Position - Pelvis y
+position_2,Segment Position,Pelvis z,Pelvis,z,Segment Position - Pelvis z
+position_3,Segment Position,L5 x,L5,x,Segment Position - L5 x
+position_4,Segment Position,L5 y,L5,y,Segment Position - L5 y
+position_5,Segment Position,L5 z,L5,z,Segment Position - L5 z
+position_6,Segment Position,L3 x,L3,x,Segment Position - L3 x
+position_7,Segment Position,L3 y,L3,y,Segment Position - L3 y
+position_8,Segment Position,L3 z,L3,z,Segment Position - L3 z
+position_9,Segment Position,T12 x,T12,x,Segment Position - T12 x
+position_10,Segment Position,T12 y,T12,y,Segment Position - T12 y
+position_11,Segment Position,T12 z,T12,z,Segment Position - T12 z
+position_12,Segment Position,T8 x,T8,x,Segment Position - T8 x
+position_13,Segment Position,T8 y,T8,y,Segment Position - T8 y
+position_14,Segment Position,T8 z,T8,z,Segment Position - T8 z
+position_15,Segment Position,Neck x,Neck,x,Segment Position - Neck x
+position_16,Segment Position,Neck y,Neck,y,Segment Position - Neck y
+position_17,Segment Position,Neck z,Neck,z,Segment Position - Neck z
+position_18,Segment Position,Head x,Head,x,Segment Position - Head x
+position_19,Segment Position,Head y,Head,y,Segment Position - Head y
+position_20,Segment Position,Head z,Head,z,Segment Position - Head z
+position_21,Segment Position,Right Shoulder x,Right Shoulder,x,Segment Position - Right Shoulder x
+position_22,Segment Position,Right Shoulder y,Right Shoulder,y,Segment Position - Right Shoulder y
+position_23,Segment Position,Right Shoulder z,Right Shoulder,z,Segment Position - Right Shoulder z
+position_24,Segment Position,Right Upper Arm x,Right Upper Arm,x,Segment Position - Right Upper Arm x
+position_25,Segment Position,Right Upper Arm y,Right Upper Arm,y,Segment Position - Right Upper Arm y
+position_26,Segment Position,Right Upper Arm z,Right Upper Arm,z,Segment Position - Right Upper Arm z
+position_27,Segment Position,Right Forearm x,Right Forearm,x,Segment Position - Right Forearm x
+position_28,Segment Position,Right Forearm y,Right Forearm,y,Segment Position - Right Forearm y
+position_29,Segment Position,Right Forearm z,Right Forearm,z,Segment Position - Right Forearm z
+position_30,Segment Position,Right Hand x,Right Hand,x,Segment Position - Right Hand x
+position_31,Segment Position,Right Hand y,Right Hand,y,Segment Position - Right Hand y
+position_32,Segment Position,Right Hand z,Right Hand,z,Segment Position - Right Hand z
+position_33,Segment Position,Left Shoulder x,Left Shoulder,x,Segment Position - Left Shoulder x
+position_34,Segment Position,Left Shoulder y,Left Shoulder,y,Segment Position - Left Shoulder y
+position_35,Segment Position,Left Shoulder z,Left Shoulder,z,Segment Position - Left Shoulder z
+position_36,Segment Position,Left Upper Arm x,Left Upper Arm,x,Segment Position - Left Upper Arm x
+position_37,Segment Position,Left Upper Arm y,Left Upper Arm,y,Segment Position - Left Upper Arm y
+position_38,Segment Position,Left Upper Arm z,Left Upper Arm,z,Segment Position - Left Upper Arm z
+position_39,Segment Position,Left Forearm x,Left Forearm,x,Segment Position - Left Forearm x
+position_40,Segment Position,Left Forearm y,Left Forearm,y,Segment Position - Left Forearm y
+position_41,Segment Position,Left Forearm z,Left Forearm,z,Segment Position - Left Forearm z
+position_42,Segment Position,Left Hand x,Left Hand,x,Segment Position - Left Hand x
+position_43,Segment Position,Left Hand y,Left Hand,y,Segment Position - Left Hand y
+position_44,Segment Position,Left Hand z,Left Hand,z,Segment Position - Left Hand z
+position_45,Segment Position,Right Upper Leg x,Right Upper Leg,x,Segment Position - Right Upper Leg x
+position_46,Segment Position,Right Upper Leg y,Right Upper Leg,y,Segment Position - Right Upper Leg y
+position_47,Segment Position,Right Upper Leg z,Right Upper Leg,z,Segment Position - Right Upper Leg z
+position_48,Segment Position,Right Lower Leg x,Right Lower Leg,x,Segment Position - Right Lower Leg x
+position_49,Segment Position,Right Lower Leg y,Right Lower Leg,y,Segment Position - Right Lower Leg y
+position_50,Segment Position,Right Lower Leg z,Right Lower Leg,z,Segment Position - Right Lower Leg z
+position_51,Segment Position,Right Foot x,Right Foot,x,Segment Position - Right Foot x
+position_52,Segment Position,Right Foot y,Right Foot,y,Segment Position - Right Foot y
+position_53,Segment Position,Right Foot z,Right Foot,z,Segment Position - Right Foot z
+position_54,Segment Position,Right Toe x,Right Toe,x,Segment Position - Right Toe x
+position_55,Segment Position,Right Toe y,Right Toe,y,Segment Position - Right Toe y
+position_56,Segment Position,Right Toe z,Right Toe,z,Segment Position - Right Toe z
+position_57,Segment Position,Left Upper Leg x,Left Upper Leg,x,Segment Position - Left Upper Leg x
+position_58,Segment Position,Left Upper Leg y,Left Upper Leg,y,Segment Position - Left Upper Leg y
+position_59,Segment Position,Left Upper Leg z,Left Upper Leg,z,Segment Position - Left Upper Leg z
+position_60,Segment Position,Left Lower Leg x,Left Lower Leg,x,Segment Position - Left Lower Leg x
+position_61,Segment Position,Left Lower Leg y,Left Lower Leg,y,Segment Position - Left Lower Leg y
+position_62,Segment Position,Left Lower Leg z,Left Lower Leg,z,Segment Position - Left Lower Leg z
+position_63,Segment Position,Left Foot x,Left Foot,x,Segment Position - Left Foot x
+position_64,Segment Position,Left Foot y,Left Foot,y,Segment Position - Left Foot y
+position_65,Segment Position,Left Foot z,Left Foot,z,Segment Position - Left Foot z
+position_66,Segment Position,Left Toe x,Left Toe,x,Segment Position - Left Toe x
+position_67,Segment Position,Left Toe y,Left Toe,y,Segment Position - Left Toe y
+position_68,Segment Position,Left Toe z,Left Toe,z,Segment Position - Left Toe z
+velocity_0,Segment Velocity,Pelvis x,Pelvis,x,Segment Velocity - Pelvis x
+velocity_1,Segment Velocity,Pelvis y,Pelvis,y,Segment Velocity - Pelvis y
+velocity_2,Segment Velocity,Pelvis z,Pelvis,z,Segment Velocity - Pelvis z
+velocity_3,Segment Velocity,L5 x,L5,x,Segment Velocity - L5 x
+velocity_4,Segment Velocity,L5 y,L5,y,Segment Velocity - L5 y
+velocity_5,Segment Velocity,L5 z,L5,z,Segment Velocity - L5 z
+velocity_6,Segment Velocity,L3 x,L3,x,Segment Velocity - L3 x
+velocity_7,Segment Velocity,L3 y,L3,y,Segment Velocity - L3 y
+velocity_8,Segment Velocity,L3 z,L3,z,Segment Velocity - L3 z
+velocity_9,Segment Velocity,T12 x,T12,x,Segment Velocity - T12 x
+velocity_10,Segment Velocity,T12 y,T12,y,Segment Velocity - T12 y
+velocity_11,Segment Velocity,T12 z,T12,z,Segment Velocity - T12 z
+velocity_12,Segment Velocity,T8 x,T8,x,Segment Velocity - T8 x
+velocity_13,Segment Velocity,T8 y,T8,y,Segment Velocity - T8 y
+velocity_14,Segment Velocity,T8 z,T8,z,Segment Velocity - T8 z
+velocity_15,Segment Velocity,Neck x,Neck,x,Segment Velocity - Neck x
+velocity_16,Segment Velocity,Neck y,Neck,y,Segment Velocity - Neck y
+velocity_17,Segment Velocity,Neck z,Neck,z,Segment Velocity - Neck z
+velocity_18,Segment Velocity,Head x,Head,x,Segment Velocity - Head x
+velocity_19,Segment Velocity,Head y,Head,y,Segment Velocity - Head y
+velocity_20,Segment Velocity,Head z,Head,z,Segment Velocity - Head z
+velocity_21,Segment Velocity,Right Shoulder x,Right Shoulder,x,Segment Velocity - Right Shoulder x
+velocity_22,Segment Velocity,Right Shoulder y,Right Shoulder,y,Segment Velocity - Right Shoulder y
+velocity_23,Segment Velocity,Right Shoulder z,Right Shoulder,z,Segment Velocity - Right Shoulder z
+velocity_24,Segment Velocity,Right Upper Arm x,Right Upper Arm,x,Segment Velocity - Right Upper Arm x
+velocity_25,Segment Velocity,Right Upper Arm y,Right Upper Arm,y,Segment Velocity - Right Upper Arm y
+velocity_26,Segment Velocity,Right Upper Arm z,Right Upper Arm,z,Segment Velocity - Right Upper Arm z
+velocity_27,Segment Velocity,Right Forearm x,Right Forearm,x,Segment Velocity - Right Forearm x
+velocity_28,Segment Velocity,Right Forearm y,Right Forearm,y,Segment Velocity - Right Forearm y
+velocity_29,Segment Velocity,Right Forearm z,Right Forearm,z,Segment Velocity - Right Forearm z
+velocity_30,Segment Velocity,Right Hand x,Right Hand,x,Segment Velocity - Right Hand x
+velocity_31,Segment Velocity,Right Hand y,Right Hand,y,Segment Velocity - Right Hand y
+velocity_32,Segment Velocity,Right Hand z,Right Hand,z,Segment Velocity - Right Hand z
+velocity_33,Segment Velocity,Left Shoulder x,Left Shoulder,x,Segment Velocity - Left Shoulder x
+velocity_34,Segment Velocity,Left Shoulder y,Left Shoulder,y,Segment Velocity - Left Shoulder y
+velocity_35,Segment Velocity,Left Shoulder z,Left Shoulder,z,Segment Velocity - Left Shoulder z
+velocity_36,Segment Velocity,Left Upper Arm x,Left Upper Arm,x,Segment Velocity - Left Upper Arm x
+velocity_37,Segment Velocity,Left Upper Arm y,Left Upper Arm,y,Segment Velocity - Left Upper Arm y
+velocity_38,Segment Velocity,Left Upper Arm z,Left Upper Arm,z,Segment Velocity - Left Upper Arm z
+velocity_39,Segment Velocity,Left Forearm x,Left Forearm,x,Segment Velocity - Left Forearm x
+velocity_40,Segment Velocity,Left Forearm y,Left Forearm,y,Segment Velocity - Left Forearm y
+velocity_41,Segment Velocity,Left Forearm z,Left Forearm,z,Segment Velocity - Left Forearm z
+velocity_42,Segment Velocity,Left Hand x,Left Hand,x,Segment Velocity - Left Hand x
+velocity_43,Segment Velocity,Left Hand y,Left Hand,y,Segment Velocity - Left Hand y
+velocity_44,Segment Velocity,Left Hand z,Left Hand,z,Segment Velocity - Left Hand z
+velocity_45,Segment Velocity,Right Upper Leg x,Right Upper Leg,x,Segment Velocity - Right Upper Leg x
+velocity_46,Segment Velocity,Right Upper Leg y,Right Upper Leg,y,Segment Velocity - Right Upper Leg y
+velocity_47,Segment Velocity,Right Upper Leg z,Right Upper Leg,z,Segment Velocity - Right Upper Leg z
+velocity_48,Segment Velocity,Right Lower Leg x,Right Lower Leg,x,Segment Velocity - Right Lower Leg x
+velocity_49,Segment Velocity,Right Lower Leg y,Right Lower Leg,y,Segment Velocity - Right Lower Leg y
+velocity_50,Segment Velocity,Right Lower Leg z,Right Lower Leg,z,Segment Velocity - Right Lower Leg z
+velocity_51,Segment Velocity,Right Foot x,Right Foot,x,Segment Velocity - Right Foot x
+velocity_52,Segment Velocity,Right Foot y,Right Foot,y,Segment Velocity - Right Foot y
+velocity_53,Segment Velocity,Right Foot z,Right Foot,z,Segment Velocity - Right Foot z
+velocity_54,Segment Velocity,Right Toe x,Right Toe,x,Segment Velocity - Right Toe x
+velocity_55,Segment Velocity,Right Toe y,Right Toe,y,Segment Velocity - Right Toe y
+velocity_56,Segment Velocity,Right Toe z,Right Toe,z,Segment Velocity - Right Toe z
+velocity_57,Segment Velocity,Left Upper Leg x,Left Upper Leg,x,Segment Velocity - Left Upper Leg x
+velocity_58,Segment Velocity,Left Upper Leg y,Left Upper Leg,y,Segment Velocity - Left Upper Leg y
+velocity_59,Segment Velocity,Left Upper Leg z,Left Upper Leg,z,Segment Velocity - Left Upper Leg z
+velocity_60,Segment Velocity,Left Lower Leg x,Left Lower Leg,x,Segment Velocity - Left Lower Leg x
+velocity_61,Segment Velocity,Left Lower Leg y,Left Lower Leg,y,Segment Velocity - Left Lower Leg y
+velocity_62,Segment Velocity,Left Lower Leg z,Left Lower Leg,z,Segment Velocity - Left Lower Leg z
+velocity_63,Segment Velocity,Left Foot x,Left Foot,x,Segment Velocity - Left Foot x
+velocity_64,Segment Velocity,Left Foot y,Left Foot,y,Segment Velocity - Left Foot y
+velocity_65,Segment Velocity,Left Foot z,Left Foot,z,Segment Velocity - Left Foot z
+velocity_66,Segment Velocity,Left Toe x,Left Toe,x,Segment Velocity - Left Toe x
+velocity_67,Segment Velocity,Left Toe y,Left Toe,y,Segment Velocity - Left Toe y
+velocity_68,Segment Velocity,Left Toe z,Left Toe,z,Segment Velocity - Left Toe z
+acceleration_0,Segment Acceleration,Pelvis x,Pelvis,x,Segment Acceleration - Pelvis x
+acceleration_1,Segment Acceleration,Pelvis y,Pelvis,y,Segment Acceleration - Pelvis y
+acceleration_2,Segment Acceleration,Pelvis z,Pelvis,z,Segment Acceleration - Pelvis z
+acceleration_3,Segment Acceleration,L5 x,L5,x,Segment Acceleration - L5 x
+acceleration_4,Segment Acceleration,L5 y,L5,y,Segment Acceleration - L5 y
+acceleration_5,Segment Acceleration,L5 z,L5,z,Segment Acceleration - L5 z
+acceleration_6,Segment Acceleration,L3 x,L3,x,Segment Acceleration - L3 x
+acceleration_7,Segment Acceleration,L3 y,L3,y,Segment Acceleration - L3 y
+acceleration_8,Segment Acceleration,L3 z,L3,z,Segment Acceleration - L3 z
+acceleration_9,Segment Acceleration,T12 x,T12,x,Segment Acceleration - T12 x
+acceleration_10,Segment Acceleration,T12 y,T12,y,Segment Acceleration - T12 y
+acceleration_11,Segment Acceleration,T12 z,T12,z,Segment Acceleration - T12 z
+acceleration_12,Segment Acceleration,T8 x,T8,x,Segment Acceleration - T8 x
+acceleration_13,Segment Acceleration,T8 y,T8,y,Segment Acceleration - T8 y
+acceleration_14,Segment Acceleration,T8 z,T8,z,Segment Acceleration - T8 z
+acceleration_15,Segment Acceleration,Neck x,Neck,x,Segment Acceleration - Neck x
+acceleration_16,Segment Acceleration,Neck y,Neck,y,Segment Acceleration - Neck y
+acceleration_17,Segment Acceleration,Neck z,Neck,z,Segment Acceleration - Neck z
+acceleration_18,Segment Acceleration,Head x,Head,x,Segment Acceleration - Head x
+acceleration_19,Segment Acceleration,Head y,Head,y,Segment Acceleration - Head y
+acceleration_20,Segment Acceleration,Head z,Head,z,Segment Acceleration - Head z
+acceleration_21,Segment Acceleration,Right Shoulder x,Right Shoulder,x,Segment Acceleration - Right Shoulder x
+acceleration_22,Segment Acceleration,Right Shoulder y,Right Shoulder,y,Segment Acceleration - Right Shoulder y
+acceleration_23,Segment Acceleration,Right Shoulder z,Right Shoulder,z,Segment Acceleration - Right Shoulder z
+acceleration_24,Segment Acceleration,Right Upper Arm x,Right Upper Arm,x,Segment Acceleration - Right Upper Arm x
+acceleration_25,Segment Acceleration,Right Upper Arm y,Right Upper Arm,y,Segment Acceleration - Right Upper Arm y
+acceleration_26,Segment Acceleration,Right Upper Arm z,Right Upper Arm,z,Segment Acceleration - Right Upper Arm z
+acceleration_27,Segment Acceleration,Right Forearm x,Right Forearm,x,Segment Acceleration - Right Forearm x
+acceleration_28,Segment Acceleration,Right Forearm y,Right Forearm,y,Segment Acceleration - Right Forearm y
+acceleration_29,Segment Acceleration,Right Forearm z,Right Forearm,z,Segment Acceleration - Right Forearm z
+acceleration_30,Segment Acceleration,Right Hand x,Right Hand,x,Segment Acceleration - Right Hand x
+acceleration_31,Segment Acceleration,Right Hand y,Right Hand,y,Segment Acceleration - Right Hand y
+acceleration_32,Segment Acceleration,Right Hand z,Right Hand,z,Segment Acceleration - Right Hand z
+acceleration_33,Segment Acceleration,Left Shoulder x,Left Shoulder,x,Segment Acceleration - Left Shoulder x
+acceleration_34,Segment Acceleration,Left Shoulder y,Left Shoulder,y,Segment Acceleration - Left Shoulder y
+acceleration_35,Segment Acceleration,Left Shoulder z,Left Shoulder,z,Segment Acceleration - Left Shoulder z
+acceleration_36,Segment Acceleration,Left Upper Arm x,Left Upper Arm,x,Segment Acceleration - Left Upper Arm x
+acceleration_37,Segment Acceleration,Left Upper Arm y,Left Upper Arm,y,Segment Acceleration - Left Upper Arm y
+acceleration_38,Segment Acceleration,Left Upper Arm z,Left Upper Arm,z,Segment Acceleration - Left Upper Arm z
+acceleration_39,Segment Acceleration,Left Forearm x,Left Forearm,x,Segment Acceleration - Left Forearm x
+acceleration_40,Segment Acceleration,Left Forearm y,Left Forearm,y,Segment Acceleration - Left Forearm y
+acceleration_41,Segment Acceleration,Left Forearm z,Left Forearm,z,Segment Acceleration - Left Forearm z
+acceleration_42,Segment Acceleration,Left Hand x,Left Hand,x,Segment Acceleration - Left Hand x
+acceleration_43,Segment Acceleration,Left Hand y,Left Hand,y,Segment Acceleration - Left Hand y
+acceleration_44,Segment Acceleration,Left Hand z,Left Hand,z,Segment Acceleration - Left Hand z
+acceleration_45,Segment Acceleration,Right Upper Leg x,Right Upper Leg,x,Segment Acceleration - Right Upper Leg x
+acceleration_46,Segment Acceleration,Right Upper Leg y,Right Upper Leg,y,Segment Acceleration - Right Upper Leg y
+acceleration_47,Segment Acceleration,Right Upper Leg z,Right Upper Leg,z,Segment Acceleration - Right Upper Leg z
+acceleration_48,Segment Acceleration,Right Lower Leg x,Right Lower Leg,x,Segment Acceleration - Right Lower Leg x
+acceleration_49,Segment Acceleration,Right Lower Leg y,Right Lower Leg,y,Segment Acceleration - Right Lower Leg y
+acceleration_50,Segment Acceleration,Right Lower Leg z,Right Lower Leg,z,Segment Acceleration - Right Lower Leg z
+acceleration_51,Segment Acceleration,Right Foot x,Right Foot,x,Segment Acceleration - Right Foot x
+acceleration_52,Segment Acceleration,Right Foot y,Right Foot,y,Segment Acceleration - Right Foot y
+acceleration_53,Segment Acceleration,Right Foot z,Right Foot,z,Segment Acceleration - Right Foot z
+acceleration_54,Segment Acceleration,Right Toe x,Right Toe,x,Segment Acceleration - Right Toe x
+acceleration_55,Segment Acceleration,Right Toe y,Right Toe,y,Segment Acceleration - Right Toe y
+acceleration_56,Segment Acceleration,Right Toe z,Right Toe,z,Segment Acceleration - Right Toe z
+acceleration_57,Segment Acceleration,Left Upper Leg x,Left Upper Leg,x,Segment Acceleration - Left Upper Leg x
+acceleration_58,Segment Acceleration,Left Upper Leg y,Left Upper Leg,y,Segment Acceleration - Left Upper Leg y
+acceleration_59,Segment Acceleration,Left Upper Leg z,Left Upper Leg,z,Segment Acceleration - Left Upper Leg z
+acceleration_60,Segment Acceleration,Left Lower Leg x,Left Lower Leg,x,Segment Acceleration - Left Lower Leg x
+acceleration_61,Segment Acceleration,Left Lower Leg y,Left Lower Leg,y,Segment Acceleration - Left Lower Leg y
+acceleration_62,Segment Acceleration,Left Lower Leg z,Left Lower Leg,z,Segment Acceleration - Left Lower Leg z
+acceleration_63,Segment Acceleration,Left Foot x,Left Foot,x,Segment Acceleration - Left Foot x
+acceleration_64,Segment Acceleration,Left Foot y,Left Foot,y,Segment Acceleration - Left Foot y
+acceleration_65,Segment Acceleration,Left Foot z,Left Foot,z,Segment Acceleration - Left Foot z
+acceleration_66,Segment Acceleration,Left Toe x,Left Toe,x,Segment Acceleration - Left Toe x
+acceleration_67,Segment Acceleration,Left Toe y,Left Toe,y,Segment Acceleration - Left Toe y
+acceleration_68,Segment Acceleration,Left Toe z,Left Toe,z,Segment Acceleration - Left Toe z
+angularVelocity_0,Segment Angular Velocity,Pelvis x,Pelvis,x,Segment Angular Velocity - Pelvis x
+angularVelocity_1,Segment Angular Velocity,Pelvis y,Pelvis,y,Segment Angular Velocity - Pelvis y
+angularVelocity_2,Segment Angular Velocity,Pelvis z,Pelvis,z,Segment Angular Velocity - Pelvis z
+angularVelocity_3,Segment Angular Velocity,L5 x,L5,x,Segment Angular Velocity - L5 x
+angularVelocity_4,Segment Angular Velocity,L5 y,L5,y,Segment Angular Velocity - L5 y
+angularVelocity_5,Segment Angular Velocity,L5 z,L5,z,Segment Angular Velocity - L5 z
+angularVelocity_6,Segment Angular Velocity,L3 x,L3,x,Segment Angular Velocity - L3 x
+angularVelocity_7,Segment Angular Velocity,L3 y,L3,y,Segment Angular Velocity - L3 y
+angularVelocity_8,Segment Angular Velocity,L3 z,L3,z,Segment Angular Velocity - L3 z
+angularVelocity_9,Segment Angular Velocity,T12 x,T12,x,Segment Angular Velocity - T12 x
+angularVelocity_10,Segment Angular Velocity,T12 y,T12,y,Segment Angular Velocity - T12 y
+angularVelocity_11,Segment Angular Velocity,T12 z,T12,z,Segment Angular Velocity - T12 z
+angularVelocity_12,Segment Angular Velocity,T8 x,T8,x,Segment Angular Velocity - T8 x
+angularVelocity_13,Segment Angular Velocity,T8 y,T8,y,Segment Angular Velocity - T8 y
+angularVelocity_14,Segment Angular Velocity,T8 z,T8,z,Segment Angular Velocity - T8 z
+angularVelocity_15,Segment Angular Velocity,Neck x,Neck,x,Segment Angular Velocity - Neck x
+angularVelocity_16,Segment Angular Velocity,Neck y,Neck,y,Segment Angular Velocity - Neck y
+angularVelocity_17,Segment Angular Velocity,Neck z,Neck,z,Segment Angular Velocity - Neck z
+angularVelocity_18,Segment Angular Velocity,Head x,Head,x,Segment Angular Velocity - Head x
+angularVelocity_19,Segment Angular Velocity,Head y,Head,y,Segment Angular Velocity - Head y
+angularVelocity_20,Segment Angular Velocity,Head z,Head,z,Segment Angular Velocity - Head z
+angularVelocity_21,Segment Angular Velocity,Right Shoulder x,Right Shoulder,x,Segment Angular Velocity - Right Shoulder x
+angularVelocity_22,Segment Angular Velocity,Right Shoulder y,Right Shoulder,y,Segment Angular Velocity - Right Shoulder y
+angularVelocity_23,Segment Angular Velocity,Right Shoulder z,Right Shoulder,z,Segment Angular Velocity - Right Shoulder z
+angularVelocity_24,Segment Angular Velocity,Right Upper Arm x,Right Upper Arm,x,Segment Angular Velocity - Right Upper Arm x
+angularVelocity_25,Segment Angular Velocity,Right Upper Arm y,Right Upper Arm,y,Segment Angular Velocity - Right Upper Arm y
+angularVelocity_26,Segment Angular Velocity,Right Upper Arm z,Right Upper Arm,z,Segment Angular Velocity - Right Upper Arm z
+angularVelocity_27,Segment Angular Velocity,Right Forearm x,Right Forearm,x,Segment Angular Velocity - Right Forearm x
+angularVelocity_28,Segment Angular Velocity,Right Forearm y,Right Forearm,y,Segment Angular Velocity - Right Forearm y
+angularVelocity_29,Segment Angular Velocity,Right Forearm z,Right Forearm,z,Segment Angular Velocity - Right Forearm z
+angularVelocity_30,Segment Angular Velocity,Right Hand x,Right Hand,x,Segment Angular Velocity - Right Hand x
+angularVelocity_31,Segment Angular Velocity,Right Hand y,Right Hand,y,Segment Angular Velocity - Right Hand y
+angularVelocity_32,Segment Angular Velocity,Right Hand z,Right Hand,z,Segment Angular Velocity - Right Hand z
+angularVelocity_33,Segment Angular Velocity,Left Shoulder x,Left Shoulder,x,Segment Angular Velocity - Left Shoulder x
+angularVelocity_34,Segment Angular Velocity,Left Shoulder y,Left Shoulder,y,Segment Angular Velocity - Left Shoulder y
+angularVelocity_35,Segment Angular Velocity,Left Shoulder z,Left Shoulder,z,Segment Angular Velocity - Left Shoulder z
+angularVelocity_36,Segment Angular Velocity,Left Upper Arm x,Left Upper Arm,x,Segment Angular Velocity - Left Upper Arm x
+angularVelocity_37,Segment Angular Velocity,Left Upper Arm y,Left Upper Arm,y,Segment Angular Velocity - Left Upper Arm y
+angularVelocity_38,Segment Angular Velocity,Left Upper Arm z,Left Upper Arm,z,Segment Angular Velocity - Left Upper Arm z
+angularVelocity_39,Segment Angular Velocity,Left Forearm x,Left Forearm,x,Segment Angular Velocity - Left Forearm x
+angularVelocity_40,Segment Angular Velocity,Left Forearm y,Left Forearm,y,Segment Angular Velocity - Left Forearm y
+angularVelocity_41,Segment Angular Velocity,Left Forearm z,Left Forearm,z,Segment Angular Velocity - Left Forearm z
+angularVelocity_42,Segment Angular Velocity,Left Hand x,Left Hand,x,Segment Angular Velocity - Left Hand x
+angularVelocity_43,Segment Angular Velocity,Left Hand y,Left Hand,y,Segment Angular Velocity - Left Hand y
+angularVelocity_44,Segment Angular Velocity,Left Hand z,Left Hand,z,Segment Angular Velocity - Left Hand z
+angularVelocity_45,Segment Angular Velocity,Right Upper Leg x,Right Upper Leg,x,Segment Angular Velocity - Right Upper Leg x
+angularVelocity_46,Segment Angular Velocity,Right Upper Leg y,Right Upper Leg,y,Segment Angular Velocity - Right Upper Leg y
+angularVelocity_47,Segment Angular Velocity,Right Upper Leg z,Right Upper Leg,z,Segment Angular Velocity - Right Upper Leg z
+angularVelocity_48,Segment Angular Velocity,Right Lower Leg x,Right Lower Leg,x,Segment Angular Velocity - Right Lower Leg x
+angularVelocity_49,Segment Angular Velocity,Right Lower Leg y,Right Lower Leg,y,Segment Angular Velocity - Right Lower Leg y
+angularVelocity_50,Segment Angular Velocity,Right Lower Leg z,Right Lower Leg,z,Segment Angular Velocity - Right Lower Leg z
+angularVelocity_51,Segment Angular Velocity,Right Foot x,Right Foot,x,Segment Angular Velocity - Right Foot x
+angularVelocity_52,Segment Angular Velocity,Right Foot y,Right Foot,y,Segment Angular Velocity - Right Foot y
+angularVelocity_53,Segment Angular Velocity,Right Foot z,Right Foot,z,Segment Angular Velocity - Right Foot z
+angularVelocity_54,Segment Angular Velocity,Right Toe x,Right Toe,x,Segment Angular Velocity - Right Toe x
+angularVelocity_55,Segment Angular Velocity,Right Toe y,Right Toe,y,Segment Angular Velocity - Right Toe y
+angularVelocity_56,Segment Angular Velocity,Right Toe z,Right Toe,z,Segment Angular Velocity - Right Toe z
+angularVelocity_57,Segment Angular Velocity,Left Upper Leg x,Left Upper Leg,x,Segment Angular Velocity - Left Upper Leg x
+angularVelocity_58,Segment Angular Velocity,Left Upper Leg y,Left Upper Leg,y,Segment Angular Velocity - Left Upper Leg y
+angularVelocity_59,Segment Angular Velocity,Left Upper Leg z,Left Upper Leg,z,Segment Angular Velocity - Left Upper Leg z
+angularVelocity_60,Segment Angular Velocity,Left Lower Leg x,Left Lower Leg,x,Segment Angular Velocity - Left Lower Leg x
+angularVelocity_61,Segment Angular Velocity,Left Lower Leg y,Left Lower Leg,y,Segment Angular Velocity - Left Lower Leg y
+angularVelocity_62,Segment Angular Velocity,Left Lower Leg z,Left Lower Leg,z,Segment Angular Velocity - Left Lower Leg z
+angularVelocity_63,Segment Angular Velocity,Left Foot x,Left Foot,x,Segment Angular Velocity - Left Foot x
+angularVelocity_64,Segment Angular Velocity,Left Foot y,Left Foot,y,Segment Angular Velocity - Left Foot y
+angularVelocity_65,Segment Angular Velocity,Left Foot z,Left Foot,z,Segment Angular Velocity - Left Foot z
+angularVelocity_66,Segment Angular Velocity,Left Toe x,Left Toe,x,Segment Angular Velocity - Left Toe x
+angularVelocity_67,Segment Angular Velocity,Left Toe y,Left Toe,y,Segment Angular Velocity - Left Toe y
+angularVelocity_68,Segment Angular Velocity,Left Toe z,Left Toe,z,Segment Angular Velocity - Left Toe z
+angularAcceleration_0,Segment Angular Acceleration,Pelvis x,Pelvis,x,Segment Angular Acceleration - Pelvis x
+angularAcceleration_1,Segment Angular Acceleration,Pelvis y,Pelvis,y,Segment Angular Acceleration - Pelvis y
+angularAcceleration_2,Segment Angular Acceleration,Pelvis z,Pelvis,z,Segment Angular Acceleration - Pelvis z
+angularAcceleration_3,Segment Angular Acceleration,L5 x,L5,x,Segment Angular Acceleration - L5 x
+angularAcceleration_4,Segment Angular Acceleration,L5 y,L5,y,Segment Angular Acceleration - L5 y
+angularAcceleration_5,Segment Angular Acceleration,L5 z,L5,z,Segment Angular Acceleration - L5 z
+angularAcceleration_6,Segment Angular Acceleration,L3 x,L3,x,Segment Angular Acceleration - L3 x
+angularAcceleration_7,Segment Angular Acceleration,L3 y,L3,y,Segment Angular Acceleration - L3 y
+angularAcceleration_8,Segment Angular Acceleration,L3 z,L3,z,Segment Angular Acceleration - L3 z
+angularAcceleration_9,Segment Angular Acceleration,T12 x,T12,x,Segment Angular Acceleration - T12 x
+angularAcceleration_10,Segment Angular Acceleration,T12 y,T12,y,Segment Angular Acceleration - T12 y
+angularAcceleration_11,Segment Angular Acceleration,T12 z,T12,z,Segment Angular Acceleration - T12 z
+angularAcceleration_12,Segment Angular Acceleration,T8 x,T8,x,Segment Angular Acceleration - T8 x
+angularAcceleration_13,Segment Angular Acceleration,T8 y,T8,y,Segment Angular Acceleration - T8 y
+angularAcceleration_14,Segment Angular Acceleration,T8 z,T8,z,Segment Angular Acceleration - T8 z
+angularAcceleration_15,Segment Angular Acceleration,Neck x,Neck,x,Segment Angular Acceleration - Neck x
+angularAcceleration_16,Segment Angular Acceleration,Neck y,Neck,y,Segment Angular Acceleration - Neck y
+angularAcceleration_17,Segment Angular Acceleration,Neck z,Neck,z,Segment Angular Acceleration - Neck z
+angularAcceleration_18,Segment Angular Acceleration,Head x,Head,x,Segment Angular Acceleration - Head x
+angularAcceleration_19,Segment Angular Acceleration,Head y,Head,y,Segment Angular Acceleration - Head y
+angularAcceleration_20,Segment Angular Acceleration,Head z,Head,z,Segment Angular Acceleration - Head z
+angularAcceleration_21,Segment Angular Acceleration,Right Shoulder x,Right Shoulder,x,Segment Angular Acceleration - Right Shoulder x
+angularAcceleration_22,Segment Angular Acceleration,Right Shoulder y,Right Shoulder,y,Segment Angular Acceleration - Right Shoulder y
+angularAcceleration_23,Segment Angular Acceleration,Right Shoulder z,Right Shoulder,z,Segment Angular Acceleration - Right Shoulder z
+angularAcceleration_24,Segment Angular Acceleration,Right Upper Arm x,Right Upper Arm,x,Segment Angular Acceleration - Right Upper Arm x
+angularAcceleration_25,Segment Angular Acceleration,Right Upper Arm y,Right Upper Arm,y,Segment Angular Acceleration - Right Upper Arm y
+angularAcceleration_26,Segment Angular Acceleration,Right Upper Arm z,Right Upper Arm,z,Segment Angular Acceleration - Right Upper Arm z
+angularAcceleration_27,Segment Angular Acceleration,Right Forearm x,Right Forearm,x,Segment Angular Acceleration - Right Forearm x
+angularAcceleration_28,Segment Angular Acceleration,Right Forearm y,Right Forearm,y,Segment Angular Acceleration - Right Forearm y
+angularAcceleration_29,Segment Angular Acceleration,Right Forearm z,Right Forearm,z,Segment Angular Acceleration - Right Forearm z
+angularAcceleration_30,Segment Angular Acceleration,Right Hand x,Right Hand,x,Segment Angular Acceleration - Right Hand x
+angularAcceleration_31,Segment Angular Acceleration,Right Hand y,Right Hand,y,Segment Angular Acceleration - Right Hand y
+angularAcceleration_32,Segment Angular Acceleration,Right Hand z,Right Hand,z,Segment Angular Acceleration - Right Hand z
+angularAcceleration_33,Segment Angular Acceleration,Left Shoulder x,Left Shoulder,x,Segment Angular Acceleration - Left Shoulder x
+angularAcceleration_34,Segment Angular Acceleration,Left Shoulder y,Left Shoulder,y,Segment Angular Acceleration - Left Shoulder y
+angularAcceleration_35,Segment Angular Acceleration,Left Shoulder z,Left Shoulder,z,Segment Angular Acceleration - Left Shoulder z
+angularAcceleration_36,Segment Angular Acceleration,Left Upper Arm x,Left Upper Arm,x,Segment Angular Acceleration - Left Upper Arm x
+angularAcceleration_37,Segment Angular Acceleration,Left Upper Arm y,Left Upper Arm,y,Segment Angular Acceleration - Left Upper Arm y
+angularAcceleration_38,Segment Angular Acceleration,Left Upper Arm z,Left Upper Arm,z,Segment Angular Acceleration - Left Upper Arm z
+angularAcceleration_39,Segment Angular Acceleration,Left Forearm x,Left Forearm,x,Segment Angular Acceleration - Left Forearm x
+angularAcceleration_40,Segment Angular Acceleration,Left Forearm y,Left Forearm,y,Segment Angular Acceleration - Left Forearm y
+angularAcceleration_41,Segment Angular Acceleration,Left Forearm z,Left Forearm,z,Segment Angular Acceleration - Left Forearm z
+angularAcceleration_42,Segment Angular Acceleration,Left Hand x,Left Hand,x,Segment Angular Acceleration - Left Hand x
+angularAcceleration_43,Segment Angular Acceleration,Left Hand y,Left Hand,y,Segment Angular Acceleration - Left Hand y
+angularAcceleration_44,Segment Angular Acceleration,Left Hand z,Left Hand,z,Segment Angular Acceleration - Left Hand z
+angularAcceleration_45,Segment Angular Acceleration,Right Upper Leg x,Right Upper Leg,x,Segment Angular Acceleration - Right Upper Leg x
+angularAcceleration_46,Segment Angular Acceleration,Right Upper Leg y,Right Upper Leg,y,Segment Angular Acceleration - Right Upper Leg y
+angularAcceleration_47,Segment Angular Acceleration,Right Upper Leg z,Right Upper Leg,z,Segment Angular Acceleration - Right Upper Leg z
+angularAcceleration_48,Segment Angular Acceleration,Right Lower Leg x,Right Lower Leg,x,Segment Angular Acceleration - Right Lower Leg x
+angularAcceleration_49,Segment Angular Acceleration,Right Lower Leg y,Right Lower Leg,y,Segment Angular Acceleration - Right Lower Leg y
+angularAcceleration_50,Segment Angular Acceleration,Right Lower Leg z,Right Lower Leg,z,Segment Angular Acceleration - Right Lower Leg z
+angularAcceleration_51,Segment Angular Acceleration,Right Foot x,Right Foot,x,Segment Angular Acceleration - Right Foot x
+angularAcceleration_52,Segment Angular Acceleration,Right Foot y,Right Foot,y,Segment Angular Acceleration - Right Foot y
+angularAcceleration_53,Segment Angular Acceleration,Right Foot z,Right Foot,z,Segment Angular Acceleration - Right Foot z
+angularAcceleration_54,Segment Angular Acceleration,Right Toe x,Right Toe,x,Segment Angular Acceleration - Right Toe x
+angularAcceleration_55,Segment Angular Acceleration,Right Toe y,Right Toe,y,Segment Angular Acceleration - Right Toe y
+angularAcceleration_56,Segment Angular Acceleration,Right Toe z,Right Toe,z,Segment Angular Acceleration - Right Toe z
+angularAcceleration_57,Segment Angular Acceleration,Left Upper Leg x,Left Upper Leg,x,Segment Angular Acceleration - Left Upper Leg x
+angularAcceleration_58,Segment Angular Acceleration,Left Upper Leg y,Left Upper Leg,y,Segment Angular Acceleration - Left Upper Leg y
+angularAcceleration_59,Segment Angular Acceleration,Left Upper Leg z,Left Upper Leg,z,Segment Angular Acceleration - Left Upper Leg z
+angularAcceleration_60,Segment Angular Acceleration,Left Lower Leg x,Left Lower Leg,x,Segment Angular Acceleration - Left Lower Leg x
+angularAcceleration_61,Segment Angular Acceleration,Left Lower Leg y,Left Lower Leg,y,Segment Angular Acceleration - Left Lower Leg y
+angularAcceleration_62,Segment Angular Acceleration,Left Lower Leg z,Left Lower Leg,z,Segment Angular Acceleration - Left Lower Leg z
+angularAcceleration_63,Segment Angular Acceleration,Left Foot x,Left Foot,x,Segment Angular Acceleration - Left Foot x
+angularAcceleration_64,Segment Angular Acceleration,Left Foot y,Left Foot,y,Segment Angular Acceleration - Left Foot y
+angularAcceleration_65,Segment Angular Acceleration,Left Foot z,Left Foot,z,Segment Angular Acceleration - Left Foot z
+angularAcceleration_66,Segment Angular Acceleration,Left Toe x,Left Toe,x,Segment Angular Acceleration - Left Toe x
+angularAcceleration_67,Segment Angular Acceleration,Left Toe y,Left Toe,y,Segment Angular Acceleration - Left Toe y
+angularAcceleration_68,Segment Angular Acceleration,Left Toe z,Left Toe,z,Segment Angular Acceleration - Left Toe z
+footContacts_0,MVNX footContactDefinition,LeftFoot_Heel,Left Foot,Heel contact,Left foot heel contact flag
+footContacts_1,MVNX footContactDefinition,LeftFoot_Toe,Left Foot,Toe contact,Left foot toe contact flag
+footContacts_2,MVNX footContactDefinition,RightFoot_Heel,Right Foot,Heel contact,Right foot heel contact flag
+footContacts_3,MVNX footContactDefinition,RightFoot_Toe,Right Foot,Toe contact,Right foot toe contact flag
+jointAngle_0,Joint Angles ZXY,L5S1 Lateral Bending,L5S1,Lateral Bending,Joint Angle ZXY - L5S1 Lateral Bending
+jointAngle_1,Joint Angles ZXY,L5S1 Axial Bending,L5S1,Axial Bending,Joint Angle ZXY - L5S1 Axial Bending
+jointAngle_2,Joint Angles ZXY,L5S1 Flexion/Extension,L5S1,Flexion/Extension,Joint Angle ZXY - L5S1 Flexion/Extension
+jointAngle_3,Joint Angles ZXY,L4L3 Lateral Bending,L4L3,Lateral Bending,Joint Angle ZXY - L4L3 Lateral Bending
+jointAngle_4,Joint Angles ZXY,L4L3 Axial Rotation,L4L3,Axial Rotation,Joint Angle ZXY - L4L3 Axial Rotation
+jointAngle_5,Joint Angles ZXY,L4L3 Flexion/Extension,L4L3,Flexion/Extension,Joint Angle ZXY - L4L3 Flexion/Extension
+jointAngle_6,Joint Angles ZXY,L1T12 Lateral Bending,L1T12,Lateral Bending,Joint Angle ZXY - L1T12 Lateral Bending
+jointAngle_7,Joint Angles ZXY,L1T12 Axial Rotation,L1T12,Axial Rotation,Joint Angle ZXY - L1T12 Axial Rotation
+jointAngle_8,Joint Angles ZXY,L1T12 Flexion/Extension,L1T12,Flexion/Extension,Joint Angle ZXY - L1T12 Flexion/Extension
+jointAngle_9,Joint Angles ZXY,T9T8 Lateral Bending,T9T8,Lateral Bending,Joint Angle ZXY - T9T8 Lateral Bending
+jointAngle_10,Joint Angles ZXY,T9T8 Axial Rotation,T9T8,Axial Rotation,Joint Angle ZXY - T9T8 Axial Rotation
+jointAngle_11,Joint Angles ZXY,T9T8 Flexion/Extension,T9T8,Flexion/Extension,Joint Angle ZXY - T9T8 Flexion/Extension
+jointAngle_12,Joint Angles ZXY,T1C7 Lateral Bending,T1C7,Lateral Bending,Joint Angle ZXY - T1C7 Lateral Bending
+jointAngle_13,Joint Angles ZXY,T1C7 Axial Rotation,T1C7,Axial Rotation,Joint Angle ZXY - T1C7 Axial Rotation
+jointAngle_14,Joint Angles ZXY,T1C7 Flexion/Extension,T1C7,Flexion/Extension,Joint Angle ZXY - T1C7 Flexion/Extension
+jointAngle_15,Joint Angles ZXY,C1 Head Lateral Bending,C1 Head,Lateral Bending,Joint Angle ZXY - C1 Head Lateral Bending
+jointAngle_16,Joint Angles ZXY,C1 Head Axial Rotation,C1 Head,Axial Rotation,Joint Angle ZXY - C1 Head Axial Rotation
+jointAngle_17,Joint Angles ZXY,C1 Head Flexion/Extension,C1 Head,Flexion/Extension,Joint Angle ZXY - C1 Head Flexion/Extension
+jointAngle_18,Joint Angles ZXY,Right T4 Shoulder Abduction/Adduction,Right T4 Shoulder,Abduction/Adduction,Joint Angle ZXY - Right T4 Shoulder Abduction/Adduction
+jointAngle_19,Joint Angles ZXY,Right T4 Shoulder Internal/External Rotation,Right T4 Shoulder,Internal/External Rotation,Joint Angle ZXY - Right T4 Shoulder Internal/External Rotation
+jointAngle_20,Joint Angles ZXY,Right T4 Shoulder Flexion/Extension,Right T4 Shoulder,Flexion/Extension,Joint Angle ZXY - Right T4 Shoulder Flexion/Extension
+jointAngle_21,Joint Angles ZXY,Right Shoulder Abduction/Adduction,Right Shoulder,Abduction/Adduction,Joint Angle ZXY - Right Shoulder Abduction/Adduction
+jointAngle_22,Joint Angles ZXY,Right Shoulder Internal/External Rotation,Right Shoulder,Internal/External Rotation,Joint Angle ZXY - Right Shoulder Internal/External Rotation
+jointAngle_23,Joint Angles ZXY,Right Shoulder Flexion/Extension,Right Shoulder,Flexion/Extension,Joint Angle ZXY - Right Shoulder Flexion/Extension
+jointAngle_24,Joint Angles ZXY,Right Elbow Ulnar Deviation/Radial Deviation,Right Elbow Ulnar Deviation/Radial Deviation,,Joint Angle ZXY - Right Elbow Ulnar Deviation/Radial Deviation
+jointAngle_25,Joint Angles ZXY,Right Elbow Pronation/Supination,Right Elbow Pronation/Supination,,Joint Angle ZXY - Right Elbow Pronation/Supination
+jointAngle_26,Joint Angles ZXY,Right Elbow Flexion/Extension,Right Elbow,Flexion/Extension,Joint Angle ZXY - Right Elbow Flexion/Extension
+jointAngle_27,Joint Angles ZXY,Right Wrist Ulnar Deviation/Radial Deviation,Right Wrist Ulnar Deviation/Radial Deviation,,Joint Angle ZXY - Right Wrist Ulnar Deviation/Radial Deviation
+jointAngle_28,Joint Angles ZXY,Right Wrist Pronation/Supination,Right Wrist Pronation/Supination,,Joint Angle ZXY - Right Wrist Pronation/Supination
+jointAngle_29,Joint Angles ZXY,Right Wrist Flexion/Extension,Right Wrist,Flexion/Extension,Joint Angle ZXY - Right Wrist Flexion/Extension
+jointAngle_30,Joint Angles ZXY,Left T4 Shoulder Abduction/Adduction,Left T4 Shoulder,Abduction/Adduction,Joint Angle ZXY - Left T4 Shoulder Abduction/Adduction
+jointAngle_31,Joint Angles ZXY,Left T4 Shoulder Internal/External Rotation,Left T4 Shoulder,Internal/External Rotation,Joint Angle ZXY - Left T4 Shoulder Internal/External Rotation
+jointAngle_32,Joint Angles ZXY,Left T4 Shoulder Flexion/Extension,Left T4 Shoulder,Flexion/Extension,Joint Angle ZXY - Left T4 Shoulder Flexion/Extension
+jointAngle_33,Joint Angles ZXY,Left Shoulder Abduction/Adduction,Left Shoulder,Abduction/Adduction,Joint Angle ZXY - Left Shoulder Abduction/Adduction
+jointAngle_34,Joint Angles ZXY,Left Shoulder Internal/External Rotation,Left Shoulder,Internal/External Rotation,Joint Angle ZXY - Left Shoulder Internal/External Rotation
+jointAngle_35,Joint Angles ZXY,Left Shoulder Flexion/Extension,Left Shoulder,Flexion/Extension,Joint Angle ZXY - Left Shoulder Flexion/Extension
+jointAngle_36,Joint Angles ZXY,Left Elbow Ulnar Deviation/Radial Deviation,Left Elbow Ulnar Deviation/Radial Deviation,,Joint Angle ZXY - Left Elbow Ulnar Deviation/Radial Deviation
+jointAngle_37,Joint Angles ZXY,Left Elbow Pronation/Supination,Left Elbow Pronation/Supination,,Joint Angle ZXY - Left Elbow Pronation/Supination
+jointAngle_38,Joint Angles ZXY,Left Elbow Flexion/Extension,Left Elbow,Flexion/Extension,Joint Angle ZXY - Left Elbow Flexion/Extension
+jointAngle_39,Joint Angles ZXY,Left Wrist Ulnar Deviation/Radial Deviation,Left Wrist Ulnar Deviation/Radial Deviation,,Joint Angle ZXY - Left Wrist Ulnar Deviation/Radial Deviation
+jointAngle_40,Joint Angles ZXY,Left Wrist Pronation/Supination,Left Wrist Pronation/Supination,,Joint Angle ZXY - Left Wrist Pronation/Supination
+jointAngle_41,Joint Angles ZXY,Left Wrist Flexion/Extension,Left Wrist,Flexion/Extension,Joint Angle ZXY - Left Wrist Flexion/Extension
+jointAngle_42,Joint Angles ZXY,Right Hip Abduction/Adduction,Right Hip,Abduction/Adduction,Joint Angle ZXY - Right Hip Abduction/Adduction
+jointAngle_43,Joint Angles ZXY,Right Hip Internal/External Rotation,Right Hip,Internal/External Rotation,Joint Angle ZXY - Right Hip Internal/External Rotation
+jointAngle_44,Joint Angles ZXY,Right Hip Flexion/Extension,Right Hip,Flexion/Extension,Joint Angle ZXY - Right Hip Flexion/Extension
+jointAngle_45,Joint Angles ZXY,Right Knee Abduction/Adduction,Right Knee,Abduction/Adduction,Joint Angle ZXY - Right Knee Abduction/Adduction
+jointAngle_46,Joint Angles ZXY,Right Knee Internal/External Rotation,Right Knee,Internal/External Rotation,Joint Angle ZXY - Right Knee Internal/External Rotation
+jointAngle_47,Joint Angles ZXY,Right Knee Flexion/Extension,Right Knee,Flexion/Extension,Joint Angle ZXY - Right Knee Flexion/Extension
+jointAngle_48,Joint Angles ZXY,Right Ankle Abduction/Adduction,Right Ankle,Abduction/Adduction,Joint Angle ZXY - Right Ankle Abduction/Adduction
+jointAngle_49,Joint Angles ZXY,Right Ankle Internal/External Rotation,Right Ankle,Internal/External Rotation,Joint Angle ZXY - Right Ankle Internal/External Rotation
+jointAngle_50,Joint Angles ZXY,Right Ankle Dorsiflexion/Plantarflexion,Right Ankle,Dorsiflexion/Plantarflexion,Joint Angle ZXY - Right Ankle Dorsiflexion/Plantarflexion
+jointAngle_51,Joint Angles ZXY,Right Ball Foot Abduction/Adduction,Right Ball Foot,Abduction/Adduction,Joint Angle ZXY - Right Ball Foot Abduction/Adduction
+jointAngle_52,Joint Angles ZXY,Right Ball Foot Internal/External Rotation,Right Ball Foot,Internal/External Rotation,Joint Angle ZXY - Right Ball Foot Internal/External Rotation
+jointAngle_53,Joint Angles ZXY,Right Ball Foot Flexion/Extension,Right Ball Foot,Flexion/Extension,Joint Angle ZXY - Right Ball Foot Flexion/Extension
+jointAngle_54,Joint Angles ZXY,Left Hip Abduction/Adduction,Left Hip,Abduction/Adduction,Joint Angle ZXY - Left Hip Abduction/Adduction
+jointAngle_55,Joint Angles ZXY,Left Hip Internal/External Rotation,Left Hip,Internal/External Rotation,Joint Angle ZXY - Left Hip Internal/External Rotation
+jointAngle_56,Joint Angles ZXY,Left Hip Flexion/Extension,Left Hip,Flexion/Extension,Joint Angle ZXY - Left Hip Flexion/Extension
+jointAngle_57,Joint Angles ZXY,Left Knee Abduction/Adduction,Left Knee,Abduction/Adduction,Joint Angle ZXY - Left Knee Abduction/Adduction
+jointAngle_58,Joint Angles ZXY,Left Knee Internal/External Rotation,Left Knee,Internal/External Rotation,Joint Angle ZXY - Left Knee Internal/External Rotation
+jointAngle_59,Joint Angles ZXY,Left Knee Flexion/Extension,Left Knee,Flexion/Extension,Joint Angle ZXY - Left Knee Flexion/Extension
+jointAngle_60,Joint Angles ZXY,Left Ankle Abduction/Adduction,Left Ankle,Abduction/Adduction,Joint Angle ZXY - Left Ankle Abduction/Adduction
+jointAngle_61,Joint Angles ZXY,Left Ankle Internal/External Rotation,Left Ankle,Internal/External Rotation,Joint Angle ZXY - Left Ankle Internal/External Rotation
+jointAngle_62,Joint Angles ZXY,Left Ankle Dorsiflexion/Plantarflexion,Left Ankle,Dorsiflexion/Plantarflexion,Joint Angle ZXY - Left Ankle Dorsiflexion/Plantarflexion
+jointAngle_63,Joint Angles ZXY,Left Ball Foot Abduction/Adduction,Left Ball Foot,Abduction/Adduction,Joint Angle ZXY - Left Ball Foot Abduction/Adduction
+jointAngle_64,Joint Angles ZXY,Left Ball Foot Internal/External Rotation,Left Ball Foot,Internal/External Rotation,Joint Angle ZXY - Left Ball Foot Internal/External Rotation
+jointAngle_65,Joint Angles ZXY,Left Ball Foot Flexion/Extension,Left Ball Foot,Flexion/Extension,Joint Angle ZXY - Left Ball Foot Flexion/Extension
+jointAngleXZY_0,Joint Angles XZY,L5S1 Lateral Bending,L5S1,Lateral Bending,Joint Angle XZY - L5S1 Lateral Bending
+jointAngleXZY_1,Joint Angles XZY,L5S1 Axial Bending,L5S1,Axial Bending,Joint Angle XZY - L5S1 Axial Bending
+jointAngleXZY_2,Joint Angles XZY,L5S1 Flexion/Extension,L5S1,Flexion/Extension,Joint Angle XZY - L5S1 Flexion/Extension
+jointAngleXZY_3,Joint Angles XZY,L4L3 Lateral Bending,L4L3,Lateral Bending,Joint Angle XZY - L4L3 Lateral Bending
+jointAngleXZY_4,Joint Angles XZY,L4L3 Axial Rotation,L4L3,Axial Rotation,Joint Angle XZY - L4L3 Axial Rotation
+jointAngleXZY_5,Joint Angles XZY,L4L3 Flexion/Extension,L4L3,Flexion/Extension,Joint Angle XZY - L4L3 Flexion/Extension
+jointAngleXZY_6,Joint Angles XZY,L1T12 Lateral Bending,L1T12,Lateral Bending,Joint Angle XZY - L1T12 Lateral Bending
+jointAngleXZY_7,Joint Angles XZY,L1T12 Axial Rotation,L1T12,Axial Rotation,Joint Angle XZY - L1T12 Axial Rotation
+jointAngleXZY_8,Joint Angles XZY,L1T12 Flexion/Extension,L1T12,Flexion/Extension,Joint Angle XZY - L1T12 Flexion/Extension
+jointAngleXZY_9,Joint Angles XZY,T9T8 Lateral Bending,T9T8,Lateral Bending,Joint Angle XZY - T9T8 Lateral Bending
+jointAngleXZY_10,Joint Angles XZY,T9T8 Axial Rotation,T9T8,Axial Rotation,Joint Angle XZY - T9T8 Axial Rotation
+jointAngleXZY_11,Joint Angles XZY,T9T8 Flexion/Extension,T9T8,Flexion/Extension,Joint Angle XZY - T9T8 Flexion/Extension
+jointAngleXZY_12,Joint Angles XZY,T1C7 Lateral Bending,T1C7,Lateral Bending,Joint Angle XZY - T1C7 Lateral Bending
+jointAngleXZY_13,Joint Angles XZY,T1C7 Axial Rotation,T1C7,Axial Rotation,Joint Angle XZY - T1C7 Axial Rotation
+jointAngleXZY_14,Joint Angles XZY,T1C7 Flexion/Extension,T1C7,Flexion/Extension,Joint Angle XZY - T1C7 Flexion/Extension
+jointAngleXZY_15,Joint Angles XZY,C1 Head Lateral Bending,C1 Head,Lateral Bending,Joint Angle XZY - C1 Head Lateral Bending
+jointAngleXZY_16,Joint Angles XZY,C1 Head Axial Rotation,C1 Head,Axial Rotation,Joint Angle XZY - C1 Head Axial Rotation
+jointAngleXZY_17,Joint Angles XZY,C1 Head Flexion/Extension,C1 Head,Flexion/Extension,Joint Angle XZY - C1 Head Flexion/Extension
+jointAngleXZY_18,Joint Angles XZY,Right T4 Shoulder Abduction/Adduction,Right T4 Shoulder,Abduction/Adduction,Joint Angle XZY - Right T4 Shoulder Abduction/Adduction
+jointAngleXZY_19,Joint Angles XZY,Right T4 Shoulder Internal/External Rotation,Right T4 Shoulder,Internal/External Rotation,Joint Angle XZY - Right T4 Shoulder Internal/External Rotation
+jointAngleXZY_20,Joint Angles XZY,Right T4 Shoulder Flexion/Extension,Right T4 Shoulder,Flexion/Extension,Joint Angle XZY - Right T4 Shoulder Flexion/Extension
+jointAngleXZY_21,Joint Angles XZY,Right Shoulder Abduction/Adduction,Right Shoulder,Abduction/Adduction,Joint Angle XZY - Right Shoulder Abduction/Adduction
+jointAngleXZY_22,Joint Angles XZY,Right Shoulder Internal/External Rotation,Right Shoulder,Internal/External Rotation,Joint Angle XZY - Right Shoulder Internal/External Rotation
+jointAngleXZY_23,Joint Angles XZY,Right Shoulder Flexion/Extension,Right Shoulder,Flexion/Extension,Joint Angle XZY - Right Shoulder Flexion/Extension
+jointAngleXZY_24,Joint Angles XZY,Right Elbow Ulnar Deviation/Radial Deviation,Right Elbow Ulnar Deviation/Radial Deviation,,Joint Angle XZY - Right Elbow Ulnar Deviation/Radial Deviation
+jointAngleXZY_25,Joint Angles XZY,Right Elbow Pronation/Supination,Right Elbow Pronation/Supination,,Joint Angle XZY - Right Elbow Pronation/Supination
+jointAngleXZY_26,Joint Angles XZY,Right Elbow Flexion/Extension,Right Elbow,Flexion/Extension,Joint Angle XZY - Right Elbow Flexion/Extension
+jointAngleXZY_27,Joint Angles XZY,Right Wrist Ulnar Deviation/Radial Deviation,Right Wrist Ulnar Deviation/Radial Deviation,,Joint Angle XZY - Right Wrist Ulnar Deviation/Radial Deviation
+jointAngleXZY_28,Joint Angles XZY,Right Wrist Pronation/Supination,Right Wrist Pronation/Supination,,Joint Angle XZY - Right Wrist Pronation/Supination
+jointAngleXZY_29,Joint Angles XZY,Right Wrist Flexion/Extension,Right Wrist,Flexion/Extension,Joint Angle XZY - Right Wrist Flexion/Extension
+jointAngleXZY_30,Joint Angles XZY,Left T4 Shoulder Abduction/Adduction,Left T4 Shoulder,Abduction/Adduction,Joint Angle XZY - Left T4 Shoulder Abduction/Adduction
+jointAngleXZY_31,Joint Angles XZY,Left T4 Shoulder Internal/External Rotation,Left T4 Shoulder,Internal/External Rotation,Joint Angle XZY - Left T4 Shoulder Internal/External Rotation
+jointAngleXZY_32,Joint Angles XZY,Left T4 Shoulder Flexion/Extension,Left T4 Shoulder,Flexion/Extension,Joint Angle XZY - Left T4 Shoulder Flexion/Extension
+jointAngleXZY_33,Joint Angles XZY,Left Shoulder Abduction/Adduction,Left Shoulder,Abduction/Adduction,Joint Angle XZY - Left Shoulder Abduction/Adduction
+jointAngleXZY_34,Joint Angles XZY,Left Shoulder Internal/External Rotation,Left Shoulder,Internal/External Rotation,Joint Angle XZY - Left Shoulder Internal/External Rotation
+jointAngleXZY_35,Joint Angles XZY,Left Shoulder Flexion/Extension,Left Shoulder,Flexion/Extension,Joint Angle XZY - Left Shoulder Flexion/Extension
+jointAngleXZY_36,Joint Angles XZY,Left Elbow Ulnar Deviation/Radial Deviation,Left Elbow Ulnar Deviation/Radial Deviation,,Joint Angle XZY - Left Elbow Ulnar Deviation/Radial Deviation
+jointAngleXZY_37,Joint Angles XZY,Left Elbow Pronation/Supination,Left Elbow Pronation/Supination,,Joint Angle XZY - Left Elbow Pronation/Supination
+jointAngleXZY_38,Joint Angles XZY,Left Elbow Flexion/Extension,Left Elbow,Flexion/Extension,Joint Angle XZY - Left Elbow Flexion/Extension
+jointAngleXZY_39,Joint Angles XZY,Left Wrist Ulnar Deviation/Radial Deviation,Left Wrist Ulnar Deviation/Radial Deviation,,Joint Angle XZY - Left Wrist Ulnar Deviation/Radial Deviation
+jointAngleXZY_40,Joint Angles XZY,Left Wrist Pronation/Supination,Left Wrist Pronation/Supination,,Joint Angle XZY - Left Wrist Pronation/Supination
+jointAngleXZY_41,Joint Angles XZY,Left Wrist Flexion/Extension,Left Wrist,Flexion/Extension,Joint Angle XZY - Left Wrist Flexion/Extension
+jointAngleXZY_42,Joint Angles XZY,Right Hip Abduction/Adduction,Right Hip,Abduction/Adduction,Joint Angle XZY - Right Hip Abduction/Adduction
+jointAngleXZY_43,Joint Angles XZY,Right Hip Internal/External Rotation,Right Hip,Internal/External Rotation,Joint Angle XZY - Right Hip Internal/External Rotation
+jointAngleXZY_44,Joint Angles XZY,Right Hip Flexion/Extension,Right Hip,Flexion/Extension,Joint Angle XZY - Right Hip Flexion/Extension
+jointAngleXZY_45,Joint Angles XZY,Right Knee Abduction/Adduction,Right Knee,Abduction/Adduction,Joint Angle XZY - Right Knee Abduction/Adduction
+jointAngleXZY_46,Joint Angles XZY,Right Knee Internal/External Rotation,Right Knee,Internal/External Rotation,Joint Angle XZY - Right Knee Internal/External Rotation
+jointAngleXZY_47,Joint Angles XZY,Right Knee Flexion/Extension,Right Knee,Flexion/Extension,Joint Angle XZY - Right Knee Flexion/Extension
+jointAngleXZY_48,Joint Angles XZY,Right Ankle Abduction/Adduction,Right Ankle,Abduction/Adduction,Joint Angle XZY - Right Ankle Abduction/Adduction
+jointAngleXZY_49,Joint Angles XZY,Right Ankle Internal/External Rotation,Right Ankle,Internal/External Rotation,Joint Angle XZY - Right Ankle Internal/External Rotation
+jointAngleXZY_50,Joint Angles XZY,Right Ankle Dorsiflexion/Plantarflexion,Right Ankle,Dorsiflexion/Plantarflexion,Joint Angle XZY - Right Ankle Dorsiflexion/Plantarflexion
+jointAngleXZY_51,Joint Angles XZY,Right Ball Foot Abduction/Adduction,Right Ball Foot,Abduction/Adduction,Joint Angle XZY - Right Ball Foot Abduction/Adduction
+jointAngleXZY_52,Joint Angles XZY,Right Ball Foot Internal/External Rotation,Right Ball Foot,Internal/External Rotation,Joint Angle XZY - Right Ball Foot Internal/External Rotation
+jointAngleXZY_53,Joint Angles XZY,Right Ball Foot Flexion/Extension,Right Ball Foot,Flexion/Extension,Joint Angle XZY - Right Ball Foot Flexion/Extension
+jointAngleXZY_54,Joint Angles XZY,Left Hip Abduction/Adduction,Left Hip,Abduction/Adduction,Joint Angle XZY - Left Hip Abduction/Adduction
+jointAngleXZY_55,Joint Angles XZY,Left Hip Internal/External Rotation,Left Hip,Internal/External Rotation,Joint Angle XZY - Left Hip Internal/External Rotation
+jointAngleXZY_56,Joint Angles XZY,Left Hip Flexion/Extension,Left Hip,Flexion/Extension,Joint Angle XZY - Left Hip Flexion/Extension
+jointAngleXZY_57,Joint Angles XZY,Left Knee Abduction/Adduction,Left Knee,Abduction/Adduction,Joint Angle XZY - Left Knee Abduction/Adduction
+jointAngleXZY_58,Joint Angles XZY,Left Knee Internal/External Rotation,Left Knee,Internal/External Rotation,Joint Angle XZY - Left Knee Internal/External Rotation
+jointAngleXZY_59,Joint Angles XZY,Left Knee Flexion/Extension,Left Knee,Flexion/Extension,Joint Angle XZY - Left Knee Flexion/Extension
+jointAngleXZY_60,Joint Angles XZY,Left Ankle Abduction/Adduction,Left Ankle,Abduction/Adduction,Joint Angle XZY - Left Ankle Abduction/Adduction
+jointAngleXZY_61,Joint Angles XZY,Left Ankle Internal/External Rotation,Left Ankle,Internal/External Rotation,Joint Angle XZY - Left Ankle Internal/External Rotation
+jointAngleXZY_62,Joint Angles XZY,Left Ankle Dorsiflexion/Plantarflexion,Left Ankle,Dorsiflexion/Plantarflexion,Joint Angle XZY - Left Ankle Dorsiflexion/Plantarflexion
+jointAngleXZY_63,Joint Angles XZY,Left Ball Foot Abduction/Adduction,Left Ball Foot,Abduction/Adduction,Joint Angle XZY - Left Ball Foot Abduction/Adduction
+jointAngleXZY_64,Joint Angles XZY,Left Ball Foot Internal/External Rotation,Left Ball Foot,Internal/External Rotation,Joint Angle XZY - Left Ball Foot Internal/External Rotation
+jointAngleXZY_65,Joint Angles XZY,Left Ball Foot Flexion/Extension,Left Ball Foot,Flexion/Extension,Joint Angle XZY - Left Ball Foot Flexion/Extension
+jointAngleErgo_0,Ergonomic Joint Angles ZXY,T8_Head Lateral Bending,T8_Head,Lateral Bending,Ergonomic Joint Angle ZXY - T8_Head Lateral Bending
+jointAngleErgo_1,Ergonomic Joint Angles ZXY,T8_Head Axial Bending,T8_Head,Axial Bending,Ergonomic Joint Angle ZXY - T8_Head Axial Bending
+jointAngleErgo_2,Ergonomic Joint Angles ZXY,T8_Head Flexion/Extension,T8_Head,Flexion/Extension,Ergonomic Joint Angle ZXY - T8_Head Flexion/Extension
+jointAngleErgo_3,Ergonomic Joint Angles ZXY,T8_LeftUpperArm Lateral Bending,T8_LeftUpperArm,Lateral Bending,Ergonomic Joint Angle ZXY - T8_LeftUpperArm Lateral Bending
+jointAngleErgo_4,Ergonomic Joint Angles ZXY,T8_LeftUpperArm Axial Bending,T8_LeftUpperArm,Axial Bending,Ergonomic Joint Angle ZXY - T8_LeftUpperArm Axial Bending
+jointAngleErgo_5,Ergonomic Joint Angles ZXY,T8_LeftUpperArm Flexion/Extension,T8_LeftUpperArm,Flexion/Extension,Ergonomic Joint Angle ZXY - T8_LeftUpperArm Flexion/Extension
+jointAngleErgo_6,Ergonomic Joint Angles ZXY,T8_RightUpperArm Lateral Bending,T8_RightUpperArm,Lateral Bending,Ergonomic Joint Angle ZXY - T8_RightUpperArm Lateral Bending
+jointAngleErgo_7,Ergonomic Joint Angles ZXY,T8_RightUpperArm Axial Bending,T8_RightUpperArm,Axial Bending,Ergonomic Joint Angle ZXY - T8_RightUpperArm Axial Bending
+jointAngleErgo_8,Ergonomic Joint Angles ZXY,T8_RightUpperArm Flexion/Extension,T8_RightUpperArm,Flexion/Extension,Ergonomic Joint Angle ZXY - T8_RightUpperArm Flexion/Extension
+jointAngleErgo_9,Ergonomic Joint Angles ZXY,Pelvis_T8 Lateral Bending,Pelvis_T8,Lateral Bending,Ergonomic Joint Angle ZXY - Pelvis_T8 Lateral Bending
+jointAngleErgo_10,Ergonomic Joint Angles ZXY,Pelvis_T8 Axial Bending,Pelvis_T8,Axial Bending,Ergonomic Joint Angle ZXY - Pelvis_T8 Axial Bending
+jointAngleErgo_11,Ergonomic Joint Angles ZXY,Pelvis_T8 Flexion/Extension,Pelvis_T8,Flexion/Extension,Ergonomic Joint Angle ZXY - Pelvis_T8 Flexion/Extension
+jointAngleErgo_12,Ergonomic Joint Angles ZXY,Vertical_Pelvis Lateral Bending,Vertical_Pelvis,Lateral Bending,Ergonomic Joint Angle ZXY - Vertical_Pelvis Lateral Bending
+jointAngleErgo_13,Ergonomic Joint Angles ZXY,Vertical_Pelvis Axial Bending,Vertical_Pelvis,Axial Bending,Ergonomic Joint Angle ZXY - Vertical_Pelvis Axial Bending
+jointAngleErgo_14,Ergonomic Joint Angles ZXY,Vertical_Pelvis Flexion/Extension,Vertical_Pelvis,Flexion/Extension,Ergonomic Joint Angle ZXY - Vertical_Pelvis Flexion/Extension
+jointAngleErgo_15,Ergonomic Joint Angles ZXY,Vertical_T8 Lateral Bending,Vertical_T8,Lateral Bending,Ergonomic Joint Angle ZXY - Vertical_T8 Lateral Bending
+jointAngleErgo_16,Ergonomic Joint Angles ZXY,Vertical_T8 Axial Bending,Vertical_T8,Axial Bending,Ergonomic Joint Angle ZXY - Vertical_T8 Axial Bending
+jointAngleErgo_17,Ergonomic Joint Angles ZXY,Vertical_T8 Flexion/Extension,Vertical_T8,Flexion/Extension,Ergonomic Joint Angle ZXY - Vertical_T8 Flexion/Extension
+jointAngleErgoXZY_0,Ergonomic Joint Angles XZY,T8_Head Lateral Bending,T8_Head,Lateral Bending,Ergonomic Joint Angle XZY - T8_Head Lateral Bending
+jointAngleErgoXZY_1,Ergonomic Joint Angles XZY,T8_Head Axial Bending,T8_Head,Axial Bending,Ergonomic Joint Angle XZY - T8_Head Axial Bending
+jointAngleErgoXZY_2,Ergonomic Joint Angles XZY,T8_Head Flexion/Extension,T8_Head,Flexion/Extension,Ergonomic Joint Angle XZY - T8_Head Flexion/Extension
+jointAngleErgoXZY_3,Ergonomic Joint Angles XZY,T8_LeftUpperArm Lateral Bending,T8_LeftUpperArm,Lateral Bending,Ergonomic Joint Angle XZY - T8_LeftUpperArm Lateral Bending
+jointAngleErgoXZY_4,Ergonomic Joint Angles XZY,T8_LeftUpperArm Axial Bending,T8_LeftUpperArm,Axial Bending,Ergonomic Joint Angle XZY - T8_LeftUpperArm Axial Bending
+jointAngleErgoXZY_5,Ergonomic Joint Angles XZY,T8_LeftUpperArm Flexion/Extension,T8_LeftUpperArm,Flexion/Extension,Ergonomic Joint Angle XZY - T8_LeftUpperArm Flexion/Extension
+jointAngleErgoXZY_6,Ergonomic Joint Angles XZY,T8_RightUpperArm Lateral Bending,T8_RightUpperArm,Lateral Bending,Ergonomic Joint Angle XZY - T8_RightUpperArm Lateral Bending
+jointAngleErgoXZY_7,Ergonomic Joint Angles XZY,T8_RightUpperArm Axial Bending,T8_RightUpperArm,Axial Bending,Ergonomic Joint Angle XZY - T8_RightUpperArm Axial Bending
+jointAngleErgoXZY_8,Ergonomic Joint Angles XZY,T8_RightUpperArm Flexion/Extension,T8_RightUpperArm,Flexion/Extension,Ergonomic Joint Angle XZY - T8_RightUpperArm Flexion/Extension
+jointAngleErgoXZY_9,Ergonomic Joint Angles XZY,Pelvis_T8 Lateral Bending,Pelvis_T8,Lateral Bending,Ergonomic Joint Angle XZY - Pelvis_T8 Lateral Bending
+jointAngleErgoXZY_10,Ergonomic Joint Angles XZY,Pelvis_T8 Axial Bending,Pelvis_T8,Axial Bending,Ergonomic Joint Angle XZY - Pelvis_T8 Axial Bending
+jointAngleErgoXZY_11,Ergonomic Joint Angles XZY,Pelvis_T8 Flexion/Extension,Pelvis_T8,Flexion/Extension,Ergonomic Joint Angle XZY - Pelvis_T8 Flexion/Extension
+jointAngleErgoXZY_12,Ergonomic Joint Angles XZY,Vertical_Pelvis Lateral Bending,Vertical_Pelvis,Lateral Bending,Ergonomic Joint Angle XZY - Vertical_Pelvis Lateral Bending
+jointAngleErgoXZY_13,Ergonomic Joint Angles XZY,Vertical_Pelvis Axial Bending,Vertical_Pelvis,Axial Bending,Ergonomic Joint Angle XZY - Vertical_Pelvis Axial Bending
+jointAngleErgoXZY_14,Ergonomic Joint Angles XZY,Vertical_Pelvis Flexion/Extension,Vertical_Pelvis,Flexion/Extension,Ergonomic Joint Angle XZY - Vertical_Pelvis Flexion/Extension
+jointAngleErgoXZY_15,Ergonomic Joint Angles XZY,Vertical_T8 Lateral Bending,Vertical_T8,Lateral Bending,Ergonomic Joint Angle XZY - Vertical_T8 Lateral Bending
+jointAngleErgoXZY_16,Ergonomic Joint Angles XZY,Vertical_T8 Axial Bending,Vertical_T8,Axial Bending,Ergonomic Joint Angle XZY - Vertical_T8 Axial Bending
+jointAngleErgoXZY_17,Ergonomic Joint Angles XZY,Vertical_T8 Flexion/Extension,Vertical_T8,Flexion/Extension,Ergonomic Joint Angle XZY - Vertical_T8 Flexion/Extension
+centerOfMass_0,Center of Mass,CoM pos x,Center of Mass pos,x,Center of Mass - CoM pos x
+centerOfMass_1,Center of Mass,CoM pos y,Center of Mass pos,y,Center of Mass - CoM pos y
+centerOfMass_2,Center of Mass,CoM pos z,Center of Mass pos,z,Center of Mass - CoM pos z
+centerOfMass_3,Center of Mass,CoM vel x,Center of Mass vel,x,Center of Mass - CoM vel x
+centerOfMass_4,Center of Mass,CoM vel y,Center of Mass vel,y,Center of Mass - CoM vel y
+centerOfMass_5,Center of Mass,CoM vel z,Center of Mass vel,z,Center of Mass - CoM vel z
+centerOfMass_6,Center of Mass,CoM acc x,Center of Mass acc,x,Center of Mass - CoM acc x
+centerOfMass_7,Center of Mass,CoM acc y,Center of Mass acc,y,Center of Mass - CoM acc y
+centerOfMass_8,Center of Mass,CoM acc z,Center of Mass acc,z,Center of Mass - CoM acc z
+group,metadata,group,cohort/group,,Participant cohort/group label
+subject_id,metadata,subject_id,subject,,Participant identifier
+speed,metadata,speed,condition,,Gait speed condition
+file_name,metadata,file_name,file,,Source file name
+sensorFreeAcceleration_0,Sensor Free Acceleration,Pelvis x,Pelvis,x,Sensor Free Acceleration - Pelvis x
+sensorFreeAcceleration_1,Sensor Free Acceleration,Pelvis y,Pelvis,y,Sensor Free Acceleration - Pelvis y
+sensorFreeAcceleration_2,Sensor Free Acceleration,Pelvis z,Pelvis,z,Sensor Free Acceleration - Pelvis z
+sensorFreeAcceleration_3,Sensor Free Acceleration,Right Upper Leg x,Right Upper Leg,x,Sensor Free Acceleration - Right Upper Leg x
+sensorFreeAcceleration_4,Sensor Free Acceleration,Right Upper Leg y,Right Upper Leg,y,Sensor Free Acceleration - Right Upper Leg y
+sensorFreeAcceleration_5,Sensor Free Acceleration,Right Upper Leg z,Right Upper Leg,z,Sensor Free Acceleration - Right Upper Leg z
+sensorFreeAcceleration_6,Sensor Free Acceleration,Right Lower Leg x,Right Lower Leg,x,Sensor Free Acceleration - Right Lower Leg x
+sensorFreeAcceleration_7,Sensor Free Acceleration,Right Lower Leg y,Right Lower Leg,y,Sensor Free Acceleration - Right Lower Leg y
+sensorFreeAcceleration_8,Sensor Free Acceleration,Right Lower Leg z,Right Lower Leg,z,Sensor Free Acceleration - Right Lower Leg z
+sensorFreeAcceleration_9,Sensor Free Acceleration,Right Foot x,Right Foot,x,Sensor Free Acceleration - Right Foot x
+sensorFreeAcceleration_10,Sensor Free Acceleration,Right Foot y,Right Foot,y,Sensor Free Acceleration - Right Foot y
+sensorFreeAcceleration_11,Sensor Free Acceleration,Right Foot z,Right Foot,z,Sensor Free Acceleration - Right Foot z
+sensorFreeAcceleration_12,Sensor Free Acceleration,Left Upper Leg x,Left Upper Leg,x,Sensor Free Acceleration - Left Upper Leg x
+sensorFreeAcceleration_13,Sensor Free Acceleration,Left Upper Leg y,Left Upper Leg,y,Sensor Free Acceleration - Left Upper Leg y
+sensorFreeAcceleration_14,Sensor Free Acceleration,Left Upper Leg z,Left Upper Leg,z,Sensor Free Acceleration - Left Upper Leg z
+sensorFreeAcceleration_15,Sensor Free Acceleration,Left Lower Leg x,Left Lower Leg,x,Sensor Free Acceleration - Left Lower Leg x
+sensorFreeAcceleration_16,Sensor Free Acceleration,Left Lower Leg y,Left Lower Leg,y,Sensor Free Acceleration - Left Lower Leg y
+sensorFreeAcceleration_17,Sensor Free Acceleration,Left Lower Leg z,Left Lower Leg,z,Sensor Free Acceleration - Left Lower Leg z
+sensorFreeAcceleration_18,Sensor Free Acceleration,Left Foot x,Left Foot,x,Sensor Free Acceleration - Left Foot x
+sensorFreeAcceleration_19,Sensor Free Acceleration,Left Foot y,Left Foot,y,Sensor Free Acceleration - Left Foot y
+sensorFreeAcceleration_20,Sensor Free Acceleration,Left Foot z,Left Foot,z,Sensor Free Acceleration - Left Foot z
+sensorMagneticField_0,Sensor Magnetic Field,Pelvis x,Pelvis,x,Sensor Magnetic Field - Pelvis x
+sensorMagneticField_1,Sensor Magnetic Field,Pelvis y,Pelvis,y,Sensor Magnetic Field - Pelvis y
+sensorMagneticField_2,Sensor Magnetic Field,Pelvis z,Pelvis,z,Sensor Magnetic Field - Pelvis z
+sensorMagneticField_3,Sensor Magnetic Field,Right Upper Leg x,Right Upper Leg,x,Sensor Magnetic Field - Right Upper Leg x
+sensorMagneticField_4,Sensor Magnetic Field,Right Upper Leg y,Right Upper Leg,y,Sensor Magnetic Field - Right Upper Leg y
+sensorMagneticField_5,Sensor Magnetic Field,Right Upper Leg z,Right Upper Leg,z,Sensor Magnetic Field - Right Upper Leg z
+sensorMagneticField_6,Sensor Magnetic Field,Right Lower Leg x,Right Lower Leg,x,Sensor Magnetic Field - Right Lower Leg x
+sensorMagneticField_7,Sensor Magnetic Field,Right Lower Leg y,Right Lower Leg,y,Sensor Magnetic Field - Right Lower Leg y
+sensorMagneticField_8,Sensor Magnetic Field,Right Lower Leg z,Right Lower Leg,z,Sensor Magnetic Field - Right Lower Leg z
+sensorMagneticField_9,Sensor Magnetic Field,Right Foot x,Right Foot,x,Sensor Magnetic Field - Right Foot x
+sensorMagneticField_10,Sensor Magnetic Field,Right Foot y,Right Foot,y,Sensor Magnetic Field - Right Foot y
+sensorMagneticField_11,Sensor Magnetic Field,Right Foot z,Right Foot,z,Sensor Magnetic Field - Right Foot z
+sensorMagneticField_12,Sensor Magnetic Field,Left Upper Leg x,Left Upper Leg,x,Sensor Magnetic Field - Left Upper Leg x
+sensorMagneticField_13,Sensor Magnetic Field,Left Upper Leg y,Left Upper Leg,y,Sensor Magnetic Field - Left Upper Leg y
+sensorMagneticField_14,Sensor Magnetic Field,Left Upper Leg z,Left Upper Leg,z,Sensor Magnetic Field - Left Upper Leg z
+sensorMagneticField_15,Sensor Magnetic Field,Left Lower Leg x,Left Lower Leg,x,Sensor Magnetic Field - Left Lower Leg x
+sensorMagneticField_16,Sensor Magnetic Field,Left Lower Leg y,Left Lower Leg,y,Sensor Magnetic Field - Left Lower Leg y
+sensorMagneticField_17,Sensor Magnetic Field,Left Lower Leg z,Left Lower Leg,z,Sensor Magnetic Field - Left Lower Leg z
+sensorMagneticField_18,Sensor Magnetic Field,Left Foot x,Left Foot,x,Sensor Magnetic Field - Left Foot x
+sensorMagneticField_19,Sensor Magnetic Field,Left Foot y,Left Foot,y,Sensor Magnetic Field - Left Foot y
+sensorMagneticField_20,Sensor Magnetic Field,Left Foot z,Left Foot,z,Sensor Magnetic Field - Left Foot z
+sensorOrientation_0,Sensor Orientation - Quat,Pelvis q0,Pelvis,q0,Sensor Orientation Quaternion - Pelvis q0
+sensorOrientation_1,Sensor Orientation - Quat,Pelvis q1,Pelvis,q1,Sensor Orientation Quaternion - Pelvis q1
+sensorOrientation_2,Sensor Orientation - Quat,Pelvis q2,Pelvis,q2,Sensor Orientation Quaternion - Pelvis q2
+sensorOrientation_3,Sensor Orientation - Quat,Pelvis q3,Pelvis,q3,Sensor Orientation Quaternion - Pelvis q3
+sensorOrientation_4,Sensor Orientation - Quat,Right Upper Leg q0,Right Upper Leg,q0,Sensor Orientation Quaternion - Right Upper Leg q0
+sensorOrientation_5,Sensor Orientation - Quat,Right Upper Leg q1,Right Upper Leg,q1,Sensor Orientation Quaternion - Right Upper Leg q1
+sensorOrientation_6,Sensor Orientation - Quat,Right Upper Leg q2,Right Upper Leg,q2,Sensor Orientation Quaternion - Right Upper Leg q2
+sensorOrientation_7,Sensor Orientation - Quat,Right Upper Leg q3,Right Upper Leg,q3,Sensor Orientation Quaternion - Right Upper Leg q3
+sensorOrientation_8,Sensor Orientation - Quat,Right Lower Leg q0,Right Lower Leg,q0,Sensor Orientation Quaternion - Right Lower Leg q0
+sensorOrientation_9,Sensor Orientation - Quat,Right Lower Leg q1,Right Lower Leg,q1,Sensor Orientation Quaternion - Right Lower Leg q1
+sensorOrientation_10,Sensor Orientation - Quat,Right Lower Leg q2,Right Lower Leg,q2,Sensor Orientation Quaternion - Right Lower Leg q2
+sensorOrientation_11,Sensor Orientation - Quat,Right Lower Leg q3,Right Lower Leg,q3,Sensor Orientation Quaternion - Right Lower Leg q3
+sensorOrientation_12,Sensor Orientation - Quat,Right Foot q0,Right Foot,q0,Sensor Orientation Quaternion - Right Foot q0
+sensorOrientation_13,Sensor Orientation - Quat,Right Foot q1,Right Foot,q1,Sensor Orientation Quaternion - Right Foot q1
+sensorOrientation_14,Sensor Orientation - Quat,Right Foot q2,Right Foot,q2,Sensor Orientation Quaternion - Right Foot q2
+sensorOrientation_15,Sensor Orientation - Quat,Right Foot q3,Right Foot,q3,Sensor Orientation Quaternion - Right Foot q3
+sensorOrientation_16,Sensor Orientation - Quat,Left Upper Leg q0,Left Upper Leg,q0,Sensor Orientation Quaternion - Left Upper Leg q0
+sensorOrientation_17,Sensor Orientation - Quat,Left Upper Leg q1,Left Upper Leg,q1,Sensor Orientation Quaternion - Left Upper Leg q1
+sensorOrientation_18,Sensor Orientation - Quat,Left Upper Leg q2,Left Upper Leg,q2,Sensor Orientation Quaternion - Left Upper Leg q2
+sensorOrientation_19,Sensor Orientation - Quat,Left Upper Leg q3,Left Upper Leg,q3,Sensor Orientation Quaternion - Left Upper Leg q3
+sensorOrientation_20,Sensor Orientation - Quat,Left Lower Leg q0,Left Lower Leg,q0,Sensor Orientation Quaternion - Left Lower Leg q0
+sensorOrientation_21,Sensor Orientation - Quat,Left Lower Leg q1,Left Lower Leg,q1,Sensor Orientation Quaternion - Left Lower Leg q1
+sensorOrientation_22,Sensor Orientation - Quat,Left Lower Leg q2,Left Lower Leg,q2,Sensor Orientation Quaternion - Left Lower Leg q2
+sensorOrientation_23,Sensor Orientation - Quat,Left Lower Leg q3,Left Lower Leg,q3,Sensor Orientation Quaternion - Left Lower Leg q3
+sensorOrientation_24,Sensor Orientation - Quat,Left Foot q0,Left Foot,q0,Sensor Orientation Quaternion - Left Foot q0
+sensorOrientation_25,Sensor Orientation - Quat,Left Foot q1,Left Foot,q1,Sensor Orientation Quaternion - Left Foot q1
+sensorOrientation_26,Sensor Orientation - Quat,Left Foot q2,Left Foot,q2,Sensor Orientation Quaternion - Left Foot q2
+sensorOrientation_27,Sensor Orientation - Quat,Left Foot q3,Left Foot,q3,Sensor Orientation Quaternion - Left Foot q3
