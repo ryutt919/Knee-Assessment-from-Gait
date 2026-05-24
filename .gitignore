@@ -5,6 +5,14 @@ mds/
 misc/
 zip/
 agent_temp/
+harness/
+logs/
+prompts/
+specs/
+tests/
+context/
+agents/
+state/
 
 *.md
 **/*.md

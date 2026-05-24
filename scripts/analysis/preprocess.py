@@ -802,4 +802,5 @@ def run_preprocessing(
 
 
 # 스크립트 직접 실행 시 전처리 파이프라인을 즉시 수행한다.
-run_preprocessing()
+if __name__ == "__main__":
+    run_preprocessing()
