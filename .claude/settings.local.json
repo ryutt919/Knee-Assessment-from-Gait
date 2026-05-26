@@ -1,4 +1,7 @@
 {
+  "env": {
+    "PATH": "/Users/ryutt/Desktop/mini_ryutt/Walking/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+  },
   "permissions": {
     "allow": [
       "Bash(python3:*)",
@@ -21,7 +24,11 @@
       "Bash(jupyter nbconvert:*)",
       "Bash(claude --version)",
       "Bash(where claude:*)",
-      "Bash(claude skills:*)"
+      "Bash(claude skills:*)",
+      "Bash(sort -t/ -k8)",
+      "Bash(python smoke_test.py)",
+      "Bash(pkill -f smoke_test.py)",
+      "Bash(../.venv/bin/python -c ' *)"
     ]
   }
 }

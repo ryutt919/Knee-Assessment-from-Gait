@@ -1,0 +1,70 @@
+# Optuna 하이퍼파라미터 탐색 범위
+# 형식: [low, high, (log)] 또는 [choice1, choice2, ...]
+
+logreg:
+  C:          [1.0e-3, 1.0e2, log]
+  penalty:    [l2, l1, elasticnet]
+  l1_ratio:   [0.0, 1.0]            # elasticnet 전용
+
+linearsvc:
+  C:          [1.0e-3, 1.0e2, log]
+
+svm_rbf:
+  C:          [1.0e-3, 1.0e2, log]
+  gamma:      [1.0e-4, 1.0e1, log]
+
+rf:
+  n_estimators:     [200, 1000]
+  max_depth:        [3, 20, null]   # null = 제한 없음
+  max_features:     [sqrt, log2, 0.5]
+  min_samples_split: [2, 20]
+  min_samples_leaf:  [1, 10]
+
+gbt:
+  n_estimators:  [100, 600]
+  learning_rate: [0.01, 0.2, log]
+  max_depth:     [2, 6]
+  subsample:     [0.5, 1.0]
+  min_samples_leaf: [1, 10]
+
+xgboost:
+  n_estimators:  [100, 600]
+  learning_rate: [0.01, 0.2, log]
+  max_depth:     [2, 6]
+  subsample:     [0.5, 1.0]
+  colsample_bytree: [0.5, 1.0]
+  min_child_weight: [1, 10]
+
+lightgbm:
+  n_estimators:  [100, 600]
+  learning_rate: [0.01, 0.2, log]
+  num_leaves:    [16, 128]
+  subsample:     [0.5, 1.0]
+  colsample_bytree: [0.5, 1.0]
+  min_child_samples: [5, 50]
+
+fpca:
+  n_components: [10, 120]
+  clf_C:        [1.0e-3, 1.0e2, log]
+
+cnn1d:
+  num_layers:  [2, 5]
+  channels:    [16, 128]
+  kernel_size: [3, 11]
+  dilation:    [1, 4]
+  dropout:     [0.0, 0.5]
+  lr:          [1.0e-4, 1.0e-2, log]
+  weight_decay: [0.0, 1.0e-2]
+  batch_size:   [8, 64]
+
+transformer:
+  d_model:       [32, 256]
+  n_heads:       [2, 4, 8]         # d_model의 약수여야 함
+  num_layers:    [1, 4]
+  dim_feedforward: [64, 512]
+  dropout:       [0.0, 0.5]
+  attention_dropout: [0.0, 0.3]
+  lr:            [1.0e-5, 5.0e-4, log]
+  weight_decay:  [0.0, 1.0e-2]
+  warmup_ratio:  [0.0, 0.1]
+  batch_size:    [4, 32]

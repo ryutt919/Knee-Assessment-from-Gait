@@ -28,3 +28,25 @@ Thumbs.db
 *.png
 *.jpeg
 *.txt
+
+# 데이터베이스 (MLflow, Optuna)
+*.db
+
+# 로그 파일
+*.log
+
+# 직렬화 파일
+*.pkl
+
+# ML 파이프라인 산출물
+ML_based/artifacts/logs/
+ML_based/artifacts/optuna/
+ML_based/artifacts/*.csv
+ML_based/data/splits/
+ML_based/reports/report_*.html
+ML_based/reports/pipeline_report_*.html
+ML_based/mlflow.db
+ML_based/pipeline_full_train.log
+
+# HTML 산출물
+htmls/

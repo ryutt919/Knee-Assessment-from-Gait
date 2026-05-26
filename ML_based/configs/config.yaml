@@ -1,0 +1,113 @@
+# ── 데이터 경로 ──────────────────────────────────────
+data:
+  root: ../data/processed
+  scalar_subject:  features_scalar.csv
+  scalar_stride:   stride_level_peaks.parquet
+  waveform_norm_101: waveforms_stride.parquet
+  raw_cycles:      stride_raw_waveforms.parquet   # Phase 1 생성 산출물
+  raw_slim:        slim_gait.parquet
+  feature_ranking: feature_ranking.csv
+  gait_global:     ../data/gait_analysis_global.csv
+
+# ── 전처리 / 피처 설정 ─────────────────────────────
+features:
+  speed_as_feature: true        # normal/slow/fast one-hot
+  stride_trim: 2                # trial 앞뒤 각 N개 stride 제거 (가속/감속 구간)
+  feature_select: eta2_top30    # none | eta2_topK (K=정수) | all
+  waveform_type: norm_101       # norm_101 | raw_padded
+  waveform_norm: zscore         # none | zscore | ha_centered
+
+# ── 학습 / CV ──────────────────────────────────────
+cv:
+  n_outer: 5
+  n_inner: 3
+  group_col: subject_id
+  seed: 42
+
+targets:
+  mode: binary                  # binary | multiclass
+  binary_map:
+    ACLD: 1
+    ACLR: 1
+    HA: 0
+
+# ── 모델별 설정 (enabled=false로 개별 비활성화 가능) ──
+models:
+  logreg:
+    enabled: true
+    max_iter: 1000
+    class_weight: balanced
+
+  linearsvc:
+    enabled: true
+    class_weight: balanced
+    max_iter: 2000
+
+  svm_rbf:
+    enabled: true
+    class_weight: balanced
+
+  rf:
+    enabled: true
+    class_weight: balanced
+    n_jobs: 4
+
+  gbt:
+    enabled: true
+
+  xgboost:
+    enabled: true
+    early_stopping_rounds: 50
+    n_jobs: 4
+
+  lightgbm:
+    enabled: true
+    early_stopping_rounds: 50
+    verbose: -1
+    n_jobs: 4
+
+  fpca:
+    enabled: true
+    input: norm_101             # norm_101만 지원
+
+  cnn1d:
+    enabled: true
+    max_epochs: 200
+    batch_size: 32
+    early_stop:
+      monitor: val_macro_f1
+      patience: 15
+      min_delta: 0.001
+      restore_best: true
+
+  transformer:
+    enabled: true
+    max_epochs: 200
+    batch_size: 16
+    early_stop:
+      monitor: val_macro_f1
+      patience: 15
+      min_delta: 0.001
+      restore_best: true
+
+# ── 테스트 모드 ─────────────────────────────────
+# --test 플래그로 활성화: 파이프라인 실행 확인만 가능한 최소 설정
+test_mode:
+  enabled: false
+  n_samples: 60          # 균형 샘플 피험자 수 (20명 × 3그룹)
+  n_outer: 2
+  n_inner: 2
+  n_trials_sklearn: 1
+  n_trials_dl: 1
+  max_epochs_dl: 2
+  feature_select: all    # eta2 필터 무시 (컬럼 불일치 방지)
+
+# ── Optuna ───────────────────────────────────────
+optuna:
+  n_trials:
+    sklearn: 50
+    dl: 30
+  pruner: MedianPruner
+  pruner_warmup_steps: 10
+  direction: maximize
+  metric: macro_f1
