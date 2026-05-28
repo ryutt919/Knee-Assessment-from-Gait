@@ -16,6 +16,7 @@ state/
 
 *.md
 **/*.md
+!CLAUDE.md
 __pycache__/
 *.py[cod]
 
@@ -38,7 +39,8 @@ Thumbs.db
 # 직렬화 파일
 *.pkl
 
-# ML 파이프라인 산출물
+# ML 파이프라인 산출물 (버전별 artifacts 폴더)
+ML_based/artifacts-*/
 ML_based/artifacts/logs/
 ML_based/artifacts/optuna/
 ML_based/artifacts/*.csv
