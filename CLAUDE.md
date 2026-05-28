@@ -156,6 +156,7 @@ After implementing or modifying code, always do these three things **in order**:
 2. **Update this CLAUDE.md** — reflect any new bugs, design changes, or command changes in the relevant section immediately.
 
 3. **Update HTML status report** — regenerate `ML_based/reports/status_report.html` with:
+   - Always use **light theme** (white background, dark text)
    - Date and summary of changes
    - Latest model performance (macro_f1 per model)
    - Known issues and next tasks
