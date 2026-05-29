@@ -1,0 +1,186 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>0529 ML Execution Log</title><style>
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#182230;margin:0;line-height:1.6}
+    main{max-width:1120px;margin:0 auto;padding:34px 28px 64px}
+    h1{font-size:30px;margin:0 0 8px;color:#0f172a} h2{font-size:22px;margin-top:34px;border-bottom:1px solid #e5e7eb;padding-bottom:8px}
+    h3{font-size:17px;margin-top:24px}.muted{color:#64748b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;background:#f8fafc}.metric{font-size:28px;font-weight:750;color:#1a6ca8}
+    table.tbl{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0} .tbl th{background:#f1f5f9;text-align:left}.tbl th,.tbl td{border:1px solid #e5e7eb;padding:7px 9px}
+    figure{margin:18px 0;padding:0}img{max-width:100%;border:1px solid #e5e7eb;border-radius:8px;background:#fff}figcaption{font-size:13px;color:#64748b;margin-top:6px}
+    code{background:#f1f5f9;border-radius:4px;padding:2px 5px}.ok{color:#15803d;font-weight:700}.warn{color:#b45309;font-weight:700}.bad{color:#b91c1c;font-weight:700}
+    ul{padding-left:22px}.small{font-size:13px}pre{white-space:pre-wrap;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:12px;max-height:420px;overflow:auto}
+    </style></head>
+    <body><main><h1>0529 ML 실행 로그</h1><p class="muted">생성 시각: 2026-05-30 00:51:41</p>
+    <section class="grid">
+      <div class="card"><div class="muted">선택 데이터</div><div>data/processed/stride_level_peaks.parquet</div></div>
+      <div class="card"><div class="muted">샘플 / 피험자</div><div>15135 rows / 79 subjects</div></div>
+      <div class="card"><div class="muted">최고 모델</div><div>random_forest</div></div>
+      <div class="card"><div class="muted">Stride ROC-AUC</div><div class="metric">0.647</div></div>
+    </section>
+    <h2>읽은 파일</h2><ul><li><code>GAI 중간 결과/intro.md</code></li><li><code>GAI 중간 결과/statistics_v1.html</code></li><li><code>GAI 중간 결과/0527_main.html</code></li></ul>
+    <h2>실행 환경</h2><pre>{
+  &quot;python&quot;: &quot;3.14.4&quot;,
+  &quot;platform&quot;: &quot;macOS-26.4.1-arm64-arm-64bit-Mach-O&quot;,
+  &quot;pandas&quot;: &quot;3.0.3&quot;
+}</pre>
+    <h2>실행 명령</h2><ul><li><code>python -m venv 0529_ML/.venv</code></li><li><code>0529_ML/.venv/bin/python -m pip install pandas pyarrow scikit-learn matplotlib joblib xgboost lightgbm</code></li><li><code>0529_ML/.venv/bin/python 0529_ML/scripts/01_run_ml_pipeline.py</code></li></ul>
+    <h2>데이터 인벤토리</h2><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>path</th>
+      <th>shape</th>
+      <th>columns_preview</th>
+      <th>group_col</th>
+      <th>subject_col</th>
+      <th>group_counts</th>
+      <th>n_subjects</th>
+      <th>usable_features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data/processed/stride_level_peaks.parquet</td>
+      <td>[15135, 50]</td>
+      <td>['subject_id', 'group', 'speed', 'side', 'stride_idx', 'hip_adduction_peak', 'hip_adduction_min', 'hip_adduction_ROM', 'hip_adduction_IC_angle', 'hip_adduction_peak_timing', 'hip_int_rotation_peak', 'hip_int_rotation_min', 'hip_int_rotation_ROM', 'hip_int_rotation_IC_angle', 'hip_int_rotation_peak_timing', 'hip_flexion_peak', 'hip_flexion_min', 'hip_flexion_ROM', 'hip_flexion_IC_angle', 'hip_flexion_peak_timing', 'knee_adduction_peak', 'knee_adduction_min', 'knee_adduction_ROM', 'knee_adduction_IC_angle', 'knee_adduction_peak_timing', 'knee_int_rotation_peak', 'knee_int_rotation_min', 'knee_int_rotation_ROM', 'knee_int_rotation_IC_angle', 'knee_int_rotation_peak_timing', 'knee_flexion_peak', 'knee_flexion_min', 'knee_flexion_ROM', 'knee_flexion_IC_angle', 'knee_flexion_peak_timing', 'ankle_adduction_peak', 'ankle_adduction_min', 'ankle_adduction_ROM', 'ankle_adduction_IC_angle', 'ankle_adduction_peak_timing']</td>
+      <td>group</td>
+      <td>subject_id</td>
+      <td>{'ACLD': 5421, 'HA': 4862, 'ACLR': 4852}</td>
+      <td>79.000</td>
+      <td>46.000</td>
+    </tr>
+    <tr>
+      <td>data/processed/features_scalar.csv</td>
+      <td>[237, 148]</td>
+      <td>['subject_id', 'group', 'speed', 'injured_leg', 'hip_adduction_peak_injured', 'hip_adduction_min_injured', 'hip_adduction_ROM_injured', 'hip_adduction_IC_angle_injured', 'hip_adduction_peak_timing_injured', 'hip_adduction_peak_contralateral', 'hip_adduction_min_contralateral', 'hip_adduction_ROM_contralateral', 'hip_adduction_IC_angle_contralateral', 'hip_adduction_peak_timing_contralateral', 'hip_int_rotation_peak_injured', 'hip_int_rotation_min_injured', 'hip_int_rotation_ROM_injured', 'hip_int_rotation_IC_angle_injured', 'hip_int_rotation_peak_timing_injured', 'hip_int_rotation_peak_contralateral', 'hip_int_rotation_min_contralateral', 'hip_int_rotation_ROM_contralateral', 'hip_int_rotation_IC_angle_contralateral', 'hip_int_rotation_peak_timing_contralateral', 'hip_flexion_peak_injured', 'hip_flexion_min_injured', 'hip_flexion_ROM_injured', 'hip_flexion_IC_angle_injured', 'hip_flexion_peak_timing_injured', 'hip_flexion_peak_contralateral', 'hip_flexion_min_contralateral', 'hip_flexion_ROM_contralateral', 'hip_flexion_IC_angle_contralateral', 'hip_flexion_peak_timing_contralateral', 'knee_adduction_peak_injured', 'knee_adduction_min_injured', 'knee_adduction_ROM_injured', 'knee_adduction_IC_angle_injured', 'knee_adduction_peak_timing_injured', 'knee_adduction_peak_contralateral']</td>
+      <td>group</td>
+      <td>subject_id</td>
+      <td>{'ACLD': 81, 'ACLR': 81, 'HA': 75}</td>
+      <td>79.000</td>
+      <td>145.000</td>
+    </tr>
+    <tr>
+      <td>data/processed/analysis_data.csv</td>
+      <td>[237, 38]</td>
+      <td>['subject_id', 'group', 'speed', 'injured_leg', 'hip_adduction_injured', 'hip_adduction_contralateral', 'hip_int_rotation_injured', 'hip_int_rotation_contralateral', 'hip_flexion_injured', 'hip_flexion_contralateral', 'knee_adduction_injured', 'knee_adduction_contralateral', 'knee_int_rotation_injured', 'knee_int_rotation_contralateral', 'knee_flexion_injured', 'knee_flexion_contralateral', 'ankle_adduction_injured', 'ankle_adduction_contralateral', 'ankle_int_rotation_injured', 'ankle_int_rotation_contralateral', 'ankle_dorsiflexion_injured', 'ankle_dorsiflexion_contralateral', 'hip_flexion_LSI', 'hip_adduction_LSI', 'hip_int_rotation_LSI', 'knee_flexion_LSI', 'knee_adduction_LSI', 'knee_int_rotation_LSI', 'ankle_dorsiflexion_LSI', 'ankle_adduction_LSI', 'ankle_int_rotation_LSI', 'gait_speed_mps', 'cadence_spm', 'stride_length_mean_m', 'step_width_mean_m_orth', 'double_support_pct', 'single_support_L_pct', 'single_support_R_pct']</td>
+      <td>group</td>
+      <td>subject_id</td>
+      <td>{'ACLD': 81, 'ACLR': 81, 'HA': 75}</td>
+      <td>79.000</td>
+      <td>33.000</td>
+    </tr>
+    <tr>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>[273, 388]</td>
+      <td>['subject_id', 'person_id', 'group', 'speed', 'sex', 'age', 'weight', 'height', 'injured_leg', 'pseudo_injured_leg', 'hip_adduction_injured_peak_max', 'hip_adduction_injured_peak_min', 'hip_adduction_injured_rom', 'hip_adduction_injured_peak_max_pct', 'hip_adduction_injured_peak_min_pct', 'hip_adduction_injured_waveform_mean', 'hip_adduction_injured_loading_response_mean', 'hip_adduction_injured_mid_stance_mean', 'hip_adduction_injured_terminal_stance_mean', 'hip_adduction_injured_swing_mean', 'hip_adduction_injured_spm_region_mean', 'hip_int_rotation_injured_peak_max', 'hip_int_rotation_injured_peak_min', 'hip_int_rotation_injured_rom', 'hip_int_rotation_injured_peak_max_pct', 'hip_int_rotation_injured_peak_min_pct', 'hip_int_rotation_injured_waveform_mean', 'hip_int_rotation_injured_loading_response_mean', 'hip_int_rotation_injured_mid_stance_mean', 'hip_int_rotation_injured_terminal_stance_mean', 'hip_int_rotation_injured_swing_mean', 'hip_int_rotation_injured_spm_region_mean', 'hip_flexion_injured_peak_max', 'hip_flexion_injured_peak_min', 'hip_flexion_injured_rom', 'hip_flexion_injured_peak_max_pct', 'hip_flexion_injured_peak_min_pct', 'hip_flexion_injured_waveform_mean', 'hip_flexion_injured_loading_response_mean', 'hip_flexion_injured_mid_stance_mean']</td>
+      <td>group</td>
+      <td>subject_id</td>
+      <td>{'ACLD': 120, 'ACLR': 78, 'HA': 75}</td>
+      <td>91.000</td>
+      <td>307.000</td>
+    </tr>
+  </tbody>
+</table>
+    <h2>주요 로그</h2><ul>
+      <li>기존 파일은 읽기만 수행했고 모든 산출물은 <code>0529_ML</code> 내부에 저장했다.</li>
+      <li>DL 모델은 실행하지 않았다.</li>
+      <li>누수 방지를 위해 group/target/label/id/subject/file/path/split/match 계열 컬럼을 feature에서 제외했다.</li>
+      <li>평가는 subject 기준 StratifiedGroupKFold로 수행했다.</li>
+    </ul>
+    <h2>모델별 실행 상태</h2><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>accuracy</th>
+      <th>balanced_accuracy</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1</th>
+      <th>macro_f1</th>
+      <th>roc_auc</th>
+      <th>average_precision</th>
+      <th>model</th>
+      <th>n_folds</th>
+      <th>cv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.654</td>
+      <td>0.594</td>
+      <td>0.737</td>
+      <td>0.762</td>
+      <td>0.749</td>
+      <td>0.596</td>
+      <td>0.647</td>
+      <td>0.785</td>
+      <td>random_forest</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.638</td>
+      <td>0.582</td>
+      <td>0.731</td>
+      <td>0.740</td>
+      <td>0.735</td>
+      <td>0.583</td>
+      <td>0.629</td>
+      <td>0.770</td>
+      <td>lightgbm</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.687</td>
+      <td>0.551</td>
+      <td>0.703</td>
+      <td>0.932</td>
+      <td>0.802</td>
+      <td>0.530</td>
+      <td>0.627</td>
+      <td>0.764</td>
+      <td>xgboost</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.688</td>
+      <td>0.548</td>
+      <td>0.702</td>
+      <td>0.939</td>
+      <td>0.803</td>
+      <td>0.524</td>
+      <td>0.626</td>
+      <td>0.763</td>
+      <td>gradient_boosting</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.572</td>
+      <td>0.541</td>
+      <td>0.709</td>
+      <td>0.627</td>
+      <td>0.665</td>
+      <td>0.536</td>
+      <td>0.577</td>
+      <td>0.734</td>
+      <td>logistic_regression</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.517</td>
+      <td>0.541</td>
+      <td>0.719</td>
+      <td>0.473</td>
+      <td>0.571</td>
+      <td>0.509</td>
+      <td>0.537</td>
+      <td>0.706</td>
+      <td>linear_svm</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+  </tbody>
+</table>
+    <h2>생성 산출물</h2><ul><li><code>.gitignore</code></li><li><code>figures/01_group_distribution.png</code></li><li><code>figures/02_missingness.png</code></li><li><code>figures/03_best_model_roc.png</code></li><li><code>figures/04_best_model_pr.png</code></li><li><code>figures/05_best_model_confusion_matrix.png</code></li><li><code>figures/06_best_model_feature_importance.png</code></li><li><code>htmls/01_execution_log.html</code></li><li><code>htmls/02_ml_result_report.html</code></li><li><code>logs/01_execution_log.json</code></li><li><code>models/01_best_traditional_ml_model.joblib</code></li><li><code>results/00_source_document_summary.json</code></li><li><code>results/01_eda_summary.json</code></li><li><code>results/02_data_inventory.csv</code></li><li><code>results/03_missingness.csv</code></li><li><code>results/04_model_metrics_stride_level.csv</code></li><li><code>results/05_model_cv_details.json</code></li><li><code>results/06_subject_level_predictions.csv</code></li><li><code>results/07_subject_level_metrics.json</code></li><li><code>results/08_best_model_feature_importance.csv</code></li><li><code>results/09_candidate_dataset_model_metrics.csv</code></li><li><code>results/10_overall_best_candidate.json</code></li><li><code>scripts/01_run_ml_pipeline.py</code></li><li><code>scripts/02_compare_candidate_datasets.py</code></li></ul>
+    </main></body></html>

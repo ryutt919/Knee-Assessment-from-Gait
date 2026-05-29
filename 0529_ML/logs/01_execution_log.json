@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-05-30T00:51:41",
+  "best_model": "random_forest",
+  "best_stride_auc": 0.6466116924858,
+  "subject_auc": 0.7503703703703705,
+  "outputs": [
+    ".gitignore",
+    "figures/01_group_distribution.png",
+    "figures/02_missingness.png",
+    "figures/03_best_model_roc.png",
+    "figures/04_best_model_pr.png",
+    "figures/05_best_model_confusion_matrix.png",
+    "figures/06_best_model_feature_importance.png",
+    "htmls/01_execution_log.html",
+    "htmls/02_ml_result_report.html",
+    "logs/01_execution_log.json",
+    "models/01_best_traditional_ml_model.joblib",
+    "results/00_source_document_summary.json",
+    "results/01_eda_summary.json",
+    "results/02_data_inventory.csv",
+    "results/03_missingness.csv",
+    "results/04_model_metrics_stride_level.csv",
+    "results/05_model_cv_details.json",
+    "results/06_subject_level_predictions.csv",
+    "results/07_subject_level_metrics.json",
+    "results/08_best_model_feature_importance.csv",
+    "results/09_candidate_dataset_model_metrics.csv",
+    "results/10_overall_best_candidate.json",
+    "scripts/01_run_ml_pipeline.py",
+    "scripts/02_compare_candidate_datasets.py"
+  ],
+  "candidate_best_model": "svc_rbf",
+  "candidate_best_dataset": "data/processed/features_scalar.csv",
+  "candidate_best_auc": 0.8865020576131687,
+  "commands_added": [
+    "0529_ML/.venv/bin/python 0529_ML/scripts/02_compare_candidate_datasets.py"
+  ]
+}

@@ -1,0 +1,639 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>0529 ML Result Report</title><style>
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#182230;margin:0;line-height:1.6}
+    main{max-width:1120px;margin:0 auto;padding:34px 28px 64px}
+    h1{font-size:30px;margin:0 0 8px;color:#0f172a} h2{font-size:22px;margin-top:34px;border-bottom:1px solid #e5e7eb;padding-bottom:8px}
+    h3{font-size:17px;margin-top:24px}.muted{color:#64748b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;background:#f8fafc}.metric{font-size:28px;font-weight:750;color:#1a6ca8}
+    table.tbl{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0} .tbl th{background:#f1f5f9;text-align:left}.tbl th,.tbl td{border:1px solid #e5e7eb;padding:7px 9px}
+    figure{margin:18px 0;padding:0}img{max-width:100%;border:1px solid #e5e7eb;border-radius:8px;background:#fff}figcaption{font-size:13px;color:#64748b;margin-top:6px}
+    code{background:#f1f5f9;border-radius:4px;padding:2px 5px}.ok{color:#15803d;font-weight:700}.warn{color:#b45309;font-weight:700}.bad{color:#b91c1c;font-weight:700}
+    ul{padding-left:22px}.small{font-size:13px}pre{white-space:pre-wrap;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:12px;max-height:420px;overflow:auto}
+    </style></head>
+    <body><main><h1>ACL 보행 전통 ML 결과 보고서</h1><p class="muted">생성 시각: 2026-05-30 00:51:41 · Light theme</p>
+    <section class="grid">
+      <div class="card"><div class="muted">목표</div><div>ACLD/ACLR vs HA 이진 분류</div></div>
+      <div class="card"><div class="muted">최고 모델</div><div>random_forest</div></div>
+      <div class="card"><div class="muted">Stride ROC-AUC</div><div class="metric">0.647</div></div>
+      <div class="card"><div class="muted">95% AUC 목표</div><div><span class='bad'>미달</span></div></div>
+    </section>
+    
+    <section class="grid">
+      <div class="card"><div class="muted">전체 후보 최고</div><div>svc_rbf</div></div>
+      <div class="card"><div class="muted">전체 후보 데이터</div><div><code>data/processed/features_scalar.csv</code></div></div>
+      <div class="card"><div class="muted">전체 후보 ROC-AUC</div><div class="metric">0.887</div></div>
+      <div class="card"><div class="muted">누수 강화 기준</div><div>SPM/demographic/leg metadata 제외</div></div>
+    </section>
+    <p class="warn">주의: 상단 첫 요약의 stride-level 모델은 원 계획의 stride 테이블 기준 결과이며, 전체 후보 비교 최고 성능은 위 카드와 하단 후보 비교 표를 기준으로 해석한다.</p>
+<h2>연구 배경 요약</h2><p>IMU 기반 다속도 보행 데이터로 ACL 결손(ACLD), ACL 재건(ACLR), 건강 대조군(HA)의 보행 차이를 분석한다. 기존 통계 보고서는 ACLD 27명, ACLR 27명, HA 25명, Normal/Slow/Fast 3속도 조건, Hip/Knee/Ankle 3평면 관절각 및 LSI/ROM/peak 지표를 사용했다.</p><p>Bonferroni 보정 후 5개 스칼라 지표가 유의했고, fast 속도 무릎 굴곡 loading response peak LSI가 가장 큰 효과 크기를 보였다. ACLR 환측 무릎 굴곡 첫 피크가 건측 대비 낮고, 고관절 굴곡 ROM 감소는 ACLD/ACLR 모두에서 HA 대비 관찰되었다.</p>
+    <h2>타깃 정의</h2><p>기본 ML 타깃은 ACLD/ACLR=1, HA=0 이진 분류로 둔다. 이는 임상적으로 ACL 병력군과 건강 대조군 판별에 직접 대응하며, 피험자 수가 작은 3군 다중분류보다 subject-safe CV에서 더 안정적이다.</p>
+    <h2>데이터 요약</h2><p>선택 데이터는 <code>data/processed/stride_level_peaks.parquet</code>이며 15135행, 52열, 79명의 subject를 포함한다.</p>
+    <div class="grid"><div class="card"><b>행 기준 그룹</b><pre>{
+  &quot;ACLD&quot;: 5421,
+  &quot;HA&quot;: 4862,
+  &quot;ACLR&quot;: 4852
+}</pre></div>
+    <div class="card"><b>Subject 기준 그룹</b><pre>{
+  &quot;ACLD&quot;: 27,
+  &quot;ACLR&quot;: 27,
+  &quot;HA&quot;: 25
+}</pre></div></div>
+    <figure><img src="../figures/01_group_distribution.png" alt="그룹별 행 수와 subject 수"><figcaption>그룹별 행 수와 subject 수</figcaption></figure>
+    <figure><img src="../figures/02_missingness.png" alt="상위 결측 feature"><figcaption>상위 결측 feature</figcaption></figure>
+    <h2>전처리 및 누수 방지</h2><ul>
+      <li>결측 numeric feature는 train fold median, categorical feature는 최빈값으로 대체했다.</li>
+      <li>범주형 feature는 train fold one-hot encoding을 적용했다.</li>
+      <li>선형/SVM 계열은 scaling을 train fold 안에서만 수행했다.</li>
+      <li>Dropped identifiers, labels, group/cohort fields, source/path/file, split/fold, and matching/pair columns.</li>
+      <li>Feature selection은 fold 내부 <code>SelectKBest(f_classif, k<=30)</code>로 제한했다.</li>
+    </ul>
+    <h2>검증 전략</h2><p>동일 subject의 stride가 train/test fold에 동시에 들어가지 않도록 subject group 기반 CV를 사용했다. CV 방식: <code>StratifiedGroupKFold</code>.</p>
+    <h2>모델별 성능 비교</h2><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>accuracy</th>
+      <th>balanced_accuracy</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1</th>
+      <th>macro_f1</th>
+      <th>roc_auc</th>
+      <th>average_precision</th>
+      <th>model</th>
+      <th>n_folds</th>
+      <th>cv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.654</td>
+      <td>0.594</td>
+      <td>0.737</td>
+      <td>0.762</td>
+      <td>0.749</td>
+      <td>0.596</td>
+      <td>0.647</td>
+      <td>0.785</td>
+      <td>random_forest</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.638</td>
+      <td>0.582</td>
+      <td>0.731</td>
+      <td>0.740</td>
+      <td>0.735</td>
+      <td>0.583</td>
+      <td>0.629</td>
+      <td>0.770</td>
+      <td>lightgbm</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.687</td>
+      <td>0.551</td>
+      <td>0.703</td>
+      <td>0.932</td>
+      <td>0.802</td>
+      <td>0.530</td>
+      <td>0.627</td>
+      <td>0.764</td>
+      <td>xgboost</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.688</td>
+      <td>0.548</td>
+      <td>0.702</td>
+      <td>0.939</td>
+      <td>0.803</td>
+      <td>0.524</td>
+      <td>0.626</td>
+      <td>0.763</td>
+      <td>gradient_boosting</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.572</td>
+      <td>0.541</td>
+      <td>0.709</td>
+      <td>0.627</td>
+      <td>0.665</td>
+      <td>0.536</td>
+      <td>0.577</td>
+      <td>0.734</td>
+      <td>logistic_regression</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.517</td>
+      <td>0.541</td>
+      <td>0.719</td>
+      <td>0.473</td>
+      <td>0.571</td>
+      <td>0.509</td>
+      <td>0.537</td>
+      <td>0.706</td>
+      <td>linear_svm</td>
+      <td>5.000</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+  </tbody>
+</table>
+    <h2>최고 모델 상세</h2>
+    <p>Stride-level ROC-AUC는 <b>0.647</b>, macro F1은 <b>0.596</b>이다. Subject-level 평균 score 기준 ROC-AUC는 <b>0.750</b>이다.</p>
+    <figure><img src="../figures/03_best_model_roc.png" alt="최고 모델 ROC 곡선: stride-level 및 subject-level"><figcaption>최고 모델 ROC 곡선: stride-level 및 subject-level</figcaption></figure>
+    <figure><img src="../figures/04_best_model_pr.png" alt="최고 모델 PR 곡선"><figcaption>최고 모델 PR 곡선</figcaption></figure>
+    <figure><img src="../figures/05_best_model_confusion_matrix.png" alt="최고 모델 stride-level confusion matrix"><figcaption>최고 모델 stride-level confusion matrix</figcaption></figure>
+    <h2>Feature Importance</h2><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>importance</th>
+      <th>abs_importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>hip_adduction_peak</td>
+      <td>0.121</td>
+      <td>0.121</td>
+    </tr>
+    <tr>
+      <td>hip_adduction_min</td>
+      <td>0.100</td>
+      <td>0.100</td>
+    </tr>
+    <tr>
+      <td>hip_adduction_ROM</td>
+      <td>0.067</td>
+      <td>0.067</td>
+    </tr>
+    <tr>
+      <td>ankle_dorsiflexion_peak_timing</td>
+      <td>0.065</td>
+      <td>0.065</td>
+    </tr>
+    <tr>
+      <td>ankle_dorsiflexion_IC_angle</td>
+      <td>0.065</td>
+      <td>0.065</td>
+    </tr>
+    <tr>
+      <td>knee_flexion_ROM</td>
+      <td>0.046</td>
+      <td>0.046</td>
+    </tr>
+    <tr>
+      <td>hip_flexion_min</td>
+      <td>0.041</td>
+      <td>0.041</td>
+    </tr>
+    <tr>
+      <td>hip_flexion_peak</td>
+      <td>0.040</td>
+      <td>0.040</td>
+    </tr>
+    <tr>
+      <td>ankle_int_rotation_ROM</td>
+      <td>0.039</td>
+      <td>0.039</td>
+    </tr>
+    <tr>
+      <td>ankle_int_rotation_min</td>
+      <td>0.033</td>
+      <td>0.033</td>
+    </tr>
+    <tr>
+      <td>hip_flexion_IC_angle</td>
+      <td>0.033</td>
+      <td>0.033</td>
+    </tr>
+    <tr>
+      <td>knee_flexion_IC_angle</td>
+      <td>0.029</td>
+      <td>0.029</td>
+    </tr>
+    <tr>
+      <td>ankle_adduction_min</td>
+      <td>0.028</td>
+      <td>0.028</td>
+    </tr>
+    <tr>
+      <td>hip_flexion_ROM</td>
+      <td>0.027</td>
+      <td>0.027</td>
+    </tr>
+    <tr>
+      <td>knee_flexion_peak</td>
+      <td>0.026</td>
+      <td>0.026</td>
+    </tr>
+  </tbody>
+</table>
+    <figure><img src="../figures/06_best_model_feature_importance.png" alt="최고 모델 상위 feature importance"><figcaption>최고 모델 상위 feature importance</figcaption></figure>
+    <h2>기존 통계 결과와의 연결</h2><p>기존 보고서에서 fast 조건 무릎 굴곡 loading response peak LSI, 고관절 굴곡 ROM, 대칭성 관련 지표가 주요 차이로 제시되었다. 상위 ML feature에 knee/hip, fast/speed, LSI/ROM/peak 계열이 포함되면 통계 결과와 방향성이 맞는 근거로 해석할 수 있다. 포함되지 않는 경우 subject-safe CV에서 더 일반화되는 다른 IMU 요약 지표가 선택된 것으로 보아야 한다.</p>
+    <h2>95% AUC 목표 판단 및 누수 점검</h2><p><span class='bad'>미달</span>. AUC가 0.95 미만이다. 현재 결과는 subject leakage를 제한한 보수적 평가로 보며, 추가 feature engineering과 외부 검증이 필요하다.</p>
+    <h2>한계점</h2><ul>
+      <li>데이터셋 규모가 작고 stride 단위 반복 측정이 많아 subject-level 외부 검증 없이는 일반화 성능을 확정할 수 없다.</li>
+      <li>ACLD와 ACLR을 하나의 양성 클래스로 묶어 회복 단계별 차이는 별도 모델에서 평가해야 한다.</li>
+      <li>전통 ML만 실행했으며 waveform 전체 시계열 기반 DL은 이번 목표에서 제외했다.</li>
+    </ul>
+    <h2>다음 실험 제안</h2><ul>
+      <li>ACLD vs ACLR vs HA 다중분류와 ACLR vs HA 이진분류를 별도 비교한다.</li>
+      <li>subject 단위 feature aggregation과 stride 단위 모델을 분리해 AUC 안정성을 비교한다.</li>
+      <li>속도별 단일 모델과 multi-speed 통합 모델을 비교해 H2를 직접 검증한다.</li>
+    </ul>
+    
+    <h2>후보 데이터셋 추가 비교</h2>
+    <p>동일한 누수 제거 규칙과 subject group CV로 모든 사용 가능 후보 테이블을 비교했다. 최고 후보는
+    <code>data/processed/features_scalar.csv</code> / <code>svc_rbf</code>이며 ROC-AUC는 <b>0.887</b>이다.</p>
+    <table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>accuracy</th>
+      <th>balanced_accuracy</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1</th>
+      <th>macro_f1</th>
+      <th>roc_auc</th>
+      <th>average_precision</th>
+      <th>dataset</th>
+      <th>model</th>
+      <th>rows</th>
+      <th>subjects</th>
+      <th>features</th>
+      <th>numeric_features</th>
+      <th>categorical_features</th>
+      <th>cv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.814346</td>
+      <td>0.763951</td>
+      <td>0.839080</td>
+      <td>0.901235</td>
+      <td>0.869048</td>
+      <td>0.775104</td>
+      <td>0.886502</td>
+      <td>0.940109</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>svc_rbf</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.831224</td>
+      <td>0.776296</td>
+      <td>0.842697</td>
+      <td>0.925926</td>
+      <td>0.882353</td>
+      <td>0.791923</td>
+      <td>0.872181</td>
+      <td>0.924817</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>gradient_boosting</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.835443</td>
+      <td>0.782963</td>
+      <td>0.847458</td>
+      <td>0.925926</td>
+      <td>0.884956</td>
+      <td>0.798033</td>
+      <td>0.869218</td>
+      <td>0.924480</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>xgboost</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.776371</td>
+      <td>0.779136</td>
+      <td>0.886525</td>
+      <td>0.771605</td>
+      <td>0.825083</td>
+      <td>0.757570</td>
+      <td>0.862140</td>
+      <td>0.934615</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>logistic_regression</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.831224</td>
+      <td>0.794198</td>
+      <td>0.863095</td>
+      <td>0.895062</td>
+      <td>0.878788</td>
+      <td>0.800505</td>
+      <td>0.860988</td>
+      <td>0.918707</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>lightgbm</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.797468</td>
+      <td>0.733704</td>
+      <td>0.816667</td>
+      <td>0.907407</td>
+      <td>0.859649</td>
+      <td>0.748006</td>
+      <td>0.851523</td>
+      <td>0.919820</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>random_forest</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.765568</td>
+      <td>0.668586</td>
+      <td>0.810185</td>
+      <td>0.883838</td>
+      <td>0.845411</td>
+      <td>0.680281</td>
+      <td>0.823367</td>
+      <td>0.929018</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>xgboost</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.776557</td>
+      <td>0.680303</td>
+      <td>0.815668</td>
+      <td>0.893939</td>
+      <td>0.853012</td>
+      <td>0.693682</td>
+      <td>0.814815</td>
+      <td>0.924789</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>gradient_boosting</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.769231</td>
+      <td>0.691818</td>
+      <td>0.826087</td>
+      <td>0.863636</td>
+      <td>0.844444</td>
+      <td>0.698818</td>
+      <td>0.814747</td>
+      <td>0.927709</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>lightgbm</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.776557</td>
+      <td>0.692727</td>
+      <td>0.824645</td>
+      <td>0.878788</td>
+      <td>0.850856</td>
+      <td>0.702800</td>
+      <td>0.796364</td>
+      <td>0.911268</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>random_forest</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.759494</td>
+      <td>0.680864</td>
+      <td>0.783784</td>
+      <td>0.895062</td>
+      <td>0.835735</td>
+      <td>0.693458</td>
+      <td>0.796214</td>
+      <td>0.880259</td>
+      <td>data/processed/analysis_data.csv</td>
+      <td>xgboost</td>
+      <td>237</td>
+      <td>79</td>
+      <td>33</td>
+      <td>32</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.746835</td>
+      <td>0.707407</td>
+      <td>0.814815</td>
+      <td>0.814815</td>
+      <td>0.814815</td>
+      <td>0.707407</td>
+      <td>0.788560</td>
+      <td>0.885455</td>
+      <td>data/processed/analysis_data.csv</td>
+      <td>lightgbm</td>
+      <td>237</td>
+      <td>79</td>
+      <td>33</td>
+      <td>32</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.620253</td>
+      <td>0.700741</td>
+      <td>0.928571</td>
+      <td>0.481481</td>
+      <td>0.634146</td>
+      <td>0.619705</td>
+      <td>0.787654</td>
+      <td>0.902108</td>
+      <td>data/processed/features_scalar.csv</td>
+      <td>linear_svm</td>
+      <td>237</td>
+      <td>79</td>
+      <td>145</td>
+      <td>144</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.725275</td>
+      <td>0.698788</td>
+      <td>0.847458</td>
+      <td>0.757576</td>
+      <td>0.800000</td>
+      <td>0.680702</td>
+      <td>0.780943</td>
+      <td>0.912655</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>logistic_regression</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.761905</td>
+      <td>0.670202</td>
+      <td>0.812207</td>
+      <td>0.873737</td>
+      <td>0.841849</td>
+      <td>0.680184</td>
+      <td>0.774747</td>
+      <td>0.895380</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>svc_rbf</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.713080</td>
+      <td>0.700617</td>
+      <td>0.826389</td>
+      <td>0.734568</td>
+      <td>0.777778</td>
+      <td>0.686508</td>
+      <td>0.773909</td>
+      <td>0.859985</td>
+      <td>data/processed/analysis_data.csv</td>
+      <td>logistic_regression</td>
+      <td>237</td>
+      <td>79</td>
+      <td>33</td>
+      <td>32</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.633700</td>
+      <td>0.722626</td>
+      <td>0.945455</td>
+      <td>0.525253</td>
+      <td>0.675325</td>
+      <td>0.627578</td>
+      <td>0.766734</td>
+      <td>0.908185</td>
+      <td>data/processed/waveform_based/feature_table.csv</td>
+      <td>linear_svm</td>
+      <td>273</td>
+      <td>91</td>
+      <td>307</td>
+      <td>306</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.721519</td>
+      <td>0.642346</td>
+      <td>0.763736</td>
+      <td>0.858025</td>
+      <td>0.808140</td>
+      <td>0.650224</td>
+      <td>0.759588</td>
+      <td>0.869875</td>
+      <td>data/processed/analysis_data.csv</td>
+      <td>gradient_boosting</td>
+      <td>237</td>
+      <td>79</td>
+      <td>33</td>
+      <td>32</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.725738</td>
+      <td>0.641852</td>
+      <td>0.762162</td>
+      <td>0.870370</td>
+      <td>0.812680</td>
+      <td>0.650435</td>
+      <td>0.758848</td>
+      <td>0.868709</td>
+      <td>data/processed/analysis_data.csv</td>
+      <td>random_forest</td>
+      <td>237</td>
+      <td>79</td>
+      <td>33</td>
+      <td>32</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+    <tr>
+      <td>0.637131</td>
+      <td>0.648642</td>
+      <td>0.806452</td>
+      <td>0.617284</td>
+      <td>0.699301</td>
+      <td>0.620927</td>
+      <td>0.741070</td>
+      <td>0.848308</td>
+      <td>data/processed/analysis_data.csv</td>
+      <td>linear_svm</td>
+      <td>237</td>
+      <td>79</td>
+      <td>33</td>
+      <td>32</td>
+      <td>1</td>
+      <td>StratifiedGroupKFold</td>
+    </tr>
+  </tbody>
+</table>
+    </main></body></html>
