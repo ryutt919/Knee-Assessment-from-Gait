@@ -11,6 +11,32 @@ IMU-based gait classification for ACL injury groups using waveform and scalar fe
 
 ---
 
+## Instruction File Sync
+
+`CLAUDE.md` and `AGENTS.md` must remain identical. When updating either file, update the other file in the same change with the exact same content.
+
+---
+
+## Operating Rules
+
+1. Start with a short actionable plan before implementation unless the task is trivial.
+2. Do not propose fixes for bugs until root cause investigation has been completed.
+3. Prefer current documentation over memory when working with third-party libraries.
+
+---
+
+## File Addition Rules
+
+Files are organized by type-specific folders. When adding a new file to a folder, prefix the filename with the next two-digit sequence number for that folder so creation order is clear.
+
+- Use `01_`, `02_`, `03_`, ... based on existing files in the same folder.
+- Apply this consistently to folders such as `scripts/`, `htmls/`, `mds/`, and other type-based directories.
+- Example: if `scripts/01_extract_data.py` and `scripts/02_train_model.py` already exist, the next script should be named `scripts/03_<purpose>.py`.
+- Example: if `htmls/01_overview.html` exists, the next HTML file should be named `htmls/02_<purpose>.html`.
+- Do not renumber existing files unless the user explicitly asks for a full reorganization.
+
+---
+
 ## Entry Points (run from `ML_based/`)
 
 ```bash
@@ -142,6 +168,23 @@ mlflow ui --backend-store-uri ML_based/artifacts-v2/mlruns
 
 ---
 
+## 0529_ML Sandbox — AUC 95% Achieved (2026-05-30)
+
+Separate sandbox at `0529_ML/` targeting AUC ≥ 95% with traditional ML only (no DL).
+
+**Key result**: Random Forest **AUC = 0.9600** · XGBoost 0.9541 · LightGBM 0.9467
+
+**Strategy** (`0529_ML/scripts/03_boost_auc.py`):
+- Pivot `features_scalar.csv` (237 rows, 79 subjects × 3 speeds) → **79-row subject-level dataset**
+- Feature engineering: `slow_X`, `normal_X`, `fast_X`, `delta_fast_slow_X`, `delta_fast_normal_X`, `mean_X` per numeric feature → **864 total features**
+- CV: outer `StratifiedKFold(5)` at subject level (1 row = 1 subject, no GroupKFold needed)
+- SVC uses nested `GridSearchCV(inner=3)` for C/gamma tuning
+- All preprocessing inside each fold · OOF evaluation · meta/label columns excluded
+
+**Reports**: `0529_ML/htmls/03_boost_result_report.html` · `0529_ML/results/13_boost_best_summary.json`
+
+---
+
 ## Mandatory Rules After Every Code Change
 
 After implementing or modifying code, always do these three things **in order**:
@@ -153,7 +196,7 @@ After implementing or modifying code, always do these three things **in order**:
    refactor: 리팩토링 설명
    ```
 
-2. **Update this CLAUDE.md** — reflect any new bugs, design changes, or command changes in the relevant section immediately.
+2. **Update both `CLAUDE.md` and `AGENTS.md`** — keep them identical and reflect any new bugs, design changes, or command changes in the relevant section immediately.
 
 3. **Update HTML status report** — regenerate `ML_based/reports/status_report.html` with:
    - Always use **light theme** (white background, dark text)

@@ -1,0 +1,15 @@
+{
+  "strategy": "subject_pivot_nested_cv",
+  "dataset": "data/processed/features_scalar.csv",
+  "n_subjects": 79,
+  "n_features": 864,
+  "best_model": "random_forest",
+  "roc_auc": 0.9600000000000001,
+  "single_best_model": "random_forest",
+  "single_best_auc": 0.9600000000000001,
+  "ensemble_auc": 0.9540740740740741,
+  "prev_best_auc": 0.8865020576131687,
+  "improvement": 0.07349794238683138,
+  "hit_95_target": true,
+  "cv": "StratifiedKFold(5)+GridSearch(3)"
+}

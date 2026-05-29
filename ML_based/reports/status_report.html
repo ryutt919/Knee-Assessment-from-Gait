@@ -123,9 +123,9 @@
     <div>
       <h1>ACL Gait ML Pipeline</h1>
       <div class="meta">
-        <span>📅 마지막 업데이트: 2026-05-28</span>
+        <span>📅 마지막 업데이트: 2026-05-30</span>
         <span>🌿 브랜치: main</span>
-        <span>🔖 커밋: d793a90</span>
+        <span>🔖 커밋: 1f3b3df</span>
       </div>
     </div>
     <div class="version-tag">artifacts-v2 현재</div>
@@ -144,9 +144,9 @@
       <div class="sub">logreg · linearsvc · svm_rbf</div>
     </div>
     <div class="card">
-      <div class="label">아티팩트 버전</div>
-      <div class="value">v2</div>
-      <div class="sub">v1 완료 · v2 진행 중</div>
+      <div class="label">0529_ML 샌드박스 최고 AUC</div>
+      <div class="value" style="color: var(--success)">0.9600</div>
+      <div class="sub">random_forest · subject-pivot · StratifiedKFold(5)</div>
     </div>
     <div class="card">
       <div class="label">알려진 이슈</div>
@@ -340,10 +340,54 @@ python orchestrator.py --models fpca cnn1d transformer --waveform_type raw_padde
     </table>
   </div>
 
+  <!-- 0529_ML 샌드박스 결과 -->
+  <div class="section">
+    <h2>0529_ML 샌드박스 — AUC 95% 달성 (2026-05-30)</h2>
+    <table>
+      <thead>
+        <tr><th>모델</th><th>ROC-AUC</th><th>Macro F1</th><th>CV 전략</th><th>피험자 수</th><th>Feature 수</th></tr>
+      </thead>
+      <tbody>
+        <tr class="rank-1">
+          <td><code>random_forest</code></td>
+          <td>0.9600 <div class="bar-wrap"><div class="bar" style="width:96%"></div></div></td>
+          <td>0.8562</td><td>StratifiedKFold(5)</td><td>79</td><td>864</td>
+        </tr>
+        <tr class="rank-2">
+          <td><code>xgboost</code></td>
+          <td>0.9541</td><td>0.8602</td><td>StratifiedKFold(5)</td><td>79</td><td>864</td>
+        </tr>
+        <tr class="rank-2">
+          <td><code>ensemble (RF+XGB+LGBM)</code></td>
+          <td>0.9541</td><td>0.8291</td><td>StratifiedKFold(5)</td><td>79</td><td>864</td>
+        </tr>
+        <tr class="rank-3">
+          <td><code>lightgbm</code></td>
+          <td>0.9467</td><td>0.8244</td><td>StratifiedKFold(5)</td><td>79</td><td>864</td>
+        </tr>
+        <tr>
+          <td><code>svc_rbf_tuned</code></td>
+          <td>0.9096</td><td>0.8637</td><td>Nested (outer-5/inner-3)</td><td>79</td><td>864</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px; color:var(--muted); margin-top:10px;">
+      전략: features_scalar.csv (237행) → subject-level pivot (79행×864 features).<br>
+      각 numeric feature를 slow/normal/fast × 3 + delta_fast_slow + delta_fast_normal + mean으로 확장.<br>
+      DL 제외 · 누수 방지 확인 · 산출물: <code>0529_ML/htmls/03_boost_result_report.html</code>
+    </p>
+  </div>
+
   <!-- 변경 이력 -->
   <div class="section">
     <h2>변경 이력</h2>
 
+    <div class="changelog-item">
+      <div class="cl-date">2026-05-30</div>
+      <div class="cl-content">
+        <span class="cl-tag cl-feat">feat</span>0529_ML 샌드박스 AUC 95% 달성 — subject-pivot 864 features, random_forest AUC=0.9600
+      </div>
+    </div>
     <div class="changelog-item">
       <div class="cl-date">2026-05-28</div>
       <div class="cl-content">
