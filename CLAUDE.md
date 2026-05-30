@@ -209,12 +209,15 @@ After implementing or modifying code, always do these three things **in order**:
    ```python
    _START = datetime.now()
    # ... work ...
-   _elapsed = datetime.now() - _START
-   # HTML footer section (keep under 8 lines):
-   # 시작: {_START:%Y-%m-%d %H:%M:%S}  |  소요: {_elapsed}  |  토큰: Anthropic Console 확인
+   _END = datetime.now()
+   _elapsed = _END - _START
+   # HTML footer section (keep under 12 lines):
+   # 시작: {_START:%Y-%m-%d %H:%M:%S}  |  완료: {_END:%H:%M:%S}  |  소요: {_elapsed}  |  토큰: Anthropic Console 확인
    # 사고 흐름 (2~3 bullet):
    #  · 문제: 무엇을 해결하려 했는가
    #  · 접근: 어떤 전략을 선택했고 왜
    #  · 결과: 핵심 수치 한 줄
+   # 발견된 문제 & 수정 방향 (있을 때만):
+   #  · [문제] 한 줄 기술  →  [수정] 한 줄 방향
    ```
-   Keep the log section compact — **no extra prose**, just the 3 bullets + timing line.
+   Keep the log section compact — **no extra prose**, one line per item.
