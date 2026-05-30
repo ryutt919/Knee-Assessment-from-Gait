@@ -204,3 +204,17 @@ After implementing or modifying code, always do these three things **in order**:
    - Latest model performance (macro_f1 per model)
    - Known issues and next tasks
    - Artifact version status
+
+4. **Execution log in HTML report** — every goal-driven script must record in its HTML report footer:
+   ```python
+   _START = datetime.now()
+   # ... work ...
+   _elapsed = datetime.now() - _START
+   # HTML footer section (keep under 8 lines):
+   # 시작: {_START:%Y-%m-%d %H:%M:%S}  |  소요: {_elapsed}  |  토큰: Anthropic Console 확인
+   # 사고 흐름 (2~3 bullet):
+   #  · 문제: 무엇을 해결하려 했는가
+   #  · 접근: 어떤 전략을 선택했고 왜
+   #  · 결과: 핵심 수치 한 줄
+   ```
+   Keep the log section compact — **no extra prose**, just the 3 bullets + timing line.
