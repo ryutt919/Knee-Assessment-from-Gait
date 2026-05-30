@@ -64,9 +64,46 @@ def verify_raw_cycles():
         valid_ratio = df[mask_cols].mean(axis=0).mean()
         print(f"  유효 샘플 비율 (마스크): {valid_ratio:.3f}")
 
-    strides_per_trial = df.groupby(["subject_id", "speed", "trial_id"]).size()
-    print(f"  stride/trial: mean={strides_per_trial.mean():.1f}, "
+    group_cols = ["subject_id", "speed", "trial_id"]
+    if "actual_leg" in df.columns:
+        group_cols.append("actual_leg")
+    strides_per_trial = df.groupby(group_cols).size()
+    print(f"  stride/trial/leg: mean={strides_per_trial.mean():.1f}, "
           f"min={strides_per_trial.min()}, max={strides_per_trial.max()}")
+    if "side_basis" in df.columns:
+        print(f"  side_basis: {df['side_basis'].value_counts().to_dict()}")
+
+
+def verify_cycle_waveforms_101():
+    path = PROCESSED / "cycle_waveforms_101.parquet"
+    if not path.exists():
+        print("=" * 60)
+        print("[cycle_waveforms_101] 미생성 — features/extract_cycle_waveforms_101.py 실행 필요")
+        return
+
+    df = pd.read_parquet(path)
+    print("=" * 60)
+    print(f"[cycle_waveforms_101 (cycle-level 101pt)] {df.shape}")
+    print(f"  그룹: {df['group'].value_counts().to_dict()}")
+    print(f"  속도: {df['speed'].value_counts().to_dict()}")
+    print(f"  side_basis: {df['side_basis'].value_counts().to_dict()}")
+    print(f"  actual_leg: {df['actual_leg'].value_counts().to_dict()}")
+
+    lens = df["cycle_len"]
+    print(f"  cycle 길이: mean={lens.mean():.1f}, std={lens.std():.1f}, "
+          f"p5={lens.quantile(0.05):.0f}, p95={lens.quantile(0.95):.0f}, max={lens.max()}")
+
+    meta_cols = {
+        "subject_id", "group", "speed", "trial_id", "actual_leg", "side_basis",
+        "injured_leg", "cycle_idx", "cycle_idx_original", "cycle_len",
+        "n_cycles_raw", "n_cycles_trimmed",
+    }
+    wave_cols = [c for c in df.columns if c not in meta_cols]
+    print(f"  파형 컬럼 수: {len(wave_cols)} (기대: 9×101=909)")
+    print(f"  파형 결측률 (max): {df[wave_cols].isnull().mean().max():.4f}")
+
+    bad_trim = (df["cycle_idx_original"] < 2).sum()
+    print(f"  trim 검증: cycle_idx_original < 2 행={int(bad_trim)}")
 
 
 def verify_feature_ranking():
@@ -83,6 +120,7 @@ def run_verification(_cfg=None) -> None:
     """파이프라인에서 호출하는 wrapper."""
     verify_scalar_stride()
     verify_waveform_norm()
+    verify_cycle_waveforms_101()
     verify_raw_cycles()
     verify_feature_ranking()
     print("=" * 60)

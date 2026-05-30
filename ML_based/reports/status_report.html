@@ -6,9 +6,9 @@
   <title>ACL Gait ML Pipeline — Status Report</title>
   <style>
     :root {
-      --bg: #f5f6fa;
+      --bg: #ffffff;
       --surface: #ffffff;
-      --surface2: #f0f1f5;
+      --surface2: #f8fafc;
       --border: #e2e4ec;
       --accent: #3d6cf5;
       --accent2: #0ea5a0;
@@ -125,7 +125,7 @@
       <div class="meta">
         <span>📅 마지막 업데이트: 2026-05-30</span>
         <span>🌿 브랜치: main</span>
-        <span>🔖 커밋: 1f3b3df</span>
+        <span>🔖 커밋: git log -1 확인</span>
       </div>
     </div>
     <div class="version-tag">artifacts-v2 현재</div>
@@ -149,8 +149,13 @@
       <div class="sub">random_forest · subject-pivot · StratifiedKFold(5)</div>
     </div>
     <div class="card">
+      <div class="label">Cycle-level 101pt 파형</div>
+      <div class="value" style="color: var(--accent2)">8,079</div>
+      <div class="sub">trimmed cycles · 9×101 waveform · actual injured side</div>
+    </div>
+    <div class="card">
       <div class="label">알려진 이슈</div>
-      <div class="value" style="color: var(--success)">4</div>
+      <div class="value" style="color: var(--success)">5</div>
       <div class="sub">모두 수정 완료됨</div>
     </div>
   </div>
@@ -242,6 +247,18 @@
           <td>optuna · logs (scalar 3개 완료)</td>
           <td><span class="badge badge-run">진행 중</span></td>
         </tr>
+        <tr>
+          <td><span class="badge badge-v2">data</span></td>
+          <td><code>data/processed/cycle_waveforms_101.parquet</code></td>
+          <td>8,079×921 · first/last 2 cycles trimmed per trial/leg · summary JSON 생성</td>
+          <td><span class="badge badge-done">완료</span></td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-v2">data</span></td>
+          <td><code>data/processed/stride_raw_waveforms.parquet</code></td>
+          <td>8,002×3,163 · full-cycle raw padded · 99th percentile length cap 175</td>
+          <td><span class="badge badge-done">완료</span></td>
+        </tr>
       </tbody>
     </table>
     <pre>
@@ -251,7 +268,12 @@ mlflow ui --backend-store-uri ML_based/artifacts-v2/mlruns
 # 다음 실험 실행
 cd ML_based
 python orchestrator.py --models rf gbt xgboost lightgbm
-python orchestrator.py --models fpca cnn1d transformer --waveform_type raw_padded</pre>
+python orchestrator.py --models fpca cnn1d transformer --waveform_type cycle_norm_101
+python orchestrator.py --models fpca cnn1d transformer --waveform_type raw_padded
+
+# cycle-level 101pt waveform 재생성
+python features/extract_cycle_waveforms_101.py
+python features/verify_data.py</pre>
   </div>
 
   <!-- 알려진 이슈 -->
@@ -301,6 +323,17 @@ python orchestrator.py --models fpca cnn1d transformer --waveform_type raw_padde
         확인 로그: <code>[Optuna] {model} fold=N: nf={n}, 기존 0 trials</code>
       </div>
     </div>
+
+    <div class="issue-item">
+      <div class="issue-title">
+        <span class="badge badge-done">수정됨</span>&nbsp;
+        raw cycle injured-side 고정 매핑 — <code>features/extract_raw_cycles.py</code>
+      </div>
+      <div class="issue-desc">
+        기존 raw cycle 추출은 <code>injured=Right</code>, <code>contralateral=Left</code>로 해석될 수 있었다.<br>
+        수정 후 <code>data/ID.csv</code>의 <code>Injured leg</code>를 사용하고 <code>actual_leg</code>, <code>side_basis</code>를 함께 저장한다.
+      </div>
+    </div>
   </div>
 
   <!-- 다음 작업 -->
@@ -318,7 +351,7 @@ python orchestrator.py --models fpca cnn1d transformer --waveform_type raw_padde
         </tr>
         <tr>
           <td>🔴 High</td>
-          <td>waveform 모델 v2 실행: <code>fpca cnn1d transformer</code></td>
+          <td>cycle-level 101pt 파형을 사용하는 waveform 모델/FPCA 비교 실험 설계</td>
           <td><span class="badge badge-todo">대기</span></td>
         </tr>
         <tr>
@@ -378,10 +411,43 @@ python orchestrator.py --models fpca cnn1d transformer --waveform_type raw_padde
     </p>
   </div>
 
+  <!-- Cycle-level waveform 산출물 -->
+  <div class="section">
+    <h2>Cycle-level 101pt Waveform — 생성 완료 (2026-05-30)</h2>
+    <table>
+      <thead>
+        <tr><th>항목</th><th>값</th><th>검증</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>파일</td><td><code>data/processed/cycle_waveforms_101.parquet</code></td><td><span class="badge badge-done">생성</span></td></tr>
+        <tr><td>Shape</td><td>8,079 rows × 921 columns</td><td>메타 12 + waveform 909</td></tr>
+        <tr><td>단위</td><td><code>subject_id × speed × trial_id × actual_leg × cycle_idx</code></td><td>trial 경계 보존</td></tr>
+        <tr><td>Trim</td><td>trial/leg별 첫 2개·마지막 2개 cycle 제외</td><td><code>cycle_idx_original &lt; 2</code> 0건</td></tr>
+        <tr><td>Side mapping</td><td>ACLD/ACLR은 <code>ID.csv</code>의 <code>Injured leg</code> 사용</td><td>불일치 0건</td></tr>
+        <tr><td>결측</td><td>max waveform NaN rate 0.0000</td><td><span class="badge badge-done">통과</span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px; color:var(--muted); margin-top:10px;">
+      생성 스크립트: <code>ML_based/features/extract_cycle_waveforms_101.py</code> · 요약: <code>data/processed/cycle_waveforms_101_summary.json</code>
+    </p>
+  </div>
+
   <!-- 변경 이력 -->
   <div class="section">
     <h2>변경 이력</h2>
 
+    <div class="changelog-item">
+      <div class="cl-date">2026-05-30</div>
+      <div class="cl-content">
+        <span class="cl-tag cl-feat">feat</span>cycle-level 101pt waveform 데이터 생성 — 8,079 cycles, first/last 2 cycle trim, actual injured side 매핑
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="cl-date">2026-05-30</div>
+      <div class="cl-content">
+        <span class="cl-tag cl-fix">fix</span><code>extract_raw_cycles.py</code>의 injured=Right 고정 매핑을 <code>ID.csv</code> 기반 actual-leg 매핑으로 수정
+      </div>
+    </div>
     <div class="changelog-item">
       <div class="cl-date">2026-05-30</div>
       <div class="cl-content">

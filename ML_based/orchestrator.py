@@ -49,12 +49,14 @@ def parse_args():
                    help="설정 파일 경로")
     p.add_argument("--target", choices=["binary", "multiclass"], default=None,
                    help="분류 타깃 override (config 기본값 사용 시 생략)")
-    p.add_argument("--waveform_type", choices=["norm_101", "raw_padded"], default=None,
+    p.add_argument("--waveform_type", choices=["norm_101", "cycle_norm_101", "raw_padded"], default=None,
                    help="waveform_type override")
     p.add_argument("--waveform_norm", choices=["none", "zscore", "ha_centered"], default=None,
                    help="waveform_norm override")
     p.add_argument("--feature_select", default=None,
                    help="feature_select override (e.g. eta2_top30, all)")
+    p.add_argument("--version", default=None,
+                   help="실험 버전명 override (config 기본값 사용 시 생략, 예: v2)")
     p.add_argument("--test", action="store_true",
                    help="테스트 모드: 극소량 샘플·최소 epoch으로 파이프라인 실행 확인")
     p.add_argument("--skip-transformer", action="store_true",
@@ -93,26 +95,28 @@ def _subsample_test(X, y, groups, speed, mask, n_per_group: int = 20) -> tuple:
 
 def _load_for_model(loader_type: str, cfg) -> tuple:
     """
-    Returns (X, y, groups, speed_data, mask_data)
-    speed_data / mask_data: None for scalar models
+    Returns (X, y, groups, speed_data, mask_data, feature_names)
+    feature_names: list[str] (scalar) | None (waveform)
     """
     if loader_type == "scalar":
-        X, y, groups = load_stride_scalar(cfg)
+        X, y, groups, feature_names = load_stride_scalar(cfg)
         speed, mask = None, None
     else:
         result = load_waveform(cfg)
         # load_waveform 반환 순서: (X, speed_oh, mask, y, groups)
         X, speed, mask, y, groups = result
+        feature_names = None
 
     if cfg.get("test_mode", {}).get("enabled", False):
         n_per = cfg.test_mode.n_samples // 3  # 3 groups
         X, y, groups, speed, mask = _subsample_test(X, y, groups, speed, mask, n_per)
         print(f"[orchestrator] test 서브샘플: {X.shape[0]}행, {len(set(groups))}피험자")
 
-    return X, y, groups, speed, mask
+    return X, y, groups, speed, mask, feature_names
 
 
-def _run_model_isolated(model_name, module_path, class_name, X, y, groups, cfg, speed, mask, is_dl, return_dict):
+def _run_model_isolated(model_name, module_path, class_name, X, y, groups,
+                        cfg, speed, mask, is_dl, feature_names, return_dict):
     import sys, os
     sys.stdout.reconfigure(line_buffering=True)  # 서브프로세스 출력을 실시간으로 flush
     if is_dl:
@@ -122,7 +126,6 @@ def _run_model_isolated(model_name, module_path, class_name, X, y, groups, cfg, 
         import importlib
         from train.cross_validate import run_cv
 
-        # 동적 임포트
         mod = importlib.import_module(module_path)
         model_cls = getattr(mod, class_name)
 
@@ -134,6 +137,7 @@ def _run_model_isolated(model_name, module_path, class_name, X, y, groups, cfg, 
             speed_data=speed,
             mask_data=mask,
             is_dl=is_dl,
+            feature_names=feature_names,
         )
         return_dict["result"] = fold_results
     except Exception as e:
@@ -147,6 +151,10 @@ def run(args=None):
         args = parse_args()
 
     cfg = OmegaConf.load(args.config)
+
+    # --version 플래그: config 기본값 override
+    if getattr(args, "version", None):
+        OmegaConf.update(cfg, "version", args.version)
 
     # --test 플래그: 극소량 데이터·최소 epoch으로 파이프라인 실행 확인
     if getattr(args, "test", False):
@@ -195,7 +203,8 @@ def run(args=None):
             print(f"[orchestrator] {m}: config에서 비활성화됨, 건너뜀")
 
     print(f"[orchestrator] 실행 모델: {active}")
-    print(f"[orchestrator] target={cfg.targets.mode}  "
+    print(f"[orchestrator] version={cfg.version}  "
+          f"target={cfg.targets.mode}  "
           f"waveform_type={cfg.features.waveform_type}  "
           f"waveform_norm={cfg.features.waveform_norm}")
 
@@ -215,7 +224,7 @@ def run(args=None):
             print(f"[orchestrator] 데이터 로딩: {loader_type}")
             _cache[loader_type] = _load_for_model(loader_type, cfg)
 
-        X, y, groups, speed, mask = _cache[loader_type]
+        X, y, groups, speed, mask, feature_names = _cache[loader_type]
 
         print(f"\n{'='*60}")
         print(f"[orchestrator] 모델 시작: {model_name}  "
@@ -231,7 +240,8 @@ def run(args=None):
         return_dict = manager.dict()
 
         p = ctx.Process(target=_run_model_isolated, args=(
-            model_name, module_path, class_name, X, y, groups, cfg, speed, mask, is_dl, return_dict
+            model_name, module_path, class_name, X, y, groups,
+            cfg, speed, mask, is_dl, feature_names, return_dict
         ))
         p.start()
         p.join()
@@ -280,6 +290,7 @@ def run(args=None):
                 "waveform_type": cfg.features.waveform_type,
                 "n_outer":      cfg.cv.n_outer,
             },
+            version=cfg.version,
         )
 
     return all_results

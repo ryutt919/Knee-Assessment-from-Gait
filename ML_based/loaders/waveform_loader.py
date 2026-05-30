@@ -1,6 +1,7 @@
 """
 파형 로더
 - load_waveform_norm101: waveforms_stride.parquet → (N, 9ch, 101)
+- load_waveform_cycle101: cycle_waveforms_101.parquet → (N, 9ch, 101)
 - load_waveform_raw    : stride_raw_waveforms.parquet → (N, 9ch, max_len) + mask
 
 waveform_norm flag (config.features.waveform_norm):
@@ -64,6 +65,30 @@ def load_waveform_norm101(cfg: DictConfig):
     return X, speed_oh, None, y, groups
 
 
+def load_waveform_cycle101(cfg: DictConfig):
+    """
+    Cycle-level 101pt 정규화 파형 로드.
+    Returns: X (N, 9, 101, dtype=float32), speed_onehot (N,3), mask=None, y, groups
+    """
+    path = PROCESSED / cfg.data.get("cycle_waveforms_101", "cycle_waveforms_101.parquet")
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} 없음 — features/extract_cycle_waveforms_101.py를 먼저 실행하세요."
+        )
+    df = pd.read_parquet(path)
+
+    seqs = []
+    for joint in JOINTS:
+        cols = [f"{joint}_{t:03d}" for t in range(101)]
+        seqs.append(df[cols].values.astype(np.float32))
+
+    X = np.stack(seqs, axis=1)
+    y = _apply_target(df, cfg)
+    groups = df["subject_id"].values
+    speed_oh = _speed_onehot(df["speed"]) if cfg.features.speed_as_feature else None
+    return X, speed_oh, None, y, groups
+
+
 def load_waveform_raw(cfg: DictConfig):
     """
     Raw padded 파형 로드 (stride_raw_waveforms.parquet 필요).
@@ -100,6 +125,8 @@ def load_waveform(cfg: DictConfig):
     """config.features.waveform_type에 따라 분기."""
     if cfg.features.waveform_type == "norm_101":
         return load_waveform_norm101(cfg)
+    elif cfg.features.waveform_type == "cycle_norm_101":
+        return load_waveform_cycle101(cfg)
     elif cfg.features.waveform_type == "raw_padded":
         return load_waveform_raw(cfg)
     else:

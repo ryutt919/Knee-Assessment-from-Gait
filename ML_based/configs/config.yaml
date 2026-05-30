@@ -1,9 +1,13 @@
+# ── 버전 ──────────────────────────────────────────────
+version: v1
+
 # ── 데이터 경로 ──────────────────────────────────────
 data:
   root: ../data/processed
   scalar_subject:  features_scalar.csv
   scalar_stride:   stride_level_peaks.parquet
   waveform_norm_101: waveforms_stride.parquet
+  cycle_waveforms_101: cycle_waveforms_101.parquet
   raw_cycles:      stride_raw_waveforms.parquet   # Phase 1 생성 산출물
   raw_slim:        slim_gait.parquet
   feature_ranking: feature_ranking.csv
@@ -13,8 +17,8 @@ data:
 features:
   speed_as_feature: true        # normal/slow/fast one-hot
   stride_trim: 2                # trial 앞뒤 각 N개 stride 제거 (가속/감속 구간)
-  feature_select: eta2_top30    # none | eta2_topK (K=정수) | all
-  waveform_type: norm_101       # norm_101 | raw_padded
+  feature_select: eta2_sorted    # none | all | eta2_topK (K=정수) | eta2_sorted (전체 η² 정렬, n_features는 Optuna 탐색)
+  waveform_type: norm_101       # norm_101 | cycle_norm_101 | raw_padded
   waveform_norm: zscore         # none | zscore | ha_centered
 
 # ── 학습 / CV ──────────────────────────────────────
@@ -101,6 +105,12 @@ test_mode:
   n_trials_dl: 1
   max_epochs_dl: 2
   feature_select: all    # eta2 필터 무시 (컬럼 불일치 방지)
+
+# ── SHAP 분석 ─────────────────────────────────────
+# KernelExplainer (svm_rbf)는 느림 — 기본 비활성화
+shap:
+  enabled: false    # true 설정 시 각 outer fold에서 SHAP 분석 실행
+  top_k: 10         # beeswarm plot 및 η² 비교에 사용할 top-K feature 수
 
 # ── Optuna ───────────────────────────────────────
 optuna:

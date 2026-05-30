@@ -8,22 +8,21 @@ Phase 1: slim_gait → per-stride raw waveform (패딩+마스크)
 
 Stride Trim: trial별 앞 2개·뒤 2개 stride 제거 (config.features.stride_trim)
 """
+from __future__ import annotations
+
 import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from omegaconf import OmegaConf
+from omegaconf import DictConfig, OmegaConf
 
 ROOT = Path(__file__).parent.parent.parent
 ML = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ML))
 
-from utils.preprocess import get_stance_segments, build_stance_contact_signal
-
-SLIM = ROOT / "data" / "processed" / "slim_gait.parquet"
-OUT  = ROOT / "data" / "processed" / "stride_raw_waveforms.parquet"
+ID_CSV = ROOT / "data" / "ID.csv"
 
 JOINT_COLS = {
     "hip_adduction":     ("jointAngle_42", "jointAngle_54"),
@@ -37,42 +36,100 @@ JOINT_COLS = {
     "ankle_dorsiflexion":("jointAngle_50", "jointAngle_62"),
 }
 
-SIDES = {
-    "injured":      {"heel": "footContacts_2", "toe": "footContacts_3", "suffix": 1},
-    "contralateral":{"heel": "footContacts_0", "toe": "footContacts_1", "suffix": 0},
-}
+HEEL_COLS = {"Left": "footContacts_0", "Right": "footContacts_2"}
+
+
+def _load_cfg(cfg: DictConfig | str | Path | None) -> DictConfig:
+    if cfg is None:
+        return OmegaConf.load(ML / "configs" / "config.yaml")
+    if isinstance(cfg, (str, Path)):
+        return OmegaConf.load(cfg)
+    return cfg
+
+
+def _data_root(cfg: DictConfig) -> Path:
+    root = Path(str(cfg.data.root))
+    if not root.is_absolute():
+        root = (ML / root).resolve()
+    return root
+
+
+def _input_output_paths(cfg: DictConfig) -> tuple[Path, Path]:
+    data_root = _data_root(cfg)
+    slim = data_root / cfg.data.get("raw_slim", "slim_gait.parquet")
+    out = data_root / cfg.data.get("raw_cycles", "stride_raw_waveforms.parquet")
+    return slim, out
+
+
+def _injured_map() -> dict[str, str]:
+    id_df = pd.read_csv(ID_CSV)
+    mapping: dict[str, str] = {}
+    for _, row in id_df.iterrows():
+        leg = row.get("Injured leg", "")
+        leg = str(leg).strip() if pd.notna(leg) else ""
+        if leg in ("Left", "Right"):
+            mapping[str(row["ID"])] = leg
+    return mapping
+
+
+def _injured_leg_for(subject_id: str, group: str, injured: dict[str, str]) -> str:
+    if group in ("ACLD", "ACLR"):
+        if subject_id not in injured:
+            raise ValueError(f"{subject_id} ({group})의 Injured leg metadata가 없습니다.")
+        return injured[subject_id]
+    return "Right"
+
+
+def _side_basis(group: str, actual_leg: str, injured_leg: str) -> str:
+    if group in ("ACLD", "ACLR"):
+        return "injured" if actual_leg == injured_leg else "contralateral"
+    return "injured" if actual_leg == "Right" else "contralateral"
+
+
+def _cycle_segments(heel_signal: np.ndarray, min_samples: int = 40) -> list[tuple[int, int]]:
+    """Heel-strike to next heel-strike full gait cycles."""
+    binary = np.asarray(pd.to_numeric(pd.Series(heel_signal), errors="coerce").fillna(0), dtype=int)
+    heel_strikes = np.where(np.diff(binary) == 1)[0] + 1
+    segments: list[tuple[int, int]] = []
+    for i in range(len(heel_strikes) - 1):
+        start = int(heel_strikes[i])
+        end = int(heel_strikes[i + 1])
+        if end - start >= min_samples:
+            segments.append((start, end))
+    return segments
 
 
 def extract_strides_for_trial(
     trial_df: pd.DataFrame,
     joint_cols: dict,
-    side: str,
+    actual_leg: str,
     stride_trim: int,
 ) -> list[dict]:
     """단일 trial(file_name)에서 stride별 raw 파형 추출."""
-    heel_col = SIDES[side]["heel"]
-    toe_col  = SIDES[side]["toe"]
-
-    if heel_col not in trial_df.columns or toe_col not in trial_df.columns:
+    heel_col = HEEL_COLS[actual_leg]
+    if heel_col not in trial_df.columns:
         return []
 
-    contact = build_stance_contact_signal(
-        trial_df[heel_col].values.astype(int),
-        trial_df[toe_col].values.astype(int),
-        mode="heel_toe_or",
-    )
-    segments = get_stance_segments(contact, max_gap=8)
+    segments = _cycle_segments(trial_df[heel_col].to_numpy())
+    n_raw = len(segments)
 
-    if len(segments) <= stride_trim * 2:
+    if n_raw <= stride_trim * 2:
         return []
 
-    segments = segments[stride_trim: len(segments) - stride_trim]
+    segments = segments[stride_trim:n_raw - stride_trim]
+    n_trimmed = len(segments)
 
     records = []
     for idx, (start, end) in enumerate(segments):
-        seg_data = {"stride_idx": idx, "cycle_len": end - start}
+        seg_data = {
+            "stride_idx": idx,
+            "stride_idx_original": idx + stride_trim,
+            "cycle_len": end - start,
+            "n_cycles_raw": n_raw,
+            "n_cycles_trimmed": n_trimmed,
+        }
         for joint, (right_col, left_col) in joint_cols.items():
-            col = right_col if SIDES[side]["suffix"] == 1 else left_col
+            col = right_col if actual_leg == "Right" else left_col
             if col in trial_df.columns:
                 seg_data[f"_raw_{joint}"] = trial_df[col].values[start:end].tolist()
             else:
@@ -83,22 +140,25 @@ def extract_strides_for_trial(
 
 
 def run(cfg_path: str | None = None):
-    cfg_path = cfg_path or str(ML / "configs" / "config.yaml")
-    cfg = OmegaConf.load(cfg_path)
+    cfg = _load_cfg(cfg_path)
     stride_trim: int = cfg.features.stride_trim
+    slim_path, out_path = _input_output_paths(cfg)
 
-    print(f"[extract_raw_cycles] slim_gait 로드: {SLIM}")
-    slim = pd.read_parquet(SLIM)
+    print(f"[extract_raw_cycles] slim_gait 로드: {slim_path}")
+    slim = pd.read_parquet(slim_path)
     print(f"  shape={slim.shape}, subjects={slim['subject_id'].nunique()}")
 
+    injured = _injured_map()
     all_records: list[dict] = []
 
     for (subj, grp, spd, fn), trial_df in slim.groupby(
         ["subject_id", "group", "speed", "file_name"]
     ):
         trial_df = trial_df.sort_values("time_ms").reset_index(drop=True)
-        for side in ("injured", "contralateral"):
-            strides = extract_strides_for_trial(trial_df, JOINT_COLS, side, stride_trim)
+        injured_leg = _injured_leg_for(str(subj), str(grp), injured)
+        for actual_leg in ("Right", "Left"):
+            side = _side_basis(str(grp), actual_leg, injured_leg)
+            strides = extract_strides_for_trial(trial_df, JOINT_COLS, actual_leg, stride_trim)
             for s in strides:
                 rec = {
                     "subject_id": subj,
@@ -106,6 +166,9 @@ def run(cfg_path: str | None = None):
                     "speed": spd,
                     "trial_id": fn,
                     "side": side,
+                    "side_basis": side,
+                    "actual_leg": actual_leg,
+                    "injured_leg": injured_leg,
                     **{k: v for k, v in s.items() if not k.startswith("_raw_")},
                 }
                 for joint in JOINT_COLS:
@@ -135,10 +198,15 @@ def run(cfg_path: str | None = None):
         rows.append(row)
 
     df = pd.DataFrame(rows)
-    df.to_parquet(OUT, index=False)
-    size_mb = OUT.stat().st_size / 1e6
-    print(f"[extract_raw_cycles] ✅ 저장: {OUT} ({size_mb:.1f}MB, {len(df):,}행)")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(out_path, index=False)
+    size_mb = out_path.stat().st_size / 1e6
+    print(f"[extract_raw_cycles] ✅ 저장: {out_path} ({size_mb:.1f}MB, {len(df):,}행)")
     return df
+
+
+def extract(cfg: DictConfig | str | Path | None = None):
+    return run(cfg)
 
 
 if __name__ == "__main__":
