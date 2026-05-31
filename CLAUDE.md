@@ -17,23 +17,7 @@ IMU-based gait classification for ACL injury groups using waveform and scalar fe
 
 ---
 
-## Operating Rules
-
-1. Start with a short actionable plan before implementation unless the task is trivial.
-2. Do not propose fixes for bugs until root cause investigation has been completed.
-3. Prefer current documentation over memory when working with third-party libraries.
-
----
-
-## File Addition Rules
-
-Files are organized by type-specific folders. When adding a new file to a folder, prefix the filename with the next two-digit sequence number for that folder so creation order is clear.
-
-- Use `01_`, `02_`, `03_`, ... based on existing files in the same folder.
-- Apply this consistently to folders such as `scripts/`, `htmls/`, `mds/`, and other type-based directories.
-- Example: if `scripts/01_extract_data.py` and `scripts/02_train_model.py` already exist, the next script should be named `scripts/03_<purpose>.py`.
-- Example: if `htmls/01_overview.html` exists, the next HTML file should be named `htmls/02_<purpose>.html`.
-- Do not renumber existing files unless the user explicitly asks for a full reorganization.
+> General operating rules, file placement & naming, Mandatory Rules, and Agent Handoff protocol are defined in the `<work_documentation>` block of the global `~/.claude/CLAUDE.md`.
 
 ---
 
@@ -194,42 +178,3 @@ Separate sandbox at `0529_ML/` targeting AUC ≥ 95% with traditional ML only (n
 - All preprocessing inside each fold · OOF evaluation · meta/label columns excluded
 
 **Reports**: `0529_ML/htmls/03_boost_result_report.html` · `0529_ML/results/13_boost_best_summary.json`
-
----
-
-## Mandatory Rules After Every Code Change
-
-After implementing or modifying code, always do these three things **in order**:
-
-1. **Korean git commit**
-   ```
-   feat: 기능 추가 설명
-   fix: 버그 수정 설명
-   refactor: 리팩토링 설명
-   ```
-
-2. **Update both `CLAUDE.md` and `AGENTS.md`** — keep them identical and reflect any new bugs, design changes, or command changes in the relevant section immediately.
-
-3. **Update HTML status report** — regenerate `ML_based/reports/status_report.html` with:
-   - Always use **light theme** (white background, dark text)
-   - Date and summary of changes
-   - Latest model performance (macro_f1 per model)
-   - Known issues and next tasks
-   - Artifact version status
-
-4. **Execution log in HTML report** — every goal-driven script must record in its HTML report footer:
-   ```python
-   _START = datetime.now()
-   # ... work ...
-   _END = datetime.now()
-   _elapsed = _END - _START
-   # HTML footer section (keep under 12 lines):
-   # 시작: {_START:%Y-%m-%d %H:%M:%S}  |  완료: {_END:%H:%M:%S}  |  소요: {_elapsed}  |  토큰: Anthropic Console 확인
-   # 사고 흐름 (2~3 bullet):
-   #  · 문제: 무엇을 해결하려 했는가
-   #  · 접근: 어떤 전략을 선택했고 왜
-   #  · 결과: 핵심 수치 한 줄
-   # 발견된 문제 & 수정 방향 (있을 때만):
-   #  · [문제] 한 줄 기술  →  [수정] 한 줄 방향
-   ```
-   Keep the log section compact — **no extra prose**, one line per item.
