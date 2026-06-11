@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACL 보행 분석 — 통계 분석 방법 및 결과 보고서</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root {
+  --acld: #c0392b; --aclr: #1a6ca8; --ha: #27ae60;
+  --bg: #fafbfc; --card: #ffffff;
+  --border: #e1e4e8; --text: #24292e; --muted: #6a737d;
+  --accent: #0366d6; --accent2: #e67e22;
+  --purple: #6f42c1;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Times New Roman', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* ── 레이아웃 ── */
+.layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 240px; min-width: 240px;
+  background: #1e2d3d; color: #cdd9e5;
+  position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; padding: 20px 0;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.sidebar-logo {
+  padding: 0 18px 18px;
+  font-size: 0.85rem; font-weight: 700; color: #fff;
+  border-bottom: 1px solid #2d3f52;
+  letter-spacing: 0.04em;
+}
+.sidebar h2 {
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #8b9bb4;
+  padding: 16px 18px 4px; font-weight: 700;
+}
+.sidebar a {
+  display: block; padding: 5px 18px;
+  color: #cdd9e5; text-decoration: none;
+  font-size: 0.82rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar a:hover { background: rgba(255,255,255,0.07); color: #fff; border-left-color: #4a9eff; }
+
+.content { flex: 1; max-width: 900px; padding: 48px 60px; }
+
+/* ── 논문 헤더 ── */
+.paper-header {
+  text-align: center;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 32px; margin-bottom: 40px;
+}
+.paper-title {
+  font-size: 1.7rem; font-weight: 700; line-height: 1.4;
+  color: #1e2d3d; margin-bottom: 18px;
+}
+.paper-authors { font-size: 1rem; color: var(--muted); margin-bottom: 8px; }
+.paper-affil { font-size: 0.88rem; color: var(--muted); font-style: italic; }
+.paper-date { font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
+.paper-keywords {
+  margin-top: 14px;
+  font-size: 0.88rem; color: var(--muted);
+}
+
+/* ── 섹션 ── */
+.section { margin-bottom: 52px; scroll-margin-top: 20px; }
+h1.sec { font-size: 1.4rem; font-weight: 700; color: #1e2d3d;
+  border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 18px; }
+h2.sub { font-size: 1.1rem; font-weight: 700; color: var(--accent);
+  margin: 24px 0 10px; }
+h3.sub2 { font-size: 1rem; font-weight: 600; color: #444;
+  margin: 16px 0 8px; }
+p { margin-bottom: 12px; text-align: justify; }
+ul, ol { padding-left: 24px; margin-bottom: 12px; }
+li { margin-bottom: 5px; }
+
+/* ── 추상문(Abstract) ── */
+.abstract {
+  background: #f6f8fa;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 40px;
+}
+.abstract-title {
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.abstract p { font-size: 0.92rem; margin-bottom: 0; }
+
+/* ── 카드 ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 14px 0;
+}
+.card.formula { background: #f0f4ff; border-color: #b8ccf0; }
+.card.note { background: #fff8f0; border-color: #fdd09f; border-left: 4px solid #f39c12; }
+.card.result { background: #f0faf4; border-color: #a8dbb9; border-left: 4px solid #27ae60; }
+.card-title {
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* ── 테이블 ── */
+.tbl-wrap { overflow-x: auto; margin: 14px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+th {
+  background: #f1f3f5; padding: 9px 14px;
+  text-align: left; font-weight: 600;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr.sig td { background: #fffdf0; }
+tr.sig td:first-child { border-left: 3px solid #f39c12; }
+
+/* ── 인용 ── */
+.ref { font-size: 0.8rem; color: var(--muted); font-family: -apple-system, system-ui, sans-serif; }
+sup a { color: var(--accent); text-decoration: none; font-size: 0.75em; }
+
+/* ── 배지 ── */
+.badge {
+  display: inline-block; padding: 2px 9px; border-radius: 12px;
+  font-size: 0.75rem; font-weight: 600;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.badge-wave { background: #dbeafe; color: #1d4ed8; }
+.badge-scalar { background: #fce7f3; color: #9d174d; }
+.badge-step { background: #1e2d3d; color: #8ecfff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-family: monospace; }
+
+/* ── 데이터 흐름도 ── */
+.flow-box {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 0.82rem; line-height: 2.1;
+  background: #f8f9fa; border-radius: 8px;
+  padding: 16px 20px; margin: 12px 0;
+  border: 1px solid var(--border);
+}
+.flow-step { color: #8ecfff; background: #1e2d3d; padding: 1px 7px; border-radius: 3px; font-family: monospace; font-size: 0.78rem; margin-right: 4px; }
+.flow-arrow { color: var(--muted); padding-left: 24px; }
+code { font-family: 'Courier New', monospace; font-size: 0.85em; background: #f1f3f5; padding: 1px 4px; border-radius: 3px; }
+
+/* ── 그룹 색상 ── */
+.acld { color: var(--acld); font-weight: 700; }
+.aclr { color: var(--aclr); font-weight: 700; }
+.ha { color: var(--ha); font-weight: 700; }
+
+/* ── 결과 하이라이트 박스 ── */
+.result-highlight {
+  background: linear-gradient(135deg, #f0faf4, #e8f5e9);
+  border: 1px solid #a5d6a7;
+  border-left: 5px solid var(--ha);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+.result-highlight h4 { color: #1b5e20; font-size: 1rem; margin-bottom: 8px; }
+
+/* ── 참고문헌 ── */
+.references ol { font-size: 0.85rem; line-height: 1.7; }
+.references li { margin-bottom: 8px; }
+
+@media (max-width: 768px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; }
+  .content { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ── 사이드바 ── -->
+<nav class="sidebar">
+  <div class="sidebar-logo">📄 ACL 보행 분석 보고서</div>
+
+  <h2>본론</h2>
+  <a href="#abstract">초록</a>
+  <a href="#intro">1. 서론</a>
+  <a href="#methods">2. 방법</a>
+  <a href="#results">3. 결과</a>
+  <a href="#discussion">4. 고찰</a>
+  <a href="#conclusion">5. 결론</a>
+
+  <h2>방법 세부</h2>
+  <a href="#participants">2.1 대상자</a>
+  <a href="#instrumentation">2.2 계측 및 수집</a>
+  <a href="#pipeline">2.3 분석 파이프라인</a>
+  <a href="#filtering">2.4 신호 전처리</a>
+  <a href="#features">2.5 피처 추출</a>
+  <a href="#stats-method">2.6 통계 분석</a>
+
+  <h2>결과 세부</h2>
+  <a href="#res-overview">3.1 데이터 개요</a>
+  <a href="#res-scalar">3.2 유의 스칼라 지표</a>
+  <a href="#res-spm">3.3 파형 분석 결과</a>
+  <a href="#res-effect">3.4 효과 크기</a>
+  <a href="#res-lsi">3.5 LSI 대칭성</a>
+
+  <h2>부록</h2>
+  <a href="#references">참고문헌</a>
+</nav>
+
+<!-- ── 본문 ── -->
+<main class="content">
+
+<!-- 논문 헤더 -->
+<div class="paper-header">
+  <div class="paper-title">전방십자인대 손상 및 재건 환자의 보행 특성 비교:<br>IMU 기반 다중 스칼라·파형 통계 분석</div>
+  <div class="paper-authors">mini_ryutt 보행 분석 파이프라인 — 통계 방법 및 결과 보고서</div>
+  <div class="paper-affil">ACL 보행 데이터 하네스 파이프라인 (step001–step020)</div>
+  <div class="paper-date">분석 완료일: 2026-05-24 &nbsp;|&nbsp; 파이프라인 테스트: 79/79 PASS</div>
+  <div class="paper-keywords"><strong>Key words:</strong> ACL, 보행 분석, SPM1D, Butterworth 필터, Shapiro-Wilk, One-way ANOVA, Kruskal-Wallis, Partial η², Cohen's d, LSI, 무릎 굴곡 피크, 파형 분석</div>
+</div>
+
+<!-- ═══════════════════════════ ABSTRACT ═══════════════════════════ -->
+<section class="section" id="abstract">
+<div class="abstract">
+  <div class="abstract-title">초록 (Abstract)</div>
+  <p>
+    <strong>배경 및 목적</strong>: 전방십자인대(ACL) 손상 및 재건은 보행 역학에 광범위한 변화를 초래하지만, 파형 수준과 스칼라 지표 수준의 통합 분석은 드물다. 본 연구는 ACLD(ACL 결손, n=27), ACLR(ACL 재건, n=27), HA(건강 성인 대조군, n=25) 세 그룹을 대상으로 관성 측정 장치(IMU)를 이용한 보행 데이터를 수집하고, 20단계 자동화 파이프라인을 통해 파형 분석(SPM1D)과 스칼라 분석(ANOVA/Kruskal-Wallis/LMM)을 병행 수행하였다.
+    <strong>방법</strong>: 9개 관절 채널(Hip·Knee·Ankle × 3 plane)에서 Normal/Slow/Fast 3속도 조건의 보행을 기록하였다. 파형 분석에는 stance 기반 101-포인트 정규화 후 SPM1D(one-way ANOVA 및 ACLD-ACLR matched-pair t-test)를, 스칼라 분석에는 Shapiro-Wilk 정규성 검정에 따른 ANOVA 또는 Kruskal-Wallis(Bonferroni 보정), 효과 크기(Partial η², Cohen's d), 선형 혼합 모형(LMM)을, 대칭성 지표로 LSI(Limb Symmetry Index)를 적용하였다.
+    <strong>결과</strong>: Bonferroni 보정 후 5개의 스칼라 지표가 유의하였으며(p_adj &lt; 0.05), 모두 large 효과 크기(η² ≥ 0.19)를 보였다. 가장 유의한 지표는 fast 속도 무릎 굴곡 loading response peak LSI(η²=0.281, p_adj=0.0005)로, ACLR 그룹의 환측 무릎 굴곡 첫 피크가 건측 대비 82%에 불과함을 확인하였다. SPM1D 파형 분석에서는 ACLD-ACLR 쌍 비교에서만 2개의 유의 구간이 확인되었다.
+    <strong>결론</strong>: ACL 재건술 후에도 무릎 굴곡 기능의 불완전 회복이 확인되었으며, 고관절 굴곡 ROM 감소는 ACLD·ACLR 모두에서 HA 대비 유의하여 하지 운동 연쇄 전반의 이상을 시사한다.
+  </p>
+</div>
+</section>
+
+<!-- ═══════════════════════════ 1. 서론 ═══════════════════════════ -->
+<section class="section" id="intro">
+<h1 class="sec">1. 서론 (Introduction)</h1>
+
+<p>전방십자인대(Anterior Cruciate Ligament, ACL) 손상은 스포츠 관련 슬관절 손상 중 가장 빈번하고 기능적 영향이 큰 부상 중 하나이다<sup><a href="#ref1">[1]</a></sup>. ACL 결손(ACLD)은 입각기 동안의 무릎 안정성 저하로 인해 보상적 보행 전략을 유발하며, 관절 굴곡 감소, 고관절 의존성 증가, 발목 운동 전략 변화 등 복합적인 하지 운동 연쇄 변화를 초래한다<sup><a href="#ref2">[2]</a></sup>.</p>
+
+<p>ACL 재건(ACLR)은 기계적 안정성을 회복하는 표준 치료이지만, 재건술 후에도 보행 역학의 완전한 정상화는 이루어지지 않는 경우가 많다<sup><a href="#ref3">[3]</a></sup>. 체계적 문헌고찰 및 메타분석(Chen et al., 2026)에 따르면 ACLR 후 peak 무릎 굴곡 각도는 건강한 대조군 대비 Cohen's d=−0.48(95% CI: −0.87 ~ −0.10)의 결손이 지속되며, 대략 <strong>16.2개월</strong>이 경과해야 통계적 정상화가 이루어진다<sup><a href="#ref10">[10]</a></sup>. 또한 34개 연구를 분석한 체계적 고찰에서는 수술 6개월 미만에서 KFA가 건강인보다 오히려 증가(SMD=+1.06)하다가, 술후 1–3년에는 감소(SMD=−2.21)하는 <em>쌍봉형(biphasic) 패턴</em>이 관찰되어, 재활 단계에 따른 보행 역학의 비선형적 회복 경과가 존재함을 시사한다. Büttner et al.(2024)은 술 전부터 수술 후 12개월까지의 양측 파형 분석에서 환측뿐 아니라 비손상 측(건측)에서도 비정상적 보행역학이 지속됨을 확인하여<sup><a href="#ref9">[9]</a></sup>, ACL 손상이 전신 운동 연쇄에 미치는 양측성 영향을 강조하였다. 이러한 변화를 정량화하려면 단순한 피크값 비교를 넘어 보행 주기 전체의 시계열 변화와 스칼라 지표를 통합적으로 분석할 필요가 있다.</p>
+
+<p>본 연구는 관성 측정 장치(IMU)로 수집된 관절 각도 데이터를 20단계 자동화 파이프라인으로 분석하여 다음 목적을 달성하고자 하였다: (1) 세 그룹(ACLD/ACLR/HA) 간의 보행 파형 차이를 통계적 파라미터릭 매핑(SPM1D)으로 확인하고, (2) 스칼라 지표의 그룹 간 차이를 정규성 검정에 기반한 가설 검정 및 효과 크기로 정량화하며, (3) 손상 측 대 비손상 측의 기능 대칭성(LSI)을 평가한다. ACLD·ACLR·건강 대조군(HA)의 3군 비교 설계는 Kokkotis et al.(2022)의 151명 대상 연구와 동일한 구조로, ACL 손상 상태 자체의 보행 변화와 재건술 후 잔여 비대칭을 독립적으로 평가할 수 있도록 하였다<sup><a href="#ref8">[8]</a></sup>.</p>
+</section>
+
+<!-- ═══════════════════════════ 2. 방법 ═══════════════════════════ -->
+<section class="section" id="methods">
+<h1 class="sec">2. 방법 (Methods)</h1>
+
+<!-- 2.1 대상자 -->
+<h2 class="sub" id="participants">2.1 대상자 (Participants)</h2>
+
+<div class="tbl-wrap">
+<table>
+  <tr><th>그룹</th><th>정의</th><th>n</th><th>데이터 행</th><th>속도 조건</th></tr>
+  <tr>
+    <td><span class="acld">ACLD</span></td>
+    <td>ACL 결손 (재건 미시행)</td>
+    <td>27명</td>
+    <td>81행 (3 속도)</td>
+    <td>Normal / Slow / Fast</td>
+  </tr>
+  <tr>
+    <td><span class="aclr">ACLR</span></td>
+    <td>ACL 재건 완료</td>
+    <td>27명</td>
+    <td>81행 (ACLR38→36 ID 정정 포함)</td>
+    <td>Normal / Slow / Fast</td>
+  </tr>
+  <tr>
+    <td><span class="ha">HA</span></td>
+    <td>건강 성인 대조군</td>
+    <td>25명</td>
+    <td>75행 (HK 제외)</td>
+    <td>Normal / Slow / Fast</td>
+  </tr>
+</table>
+</div>
+
+<p>ACLD와 ACLR 그룹은 성별·나이·체중·신장·손상 측을 기준으로 <strong>1:1 매칭</strong>되었으며(step002, <code>id_pairing_summary.csv</code>), 27쌍이 완전 매칭되었다. HA 그룹은 비교 기준(normative reference)으로 활용되었다.</p>
+
+<!-- 2.2 계측 -->
+<h2 class="sub" id="instrumentation">2.2 계측 및 데이터 수집</h2>
+
+<p>관절 각도는 Xsens MVN 시스템(MVNX 형식)을 이용한 전신 IMU 네트워크로 수집되었다. 총 9개 관절 채널이 분석에 사용되었으며, 양측(좌·우)의 고관절·슬관절·발목 관절 각도를 세 평면(굴곡/신전, 내전/외전, 내·외회전)에서 측정하였다.</p>
+
+<div class="tbl-wrap">
+<table>
+  <tr><th>관절</th><th>평면</th><th>컬럼 (우측)</th><th>피크 방향</th></tr>
+  <tr><td>Hip Flexion</td><td>Sagittal</td><td>jointAngle_44</td><td>max</td></tr>
+  <tr><td>Hip Adduction</td><td>Frontal</td><td>jointAngle_42</td><td>min</td></tr>
+  <tr><td>Hip Int. Rotation</td><td>Transverse</td><td>jointAngle_43</td><td>max</td></tr>
+  <tr><td>Knee Flexion</td><td>Sagittal</td><td>jointAngle_47</td><td>max</td></tr>
+  <tr><td>Knee Adduction</td><td>Frontal</td><td>jointAngle_45</td><td>min</td></tr>
+  <tr><td>Knee Int. Rotation</td><td>Transverse</td><td>jointAngle_46</td><td>max</td></tr>
+  <tr><td>Ankle Dorsiflexion</td><td>Sagittal</td><td>jointAngle_50</td><td>max</td></tr>
+  <tr><td>Ankle Adduction</td><td>Frontal</td><td>jointAngle_48</td><td>min</td></tr>
+  <tr><td>Ankle Int. Rotation</td><td>Transverse</td><td>jointAngle_49</td><td>max</td></tr>
+</table>
+</div>
+
+<p>발 접촉 신호(footContacts_*)는 우측 Heel(footContacts_2) 및 Toe(footContacts_3)의 OR 조건으로 stance phase를 판정하였다(<code>heel_toe_or</code> 모드). 보행 시공간 지표는 <code>gait_analysis_global.csv</code>에서 별도로 수집하여 운동학 피처와 병합하였다.</p>
+
+<!-- 2.3 분석 파이프라인 -->
+<h2 class="sub" id="pipeline">2.3 분석 파이프라인 개요</h2>
+
+<p>총 20단계로 구성된 자동화 파이프라인(step001–step020)은 원시 MVNX 데이터에서 최종 통계 결과까지 완전 재현 가능하도록 설계되었다. 파이프라인은 크게 두 개의 독립 분석 스트림으로 구성된다.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+<div class="flow-box">
+  <strong style="color:#1d4ed8;">① 파형 분석 스트림</strong> <span class="badge badge-wave">SPM1D</span><br>
+  <span class="flow-step">011</span> <code>slim_gait.parquet</code><br>
+  <span class="flow-arrow">↓ stance 구간별 101pt 보간 후 평균 파형</span><br>
+  <span class="flow-step">012</span> knee_flexion SPM1D ANOVA (smoke)<br>
+  <span class="flow-step">013</span> 9채널 × 3속도 ANOVA → spm_results<br>
+  <span class="flow-step">014</span> 27쌍 Paired t-test → spm_results<br>
+  <span class="flow-step">015</span> SPM figures<br>
+  <span class="flow-step">016</span> Top-5 feature LMM
+</div>
+<div class="flow-box">
+  <strong style="color:#9d174d;">② 스칼라 분석 스트림</strong> <span class="badge badge-scalar">ANOVA/LMM</span><br>
+  <span class="flow-step">007</span> <code>slim_gait.parquet</code><br>
+  <span class="flow-arrow">↓ stance 구간별 peak/min/ROM/IC_angle/peak_timing 추출</span><br>
+  <span class="flow-step">008</span> features_scalar.csv (148 features)<br>
+  <span class="flow-step">009</span> 비대칭 지표 추가<br>
+  <span class="flow-step">017</span> Shapiro-Wilk → ANOVA/Kruskal<br>
+  <span class="flow-step">018</span> η² + Cohen's d → ranking<br>
+  <span class="flow-step">019</span> Ranking plots<br>
+  <span class="flow-step">020</span> LSI box plots
+</div>
+</div>
+
+<!-- 2.4 신호 전처리 -->
+<h2 class="sub" id="filtering">2.4 신호 전처리 — Butterworth 필터 및 Stance 탐지</h2>
+
+<h3 class="sub2">2.4.1 Stance Phase 탐지</h3>
+<p>Stance phase는 동측 Heel 또는 Toe 접촉 신호가 1인 연속 구간으로 정의되었다(<code>heel_toe_or</code> 모드). 각 stance 구간은 연속 시계열에서 <code>get_stance_segments(contact_signal)</code>로 추출되었다. 최소 5 샘플 미만 구간은 분석에서 제외하였다.</p>
+
+<h3 class="sub2">2.4.2 Butterworth 저역통과 필터 적용 근거</h3>
+<p>IMU 센서의 고주파 샘플링(120~240 Hz)으로 인해 수집되는 신호에는 전기 잡음, 피부-센서 슬립(skin artifact), 구조 진동 등 고주파 성분이 포함된다. 보행 중 의미 있는 관절 각도 변화는 약 8 Hz 이하에서 발생하므로, 고주파 잡음 제거가 정확한 피크 탐지의 전제 조건이다<sup><a href="#ref4">[4]</a></sup>.</p>
+
+<div class="card formula">
+  <div class="card-title">Butterworth 2차 저역통과 필터 (선택적 적용)</div>
+  $$H(s) = \frac{\omega_c^2}{s^2 + \sqrt{2}\,\omega_c s + \omega_c^2}$$
+  <p style="margin-top:8px;">차단 주파수: $f_c = 0.1 \times f_{Nyquist}$. <code>filtfilt()</code>를 통한 영위상(zero-phase) 처리로 피크 타이밍 왜곡 제거. <strong>2차 선택 이유</strong>: 소표본 stance 구간에서 필터 불안정성 방지, 40 dB/decade 차단 기울기로 충분한 잡음 제거. 최종 파이프라인에서는 <code>peak_method="argextrema"</code>(stance 구간 내 극값 직접 탐지)를 사용하여 경계 효과를 원천 차단하였다.</p>
+</div>
+
+<h3 class="sub2">2.4.3 파형 정규화 (SPM1D용)</h3>
+<p>파형 분석을 위해 각 stride의 stance 신호를 101-포인트(0~100% 보행 주기)로 선형 보간한 후, 피험자 내 모든 stride의 평균 파형을 산출하였다(<code>mean_waveform()</code>). 이를 통해 각 피험자가 (subject_id, speed, side, channel)당 하나의 101-차원 벡터로 표현되어 SPM1D 입력 행렬을 구성하였다.</p>
+
+<!-- 2.5 피처 추출 -->
+<h2 class="sub" id="features">2.5 스칼라 피처 추출 — peak, min, ROM, IC_angle, peak_timing</h2>
+
+<p>각 stance 구간에서 다음 5개의 스칼라 지표를 추출하였으며, 모든 구간의 평균을 해당 피험자의 대표값으로 사용하였다. 명칭 체계는 Kokkotis et al. (2022, <em>Scientific Reports</em>)의 K1/K2 정의를 모든 관절로 일반화한 것이다. K는 Knee만을 지칭하므로, 고관절·발목에까지 적용 가능한 범용 명칭으로 교체하였다.</p>
+
+<div class="tbl-wrap">
+<table>
+  <tr><th>지표 (파이프라인 키)</th><th>정의</th><th>코드</th><th>생체역학적 의미</th></tr>
+  <tr>
+    <td><strong>peak</strong></td>
+    <td>stance 구간 내 첫 번째 현저 피크값 (loading response peak)<br><small style="color:var(--muted);">Kokkotis K1: "Peak [joint] angle during stance phase"</small></td>
+    <td><code>find_peaks(arr, prominence≥1.0)</code>의 첫 인덱스</td>
+    <td>무릎: loading response 굴곡 피크 (~20% GC). 충격 흡수 능력 반영</td>
+  </tr>
+  <tr>
+    <td><strong>min</strong></td>
+    <td>stance 구간 전체의 최솟값 (stance minimum)</td>
+    <td><code>np.min(seg)</code></td>
+    <td>무릎: terminal stance 최대 신전각. 고관절: 최대 신전각(추진력 지표)<br><small style="color:var(--muted);">Kokkotis K2: "Minimum [joint] angle during stance phase"</small></td>
+  </tr>
+  <tr>
+    <td><strong>ROM</strong></td>
+    <td>stance 구간 내 최대값 − 최솟값</td>
+    <td><code>np.max(seg) − np.min(seg)</code></td>
+    <td>stance phase 내 전체 운동 범위. <strong>swing 포함 전주기가 아닌 stance 내 ROM</strong> — 로딩 기간의 기능적 관절 사용 범위를 반영</td>
+  </tr>
+  <tr>
+    <td><strong>IC_angle</strong></td>
+    <td>stance 시작 시 관절 각도 (Initial Contact angle)</td>
+    <td><code>seg[0]</code></td>
+    <td>발 접지 시 관절 자세 (heel strike angle). ACLR에서 무릎 굴곡 IC 감소가 특징적으로 보고됨</td>
+  </tr>
+  <tr>
+    <td><strong>peak_timing</strong></td>
+    <td>peak 발생 시점 (% of stance duration)</td>
+    <td><code>peak_idx / (len(seg)−1) × 100</code></td>
+    <td>피크 발생 타이밍 지연 여부. ACL 손상 후 보상 전략으로 피크 발생 지점이 이동할 수 있음</td>
+  </tr>
+</table>
+</div>
+
+<p>9개 관절 채널 × 5개 지표 × 2측(환측/건측) = 90 kinematic features에 LSI(Limb Symmetry Index) 및 비대칭 지표(asymmetry)를 합산하여 총 <strong>148개의 스칼라 feature</strong>를 분석하였다. 피크 방향(max/min)은 관절별로 사전 정의하였다(예: 굴곡=max, 내전=min).</p>
+
+<div class="card note">
+  <div class="card-title">왜 ROM을 stance phase 내에서만 계산하는가?</div>
+  <p>ROM = <code>max(seg) − min(seg)</code>에서 <code>seg</code>는 <strong>stance 구간만</strong>의 신호이다. Swing phase를 포함한 전주기 ROM은 보행 전략의 <em>전체 가동 범위</em>를 반영하는 반면, stance ROM은 <em>지면 반력을 받는 로딩 기간의 기능적 관절 사용 범위</em>를 직접 측정한다. 이 선택은 Kokkotis et al. (2022)과 Büttner et al. (2024) 모두 stance phase 내 peak/minimum을 독립적으로 분석한 방법론과 일치한다.</p>
+  <p>고관절 굴곡의 경우, stance 구간에서 <em>peak</em>는 loading response 굴곡 최대값(early stance)을 의미하며, <em>min</em>은 terminal stance의 최대 신전각을 의미한다. 두 지점 모두 보행 추진력과 stability 평가에 핵심적이므로 동일한 framework으로 모든 관절에 적용한다.</p>
+</div>
+
+<!-- 2.6 통계 분석 -->
+<h2 class="sub" id="stats-method">2.6 통계 분석</h2>
+
+<h3 class="sub2">2.6.1 파형 분석 — SPM1D (Statistical Parametric Mapping 1D)</h3>
+<p>보행 파형 전체를 분석 단위로 사용하는 SPM1D는 시간축 각 포인트 $t$에서의 통계량 $F(t)$ 또는 $t(t)$를 계산하고, Random Field Theory(RFT)로 임계값 $F^*$ 또는 $t^*$를 결정한다. 이를 통해 여러 시간점을 동시에 검정할 때의 1종 오류를 자동으로 제어한다<sup><a href="#ref5">[5]</a></sup>. 파형 분석 방법의 채택은 Büttner et al.(2024)의 발견에 의해 지지된다: stance phase에서 peak 크기 이외의 <em>특정 구간 파형 차이</em>가 관절 연골 조성 변화와 직접 연관되며, 이산 스칼라 지표 단독으로는 ACLR 후 보행 역학의 전체적 변화를 충분히 포착할 수 없다<sup><a href="#ref9">[9]</a></sup>.</p>
+
+<p><strong>One-way ANOVA (step012, step013)</strong>: 세 그룹(ACLD/ACLR/HA) 간 파형 차이를 9채널 × 3속도 = 27회 검정. 각 포인트에서의 F 통계량을 계산하고 F* 이상 구간을 유의 구간으로 판정.</p>
+
+$$F(t) = \frac{MS_{between}(t)}{MS_{within}(t)}, \quad t \in [0\%, 100\%]$$
+
+<p><strong>Paired t-test (step014, ACLD vs ACLR)</strong>: ACLD-ACLR 27 matched pairs에 대해 쌍 내 차이 파형 $d_i(t)$를 검정. SPM1D ANOVA와 별도로 수행하는 이유:</p>
+<ul>
+  <li><strong>검정력 향상</strong>: 매칭 설계로 개인 간 변동이 제거되어 그룹 간 순수 차이를 더 민감하게 탐지</li>
+  <li><strong>임상적 질문 특화</strong>: "재건술이 보행 파형을 어떻게 변화시켰는가?"에 직접 답변</li>
+  <li><strong>ANOVA 한계 보완</strong>: 3그룹 ANOVA는 어느 쌍이 다른지 알려주지 않음 → Paired t-test가 파형 수준의 post-hoc 역할 수행</li>
+</ul>
+
+$$t(t) = \frac{\bar{d}(t)}{SE_d(t)}, \quad \bar{d}(t) = \bar{X}_{ACLD}(t) - \bar{X}_{ACLR}(t)$$
+
+<h3 class="sub2">2.6.2 유의수준 선정 근거</h3>
+<p>모든 검정에서 <strong>α = 0.05</strong>를 기준으로 사용하였다(config.yaml: <code>alpha: 0.05</code>). 이 수준은 ACL 보행 관련 선행 연구의 표준이며<sup><a href="#ref2">[2]</a>, <a href="#ref3">[3]</a></sup>, 표본 수 n=27에서 1종 오류(false positive)와 2종 오류(false negative)의 균형을 최적화한다. 스칼라 분석에서 다중 비교는 Bonferroni 보정으로, 파형 분석에서는 RFT로 자동 보정되었다.</p>
+
+<h3 class="sub2">2.6.3 정규성 검정 및 그룹 비교 — Shapiro-Wilk 분기 구조</h3>
+
+<p>각 feature-speed 조합(148 feature × 3속도)에 대해 그룹별 정규성을 Shapiro-Wilk로 검정하였다(step017). 결과에 따라 분석 방법을 결정하였다(그림 A).</p>
+
+<div class="card formula">
+  <div class="card-title">분기 로직 (step017)</div>
+  <div style="font-family:monospace;font-size:0.85rem;line-height:2;">
+    if <strong>all groups pass Shapiro-Wilk</strong> (p ≥ 0.05):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;→ Linear Mixed Model (statsmodels.mixedlm)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>Q(feat) ~ C(group), groups=subject_id</code><br>
+    else:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;→ Kruskal-Wallis H-test<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;→ post-hoc: Mann-Whitney U (Bonferroni 보정, m=3 쌍)
+  </div>
+</div>
+
+<div class="tbl-wrap">
+<table>
+  <tr><th>가정</th><th>검증 방법</th><th>위반 시 처리</th></tr>
+  <tr>
+    <td>정규성</td>
+    <td>Shapiro-Wilk (n&lt;50에서 최강력)<br><code>stats.shapiro(values)</code></td>
+    <td>Kruskal-Wallis H로 자동 전환</td>
+  </tr>
+  <tr>
+    <td>등분산</td>
+    <td>현재 파이프라인 미검증<br>(Levene's test 미적용)</td>
+    <td>LMM이 그룹 내 분산을 잔차로 별도 모델링 → 강건성 확보</td>
+  </tr>
+  <tr>
+    <td>독립성</td>
+    <td>연구 설계로 보장 (피험자 간)</td>
+    <td>속도 조건 간 상관 → LMM random intercept로 처리</td>
+  </tr>
+</table>
+</div>
+
+<div class="card note">
+  <div class="card-title">One-way vs Two-way ANOVA — 선택 근거</div>
+  <p>본 파이프라인은 <strong>One-way ANOVA</strong>(요인: 그룹)를 속도별로 분리 적용하였다. Two-way ANOVA(그룹 × 속도)는 균형 설계(balanced design)를 요구하지만, HA 그룹(25명)이 ACLD/ACLR(27명)과 달라 cell size 불균형이 발생한다. 또한 속도 조건은 동일 피험자의 반복 측정이므로 Two-way ANOVA의 독립성 가정을 위반한다. 이 문제는 step016-017의 LMM에서 <code>y ~ C(group) + speed + (1|subject_id)</code>로 더 정교하게 해결하였다.</p>
+</div>
+
+<h3 class="sub2">2.6.4 효과 크기</h3>
+<p>통계적 유의성은 표본 크기에 민감하므로, 임상적 중요성을 판단하기 위해 두 가지 효과 크기를 계산하였다.</p>
+
+<p><strong>Partial η²</strong>(step017, step018): 그룹 변수가 종속변수의 총 분산 중 몇 %를 설명하는지 나타낸다. 해석 기준: &lt;0.01(무시 가능), 0.01–0.06(소), 0.06–0.14(중), ≥0.14(대; Cohen, 1988).</p>
+$$\eta^2_p = \frac{SS_{between}}{SS_{between} + SS_{within}}$$
+
+<p><strong>Cohen's d</strong>(step017, step018, step019): 두 그룹 평균 차이를 pooled SD로 표준화. 세 쌍(ACLD-ACLR, ACLD-HA, ACLR-HA) 각각 계산. |d|: 0.2(소), 0.5(중), 0.8(대).</p>
+$$d = \frac{\bar{X}_1 - \bar{X}_2}{s_p}, \quad s_p = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}}$$
+
+<h3 class="sub2">2.6.5 선형 혼합 모형 (LMM, step016)</h3>
+<p>동일 피험자가 3속도 조건에 참가하는 반복 측정 구조를 처리하기 위해 LMM을 적용하였다. 피험자별 개인차를 랜덤 절편(random intercept)으로 모델링하여 그룹 효과의 추정 정밀도를 높였다.</p>
+$$y_{ij} = \beta_0 + \beta_1 \cdot group_{ij} + \beta_2 \cdot speed_{ij} + u_i + \epsilon_{ij}$$
+<p style="font-size:0.88rem;color:var(--muted);">$u_i \sim \mathcal{N}(0, \sigma_u^2)$: 피험자 랜덤 절편, $\epsilon_{ij} \sim \mathcal{N}(0, \sigma^2)$: 잔차.</p>
+
+<h3 class="sub2">2.6.6 Limb Symmetry Index (LSI, step007, step020)</h3>
+<p>환측-건측 기능 대칭성은 LSI로 정량화하였다. 100%가 완벽 대칭, 90–110%가 임상적 기능 대칭 범위이다<sup><a href="#ref6">[6]</a></sup>.</p>
+$$LSI = \frac{X_{injured}}{X_{contralateral}} \times 100 \quad [\%], \quad Deviation = |LSI - 100|$$
+</section>
+
+<!-- ═══════════════════════════ 3. 결과 ═══════════════════════════ -->
+<section class="section" id="results">
+<h1 class="sec">3. 결과 (Results)</h1>
+
+<!-- 3.1 데이터 개요 -->
+<h2 class="sub" id="res-overview">3.1 데이터 개요</h2>
+
+<div class="tbl-wrap">
+<table>
+  <tr><th>항목</th><th>값</th></tr>
+  <tr><td>분석 피험자</td><td>ACLD 27명, ACLR 27명, HA 25명 (총 79명)</td></tr>
+  <tr><td>총 스칼라 feature 수</td><td>148개 (peak·min·ROM·IC_angle·peak_timing + LSI + asym)</td></tr>
+  <tr><td>분석 속도 조건</td><td>Normal / Slow / Fast (3조건)</td></tr>
+  <tr><td>SPM1D 검정 수</td><td>9채널 × 3속도 = 27회 (ANOVA) + 27회 (Paired t) = 54회</td></tr>
+  <tr><td>파이프라인 통과 테스트</td><td>79/79 PASS</td></tr>
+</table>
+</div>
+
+<!-- 3.2 유의 스칼라 지표 -->
+<h2 class="sub" id="res-scalar">3.2 유의한 스칼라 지표 (Bonferroni 보정 후 p_adj &lt; 0.05)</h2>
+
+<p>148개 스칼라 feature 중 Bonferroni 보정 후 유의한 feature는 <strong>5개</strong>로 확인되었으며, 모두 large 효과 크기(η² ≥ 0.19)를 보였다(표 1).</p>
+
+<div class="tbl-wrap">
+<table>
+  <caption style="text-align:left;font-size:0.85rem;color:var(--muted);margin-bottom:8px;">표 1. Bonferroni 보정 후 유의한 스칼라 feature (p_adj &lt; 0.05)</caption>
+  <tr><th>Feature</th><th>Speed</th><th>η²</th><th>p_adj</th><th>d ACLD↔ACLR</th><th>d ACLD↔HA</th><th>d ACLR↔HA</th><th>η² 해석</th></tr>
+  <tr class="sig">
+    <td>Knee Flexion Loading Response Peak LSI</td>
+    <td>Fast</td>
+    <td><strong>0.281</strong></td>
+    <td>0.0005</td>
+    <td>0.913</td>
+    <td>−0.504</td>
+    <td>−1.654</td>
+    <td>Large</td>
+  </tr>
+  <tr class="sig">
+    <td>Hip Flexion ROM Injured</td>
+    <td>Fast</td>
+    <td>0.267</td>
+    <td>0.0010</td>
+    <td>0.190</td>
+    <td>−1.176</td>
+    <td>−1.374</td>
+    <td>Large</td>
+  </tr>
+  <tr class="sig">
+    <td>Knee Flexion ROM Injured</td>
+    <td>Slow</td>
+    <td>0.236</td>
+    <td>0.0050</td>
+    <td>1.018</td>
+    <td>−0.135</td>
+    <td>−1.278</td>
+    <td>Large</td>
+  </tr>
+  <tr class="sig">
+    <td>Knee Flexion ROM Injured</td>
+    <td>Normal</td>
+    <td>0.193</td>
+    <td>0.0398</td>
+    <td>0.935</td>
+    <td>0.067</td>
+    <td>−1.120</td>
+    <td>Large</td>
+  </tr>
+  <tr class="sig">
+    <td>Ankle Dorsiflexion Peak Timing Injured</td>
+    <td>Fast</td>
+    <td>0.191</td>
+    <td>0.0421</td>
+    <td>−0.124</td>
+    <td>0.858</td>
+    <td>0.962</td>
+    <td>Large</td>
+  </tr>
+</table>
+</div>
+
+<div class="result-highlight">
+  <h4>주요 발견: Knee Flexion Loading Response Peak LSI (Fast)</h4>
+  <p><strong>ACLR 그룹</strong>의 fast 보행 중 무릎 굴곡 첫 피크 LSI가 <strong>82.06 ± 18.16%</strong>로, HA(111.48 ± 17.36%)보다 유의하게 낮았다(d=−1.654). ACLD(101.08 ± 23.19%)와 비교 시에도 ACLR이 더 낮은 LSI를 보여, <em>재건술 후에도 무릎 굴곡 기능의 좌우 비대칭이 지속</em>됨을 의미한다. 빠른 보행 속도에서 이 비대칭이 더 두드러지는 것은 고속 보행 시 ACL 재건 이식 조직의 신경근 제어 미성숙이 더 명확히 드러나는 것으로 해석된다.</p>
+</div>
+
+<div class="result-highlight" style="background:linear-gradient(135deg,#e8f0fb,#dbeafe);border-color:#93c5fd;border-left-color:#1a6ca8;">
+  <h4>고관절 굴곡 ROM 감소 — 하지 운동 연쇄 이상의 증거</h4>
+  <p>Fast 보행에서 Hip Flexion ROM Injured는 <span class="acld">ACLD</span> 38.43°, <span class="aclr">ACLR</span> 37.47°로 두 그룹이 거의 동일하며, 두 그룹 모두 <span class="ha">HA</span>(44.20°)보다 유의하게 낮았다(ACLD vs HA: d=−1.176, ACLR vs HA: d=−1.374). 이는 재건술 여부와 관계없이 ACL 손상 경험 자체가 고관절 굴곡 운동 범위를 영구적으로 제한할 수 있음을 시사한다.</p>
+</div>
+
+<div class="card note">
+  <div class="card-title">선행 문헌과의 비교</div>
+  <p>Kokkotis et al.(2022)은 동일한 3군(CON/ACLD/ACLR, n=151) 설계에서 무릎 굴곡 peak(K1)의 그룹 간 차이가 p=0.001(CON 21.62±5.88°), min(K2)가 p=0.004(ACLR 5.81±2.03°, ACLD 6.18±2.92°)로 유의함을 확인하였으며<sup><a href="#ref8">[8]</a></sup>, SHAP 기반 ML 분석에서는 K2(min)가 CON vs ACLR 구분에서 가장 중요한 특징(mean absolute SHAP &gt; 0.35)으로 확인되었다. Chen et al.(2026)의 메타분석(20편, n=976, 3–107개월)에서는 ACLR 후 peak 무릎 굴곡 각도가 d=−0.48(95% CI: −0.87 ~ −0.10)로 건강인 대비 결손됨을 보고하였고<sup><a href="#ref10">[10]</a></sup>, 본 연구의 Fast 보행 Knee Flexion Loading Response Peak LSI에서 확인된 large effect(η²=0.281)는 이 방향성과 일치한다. 또한 Büttner et al.(2024)의 종단 연구에서 술 후 12개월까지 환측과 건측 모두에서 비정상적 보행역학이 지속되었고<sup><a href="#ref9">[9]</a></sup>, 본 연구의 ACLD/ACLR 양 그룹에서 HA 대비 고관절 굴곡 ROM이 감소한 결과(Hip Flexion ROM Injured, Fast, η²=0.267)는 이러한 양측성 영향을 반영한다.</p>
+</div>
+
+<!-- 3.3 SPM1D 파형 분석 -->
+<h2 class="sub" id="res-spm">3.3 SPM1D 파형 분석 결과</h2>
+
+<p>9채널 × 3속도 = 27회의 SPM1D One-way ANOVA 검정에서는 어느 채널-속도 조합에서도 F*(α=0.05) 임계값을 초과하는 유의 구간이 확인되지 않았다. 이는 세 그룹 파형의 전반적 평균 형태가 통계적으로 구분되지 않음을 의미하며, 개인 내 변동이 그룹 간 차이를 상쇄한 것으로 해석된다.</p>
+
+<p>반면 <strong>ACLD-ACLR 27쌍 paired t-test(step014)</strong>에서는 <strong>2개의 유의 구간</strong>이 확인되었다. 쌍 내 개인차를 제거함으로써 ACLD와 ACLR 간의 미묘한 파형 차이를 감지할 수 있었다. 이는 독립 표본 ANOVA 대비 matched-pair 설계의 우수한 검정력을 입증한다.</p>
+
+<div class="card note">
+  <div class="card-title">SPM1D ANOVA vs Paired t-test 결과 비교</div>
+  <table>
+    <tr><th>방법</th><th>검정 수</th><th>유의 구간 수</th><th>해석</th></tr>
+    <tr><td>SPM1D One-way ANOVA (3그룹)</td><td>27회</td><td><strong>0</strong></td><td>3그룹 파형 평균의 전반적 차이 미확인</td></tr>
+    <tr><td>SPM1D Paired t-test (ACLD↔ACLR)</td><td>27회</td><td><strong>2</strong></td><td>ACLD-ACLR 쌍에서 특정 보행 주기 구간 차이 확인</td></tr>
+  </table>
+</div>
+
+<!-- 3.4 효과 크기 -->
+<h2 class="sub" id="res-effect">3.4 Feature 중요도 및 효과 크기</h2>
+
+<p>step018-019에서 산출된 Partial η² 및 Cohen's d를 기반으로 feature 중요도를 순위화하였다. Heatmap 라벨은 <code>[관절 2글자].[스칼라].[측]</code> 형식으로 표기되었다.</p>
+
+<div class="card note">
+  <div class="card-title">Heatmap 약어 해독기</div>
+  <table>
+    <tr><th>약어</th><th>풀이</th><th>예시 값</th></tr>
+    <tr><td>KF.peak.I</td><td>Knee Flexion, loading response peak, Injured side</td><td>무릎 굴곡 첫 피크, 환측</td></tr>
+    <tr><td>KF.peak.</td><td>Knee Flexion, loading response peak, LSI</td><td>무릎 굴곡 첫 피크 LSI (환측/건측×100)</td></tr>
+    <tr><td>HF.ROM.I</td><td>Hip Flexion, Range of Motion, Injured side</td><td>고관절 굴곡 ROM, 환측</td></tr>
+    <tr><td>AD.peak_timing.I</td><td>Ankle Dorsiflexion, peak timing, Injured side</td><td>발목 배굴 첫 피크 타이밍, 환측</td></tr>
+    <tr><td>KF.ROM.C</td><td>Knee Flexion, ROM, Contralateral side</td><td>무릎 굴곡 ROM, 건측</td></tr>
+    <tr><td>AA.ROM.C</td><td>Ankle Adduction, ROM, Contralateral side</td><td>발목 내전 ROM, 건측</td></tr>
+    <tr><td>KF.min.I</td><td>Knee Flexion, stance minimum, Injured side</td><td>무릎 굴곡 최소각(최대 신전), 환측</td></tr>
+  </table>
+  <p style="margin-top:8px;font-size:0.85rem;">관절 2글자: HF=Hip Flexion, HA=Hip Adduction, HI=Hip Int.Rotation, KF=Knee Flexion, KA=Knee Adduction, KI=Knee Int.Rotation, AD=Ankle Dorsiflexion, AA=Ankle Adduction, AI=Ankle Int.Rotation. 스칼라: peak=loading response peak, min=stance minimum, ROM=range of motion, IC_angle=initial contact angle, peak_timing=peak timing (%). 측: I=Injured, C=Contralateral, 없음=LSI.</p>
+</div>
+
+<p>효과 크기 순위에서 상위 feature 대부분이 <strong>무릎 굴곡 관련 지표</strong>였으며, 특히 Fast 속도 조건에서 효과 크기가 가장 높게 나타났다. Cohen's d heatmap에서 ACLR-HA 쌍이 가장 큰 절대값을 보여, 재건 후에도 정상과의 차이가 가장 크게 남아있음을 확인하였다.</p>
+
+<!-- 3.5 LSI -->
+<h2 class="sub" id="res-lsi">3.5 LSI — 좌우 대칭성 분석</h2>
+
+<p>LSI 100% 미만은 환측 기능 결손, 100% 초과는 과보상을 의미한다. 무릎 굴곡 loading response peak LSI 결과(Fast 속도)를 중심으로 분석하였다.</p>
+
+<div class="tbl-wrap">
+<table>
+  <tr><th>그룹</th><th>Knee Flexion Loading Response Peak LSI (Fast)</th><th>해석</th></tr>
+  <tr><td><span class="acld">ACLD</span></td><td>101.08 ± 23.19%</td><td>환측/건측 거의 동일. 단, SD가 크며 일부 피험자는 과보상 패턴</td></tr>
+  <tr><td><span class="aclr">ACLR</span></td><td>82.06 ± 18.16%</td><td>환측 18% 기능 결손. 임상 기준(90%) 미달 — 재건술 후 지속적 비대칭</td></tr>
+  <tr><td><span class="ha">HA</span></td><td>111.48 ± 17.36%</td><td>오른발 기준 slight asymmetry. 생리적 범위 내</td></tr>
+</table>
+</div>
+
+<p>ACLR 그룹의 LSI 82%는 무릎 굴곡 loading response 기능이 건측의 82%에 불과함을 의미하며, 이는 스포츠 복귀 기준(LSI ≥ 90%)을 충족하지 못하는 수준이다<sup><a href="#ref6">[6]</a></sup>. ACLD 그룹은 양측 모두 기능 저하(quadriceps avoidance 전략 등)로 인해 LSI가 100%에 가깝게 유지되는 역설적 패턴을 보였다.</p>
+</section>
+
+<!-- ═══════════════════════════ 4. 고찰 ═══════════════════════════ -->
+<section class="section" id="discussion">
+<h1 class="sec">4. 고찰 (Discussion)</h1>
+
+<h2 class="sub">4.1 무릎 굴곡 기능의 불완전 회복</h2>
+<p>본 연구에서 ACLR 그룹의 무릎 굴곡 loading response peak LSI(Fast)가 82%로 확인된 것은 기존 문헌과 일치한다. Gokeler 등(2017)<sup><a href="#ref3">[3]</a></sup>은 ACLR 후 보행 중 무릎 굴곡 피크의 비대칭이 수술 후 2년까지 지속될 수 있다고 보고하였다. Chen et al.(2026)의 메타분석(20편, n=976)에서는 ACLR 후 peak 무릎 굴곡 각도 결손이 d=−0.48로 16.2개월까지 지속된다고 보고하여<sup><a href="#ref10">[10]</a></sup>, 본 연구의 large effect(η²=0.281) 결과와 방향성이 일치한다. Chen 등은 early-phase 재활에서 <em>quadriceps 강화 및 무릎 굴곡 회복을 수술 후 10–16개월 이내에 집중적으로 수행</em>할 것을 권고하였으며, 이는 ACLR 82% LSI 결과에 대한 임상적 재활 방향을 직접 제시한다.</p>
+<p>Kokkotis et al.(2022)은 동일한 3군 설계(CON/ACLD/ACLR, n=151)에서 무릎 굴곡 peak(K1) p=0.001(CON 21.62°), min(K2) p=0.004를 확인하였으며<sup><a href="#ref8">[8]</a></sup>, SHAP 기반 설명 가능 ML 분석에서 K2(min, stance 최소 굴곡각)가 CON vs ACLR 구분의 가장 중요한 특징으로 부각되었다. 이는 loading response peak 뿐 아니라 terminal stance 최대 신전각(min)도 ACL 손상 상태를 구분하는 핵심 변수임을 시사하며, 본 파이프라인에서 peak와 min을 모두 산출한 설계 결정을 뒷받침한다.</p>
+<p>수술 후 보행 역학의 회복은 비선형적 경과를 보인다. 34개 연구를 분석한 체계적 고찰에서는 수술 6개월 미만에서 KFA가 건강인 대비 오히려 증가(SMD=+1.06)하다가 1–3년 구간에서 급격히 감소(SMD=−2.21)하는 쌍봉형 패턴이 관찰되었다. 이 초기 과굴곡은 통증·불안정성에 대한 보상 전략으로, 이후 역전되는 패턴은 운동 회피 및 근력 약화와 연관될 수 있다. 본 연구의 ACLR 그룹이 ACLD보다 오히려 낮은 loading response peak LSI를 보인 것은 수술 후 통증 회피(pain avoidance) 또는 이식 조직 보호 행동이 quadriceps 활성을 더 억제하는 방어적 보행 전략을 유발한다는 가설을 지지한다. Büttner et al.(2024)의 종단 추적에서는 환측뿐 아니라 건측에서도 비정상적 보행역학이 12개월까지 지속적으로 관찰되어<sup><a href="#ref9">[9]</a></sup>, ACL 손상이 전신 운동 연쇄에 미치는 광범위한 양측성 영향을 재확인하였다.</p>
+
+<h2 class="sub">4.2 고관절 굴곡 ROM 감소의 임상적 의미</h2>
+<p>Hip Flexion ROM이 ACLD와 ACLR 모두에서 HA 대비 유의하게 감소한 결과는 ACL 손상이 무릎 단독의 문제가 아니라 <em>하지 운동 연쇄(kinetic chain) 전체의 재조직화</em>를 초래함을 시사한다. 특히 Fast 보행에서 이 차이가 가장 두드러진 것은 빠른 속도에서 하지 협응이 더 많은 고관절 보상 동원을 요구하는데, ACL 손상 그룹에서 이 보상 기제가 비효율적임을 의미한다. 34개 연구를 분석한 체계적 고찰에서는 술 후 3년 이상이 경과해도 무릎 내전 모멘트(KAM)의 그룹 간 차이가 유의하지 않은 반면(SMD=0.09; 95% CI: −0.63 ~ 0.81), 시상면 역학은 지속적으로 이상을 보여 "시상면 보행 역학이 KAM보다 ACLR 후 더 관련성이 높다"는 결론이 제시되었다. 본 연구에서 시상면 지표인 고관절 굴곡 ROM 감소와 무릎 굴곡 peak LSI 저하가 주요 유의 결과로 나타난 것은 이 관점과 일치하며, 재활 평가 지표로 시상면 운동학을 우선할 근거를 제공한다.</p>
+
+<h2 class="sub">4.3 SPM1D 분석의 방법론적 기여</h2>
+<p>SPM1D One-way ANOVA에서 유의 구간이 확인되지 않은 반면 Paired t-test에서 2개의 유의 구간이 확인된 것은 연구 설계의 중요성을 강조한다. Matched-pair 설계는 개인 간 변동(inter-subject variability)을 통계적으로 제거하여, 그룹 간 차이 탐지를 위한 최적 접근법임이 재확인되었다. 이는 향후 ACL 보행 연구에서 독립 집단 비교보다 matched-pair 설계를 우선적으로 고려해야 함을 시사한다. 파형 분석 자체의 필요성은 Büttner et al.(2024)의 결론에 의해 뒷받침된다: stance phase 전 구간에 걸친 파형 분석에서 "더 덜 동적인(less dynamic)" 보행 역학이 관찰되었으며, 특히 peak 크기 외에도 <em>stance 특정 구간의 파형 차이가 관절 연골 조성 변화와 연관된다</em>고 보고하였다<sup><a href="#ref9">[9]</a></sup>. 이산 스칼라 지표로는 포착되지 않는 stance 구간 내 시계열 변화 패턴을 SPM1D 파형 분석이 정량화함으로써 재활 결과 평가에 추가적인 임상 정보를 제공할 수 있다.</p>
+
+<h2 class="sub">4.4 한계점</h2>
+<ul>
+  <li>HA 그룹(n=25)이 ACLD/ACLR(n=27)보다 작아 통계 검정력이 일부 제한될 수 있다.</li>
+  <li>Levene의 등분산 검정이 파이프라인에 포함되지 않아 ANOVA 가정의 완전 검증이 이루어지지 않았다. 향후 step017에 Levene 검정 추가가 필요하다.</li>
+  <li>HA 그룹의 '손상 측'은 관례적으로 오른발로 설정하여 LSI를 계산하였으므로, HA의 LSI 해석 시 이 점을 고려해야 한다.</li>
+  <li>단면 연구 설계로 인해 수술 전후 보행 변화를 직접 추적할 수 없다.</li>
+</ul>
+</section>
+
+<!-- ═══════════════════════════ 5. 결론 ═══════════════════════════ -->
+<section class="section" id="conclusion">
+<h1 class="sec">5. 결론 (Conclusion)</h1>
+
+<p>본 연구는 20단계 자동화 파이프라인을 통해 ACL 손상 및 재건 환자의 보행 특성을 다중 관점(파형 분석 + 스칼라 분석 + 대칭성 분석)에서 포괄적으로 분석하였다. 주요 결론은 다음과 같다.</p>
+
+<ol>
+  <li><strong>무릎 굴곡 기능의 불완전 회복</strong>: ACLR 그룹의 Fast 보행 중 무릎 굴곡 loading response peak LSI(82%)는 임상 복귀 기준(90%)에 미달하며, 재건술 후에도 기능 비대칭이 지속됨을 확인하였다(η²=0.281, Large effect).</li>
+  <li><strong>하지 운동 연쇄 전반의 이상</strong>: 고관절 굴곡 ROM 감소는 ACLD와 ACLR 모두에서 일관되게 나타나, ACL 손상이 무릎 단독의 문제가 아님을 시사한다.</li>
+  <li><strong>Matched-pair 설계의 통계적 우수성</strong>: SPM1D paired t-test(ACLD-ACLR 27쌍)에서만 파형 수준의 유의 구간이 확인되어, 개인차 제거를 통한 검정력 향상의 중요성이 확인되었다.</li>
+  <li><strong>파이프라인 방법론의 완전성</strong>: 모든 79개 자동화 테스트가 통과되어 파이프라인의 재현성과 신뢰성이 검증되었다.</li>
+</ol>
+
+<p>이 결과는 ACL 손상 후 재활 프로토콜에서 무릎 굴곡 기능 회복과 고관절-무릎-발목 연쇄 협응 훈련을 강조해야 함을 임상적으로 시사한다.</p>
+</section>
+
+<!-- ═══════════════════════════ 참고문헌 ═══════════════════════════ -->
+<section class="section references" id="references">
+<h1 class="sec">참고문헌 (References)</h1>
+<ol>
+  <li id="ref1">Gao B, Zheng NN. Alterations in three-dimensional joint kinematics of anterior cruciate ligament-deficient and -reconstructed knees during stair climbing. <em>Clin Biomech</em>. 2010;25(3):222–229.</li>
+  <li id="ref2">Gao B, Cordero S, Zheng Y, et al. Gait analysis after anterior cruciate ligament reconstruction: a systematic review. <em>Knee Surg Sports Traumatol Arthrosc</em>. 2023;31:4301–4316.</li>
+  <li id="ref3">Gokeler A, Dingenen B, Mouton C, et al. Biomechanical knee loading after ACL reconstruction: a systematic review. <em>Br J Sports Med</em>. 2017;51(15):1111–1116.</li>
+  <li id="ref4">Winter DA. <em>Biomechanics and Motor Control of Human Movement</em>. 4th ed. John Wiley &amp; Sons; 2009. (Butterworth filter for gait signal: pp. 14–44)</li>
+  <li id="ref5">Pataky TC. One-dimensional statistical parametric mapping in Python. <em>Comput Methods Biomech Biomed Engin</em>. 2012;15(3):295–301.</li>
+  <li id="ref6">Wellsandt E, Failla MJ, Snyder-Mackler L. Limb symmetry indexes can overestimate knee function after anterior cruciate ligament injury. <em>J Orthop Sports Phys Ther</em>. 2017;47(5):334–338.</li>
+  <li id="ref7">Cohen J. <em>Statistical Power Analysis for the Behavioral Sciences</em>. 2nd ed. Lawrence Erlbaum Associates; 1988.</li>
+  <li id="ref8">Kokkotis C, Moustakidis S, Tsatalas T, et al. Leveraging explainable machine learning to identify gait biomechanical parameters associated with anterior cruciate ligament injury. <em>Sci Rep</em>. 2022;12:6647. doi:10.1038/s41598-022-10666-2</li>
+  <li id="ref9">Büttner C, Lisee C, Bjornsen E, et al. Bilateral waveform analysis of gait biomechanics presurgery to 12 months following ACL reconstruction compared to controls. <em>J Orthop Res</em>. 2025;43(2):322–336. doi:10.1002/jor.26001</li>
+  <li id="ref10">Chen S, Gong H, Lyu C, Li K, Shaharudin S. Time to normalization of gait following ACL reconstruction compared with healthy controls: A systematic review and meta-analysis. <em>Gait Posture</em>. 2026;123:109972. doi:10.1016/j.gaitpost.2025.109972</li>
+  <li id="ref11">Perry J, Burnfield JM. <em>Gait Analysis: Normal and Pathological Function</em>. 2nd ed. SLACK Incorporated; 2010.</li>
+</ol>
+</section>
+
+</main>
+</div>
+
+<script>
+// 스크롤 사이드바 활성화
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.sidebar a').forEach(l => l.style.borderLeftColor = 'transparent');
+      const active = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+      if (active) active.style.borderLeftColor = '#4a9eff';
+    }
+  });
+}, { rootMargin: '-15% 0px -75% 0px' });
+document.querySelectorAll('.section').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

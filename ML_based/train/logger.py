@@ -14,7 +14,10 @@ import numpy as np
 from omegaconf import DictConfig, OmegaConf
 
 ML = Path(__file__).parent.parent
-LOGS_DIR = ML / "artifacts" / "logs"
+
+
+def _logs_dir(version: str) -> Path:
+    return ML / f"artifacts-{version}" / "logs"
 
 
 def _get_git_info() -> tuple[str, str]:
@@ -49,11 +52,13 @@ def log_run(
     cm_fig_path: str = "",
 ) -> None:
     """실험 결과 1행을 CSV에 append."""
-    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    version = cfg.get("version", "v1")
+    logs_dir = _logs_dir(version)
+    logs_dir.mkdir(parents=True, exist_ok=True)
 
     _, git_branch = _get_git_info()
     ts = datetime.now().strftime("%Y%m%d")
-    csv_path = LOGS_DIR / f"runs_{ts}.csv"
+    csv_path = logs_dir / f"runs_{ts}.csv"
 
     row: dict = {
         # 실험 식별
@@ -120,14 +125,16 @@ def save_test_result(
     results: list[dict],                 # [{name, status, elapsed_sec, error?}, ...]
     mode: str = "test",                  # "test" | "full"
     extra: dict | None = None,           # 추가 메타 (모델명, 설정 등)
+    version: str = "v1",
 ) -> Path:
     """
-    테스트 결과를 artifacts/logs/test_{type}_{datetime}.json 에 저장.
+    테스트 결과를 artifacts-{version}/logs/test_{type}_{datetime}.json 에 저장.
 
     results 항목 형식:
         {"name": str, "status": "PASS"|"FAIL", "elapsed_sec": float, "error": str|None}
     """
-    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    logs_dir = _logs_dir(version)
+    logs_dir.mkdir(parents=True, exist_ok=True)
     git_hash, git_branch = _get_git_info()
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -148,7 +155,7 @@ def save_test_result(
         **(extra or {}),
     }
 
-    out_path = LOGS_DIR / f"test_{test_type}_{ts}.json"
+    out_path = logs_dir / f"test_{test_type}_{ts}.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 

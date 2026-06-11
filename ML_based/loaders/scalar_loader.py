@@ -5,7 +5,10 @@
 
 Stride Trim: (subject_id, speed, trial_id) 그룹별 앞뒤 stride_trim개 제거
 Speed one-hot: normal/slow/fast → [1,0,0], [0,1,0], [0,0,1]
-η²-guided selection: feature_ranking.csv top-k feature만 사용
+η²-guided selection:
+  - eta2_topK  : feature_ranking.csv top-K feature만 사용 (η² 내림차순 정렬)
+  - eta2_sorted: 전체 feature를 η² 내림차순으로 정렬 (n_features HPO용)
+  - all / none : 선택 없이 전체
 """
 import sys
 from pathlib import Path
@@ -19,6 +22,8 @@ ML   = Path(__file__).parent.parent
 PROCESSED = ROOT / "data" / "processed"
 
 SPEED_ORDER = ["normal", "slow", "fast"]
+
+_SUBJ_SUFFIXES = ["_LSI", "_injured", "_uninjured", "_asym", "_contralateral"]
 
 
 def _speed_onehot(speed_series: pd.Series) -> pd.DataFrame:
@@ -38,15 +43,63 @@ def _apply_target(df: pd.DataFrame, cfg: DictConfig) -> np.ndarray:
         return df["group"].map(label_map).values.astype(int)
 
 
+def _strip_subj_suffix(feat: str) -> str:
+    """subject-level feature명에서 side/metric suffix를 제거해 base name 반환."""
+    for s in _SUBJ_SUFFIXES:
+        if feat.endswith(s):
+            return feat[: -len(s)]
+    return feat
+
+
+def _build_base_eta2(ranking_path: Path) -> dict[str, float]:
+    """feature_ranking.csv → {base_name: max_eta2} 딕셔너리."""
+    ranking = pd.read_csv(ranking_path)
+    eta2_col = next((c for c in ranking.columns if "eta" in c.lower()), "eta2")
+    feat_col = next((c for c in ranking.columns if "feature" in c.lower()), "feature")
+    ranking = ranking[[feat_col, eta2_col]].rename(columns={feat_col: "feature", eta2_col: "eta2"})
+    # speed별 여러 행 → max
+    per_feat = ranking.groupby("feature")["eta2"].max()
+    base_eta2: dict[str, float] = {}
+    for feat_name, eta2_val in per_feat.items():
+        base = _strip_subj_suffix(feat_name)
+        base_eta2[base] = max(base_eta2.get(base, 0.0), float(eta2_val))
+    return base_eta2
+
+
+def _stride_col_eta2(col: str, base_eta2: dict[str, float]) -> float:
+    """stride-level 컬럼명을 base_eta2 딕셔너리로 η² 점수 조회."""
+    if col in base_eta2:
+        return base_eta2[col]
+    for base, val in base_eta2.items():
+        if col.startswith(base + "_") or col == base:
+            return val
+    return 0.0
+
+
+def _eta2_sort_feat_cols(feat_cols: list[str], ranking_path: Path) -> list[str]:
+    """stride-level feat_cols를 η² 내림차순으로 정렬."""
+    base_eta2 = _build_base_eta2(ranking_path)
+    return sorted(feat_cols, key=lambda c: _stride_col_eta2(c, base_eta2), reverse=True)
+
+
 def _eta2_feature_names(cfg: DictConfig) -> list[str] | None:
+    """
+    feature_select 설정에 따른 필터 feature 목록 반환.
+    - all / none / eta2_sorted → None (필터 없음)
+    - eta2_topK → top-K feature 이름 목록
+    """
     sel = cfg.features.feature_select
-    if sel == "all" or sel == "none":
+    if sel in ("all", "none", "eta2_sorted"):
         return None
     if not sel.startswith("eta2_top"):
         return None
     k = int(sel.replace("eta2_top", ""))
     ranking_path = PROCESSED / cfg.data.feature_ranking
     ranking = pd.read_csv(ranking_path)
+    eta2_col = next((c for c in ranking.columns if "eta" in c.lower()), "eta2")
+    feat_col = next((c for c in ranking.columns if "feature" in c.lower()), "feature")
+    ranking = ranking[[feat_col, eta2_col]].rename(columns={feat_col: "feature", eta2_col: "eta2"})
+    ranking = ranking.groupby("feature")["eta2"].max().reset_index()
     top_features = ranking.nlargest(k, "eta2")["feature"].tolist()
     return top_features
 
@@ -86,7 +139,6 @@ def _trim_strides(df: pd.DataFrame, stride_trim: int) -> pd.DataFrame:
     trial_col = "trial_id" if "trial_id" in df.columns else None
 
     if trial_col is None:
-        # trial_id 없을 때: stride_idx만으로 trim (subject/speed 그룹 내)
         def trim_group(g):
             sorted_g = g.sort_values("stride_idx")
             n = len(sorted_g)
@@ -110,7 +162,8 @@ def _trim_strides(df: pd.DataFrame, stride_trim: int) -> pd.DataFrame:
 
 def load_stride_scalar(cfg: DictConfig):
     """
-    Returns: X (ndarray), y (ndarray), groups (ndarray of subject_id strings)
+    Returns: X (ndarray), y (ndarray), groups (ndarray), feature_names (list[str])
+    feature_names: X의 각 컬럼 이름 (η² 정렬 모드 시 η² 내림차순)
     """
     path = PROCESSED / cfg.data.scalar_stride
     df = pd.read_parquet(path)
@@ -121,38 +174,41 @@ def load_stride_scalar(cfg: DictConfig):
     meta_cols = {"subject_id", "group", "speed", "side", "stride_idx", "trial_id"}
     feat_cols = [c for c in df.columns if c not in meta_cols]
 
+    sel = cfg.features.feature_select
+    ranking_path = PROCESSED / cfg.data.feature_ranking
+
     top_feats = _eta2_feature_names(cfg)
     if top_feats:
         base_top_feats = set()
         for f in top_feats:
-            # _contralateral 포함: subject-level에서 파생된 모든 suffix를 strip
-            for suffix in ["_LSI", "_injured", "_uninjured", "_asym", "_contralateral"]:
-                if f.endswith(suffix):
-                    f = f[:-len(suffix)]
-                    break
-            base_top_feats.add(f)
+            base_top_feats.add(_strip_subj_suffix(f))
         feat_cols_set = set(feat_cols)
         selected = set()
         for base in base_top_feats:
             if base in feat_cols_set:
                 selected.add(base)
             else:
-                # _asym 등으로 strip 시 base가 컬럼에 없을 경우 prefix 매칭
-                # e.g. 'knee_flexion' → 'knee_flexion_peak', 'knee_flexion_ROM', ...
                 for c in feat_cols:
                     if c.startswith(base + "_"):
                         selected.add(c)
         feat_cols = [c for c in feat_cols if c in selected]
         print(f"[scalar_loader] eta2 feature select: {len(feat_cols)}개 컬럼 선택됨")
 
+    # η² 정렬: eta2_sorted 또는 eta2_topK 모드에서 적용
+    if sel == "eta2_sorted" or sel.startswith("eta2_top"):
+        feat_cols = _eta2_sort_feat_cols(feat_cols, ranking_path)
+        print(f"[scalar_loader] η² 내림차순 정렬 완료 (상위 5): {feat_cols[:5]}")
+
     X_feats = df[feat_cols].values.astype(float)
 
     if cfg.features.speed_as_feature:
         speed_oh = _speed_onehot(df["speed"]).values
         X = np.hstack([X_feats, speed_oh])
+        feature_names = list(feat_cols) + [f"speed_{sp}" for sp in SPEED_ORDER]
     else:
         X = X_feats
+        feature_names = list(feat_cols)
 
     y = _apply_target(df, cfg)
     groups = df["subject_id"].values
-    return X, y, groups
+    return X, y, groups, feature_names

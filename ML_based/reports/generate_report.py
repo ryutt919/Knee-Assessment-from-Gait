@@ -11,14 +11,12 @@ import numpy as np
 import pandas as pd
 
 ML = Path(__file__).parent.parent
-LOGS_DIR  = ML / "artifacts" / "logs"
-REPORT_DIR = ML / "reports"
 
 
-def _load_runs() -> pd.DataFrame:
-    csvs = sorted(glob.glob(str(LOGS_DIR / "runs_*.csv")))
+def _load_runs(logs_dir: Path) -> pd.DataFrame:
+    csvs = sorted(glob.glob(str(logs_dir / "runs_*.csv")))
     if not csvs:
-        raise FileNotFoundError(f"실험 로그 없음: {LOGS_DIR}/runs_*.csv")
+        raise FileNotFoundError(f"실험 로그 없음: {logs_dir}/runs_*.csv")
     frames = []
     for c in csvs:
         try:
@@ -66,14 +64,17 @@ def _html_table(df: pd.DataFrame) -> str:
                       float_format=lambda x: f"{x:.4f}" if isinstance(x, float) else str(x))
 
 
-def generate(output_path: str | Path | None = None) -> Path:
-    df = _load_runs()
+def generate(output_path: str | Path | None = None, version: str = "v1") -> Path:
+    logs_dir = ML / f"artifacts-{version}" / "logs"
+    report_dir = ML / f"artifacts-{version}" / "reports"
+
+    df = _load_runs(logs_dir)
     summary = _model_summary(df)
 
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     if output_path is None:
-        REPORT_DIR.mkdir(parents=True, exist_ok=True)
-        output_path = REPORT_DIR / f"report_{ts}.html"
+        report_dir.mkdir(parents=True, exist_ok=True)
+        output_path = report_dir / f"report_{ts}.html"
     output_path = Path(output_path)
 
     html_parts = [

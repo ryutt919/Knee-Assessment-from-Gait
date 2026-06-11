@@ -14,7 +14,6 @@ from omegaconf import DictConfig
 from sklearn.metrics import f1_score
 
 ML = Path(__file__).parent.parent
-OPTUNA_DIR = ML / "artifacts" / "optuna"
 SEARCH_SPACE_PATH = ML / "configs" / "search_space.yaml"
 
 optuna.logging.set_verbosity(optuna.logging.WARNING)
@@ -50,25 +49,36 @@ def _suggest(trial: optuna.Trial, name: str, spec) -> object:
 
 
 def _build_params(trial: optuna.Trial, model_name: str, cfg: DictConfig,
-                  search_space: dict) -> dict:
+                  search_space: dict, feat_count_cap: int = None) -> dict:
+    """
+    Optuna trial에서 하이퍼파라미터를 샘플링.
+
+    feat_count_cap: n_features의 상한을 실제 feature 수로 제한 (None이면 무제한).
+    n_features는 모델 생성자 인자가 아닌 특수 키로 반환 — objective에서 pop 처리.
+    """
     model_space = search_space.get(model_name, {})
     params: dict = {}
 
-    # n_classes는 cfg에서 고정
     n_classes = 2 if cfg.targets.mode == "binary" else 3
     params["n_classes"] = n_classes
 
     for key, spec in model_space.items():
-        params[key] = _suggest(trial, key, spec)
+        if key == "n_features":
+            low  = int(spec[0])
+            high = int(spec[1])
+            if feat_count_cap is not None:
+                high = min(high, feat_count_cap)
+            high = max(high, low)  # low > cap 방지
+            params["n_features"] = trial.suggest_int("n_features", low, high)
+        else:
+            params[key] = _suggest(trial, key, spec)
 
-    # 모델별 고정 파라미터 (config에서)
     model_cfg = cfg.models.get(model_name, {})
     for k in ("max_iter", "class_weight", "max_epochs", "batch_size", "patience",
               "min_delta", "early_stopping_rounds"):
         if k in model_cfg:
             params.setdefault(k, model_cfg[k])
 
-    # DL: speed_dim 전달
     if model_name in ("cnn1d", "transformer"):
         params.setdefault("speed_dim", 3 if cfg.features.speed_as_feature else 0)
 
@@ -94,7 +104,9 @@ def run_optuna(
     from loaders.splits import make_outer_splits
     from sklearn.preprocessing import StandardScaler
 
-    OPTUNA_DIR.mkdir(parents=True, exist_ok=True)
+    version = cfg.get("version", "v1")
+    optuna_dir = ML / f"artifacts-{version}" / "optuna"
+    optuna_dir.mkdir(parents=True, exist_ok=True)
     search_space = _load_search_space()
 
     n_inner  = cfg.cv.n_inner
@@ -102,7 +114,10 @@ def run_optuna(
     inner_splits = make_outer_splits(groups_tr, n_inner, cfg.cv.seed + fold * 100, y=y_tr)
 
     def objective(trial: optuna.Trial) -> float:
-        params = _build_params(trial, model_name, cfg, search_space)
+        params = _build_params(trial, model_name, cfg, search_space,
+                               feat_count_cap=X_tr.shape[1])
+        # n_features는 모델 생성자 인자가 아님 — 먼저 pop
+        n_features = params.pop("n_features", None)
         fold_f1s = []
         fold_bacs = []
         fold_precs = []
@@ -113,6 +128,15 @@ def run_optuna(
         for inner_fold_idx, (i_tr, i_va) in enumerate(inner_splits):
             Xi_tr, Xi_va = X_tr[i_tr], X_tr[i_va]
             yi_tr, yi_va = y_tr[i_tr], y_tr[i_va]
+
+            # n_features 슬라이싱: 상위 n_features개 피처 컬럼 사용
+            # speed one-hot (마지막 3열)은 항상 포함
+            if n_features is not None and not is_dl:
+                n_speed = 3 if cfg.features.speed_as_feature else 0
+                nf = min(n_features, Xi_tr.shape[1] - n_speed)
+                col_idx = list(range(nf)) + list(range(Xi_tr.shape[1] - n_speed, Xi_tr.shape[1]))
+                Xi_tr = Xi_tr[:, col_idx]
+                Xi_va = Xi_va[:, col_idx]
 
             sp_i_tr = sp_tr[i_tr] if sp_tr is not None else None
             sp_i_va = sp_tr[i_va] if sp_tr is not None else None
@@ -198,7 +222,7 @@ def run_optuna(
     # feature 수를 study 이름에 포함 → feature set 변경 시 자동으로 새 study 생성
     n_feat = X_tr.shape[1]
     study_key = f"{model_name}_fold{fold}_nf{n_feat}"
-    storage = f"sqlite:///{OPTUNA_DIR}/study_{study_key}.db"
+    storage = f"sqlite:///{optuna_dir}/study_{study_key}.db"
     pruner  = optuna.pruners.MedianPruner(
         n_warmup_steps=cfg.optuna.pruner_warmup_steps
     )

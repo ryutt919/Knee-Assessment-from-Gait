@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMU 기반 다속도 보행 분석 — ACL 환자 판별 및 회복도 측정</title>
+<style>
+  :root {
+    --acld: #c0392b; --aclr: #1a6ca8; --ha: #1e8449;
+    --bg: #e8ecf2; --slide-bg: #ffffff;
+    --text: #1a2333; --sub: #5a6a80;
+    --accent: #1a6ca8; --gold: #b8860b;
+    --border: #d0d8e4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Slide Container ── */
+  #deck {
+    width: 1280px; height: 720px;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute; inset: 0;
+    background: var(--slide-bg);
+    display: none;
+    flex-direction: column;
+    padding: 22px 36px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .slide.active { display: flex; }
+
+  /* ── Slide Header ── */
+  .slide-header {
+    display: flex; align-items: flex-start;
+    gap: 12px; margin-bottom: 14px;
+  }
+  .slide-num {
+    flex-shrink: 0; width: 44px; height: 44px;
+    background: var(--accent); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 18px; color: #fff;
+    margin-top: 2px;
+  }
+  .slide-title {
+    font-size: 36px; font-weight: 700;
+    line-height: 1.2; color: #0f1a2b;
+  }
+  .slide-subtitle {
+    font-size: 20px; color: var(--sub);
+    margin-top: 4px;
+  }
+
+  /* ── Content ── */
+  .slide-body {
+    flex: 1; display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .slide-body.row { flex-direction: row; gap: 20px; }
+
+  /* ── Typography ── */
+  .lead {
+    font-size: 20px; font-weight: 600;
+    color: var(--gold); margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  p { font-size: 16px; line-height: 1.55; color: #2c3e50; margin-bottom: 5px; }
+  .indent { padding-left: 20px; }
+
+  /* ── Bullet lists ── */
+  .bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .bullets li {
+    font-size: 17px; line-height: 1.5;
+    color: #2c3e50;
+    padding-left: 24px; position: relative;
+  }
+  .bullets li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--accent); font-size: 13px; top: 4px;
+  }
+  .bullets li strong { color: #0f1a2b; }
+  .bullets.sm li { font-size: 15px; }
+
+  /* ── Quote ── */
+  .quote {
+    border-left: 4px solid var(--gold);
+    background: rgba(184,134,11,0.07);
+    padding: 14px 18px; border-radius: 0 8px 8px 0;
+    font-size: 14px; color: #3a4a5c;
+    font-style: italic; margin: 14px 0;
+  }
+
+  /* ── Ref badge ── */
+  .ref {
+    display: inline-block; font-size: 13px;
+    background: rgba(26,108,168,0.1); color: #1a5a90;
+    border-radius: 4px; padding: 1px 7px;
+    vertical-align: middle; margin-left: 4px;
+  }
+
+  /* ── Stat Cards ── */
+  .stat-grid {
+    display: grid; gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-grid.col3 { grid-template-columns: repeat(3, 1fr); }
+  .stat-card {
+    background: #f4f7fb;
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 10px;
+    text-align: center;
+  }
+  .stat-card .sval {
+    font-size: 26px; font-weight: 800;
+    color: var(--gold); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card .sval.acld { color: var(--acld); }
+  .stat-card .sval.aclr { color: var(--aclr); }
+  .stat-card .sval.ha { color: var(--ha); }
+  .stat-card .slabel { font-size: 14px; color: var(--sub); }
+  .stat-card .ssub { font-size: 13px; color: #5a7090; margin-top: 3px; }
+
+  /* ── Result Table ── */
+  .rtable { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .rtable th {
+    background: #f0f4f8;
+    padding: 6px 10px; text-align: left;
+    color: var(--sub); font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .rtable td {
+    padding: 5px 10px; border-bottom: 1px solid #e8edf3;
+    color: var(--text);
+  }
+  .rtable tr:hover td { background: #f8fafc; }
+  .rtable .sig { color: var(--gold); font-weight: 700; }
+  .rtable .large { color: #e74c3c; font-size: 13px;
+    background: rgba(231,76,60,0.15); border-radius: 3px; padding: 1px 5px; }
+  .rtable .acld-c { color: var(--acld); font-weight: 600; }
+  .rtable .aclr-c { color: var(--aclr); font-weight: 600; }
+  .rtable .ha-c { color: var(--ha); font-weight: 600; }
+
+  /* ── Group Comparison ── */
+  .group-bars { display: flex; flex-direction: column; gap: 12px; margin: 8px 0; }
+  .gbar { display: flex; align-items: center; gap: 12px; }
+  .gbar-label { width: 48px; font-size: 14px; font-weight: 700; text-align: right; }
+  .gbar-label.acld { color: var(--acld); }
+  .gbar-label.aclr { color: var(--aclr); }
+  .gbar-label.ha { color: var(--ha); }
+  .gbar-track {
+    flex: 1; height: 30px; background: #e8edf3;
+    border-radius: 6px; position: relative; overflow: hidden;
+  }
+  .gbar-fill {
+    height: 100%; border-radius: 6px;
+    display: flex; align-items: center;
+    padding-left: 10px; font-size: 13px; font-weight: 600; color: #fff;
+    transition: width 0.4s ease;
+  }
+  .gbar-fill.acld { background: var(--acld); }
+  .gbar-fill.aclr { background: var(--aclr); }
+  .gbar-fill.ha { background: var(--ha); }
+
+  /* ── Two-col layout ── */
+  .col { flex: 1; display: flex; flex-direction: column; }
+  .col.narrow { flex: 0 0 42%; }
+  .col.wide { flex: 0 0 56%; }
+
+  /* ── Image placeholder ── */
+  .img-placeholder {
+    flex: 1;
+    border: 2px dashed #b0bdd0;
+    border-radius: 10px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: #f4f7fb;
+    gap: 10px; min-height: 200px;
+  }
+  .img-placeholder .ph-icon { font-size: 48px; opacity: 0.5; }
+  .img-placeholder .ph-label {
+    font-size: 13px; color: #7a90a8;
+    text-align: center; max-width: 280px; line-height: 1.5;
+  }
+  .img-actual {
+    width: 100%; height: 100%;
+    object-fit: contain; border-radius: 8px;
+  }
+  .fig-caption {
+    font-size: 13px; color: var(--sub);
+    text-align: center; margin-top: 8px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px; background: var(--border);
+    margin: 16px 0;
+  }
+
+  /* ── Tag ── */
+  .tag {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    padding: 2px 9px; border-radius: 20px;
+  }
+  .tag.fast { background: rgba(231,76,60,0.2); color: #e74c3c; }
+  .tag.slow { background: rgba(52,152,219,0.2); color: #3498db; }
+  .tag.norm { background: rgba(39,174,96,0.2); color: #27ae60; }
+  .tag.large-effect { background: rgba(240,192,64,0.2); color: var(--gold); }
+
+  /* ── Pipeline Diagram ── */
+  .pipeline {
+    display: flex; align-items: center; gap: 0;
+    margin: 10px 0;
+  }
+  .pipe-box {
+    flex: 1; background: #e8f0fa;
+    border: 1px solid #b8cce8;
+    border-radius: 10px; padding: 14px 12px;
+    text-align: center;
+  }
+  .pipe-box.stat { background: #e8f6ee; border-color: #a8d8b8; }
+  .pipe-box.ml { background: #f2eafa; border-color: #c8a8e8; }
+  .pipe-box.shap { background: #fef4e8; border-color: #e8c888; }
+  .pipe-box .pb-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .pipe-box .pb-sub { font-size: 13px; color: var(--sub); line-height: 1.5; }
+  .pipe-arrow {
+    font-size: 16px; color: var(--sub);
+    padding: 0 8px; flex-shrink: 0;
+  }
+
+  /* ── Highlight box ── */
+  .highlight-box {
+    background: #fdf8e8;
+    border: 1px solid #e0c870;
+    border-radius: 8px; padding: 8px 14px;
+    margin: 6px 0;
+  }
+  .highlight-box.blue {
+    background: #e8f2fb;
+    border-color: #90b8e0;
+  }
+  .highlight-box .hb-title {
+    font-size: 14px; font-weight: 700;
+    color: #8a6800; margin-bottom: 6px;
+  }
+  .highlight-box.blue .hb-title { color: var(--accent); }
+  .highlight-box p { font-size: 14px; margin-bottom: 0; }
+
+  /* ── Bottom bar ── */
+  #ctrl {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 1280px; padding: 10px 16px;
+  }
+  #progress {
+    height: 3px; background: #d0d8e4;
+    border-radius: 2px; width: 1280px;
+    margin-bottom: 2px;
+  }
+  #progress-fill {
+    height: 100%; background: var(--accent);
+    border-radius: 2px; transition: width 0.3s;
+  }
+  .ctrl-btn {
+    background: #edf1f7;
+    border: 1px solid var(--border); color: var(--text);
+    border-radius: 6px; padding: 6px 18px;
+    cursor: pointer; font-size: 14px;
+    transition: background 0.2s;
+  }
+  .ctrl-btn:hover { background: #dde4ee; }
+  #slide-counter { font-size: 14px; color: var(--sub); }
+
+  /* ── Title Slide special ── */
+  .title-slide {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; background: linear-gradient(135deg, #f0f4fa 0%, #dde8f5 100%);
+  }
+  .title-slide .main-title {
+    font-size: 46px; font-weight: 800;
+    line-height: 1.25; color: #0f1a2b;
+    max-width: 900px; margin-bottom: 14px;
+  }
+  .title-slide .accent-line {
+    width: 80px; height: 4px;
+    background: var(--accent); border-radius: 2px; margin: 0 auto 16px;
+  }
+  .title-slide .meta { font-size: 18px; color: var(--sub); line-height: 1.8; }
+  .title-slide .rqs {
+    display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap;
+    justify-content: center;
+  }
+  .rq-card {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px;
+    max-width: 300px; text-align: left;
+  }
+  .rq-card .rq-num {
+    font-size: 13px; color: var(--accent);
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .rq-card .rq-text { font-size: 16px; line-height: 1.5; color: #3a4a5c; }
+
+  /* SPM region badge */
+  .spm-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fdf4d8; border: 1px solid #d4b040;
+    border-radius: 8px; padding: 8px 14px; margin: 4px 0;
+  }
+  .spm-badge .sb-chan { font-weight: 700; font-size: 16px; }
+  .spm-badge .sb-info { font-size: 13px; color: var(--sub); }
+  .spm-badge .sb-pval { font-size: 13px; color: #8a6000; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<div id="progress"><div id="progress-fill"></div></div>
+<div id="deck">
+
+<!-- ══════════════════════════════════════════
+     SLIDE 1: 표지
+══════════════════════════════════════════ -->
+<div class="slide title-slide active" data-slide="1">
+  <div class="main-title">
+    IMU 기반 다속도 보행 분석으로<br>
+    <span style="color:var(--accent);">ACL 환자 판별</span> 및 <span style="color:var(--gold);">회복도 측정</span>
+  </div>
+  <div class="accent-line"></div>
+  <div class="meta">
+    COMPWALK-ACL (Yona et al., 2026) · n=79 (ACLD 27 · ACLR 27 · HA 25)<br>
+    다속도(Slow / Normal / Fast) · 7 IMU 센서 · Xsens
+  </div>
+  <div class="rqs">
+    <div class="rq-card">
+      <div class="rq-num">RQ 1</div>
+      <div class="rq-text">다속도 IMU 보행 시계열로 ACLD · ACLR · HA를 감별하는 <strong>ML 모델 개발·검증</strong></div>
+    </div>
+    <div class="rq-card">
+      <div class="rq-num">RQ 2</div>
+      <div class="rq-text">속도 의존적 보행 비대칭을 회복 상태의 <strong>동적 지표로 정량화</strong></div>
+    </div>
+    <div class="rq-card">
+      <div class="rq-num">RQ 3</div>
+      <div class="rq-text">IMU 보행 특징의 전 재활 단계에 걸친 <strong>종단적 회복 지표 적용 가능성 평가</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 2: 임상 문제
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="2">
+  <div class="slide-header">
+    <div class="slide-num">2</div>
+    <div>
+      <div class="slide-title">왜 ACL 보행인가?</div>
+      <div class="slide-subtitle">임상 문제 & 평가 도구의 한계</div>
+    </div>
+  </div>
+  <div class="slide-body row">
+    <div class="col">
+      <div class="stat-grid col3" style="margin-bottom:20px;">
+        <div class="stat-card">
+          <div class="sval" style="color:var(--acld);">25만</div>
+          <div class="slabel">연간 ACLR 수술 건수</div>
+          <div class="ssub">미국 기준 (Zhu 2025)</div>
+        </div>
+        <div class="stat-card">
+          <div class="sval" style="color:var(--gold);">15–25%</div>
+          <div class="slabel">2년 이내 재파열률</div>
+          <div class="ssub">Yu 2026</div>
+        </div>
+        <div class="stat-card">
+          <div class="sval" style="color:var(--acld);">50%</div>
+          <div class="slabel">10–15년 내 PTOA</div>
+          <div class="ssub">골관절염 발생률</div>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li><strong>현 평가 도구:</strong> Biodex, OMC, Force plate<br>
+          <span style="font-size:13px;color:var(--sub);">→ 고정밀이나 특수 실험실 전용, 고비용, 일상 모니터링 불가</span>
+        </li>
+        <li><strong>결과:</strong> 대부분의 환자는 동작 품질 평가 없이 재활 완료
+          <br><span style="font-size:13px;color:var(--sub);">→ 임상 평가 ≠ 실제 기능 회복</span>
+        </li>
+        <li><strong>보행의 강점:</strong> 하루 6,000–12,000보, 재활 첫날부터 평가 가능 <span class="ref">Lisee 2022</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col" style="flex:0 0 44%;">
+      <div class="highlight-box" style="margin-bottom:9px;">
+        <div class="hb-title">ACLR 보행 보상 패턴 (반복 검증됨)</div>
+        <ul class="bullets sm">
+          <li>무릎 굴곡각 감소 (stiffened knee 전략)</li>
+          <li>최대 KEM · KAM 저하 → 하중 불균형</li>
+          <li>재건 측 vGRF 감소 (하중 회피)</li>
+          <li>비손상 측 하지에서도 지속 <span class="ref">Büttner 2024</span></li>
+        </ul>
+      </div>
+      <div class="highlight-box" style="margin-bottom:9px;border-left:3px solid #c0392b;background:rgba(192,57,43,0.06);">
+        <div class="hb-title" style="color:#c0392b;">PTOA 기전 — 왜 보상 패턴이 위험한가</div>
+        <ul class="bullets sm">
+          <li>KEM · KAM 감소 → 연골 접촉 응력 분포 변화</li>
+          <li>수천 회 반복 부하 → 연골 세포 대사 저해 → PTOA</li>
+          <li><span class="ref">Lisee 2022</span>: 낮은 일일 보행 수 → vGRF · KEM 감소 → 연골 퇴행</li>
+          <li>전두면 하중 과소 환자 → 5년 내 OA 발생률 역설적 증가</li>
+        </ul>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-title">보행이 전 재활 기간 평가의 핵심인 이유</div>
+        <p>홉·달리기는 초기 재활에서 금기 — 보행은 <strong>Day 1부터 안전하게 평가 가능</strong>.<br>
+        저강도·보편적 접근으로 전 재활 기간 <strong>종단적 연속 모니터링</strong> 유일하게 가능.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 3: 다속도의 필요성
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="3">
+  <div class="slide-header">
+    <div class="slide-num">3</div>
+    <div>
+      <div class="slide-title">단일 속도 평가의 함정</div>
+      <div class="slide-subtitle">왜 '다속도'인가 — 근거 문헌 기반</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="lead">자기선택 속도에서 ACLR 환자는 이미 "정상처럼" 보인다. 이것이 문제다.</div>
+    <div class="slide-body row" style="gap:24px;flex:1;">
+      <div class="col">
+        <div class="highlight-box" style="margin-bottom:12px;">
+          <div class="hb-title">Garcia et al. 2021 &amp; Krishnan et al. 2022 <span class="ref">J Orthop Res</span></div>
+          <ul class="bullets sm">
+            <li>보행 속도 ↑ (80%→100%→120%) 시 GRF 좌우 비대칭 <strong>진행적 증가</strong></li>
+            <li>건강군: 속도 변화에 비대칭 변화 미미</li>
+            <li>자기선택 속도: GRF 좌우 차이 &lt; 5% → '정상 범위' 착시</li>
+          </ul>
+          <div class="quote" style="margin-top:10px;font-size:13px;">
+            "비손상 측 GRF의 동반 감소로 인해 차이가 인위적으로 축소됨 — 거짓 안심(false reassurance)"<br>
+            — Krishnan et al. 2022
+          </div>
+        </div>
+        <div class="highlight-box blue">
+          <div class="hb-title">Lai et al. 2024 <span class="ref">Orthopaedic Surgery</span></div>
+          <ul class="bullets sm">
+            <li><strong>빠른 속도에서만</strong> 횡단면 비대칭 노출: 외회전 증가, 경골 전방 이동</li>
+            <li>Slow/Normal에서는 유의한 차이 없음</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 4: 전 파형 분석의 필요성
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="4">
+  <div class="slide-header">
+    <div class="slide-num">4</div>
+    <div>
+      <div class="slide-title">피크값 분석의 한계 & 연구 공백</div>
+      <div class="slide-subtitle">Büttner 2024 근거 + 기존 연구 공백</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:28px;">
+    <div class="col">
+      <div class="highlight-box" style="margin-bottom:16px;">
+        <div class="hb-title">Büttner et al. 2024 <span class="ref">J Orthop Res</span></div>
+        <ul class="bullets sm">
+          <li>수술 전~수술 후 12개월 <strong>종단 전 파형 분석</strong></li>
+          <li>집단 간 차이: 전반부 피크가 아닌 <strong>중간 입각기 전 구간</strong>에 분포</li>
+          <li>중간 입각기 vGRF → 12개월 연골 변화 예측력 피크값 ≫</li>
+          <li>비손상 측 하지에서도 비정상 보행 <strong>지속</strong></li>
+        </ul>
+        <div class="quote" style="margin-top:10px;font-size:13px;">
+          "only evaluating peak outcomes within the first half of stance may lead to poor interpretations of results"
+        </div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:15px;color:var(--sub);">
+        따라서 본 연구는 <strong style="color:#0f1a2b;">스칼라 피크 분석(ANOVA)</strong> +
+        <strong style="color:#0f1a2b;">전체 파형 분석(SPM1D)</strong>를 병행합니다.
+      </p>
+    </div>
+    <div class="col" style="flex:0 0 46%;">
+      <div style="background:rgba(26,108,168,0.07);border:1px solid rgba(26,108,168,0.28);border-radius:10px;padding:13px;margin-bottom:10px;">
+        <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px;">💡 IMU가 유효한 대리 측정치인 이유</div>
+        <ul class="bullets sm">
+          <li><span class="ref">Jones 2022</span>: 경골 IMU 각속도 ↔ KEM · ROM · 강성 <strong>rs = 0.712–0.776</strong></li>
+          <li><span class="ref">Krishnakumar SR</span>: IMU로 vGRF · 무릎 모멘트 임상 허용 RMSE 이하 추정 가능</li>
+          <li>소형 · 저비용 · 휴대 → 실험실 밖 일상 연속 측정 가능</li>
+        </ul>
+      </div>
+      <div style="background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.25);border-radius:10px;padding:13px;margin-bottom:10px;">
+        <div style="font-size:14px;font-weight:700;color:#e74c3c;margin-bottom:8px;">⚠ 기존 IMU 연구들의 공백</div>
+        <ul class="bullets sm">
+          <li>대부분 <strong>단일 속도</strong> → 속도 의존적 비대칭 포착 불가</li>
+          <li><strong>횡단면</strong> 설계 → 회복 궤적 추적 불가</li>
+          <li>이산 스칼라 특징만 → 시계열 풍부성 미활용</li>
+        </ul>
+      </div>
+      <div style="background:rgba(74,158,255,0.1);border:1px solid rgba(74,158,255,0.3);border-radius:10px;padding:13px;">
+        <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px;">✓ 본 연구의 차별점</div>
+        <ul class="bullets sm">
+          <li><strong>다속도</strong> Slow / Normal / Fast</li>
+          <li><strong>종단 쌍</strong>: ACLD → ACLR (동일 피험자)</li>
+          <li><strong>전 파형 SPM1D</strong> + 스칼라 ANOVA 병행</li>
+          <li><strong>ML + SHAP</strong> 해석 가능성 확보</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 5: 데이터셋
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="5">
+  <div class="slide-header">
+    <div class="slide-num">5</div>
+    <div>
+      <div class="slide-title">데이터셋: COMPWALK-ACL</div>
+      <div class="slide-subtitle">Yona et al., 2026, Scientific Data — 세계 유일 공개 다속도 IMU 종단 데이터셋</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:28px;">
+    <div class="col">
+      <div class="stat-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px;">
+        <div class="stat-card" style="border-top:3px solid var(--acld);">
+          <div class="sval acld">27</div>
+          <div class="slabel">ACLD</div>
+          <div class="ssub">ACL 손상 (수술 전)</div>
+        </div>
+        <div class="stat-card" style="border-top:3px solid var(--aclr);">
+          <div class="sval aclr">27</div>
+          <div class="slabel">ACLR</div>
+          <div class="ssub">재건술 후 3개월<br>(동일 피험자 ↑)</div>
+        </div>
+        <div class="stat-card" style="border-top:3px solid var(--ha);">
+          <div class="sval ha">25</div>
+          <div class="slabel">Healthy Adults</div>
+          <div class="ssub">건강 성인 18–45세</div>
+        </div>
+      </div>
+      <ul class="bullets" style="gap:12px;">
+        <li><strong>속도 조건:</strong> Slow / Normal / Fast (자기선택 기준)</li>
+        <li><strong>7 실측 IMU:</strong> 골반, 양측 대퇴·하퇴·발
+          <br><span style="font-size:13px;color:var(--sub);">→ 직접 측정 신호 (각도·각속도·가속도)</span>
+        </li>
+        <li><strong>+23개 segment:</strong> Xsens 모델 계산 운동학
+          <br><span style="font-size:13px;color:var(--sub);">→ 총 693 채널, 분석 주 대상: 7 IMU</span>
+        </li>
+        <li><strong>핵심 가치:</strong> 동일 피험자 수술 전후 종단 쌍 → <span style="color:var(--gold);">ACLD → ACLR 직접 비교</span></li>
+      </ul>
+    </div>
+    <div class="col" style="flex:0 0 44%;">
+      <div class="img-placeholder" style="height:100%;">
+        <div class="ph-icon">🦾</div>
+        <div class="ph-label">
+          <strong>[IMAGE PLACEHOLDER]</strong><br>
+          7 IMU 센서 부착 위치 사진<br>
+          (골반·양측 대퇴/하퇴/발)<br>
+          또는 Yona 2026 논문 Figure 1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 6: 방법론 개요
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="6">
+  <div class="slide-header">
+    <div class="slide-num">6</div>
+    <div>
+      <div class="slide-title">분석 파이프라인 (20-Step)</div>
+      <div class="slide-subtitle">통계 분석 → ML 분류 → SHAP 해석</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="pipeline">
+      <div class="pipe-box" style="background:rgba(52,152,219,0.1);border-color:rgba(52,152,219,0.3);">
+        <div class="pb-title" style="color:#3498db;">① 데이터 전처리</div>
+        <div class="pb-sub">slim_gait.parquet<br>Stance 구간 추출<br>101pt 시간 정규화</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-box stat">
+        <div class="pb-title" style="color:#27ae60;">② 스칼라 분석</div>
+        <div class="pb-sub">148 features<br>Shapiro-Wilk → ANOVA<br>η², Cohen's d ranking</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-box" style="background:rgba(39,174,96,0.1);border-color:rgba(39,174,96,0.3);">
+        <div class="pb-title" style="color:#27ae60;">③ SPM1D 파형</div>
+        <div class="pb-sub">9채널 × 3속도 ANOVA<br>27쌍 Paired t-test<br>유의 구간 검출</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-box ml">
+        <div class="pb-title" style="color:#9b59b6;">④ ML 분류</div>
+        <div class="pb-sub">3-class / Binary<br>LOSO-CV<br>SVM · XGBoost</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-box shap">
+        <div class="pb-title" style="color:#e67e22;">⑤ SHAP 해석</div>
+        <div class="pb-sub">기여 feature 분석<br>통계 ↔ ML 교차검증<br>임상 해석</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;margin:14px 0;">
+      <div style="background:rgba(39,174,96,0.15);border:1px solid rgba(39,174,96,0.4);border-radius:6px;padding:6px 14px;font-size:13px;color:#27ae60;font-weight:700;">
+        ✅ STEP 1–3 완료 (오늘 발표)
+      </div>
+      <div style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.4);border-radius:6px;padding:6px 14px;font-size:13px;color:#9b59b6;font-weight:700;">
+        🔜 STEP 4–5 예정
+      </div>
+    </div>
+    <div class="img-placeholder" style="flex:1;min-height:0;">
+      <div class="ph-icon">🗂</div>
+      <div class="ph-label">
+        <strong>[IMAGE PLACEHOLDER]</strong><br>
+        파이프라인 흐름도 이미지<br>
+        (step별 입출력 다이어그램)
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 7: 방법론 — 스칼라 분석
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="7">
+  <div class="slide-header">
+    <div class="slide-num">7</div>
+    <div>
+      <div class="slide-title">방법론 ① 스칼라 분석</div>
+      <div class="slide-subtitle">Stance 구간 feature 추출 → ANOVA → 효과 크기 ranking</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:28px;">
+    <div class="col">
+      <div class="highlight-box blue" style="margin-bottom:16px;">
+        <div class="hb-title">분석 절차</div>
+        <ul class="bullets sm">
+          <li>Stance 구간별 5종 feature: <strong>peak / min / ROM / IC_angle / peak_timing</strong></li>
+          <li>9채널 × 5종 × 3속도 → <strong>148 features</strong> (+LSI, 비대칭 지표)</li>
+          <li>Shapiro-Wilk 정규성 검정 → 통과: One-way ANOVA / 실패: Kruskal-Wallis</li>
+          <li>Bonferroni 다중 비교 보정</li>
+          <li>효과 크기: <strong>η² (집단 간)</strong> + <strong>Cohen's d (쌍별)</strong> → ranking</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <div class="hb-title">LSI (Limb Symmetry Index)</div>
+        <p style="font-size:13px;">= (환측 값 / 건측 값) × 100<br>
+        임상 기준: <strong>90–110%</strong> = 기능 대칭 범위<br>
+        RTS(스포츠 복귀) 결정의 핵심 임상 벤치마크 <span class="ref">Mpaliotes 2022</span></p>
+      </div>
+    </div>
+    <div class="col" style="flex:0 0 46%;">
+      <div style="font-size:13px;font-weight:700;color:var(--sub);margin-bottom:8px;">IMU 신호 파형 & Feature 추출 시각화</div>
+      <div style="display:flex;gap:12px;height:260px;">
+        <div style="flex:1;display:flex;flex-direction:column;">
+          <div style="flex:1;background:#f0f4f8;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+            <img src="HF.png" alt="Hip Flexion 파형" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="fig-caption" style="margin-top:5px;">Fig. Hip Flexion<br>● peak &nbsp;● IC_angle 추출</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;">
+          <div style="flex:1;background:#f0f4f8;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+            <img src="KF.png" alt="Knee Flexion 파형" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="fig-caption" style="margin-top:5px;">Fig. Knee Flexion<br>● peak &nbsp;● min &nbsp;ROM 추출</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 8: 방법론 — SPM1D
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="8">
+  <div class="slide-header">
+    <div class="slide-num">8</div>
+    <div>
+      <div class="slide-title">방법론 ② SPM1D 파형 분석</div>
+      <div class="slide-subtitle">전체 stance 파형의 통계적 비교 — 왜 SPM1D인가</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:24px;">
+    <div class="col">
+      <div class="highlight-box blue" style="margin-bottom:12px;">
+        <div class="hb-title">분석 절차</div>
+        <ul class="bullets sm">
+          <li>Stance 구간 <strong>101pt 시간 정규화</strong> → 그룹별 평균 파형</li>
+          <li><strong>3그룹 ANOVA</strong>: 9채널 × 3속도 (ACLD·ACLR·HA)</li>
+          <li><strong>Paired t-test</strong>: 27쌍 ACLD–ACLR (종단 비교)</li>
+          <li>SPM{F} / SPM{t} 임계값으로 유의 구간 판정</li>
+        </ul>
+      </div>
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:10px;">WHY SPM1D — 3가지 근거</div>
+      <ul class="bullets sm">
+        <li><strong>Büttner 2024</strong>: 집단 간 차이가 피크 하나가 아닌 파형 전 구간 분포</li>
+        <li><strong>Garcia 2021, Krishnan 2022</strong>: 실제로 SPM1D 2×3 반복측정 ANOVA 사용.<br>
+          "이산 시점 비교에서 포착 불가한 보행 특성의 강건한 평가"</li>
+        <li><strong>Lai 2024</strong>: 3속도 다속도 운동학 SPM1D paired t-test 선례 — 본 연구와 동일 설계</li>
+      </ul>
+    </div>
+    <div class="col" style="flex:0 0 46%;display:flex;flex-direction:column;gap:12px;">
+      <div style="flex:1;background:#f0f4f8;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+        <img src="spm_knee_flexion_fast_Right.png" alt="SPM knee fast" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a6080;padding:10px;font-size:15px;\'>spm_knee_flexion_fast_Right.png</div>'">
+      </div>
+      <div class="fig-caption">Fig. SPM1D — Knee Flexion, Fast (Right leg, 3그룹 ANOVA)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 9: 결과 개요 (KPI)
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="9">
+  <div class="slide-header">
+    <div class="slide-num">9</div>
+    <div>
+      <div class="slide-title">결과 개요 — 스칼라 분석 & SPM1D</div>
+      <div class="slide-subtitle">20/20 steps 완료 · 79 tests passed · Bonferroni 보정</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="stat-grid" style="margin-bottom:16px;grid-template-columns:repeat(5,1fr);">
+      <div class="stat-card">
+        <div class="sval">148</div>
+        <div class="slabel">전체 Features</div>
+        <div class="ssub">9채널 × 5종 + LSI·비대칭</div>
+      </div>
+      <div class="stat-card" style="border-top:3px solid var(--gold);">
+        <div class="sval" style="color:var(--gold);">19</div>
+        <div class="slabel">유의 Features</div>
+        <div class="ssub">Bonferroni p&lt;0.05</div>
+      </div>
+      <div class="stat-card" style="border-top:3px solid var(--acld);">
+        <div class="sval" style="color:var(--acld);">10</div>
+        <div class="slabel">Fast 조건</div>
+        <div class="ssub">19개 중 과반수 · 속도↑ 차이↑</div>
+      </div>
+      <div class="stat-card" style="border-top:3px solid var(--aclr);">
+        <div class="sval" style="color:var(--aclr);">3</div>
+        <div class="slabel">SPM ANOVA 채널</div>
+        <div class="ssub">모두 fast 조건</div>
+      </div>
+      <div class="stat-card">
+        <div class="sval">1</div>
+        <div class="slabel">SPM Paired 채널</div>
+        <div class="ssub">ACLD vs ACLR · knee flexion</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="highlight-box">
+        <div class="hb-title">속도별 유의 피처 분포 (19개)</div>
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <div style="flex:1;background:#fde8e8;border-radius:6px;padding:10px;text-align:center;"><div style="font-size:26px;font-weight:800;color:var(--acld);">10</div><div style="font-size:13px;color:var(--sub);">Fast</div></div>
+          <div style="flex:1;background:#e8f0fb;border-radius:6px;padding:10px;text-align:center;"><div style="font-size:26px;font-weight:800;color:var(--aclr);">5</div><div style="font-size:13px;color:var(--sub);">Slow</div></div>
+          <div style="flex:1;background:#e8f6ee;border-radius:6px;padding:10px;text-align:center;"><div style="font-size:26px;font-weight:800;color:var(--ha);">4</div><div style="font-size:13px;color:var(--sub);">Normal</div></div>
+        </div>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-title">SPM1D 3-group ANOVA — Fast 조건 유의 채널 (3개)</div>
+        <ul class="bullets sm" style="margin-top:4px;">
+          <li>Knee Adduction (fast): 78–87% stance · F_max=9.32</li>
+          <li>Knee Int. Rotation (fast): 20–30%, 80–86% stance · F_max=7.99</li>
+          <li>Knee Flexion (fast): 0–4%, 75–82%, 100% stance · F_max=7.57</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <table class="rtable">
+        <thead><tr><th>클러스터</th><th>유의 피처 수</th><th>주요 속도</th><th>최대 η²</th><th>최대 |d| ACLR↔HA</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Knee Flexion</strong></td><td class="sig">7개</td><td><span class="tag fast">fast</span> <span class="tag slow">slow</span> <span class="tag norm">normal</span></td><td class="sig">0.284</td><td>1.75</td></tr>
+          <tr><td><strong>Hip Flexion</strong></td><td class="sig">5개</td><td><span class="tag fast">fast</span> dominant</td><td class="sig">0.253</td><td>1.34</td></tr>
+          <tr><td><strong>Ankle Dorsiflexion</strong></td><td>5개</td><td><span class="tag fast">fast</span> <span class="tag slow">slow</span></td><td>0.185</td><td>1.22</td></tr>
+          <tr><td><strong>Asymmetry (knee·ankle)</strong></td><td>4개</td><td><span class="tag slow">slow</span> <span class="tag norm">normal</span></td><td>0.199</td><td>1.07</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 10: 핵심 결과 — Knee Flexion LSI
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="10">
+  <div class="slide-header">
+    <div class="slide-num">10</div>
+    <div>
+      <div class="slide-title">Knee Flexion 클러스터 — 7개 유의 피처 전체</div>
+      <div class="slide-subtitle">FDR-BH q&lt;0.05 · LSI · Peak · ROM · Asym 4개 하위 클러스터 · η² 0.139–0.284</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:16px;">
+
+    <!-- ── Left: 4 sub-clusters with compact bar charts ── -->
+    <div class="col" style="flex:1;min-width:0;display:flex;flex-direction:column;gap:9px;">
+
+      <!-- ① LSI -->
+      <div style="border-left:3px solid var(--gold);padding-left:8px;">
+        <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:3px;">
+          ① LSI 지표 (1개) — Peak LSI <span class="tag fast">fast</span> &nbsp;η²=<strong>0.284</strong> · q=0.0005 · d(ACLR−HA)=−1.745
+        </div>
+        <div class="group-bars" style="gap:3px;margin:0;">
+          <div class="gbar"><div class="gbar-label acld" style="width:38px;font-size:11px;">ACLD</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill acld" style="width:88%;font-size:11px;line-height:20px;">99.0 ± 28.6%</div></div></div>
+          <div class="gbar"><div class="gbar-label aclr" style="width:38px;font-size:11px;">ACLR</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill aclr" style="width:69%;font-size:11px;line-height:20px;">77.0 ± 21.0% ← 23% 결손</div></div></div>
+          <div class="gbar"><div class="gbar-label ha" style="width:38px;font-size:11px;">HA</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill ha" style="width:100%;font-size:11px;line-height:20px;">112.1 ± 19.2%</div></div></div>
+        </div>
+      </div>
+
+      <div style="height:1px;background:var(--border);"></div>
+
+      <!-- ② Peak 환측 -->
+      <div style="border-left:3px solid #e74c3c;padding-left:8px;">
+        <div style="font-size:12px;font-weight:700;color:#c0392b;margin-bottom:3px;">
+          ② Peak 환측 절대값 (1개) — Peak injured <span class="tag fast">fast</span> &nbsp;η²=0.188 · q=0.0165 · d(ACLR−HA)=−1.138
+        </div>
+        <div class="group-bars" style="gap:3px;margin:0;">
+          <div class="gbar"><div class="gbar-label acld" style="width:38px;font-size:11px;">ACLD</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill acld" style="width:84%;font-size:11px;line-height:20px;">18.7 ± 4.9°</div></div></div>
+          <div class="gbar"><div class="gbar-label aclr" style="width:38px;font-size:11px;">ACLR</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill aclr" style="width:74%;font-size:11px;line-height:20px;">16.6 ± 4.9°</div></div></div>
+          <div class="gbar"><div class="gbar-label ha" style="width:38px;font-size:11px;">HA</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill ha" style="width:100%;font-size:11px;line-height:20px;">22.3 ± 5.2°</div></div></div>
+        </div>
+      </div>
+
+      <div style="height:1px;background:var(--border);"></div>
+
+      <!-- ③ ROM 환측 (2개) -->
+      <div style="border-left:3px solid #3498db;padding-left:8px;">
+        <div style="font-size:12px;font-weight:700;color:#2471a3;margin-bottom:4px;">
+          ③ ROM 환측 (2개) — Slow &amp; Normal 유의 · ACLR 수술 전보다 낮음
+        </div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:2px;">ROM injured <span class="tag slow">slow</span> &nbsp;η²=0.234 · q=0.0043 · d(ACLD↔ACLR)=1.02 · d(ACLR−HA)=−1.285</div>
+        <div class="group-bars" style="gap:3px;margin:0 0 5px 0;">
+          <div class="gbar"><div class="gbar-label acld" style="width:38px;font-size:11px;">ACLD</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill acld" style="width:99%;font-size:11px;line-height:20px;">32.5 ± 4.3°</div></div></div>
+          <div class="gbar"><div class="gbar-label aclr" style="width:38px;font-size:11px;">ACLR</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill aclr" style="width:86%;font-size:11px;line-height:20px;">28.3 ± 3.9° ← 수술 전보다 낮음</div></div></div>
+          <div class="gbar"><div class="gbar-label ha" style="width:38px;font-size:11px;">HA</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill ha" style="width:100%;font-size:11px;line-height:20px;">33.0 ± 3.3°</div></div></div>
+        </div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:2px;">ROM injured <span class="tag norm">normal</span> &nbsp;η²=0.188 · q=0.0165 · d(ACLD↔ACLR)=0.92 · d(ACLR−HA)=−1.102</div>
+        <div class="group-bars" style="gap:3px;margin:0;">
+          <div class="gbar"><div class="gbar-label acld" style="width:38px;font-size:11px;">ACLD</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill acld" style="width:100%;font-size:11px;line-height:20px;">32.2 ± 4.4°</div></div></div>
+          <div class="gbar"><div class="gbar-label aclr" style="width:38px;font-size:11px;">ACLR</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill aclr" style="width:88%;font-size:11px;line-height:20px;">28.5 ± 3.7°</div></div></div>
+          <div class="gbar"><div class="gbar-label ha" style="width:38px;font-size:11px;">HA</div><div class="gbar-track" style="height:20px;"><div class="gbar-fill ha" style="width:99%;font-size:11px;line-height:20px;">32.0 ± 2.5°</div></div></div>
+        </div>
+      </div>
+
+      <div style="height:1px;background:var(--border);"></div>
+
+      <!-- ④ Asym (3개) -->
+      <div style="border-left:3px solid #27ae60;padding-left:8px;">
+        <div style="font-size:12px;font-weight:700;color:#1e8449;margin-bottom:4px;">
+          ④ Asym 비대칭 (3개) — Slow · Normal · Fast 모두 유의 · ACL군 2–2.5배↑
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+          <div>
+            <div style="font-size:10px;color:var(--sub);margin-bottom:2px;"><span class="tag slow">slow</span> η²=0.199 · q=0.0005</div>
+            <div class="group-bars" style="gap:2px;margin:0;">
+              <div class="gbar"><div class="gbar-label acld" style="width:36px;font-size:10px;">ACLD</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill acld" style="width:100%;font-size:10px;line-height:18px;">4.77 ± 3.10</div></div></div>
+              <div class="gbar"><div class="gbar-label aclr" style="width:36px;font-size:10px;">ACLR</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill aclr" style="width:92%;font-size:10px;line-height:18px;">4.37 ± 3.10</div></div></div>
+              <div class="gbar"><div class="gbar-label ha" style="width:36px;font-size:10px;">HA</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill ha" style="width:37%;font-size:10px;line-height:18px;">1.78 ± 1.33</div></div></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--sub);margin-bottom:2px;"><span class="tag norm">normal</span> η²=0.139 · q=0.0061</div>
+            <div class="group-bars" style="gap:2px;margin:0;">
+              <div class="gbar"><div class="gbar-label acld" style="width:36px;font-size:10px;">ACLD</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill acld" style="width:87%;font-size:10px;line-height:18px;">3.74 ± 2.62</div></div></div>
+              <div class="gbar"><div class="gbar-label aclr" style="width:36px;font-size:10px;">ACLR</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill aclr" style="width:100%;font-size:10px;line-height:18px;">4.30 ± 3.20</div></div></div>
+              <div class="gbar"><div class="gbar-label ha" style="width:36px;font-size:10px;">HA</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill ha" style="width:45%;font-size:10px;line-height:18px;">1.94 ± 1.25</div></div></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--sub);margin-bottom:2px;"><span class="tag fast">fast</span> η²=0.152 · q=0.0107</div>
+            <div class="group-bars" style="gap:2px;margin:0;">
+              <div class="gbar"><div class="gbar-label acld" style="width:36px;font-size:10px;">ACLD</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill acld" style="width:80%;font-size:10px;line-height:18px;">3.71 ± 2.56</div></div></div>
+              <div class="gbar"><div class="gbar-label aclr" style="width:36px;font-size:10px;">ACLR</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill aclr" style="width:100%;font-size:10px;line-height:18px;">4.64 ± 2.74</div></div></div>
+              <div class="gbar"><div class="gbar-label ha" style="width:36px;font-size:10px;">HA</div><div class="gbar-track" style="height:18px;"><div class="gbar-fill ha" style="width:50%;font-size:10px;line-height:18px;">2.30 ± 1.21</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Right: cluster summary table + boxplot ── -->
+    <div class="col" style="flex:0 0 40%;display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#f8fafc;border-radius:8px;padding:10px 10px 8px;border:1px solid var(--border);">
+        <div style="font-size:12px;font-weight:700;color:var(--sub);margin-bottom:6px;">7개 유의 피처 — 클러스터별 정리 (η² 내림차순)</div>
+        <table class="rtable" style="font-size:12px;">
+          <thead>
+            <tr><th>하위 클러스터</th><th>피처</th><th>속도</th><th>η²</th><th>q</th><th>d(ACLR−HA)</th></tr>
+          </thead>
+          <tbody>
+            <tr style="background:rgba(184,134,11,0.07);">
+              <td><span style="color:var(--gold);font-weight:700;">① LSI</span></td>
+              <td>Peak LSI</td>
+              <td><span class="tag fast">fast</span></td>
+              <td class="sig">0.284</td><td>0.0005</td><td class="large">−1.745</td>
+            </tr>
+            <tr>
+              <td><span style="color:#2471a3;font-weight:700;">③ ROM</span></td>
+              <td>ROM 환측</td>
+              <td><span class="tag slow">slow</span></td>
+              <td class="sig">0.234</td><td>0.0043</td><td class="large">−1.285</td>
+            </tr>
+            <tr>
+              <td><span style="color:#1e8449;font-weight:700;">④ Asym</span></td>
+              <td>Asym</td>
+              <td><span class="tag slow">slow</span></td>
+              <td>0.199</td><td>0.0005</td><td>+1.072</td>
+            </tr>
+            <tr>
+              <td><span style="color:#c0392b;font-weight:700;">② Peak</span></td>
+              <td>Peak 환측</td>
+              <td><span class="tag fast">fast</span></td>
+              <td>0.188</td><td>0.0165</td><td class="large">−1.138</td>
+            </tr>
+            <tr>
+              <td><span style="color:#2471a3;font-weight:700;">③ ROM</span></td>
+              <td>ROM 환측</td>
+              <td><span class="tag norm">norm</span></td>
+              <td>0.188</td><td>0.0165</td><td class="large">−1.102</td>
+            </tr>
+            <tr>
+              <td><span style="color:#1e8449;font-weight:700;">④ Asym</span></td>
+              <td>Asym</td>
+              <td><span class="tag fast">fast</span></td>
+              <td>0.152</td><td>0.0107</td><td>+1.092</td>
+            </tr>
+            <tr>
+              <td><span style="color:#1e8449;font-weight:700;">④ Asym</span></td>
+              <td>Asym</td>
+              <td><span class="tag norm">norm</span></td>
+              <td>0.139</td><td>0.0061</td><td>+0.955</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="flex:1;background:#f0f4f8;border-radius:10px;overflow:hidden;min-height:140px;display:flex;align-items:center;justify-content:center;">
+        <img src="boxplot_knee_flexion_LSI.png" alt="Knee flexion LSI boxplot" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%;\'><div class=\'ph-icon\'>📦</div><div class=\'ph-label\'>boxplot_knee_flexion_LSI.png</div></div>'">
+      </div>
+      <div class="fig-caption">Fig. Knee Flexion Peak LSI — 속도별 3그룹 비교</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 11: Hip Flexion 클러스터
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="11">
+  <div class="slide-header">
+    <div class="slide-num">11</div>
+    <div>
+      <div class="slide-title">Hip Flexion 클러스터 — 5개 유의 피처</div>
+      <div class="slide-subtitle">ROM·LSI 모두 fast 조건에서 집중 | ACLD·ACLR 공통 vs HA 감소</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:22px;">
+    <div class="col">
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">① ROM 환측 <span class="tag fast">fast</span> — η²=0.253, p=0.004</div>
+      <div class="group-bars" style="margin-bottom:14px;">
+        <div class="gbar"><div class="gbar-label acld">ACLD</div><div class="gbar-track"><div class="gbar-fill acld" style="width:87%;">38.6 ± 5.2°</div></div></div>
+        <div class="gbar"><div class="gbar-label aclr">ACLR</div><div class="gbar-track"><div class="gbar-fill aclr" style="width:85%;">37.6 ± 5.0°</div></div></div>
+        <div class="gbar"><div class="gbar-label ha">HA</div><div class="gbar-track"><div class="gbar-fill ha" style="width:100%;">44.2 ± 4.8°</div></div></div>
+      </div>
+      <div style="font-size:13px;color:var(--sub);margin-bottom:14px;padding-left:52px;">→ ACLD·ACLR 모두 HA 대비 ~6° 감소 (d≈–1.3) — 손상·재건 공통 소견</div>
+
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">② Peak LSI <span class="tag fast">fast</span> — η²=0.173, p=0.017</div>
+      <div class="group-bars" style="margin-bottom:14px;">
+        <div class="gbar"><div class="gbar-label acld">ACLD</div><div class="gbar-track"><div class="gbar-fill acld" style="width:95%;">97.5 ± 11.0%</div></div></div>
+        <div class="gbar"><div class="gbar-label aclr">ACLR</div><div class="gbar-track"><div class="gbar-fill aclr" style="width:89%;">91.3 ± 9.6%</div></div></div>
+        <div class="gbar"><div class="gbar-label ha">HA</div><div class="gbar-track"><div class="gbar-fill ha" style="width:100%;">102.3 ± 9.3%</div></div></div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:6px;">
+        <div class="hb-title">③ Peak Timing LSI (fast) — η²=0.157, p=0.033 · 가장 큰 ACLD↔ACLR 차이</div>
+        <div style="display:flex;gap:16px;margin-top:6px;">
+          <span><span style="font-size:13px;color:var(--sub);">ACLD</span> <span class="acld-c" style="font-size:22px;font-weight:700;">144%</span></span>
+          <span><span style="font-size:13px;color:var(--sub);">ACLR</span> <span class="aclr-c" style="font-size:22px;font-weight:700;">86%</span></span>
+          <span><span style="font-size:13px;color:var(--sub);">HA</span> <span class="ha-c" style="font-size:22px;font-weight:700;">133%</span></span>
+          <span style="font-size:13px;color:var(--sub);align-self:center;">d(ACLD↔ACLR)=0.96 ← 수술 후 타이밍 급변</span>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="flex:0 0 44%;">
+      <div style="background:#f0f4f8;border-radius:10px;overflow:hidden;height:100%;display:flex;align-items:center;justify-content:center;">
+        <img src="boxplot_hip_flexion_injured.png" alt="Hip flexion ROM boxplot" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%;\'><div class=\'ph-icon\'>📦</div><div class=\'ph-label\'><strong>[IMAGE PLACEHOLDER]</strong><br>Hip Flexion ROM (환측)<br>(artifacts/boxplot_hip_flexion_injured.png)</div></div>'">
+      </div>
+      <div class="fig-caption">Fig. Hip Flexion ROM (환측) — 속도별 3그룹</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 12: 비대칭 & 속도별 경향성
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="12">
+  <div class="slide-header">
+    <div class="slide-num">12</div>
+    <div>
+      <div class="slide-title">비대칭(Asym) + 속도별 경향성</div>
+      <div class="slide-subtitle">Ankle·Knee Asymmetry 5개 유의 | Fast에서 차이 최대 — Garcia/Krishnan 가설 재현</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:20px;">
+    <div class="col">
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">Knee Flexion Asym <span class="tag slow">slow</span> — η²=0.199, p=0.0005 · ACL군 2.5배↑</div>
+      <div class="group-bars" style="margin-bottom:14px;">
+        <div class="gbar"><div class="gbar-label acld">ACLD</div><div class="gbar-track"><div class="gbar-fill acld" style="width:100%;">4.77 ± 3.10</div></div></div>
+        <div class="gbar"><div class="gbar-label aclr">ACLR</div><div class="gbar-track"><div class="gbar-fill aclr" style="width:92%;">4.37 ± 3.10</div></div></div>
+        <div class="gbar"><div class="gbar-label ha">HA</div><div class="gbar-track"><div class="gbar-fill ha" style="width:37%;">1.78 ± 1.33</div></div></div>
+      </div>
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">Ankle Dorsiflexion Asym <span class="tag slow">slow</span> — η²=0.192, p=0.006</div>
+      <div class="group-bars" style="margin-bottom:14px;">
+        <div class="gbar"><div class="gbar-label acld">ACLD</div><div class="gbar-track"><div class="gbar-fill acld" style="width:93%;">2.38 ± 1.19</div></div></div>
+        <div class="gbar"><div class="gbar-label aclr">ACLR</div><div class="gbar-track"><div class="gbar-fill aclr" style="width:100%;">2.56 ± 1.15</div></div></div>
+        <div class="gbar"><div class="gbar-label ha">HA</div><div class="gbar-track"><div class="gbar-fill ha" style="width:56%;">1.43 ± 0.59</div></div></div>
+      </div>
+      <div class="highlight-box" style="margin-top:6px;">
+        <div class="hb-title">속도↑ → 비대칭 증폭 (Garcia 2021 재현)</div>
+        <div style="display:flex;gap:6px;overflow-x:auto;margin-top:6px;">
+          <table class="rtable" style="font-size:13px;min-width:300px;">
+            <thead><tr><th>Asym</th><th>Slow</th><th>Normal</th><th>Fast</th></tr></thead>
+            <tbody>
+              <tr><td>Knee·ACLD</td><td>4.77</td><td>3.74</td><td class="sig">3.71</td></tr>
+              <tr><td>Knee·ACLR</td><td>4.37</td><td>4.30</td><td class="sig">4.64</td></tr>
+              <tr><td>Knee·HA</td><td>1.78</td><td>1.94</td><td>2.30</td></tr>
+              <tr><td>Ankle·ACLR</td><td>2.56</td><td>2.52</td><td class="sig">2.72</td></tr>
+              <tr><td>Ankle·HA</td><td>1.43</td><td>1.58</td><td>1.77</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="flex:0 0 44%;">
+      <div style="background:#f0f4f8;border-radius:10px;overflow:hidden;height:100%;display:flex;align-items:center;justify-content:center;">
+        <img src="lsi_deviation.png" alt="LSI deviation" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%;\'><div class=\'ph-icon\'>📊</div><div class=\'ph-label\'>lsi_deviation.png<br>(harness/figures/)</div></div>'">
+      </div>
+      <div class="fig-caption">Fig. LSI Deviation — ACLR Knee Flexion 최대 이탈</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 13: 속도별 경향성 종합
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="13">
+  <div class="slide-header">
+    <div class="slide-num">13</div>
+    <div>
+      <div class="slide-title">속도별 경향성 종합 — Slow → Normal → Fast</div>
+      <div class="slide-subtitle">핵심 피처의 3그룹 × 3속도 평균값 비교</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:20px;">
+    <div class="col">
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">Hip Flexion ROM (환측)° — 속도↑ 차이↑</div>
+      <table class="rtable" style="margin-bottom:14px;">
+        <thead><tr><th>그룹</th><th><span class="tag slow">Slow</span></th><th><span class="tag norm">Normal</span></th><th><span class="tag fast">Fast</span></th><th>차이(fast-slow)</th></tr></thead>
+        <tbody>
+          <tr><td class="acld-c">ACLD</td><td>28.9</td><td>33.2</td><td>38.6</td><td>+9.7°</td></tr>
+          <tr><td class="aclr-c">ACLR</td><td>29.4</td><td>33.3</td><td>37.6</td><td>+8.2°</td></tr>
+          <tr><td class="ha-c">HA</td><td>31.2</td><td>36.8</td><td class="sig">44.2</td><td class="sig">+13.0°</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:13px;color:var(--sub);margin-bottom:14px;">→ HA는 빠른 속도에서 고관절을 훨씬 크게 사용. ACL군은 속도 증가 대응 능력 감소.</div>
+
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">Knee Flexion ROM (환측)° — ACLR 속도 무관 낮음</div>
+      <table class="rtable">
+        <thead><tr><th>그룹</th><th><span class="tag slow">Slow</span></th><th><span class="tag norm">Normal</span></th><th><span class="tag fast">Fast</span></th></tr></thead>
+        <tbody>
+          <tr><td class="acld-c">ACLD</td><td>32.5</td><td>32.2</td><td>30.2</td></tr>
+          <tr><td class="aclr-c">ACLR</td><td class="sig">28.3</td><td class="sig">28.5</td><td class="sig">27.3</td></tr>
+          <tr><td class="ha-c">HA</td><td>33.0</td><td>32.0</td><td>29.3</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:13px;color:var(--sub);margin-top:8px;">→ ACLR은 모든 속도에서 ACLD·HA 대비 일관되게 낮음. 속도 독립적 ROM 회복 미완.</div>
+    </div>
+    <div class="col" style="flex:0 0 46%;">
+      <div style="font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;">Knee Flexion Peak LSI(%) — Fast에서 최대 그룹 간 차이</div>
+      <table class="rtable" style="margin-bottom:12px;">
+        <thead><tr><th>그룹</th><th><span class="tag slow">Slow</span></th><th><span class="tag norm">Normal</span></th><th><span class="tag fast">Fast</span> ★</th></tr></thead>
+        <tbody>
+          <tr><td class="acld-c">ACLD</td><td>75.9±424</td><td>91.3±273</td><td class="sig">99.0±28.6</td></tr>
+          <tr><td class="aclr-c">ACLR</td><td>13.5±852</td><td>91.3±273</td><td class="sig">77.0±21.0</td></tr>
+          <tr><td class="ha-c">HA</td><td>90.3±117</td><td>100.0±38</td><td class="sig">112.1±19.2</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:13px;color:var(--sub);margin-bottom:14px;">
+        ⚠ Slow/Normal: 이상치 다수 존재 → Fast 조건이 신뢰도 최고<br>
+        Fast에서만 3그룹 깔끔히 분리됨 (HA › ACLD › ACLR)
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-title">결론: Fast 조건이 집단 판별 최적 조건</div>
+        <p>Normal(자기선택) 단독 평가 시 ACLD≈HA로 보이는 피처들이<br>
+        Fast에서는 유의한 차이로 분리됨 — <strong>Krishnan 2022 거짓 안심 효과 IMU 재현</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 14: Feature Ranking 시각화
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="14">
+  <div class="slide-header">
+    <div class="slide-num">14</div>
+    <div>
+      <div class="slide-title">Feature Ranking 시각화</div>
+      <div class="slide-subtitle">η² 기준 상위 20개 | Cohen's d Heatmap</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:16px;">
+    <div class="col">
+      <div style="background:#f0f4f8;border-radius:10px;overflow:hidden;flex:1;height:100%;display:flex;align-items:center;justify-content:center;">
+        <img src="feature_ranking_eta2.png" alt="Feature ranking eta2" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%;\'><div class=\'ph-icon\'>📊</div><div class=\'ph-label\'>feature_ranking_eta2.png<br>(harness/figures/)</div></div>'">
+      </div>
+      <div class="fig-caption">Fig 1. η² 기준 Feature Ranking (Top 20)</div>
+    </div>
+    <div class="col">
+      <div style="background:#f0f4f8;border-radius:10px;overflow:hidden;flex:1;height:100%;display:flex;align-items:center;justify-content:center;">
+        <img src="feature_ranking_cohens_d.png" alt="Cohens d heatmap" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%;\'><div class=\'ph-icon\'>📊</div><div class=\'ph-label\'>feature_ranking_cohens_d.png<br>(harness/figures/)</div></div>'">
+      </div>
+      <div class="fig-caption">Fig 2. Cohen's d Heatmap — 쌍별 그룹 비교</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 15: SPM1D 결과 (text only)
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="15">
+  <div class="slide-header">
+    <div class="slide-num">15</div>
+    <div>
+      <div class="slide-title">SPM1D 파형 분석 결과</div>
+      <div class="slide-subtitle">설계 보완 진행 중 — 수치 결과만 제시</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:24px;">
+    <div class="col">
+      <div style="font-size:14px;font-weight:700;color:var(--sub);margin-bottom:10px;">① 3그룹 ANOVA (ACLD·ACLR·HA) — Fast 조건에서만 유의 구간</div>
+      <div class="spm-badge" style="display:flex;margin-bottom:8px;">
+        <div class="sb-chan">Knee Adduction</div>
+        <div class="sb-info"><span class="tag fast">fast</span> · 78–87% stance</div>
+        <div class="sb-pval">F_max=9.32</div>
+      </div>
+      <div class="spm-badge" style="display:flex;margin-bottom:8px;">
+        <div class="sb-chan">Knee Int. Rotation</div>
+        <div class="sb-info"><span class="tag fast">fast</span> · 20–30%, 80–86% stance</div>
+        <div class="sb-pval">F_max=7.99</div>
+      </div>
+      <div class="spm-badge" style="display:flex;margin-bottom:16px;">
+        <div class="sb-chan">Knee Flexion</div>
+        <div class="sb-info"><span class="tag fast">fast</span> · 0–4%, 75–82%, 100% stance</div>
+        <div class="sb-pval">F_max=7.57</div>
+      </div>
+
+      <div style="font-size:14px;font-weight:700;color:var(--sub);margin-bottom:10px;">② ACLD vs ACLR Paired t-test (27쌍) — 수술 전후 파형 차이</div>
+      <div class="spm-badge" style="display:flex;margin-bottom:8px;">
+        <div class="sb-chan">Knee Flexion</div>
+        <div class="sb-info"><span class="tag norm">normal</span> · 35–41%, 98% stance</div>
+        <div class="sb-pval">t_max=3.33 · p&lt;0.05</div>
+      </div>
+    </div>
+    <div class="col" style="flex:0 0 46%;">
+      <div class="highlight-box" style="margin-bottom:14px;">
+        <div class="hb-title">핵심 해석</div>
+        <ul class="bullets sm">
+          <li>3그룹 ANOVA 유의 구간 모두 <strong>fast 조건</strong>에서만 — 속도 의존성 파형 수준에서 확인</li>
+          <li>Knee 3개 평면(Flexion·Adduction·IntRotation) 모두 fast에서 집단 간 파형 차이 존재</li>
+          <li>ACLD→ACLR paired: knee flexion 중간(35–41%) + 종말(98%) stance에서 수술 전후 차이</li>
+        </ul>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-title">Scalar vs SPM1D 비교</div>
+        <ul class="bullets sm">
+          <li>Scalar 분석: 19개 피처에서 명확한 집단 차이 → ML 입력으로 적합</li>
+          <li>SPM1D: 파형 수준에서는 fast에서만 유의 → 스칼라가 더 민감한 판별</li>
+          <li>두 결과 모두 <strong>fast 조건의 우월한 판별력</strong> 일관 확인</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 16: 통계 → ML 브릿지
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="16">
+  <div class="slide-header">
+    <div class="slide-num">16</div>
+    <div>
+      <div class="slide-title">통계 분석 → ML 분류 브릿지</div>
+      <div class="slide-subtitle">왜 통계를 먼저 하는가 — Kokkotis 2022 근거</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="pipeline" style="margin-bottom:24px;">
+      <div class="pipe-box stat">
+        <div class="pb-title" style="color:#27ae60;">통계 분석 ✅</div>
+        <div class="pb-sub">"<strong>무엇이</strong> 다른가"<br>집단 수준 검증<br>19개 유의 feature 확인</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-box ml">
+        <div class="pb-title" style="color:#9b59b6;">ML 분류 🔜</div>
+        <div class="pb-sub">"<strong>개인 분류</strong>가 가능한가"<br>실제 판별 능력 검증<br>LOSO-CV</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-box shap">
+        <div class="pb-title" style="color:#e67e22;">SHAP 해석 🔜</div>
+        <div class="pb-sub">"통계가 <strong>못 본 패턴</strong>"<br>기여 feature 발굴<br>통계 ↔ ML 교차검증</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+      <div class="highlight-box">
+        <div class="hb-title">통계 선별 → ML 성능 최적화</div>
+        <p style="font-size:13px;">Kokkotis 2022: ANOVA 유의 feature 21개로 SVM 94.95% 수렴. 특징 수 증가→최적점 존재.</p>
+      </div>
+      <div class="highlight-box blue">
+        <div class="hb-title">소규모 샘플 필수 전처리</div>
+        <p style="font-size:13px;">n=79는 소규모 임상 시나리오. Domain-knowledge 사전 선별 없이 ML 투입 시 과적합 위험. <span class="ref">Kokkotis 2023</span></p>
+      </div>
+      <div class="highlight-box" style="border-color:rgba(230,126,34,0.3);background:rgba(230,126,34,0.08);">
+        <div class="hb-title" style="color:#e67e22;">SHAP의 역할</div>
+        <p style="font-size:13px;">ANOVA에서 무시된 feature들이 ML 출력에 유의미하게 기여 — "통계의 대체"가 아닌 "확장" <span class="ref">Kokkotis 2022</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 17: 앞으로 할 것
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="17">
+  <div class="slide-header">
+    <div class="slide-num">17</div>
+    <div>
+      <div class="slide-title">앞으로 할 것 — ML 분류 & SHAP 해석</div>
+      <div class="slide-subtitle">STEP 2: ML 모델 개발 · STEP 3: SHAP 해석</div>
+    </div>
+  </div>
+  <div class="slide-body row" style="gap:24px;">
+    <div class="col">
+      <div class="highlight-box blue" style="margin-bottom:16px;">
+        <div class="hb-title">ML 분류 설계</div>
+        <ul class="bullets sm">
+          <li><strong>3-class:</strong> ACLD / ACLR / Healthy
+            <br><span style="color:var(--sub);font-size:15px;">벤치마크: Kokkotis 2022 SVM 94.95%, Zhu 2025 KNN 96.37%</span>
+          </li>
+          <li><strong>Binary:</strong> ACLD vs ACLR (종단 회복도 핵심)</li>
+          <li><strong>입력:</strong> 통계 선별 feature (η² 상위 + Bonferroni 유의)</li>
+          <li><strong>검증:</strong> LOSO-CV (피험자 독립 외부 검증)</li>
+          <li><strong>모델:</strong> SVM · RandomForest · XGBoost</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <div class="hb-title">SHAP 해석 설계</div>
+        <ul class="bullets sm">
+          <li>집단별(ACLD/ACLR/HA) 기여 feature 차이 비교</li>
+          <li>통계 결과(η² ranking)와 SHAP 순위 교차 검증</li>
+          <li>임상 해석: 어떤 보행 특징이 재활 진행의 지표가 되는가</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col" style="flex:0 0 46%;">
+      <div style="font-size:13px;font-weight:700;color:var(--sub);margin-bottom:12px;">기대 산출물</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.25);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:13px;font-weight:700;color:#9b59b6;margin-bottom:4px;">Confusion Matrix</div>
+          <div style="font-size:13px;color:var(--sub);">3-class 및 binary 분류 성능 (accuracy, F1)</div>
+        </div>
+        <div style="background:rgba(230,126,34,0.1);border:1px solid rgba(230,126,34,0.25);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:13px;font-weight:700;color:#e67e22;margin-bottom:4px;">SHAP Beeswarm Plot</div>
+          <div style="font-size:13px;color:var(--sub);">집단별 기여 feature 방향성 및 크기 시각화</div>
+        </div>
+        <div style="background:rgba(74,158,255,0.1);border:1px solid rgba(74,158,255,0.25);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:4px;">속도별 분류 성능 비교</div>
+          <div style="font-size:13px;color:var(--sub);">Slow / Normal / Fast 조건별 accuracy 비교<br>→ 속도 의존성의 ML 레벨 검증</div>
+        </div>
+        <div style="background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.25);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:13px;font-weight:700;color:var(--ha);margin-bottom:4px;">임상 해석 리포트</div>
+          <div style="font-size:13px;color:var(--sub);">SHAP ↔ ANOVA 일치 feature → 재활 모니터링 지표 제안</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 18: 결론 요약
+══════════════════════════════════════════ -->
+<div class="slide" data-slide="18">
+  <div class="slide-header">
+    <div class="slide-num">18</div>
+    <div>
+      <div class="slide-title">결론 요약</div>
+      <div class="slide-subtitle">핵심 3가지 발견 & Next Steps</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px;">
+      <div style="background:rgba(231,76,60,0.08);border:2px solid rgba(231,76,60,0.3);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:700;color:var(--acld);margin-bottom:8px;">① 가장 강력한 판별 지표</div>
+        <div style="font-size:36px;font-weight:800;color:#0f1a2b;margin-bottom:6px;">77%</div>
+        <div style="font-size:14px;color:#2c3e50;line-height:1.6;">ACLR의 Knee Flexion LSI (fast)<br>임상 기준 90% 미달 · 수술 전(ACLD) 99%에서 악화<br>η²=0.284 · p=0.0005</div>
+      </div>
+      <div style="background:rgba(52,152,219,0.08);border:2px solid rgba(52,152,219,0.3);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:700;color:var(--aclr);margin-bottom:8px;">② 수술 후 ROM 회복 미완</div>
+        <div style="font-size:36px;font-weight:800;color:#0f1a2b;margin-bottom:6px;">d≈1.0</div>
+        <div style="font-size:14px;color:#2c3e50;line-height:1.6;">Knee Flexion ROM (slow/normal)<br>ACLR 28° &lt; ACLD 32° ≈ HA 33°<br>수술 전보다 낮음 — 재활 미완 시사</div>
+      </div>
+      <div style="background:rgba(240,192,64,0.08);border:2px solid rgba(240,192,64,0.3);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:700;color:var(--gold);margin-bottom:8px;">③ 속도 의존성 재현</div>
+        <div style="font-size:36px;font-weight:800;color:#0f1a2b;margin-bottom:6px;">10/19</div>
+        <div style="font-size:14px;color:#2c3e50;line-height:1.6;">유의 feature가 Fast 조건에 집중 (10/19)<br>Normal 단독 평가로는 부족<br>Garcia 2021 / Krishnan 2022 IMU 재현</div>
+      </div>
+    </div>
+    <div class="highlight-box blue">
+      <div class="hb-title">Next Steps</div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:4px;">
+        <div style="font-size:13px;color:#2c3e50;">
+          🔜 <strong>ML 분류:</strong> 통계 선별 feature → 3-class / binary LOSO-CV
+        </div>
+        <div style="font-size:13px;color:#2c3e50;">
+          🔜 <strong>SHAP:</strong> 기여 feature 발굴 + 통계 결과 교차 검증
+        </div>
+        <div style="font-size:13px;color:#2c3e50;">
+          🎯 <strong>목표:</strong> IMU 기반 비침습적 ACL 재활 모니터링 체계 구축
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end #deck -->
+
+<!-- ── Controls ── -->
+<div id="ctrl">
+  <button class="ctrl-btn" id="prev-btn">← Prev</button>
+  <span id="slide-counter">1 / 18</span>
+  <button class="ctrl-btn" id="next-btn">Next →</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let cur = 0;
+
+  function show(n) {
+    slides[cur].classList.remove('active');
+    cur = (n + total) % total;
+    slides[cur].classList.add('active');
+    document.getElementById('slide-counter').textContent = (cur+1) + ' / ' + total;
+    document.getElementById('progress-fill').style.width = ((cur+1)/total*100) + '%';
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => show(cur-1));
+  document.getElementById('next-btn').addEventListener('click', () => show(cur+1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); show(cur+1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(cur-1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(total-1);
+  });
+
+  // Init progress
+  document.getElementById('progress-fill').style.width = (1/total*100) + '%';
+</script>
+</body>
+</html>

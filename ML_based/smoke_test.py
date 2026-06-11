@@ -104,11 +104,12 @@ waveform_data = check("load_waveform (norm_101)",
                        lambda: load_waveform(CFG))
 
 if scalar_data:
-    X_sc, y_sc, g_sc = scalar_data
+    X_sc, y_sc, g_sc, feat_names_sc = scalar_data
     idx = _balanced_idx(y_sc, n_per_class=20)
     X_sc_b, y_sc_b, g_sc_b = X_sc[idx], y_sc[idx], g_sc[idx]
     print(f"    scalar  X={X_sc_b.shape}, y={y_sc_b.shape}, "
-          f"classes={np.unique(y_sc_b).tolist()}, groups={len(set(g_sc_b))}")
+          f"classes={np.unique(y_sc_b).tolist()}, groups={len(set(g_sc_b))}, "
+          f"features={len(feat_names_sc)}, top3={feat_names_sc[:3]}")
 
 if waveform_data:
     X_wv, sp_wv, mk_wv, y_wv, g_wv = waveform_data
@@ -277,7 +278,7 @@ def _test_logger():
                      "recall_macro": 0.73, "cm_HA_pred_HA": 10, "cm_HA_pred_ACL": 3},
             train_sec=1.5, n_train=100, n_test=30)
     import glob
-    logs = glob.glob(str(ML / "artifacts" / "logs" / "runs_*.csv"))
+    logs = glob.glob(str(ML / f"artifacts-{CFG.version}" / "logs" / "runs_*.csv"))
     assert len(logs) > 0
 
 check("log_run → CSV 저장", _test_logger)
@@ -302,9 +303,11 @@ def _test_cv():
     if scalar_data is None:
         raise RuntimeError("scalar_data 없음")
     from train.cross_validate import run_cv
+    fn = feat_names_sc if scalar_data else None
     results = run_cv(model_name="logreg", model_cls=LogReg,
                      X=X_sc_b, y=y_sc_b, groups=g_sc_b, cfg=CFG,
-                     speed_data=None, mask_data=None, is_dl=False)
+                     speed_data=None, mask_data=None, is_dl=False,
+                     feature_names=fn)
     assert len(results) == CFG.cv.n_outer
     assert "macro_f1" in results[0]
 

@@ -28,7 +28,25 @@
       "Bash(sort -t/ -k8)",
       "Bash(python smoke_test.py)",
       "Bash(pkill -f smoke_test.py)",
-      "Bash(../.venv/bin/python -c ' *)"
+      "Bash(../.venv/bin/python -c ' *)",
+      "Bash(node \"/Users/ryutt/.claude/plugins/cache/omc/oh-my-claudecode/4.14.4/scripts/repair-plugin-cache.mjs\")",
+      "Bash(bash *)",
+      "Bash([ -f \"$HOME/.claude/CLAUDE.md\" ])",
+      "Bash(grep -q '<!-- OMC:START -->' __TRACKED_VAR__/.claude/CLAUDE.md)",
+      "Bash(grep -q '<!-- OMC:END -->' __TRACKED_VAR__/.claude/CLAUDE.md)",
+      "Bash(command -v ruby)",
+      "Bash(ruby --version)",
+      "Bash(echo \"Ruby detected: $\\(ruby --version)",
+      "Bash(command -v npm)",
+      "Bash(npm install *)",
+      "Bash(command -v omc)",
+      "Bash(omc --version)",
+      "Bash(echo \"Verified: omc $\\(omc --version)",
+      "Bash(claude mcp *)",
+      "Bash(/opt/homebrew/bin/claude mcp *)",
+      "Bash(node -e \"const f=require\\('fs'\\),p=require\\('path'\\),h=require\\('os'\\).homedir\\(\\),d=\\(process.env.CLAUDE_CONFIG_DIR||p.join\\(h,'.claude'\\)\\).replace\\(/[\\\\\\\\/]+$/,''\\),b=p.join\\(d,'plugins','cache','omc','oh-my-claudecode'\\),valid=r=>f.existsSync\\(p.join\\(r,'skills','omc-setup','SKILL.md'\\)\\)||f.existsSync\\(p.join\\(r,'hooks','hooks.json'\\)\\)||f.existsSync\\(p.join\\(r,'docs','CLAUDE.md'\\)\\);try{const vs=f.readdirSync\\(b,{withFileTypes:true}\\).filter\\(e=>\\(e.isDirectory\\(\\)||e.isSymbolicLink\\(\\)\\)&&/^\\\\d+\\\\.\\\\d+\\\\.\\\\d+/.test\\(e.name\\)\\).map\\(e=>e.name\\).sort\\(\\(a,c\\)=>c.localeCompare\\(a,void 0,{numeric:true}\\)\\);const hit=vs.map\\(v=>p.join\\(b,v\\)\\).find\\(valid\\);if\\(hit\\)console.log\\(hit\\);else if\\(process.env.CLAUDE_PLUGIN_ROOT\\)console.log\\(process.env.CLAUDE_PLUGIN_ROOT\\)}catch{if\\(process.env.CLAUDE_PLUGIN_ROOT\\)console.log\\(process.env.CLAUDE_PLUGIN_ROOT\\)}\")",
+      "Bash(export OMC_SETUP_PLUGIN_ROOT)",
+      "Bash(echo 'Plugin root: __TRACKED_VAR__')"
     ]
   }
 }

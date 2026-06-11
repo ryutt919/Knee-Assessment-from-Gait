@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Gait Analysis in ACLR - Introduction</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+
+    <style>
+        :root {
+            --r-main-font-size: 36px;
+            --r-heading-font-weight: 800;
+            --r-heading-color: #003366;
+            --r-link-color: #004a99;
+            --accent-color: #d32f2f;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .reveal {
+            background: var(--bg-gradient);
+        }
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+            word-break: keep-all;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+        }
+        .reveal h2 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: var(--r-heading-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .reveal h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 6px;
+            background: var(--accent-color);
+        }
+        .reveal .slides section {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px !important;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .reveal ul {
+            width: 100%;
+        }
+        .reveal ul li {
+            margin-bottom: 30px;
+            line-height: 1.4;
+            list-style: none;
+            position: relative;
+            padding-left: 40px;
+        }
+        .reveal ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.5em;
+            top: -5px;
+        }
+        .reveal ul li ul li {
+            font-size: 0.8em;
+            margin-top: 15px;
+            color: #444;
+            padding-left: 30px;
+        }
+        .reveal ul li ul li::before {
+            content: '└';
+            font-size: 1em;
+            top: 0;
+        }
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 800;
+            background: linear-gradient(transparent 70%, #ffecb3 0);
+        }
+        .title-slide {
+            text-align: center !important;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+        .title-slide h1 {
+            font-size: 2.5em;
+            color: var(--r-heading-color);
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .title-slide p {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 60px;
+            font-weight: 600;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 0.6em;
+            color: #666;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section class="title-slide">
+                <h1>IMU 기반 다속도 보행 시계열 분석을 통한 ACLR 환자 판별 및 회복도 추적</h1>
+                <p>서론 (Introduction)</p>
+            </section>
+
+            <!-- Slide 1 -->
+            <section>
+                <h2>ACL 손상 및 재건술(ACLR)의 현황</h2>
+                <ul>
+                    <li>연간 약 <span class="highlight">25만 건</span>의 재건술 시행 (미국 기준)</li>
+                    <li>장기적 임상 부담
+                        <ul>
+                            <li>2년 이내 재파열률: 15–25%</li>
+                            <li>10–15년 내 외상 후 골관절염(PTOA) 발생: 최대 50%</li>
+                        </ul>
+                    </li>
+                    <li>기존 평가의 한계: 주관적 판단 의존 및 고비용 실험실 장비의 공간적 제약</li>
+                </ul>
+            </section>
+
+            <!-- Slide 2 -->
+            <section>
+                <h2>보행(Gait): 재활 모니터링의 핵심</h2>
+                <ul>
+                    <li>일상에서 가장 빈번한 동작 (1일 6,000~12,000보)</li>
+                    <li><span class="highlight">'무릎 경직(stiffened knee)'</span> 전략 채택
+                        <ul>
+                            <li>무릎 굴곡각 감소, 최대 무릎 신전 모멘트(KEM) 저하</li>
+                            <li>재건 측 수직 지면반발력(vGRF) 감소</li>
+                        </ul>
+                    </li>
+                    <li>보행 정상화는 증상 해소와 별개로 <span class="highlight">독립적인 재활 목표</span>가 되어야 함</li>
+                </ul>
+            </section>
+
+            <!-- Slide 3 -->
+            <section>
+                <h2>관절 퇴행과 보행 역학의 상관관계</h2>
+                <ul>
+                    <li>부하 노출 부족 → vGRF 및 KEM 저하 → 연골 대사 저해</li>
+                    <li>IMU 기반 지표의 유효성
+                        <ul>
+                            <li>경골(Shank) 각속도가 KEM의 유효한 대리 측정치로 입증</li>
+                            <li>IMU 신호는 관절 부하 지표의 간접 정보를 내포</li>
+                        </ul>
+                    </li>
+                    <li>보행은 초기 단계부터 <span class="highlight">안전하게 종단적 모니터링</span> 가능</li>
+                </ul>
+            </section>
+
+            <!-- Slide 4 -->
+            <section>
+                <h2>속도 의존성(Speed Dependency)</h2>
+                <ul>
+                    <li>속도 증가에 따라 <span class="highlight">비대칭성이 진행적으로 증가</span></li>
+                    <li>단일 '자기선택 속도' 평가의 위험성
+                        <ul>
+                            <li>정상에 가까운 대칭 지수로 인한 <span class="highlight">거짓 안심(False reassurance)</span></li>
+                            <li>빠른 속도에서만 기저의 신경근 결손이 노출됨</li>
+                        </ul>
+                    </li>
+                    <li>다속도(Multi-pace) 평가는 생체역학적으로 필수적</li>
+                </ul>
+            </section>
+
+            <!-- Slide 5 -->
+            <section>
+                <h2>IMU와 기계학습: 기술적 간극 극복</h2>
+                <ul>
+                    <li>IMU의 장점: 소형, 저가, 휴대성, 통제 환경 밖 측정 가능</li>
+                    <li>기존 연구의 한계
+                        <ul>
+                            <li>횡단면적 설계 및 단일 보행 속도 프로토콜</li>
+                            <li>피크값 중심의 <span class="highlight">이산적(Discrete) 특징</span>에만 의존</li>
+                        </ul>
+                    </li>
+                    <li><span class="highlight">시계열 파형 분석</span>의 중요성: 피크 이외의 구간이 연골 변화 예측에 더 중요할 수 있음</li>
+                </ul>
+            </section>
+
+            <!-- Slide 6 -->
+            <section>
+                <h2>본 연구의 목적</h2>
+                <ul>
+                    <li>다속도 IMU 보행 시계열 + 기계학습 프레임워크 제안</li>
+                    <li><strong>연구 세부 목적</strong>
+                        <ol>
+                            <li>ACLR 환자와 건강한 대조군을 감별하는 ML 모델 개발</li>
+                            <li>속도 의존적 비대칭을 회복 상태의 동적 지표로 정량화</li>
+                            <li>전 재활 단계에 걸친 종단적 회복 지표 적용 가능성 평가</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Conclusion Slide -->
+            <section style="text-align: center !important;">
+                <h2 style="border: none;">결론</h2>
+                <p style="font-size: 1.2em; line-height: 1.6;">
+                    비침습적·저비용·확장 가능한<br>
+                    <strong>객관적 ACLR 재활 모니터링 체계</strong> 마련
+                </p>
+            </section>
+        </div>
+        <div class="footer">Gait Analysis in ACLR - Introduction</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            width: 1280,
+            height: 720,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+</html>

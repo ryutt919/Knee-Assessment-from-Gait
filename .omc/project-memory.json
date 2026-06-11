@@ -1,0 +1,407 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1781157866744,
+  "projectRoot": "/Users/ryutt/Desktop/mini_ryutt/Walking",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Python",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "requirements.txt"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "pip",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "0529_ML": {
+      "path": "0529_ML",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1781157866733,
+      "keyFiles": [
+        "0529_ML_plan.md",
+        "COMPWALK paper.pdf"
+      ]
+    },
+    "0530_ML_waveform": {
+      "path": "0530_ML_waveform",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1781157866733,
+      "keyFiles": [
+        "0530_plan.md"
+      ]
+    },
+    "GAI 중간 결과": {
+      "path": "GAI 중간 결과",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1781157866733,
+      "keyFiles": [
+        "0527_main.html",
+        "intro.md",
+        "statistics_v1.html"
+      ]
+    },
+    "ML_based": {
+      "path": "ML_based",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1781157866734,
+      "keyFiles": [
+        "ml-based-plan.md",
+        "mlflow.db",
+        "orchestrator.py",
+        "pipeline_full_train.log",
+        "run_pipeline.py"
+      ]
+    },
+    "PT": {
+      "path": "PT",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1781157866734,
+      "keyFiles": []
+    },
+    "artifacts": {
+      "path": "artifacts",
+      "purpose": null,
+      "fileCount": 29,
+      "lastAccessed": 1781157866734,
+      "keyFiles": [
+        "boxplot_ankle_dorsiflexion_LSI.png",
+        "boxplot_ankle_dorsiflexion_contralateral.png",
+        "boxplot_ankle_dorsiflexion_injured.png",
+        "boxplot_cadence_spm.png",
+        "boxplot_double_support_pct.png"
+      ]
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 4,
+      "lastAccessed": 1781157866734,
+      "keyFiles": [
+        "ID.csv",
+        "data_descrpition.csv",
+        "gait_analysis_global.csv"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 2,
+      "lastAccessed": 1781157866735,
+      "keyFiles": [
+        "MVN 추출.pdf",
+        "research purpose.md"
+      ]
+    },
+    "harness": {
+      "path": "harness",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1781157866735,
+      "keyFiles": [
+        "__init__.py",
+        "config.yaml",
+        "orchestrator.py",
+        "run_pipeline.py",
+        "runner.py"
+      ]
+    },
+    "htmls": {
+      "path": "htmls",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1781157866735,
+      "keyFiles": [
+        "h3_novelty_validation.html",
+        "paper_report.html",
+        "pipeline_report.html",
+        "pipeline_report_detailed.html",
+        "results_summary.html"
+      ]
+    },
+    "mds": {
+      "path": "mds",
+      "purpose": null,
+      "fileCount": 13,
+      "lastAccessed": 1781157866735,
+      "keyFiles": [
+        "0528_H3_Refine.html",
+        "0528_H3_Refine.md",
+        "analysis_methods.md",
+        "candidate_papers.md",
+        "candidate_papers_speed.md"
+      ]
+    },
+    "misc": {
+      "path": "misc",
+      "purpose": null,
+      "fileCount": 14,
+      "lastAccessed": 1781157866735,
+      "keyFiles": [
+        "02_Refined_Pipeline.ipynb",
+        "COMP-WALK.ipynb",
+        "analysis_embeddings.ipynb",
+        "compwalk_acl_eda_insights.ipynb",
+        "download_zenodo.py"
+      ]
+    },
+    "notebooks": {
+      "path": "notebooks",
+      "purpose": null,
+      "fileCount": 5,
+      "lastAccessed": 1781157866735,
+      "keyFiles": [
+        "check_preprocessing.ipynb",
+        "data_info.ipynb",
+        "peak_segmentation.ipynb",
+        "slim_parquet_info.ipynb",
+        "waveform_group_results_review.ipynb"
+      ]
+    },
+    "zip": {
+      "path": "zip",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1781157866736,
+      "keyFiles": [
+        "ACLR.zip"
+      ]
+    },
+    "0529_ML/data": {
+      "path": "0529_ML/data",
+      "purpose": "Data files",
+      "fileCount": 0,
+      "lastAccessed": 1781157866736,
+      "keyFiles": []
+    },
+    "0529_ML/models": {
+      "path": "0529_ML/models",
+      "purpose": "Data models",
+      "fileCount": 1,
+      "lastAccessed": 1781157866736,
+      "keyFiles": [
+        "01_best_traditional_ml_model.joblib"
+      ]
+    },
+    "ML_based/data": {
+      "path": "ML_based/data",
+      "purpose": "Data files",
+      "fileCount": 1,
+      "lastAccessed": 1781157866736,
+      "keyFiles": [
+        "manifest.yaml"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 14,
+      "lastAccessed": 1780221624038,
+      "type": "file"
+    },
+    {
+      "path": "AGENTS.md",
+      "accessCount": 14,
+      "lastAccessed": 1780221711041,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/reports/status_report.html",
+      "accessCount": 9,
+      "lastAccessed": 1780092022908,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/scripts/03_boost_auc.py",
+      "accessCount": 4,
+      "lastAccessed": 1781158309166,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/0529_ML_plan.md",
+      "accessCount": 4,
+      "lastAccessed": 1781158313844,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/13_boost_best_summary.json",
+      "accessCount": 3,
+      "lastAccessed": 1781158302662,
+      "type": "file"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "accessCount": 2,
+      "lastAccessed": 1780219778028,
+      "type": "file"
+    },
+    {
+      "path": "0530_ML_waveform/0530_plan.md",
+      "accessCount": 2,
+      "lastAccessed": 1781158301765,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/11_subject_pivot_model_metrics.csv",
+      "accessCount": 2,
+      "lastAccessed": 1781158308555,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/scripts/01_run_ml_pipeline.py",
+      "accessCount": 2,
+      "lastAccessed": 1781158315236,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/run_pipeline.py",
+      "accessCount": 1,
+      "lastAccessed": 1779971652348,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/orchestrator.py",
+      "accessCount": 1,
+      "lastAccessed": 1779971652857,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/configs/config.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1779971653145,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/configs/search_space.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1779971653397,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/smoke_test.py",
+      "accessCount": 1,
+      "lastAccessed": 1779971653488,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/ml-based-plan.md",
+      "accessCount": 1,
+      "lastAccessed": 1779971653643,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1779971658342,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/08_best_model_feature_importance.csv",
+      "accessCount": 1,
+      "lastAccessed": 1781158100349,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/02_data_inventory.csv",
+      "accessCount": 1,
+      "lastAccessed": 1781158107544,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/01_eda_summary.json",
+      "accessCount": 1,
+      "lastAccessed": 1781158108076,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/htmls/03_boost_result_report.html",
+      "accessCount": 1,
+      "lastAccessed": 1781158111047,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/htmls/02_ml_result_report.html",
+      "accessCount": 1,
+      "lastAccessed": 1781158111437,
+      "type": "file"
+    },
+    {
+      "path": "data/processed/cycle_waveforms_101_summary.json",
+      "accessCount": 1,
+      "lastAccessed": 1781158132358,
+      "type": "file"
+    },
+    {
+      "path": "ML_based/loaders/waveform_loader.py",
+      "accessCount": 1,
+      "lastAccessed": 1781158139280,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/htmls/04_slim_gait_ml_pipeline_recommendation.html",
+      "accessCount": 1,
+      "lastAccessed": 1781158139638,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/04_model_metrics_stride_level.csv",
+      "accessCount": 1,
+      "lastAccessed": 1781158303445,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/07_subject_level_metrics.json",
+      "accessCount": 1,
+      "lastAccessed": 1781158308112,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/10_overall_best_candidate.json",
+      "accessCount": 1,
+      "lastAccessed": 1781158314844,
+      "type": "file"
+    },
+    {
+      "path": "GAI 중간 결과/intro.md",
+      "accessCount": 1,
+      "lastAccessed": 1781158592745,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

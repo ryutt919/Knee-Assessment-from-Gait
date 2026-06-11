@@ -23,6 +23,7 @@ ROOT = Path(__file__).parent.parent.parent
 ML   = Path(__file__).parent.parent
 
 
+
 def _get_git_hash() -> str:
     try:
         return subprocess.check_output(
@@ -43,6 +44,7 @@ def run_cv(
     speed_data: np.ndarray | None = None,
     mask_data: np.ndarray | None = None,
     is_dl: bool = False,
+    feature_names: list[str] | None = None,
 ) -> list[dict]:
     """
     Outer GroupKFold 교차 검증 실행.
@@ -94,6 +96,18 @@ def run_cv(
             sp_tr=sp_tr, mk_tr=mk_tr, is_dl=is_dl,
         )
 
+        # n_features: Optuna가 찾은 최적 feature 수 적용 (scalar 모델 전용)
+        n_features = best_params.pop("n_features", None)
+        if n_features is not None and not is_dl:
+            n_speed = 3 if cfg.features.speed_as_feature else 0
+            nf = min(n_features, X_tr.shape[1] - n_speed)
+            col_idx = list(range(nf)) + list(range(X_tr.shape[1] - n_speed, X_tr.shape[1]))
+            X_tr = X_tr[:, col_idx]
+            X_te = X_te[:, col_idx]
+            feature_names_fold = [feature_names[i] for i in col_idx] if feature_names else None
+        else:
+            feature_names_fold = feature_names
+
         # 최종 모델 학습
         t0 = time.time()
         with mlflow.start_run(run_name=f"{model_name}_fold{fold}") as run:
@@ -134,12 +148,44 @@ def run_cv(
             mlflow.log_param("train_time_sec", f"{train_sec:.1f}")
             mlflow.log_param("n_train_samples", len(X_tr))
             mlflow.log_param("n_test_samples", len(X_te))
+            if n_features is not None:
+                mlflow.log_param("n_features_used", n_features)
+
+            # SHAP 분석 (scalar 모델 + feature_names 있을 때만)
+            shap_path = ""
+            shap_enabled = cfg.get("shap", {}).get("enabled", False) if hasattr(cfg, "get") \
+                else getattr(getattr(cfg, "shap", None), "enabled", False)
+            if shap_enabled and not is_dl and feature_names_fold is not None:
+                try:
+                    from eval.shap_analysis import run_shap_analysis
+                    shap_dir = ML / f"artifacts-{cfg.version}" / "shap" \
+                                    / f"{model_name}_fold{fold}"
+                    ranking_path = ROOT / "data" / "processed" / cfg.data.feature_ranking
+                    top_k = cfg.get("shap", {}).get("top_k", 10) if hasattr(cfg, "get") \
+                        else getattr(getattr(cfg, "shap", None), "top_k", 10)
+                    res = run_shap_analysis(
+                        model_name=model_name, model=model,
+                        X_train=X_tr, X_test=X_te,
+                        feature_names=feature_names_fold,
+                        feature_ranking_path=ranking_path,
+                        save_dir=shap_dir,
+                    )
+                    shap_path = res.get("beeswarm_path", "")
+                    if "comparison" in res:
+                        cmp = res["comparison"]
+                        mlflow.log_metrics({
+                            "shap_spearman_rho":    cmp.get("spearman_rho", float("nan")),
+                            "shap_eta2_intersect":  cmp.get("intersection_count", 0),
+                        })
+                except Exception as _e:
+                    print(f"[cv] SHAP 분석 실패 (fold {fold}): {_e}")
 
         log_run(
             run_id=run.info.run_id, model_name=model_name, fold=fold,
             cfg=cfg, best_params=best_params, metrics=metrics,
             train_sec=train_sec, n_train=len(X_tr), n_test=len(X_te),
             git_hash=git_hash,
+            shap_path=shap_path,
         )
         fold_results.append({"fold": fold, **metrics})
         print(f"[cv] fold {fold} {model_name}: macro_f1={metrics['macro_f1']:.4f}")

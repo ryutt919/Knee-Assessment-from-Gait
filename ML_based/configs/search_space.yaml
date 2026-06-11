@@ -1,24 +1,29 @@
 # Optuna 하이퍼파라미터 탐색 범위
 # 형식: [low, high, (log)] 또는 [choice1, choice2, ...]
+# n_features: η² 내림차순 정렬된 X에서 앞 n_features개 컬럼 사용 (scalar 모델 전용)
 
 logreg:
   C:          [1.0e-3, 1.0e2, log]
   penalty:    [l2, l1, elasticnet]
-  l1_ratio:   [0.0, 1.0]            # elasticnet 전용
+  l1_ratio:   [0.0, 1.0]
+  n_features: [5, 50]
 
 linearsvc:
   C:          [1.0e-3, 1.0e2, log]
+  n_features: [5, 50]
 
 svm_rbf:
   C:          [1.0e-3, 1.0e2, log]
   gamma:      [1.0e-4, 1.0e1, log]
+  n_features: [5, 50]
 
 rf:
   n_estimators:     [200, 1000]
-  max_depth:        [3, 20, null]   # null = 제한 없음
+  max_depth:        [3, 20, null]
   max_features:     [sqrt, log2, 0.5]
   min_samples_split: [2, 20]
   min_samples_leaf:  [1, 10]
+  n_features:       [5, 50]
 
 gbt:
   n_estimators:  [100, 600]
@@ -26,6 +31,7 @@ gbt:
   max_depth:     [2, 6]
   subsample:     [0.5, 1.0]
   min_samples_leaf: [1, 10]
+  n_features:    [5, 50]
 
 xgboost:
   n_estimators:  [100, 600]
@@ -34,6 +40,7 @@ xgboost:
   subsample:     [0.5, 1.0]
   colsample_bytree: [0.5, 1.0]
   min_child_weight: [1, 10]
+  n_features:    [5, 50]
 
 lightgbm:
   n_estimators:  [100, 600]
@@ -42,6 +49,7 @@ lightgbm:
   subsample:     [0.5, 1.0]
   colsample_bytree: [0.5, 1.0]
   min_child_samples: [5, 50]
+  n_features:    [5, 50]
 
 fpca:
   n_components: [10, 120]

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>IMU 기반 다속도 보행 시계열 분석 - 서론</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #d97706;
+            --accent: #b91c1c;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-gray: #475569;
+        }
+
+        .reveal {
+            font-family: 'Pretendard', sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--text-dark);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 800;
+            text-transform: none;
+            word-break: keep-all;
+            color: var(--primary);
+        }
+
+        .reveal h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .reveal h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .reveal .slides section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 60px !important;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: left;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+
+        .reveal ul { margin-left: 1.5em; width: 90%; }
+        .reveal li { margin-bottom: 20px; line-height: 1.5; font-size: 34px; font-weight: 500; }
+        .reveal li li { font-size: 0.9em; margin-top: 10px; color: var(--text-gray); font-weight: 400; }
+
+        .highlight { color: var(--accent); font-weight: 700; background: rgba(185, 28, 28, 0.1); padding: 2px 8px; border-radius: 4px;}
+        .highlight-blue { color: var(--primary); font-weight: 700; }
+
+        /* Citation Style */
+        .cite {
+            font-size: 0.5em;
+            color: #3b82f6;
+            vertical-align: super;
+            font-weight: 700;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+
+        /* --- Infographic CSS --- */
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .stat-card { background: var(--bg-light); padding: 30px; border-radius: 16px; text-align: center; border-top: 6px solid var(--accent); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .stat-card i { font-size: 3em; color: var(--accent); margin-bottom: 15px; }
+        .stat-num { font-size: 2.5em; font-weight: 900; color: var(--text-dark); margin: 10px 0; line-height: 1; }
+        .stat-desc { font-size: 24px; color: var(--text-gray); font-weight: 600; line-height: 1.4; }
+
+        .process-flow { display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+        .flow-step { flex: 1; text-align: center; background: #fff; padding: 30px 20px; border-radius: 16px; border: 2px solid #e2e8f0; position: relative; }
+        .flow-step i { font-size: 2.5em; color: var(--primary); margin-bottom: 15px; }
+        .flow-step h4 { margin: 10px 0; font-size: 30px; }
+        .flow-step p { font-size: 22px; color: var(--text-gray); }
+        .flow-arrow { font-size: 2em; color: var(--secondary); margin: 0 15px; }
+
+        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+        .pillar { background: #fff; padding: 25px; border-radius: 12px; border-left: 6px solid var(--secondary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .pillar h4 { font-size: 28px; color: var(--primary); margin-bottom: 15px; }
+        .pillar p { font-size: 22px; line-height: 1.5; color: var(--text-gray); }
+
+        .alert-box { display: flex; align-items: center; background: #fff3cd; border-left: 8px solid #ffc107; padding: 20px 30px; border-radius: 8px; margin: 30px 0; }
+        .alert-box i { font-size: 2.5em; color: #ffc107; margin-right: 20px; }
+        .alert-box p { margin: 0; font-size: 28px; font-weight: 600; color: #856404; line-height: 1.4; }
+
+        .refs-container { font-size: 20px; line-height: 1.4; max-height: 60vh; overflow-y: auto; }
+        .refs-container p { margin-bottom: 12px; padding-left: 30px; text-indent: -30px; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- 0. Title Slide -->
+            <section style="text-align: center;">
+                <h1 style="font-size: 3em; margin-bottom: 20px;">IMU 기반 다속도 보행 시계열 분석</h1>
+                <h3 style="color: var(--text-gray); font-weight: 500;">ACLR 환자 판별 및 회복도 추적을 위한 기계학습 프레임워크</h3>
+                <div style="margin-top: 60px; font-size: 28px; color: var(--secondary);">
+                    <i class="fas fa-chart-line fa-2x"></i>
+                </div>
+            </section>
+
+            <!-- 1. Introduction & Burden -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">1. ACL 손상 및 재건술(ACLR)의 현실</h2>
+                <p style="font-size: 32px; margin-bottom: 30px;">전방 십자인대(ACL) 손상은 활동적 인구에서 가장 흔하고 심각한 손상 중 하나로, 수술 후에도 장기적인 임상 부담을 수반합니다.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-hospital-user"></i>
+                        <div class="stat-num">25만<span style="font-size: 0.5em;">건/년</span></div>
+                        <div class="stat-desc">미국 내 연간 재건술 건수<span class="cite">[10]</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-crutch"></i>
+                        <div class="stat-num">15~25<span style="font-size: 0.5em;">%</span></div>
+                        <div class="stat-desc">수술 후 2년 이내 재파열률<span class="cite">[5, 7]</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bone"></i>
+                        <div class="stat-num">최대 50<span style="font-size: 0.5em;">%</span></div>
+                        <div class="stat-desc">10~15년 내 외상 후 골관절염 발생<span class="cite">[5, 7]</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Clinical Assessment Limitations -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">2. 현재 임상 평가의 한계</h2>
+                <ul>
+                    <li>재활 진행 및 스포츠 복귀(RTS) 결정이 <strong>대부분 주관적 판단에 의존</strong><span class="cite">[8, 20]</span></li>
+                    <li>기존 정밀 평가 도구의 현실적 제약</li>
+                </ul>
+                <div class="pillars" style="grid-template-columns: 1fr 1fr;">
+                    <div class="pillar" style="border-left-color: var(--accent);">
+                        <h4><i class="fas fa-times-circle" style="color:var(--accent);"></i> 기존 표준 장비의 한계</h4>
+                        <p>등속성 근력 측정, 3차원 동작 분석, Force plate는 정밀하나 <strong>특수 실험실, 고비용, 전문 인력</strong>을 요구하여 일상 모니터링이 어렵습니다.</p>
+                    </div>
+                    <div class="pillar" style="border-left-color: var(--primary);">
+                        <h4><i class="fas fa-exclamation-triangle" style="color:var(--primary);"></i> 평가의 공백</h4>
+                        <p>결과적으로 객관적 평가 없이 재활이 진행되어, <strong>임상 평가와 실제 기능 회복 간 심각한 괴리</strong>가 발생합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Gait as a Biomarker -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">3. 보행(Gait): 모니터링의 핵심</h2>
+                <p style="font-size: 32px; margin-bottom: 20px;">건강한 성인의 하루 <strong>6,000~12,000보</strong><span class="cite">[6]</span>. 이 누적적 노출은 재활의 핵심 지표입니다.</p>
+                
+                <div class="process-flow">
+                    <div class="flow-step">
+                        <i class="fas fa-walking"></i>
+                        <h4>'무릎 경직' 전략 <span class="cite">[5, 8]</span></h4>
+                        <p>부하 반응기 무릎 굴곡 감소<br>최대 무릎 신전 모멘트(KEM) 저하<br>수직 지면반발력(vGRF) 감소</p>
+                    </div>
+                    <i class="fas fa-arrow-right flow-arrow"></i>
+                    <div class="flow-step">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                        <h4>전신적·양측성 영향 <span class="cite">[1]</span></h4>
+                        <p>비정상적 보행 역학은 손상 측뿐만 아니라 <strong>비손상 측 하지에서도 수술 후 12개월까지 지속됨</strong></p>
+                    </div>
+                </div>
+                <div class="alert-box" style="margin-top: 20px; padding: 15px 30px;">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>보행 정상화는 단순 증상 해소가 아닌 <span class="highlight">독립적인 재활 목표 지표</span>입니다.</p>
+                </div>
+            </section>
+
+            <!-- 4. Pathophysiology: Unloading -> PTOA -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">4. 관절 퇴행(PTOA)과의 기계론적 연쇄</h2>
+                <ul style="font-size: 30px;">
+                    <li><strong>일일 보행 수와 역학:</strong> 보행 수가 적은 환자군일수록 체중 수용 단계에서 현저히 낮은 vGRF와 KEM 관찰<span class="cite">[6]</span></li>
+                    <li><strong>치명적 연쇄 작용:</strong> 모멘트(KAM, KEM)의 지속적 감소는 연골 접촉 응력 분포를 변화시키고 세포 대사를 저해함<span class="cite">[15]</span></li>
+                    <li><strong>역설적 결과:</strong> 손상 초기 부하를 과도하게 줄인 환자들이 5년 추적 관찰 시 <strong>오히려 OA 발생률이 증가</strong>함<span class="cite">[19]</span></li>
+                </ul>
+                <div class="alert-box" style="background: #e8f4f8; border-color: #3498db; margin-top:20px;">
+                    <i class="fas fa-shield-alt" style="color: #3498db;"></i>
+                    <p>보행은 고강도 과제와 달리 <strong>회복 최초 단계부터 안전하게 평가</strong>할 수 있는 이상적인 종단적 모니터링 수단입니다.</p>
+                </div>
+            </section>
+
+            <!-- 5. IMU as Proxy -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">5. IMU를 통한 관절 부하 추정</h2>
+                <p style="font-size: 32px;">고가의 Force plate 없이도 IMU 센서가 훌륭한 대리 측정치가 됩니다.</p>
+                
+                <div class="pillars">
+                    <div class="pillar">
+                        <h4>경골(Shank) 각속도</h4>
+                        <p>경골의 낮은 각속도가 <strong>KEM 감소와 직접적 연관</strong>됨 (사두근 수축과 동기화)<span class="cite">[16, 22]</span>.</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>강한 상관관계</h4>
+                        <p>IMU 각속도/가속도와 무릎 모멘트/가동범위 간 <strong>강한 상관관계(rs=0.71~0.77)</strong> 입증<span class="cite">[11]</span>.</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>단일 센서의 가능성</h4>
+                        <p>단일 IMU만으로 보행 중 <strong>3차원 하지 운동역학(vGRF 등) 추정 가능</strong><span class="cite">[12, 21]</span>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Speed Dependency -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">6. 간과되어 온 핵심: <span class="highlight">속도 의존성</span></h2>
+                
+                <div class="alert-box" style="background: #ffebee; border-color: #f44336; margin-top: 10px; margin-bottom: 30px;">
+                    <i class="fas fa-exclamation-circle" style="color: #f44336;"></i>
+                    <p>자기선택 속도 평가는 비대칭을 위장하여 <span style="color: #d32f2f;">'거짓 안심(False reassurance)'</span>을 초래합니다<span class="cite">[3]</span>.</p>
+                </div>
+                
+                <div class="process-flow">
+                    <div class="flow-step" style="border-top: 5px solid #4CAF50;">
+                        <h4>편안한 속도 (80%~100%)</h4>
+                        <p>GRF 변조가 작고 <strong>좌우 대칭성이 가장 높음</strong>. 수술 후 6개월 시 정상 범위 근접<span class="cite">[2]</span>.</p>
+                    </div>
+                    <i class="fas fa-exchange-alt flow-arrow" style="color:#aaa;"></i>
+                    <div class="flow-step" style="border-top: 5px solid #f44336;">
+                        <h4>빠른 속도 (120%+)</h4>
+                        <p>언로딩 전략 발현. 빠른 속도에서만 <strong>비대칭(외회전 증가 등)이 명확히 노출됨</strong><span class="cite">[4, 5]</span>.</p>
+                    </div>
+                </div>
+                <p style="font-size: 26px; text-align: center; margin-top: 20px; font-weight: 700;">다속도(Multi-pace) 평가는 은폐된 보상 전략을 파악하기 위해 생체역학적으로 필수입니다.</p>
+            </section>
+
+            <!-- 7. Gaps in IMU & ML Research -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">7. 기존 IMU 기반 연구의 구조적 공백</h2>
+                <p style="font-size: 30px; margin-bottom: 20px;">IMU 보행 연구는 활발하나<span class="cite">[9, 10]</span>, 임상적 완성도를 위한 세 가지 공백이 존재합니다.</p>
+                
+                <div class="pillars">
+                    <div class="pillar">
+                        <h4><i class="fas fa-calendar-times" style="color:var(--accent);"></i> 1. 횡단면적 설계</h4>
+                        <p>단일 시점 측정에 그쳐 전 재활 기간의 <strong>종단적 회복 궤적</strong>을 추적하지 못함.</p>
+                    </div>
+                    <div class="pillar">
+                        <h4><i class="fas fa-shoe-prints" style="color:var(--accent);"></i> 2. 단일 보행 속도</h4>
+                        <p>대부분 단일 속도 프로토콜 사용. <strong>속도 의존적 비대칭 증폭</strong> 현상 포착 실패<span class="cite">[2, 3]</span>.</p>
+                    </div>
+                    <div class="pillar">
+                        <h4><i class="fas fa-chart-bar" style="color:var(--accent);"></i> 3. 이산적 피크값 한계</h4>
+                        <p>피크값(최대값 등) 특징 공학에 한정. <strong>파형 이면의 풍부한 시계열 정보</strong> 누락<span class="cite">[1, 13, 14]</span>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Proposed Solution & Objectives -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left;">8. 본 연구의 프레임워크 및 목적</h2>
+                <p style="font-size: 34px; margin-bottom: 30px;"><strong>"다속도 보행 시계열 데이터와 기계학습(ML)의 결합"</strong></p>
+                
+                <ul style="font-size: 32px; list-style-type: decimal;">
+                    <li style="margin-bottom: 25px; padding-left: 10px;">
+                        <strong>판별 모델 개발:</strong> 다속도 IMU 시계열을 활용하여 ACLR 환자와 건강한 대조군을 95% 이상의 정확도로 감별하는 프레임워크 구축
+                    </li>
+                    <li style="margin-bottom: 25px; padding-left: 10px;">
+                        <strong>동적 지표 정량화:</strong> 속도 의존적 보행 비대칭을 회복 상태를 대변하는 동적 지표로 수치화
+                    </li>
+                    <li style="margin-bottom: 25px; padding-left: 10px;">
+                        <strong>종단적 추적:</strong> 전 재활 단계에 걸쳐 임상 지표로서의 적용 가능성 검증
+                    </li>
+                </ul>
+                
+                <div class="alert-box" style="background: var(--primary); color: white; border: none; justify-content: center;">
+                    <p style="color: white; font-size: 30px;">비침습적·저비용·확장 가능한 <strong>객관적 의사결정 지원 체계</strong> 구축</p>
+                </div>
+            </section>
+
+            <!-- References 1 -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left; margin-bottom: 20px;">참고문헌 (1/3)</h2>
+                <div class="refs-container">
+                    <p>[1] Büttner et al. (2024). Bilateral Waveform Analysis of Gait Biomechanics... <i>Journal of Orthopaedic Research</i>.</p>
+                    <p>[2] Garcia et al. (2021). Gait Asymmetries Are Exacerbated at Faster Walking Speeds... <i>Journal of Orthopaedic Research</i>.</p>
+                    <p>[3] Krishnan et al. (2022). Mechanical Factors Underlying Altered Knee Extension Moment... <i>Journal of Orthopaedic Research</i>.</p>
+                    <p>[4] Lai et al. (2024). Whether Patients with ACL Reconstruction Walking at a Fast Speed Have More... <i>Orthopaedic Surgery</i>.</p>
+                    <p>[5] Yu et al. (2026). Advances in Gait Alterations and Rehabilitation After ACL Reconstruction. <i>Orthopaedic Surgery</i>.</p>
+                    <p>[6] Lisee et al. (2022). Linking Gait Biomechanics and Daily Steps Post ACL-Reconstruction. <i>Medicine & Science in Sports & Exercise</i>.</p>
+                    <p>[7] Kaur et al. (2016). Movement Patterns of the Knee During Gait Following ACL Reconstruction... <i>Sports Medicine</i>.</p>
+                </div>
+            </section>
+
+            <!-- References 2 -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left; margin-bottom: 20px;">참고문헌 (2/3)</h2>
+                <div class="refs-container">
+                    <p>[8] Lewek et al. (2002). The Effect of Insufficient Quadriceps Strength on Gait... <i>Clinical Biomechanics</i>.</p>
+                    <p>[9] Yona, Peskin & Fischer (2026). The COMPWALK-ACL: A Dataset of Multi-pace IMU Gait Kinematics... <i>Scientific Data</i>.</p>
+                    <p>[10] Zhu et al. (2025). Multi-modal Gait Analysis for ACL Reconstruction Classification... <i>Smart Health</i>.</p>
+                    <p>[11] Jones et al. (2022). Angular Velocities and Linear Accelerations Derived from IMUs... <i>Sensors</i>.</p>
+                    <p>[12] Krishnakumar et al. (2024). Estimation of Kinetics Using IMUs to Monitor and Aid in Clinical... <i>Sensors</i>.</p>
+                    <p>[13] Tedesco et al. (2020). A Wearable System for Gait Training in Subjects with ACL... <i>Sensors</i>.</p>
+                    <p>[14] Yuan et al. (2026). IMU-Based Running Gait Analysis Using Machine Learning and Sensor Fusion. <i>Frontiers</i>.</p>
+                </div>
+            </section>
+
+            <!-- References 3 -->
+            <section>
+                <h2 style="left: 0; transform: none; text-align: left; margin-bottom: 20px;">참고문헌 (3/3)</h2>
+                <div class="refs-container">
+                    <p>[15] Hall, Stevermer & Gillette (2012). Gait Analysis Post ACL Reconstruction: Knee Osteoarthritis... <i>Gait & Posture</i>.</p>
+                    <p>[16] Mpaliotes, Vasileios (2022). Gait Analysis Using IMU Sensors in Patients After ACL... 학위논문.</p>
+                    <p>[17] Hur et al. (2025). Learning Lower-Limb Joint Kinematics from IMU Data Using Transfer Learning. <i>Scientific Reports</i>.</p>
+                    <p>[18] Davis-Wilson et al. (2020). Bilateral Gait Six and Twelve Months Post–ACL Reconstruction... <i>Medicine & Science in Sports & Exercise</i>.</p>
+                    <p>[19] Wellsandt et al. (2016). Decreased Knee Joint Loading Associated with Early Knee Osteoarthritis... <i>American Journal of Sports Medicine</i>.</p>
+                    <p>[20] Di Stasi et al. (2013). Gait Patterns Differ Between ACL-Reconstructed Athletes... <i>American Journal of Sports Medicine</i>.</p>
+                    <p>[21] Lee & Park (2020). Estimation of Three-Dimensional Lower Limb Kinetics Data... <i>Sensors</i>.</p>
+                    <p>[22] Sigward et al. (2016). Pelvis and Trunk Motion Influence Valgus Knee Loading During Gait... <i>Clinical Biomechanics</i>.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'fade',
+            width: 1440,
+            height: 900,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+</html>
