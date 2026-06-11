@@ -29,10 +29,10 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 6. Final RF (1000 trees) × 2 seeds (42, 88) → soft-vote ensemble
 7. StratifiedKFold(5, shuffle=False)
 
-**Fold-level AUC**: [1.000, 0.927, 1.000, 0.977, 1.000]  
-**Hard fold (fold=1)**: HA4, HA3, HA22, HA23, HA24 vs ACLD24-26, ACLD31 — genuine biomechanical overlap
+**Fold-level AUC**: seed 42 and seed 88 both report [1.000, 0.927, 1.000, 0.977, 1.000].
+**Threshold behavior**: `02b_subject_predictions.csv` at threshold 0.5 gives TP=54, TN=10, FP=14, FN=0. Keep AUC and thresholded classification summaries separate.
 
-**Why feature interactions help**: The top-20 features include knee_flexion × hip_flexion cross-product terms that better discriminate the 5 hard HA subjects who have ACL-like gait asymmetry. Seed=42 and seed=88 consistently select feature combinations that work for fold=1.
+**Why feature interactions help**: Within each fold, the pipeline selects RF top-20 base features and appends C(20,2)=190 pairwise products before the final RF. Current artifacts prove the performance gain, but the exact selected feature names per fold are not saved.
 
 **Why PCA/Optuna hurt**:
 - PCA on noisy 1134-dim features → information loss for small fold test sets
@@ -58,13 +58,11 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 ### H3 Waveform vs Scalar — 02_raw_waveform_ml.py
 
 **Planned**: Feature sets A-D (unilateral waveform, bilateral asymmetry, speed delta, multi-speed bilateral)  
-**Status**: Script written but NOT run (computational complexity + waveform features consistently underperform scalar)
+**Current artifact status**: Script exists, but `results/02_waveform_results.csv`, `results/02_waveform_best.json`, SHAP `.npy`, and SHAP top-timepoint outputs are not present in the current worktree.
 
-**Key finding from investigation**:
-- Bilateral waveform asymmetry (HA: L2=96, ACL: L2=115) has massive overlap → low S/N
-- PCA on 909-dim waveforms is unstable for N=62 training samples
-- All waveform approaches plateau at AUC ≈ 0.84-0.91 vs scalar 0.955+
-- Adding waveform to scalar HURTS (0.9576 → 0.9429)
+**Reporting rule**:
+- Do not report waveform or SHAP as completed 0611 results unless those output artifacts are regenerated and verified.
+- Use this path only as a planned/exploratory branch in current reports.
 
 ---
 
@@ -85,7 +83,7 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 ### 3-Class 최적 파이프라인 — 04b/04c ✓
 
 **04b** (스칼라피벗+변동성+상호작용, 2-seed): macro-F1=0.6794, AUC(OvR)=0.8672
-**04c** (속도별 분석 + Optuna + 분리한계): **최종 3분류 AUC(OvR)=0.8831** (Optuna)
+**04c** (속도별 분석 + Optuna + 분리한계): **최종 3분류 AUC(OvR)=0.8831** (Optuna upper-bound probe; not strict nested validation)
 
 | 방법 | AUC(OvR) | macro-F1 |
 |------|----------|----------|
@@ -102,19 +100,20 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 | 통합(all) | 0.970 | 0.871 |
 
 **ACLD↔ACLR 분리 한계** (왜 3분류 0.98 불가):
-- 직접 이진 분류 AUC = 0.687 (상호작용) / 0.667 (경량)
+- 직접 이진 분류 AUC = 0.7174 (상호작용) / 0.6667 (경량)
 - Permutation test: p=0.0498, null mean=0.499 → **우연 경계선, 분리 신호 거의 없음**
 - ID.csv에 수술 여부·경과 등 구분 메타데이터 없음 → 보행으로만 구분 불가
 - **임상적 발견**: 재건(ACLR) 후에도 보행이 비재건(ACLD)과 구별 안 됨 = 손상 보상 잔존
 
 ---
 
-### HTML Report — 06_results_report.py ✓ (최신 종합 보고서)
+### HTML Reports — reports/ ✓
 
-**Status**: Complete  
-**Output**: [reports/results_report.html](../reports/results_report.html)
-7개 섹션: 파이프라인 / 이진분류 / 분류상세 / 속도별분석 / 3분류최대치 / 분리한계 / 데이터설계.
-모든 figure base64 인라인(CDN 무의존), 한국어, y축 rotation=0.
+**Existing output**: [reports/results_report.html](../reports/results_report.html)
+7개 섹션: 파이프라인 / 이진분류 / 분류상세 / 속도별분석 / 3분류최대치 / 분리한계 / 데이터설계. This report is result-centered and includes some presentation shortcuts.
+
+**Method/evidence output**: [reports/02_pipeline_training_method_report.html](../reports/02_pipeline_training_method_report.html)
+Purpose: explain how the upgraded ML pipeline is constructed, how models were trained, which model produced which result, and which claims are supported by current code/artifacts. It explicitly separates GAI context from 0611 model evidence, distinguishes source n=79 from final binary model n=78, separates AUC from thresholded classification, and marks raw waveform/SHAP as not currently completed.
 
 ---
 
@@ -136,3 +135,4 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 | 2026-06-11 23:10 | 3분류 최적화 | 04b: 파형+PCA → 최적 파이프라인 macro-F1 0.52→0.68, AUC 0.63→0.87 |
 | 2026-06-11 23:40 | 속도별+Optuna+한계검증 | 04c: 속도별 격자(통합>앙상블), Optuna 3분류 0.871→0.883, ACLD↔ACLR permutation p=0.05 |
 | 2026-06-11 23:55 | 종합 보고서 | 06_results_report.py 7개 섹션 재구성, 속도별/3분류최대치/분리한계 추가 |
+| 2026-06-12 00:27 | Method/evidence report | Added `reports/02_pipeline_training_method_report.html`; clarified n=79 source vs n=78 binary model, AUC vs threshold metrics, 04c Optuna validation level, and raw waveform/SHAP artifact absence |

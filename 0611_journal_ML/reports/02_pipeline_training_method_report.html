@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0611 Journal ML — Pipeline and Training Evidence Report</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --panel: #ffffff;
+    --ink: #1f2933;
+    --muted: #62717f;
+    --line: #d9e0e7;
+    --navy: #21324a;
+    --blue: #2f6f9f;
+    --green: #247a5a;
+    --amber: #9a6418;
+    --red: #a83f3f;
+    --shadow: 0 10px 30px rgba(31, 41, 51, 0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    line-height: 1.62;
+    font-size: 16px;
+  }
+  .page-header {
+    background: #162235;
+    color: #fff;
+    padding: 42px 48px 34px;
+    border-bottom: 6px solid #2f6f9f;
+  }
+  .page-header h1 {
+    margin: 0 0 10px;
+    max-width: 1180px;
+    font-size: 30px;
+    line-height: 1.22;
+    letter-spacing: 0;
+  }
+  .page-header p {
+    margin: 0;
+    max-width: 1100px;
+    color: #d8e4ef;
+  }
+  .content {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 30px 22px 70px;
+  }
+  .grid {
+    display: grid;
+    gap: 18px;
+  }
+  .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .span2 { grid-column: span 2; }
+  .report-section {
+    margin: 26px 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  h2 {
+    margin: 0 0 18px;
+    font-size: 21px;
+    letter-spacing: 0;
+    color: var(--navy);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  h3 {
+    margin: 18px 0 8px;
+    font-size: 17px;
+    color: var(--navy);
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 26px;
+    border-radius: 4px;
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .metric {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    min-height: 136px;
+  }
+  .metric.primary {
+    background: #e7f4ef;
+    border-color: #add8c7;
+  }
+  .metric .value {
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 850;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .metric .label {
+    font-weight: 760;
+    color: var(--navy);
+  }
+  .metric .sub {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .note {
+    border-left: 4px solid var(--blue);
+    background: #eef6fb;
+    padding: 12px 14px;
+    border-radius: 0 6px 6px 0;
+    color: #26475d;
+  }
+  .warn {
+    border-left-color: var(--amber);
+    background: #fff7e8;
+    color: #654513;
+  }
+  .risk {
+    border-left-color: var(--red);
+    background: #fff0f0;
+    color: #713030;
+  }
+  table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: #edf1f5;
+    color: #415161;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+  tr.best td {
+    background: #edf8f3;
+    font-weight: 760;
+  }
+  code {
+    background: #eef1f4;
+    border: 1px solid #d9e0e7;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.92em;
+    overflow-wrap: anywhere;
+  }
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 14px 0;
+  }
+  .step {
+    border: 1px solid var(--line);
+    background: #f7f9fb;
+    border-radius: 7px;
+    padding: 12px;
+    min-height: 112px;
+  }
+  .step b {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 5px;
+  }
+  .step span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .figure {
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .figure img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  .caption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+  li { margin: 4px 0; }
+  .source-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .source {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 10px 12px;
+    background: #f8fafc;
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    header { padding: 30px 22px; }
+    .page-header h1 { font-size: 24px; }
+    .g4, .g3, .g2, .pipeline, .source-list { grid-template-columns: 1fr; }
+    .span2 { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page-header">
+  <h1>0611_journal_ML 파이프라인·학습 방식·모델 결과 근거 보고서</h1>
+  <p>이 문서는 기존 결과 중심 보고서와 달리, 현재 코드와 산출물을 기준으로 데이터 계보, 학습 절차, 검증 방식, 모델별 결과, 해석상 주의점을 분리해 정리한다.</p>
+</div>
+
+<div class="content">
+  <div class="grid g4">
+    <div class="metric primary">
+      <div class="value">0.9830</div>
+      <div class="label">최종 이진 OOF AUC</div>
+      <div class="sub">02b RF interaction ensemble, 95% CI 0.9568-0.9992</div>
+    </div>
+    <div class="metric">
+      <div class="value">78</div>
+      <div class="label">02b 분석 피험자</div>
+      <div class="sub">ACL 54, HA 24. 원자료 79명 중 HA25는 scalar pivot 결측으로 제외</div>
+    </div>
+    <div class="metric">
+      <div class="value">1,134</div>
+      <div class="label">기본 피처 수</div>
+      <div class="sub">864 scalar pivot + 270 stride variability</div>
+    </div>
+    <div class="metric">
+      <div class="value">0.8831</div>
+      <div class="label">3분류 최고 AUC(OvR)</div>
+      <div class="sub">04c flat RF + Optuna upper-bound probe</div>
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">01</span> 중간 결과에서 ML 파이프라인으로 연결된 지점</h2>
+    <div class="grid g2">
+      <div>
+        <p><code>GAI 중간 결과/statistics_v1.html</code>은 ACLD 27명, ACLR 27명, HA 25명으로 구성된 79명 다속도 IMU 보행 분석을 제시한다. 분석 축은 9개 관절 채널, slow/normal/fast 3속도, 101-point 정규화 파형, SPM1D, 스칼라 효과크기, LSI였다.</p>
+        <p>통계 중간 결과의 핵심 신호는 fast 조건의 무릎 굴곡 loading-response peak LSI였다. 이 지표는 Bonferroni 보정 후 유의했고, eta2=0.281로 가장 큰 효과크기 축에 속했다. 따라서 0611 ML 작업은 단일 속도나 단일 피처가 아니라 <b>다속도 scalar feature와 subject-level 변동성</b>을 결합하는 방향으로 고도화되었다.</p>
+      </div>
+      <div class="note">
+        <b>보고서 작성 원칙</b>
+        <ul>
+          <li>GAI 자료는 연구 배경과 통계적 출발점으로 사용한다.</li>
+          <li>모델 성능 수치는 <code>0611_journal_ML/results</code>와 <code>logs</code>에서 확인된 값만 사용한다.</li>
+          <li>현재 산출물이 없는 raw waveform/SHAP 경로는 완료 결과로 쓰지 않는다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">02</span> 데이터 계보와 최종 학습 행렬</h2>
+    <table>
+      <thead>
+        <tr><th>데이터/단계</th><th>현재 확인값</th><th>보고서 해석</th><th>근거</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>원 scalar 입력</td>
+          <td><code>features_scalar.csv</code>: 237 x 148</td>
+          <td>79명 x 3속도 subject-speed table</td>
+          <td>venv 검산, <code>scripts/01_speed_ablation.py:66-76</code></td>
+        </tr>
+        <tr>
+          <td>원 stride 입력</td>
+          <td><code>stride_level_peaks.parquet</code>: 15,135 x 50</td>
+          <td>stride-level peak feature에서 subject-level variability 산출</td>
+          <td>venv 검산, <code>scripts/02b_optimal_pipeline.py:174-183</code></td>
+        </tr>
+        <tr>
+          <td>scalar pivot</td>
+          <td>78명 x 864 features</td>
+          <td>slow/normal/fast 원 피처 + fast-slow, fast-normal delta + 3속도 평균</td>
+          <td><code>logs/02b_optimal.log</code>, <code>scripts/02b_optimal_pipeline.py:61-73</code></td>
+        </tr>
+        <tr>
+          <td>stride variability</td>
+          <td>79명 x 270 features</td>
+          <td>stride feature별 std와 coefficient of variation을 subject 단위로 집계</td>
+          <td><code>logs/02b_optimal.log</code>, <code>scripts/02b_optimal_pipeline.py:76-94</code></td>
+        </tr>
+        <tr class="best">
+          <td>02b 최종 행렬</td>
+          <td>78명 x 1,134 base features</td>
+          <td>scalar pivot의 결측 제거로 HA25가 제외됨. 이후 fold 내부 상호작용 190개 추가</td>
+          <td><code>results/02b_optimal_results.json</code>, venv 재구성 검산</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn note">
+      <b>표본 수 차이</b>: 통계 보고서와 3분류 실험은 원자료 79명을 기준으로 말할 수 있지만, 최종 02b 이진 모델은 <code>HA25</code>가 결측 처리 후 빠져 78명이다. 따라서 본 보고서는 source dataset n=79, final binary model n=78을 구분한다.
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">03</span> 최종 이진 파이프라인 구성</h2>
+    <div class="pipeline">
+      <div class="step"><b>1. Scalar Pivot</b><span>3속도별 scalar feature를 subject row로 변환. 864 features.</span></div>
+      <div class="step"><b>2. Variability</b><span>stride-level std/cv를 subject 단위로 집계. 270 features.</span></div>
+      <div class="step"><b>3. Fold Scaling</b><span>각 fold에서 train에만 StandardScaler fit, test는 transform.</span></div>
+      <div class="step"><b>4. RF Selection</b><span>train fold에서만 RF importance top-20 선택.</span></div>
+      <div class="step"><b>5. Interactions</b><span>top-20 쌍별 곱 C(20,2)=190개를 fold 내부 생성.</span></div>
+      <div class="step"><b>6. Ensemble</b><span>RandomForest 1000 trees, seeds 42/88 soft-vote 평균.</span></div>
+    </div>
+    <div class="grid g2">
+      <div>
+        <h3>학습 방식</h3>
+        <ul>
+          <li>과제: ACLD+ACLR을 ACL=1, HA=0으로 둔 binary classification.</li>
+          <li>검증: <code>StratifiedKFold(5, shuffle=False)</code>. 한 행이 한 피험자이므로 GroupKFold가 필요하지 않은 subject-level 행렬이다.</li>
+          <li>누출 방지: scaler, RF feature selection, interaction construction은 각 outer fold의 train data에서 결정된 뒤 test fold에 적용된다.</li>
+          <li>불균형 처리: RandomForest에 <code>class_weight='balanced'</code> 적용.</li>
+          <li>불확실성: OOF prediction에 대해 2,000회 bootstrap percentile 95% CI를 계산.</li>
+        </ul>
+      </div>
+      <div class="risk note">
+        <b>정확히 써야 하는 제한점</b>
+        <ul>
+          <li>02b의 side-specific variability는 코드상 injured-leg map과 stride <code>side</code> 값을 비교한다. 현재 stride side 값 체계가 injured/contralateral이면 Right/Left 비교와 완전히 같지 않을 수 있으므로, 본 보고서에서는 “stride variability”로 표현하고 과한 해부학적 side 해석은 피한다.</li>
+          <li>상호작용 190개는 전체 1,134에 포함된 것이 아니라, 각 fold에서 base 1,134에 추가되는 derived terms다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">04</span> 모델별 결과: 이진 ACL vs HA</h2>
+    <table>
+      <thead>
+        <tr><th>실험</th><th>Feature 구성</th><th>모델/튜닝</th><th>CV</th><th>결과</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01 Speed Ablation</td>
+          <td>단일속도 144 features 또는 all_speeds 864 features</td>
+          <td>RF, XGBoost, LightGBM, SVC-RBF 중 조건별 best. 현재 CSV best는 RF.</td>
+          <td>Outer StratifiedKFold(5), inner StratifiedKFold(3), Optuna 50 trials</td>
+          <td>slow 0.9001, normal 0.8707, fast 0.9070, all_speeds 0.9514</td>
+        </tr>
+        <tr class="best">
+          <td>02b Optimal Pipeline</td>
+          <td>scalar pivot 864 + stride variability 270 + fold-local interactions 190</td>
+          <td>RF 1000 trees, class_weight balanced, seeds 42/88 ensemble</td>
+          <td>StratifiedKFold(5, shuffle=False), OOF</td>
+          <td><b>AUC 0.9830</b>, bootstrap mean 0.9831, median 0.9849, 95% CI 0.9568-0.9992</td>
+        </tr>
+        <tr>
+          <td>04c Integrated Speed Analysis</td>
+          <td>04c의 all condition: 다속도 통합 + variability + interactions</td>
+          <td>2-seed RF ensemble</td>
+          <td>StratifiedKFold(5, shuffle=False)</td>
+          <td>binary AUC 0.9704. 02b headline 0.9830과 별도 실험값</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid g2">
+      <div class="figure">
+        <img src="../figures/fig_02b_roc.png" alt="02b ROC curve">
+        <div class="caption">02b 최종 ROC. 수치 근거는 <code>results/02b_optimal_results.json</code>.</div>
+      </div>
+      <div>
+        <h3>Fold-level evidence</h3>
+        <table>
+          <thead><tr><th>Seed</th><th>Fold AUCs</th><th>OOF AUC</th></tr></thead>
+          <tbody>
+            <tr><td>42</td><td>1.0000, 0.9273, 1.0000, 0.9773, 1.0000</td><td>0.9815</td></tr>
+            <tr><td>88</td><td>1.0000, 0.9273, 1.0000, 0.9773, 1.0000</td><td>0.9815</td></tr>
+            <tr class="best"><td>Mean ensemble</td><td>OOF probability average</td><td>0.9830</td></tr>
+          </tbody>
+        </table>
+        <div class="note">
+          AUC는 threshold-free rank metric이다. <code>02b_subject_predictions.csv</code>를 threshold 0.5로 이진화하면 TP 54, TN 10, FP 14, FN 0이다. 따라서 “AUC 0.9830”과 “임계값 0.5에서 특이도 41.7%”는 서로 다른 성격의 성능 지표다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">05</span> 속도별 분석: 다속도 통합의 의미</h2>
+    <div class="grid g2">
+      <div class="figure">
+        <img src="../figures/fig_04c_binary_speed.png" alt="Binary speed analysis">
+        <div class="caption">04c binary speed grid. 통합 all이 단일 속도와 speed ensemble을 넘는다.</div>
+      </div>
+      <div class="figure">
+        <img src="../figures/fig_04c_3class_speed.png" alt="Three-class speed analysis">
+        <div class="caption">04c 3-class speed grid. 3분류에서도 all condition이 최고다.</div>
+      </div>
+    </div>
+    <table>
+      <thead><tr><th>Condition</th><th>Binary AUC</th><th>3-class AUC(OvR)</th><th>3-class macro-F1</th></tr></thead>
+      <tbody>
+        <tr><td>slow</td><td>0.8807</td><td>0.7769</td><td>0.5608</td></tr>
+        <tr><td>normal</td><td>0.9033</td><td>0.7709</td><td>0.6132</td></tr>
+        <tr><td>fast</td><td>0.9126</td><td>0.7884</td><td>0.6617</td></tr>
+        <tr><td>speed ensemble</td><td>0.9304</td><td>0.8115</td><td>0.6247</td></tr>
+        <tr class="best"><td>all</td><td>0.9704</td><td>0.8712</td><td>0.7267</td></tr>
+      </tbody>
+    </table>
+    <p>이 결과는 GAI 중간 결과에서 제기된 “자기선택 속도만으로는 ACL 보행 이상을 충분히 드러내기 어렵다”는 문제의식을 ML 수준에서 재확인한다. 단일 속도 중 fast가 강하지만, 최종적으로는 slow/normal/fast 정보를 하나의 subject-level feature space에 통합한 모델이 가장 높다.</p>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">06</span> 3분류 ACLD / ACLR / HA 결과</h2>
+    <table>
+      <thead>
+        <tr><th>실험</th><th>모델/파이프라인</th><th>AUC(OvR)</th><th>macro-F1</th><th>balanced accuracy</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>04_multiclass RF</td>
+          <td>waveform asymmetry + PCA + RF Optuna</td>
+          <td>0.6331</td>
+          <td>0.4313</td>
+          <td>0.4326</td>
+          <td>초기 3분류 baseline</td>
+        </tr>
+        <tr>
+          <td>04_multiclass XGB</td>
+          <td>waveform asymmetry + PCA + XGBoost Optuna</td>
+          <td>0.6308</td>
+          <td>0.5164</td>
+          <td>0.5086</td>
+          <td>macro-F1는 RF보다 높지만 AUC는 유사</td>
+        </tr>
+        <tr>
+          <td>04b RF optimal</td>
+          <td>scalar pivot + variability + interactions</td>
+          <td>0.8672</td>
+          <td>0.6794</td>
+          <td>0.6741</td>
+          <td>02b 계열 파이프라인을 3분류에 적용</td>
+        </tr>
+        <tr>
+          <td>04c fixed all</td>
+          <td>04c 통합 RF</td>
+          <td>0.8712</td>
+          <td>0.7267</td>
+          <td>not saved</td>
+          <td>속도별 grid의 all condition</td>
+        </tr>
+        <tr>
+          <td>04c hierarchical</td>
+          <td>Stage1 ACL vs HA, Stage2 ACLD vs ACLR</td>
+          <td>0.8514</td>
+          <td>0.7035</td>
+          <td>0.6998</td>
+          <td>flat보다 낮음</td>
+        </tr>
+        <tr class="best">
+          <td>04c Optuna flat</td>
+          <td>통합 RF upper-bound probe, max_depth=12, min_samples_leaf=4, max_features=0.1044</td>
+          <td>0.8831</td>
+          <td>0.7608</td>
+          <td>not saved</td>
+          <td>현재 3분류 최고값</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid g2">
+      <div class="figure">
+        <img src="../figures/fig_mc_cm_rf_optimal.png" alt="RF optimal multiclass confusion matrix">
+        <div class="caption">04b RF optimal confusion matrix.</div>
+      </div>
+      <div class="figure">
+        <img src="../figures/fig_04c_cm_hier.png" alt="Hierarchical confusion matrix">
+        <div class="caption">04c hierarchical confusion matrix. AUC(OvR)=0.8514.</div>
+      </div>
+    </div>
+    <div class="warn note">
+      <b>검증 수준 구분</b>: <code>04c_speed_analysis.py</code>는 Optuna를 “honest upper-bound probe”로 명시한다. 즉 04c Optuna 0.8831은 엄격한 nested holdout 성능이라기보다 현재 feature/model family에서의 성능 상한 탐색으로 보고해야 한다.
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">07</span> 왜 3분류가 0.98까지 가지 않는가</h2>
+    <div class="grid g2">
+      <div>
+        <p>3분류의 병목은 HA 분리가 아니라 ACLD와 ACLR의 경계다. <code>04c_permutation.json</code>에 따르면 ACLD vs ACLR 직접 binary AUC는 0.7174이고, 가벼운 CV 모델 기준 AUC는 0.6667이다. 200회 permutation null mean은 0.4994, p-value는 0.0498이다.</p>
+        <p>따라서 “이진 ACL vs HA는 매우 높은 AUC를 달성했지만, ACLD vs ACLR은 보행 피처만으로 강하게 분리되지 않는다”가 현재 코드와 결과가 지지하는 정확한 결론이다.</p>
+      </div>
+      <div class="figure">
+        <img src="../figures/fig_04c_pca_overlap.png" alt="PCA overlap">
+        <div class="caption">PCA projection. ACLD/ACLR/HA가 저차원에서는 상당히 겹친다.</div>
+      </div>
+    </div>
+    <div class="figure" style="margin-top:18px;">
+      <img src="../figures/fig_04c_permutation.png" alt="ACLD vs ACLR permutation test">
+      <div class="caption">ACLD vs ACLR permutation test. 경계선 수준의 분리 신호만 확인된다.</div>
+    </div>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">08</span> 현재 완료된 경로와 미완료/탐색 경로</h2>
+    <table>
+      <thead><tr><th>경로</th><th>상태</th><th>현재 보고 방식</th></tr></thead>
+      <tbody>
+        <tr class="best">
+          <td><code>02b_optimal_pipeline.py</code></td>
+          <td>완료, 결과/로그/ROC 존재</td>
+          <td>최종 이진 headline 모델</td>
+        </tr>
+        <tr>
+          <td><code>01_speed_ablation.py</code></td>
+          <td>완료, CSV/JSON 존재</td>
+          <td>다속도 통합의 baseline evidence</td>
+        </tr>
+        <tr>
+          <td><code>04_multiclass.py</code>, <code>04b_multiclass_optimal.py</code>, <code>04c_speed_analysis.py</code></td>
+          <td>완료, CSV/JSON/figures 존재</td>
+          <td>3분류 최대치와 ACLD/ACLR 한계 분석</td>
+        </tr>
+        <tr>
+          <td><code>02_raw_waveform_ml.py</code></td>
+          <td>스크립트는 있으나 현재 results에 waveform 결과 산출물 없음</td>
+          <td>완료 결과로 주장하지 않음. 설계/탐색 경로로만 언급</td>
+        </tr>
+        <tr>
+          <td><code>03_shap_waveform.py</code></td>
+          <td>스크립트는 있으나 현재 SHAP JSON/NPY/figure 산출물 없음</td>
+          <td>SHAP 해석 결과로 주장하지 않음</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-section">
+    <h2><span class="num">09</span> 근거 파일 목록</h2>
+    <div class="source-list">
+      <div class="source"><b>GAI context</b><br><code>GAI 중간 결과/statistics_v1.html</code><br><code>GAI 중간 결과/0527_main.html</code></div>
+      <div class="source"><b>Binary pipeline</b><br><code>scripts/02b_optimal_pipeline.py</code><br><code>results/02b_optimal_results.json</code><br><code>logs/02b_optimal.log</code></div>
+      <div class="source"><b>Speed analysis</b><br><code>scripts/01_speed_ablation.py</code><br><code>results/01_speed_ablation_results.csv</code><br><code>scripts/04c_speed_analysis.py</code><br><code>results/04c_speed_analysis.csv</code></div>
+      <div class="source"><b>3-class analysis</b><br><code>results/04_multiclass_results.csv</code><br><code>results/04b_multiclass_results.json</code><br><code>results/04c_optuna_comparison.json</code><br><code>results/04c_hierarchical.json</code><br><code>results/04c_permutation.json</code></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
