@@ -99,7 +99,7 @@ def make_speed_bar():
                 fontweight="bold")
     ax.set_ylim(0.82, 1.01)
     ax.set_ylabel("AUC  (95% CI)")
-    ax.set_title("H2: 속도 조건별 성능 비교", fontweight="bold", pad=8)
+    ax.set_title("H2: AUC by Walking Speed Condition", fontweight="bold", pad=8)
     ax.axhline(aucs[-1], color=COLORS["ok"], lw=0.8, ls="--", alpha=0.5)
     fig.tight_layout()
     return fig_to_b64(fig)
@@ -125,7 +125,7 @@ def make_multiclass_bar():
     ax.set_ylim(0.3, 0.95)
     ax.set_xticks(x); ax.set_xticklabels(classes)
     ax.set_ylabel("AUC (OvR)")
-    ax.set_title("3분류 클래스별 AUC", fontweight="bold", pad=8)
+    ax.set_title("3-Class Per-Class AUC (OvR)", fontweight="bold", pad=8)
     ax.legend(fontsize=9, framealpha=0)
     ax.axhline(0.5, color="#ccc", lw=0.8, ls="--")
     ax.text(2.45, 0.51, "무작위 수준", fontsize=8, color="#999")
@@ -151,12 +151,12 @@ def make_subject_scatter():
                 color=COLORS[g], lw=2.5, zorder=4, alpha=0.7)
 
     ax.axhline(0.5, color="#999", lw=1.0, ls="--", alpha=0.7)
-    ax.text(2.95, 0.51, "결정 경계", fontsize=8.5, color="#999", va="bottom")
-    ax.set_ylabel("예측 확률 (ACL)")
+    ax.text(2.98, 0.515, "decision boundary (0.5)", fontsize=8, color="#999", va="bottom")
+    ax.set_ylabel("OOF Predicted Probability (ACL)", fontsize=10)
     ax.set_ylim(-0.02, 1.05)
     ax.set_xticks([0.0, 1.3, 2.6])
     ax.set_xticklabels(["ACLD", "ACLR", "HA"])
-    ax.set_title("피험자별 OOF 예측 확률", fontweight="bold", pad=8)
+    ax.set_title("Subject-level OOF Predicted Probability", fontweight="bold", pad=8)
     ax.legend(fontsize=9, framealpha=0, loc="lower right")
     # Mark hard subjects
     hard = {"HA4":0.737,"HA22":0.6375,"HA5":0.6735,"HA11":0.705}
@@ -183,8 +183,8 @@ def make_bootstrap():
     ax.axvline(opt["ci_95_lo"], color="#c0392b", lw=1.5, ls="--", label=f'95% CI lo = {opt["ci_95_lo"]:.4f}')
     ax.axvline(opt["ci_95_hi"], color="#c0392b", lw=1.5, ls="--", label=f'95% CI hi = {opt["ci_95_hi"]:.4f}')
     ax.set_xlabel("Bootstrap AUC")
-    ax.set_ylabel("빈도")
-    ax.set_title("부트스트랩 AUC 분포 (2,000샘플)", fontweight="bold", pad=8)
+    ax.set_ylabel("Count")
+    ax.set_title("Bootstrap AUC Distribution (n=2,000)", fontweight="bold", pad=8)
     ax.legend(fontsize=8.5, framealpha=0)
     fig.tight_layout()
     return fig_to_b64(fig)
@@ -204,7 +204,7 @@ def make_feature_pie():
     )
     for at in autotexts:
         at.set_fontsize(9); at.set_color("white"); at.set_fontweight("bold")
-    ax.set_title("피처 구성 (총 1,134)", fontweight="bold", pad=8)
+    ax.set_title("Feature Composition (total 1,134)", fontweight="bold", pad=8)
     fig.tight_layout()
     return fig_to_b64(fig)
 
