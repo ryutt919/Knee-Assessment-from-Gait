@@ -82,10 +82,39 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 
 ---
 
-### HTML Report — 05_journal_report.py ✓
+### 3-Class 최적 파이프라인 — 04b/04c ✓
+
+**04b** (스칼라피벗+변동성+상호작용, 2-seed): macro-F1=0.6794, AUC(OvR)=0.8672
+**04c** (속도별 분석 + Optuna + 분리한계): **최종 3분류 AUC(OvR)=0.8831** (Optuna)
+
+| 방법 | AUC(OvR) | macro-F1 |
+|------|----------|----------|
+| 기존 (파형+PCA+Optuna) | 0.6331 | 0.4313 |
+| 통합 파이프라인 (고정 RF) | 0.8712 | 0.7267 |
+| 계층적 (Stage1×Stage2) | 0.8514 | 0.7035 |
+| **통합 + Optuna ★** | **0.8831** | **0.7608** |
+
+**속도별 격자** (통합 > 속도앙상블 > 단일):
+| 조건 | 이진 AUC | 3분류 AUC(OvR) |
+|------|----------|----------------|
+| slow/normal/fast | 0.88/0.90/0.91 | 0.78/0.77/0.79 |
+| 속도별 앙상블 | 0.930 | 0.812 |
+| 통합(all) | 0.970 | 0.871 |
+
+**ACLD↔ACLR 분리 한계** (왜 3분류 0.98 불가):
+- 직접 이진 분류 AUC = 0.687 (상호작용) / 0.667 (경량)
+- Permutation test: p=0.0498, null mean=0.499 → **우연 경계선, 분리 신호 거의 없음**
+- ID.csv에 수술 여부·경과 등 구분 메타데이터 없음 → 보행으로만 구분 불가
+- **임상적 발견**: 재건(ACLR) 후에도 보행이 비재건(ACLD)과 구별 안 됨 = 손상 보상 잔존
+
+---
+
+### HTML Report — 06_results_report.py ✓ (최신 종합 보고서)
 
 **Status**: Complete  
-**Output**: [htmls/05_journal_report.html](../htmls/05_journal_report.html)
+**Output**: [reports/results_report.html](../reports/results_report.html)
+7개 섹션: 파이프라인 / 이진분류 / 분류상세 / 속도별분석 / 3분류최대치 / 분리한계 / 데이터설계.
+모든 figure base64 인라인(CDN 무의존), 한국어, y축 rotation=0.
 
 ---
 
@@ -104,3 +133,6 @@ Bootstrap 95% CI: [0.9568, 0.9992] · Bootstrap median: 0.9849
 | 2026-06-11 17:00 | Multiclass done | RF macro-F1=0.4313, XGB macro-F1=0.5164; ACLD vs ACLR overlap confirmed |
 | 2026-06-11 17:05 | HTML report done | 05_journal_report.html generated with TRIPOD format, AUC≥0.98 alert |
 | 2026-06-11 17:10 | Git commit | feat: 0611_journal_ML 저널급 ACL 파이프라인 — AUC 98.30% 달성 |
+| 2026-06-11 23:10 | 3분류 최적화 | 04b: 파형+PCA → 최적 파이프라인 macro-F1 0.52→0.68, AUC 0.63→0.87 |
+| 2026-06-11 23:40 | 속도별+Optuna+한계검증 | 04c: 속도별 격자(통합>앙상블), Optuna 3분류 0.871→0.883, ACLD↔ACLR permutation p=0.05 |
+| 2026-06-11 23:55 | 종합 보고서 | 06_results_report.py 7개 섹션 재구성, 속도별/3분류최대치/분리한계 추가 |
