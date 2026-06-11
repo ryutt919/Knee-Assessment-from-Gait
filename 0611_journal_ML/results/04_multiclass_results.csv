@@ -1,3 +1,4 @@
 model,macro_f1,balanced_accuracy,auc_ovr,per_class_auc,class_order
 rf,0.4313,0.4326,0.6331,"{'ACLD': 0.5007, 'ACLR': 0.6838, 'HA': 0.7148}","['ACLD', 'ACLR', 'HA']"
 xgb,0.5164,0.5086,0.6308,"{'ACLD': 0.4665, 'ACLR': 0.6681, 'HA': 0.7578}","['ACLD', 'ACLR', 'HA']"
+rf_optimal,0.6794,0.6741,0.8672,"{'HA': 0.9622, 'ACLR': 0.8593, 'ACLD': 0.7799}","['HA', 'ACLR', 'ACLD']"

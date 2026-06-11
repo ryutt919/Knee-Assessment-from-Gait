@@ -48,6 +48,9 @@ def png_to_b64(path: Path) -> str:
 with open(RESULTS / "02b_optimal_results.json") as f:
     opt = json.load(f)
 
+with open(RESULTS / "04b_multiclass_results.json") as f:
+    mc_opt = json.load(f)
+
 speed_df = pd.read_csv(RESULTS / "01_speed_ablation_results.csv")
 mc_df    = pd.read_csv(RESULTS / "04_multiclass_results.csv")
 subj_df  = pd.read_csv(RESULTS / "02b_subject_predictions.csv")
@@ -112,30 +115,32 @@ def make_speed_bar():
     return fig_to_b64(fig)
 
 
-# ── FIG 3: 3-class per-class AUC grouped bar ─────────────────────────────────
+# ── FIG 3: 3-class per-class AUC bar (optimal pipeline) ─────────────────────
 def make_multiclass_bar():
     import ast
-    classes = ["ACLD", "ACLR", "HA"]
-    rf_auc  = ast.literal_eval(mc_df[mc_df["model"]=="rf"]["per_class_auc"].values[0])
-    xgb_auc = ast.literal_eval(mc_df[mc_df["model"]=="xgb"]["per_class_auc"].values[0])
+    classes  = mc_opt["class_order"]   # ["HA", "ACLR", "ACLD"]
+    opt_auc  = mc_opt["per_class_auc"]
+
+    # Old results for comparison
+    old_rf  = ast.literal_eval(mc_df[mc_df["model"]=="rf"]["per_class_auc"].values[0])
 
     x, width = np.arange(len(classes)), 0.35
-    fig, ax = plt.subplots(figsize=(5, 3.2))
-    b1 = ax.bar(x - width/2, [rf_auc[c]  for c in classes], width,
-                label="RF", color="#90a4ae", edgecolor="white")
-    b2 = ax.bar(x + width/2, [xgb_auc[c] for c in classes], width,
-                label="XGBoost", color=[COLORS[c] for c in classes],
-                edgecolor="white", alpha=0.85)
+    fig, ax = plt.subplots(figsize=(5.5, 3.4))
+    b1 = ax.bar(x - width/2, [old_rf.get(c, 0)  for c in classes], width,
+                label="기존 RF (PCA+Optuna)", color="#b0bec5", edgecolor="white")
+    b2 = ax.bar(x + width/2, [opt_auc[c] for c in classes], width,
+                label="최적 파이프라인 ★", color=[COLORS[c] for c in classes],
+                edgecolor="white", alpha=0.9)
     for bar in list(b1) + list(b2):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.012,
                 f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=8.5)
-    ax.set_ylim(0.3, 0.95)
+    ax.set_ylim(0.3, 1.05)
     ax.set_xticks(x); ax.set_xticklabels(classes)
     ax.set_ylabel("AUC (OvR)", **KR_YLABEL_KW)
-    ax.set_title("3분류 클래스별 AUC (OvR)", fontweight="bold", pad=8)
-    ax.legend(fontsize=9, framealpha=0)
+    ax.set_title("3분류 클래스별 AUC — 파이프라인 비교", fontweight="bold", pad=8)
+    ax.legend(fontsize=8.5, framealpha=0)
     ax.axhline(0.5, color="#ccc", lw=0.8, ls="--")
-    ax.text(2.45, 0.51, "무작위 수준", fontsize=8, color="#999")
+    ax.text(2.5, 0.51, "무작위 수준", fontsize=8, color="#999")
     fig.tight_layout()
     return fig_to_b64(fig)
 
@@ -331,9 +336,10 @@ b64_cm_bin  = make_binary_confusion()
 b64_strip   = make_classification_strip()
 
 print("Loading existing figures...", flush=True)
-b64_roc    = png_to_b64(FIGS / "fig_02b_roc.png")
-b64_cm_rf  = png_to_b64(FIGS / "fig_mc_cm_rf.png")
-b64_cm_xgb = png_to_b64(FIGS / "fig_mc_cm_xgb.png")
+b64_roc       = png_to_b64(FIGS / "fig_02b_roc.png")
+b64_cm_rf     = png_to_b64(FIGS / "fig_mc_cm_rf.png")
+b64_cm_xgb    = png_to_b64(FIGS / "fig_mc_cm_xgb.png")
+b64_cm_optimal = png_to_b64(FIGS / "fig_mc_cm_rf_optimal.png")
 
 
 def img(b64: str, alt: str = "", style: str = "max-width:100%;border-radius:8px;") -> str:
@@ -570,36 +576,39 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 <!-- 3-CLASS -->
 <section>
 <h2><span class="num">04</span> 3분류 — ACLD / ACLR / HA</h2>
-<div class="g32">
+<div class="g2">
   <div class="card">
-    <div class="g2">
-      <div>
-        <div style="font-weight:700;margin-bottom:12px;font-size:13px;">클래스별 AUC</div>
-        {img(b64_mc)}
-      </div>
-      <div>
-        <div style="font-weight:700;margin-bottom:12px;font-size:13px;">혼동 행렬 — XGBoost</div>
-        {img(b64_cm_xgb)}
-      </div>
-    </div>
-    <div class="note warn-note" style="margin-top:14px;">
-      ACLD AUC ≈ 0.47 — ACLD ↔ ACLR 경계 거의 무작위 수준.
-      두 그룹 모두 ACL 보행 보상 잔존 → 바이오메카닉스 중복.
-      HA는 상대적으로 분리 가능(XGB 0.758).
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">클래스별 AUC — 파이프라인 비교</div>
+    {img(b64_mc)}
+    <div class="note" style="margin-top:12px">
+      최적 파이프라인(스칼라 피벗 + 변동성 + 상호작용) 적용 시
+      전 클래스 AUC 대폭 향상.
+      ACLD: 0.467→<strong>{mc_opt['per_class_auc']['ACLD']:.3f}</strong>,
+      ACLR: 0.668→<strong>{mc_opt['per_class_auc']['ACLR']:.3f}</strong>,
+      HA: 0.758→<strong>{mc_opt['per_class_auc']['HA']:.3f}</strong>
     </div>
   </div>
   <div class="card">
-    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">요약</div>
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">최적 파이프라인 결과 요약</div>
     <table>
       <thead><tr><th>모델</th><th>Macro-F1</th><th>Bal.Acc</th><th>AUC(OvR)</th></tr></thead>
       <tbody>
-        <tr><td>RF</td><td>0.4313</td><td>0.4326</td><td>0.6331</td></tr>
-        <tr class="hl"><td><strong>XGBoost</strong></td><td><strong>0.5164</strong></td><td>0.5086</td><td>0.6308</td></tr>
+        <tr><td>RF (PCA+Optuna, 기존)</td><td>0.4313</td><td>0.4326</td><td>0.6331</td></tr>
+        <tr class="hl"><td><strong>RF 최적 파이프라인 ★</strong></td>
+          <td><strong>{mc_opt['macro_f1']:.4f}</strong></td>
+          <td>{mc_opt['balanced_accuracy']:.4f}</td>
+          <td><strong>{mc_opt['auc_ovr']:.4f}</strong></td>
+        </tr>
       </tbody>
     </table>
     <br>
-    <div style="font-weight:700;margin-bottom:10px;font-size:13px;">혼동 행렬 — RF</div>
-    {img(b64_cm_rf)}
+    <div style="font-weight:700;margin-bottom:10px;font-size:13px;">혼동 행렬 — 최적 파이프라인</div>
+    {img(b64_cm_optimal)}
+    <div class="note warn-note" style="margin-top:10px">
+      ACLD ↔ ACLR 경계(AUC 0.78)가 여전히 가장 낮음.
+      두 그룹 모두 ACL 보행 보상이 잔존해 바이오메카닉스 중복 불가피.
+      임상적으로 <strong>이진 분류(ACL vs HA)가 더 신뢰도 높은 과제.</strong>
+    </div>
   </div>
 </div>
 </section>

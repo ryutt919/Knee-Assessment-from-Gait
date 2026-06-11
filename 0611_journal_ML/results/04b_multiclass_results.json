@@ -1,0 +1,27 @@
+{
+  "model": "RF_interactions_ensemble",
+  "pipeline": "scalar_pivot_864 + stride_variability + within_fold_interactions",
+  "n_subjects": 79,
+  "distribution": {
+    "HA": 25,
+    "ACLR": 27,
+    "ACLD": 27
+  },
+  "class_order": [
+    "HA",
+    "ACLR",
+    "ACLD"
+  ],
+  "ens_seeds": [
+    42,
+    88
+  ],
+  "macro_f1": 0.6794,
+  "balanced_accuracy": 0.6741,
+  "auc_ovr": 0.8672,
+  "per_class_auc": {
+    "HA": 0.9622,
+    "ACLR": 0.8593,
+    "ACLD": 0.7799
+  }
+}
