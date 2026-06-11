@@ -1,0 +1,41 @@
+{
+  "model": "RF_interactions_ensemble",
+  "feature_sets": [
+    "scalar_pivot_864",
+    "stride_variability_270",
+    "within_fold_interactions_190"
+  ],
+  "n_subjects": 78,
+  "n_acl": 54,
+  "n_ha": 24,
+  "cv_strategy": "StratifiedKFold(5, shuffle=False)",
+  "ens_oof_auc": 0.983,
+  "bootstrap_mean": 0.9831,
+  "bootstrap_median": 0.9849,
+  "ci_95_lo": 0.9568,
+  "ci_95_hi": 0.9992,
+  "seed_results": {
+    "42": {
+      "oof_auc": 0.9815,
+      "fold_aucs": [
+        1.0,
+        0.9273,
+        1.0,
+        0.9773,
+        1.0
+      ]
+    },
+    "88": {
+      "oof_auc": 0.9815,
+      "fold_aucs": [
+        1.0,
+        0.9273,
+        1.0,
+        0.9773,
+        1.0
+      ]
+    }
+  },
+  "target_achieved": true,
+  "elapsed_s": 8.3
+}

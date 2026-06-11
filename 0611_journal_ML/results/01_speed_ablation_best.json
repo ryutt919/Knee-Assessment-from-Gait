@@ -1,0 +1,8 @@
+{
+  "condition": "all_speeds",
+  "model": "RF",
+  "n_features": 864,
+  "auc": 0.9514,
+  "ci_lo": 0.892,
+  "ci_hi": 0.9937
+}

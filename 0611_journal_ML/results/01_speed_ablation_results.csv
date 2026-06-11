@@ -1,0 +1,5 @@
+condition,model,n_features,auc,ci_lo,ci_hi
+slow_only,RF,144,0.9001,0.819,0.9664
+normal_only,RF,144,0.8707,0.774,0.9569
+fast_only,RF,144,0.907,0.8055,0.9808
+all_speeds,RF,864,0.9514,0.892,0.9937
