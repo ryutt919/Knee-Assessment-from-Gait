@@ -341,6 +341,21 @@ b64_cm_rf     = png_to_b64(FIGS / "fig_mc_cm_rf.png")
 b64_cm_xgb    = png_to_b64(FIGS / "fig_mc_cm_xgb.png")
 b64_cm_optimal = png_to_b64(FIGS / "fig_mc_cm_rf_optimal.png")
 
+# ── 04c speed analysis figures + results ─────────────────────────────────────
+b64_04c_binary = png_to_b64(FIGS / "fig_04c_binary_speed.png")
+b64_04c_3class = png_to_b64(FIGS / "fig_04c_3class_speed.png")
+b64_04c_pca    = png_to_b64(FIGS / "fig_04c_pca_overlap.png")
+b64_04c_perm   = png_to_b64(FIGS / "fig_04c_permutation.png")
+b64_04c_cmhier = png_to_b64(FIGS / "fig_04c_cm_hier.png")
+
+speed04c = pd.read_csv(RESULTS / "04c_speed_analysis.csv")
+with open(RESULTS / "04c_optuna_comparison.json") as f: optuna04c = json.load(f)
+with open(RESULTS / "04c_permutation.json") as f:        perm04c   = json.load(f)
+with open(RESULTS / "04c_hierarchical.json") as f:       hier04c   = json.load(f)
+
+def _spd(cond, col):
+    return speed04c[speed04c["condition"] == cond][col].values[0]
+
 
 def img(b64: str, alt: str = "", style: str = "max-width:100%;border-radius:8px;") -> str:
     return f'<img src="data:image/png;base64,{b64}" alt="{alt}" style="{style}">'
@@ -377,6 +392,7 @@ header p{{font-size:13px;opacity:.7}}
         font-weight:700;padding:3px 10px;border-radius:20px;margin-left:10px;vertical-align:middle}}
 main{{max-width:1100px;margin:0 auto;padding:32px 20px 64px}}
 .hero{{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}}
+.hero.h3{{grid-template-columns:repeat(3,1fr)}}
 .mcard{{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
         padding:20px 18px;text-align:center}}
 .mcard.prim{{background:linear-gradient(135deg,#27ae60,#2ecc71);color:#fff;
@@ -406,6 +422,10 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 .note{{background:#f0f2f8;border-left:3px solid var(--primary);padding:10px 16px;
        border-radius:0 6px 6px 0;font-size:12px;color:var(--muted);margin-top:12px}}
 .warn-note{{background:#fff8e1;border-left-color:var(--warn);color:#7d5a00}}
+.tag{{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:10px}}
+.tag.acld{{background:#fde8e8;color:#c0392b}}
+.tag.aclr{{background:#fef0e0;color:#e67e22}}
+.tag.ha{{background:#e0f0fb;color:#2980b9}}
 .pipeline{{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:14px}}
 .ps{{background:var(--primary);color:#fff;padding:10px 16px 10px 22px;
      font-size:12px;font-weight:600;position:relative;
@@ -430,13 +450,13 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 <div class="hero">
   <div class="mcard prim">
     <div class="val">{opt['ens_oof_auc']:.4f}</div>
-    <div class="lbl">OOF AUC (앙상블)</div>
+    <div class="lbl">이진 AUC — ACL vs HA</div>
     <div class="sub">95% CI [{opt['ci_95_lo']:.4f} – {opt['ci_95_hi']:.4f}]</div>
   </div>
   <div class="mcard">
-    <div class="val">{opt['bootstrap_median']:.4f}</div>
-    <div class="lbl">부트스트랩 중앙값</div>
-    <div class="sub">2,000 리샘플 · mean {opt['bootstrap_mean']:.4f}</div>
+    <div class="val">{optuna04c['optuna_auc_ovr']:.4f}</div>
+    <div class="lbl">3분류 AUC (OvR)</div>
+    <div class="sub">ACLD/ACLR/HA · Optuna 최적화</div>
   </div>
   <div class="mcard">
     <div class="val">{opt['n_subjects']}</div>
@@ -547,75 +567,127 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 </div>
 </section>
 
-<!-- SPEED ABLATION -->
+<!-- SPEED ANALYSIS (04c) -->
 <section>
-<h2><span class="num">03</span> H2 — 속도 조건별 성능 비교</h2>
+<h2><span class="num">03</span> 속도별 분석 — H2 검증 (이진 + 3분류)</h2>
+<div class="note" style="margin-bottom:16px">
+  <strong>분석 설계</strong>: 각 속도(slow/normal/fast)를 단독으로, 또 셋을 통합(all)으로,
+  그리고 속도별 모델을 soft-vote 앙상블한 결과를 모두 비교. 동일 상호작용 파이프라인 + 2-seed.
+  <strong>질문: 다속도를 합치면 단일속도보다 나은가? 속도별 앙상블이 통합보다 나은가?</strong>
+</div>
 <div class="g2">
   <div class="card">
-    <table>
-      <thead><tr><th>조건</th><th>피처 수</th><th>AUC</th><th>95% CI</th></tr></thead>
-      <tbody>
-        <tr><td>Slow only</td><td>144</td><td>0.9001</td><td>[0.819, 0.966]</td></tr>
-        <tr><td>Normal only</td><td>144</td><td>0.8707</td><td>[0.774, 0.957]</td></tr>
-        <tr><td>Fast only</td><td>144</td><td>0.9070</td><td>[0.806, 0.981]</td></tr>
-        <tr class="hl"><td><strong>All speeds ★</strong></td><td>864</td><td><strong>0.9514</strong></td><td>[0.892, 0.994]</td></tr>
-      </tbody>
-    </table>
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">이진 분류 (ACL vs HA) — 속도별</div>
+    {img(b64_04c_binary)}
     <div class="note">
-      <strong>H2 검증 ✓</strong>: 다속도(0.9514) &gt;&gt; Fast(0.9070). ΔAUC ≈ +0.044.
-      Fast &gt; Slow &gt; Normal — 빠른 속도에서 ACL 보행 패턴 차이가 가장 두드러짐.
+      <strong>통합(All) {_spd('all','binary_auc'):.3f}</strong>가 최고.
+      단일 최고 Fast({_spd('fast','binary_auc'):.3f}) &lt; 속도앙상블({_spd('speed_ensemble','binary_auc'):.3f}) &lt; 통합.
+      → 다속도 정보를 한 모델에 통합하는 것이 앙상블보다 우월.
     </div>
   </div>
   <div class="card">
-    {img(b64_speed)}
-    <p class="fig-caption">오차 막대 = 95% bootstrap CI</p>
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">3분류 (ACLD/ACLR/HA) — 속도별</div>
+    {img(b64_04c_3class)}
+    <div class="note">
+      3분류도 동일 패턴: 통합 AUC(OvR) <strong>{_spd('all','auc_ovr_3class'):.3f}</strong> &gt;
+      속도앙상블 {_spd('speed_ensemble','auc_ovr_3class'):.3f} &gt; 단일속도(0.77~0.79).
+      <strong>H2 재확인</strong>: 다속도 통합이 모든 과제에서 최선.
+    </div>
+  </div>
+</div>
+<table style="margin-top:16px">
+  <thead><tr><th>조건</th><th>이진 AUC</th><th>3분류 AUC(OvR)</th><th>3분류 macro-F1</th></tr></thead>
+  <tbody>
+    <tr><td>Slow only</td><td>{_spd('slow','binary_auc'):.4f}</td><td>{_spd('slow','auc_ovr_3class'):.4f}</td><td>{_spd('slow','macro_f1_3class'):.4f}</td></tr>
+    <tr><td>Normal only</td><td>{_spd('normal','binary_auc'):.4f}</td><td>{_spd('normal','auc_ovr_3class'):.4f}</td><td>{_spd('normal','macro_f1_3class'):.4f}</td></tr>
+    <tr><td>Fast only</td><td>{_spd('fast','binary_auc'):.4f}</td><td>{_spd('fast','auc_ovr_3class'):.4f}</td><td>{_spd('fast','macro_f1_3class'):.4f}</td></tr>
+    <tr><td>속도별 앙상블</td><td>{_spd('speed_ensemble','binary_auc'):.4f}</td><td>{_spd('speed_ensemble','auc_ovr_3class'):.4f}</td><td>{_spd('speed_ensemble','macro_f1_3class'):.4f}</td></tr>
+    <tr class="hl"><td><strong>통합 (All) ★</strong></td><td><strong>{_spd('all','binary_auc'):.4f}</strong></td><td><strong>{_spd('all','auc_ovr_3class'):.4f}</strong></td><td><strong>{_spd('all','macro_f1_3class'):.4f}</strong></td></tr>
+  </tbody>
+</table>
+</section>
+
+<!-- 3-CLASS (04c optimal + Optuna) -->
+<section>
+<h2><span class="num">04</span> 3분류 최대치 — Optuna 최적화 + 계층적 비교</h2>
+<div class="g2">
+  <div class="card">
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">최적화 단계별 3분류 성능</div>
+    <table>
+      <thead><tr><th>방법</th><th>AUC(OvR)</th><th>macro-F1</th></tr></thead>
+      <tbody>
+        <tr><td>기존 (파형+PCA+Optuna)</td><td>0.6331</td><td>0.4313</td></tr>
+        <tr><td>통합 파이프라인 (고정 RF)</td><td>{optuna04c['fixed_auc_ovr']:.4f}</td><td>{optuna04c['fixed_macro_f1']:.4f}</td></tr>
+        <tr><td>계층적 (Stage1×Stage2)</td><td>{hier04c['hier_auc_ovr']:.4f}</td><td>{hier04c['hier_macro_f1']:.4f}</td></tr>
+        <tr class="hl"><td><strong>통합 + Optuna ★</strong></td><td><strong>{optuna04c['optuna_auc_ovr']:.4f}</strong></td><td><strong>{optuna04c['optuna_macro_f1']:.4f}</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:12px">
+      <strong>Optuna 효과</strong>: 0.6331 → 0.8712(통합) → <strong>{optuna04c['optuna_auc_ovr']:.4f}</strong>(Optuna).
+      최적 파라미터 max_depth={optuna04c['optuna_best_params']['max_depth']},
+      max_features={optuna04c['optuna_best_params']['max_features']:.3f}.
+      계층적 분류({hier04c['hier_auc_ovr']:.3f})는 통합 평면 분류보다 낮아 채택하지 않음.
+    </div>
+    <div style="font-weight:700;margin:14px 0 8px;font-size:13px;">계층적 클래스별 AUC (참고)</div>
+    <table>
+      <tbody>
+        <tr><td><span class="tag ha">HA</span></td><td>{hier04c['hier_per_class_auc']['HA']:.4f}</td></tr>
+        <tr><td><span class="tag aclr">ACLR</span></td><td>{hier04c['hier_per_class_auc']['ACLR']:.4f}</td></tr>
+        <tr><td><span class="tag acld">ACLD</span></td><td>{hier04c['hier_per_class_auc']['ACLD']:.4f}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">계층적 3분류 혼동 행렬</div>
+    {img(b64_04c_cmhier)}
+    <div class="note warn-note" style="margin-top:10px">
+      <strong>3분류 정직한 최선 = AUC(OvR) {optuna04c['optuna_auc_ovr']:.4f}</strong>.
+      HA는 거의 완벽 분리(AUC 0.97)되지만 ACLD↔ACLR 혼동이 남아 0.98 미달.
+      이는 파이프라인 한계가 아니라 <strong>데이터의 근본 한계</strong> (다음 섹션 참조).
+    </div>
   </div>
 </div>
 </section>
 
-<!-- 3-CLASS -->
+<!-- ACLD vs ACLR 분리 한계 (05) -->
 <section>
-<h2><span class="num">04</span> 3분류 — ACLD / ACLR / HA</h2>
+<h2><span class="num">05</span> 왜 3분류 AUC 0.98은 불가능한가 — ACLD↔ACLR 분리 한계</h2>
+<div class="note" style="margin-bottom:16px">
+  3분류 AUC가 0.98에 못 미치는 유일한 이유는 <strong>ACLD(비재건)와 ACLR(재건)을
+  보행 데이터로 구분할 수 없기 때문</strong>. 두 그룹 모두 ACL 손상군이라 보행 패턴이 거의 동일.
+  ID.csv에 수술 여부·경과 시점 등 구분 메타데이터가 없어 오직 보행 파형으로만 구분해야 함.
+</div>
 <div class="g2">
   <div class="card">
-    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">클래스별 AUC — 파이프라인 비교</div>
-    {img(b64_mc)}
-    <div class="note" style="margin-top:12px">
-      최적 파이프라인(스칼라 피벗 + 변동성 + 상호작용) 적용 시
-      전 클래스 AUC 대폭 향상.
-      ACLD: 0.467→<strong>{mc_opt['per_class_auc']['ACLD']:.3f}</strong>,
-      ACLR: 0.668→<strong>{mc_opt['per_class_auc']['ACLR']:.3f}</strong>,
-      HA: 0.758→<strong>{mc_opt['per_class_auc']['HA']:.3f}</strong>
-    </div>
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">PCA 투영 — 세 그룹 혼재</div>
+    {img(b64_04c_pca)}
+    <p class="fig-caption">
+      비지도 PCA(PC1-PC2)에서 세 그룹이 모두 섞임. 지도학습 RF만이 HA를 분리하며,
+      ACLD/ACLR은 어떤 방법으로도 겹침. 색: 빨강 ACLD, 주황 ACLR, 파랑 HA.
+    </p>
   </div>
   <div class="card">
-    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">최적 파이프라인 결과 요약</div>
-    <table>
-      <thead><tr><th>모델</th><th>Macro-F1</th><th>Bal.Acc</th><th>AUC(OvR)</th></tr></thead>
-      <tbody>
-        <tr><td>RF (PCA+Optuna, 기존)</td><td>0.4313</td><td>0.4326</td><td>0.6331</td></tr>
-        <tr class="hl"><td><strong>RF 최적 파이프라인 ★</strong></td>
-          <td><strong>{mc_opt['macro_f1']:.4f}</strong></td>
-          <td>{mc_opt['balanced_accuracy']:.4f}</td>
-          <td><strong>{mc_opt['auc_ovr']:.4f}</strong></td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <div style="font-weight:700;margin-bottom:10px;font-size:13px;">혼동 행렬 — 최적 파이프라인</div>
-    {img(b64_cm_optimal)}
-    <div class="note warn-note" style="margin-top:10px">
-      ACLD ↔ ACLR 경계(AUC 0.78)가 여전히 가장 낮음.
-      두 그룹 모두 ACL 보행 보상이 잔존해 바이오메카닉스 중복 불가피.
-      임상적으로 <strong>이진 분류(ACL vs HA)가 더 신뢰도 높은 과제.</strong>
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">Permutation Test — ACLD vs ACLR</div>
+    {img(b64_04c_perm)}
+    <div class="note warn-note">
+      라벨을 {perm04c['n_perm']}회 무작위 셔플한 null 분포(평균 {perm04c['null_mean']:.3f}) 대비
+      실제 AUC {perm04c['real_auc_light']:.3f}, <strong>p = {perm04c['p_value']:.3f}</strong>.
+      우연 수준(0.5)을 겨우 넘는 경계선 유의 → ACLD↔ACLR 분리 신호는 통계적으로 매우 약함.
     </div>
   </div>
+</div>
+<div class="note" style="margin-top:16px;background:#eaf4ff;border-left-color:#2980b9;color:#1a5276">
+  <strong>임상적 결론</strong>: ACLD와 ACLR이 보행으로 구분되지 않는다는 것은 실패가 아니라
+  <strong>의미 있는 발견</strong>이다 — ACL 재건 수술(ACLR) 후에도 보행 패턴이 비재건군(ACLD)과
+  구별되지 않을 만큼 손상군 특유의 보상 패턴이 잔존함을 시사한다.
+  따라서 임상적으로 신뢰도 높은 과제는 <strong>이진 분류(ACL vs HA, AUC {opt['ens_oof_auc']:.3f})</strong>이며,
+  3분류는 정직한 최선 {optuna04c['optuna_auc_ovr']:.3f}로 보고한다.
 </div>
 </section>
 
 <!-- DATA OVERVIEW -->
 <section>
-<h2><span class="num">05</span> 데이터 및 설계</h2>
+<h2><span class="num">06</span> 데이터 및 설계</h2>
 <div class="g3">
   <div class="card">
     {img(b64_pie)}

@@ -1,0 +1,12 @@
+{
+  "fixed_auc_ovr": 0.8712,
+  "fixed_macro_f1": 0.7267,
+  "optuna_auc_ovr": 0.8831,
+  "optuna_macro_f1": 0.7608,
+  "optuna_best_params": {
+    "max_depth": 12,
+    "min_samples_leaf": 4,
+    "max_features": 0.10437727058827946
+  },
+  "improved": true
+}

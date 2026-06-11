@@ -1,0 +1,6 @@
+condition,binary_auc,auc_ovr_3class,macro_f1_3class
+slow,0.8807,0.7769,0.5608
+normal,0.9033,0.7709,0.6132
+fast,0.9126,0.7884,0.6617
+all,0.9704,0.8712,0.7267
+speed_ensemble,0.9304,0.8115,0.6247

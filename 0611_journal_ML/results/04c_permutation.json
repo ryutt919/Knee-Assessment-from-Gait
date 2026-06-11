@@ -1,0 +1,8 @@
+{
+  "real_auc": 0.7174,
+  "real_auc_light": 0.6667,
+  "p_value": 0.0498,
+  "null_mean": 0.4994,
+  "null_std": 0.1002,
+  "n_perm": 200
+}

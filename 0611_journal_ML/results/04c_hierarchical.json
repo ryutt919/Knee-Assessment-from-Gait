@@ -1,0 +1,14 @@
+{
+  "flat_auc_ovr": 0.8831,
+  "flat_macro_f1": 0.7608,
+  "hier_auc_ovr": 0.8514,
+  "hier_macro_f1": 0.7035,
+  "hier_bal_acc": 0.6998,
+  "hier_per_class_auc": {
+    "HA": 0.9681,
+    "ACLR": 0.8447,
+    "ACLD": 0.7415
+  },
+  "best": "flat",
+  "headline_auc_ovr": 0.8831
+}
