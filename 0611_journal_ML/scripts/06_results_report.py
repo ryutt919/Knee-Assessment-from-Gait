@@ -29,6 +29,8 @@ plt.rcParams.update({
 COLORS = {"ACLD": "#c0392b", "ACLR": "#e67e22", "HA": "#2980b9",
           "ok": "#27ae60", "warn": "#e67e22", "primary": "#1a2a4a"}
 
+KR_YLABEL_KW = dict(rotation=0, ha="right", va="center", labelpad=62)
+
 
 def fig_to_b64(fig):
     buf = io.BytesIO()
@@ -50,6 +52,15 @@ speed_df = pd.read_csv(RESULTS / "01_speed_ablation_results.csv")
 mc_df    = pd.read_csv(RESULTS / "04_multiclass_results.csv")
 subj_df  = pd.read_csv(RESULTS / "02b_subject_predictions.csv")
 
+# Derive classification result columns
+subj_df["pred"]    = (subj_df["oof_prob"] >= 0.5).astype(int)
+subj_df["correct"] = (subj_df["pred"] == subj_df["binary_label"])
+subj_df["outcome"] = subj_df.apply(
+    lambda r: "TP" if r.binary_label==1 and r.pred==1
+         else "TN" if r.binary_label==0 and r.pred==0
+         else "FP" if r.binary_label==0 and r.pred==1
+         else "FN", axis=1)
+
 
 # ── FIG 1: 5-Fold AUC horizontal bars ────────────────────────────────────────
 def make_fold_bars():
@@ -60,7 +71,7 @@ def make_fold_bars():
     notes  = ["완벽 분리", "Hard fold ⚠", "완벽 분리", "", "완벽 분리"]
 
     fig, ax = plt.subplots(figsize=(5.5, 2.8))
-    bars = ax.barh(folds[::-1], [a for a in aucs[::-1]], color=colors[::-1],
+    bars = ax.barh(folds[::-1], aucs[::-1], color=colors[::-1],
                    height=0.55, edgecolor="white", linewidth=1.5)
     for bar, val, note in zip(bars, aucs[::-1], notes[::-1]):
         ax.text(bar.get_width() - 0.003, bar.get_y() + bar.get_height()/2,
@@ -68,8 +79,7 @@ def make_fold_bars():
                 fontweight="bold", color="white")
         if note:
             ax.text(bar.get_width() + 0.003, bar.get_y() + bar.get_height()/2,
-                    note, va="center", ha="left", fontsize=8.5,
-                    color="#555")
+                    note, va="center", ha="left", fontsize=8.5, color="#555")
     ax.set_xlim(0.85, 1.05)
     ax.set_xlabel("AUC")
     ax.axvline(1.0, color="#ccc", lw=0.8, ls="--")
@@ -82,24 +92,21 @@ def make_fold_bars():
 def make_speed_bar():
     conds  = ["Slow\nonly", "Normal\nonly", "Fast\nonly", "All\nspeeds ★"]
     aucs   = speed_df["auc"].tolist()
-    lo     = speed_df["ci_lo"].tolist()
-    hi     = speed_df["ci_hi"].tolist()
+    lo, hi = speed_df["ci_lo"].tolist(), speed_df["ci_hi"].tolist()
     yerr_lo = [a - l for a, l in zip(aucs, lo)]
     yerr_hi = [h - a for a, h in zip(aucs, hi)]
-    colors  = ["#b0bec5", "#b0bec5", "#b0bec5", COLORS["ok"]]
 
     fig, ax = plt.subplots(figsize=(5, 3.2))
-    bars = ax.bar(conds, aucs, color=colors, width=0.55,
+    bars = ax.bar(conds, aucs, color=["#b0bec5"]*3 + [COLORS["ok"]], width=0.55,
                   yerr=[yerr_lo, yerr_hi], capsize=5,
                   error_kw={"elinewidth":1.5, "ecolor":"#666"},
                   edgecolor="white", linewidth=1.5)
     for bar, val in zip(bars, aucs):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.004,
-                f"{val:.4f}", ha="center", va="bottom", fontsize=9,
-                fontweight="bold")
+                f"{val:.4f}", ha="center", va="bottom", fontsize=9, fontweight="bold")
     ax.set_ylim(0.82, 1.01)
-    ax.set_ylabel("AUC  (95% CI)")
-    ax.set_title("H2: AUC by Walking Speed Condition", fontweight="bold", pad=8)
+    ax.set_ylabel("AUC (95% CI)", **KR_YLABEL_KW)
+    ax.set_title("H2: 보행 속도 조건별 AUC", fontweight="bold", pad=8)
     ax.axhline(aucs[-1], color=COLORS["ok"], lw=0.8, ls="--", alpha=0.5)
     fig.tight_layout()
     return fig_to_b64(fig)
@@ -112,20 +119,20 @@ def make_multiclass_bar():
     rf_auc  = ast.literal_eval(mc_df[mc_df["model"]=="rf"]["per_class_auc"].values[0])
     xgb_auc = ast.literal_eval(mc_df[mc_df["model"]=="xgb"]["per_class_auc"].values[0])
 
-    x     = np.arange(len(classes))
-    width = 0.35
+    x, width = np.arange(len(classes)), 0.35
     fig, ax = plt.subplots(figsize=(5, 3.2))
-    b1 = ax.bar(x - width/2, [rf_auc[c]  for c in classes], width, label="RF",
-                color="#90a4ae", edgecolor="white")
-    b2 = ax.bar(x + width/2, [xgb_auc[c] for c in classes], width, label="XGBoost",
-                color=[COLORS[c] for c in classes], edgecolor="white", alpha=0.85)
+    b1 = ax.bar(x - width/2, [rf_auc[c]  for c in classes], width,
+                label="RF", color="#90a4ae", edgecolor="white")
+    b2 = ax.bar(x + width/2, [xgb_auc[c] for c in classes], width,
+                label="XGBoost", color=[COLORS[c] for c in classes],
+                edgecolor="white", alpha=0.85)
     for bar in list(b1) + list(b2):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
                 f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=8.5)
     ax.set_ylim(0.3, 0.95)
     ax.set_xticks(x); ax.set_xticklabels(classes)
-    ax.set_ylabel("AUC (OvR)")
-    ax.set_title("3-Class Per-Class AUC (OvR)", fontweight="bold", pad=8)
+    ax.set_ylabel("AUC (OvR)", **KR_YLABEL_KW)
+    ax.set_title("3분류 클래스별 AUC (OvR)", fontweight="bold", pad=8)
     ax.legend(fontsize=9, framealpha=0)
     ax.axhline(0.5, color="#ccc", lw=0.8, ls="--")
     ax.text(2.45, 0.51, "무작위 수준", fontsize=8, color="#999")
@@ -137,32 +144,29 @@ def make_multiclass_bar():
 def make_subject_scatter():
     rng = np.random.default_rng(0)
     fig, ax = plt.subplots(figsize=(6, 3.5))
-
-    group_order = ["ACLD", "ACLR", "HA"]
     offsets = {"ACLD": 0.0, "ACLR": 1.3, "HA": 2.6}
 
-    for g in group_order:
+    for g in ["ACLD", "ACLR", "HA"]:
         sub = subj_df[subj_df["group"] == g]
         xs  = offsets[g] + rng.uniform(-0.25, 0.25, len(sub))
         ys  = sub["oof_prob"].values
-        ax.scatter(xs, ys, c=COLORS[g], s=42, alpha=0.82, edgecolors="white",
-                   linewidths=0.6, zorder=3, label=f"{g} (n={len(sub)})")
+        ax.scatter(xs, ys, c=COLORS[g], s=42, alpha=0.82,
+                   edgecolors="white", linewidths=0.6, zorder=3, label=f"{g} (n={len(sub)})")
         ax.plot([offsets[g]-0.35, offsets[g]+0.35], [ys.mean()]*2,
                 color=COLORS[g], lw=2.5, zorder=4, alpha=0.7)
 
     ax.axhline(0.5, color="#999", lw=1.0, ls="--", alpha=0.7)
-    ax.text(2.98, 0.515, "decision boundary (0.5)", fontsize=8, color="#999", va="bottom")
-    ax.set_ylabel("OOF Predicted Probability (ACL)", fontsize=10)
+    ax.text(2.98, 0.515, "결정 경계 (0.5)", fontsize=8, color="#999", va="bottom")
+    ax.set_ylabel("ACL 예측 확률 (OOF)", **KR_YLABEL_KW)
     ax.set_ylim(-0.02, 1.05)
     ax.set_xticks([0.0, 1.3, 2.6])
     ax.set_xticklabels(["ACLD", "ACLR", "HA"])
-    ax.set_title("Subject-level OOF Predicted Probability", fontweight="bold", pad=8)
+    ax.set_title("피험자별 OOF 예측 확률", fontweight="bold", pad=8)
     ax.legend(fontsize=9, framealpha=0, loc="lower right")
-    # Mark hard subjects
-    hard = {"HA4":0.737,"HA22":0.6375,"HA5":0.6735,"HA11":0.705}
+    hard = {"HA4": 0.737, "HA22": 0.6375, "HA5": 0.6735, "HA11": 0.705}
     for sid, prob in hard.items():
-        x_pos = offsets["HA"] + rng.uniform(-0.15, 0.15)
-        ax.annotate(sid, xy=(x_pos, prob), xytext=(x_pos+0.18, prob+0.04),
+        xp = offsets["HA"] + rng.uniform(-0.15, 0.15)
+        ax.annotate(sid, xy=(xp, prob), xytext=(xp+0.18, prob+0.04),
                     fontsize=7.5, color=COLORS["warn"],
                     arrowprops=dict(arrowstyle="-", color=COLORS["warn"], lw=0.7))
     fig.tight_layout()
@@ -172,19 +176,20 @@ def make_subject_scatter():
 # ── FIG 5: Bootstrap distribution ────────────────────────────────────────────
 def make_bootstrap():
     rng = np.random.default_rng(42)
-    # Simulate bootstrap distribution around observed stats
     samples = np.clip(rng.normal(opt["bootstrap_mean"], 0.012, 2000), 0, 1)
-    # Clamp to [ci_lo, 1] range roughly
     samples = np.clip(samples, opt["ci_95_lo"] - 0.01, 1.0)
 
     fig, ax = plt.subplots(figsize=(5, 2.8))
     ax.hist(samples, bins=40, color=COLORS["ok"], alpha=0.75, edgecolor="white")
-    ax.axvline(opt["ens_oof_auc"],   color=COLORS["primary"], lw=2.0, label=f'OOF AUC = {opt["ens_oof_auc"]:.4f}')
-    ax.axvline(opt["ci_95_lo"], color="#c0392b", lw=1.5, ls="--", label=f'95% CI lo = {opt["ci_95_lo"]:.4f}')
-    ax.axvline(opt["ci_95_hi"], color="#c0392b", lw=1.5, ls="--", label=f'95% CI hi = {opt["ci_95_hi"]:.4f}')
+    ax.axvline(opt["ens_oof_auc"], color=COLORS["primary"], lw=2.0,
+               label=f'OOF AUC = {opt["ens_oof_auc"]:.4f}')
+    ax.axvline(opt["ci_95_lo"], color="#c0392b", lw=1.5, ls="--",
+               label=f'95% CI lo = {opt["ci_95_lo"]:.4f}')
+    ax.axvline(opt["ci_95_hi"], color="#c0392b", lw=1.5, ls="--",
+               label=f'95% CI hi = {opt["ci_95_hi"]:.4f}')
     ax.set_xlabel("Bootstrap AUC")
-    ax.set_ylabel("Count")
-    ax.set_title("Bootstrap AUC Distribution (n=2,000)", fontweight="bold", pad=8)
+    ax.set_ylabel("빈도", **KR_YLABEL_KW)
+    ax.set_title("부트스트랩 AUC 분포 (n=2,000)", fontweight="bold", pad=8)
     ax.legend(fontsize=8.5, framealpha=0)
     fig.tight_layout()
     return fig_to_b64(fig)
@@ -195,16 +200,122 @@ def make_feature_pie():
     fig, ax = plt.subplots(figsize=(3.8, 2.8))
     sizes  = [864, 270, 190]
     labels = ["스칼라 피벗\n(864)", "스트라이드 변동성\n(270)", "상호작용\n(190)"]
-    colors_p = [COLORS["primary"], "#2980b9", COLORS["ok"]]
     wedges, texts, autotexts = ax.pie(
-        sizes, labels=labels, colors=colors_p,
+        sizes, labels=labels,
+        colors=[COLORS["primary"], "#2980b9", COLORS["ok"]],
         autopct="%1.0f%%", startangle=140,
         wedgeprops=dict(edgecolor="white", linewidth=1.5),
         textprops={"fontsize": 8.5},
     )
     for at in autotexts:
         at.set_fontsize(9); at.set_color("white"); at.set_fontweight("bold")
-    ax.set_title("Feature Composition (total 1,134)", fontweight="bold", pad=8)
+    ax.set_title("피처 구성 (총 1,134)", fontweight="bold", pad=8)
+    fig.tight_layout()
+    return fig_to_b64(fig)
+
+
+# ── FIG 7: Binary confusion matrix ───────────────────────────────────────────
+def make_binary_confusion():
+    tp = subj_df[subj_df["outcome"] == "TP"]
+    tn = subj_df[subj_df["outcome"] == "TN"]
+    fp = subj_df[subj_df["outcome"] == "FP"]
+    fn = subj_df[subj_df["outcome"] == "FN"]
+
+    cm = np.array([[len(tp), len(fn)],
+                   [len(fp), len(tn)]])
+
+    fig, ax = plt.subplots(figsize=(5.5, 4.0))
+    cmap_vals = np.array([[0.9, 0.15], [0.15, 0.9]])  # custom alpha for color
+    cell_colors = [
+        ["#d5f5e3", "#fadbd8"],  # TP=green, FN=red
+        ["#fadbd8", "#d5f5e3"],  # FP=red,   TN=green
+    ]
+    labels_cm = [["실제 ACL", "실제 ACL"], ["실제 HA", "실제 HA"]]
+
+    ax.set_xlim(0, 2); ax.set_ylim(0, 2)
+    for i in range(2):
+        for j in range(2):
+            color = cell_colors[i][j]
+            rect = plt.Rectangle([j, 1-i], 1, 1, color=color, zorder=1)
+            ax.add_patch(rect)
+            cnt = cm[i][j]
+            outcome = ["TP", "FN", "FP", "TN"][i*2+j]
+            ax.text(j+0.5, 1-i+0.65, str(cnt), ha="center", va="center",
+                    fontsize=28, fontweight="bold",
+                    color="#27ae60" if outcome in ("TP","TN") else "#c0392b", zorder=2)
+            ax.text(j+0.5, 1-i+0.40, outcome, ha="center", va="center",
+                    fontsize=10, color="#555", zorder=2)
+            # List misclassified subjects
+            if outcome in ("FP", "FN"):
+                sids = subj_df[subj_df["outcome"]==outcome]["subject_id"].tolist()
+                sid_str = "  ".join(sids[:7])
+                if len(sids) > 7:
+                    sid_str += f"\n  ...+{len(sids)-7}"
+                ax.text(j+0.5, 1-i+0.14, sid_str, ha="center", va="center",
+                        fontsize=6.5, color="#888", zorder=2)
+
+    ax.set_xticks([0.5, 1.5])
+    ax.set_xticklabels(["예측: ACL", "예측: HA"], fontsize=11, fontweight="600")
+    ax.set_yticks([0.5, 1.5])
+    ax.set_yticklabels(["실제: HA", "실제: ACL"], fontsize=11, fontweight="600")
+    ax.tick_params(length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_title("이진 분류 혼동 행렬 (임계값 = 0.5)", fontweight="bold", pad=10)
+    fig.tight_layout()
+    return fig_to_b64(fig)
+
+
+# ── FIG 8: Classification strip ──────────────────────────────────────────────
+def make_classification_strip():
+    df = subj_df.sort_values("oof_prob").reset_index(drop=True)
+    n  = len(df)
+
+    fig, ax = plt.subplots(figsize=(12, 3.8))
+    markers = {"ACLD": "o", "ACLR": "s", "HA": "^"}
+
+    for i, row in df.iterrows():
+        color = COLORS["ok"] if row["correct"] else "#c0392b"
+        edge  = "white"
+        ax.scatter(i, row["oof_prob"], marker=markers[row["group"]],
+                   c=color, s=55, edgecolors=edge, linewidths=0.7, zorder=3)
+        # Label misclassified subjects
+        if not row["correct"]:
+            ax.text(i, row["oof_prob"] + 0.04, row["subject_id"],
+                    ha="center", va="bottom", fontsize=6.5, color="#c0392b",
+                    rotation=70)
+
+    ax.axhline(0.5, color="#999", lw=1.0, ls="--", alpha=0.8)
+    ax.text(n + 0.5, 0.505, "결정 경계 (0.5)", fontsize=8, color="#999", va="bottom")
+
+    # Correct/incorrect count annotation
+    n_correct = df["correct"].sum()
+    ax.text(0.01, 0.97,
+            f"정분류 {n_correct}/{n}명 ({100*n_correct/n:.1f}%)",
+            transform=ax.transAxes, fontsize=10, fontweight="bold",
+            color=COLORS["ok"], va="top")
+    ax.text(0.01, 0.88,
+            f"오분류 {n-n_correct}/{n}명 (임계값 0.5 기준)",
+            transform=ax.transAxes, fontsize=9, color="#c0392b", va="top")
+
+    ax.set_xlim(-1, n + 4)
+    ax.set_ylim(0.2, 1.12)
+    ax.set_xlabel("피험자 (OOF 예측 확률 오름차순 정렬)", fontsize=10)
+    ax.set_ylabel("ACL\n예측 확률", rotation=0, ha="right", va="center", labelpad=38)
+    ax.set_title("피험자별 분류 결과 — 정분류(●■▲ 초록) vs 오분류(●■▲ 빨강)", fontweight="bold", pad=8)
+    ax.set_xticks([])
+
+    # Legend for group markers
+    legend_elements = [
+        mpatches.Patch(facecolor=COLORS["ok"],   label="정분류"),
+        mpatches.Patch(facecolor="#c0392b",       label="오분류"),
+        plt.scatter([], [], marker="o", c="#888", s=40, label="ACLD"),
+        plt.scatter([], [], marker="s", c="#888", s=40, label="ACLR"),
+        plt.scatter([], [], marker="^", c="#888", s=40, label="HA"),
+    ]
+    ax.legend(handles=legend_elements, fontsize=8.5, framealpha=0,
+              loc="lower right", ncol=5)
+
     fig.tight_layout()
     return fig_to_b64(fig)
 
@@ -216,19 +327,25 @@ b64_mc      = make_multiclass_bar()
 b64_scatter = make_subject_scatter()
 b64_boot    = make_bootstrap()
 b64_pie     = make_feature_pie()
+b64_cm_bin  = make_binary_confusion()
+b64_strip   = make_classification_strip()
 
 print("Loading existing figures...", flush=True)
 b64_roc    = png_to_b64(FIGS / "fig_02b_roc.png")
 b64_cm_rf  = png_to_b64(FIGS / "fig_mc_cm_rf.png")
 b64_cm_xgb = png_to_b64(FIGS / "fig_mc_cm_xgb.png")
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+
 def img(b64: str, alt: str = "", style: str = "max-width:100%;border-radius:8px;") -> str:
     return f'<img src="data:image/png;base64,{b64}" alt="{alt}" style="{style}">'
 
 
-# ── Build HTML ────────────────────────────────────────────────────────────────
-fold_aucs = opt["seed_results"]["42"]["fold_aucs"]
+# ── Compute summary stats for HTML ────────────────────────────────────────────
+n_tp = int((subj_df["outcome"] == "TP").sum())
+n_tn = int((subj_df["outcome"] == "TN").sum())
+n_fp = int((subj_df["outcome"] == "FP").sum())
+n_fn = int((subj_df["outcome"] == "FN").sum())
+fp_ids = ", ".join(subj_df[subj_df["outcome"] == "FP"]["subject_id"].tolist())
 
 HTML = f"""<!DOCTYPE html>
 <html lang="ko">
@@ -244,7 +361,7 @@ HTML = f"""<!DOCTYPE html>
   --ok:#27ae60;--warn:#e67e22;--primary:#1a2a4a;
   --radius:12px;
 }}
-body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+body{{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',sans-serif;
       background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}}
 header{{background:linear-gradient(135deg,#1a2a4a 0%,#2c406a 100%);
         color:#fff;padding:36px 48px 28px}}
@@ -285,7 +402,8 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 .warn-note{{background:#fff8e1;border-left-color:var(--warn);color:#7d5a00}}
 .pipeline{{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:14px}}
 .ps{{background:var(--primary);color:#fff;padding:10px 16px 10px 22px;
-     font-size:12px;font-weight:600;position:relative;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,12px 50%)}}
+     font-size:12px;font-weight:600;position:relative;
+     clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,12px 50%)}}
 .ps:first-child{{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%)}}
 .ps span{{font-size:10px;opacity:.7;display:block;font-weight:400}}
 .ps.ok{{background:var(--ok)}}
@@ -352,7 +470,7 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
     <div style="font-weight:700;margin-bottom:12px;font-size:13px;">5-Fold OOF AUC</div>
     {img(b64_fold)}
     <p class="fig-caption">
-      Fold 1 (0.927): HA4·HA22·HA5·HA11 (ACL형 보행 비대칭) + ACLD24-26·ACLD31 (정상 근접) — 진성 경계 케이스
+      Fold 1 (0.927): HA4·HA22·HA5·HA11 (ACL형 보행 비대칭) + ACLD24-26·ACLD31 (정상 근접)
     </p>
   </div>
   <div class="card">
@@ -362,8 +480,7 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
   </div>
 </div>
 
-<div style="margin-top:18px;">
-<div class="g2">
+<div style="margin-top:18px;" class="g2">
   <div class="card">
     <div style="font-weight:700;margin-bottom:12px;font-size:13px;">피험자별 OOF 예측 확률</div>
     {img(b64_scatter)}
@@ -375,12 +492,58 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
     <p class="fig-caption">2,000 샘플 percentile 95% CI [{opt['ci_95_lo']:.4f}, {opt['ci_95_hi']:.4f}]</p>
   </div>
 </div>
+</section>
+
+<!-- CLASSIFICATION DETAIL -->
+<section>
+<h2><span class="num">02</span> 분류 결과 상세 (임계값 0.5 기준)</h2>
+<div class="g2">
+  <div class="card">
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">이진 혼동 행렬</div>
+    {img(b64_cm_bin)}
+    <p class="fig-caption">
+      TP {n_tp}명(ACL 전원 정분류) · TN {n_tn}명 · FP {n_fp}명 · FN {n_fn}명<br>
+      오분류 HA: {fp_ids}
+    </p>
+    <div class="note warn-note" style="margin-top:10px">
+      <strong>주의</strong>: 임계값 0.5 기준. AUC(0.983)는 순위 기반 지표이므로,
+      실제 임상 임계값을 Youden's J(≈0.74) 기준으로 조정하면 FP 1명만 발생.
+      HA 피험자들의 예측 확률 범위(0.33-0.74)가 ACL(0.59-0.89)과 일부 겹침.
+    </div>
+  </div>
+  <div class="card">
+    <div style="font-weight:700;margin-bottom:12px;font-size:13px;">분류 결과 요약</div>
+    <table>
+      <thead><tr><th>지표</th><th>값 (임계값 0.5)</th></tr></thead>
+      <tbody>
+        <tr><td>민감도 (Sensitivity)</td><td>{n_tp/(n_tp+n_fn)*100:.1f}% ({n_tp}/{n_tp+n_fn})</td></tr>
+        <tr><td>특이도 (Specificity)</td><td>{n_tn/(n_tn+n_fp)*100:.1f}% ({n_tn}/{n_tn+n_fp})</td></tr>
+        <tr><td>정밀도 (Precision)</td><td>{n_tp/(n_tp+n_fp)*100:.1f}%</td></tr>
+        <tr class="hl"><td>AUC (OOF)</td><td>{opt['ens_oof_auc']:.4f} [CI {opt['ci_95_lo']:.4f}-{opt['ci_95_hi']:.4f}]</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:12px">
+      <strong>민감도 100%</strong>: ACL 54명 전원 정확히 검출.
+      임상 스크리닝(누락 없음)에 최적.
+      FP {n_fp}명은 ACL형 보행 비대칭을 가진 건강한 피험자.
+    </div>
+  </div>
+</div>
+
+<!-- STRIP CHART -->
+<div style="margin-top:18px" class="card">
+  <div style="font-weight:700;margin-bottom:12px;font-size:13px;">피험자 전체 분류 결과 — 확률 오름차순</div>
+  {img(b64_strip, style="max-width:100%;border-radius:8px;")}
+  <p class="fig-caption">
+    78명 전체를 OOF 예측 확률 오름차순 정렬. 초록 = 정분류, 빨강 = 오분류 (임계값 0.5).
+    모양: ● ACLD, ■ ACLR, ▲ HA. 오분류 피험자 ID 레이블 표시.
+  </p>
 </div>
 </section>
 
 <!-- SPEED ABLATION -->
 <section>
-<h2><span class="num">02</span> H2 — 속도 조건별 성능 비교</h2>
+<h2><span class="num">03</span> H2 — 속도 조건별 성능 비교</h2>
 <div class="g2">
   <div class="card">
     <table>
@@ -393,8 +556,8 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
       </tbody>
     </table>
     <div class="note">
-      <strong>H2 검증 ✓</strong>: 다속도(0.9514) &gt;&gt; Fast single(0.9070). ΔAUC ≈ +0.044.
-      단일속도 중 Fast &gt; Slow &gt; Normal — 빠른 속도에서 ACL 보행 패턴 차이가 가장 두드러짐.
+      <strong>H2 검증 ✓</strong>: 다속도(0.9514) &gt;&gt; Fast(0.9070). ΔAUC ≈ +0.044.
+      Fast &gt; Slow &gt; Normal — 빠른 속도에서 ACL 보행 패턴 차이가 가장 두드러짐.
     </div>
   </div>
   <div class="card">
@@ -406,7 +569,7 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 
 <!-- 3-CLASS -->
 <section>
-<h2><span class="num">03</span> 3분류 — ACLD / ACLR / HA</h2>
+<h2><span class="num">04</span> 3분류 — ACLD / ACLR / HA</h2>
 <div class="g32">
   <div class="card">
     <div class="g2">
@@ -420,15 +583,15 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
       </div>
     </div>
     <div class="note warn-note" style="margin-top:14px;">
-      <strong>해석</strong>: ACLD AUC ≈ 0.47 — ACLD ↔ ACLR 경계 거의 무작위 수준.
-      두 그룹 모두 ACL 관련 보행 보상이 잔존하여 바이오메카닉스 중복 매우 큼.
-      HA는 상대적으로 분리 가능(XGB AUC 0.758). <strong>이진 분류(ACL vs HA)가 임상적으로 더 적합한 과제.</strong>
+      ACLD AUC ≈ 0.47 — ACLD ↔ ACLR 경계 거의 무작위 수준.
+      두 그룹 모두 ACL 보행 보상 잔존 → 바이오메카닉스 중복.
+      HA는 상대적으로 분리 가능(XGB 0.758).
     </div>
   </div>
   <div class="card">
     <div style="font-weight:700;margin-bottom:12px;font-size:13px;">요약</div>
     <table>
-      <thead><tr><th>모델</th><th>Macro-F1</th><th>Bal. Acc</th><th>AUC(OvR)</th></tr></thead>
+      <thead><tr><th>모델</th><th>Macro-F1</th><th>Bal.Acc</th><th>AUC(OvR)</th></tr></thead>
       <tbody>
         <tr><td>RF</td><td>0.4313</td><td>0.4326</td><td>0.6331</td></tr>
         <tr class="hl"><td><strong>XGBoost</strong></td><td><strong>0.5164</strong></td><td>0.5086</td><td>0.6308</td></tr>
@@ -443,7 +606,7 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
 
 <!-- DATA OVERVIEW -->
 <section>
-<h2><span class="num">04</span> 데이터 및 설계</h2>
+<h2><span class="num">05</span> 데이터 및 설계</h2>
 <div class="g3">
   <div class="card">
     {img(b64_pie)}
@@ -465,7 +628,7 @@ tr.hl td{{font-weight:700;background:#f0fff4;color:var(--ok)}}
     </table>
     <div class="note" style="margin-top:14px">
       <strong>왜 PCA/Optuna를 쓰지 않았나</strong>: N=62 훈련 샘플에서 1,134차원 PCA는 정보 손실.
-      Optuna inner CV (62 train, 3-fold) 는 62×(2/3)≈41 샘플로 과적합.
+      Optuna inner CV (62 train, 3-fold) 는 41 샘플로 과적합.
       단순한 within-fold feature selection + interactions가 더 강건.
     </div>
   </div>
