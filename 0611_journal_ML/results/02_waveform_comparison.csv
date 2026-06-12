@@ -1,0 +1,2 @@
+comparison,auc_ref,auc_cmp,auc_diff,pval,significant
+D_multi_speed_bilateral vs C_speed_delta,0.7852,0.8467,-0.0615,0.237,False

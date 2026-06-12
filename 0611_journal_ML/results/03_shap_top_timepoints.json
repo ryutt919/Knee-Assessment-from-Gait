@@ -1,0 +1,155 @@
+{
+  "ankle_adduction": [
+    {
+      "timepoint": 100,
+      "gait_pct": 99.0,
+      "importance": 0.002928
+    },
+    {
+      "timepoint": 99,
+      "gait_pct": 98.0,
+      "importance": 0.00289
+    },
+    {
+      "timepoint": 0,
+      "gait_pct": 0.0,
+      "importance": 0.002798
+    }
+  ],
+  "ankle_dorsiflexion": [
+    {
+      "timepoint": 54,
+      "gait_pct": 53.5,
+      "importance": 0.00411
+    },
+    {
+      "timepoint": 55,
+      "gait_pct": 54.5,
+      "importance": 0.004093
+    },
+    {
+      "timepoint": 53,
+      "gait_pct": 52.5,
+      "importance": 0.004047
+    }
+  ],
+  "ankle_int_rotation": [
+    {
+      "timepoint": 34,
+      "gait_pct": 33.7,
+      "importance": 0.003156
+    },
+    {
+      "timepoint": 33,
+      "gait_pct": 32.7,
+      "importance": 0.003156
+    },
+    {
+      "timepoint": 35,
+      "gait_pct": 34.7,
+      "importance": 0.003154
+    }
+  ],
+  "hip_adduction": [
+    {
+      "timepoint": 29,
+      "gait_pct": 28.7,
+      "importance": 0.003355
+    },
+    {
+      "timepoint": 28,
+      "gait_pct": 27.7,
+      "importance": 0.003355
+    },
+    {
+      "timepoint": 27,
+      "gait_pct": 26.7,
+      "importance": 0.003354
+    }
+  ],
+  "hip_flexion": [
+    {
+      "timepoint": 84,
+      "gait_pct": 83.2,
+      "importance": 0.005741
+    },
+    {
+      "timepoint": 83,
+      "gait_pct": 82.2,
+      "importance": 0.00574
+    },
+    {
+      "timepoint": 85,
+      "gait_pct": 84.2,
+      "importance": 0.005718
+    }
+  ],
+  "hip_int_rotation": [
+    {
+      "timepoint": 17,
+      "gait_pct": 16.8,
+      "importance": 0.004579
+    },
+    {
+      "timepoint": 16,
+      "gait_pct": 15.8,
+      "importance": 0.004567
+    },
+    {
+      "timepoint": 18,
+      "gait_pct": 17.8,
+      "importance": 0.004538
+    }
+  ],
+  "knee_adduction": [
+    {
+      "timepoint": 6,
+      "gait_pct": 5.9,
+      "importance": 0.003626
+    },
+    {
+      "timepoint": 5,
+      "gait_pct": 5.0,
+      "importance": 0.0036
+    },
+    {
+      "timepoint": 43,
+      "gait_pct": 42.6,
+      "importance": 0.003556
+    }
+  ],
+  "knee_flexion": [
+    {
+      "timepoint": 73,
+      "gait_pct": 72.3,
+      "importance": 0.005259
+    },
+    {
+      "timepoint": 74,
+      "gait_pct": 73.3,
+      "importance": 0.005249
+    },
+    {
+      "timepoint": 72,
+      "gait_pct": 71.3,
+      "importance": 0.005186
+    }
+  ],
+  "knee_int_rotation": [
+    {
+      "timepoint": 56,
+      "gait_pct": 55.4,
+      "importance": 0.004553
+    },
+    {
+      "timepoint": 57,
+      "gait_pct": 56.4,
+      "importance": 0.004534
+    },
+    {
+      "timepoint": 55,
+      "gait_pct": 54.5,
+      "importance": 0.004425
+    }
+  ]
+}

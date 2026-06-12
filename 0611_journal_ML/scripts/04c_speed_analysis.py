@@ -31,6 +31,15 @@ from sklearn.metrics import roc_auc_score, f1_score, balanced_accuracy_score, co
 import optuna
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _models as M
+from _side_utils import to_inj_con
+
+SMOKE       = os.environ.get("SMOKE") == "1"   # fast end-to-end test
+INNER_FOLDS = 3
+N_TRIALS    = 1 if SMOKE else 25
+
 ROOT    = Path(__file__).resolve().parents[2]
 SANDBOX = Path(__file__).resolve().parents[1]
 DATA    = ROOT / "data" / "processed"
@@ -45,7 +54,7 @@ COLORS = {"ACLD": "#c0392b", "ACLR": "#e67e22", "HA": "#2980b9",
           "ok": "#27ae60", "warn": "#e67e22", "primary": "#1a2a4a", "grey": "#b0bec5"}
 
 SPEEDS    = ["slow", "normal", "fast"]
-SEEDS     = [42, 88]
+SEEDS     = [42] if SMOKE else [42, 88]
 TOP_K     = 20
 LABEL_MAP = {"HA": 0, "ACLR": 1, "ACLD": 2}
 CLASS_ORDER = ["HA", "ACLR", "ACLD"]
@@ -95,10 +104,10 @@ def build_stride_variability():
     META = {"subject_id", "group", "speed", "binary_label", "side",
             "stride_id", "n_strides", "injured_leg", "trial_id"}
     num = [c for c in df.columns if c not in META and pd.api.types.is_numeric_dtype(df[c])]
-    if "is_injured" not in df.columns and "side" in df.columns:
-        df["is_injured"] = df["side"].apply(
-            lambda x: True if str(x).lower() in ("injured", "right") else False)
-    grp = ["subject_id", "speed", "is_injured"] if "is_injured" in df.columns else ["subject_id", "speed"]
+    if "side" in df.columns:
+        # side-fixed: stride side is injured/contralateral → inj/con via _side_utils
+        df["side_std"] = df["side"].apply(lambda s: to_inj_con(s, "Right"))
+    grp = ["subject_id", "speed", "side_std"] if "side_std" in df.columns else ["subject_id", "speed"]
     agg = df.groupby(grp)[num].agg(["std", lambda x: x.std()/x.mean() if x.mean() != 0 else 0])
     agg.columns = [f"{c}_{st}" if st != "<lambda_0>" else f"{c}_cv" for c, st in agg.columns]
     agg = agg.reset_index()
@@ -142,6 +151,36 @@ def ensemble_oof(X, y, n_classes, **kw):
 def auc_binary(y, p):   return roc_auc_score(y, p)
 def auc_ovr(y, p):      return roc_auc_score(y, p, multi_class="ovr", average="macro")
 def macro_f1(y, p):     return f1_score(y, p.argmax(1), average="macro")
+
+
+def cv_oof_model(X, y, n_classes, model_name, seed=42, topK=TOP_K, n_trials=N_TRIALS):
+    """02b within-fold interaction pipeline with any registry model (Optuna-tuned).
+    Returns OOF positive-class prob (binary) or class-prob matrix (multiclass)."""
+    task = "binary" if n_classes == 2 else "multiclass"
+    skf = StratifiedKFold(5, shuffle=False)
+    inner = StratifiedKFold(INNER_FOLDS, shuffle=True, random_state=seed)
+    out = np.zeros(len(y)) if n_classes == 2 else np.zeros((len(y), n_classes))
+    for tr, te in skf.split(X, y):
+        sc = StandardScaler(); Xtr = sc.fit_transform(X[tr]); Xte = sc.transform(X[te])
+        sel = RandomForestClassifier(n_estimators=200, class_weight="balanced",
+                                     random_state=seed, n_jobs=-1)
+        sel.fit(Xtr, y[tr]); top = np.argsort(sel.feature_importances_)[-topK:]
+        Xtt, Xet = Xtr[:, top], Xte[:, top]
+        itr = [Xtt[:, i]*Xtt[:, j] for i, j in combinations(range(topK), 2)]
+        ite = [Xet[:, i]*Xet[:, j] for i, j in combinations(range(topK), 2)]
+        Xa = np.hstack([Xtr, np.column_stack(itr)]); Xea = np.hstack([Xte, np.column_stack(ite)])
+        est, _, _ = M.tune_and_build(model_name, Xa, y[tr], inner,
+                                     n_trials=n_trials, task=task, seed=seed)
+        est.fit(Xa, y[tr])
+        p = est.predict_proba(Xea)
+        if n_classes == 2:
+            out[te] = p[:, list(est.classes_).index(1)] if 1 in est.classes_ else p[:, -1]
+        else:
+            cls = list(est.classes_)
+            for j in range(n_classes):
+                if j in cls:
+                    out[te, j] = p[:, cls.index(j)]
+    return out
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -216,6 +255,32 @@ def main():
 
     pd.DataFrame(grid_rows).to_csv(RESULTS / "04c_speed_analysis.csv", index=False)
 
+    # ============ 분석 1b: 모델 벤치마크 — 통합(all) 이진 + 3분류 ============
+    print("\n[1b] 모델 벤치마크 — 통합(all) (logreg=baseline, 그 외 벤치마크)")
+    idxb, Xb_all, subb_all = prep(all_feat, ["HA", "ACLR", "ACLD"])
+    yb_all = subb_all["group"].isin(["ACLD", "ACLR"]).astype(int).values
+    idx3b, X3_all, sub3_all = prep(all_feat, ["HA", "ACLR", "ACLD"])
+    y3_all = sub3_all["group"].map(LABEL_MAP).values
+
+    models  = (['logreg', 'rf'] if SMOKE else M.available_models())
+    skipped = [m for m in M.ALL_MODELS if m not in models]
+    if skipped:
+        print(f"  Skipped (unavailable): {skipped}")
+    model_bench = []
+    for name in models:
+        pb = cv_oof_model(Xb_all, yb_all, 2, name, seed=42)
+        p3 = cv_oof_model(X3_all, y3_all, 3, name, seed=42)
+        ab, a3, f3 = auc_binary(yb_all, pb), auc_ovr(y3_all, p3), macro_f1(y3_all, p3)
+        model_bench.append({"model": name, "display": M.DISPLAY[name], "role": M.ROLE[name],
+                            "binary_auc": round(ab, 4), "auc_ovr_3class": round(a3, 4),
+                            "macro_f1_3class": round(f3, 4)})
+        print(f"  {M.DISPLAY[name]:<20}: 이진AUC={ab:.4f}  3분류AUC={a3:.4f}  macroF1={f3:.4f}")
+    model_bench.sort(key=lambda r: r["auc_ovr_3class"], reverse=True)
+    pd.DataFrame(model_bench).to_csv(RESULTS / "04c_model_benchmark.csv", index=False)
+    json.dump({"baseline_model": M.BASELINE, "benchmark": model_bench,
+               "skipped_models": skipped},
+              open(RESULTS / "04c_model_benchmark.json", "w"), indent=2, ensure_ascii=False)
+
     # ============ 분석 2: Optuna 최적화 (통합 3분류) ============
     print("\n[2] Optuna 최적화 — 통합 3분류 (고정 RF vs Optuna)")
     idx3, X3all, sub3all = prep(all_feat, ["HA", "ACLR", "ACLD"])
@@ -238,7 +303,7 @@ def main():
 
     study = optuna.create_study(direction="maximize",
                                 sampler=optuna.samplers.TPESampler(seed=42))
-    study.optimize(objective, n_trials=40, show_progress_bar=False)
+    study.optimize(objective, n_trials=(2 if SMOKE else 40), show_progress_bar=False)
     best = study.best_params
     # Re-evaluate best with 2-seed ensemble
     acc = np.zeros((len(y3all), 3))
@@ -287,7 +352,7 @@ def main():
     real_light = light_cv_auc(Xacl, yacl)
     rng = np.random.default_rng(0)
     null_aucs = []
-    for i in range(200):
+    for i in range(5 if SMOKE else 200):
         yp = rng.permutation(yacl)
         null_aucs.append(light_cv_auc(Xacl, yp))
     null_aucs = np.array(null_aucs)

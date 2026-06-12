@@ -10,8 +10,9 @@ Conditions:
   fast_only   — only fast-speed scalar features
   all_speeds  — slow+normal+fast+delta (reference, ≈ 0529_ML AUC=0.9600)
 
-CV: StratifiedKFold(5) outer / StratifiedKFold(3) inner Optuna(50 trials)
-Models: RF, XGBoost, LightGBM, SVC-RBF
+CV: StratifiedKFold(5) outer / StratifiedKFold(3) inner Optuna
+Models: logreg (baseline) + svm_rbf, rf, gbt, xgboost, lightgbm, catboost, tabpfn
+        (shared registry in _models.py; tabpfn auto-skips if unavailable)
 Metrics: AUC (95% bootstrap CI), paired bootstrap vs all_speeds
 """
 
@@ -23,16 +24,13 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.svm import SVC
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import roc_auc_score
-from sklearn.pipeline import Pipeline
-import optuna
-optuna.logging.set_verbosity(optuna.logging.WARNING)
-import xgboost as xgb
-import lightgbm as lgb
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _models as M
+
+SMOKE = os.environ.get("SMOKE") == "1"   # fast end-to-end test (tiny HPO, 2 models)
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 ROOT      = Path(__file__).resolve().parents[2]
@@ -55,10 +53,10 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 RANDOM_STATE = 42
-N_TRIALS     = 50
+N_TRIALS     = 1 if SMOKE else 25   # per model per fold (7 models × 4 conditions × 5 folds)
 OUTER_FOLDS  = 5
 INNER_FOLDS  = 3
-N_BOOTSTRAP  = 1000
+N_BOOTSTRAP  = 50 if SMOKE else 1000
 
 
 # ── Data helpers ───────────────────────────────────────────────────────────────
@@ -127,107 +125,6 @@ def make_speed_condition(pivot: pd.DataFrame, condition: str):
     return X, binary_label, subject_id, feat_cols
 
 
-# ── Optuna objectives ──────────────────────────────────────────────────────────
-
-def make_rf_objective(X_tr, y_tr, inner_cv):
-    def objective(trial):
-        params = dict(
-            n_estimators=trial.suggest_int("n_estimators", 50, 500),
-            max_depth=trial.suggest_int("max_depth", 2, 10),
-            min_samples_split=trial.suggest_int("min_samples_split", 2, 20),
-            min_samples_leaf=trial.suggest_int("min_samples_leaf", 1, 10),
-            max_features=trial.suggest_float("max_features", 0.1, 1.0),
-            class_weight='balanced',
-            random_state=RANDOM_STATE,
-            n_jobs=-1,
-        )
-        model = RandomForestClassifier(**params)
-        pipe  = Pipeline([('scaler', StandardScaler()), ('clf', model)])
-        return cross_val_score(pipe, X_tr, y_tr, cv=inner_cv, scoring='roc_auc', n_jobs=-1).mean()
-    return objective
-
-
-def make_xgb_objective(X_tr, y_tr, inner_cv):
-    scale_pos = (y_tr == 0).sum() / (y_tr == 1).sum()
-    def objective(trial):
-        params = dict(
-            n_estimators=trial.suggest_int("n_estimators", 50, 500),
-            max_depth=trial.suggest_int("max_depth", 2, 8),
-            learning_rate=trial.suggest_float("learning_rate", 0.01, 0.3, log=True),
-            subsample=trial.suggest_float("subsample", 0.5, 1.0),
-            colsample_bytree=trial.suggest_float("colsample_bytree", 0.5, 1.0),
-            reg_alpha=trial.suggest_float("reg_alpha", 1e-4, 10.0, log=True),
-            reg_lambda=trial.suggest_float("reg_lambda", 1e-4, 10.0, log=True),
-            scale_pos_weight=scale_pos,
-            random_state=RANDOM_STATE, eval_metric='auc',
-            verbosity=0,
-        )
-        model = xgb.XGBClassifier(**params)
-        pipe  = Pipeline([('scaler', StandardScaler()), ('clf', model)])
-        return cross_val_score(pipe, X_tr, y_tr, cv=inner_cv, scoring='roc_auc', n_jobs=1).mean()
-    return objective
-
-
-def make_lgb_objective(X_tr, y_tr, inner_cv):
-    def objective(trial):
-        params = dict(
-            n_estimators=trial.suggest_int("n_estimators", 50, 500),
-            num_leaves=trial.suggest_int("num_leaves", 15, 127),
-            learning_rate=trial.suggest_float("learning_rate", 0.01, 0.3, log=True),
-            subsample=trial.suggest_float("subsample", 0.5, 1.0),
-            colsample_bytree=trial.suggest_float("colsample_bytree", 0.5, 1.0),
-            reg_alpha=trial.suggest_float("reg_alpha", 1e-4, 10.0, log=True),
-            reg_lambda=trial.suggest_float("reg_lambda", 1e-4, 10.0, log=True),
-            class_weight='balanced',
-            random_state=RANDOM_STATE, verbose=-1,
-        )
-        model = lgb.LGBMClassifier(**params)
-        pipe  = Pipeline([('scaler', StandardScaler()), ('clf', model)])
-        return cross_val_score(pipe, X_tr, y_tr, cv=inner_cv, scoring='roc_auc', n_jobs=1).mean()
-    return objective
-
-
-def make_svc_objective(X_tr, y_tr, inner_cv):
-    def objective(trial):
-        C     = trial.suggest_float("C", 1e-3, 1e3, log=True)
-        gamma = trial.suggest_float("gamma", 1e-5, 1.0, log=True)
-        model = SVC(C=C, gamma=gamma, kernel='rbf', class_weight='balanced',
-                    probability=True, random_state=RANDOM_STATE)
-        pipe  = Pipeline([('scaler', StandardScaler()), ('clf', model)])
-        return cross_val_score(pipe, X_tr, y_tr, cv=inner_cv, scoring='roc_auc', n_jobs=-1).mean()
-    return objective
-
-
-OBJECTIVE_BUILDERS = {
-    'rf':   make_rf_objective,
-    'xgb':  make_xgb_objective,
-    'lgb':  make_lgb_objective,
-    'svc':  make_svc_objective,
-}
-
-MODEL_BUILDERS = {
-    'rf':  lambda p: Pipeline([('scaler', StandardScaler()),
-                                ('clf', RandomForestClassifier(**p, class_weight='balanced',
-                                                               random_state=RANDOM_STATE, n_jobs=-1))]),
-    'xgb': lambda p: Pipeline([('scaler', StandardScaler()),
-                                ('clf', xgb.XGBClassifier(**p, random_state=RANDOM_STATE,
-                                                          verbosity=0, eval_metric='auc'))]),
-    'lgb': lambda p: Pipeline([('scaler', StandardScaler()),
-                                ('clf', lgb.LGBMClassifier(**p, random_state=RANDOM_STATE, verbose=-1,
-                                                           class_weight='balanced'))]),
-    'svc': lambda p: Pipeline([('scaler', StandardScaler()),
-                                ('clf', SVC(**p, kernel='rbf', class_weight='balanced',
-                                           probability=True, random_state=RANDOM_STATE))]),
-}
-
-XGB_KEYS = {'n_estimators','max_depth','learning_rate','subsample','colsample_bytree','reg_alpha','reg_lambda','scale_pos_weight'}
-LGB_KEYS = {'n_estimators','num_leaves','learning_rate','subsample','colsample_bytree','reg_alpha','reg_lambda'}
-RF_KEYS  = {'n_estimators','max_depth','min_samples_split','min_samples_leaf','max_features'}
-SVC_KEYS = {'C','gamma'}
-
-MODEL_PARAM_KEYS = {'rf': RF_KEYS, 'xgb': XGB_KEYS, 'lgb': LGB_KEYS, 'svc': SVC_KEYS}
-
-
 # ── Statistical helpers ────────────────────────────────────────────────────────
 
 def bootstrap_ci(y_true, y_scores, n=N_BOOTSTRAP, rs=RANDOM_STATE):
@@ -272,31 +169,17 @@ def run_condition_model(X, y, condition: str, model_name: str) -> dict:
         X_tr, X_te = X[tr_idx], X[te_idx]
         y_tr, y_te = y[tr_idx], y[te_idx]
 
-        study_name = f"{condition}_{model_name}_f{fold}"
-        study = optuna.create_study(
-            direction='maximize',
-            study_name=study_name,
-            sampler=optuna.samplers.TPESampler(seed=RANDOM_STATE + fold),
-            pruner=optuna.pruners.MedianPruner(n_warmup_steps=5),
-        )
-        obj = OBJECTIVE_BUILDERS[model_name](X_tr, y_tr, inner_cv)
-        study.optimize(obj, n_trials=N_TRIALS, show_progress_bar=False)
-
-        best_params = {k: v for k, v in study.best_params.items()
-                       if k in MODEL_PARAM_KEYS[model_name]}
-        if model_name == 'xgb':
-            scale_pos = (y_tr == 0).sum() / max((y_tr == 1).sum(), 1)
-            best_params['scale_pos_weight'] = scale_pos
-
-        pipe = MODEL_BUILDERS[model_name](best_params)
-        pipe.fit(X_tr, y_tr)
-        proba = pipe.predict_proba(X_te)[:, 1]
+        est, _, best_val = M.tune_and_build(
+            model_name, X_tr, y_tr, inner_cv,
+            n_trials=N_TRIALS, task="binary", seed=RANDOM_STATE + fold)
+        est.fit(X_tr, y_tr)
+        proba = est.predict_proba(X_te)[:, 1]
 
         oof_scores[te_idx] = proba
         oof_true[te_idx]   = y_te
         fold_aucs.append(roc_auc_score(y_te, proba))
         log.info(f"  {condition}/{model_name} fold={fold} auc={fold_aucs[-1]:.4f} "
-                 f"best_val={study.best_value:.4f}")
+                 f"best_val={best_val:.4f}")
 
     mean_auc = roc_auc_score(oof_true, oof_scores)
     ci_lo, ci_hi = bootstrap_ci(oof_true, oof_scores)
@@ -304,6 +187,8 @@ def run_condition_model(X, y, condition: str, model_name: str) -> dict:
     return {
         'condition':   condition,
         'model':       model_name,
+        'display':     M.DISPLAY[model_name],
+        'role':        M.ROLE[model_name],
         'auc':         mean_auc,
         'ci_lo':       ci_lo,
         'ci_hi':       ci_hi,
@@ -325,7 +210,10 @@ def main():
     pivot = make_subject_pivot(df)
 
     conditions = ['slow_only', 'normal_only', 'fast_only', 'all_speeds']
-    models     = ['rf', 'xgb', 'lgb', 'svc']
+    models     = (['logreg', 'rf'] if SMOKE else M.available_models())
+    skipped    = [m for m in M.ALL_MODELS if m not in models]
+    if skipped:
+        log.warning(f"Skipped (unavailable): {skipped}")
 
     all_results = []
     condition_oof = {}  # condition → best model oof scores (for comparison)

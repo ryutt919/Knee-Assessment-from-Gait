@@ -1,14 +1,14 @@
 {
-  "flat_auc_ovr": 0.8831,
-  "flat_macro_f1": 0.7608,
-  "hier_auc_ovr": 0.8514,
-  "hier_macro_f1": 0.7035,
-  "hier_bal_acc": 0.6998,
+  "flat_auc_ovr": 0.8783,
+  "flat_macro_f1": 0.7479,
+  "hier_auc_ovr": 0.8493,
+  "hier_macro_f1": 0.6091,
+  "hier_bal_acc": 0.6277,
   "hier_per_class_auc": {
-    "HA": 0.9681,
-    "ACLR": 0.8447,
-    "ACLD": 0.7415
+    "HA": 0.9674,
+    "ACLR": 0.8433,
+    "ACLD": 0.7372
   },
   "best": "flat",
-  "headline_auc_ovr": 0.8831
+  "headline_auc_ovr": 0.8783
 }

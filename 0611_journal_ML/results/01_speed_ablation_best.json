@@ -1,8 +1,34 @@
 {
-  "condition": "all_speeds",
-  "model": "RF",
-  "n_features": 864,
-  "auc": 0.9514,
-  "ci_lo": 0.892,
-  "ci_hi": 0.9937
+  "strategy": "speed_ablation_nested_cv",
+  "conditions": {
+    "slow_only": {
+      "model": "xgboost",
+      "auc": 0.8926,
+      "ci_lo": 0.8169,
+      "ci_hi": 0.9557
+    },
+    "normal_only": {
+      "model": "logreg",
+      "auc": 0.8341,
+      "ci_lo": 0.7271,
+      "ci_hi": 0.921
+    },
+    "fast_only": {
+      "model": "rf",
+      "auc": 0.8511,
+      "ci_lo": 0.744,
+      "ci_hi": 0.9417
+    },
+    "all_speeds": {
+      "model": "catboost",
+      "auc": 0.9467,
+      "ci_lo": 0.8773,
+      "ci_hi": 0.9956
+    }
+  },
+  "scalar_baseline_auc": 0.96,
+  "n_subjects": 79,
+  "outer_folds": 5,
+  "n_trials": 25,
+  "elapsed_sec": 2225.5
 }

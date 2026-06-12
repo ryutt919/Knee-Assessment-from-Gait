@@ -16,7 +16,7 @@ Output figures (300dpi PNG for journal):
 import warnings
 warnings.filterwarnings("ignore")
 
-import json, logging
+import sys, json, logging
 from pathlib import Path
 
 import numpy as np
@@ -30,6 +30,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.metrics import roc_auc_score
 import shap
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _side_utils import build_injured_leg_map, to_inj_con
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 ROOT     = Path(__file__).resolve().parents[2]
@@ -63,20 +66,13 @@ def get_wave_cols(df):
     return [c for c in df.columns if any(c.startswith(ch + '_') for ch in CHANNELS)]
 
 
-def get_injured_leg_map(scalar_df):
-    mapping = {}
-    for _, row in scalar_df.drop_duplicates('subject_id').iterrows():
-        leg = row['injured_leg']
-        mapping[row['subject_id']] = 'Right' if (pd.isna(leg) or str(leg).lower() == 'nan') else leg
-    return mapping
-
-
 def build_bilateral_asymmetry(wave_df, inj_map, wave_cols):
     rows = []
     for (subj, speed), grp in wave_df.groupby(['subject_id', 'speed']):
         leg = inj_map.get(subj, 'Right')
-        inj = grp[grp['side'] == leg]
-        con = grp[grp['side'] != leg]
+        side_std = grp['side'].apply(lambda s: to_inj_con(s, leg))
+        inj = grp[side_std == 'inj']
+        con = grp[side_std == 'con']
         if len(inj) == 0 or len(con) == 0:
             continue
         asym = inj[wave_cols].values[0] - con[wave_cols].values[0]
@@ -238,7 +234,7 @@ def main():
     wave_df   = pd.read_parquet(WAVE_PATH)
     scalar_df = pd.read_csv(SCALAR_PATH)
     wave_cols = get_wave_cols(wave_df)
-    inj_map   = get_injured_leg_map(scalar_df)
+    inj_map   = build_injured_leg_map(scalar_df)
 
     # Build feature set D (multi-speed bilateral) — the best feature set
     asym_df  = build_bilateral_asymmetry(wave_df, inj_map, wave_cols)
@@ -272,10 +268,13 @@ def main():
     }
     best_json = RESULTS / "02_waveform_best.json"
     if best_json.exists():
-        with open(best_json) as f:
-            b = json.load(f)
-        fs = b.get('best_by_feature_set', {}).get('D_multi_speed_bilateral', {})
-        log.info(f"Loaded best AUC from script 02: {fs.get('auc', 'N/A')}")
+        try:
+            with open(best_json) as f:
+                b = json.load(f)
+            fs = b.get('best_by_feature_set', {}).get('D_multi_speed_bilateral', {})
+            log.info(f"Loaded best AUC from script 02: {fs.get('auc', 'N/A')}")
+        except (json.JSONDecodeError, OSError) as e:
+            log.warning(f"02_waveform_best.json unreadable ({e}); using default RF params")
 
     clf = RandomForestClassifier(**best_params, class_weight='balanced',
                                   random_state=RANDOM_STATE, n_jobs=-1)
@@ -288,11 +287,14 @@ def main():
     explainer   = shap.TreeExplainer(clf)
     shap_values = explainer.shap_values(X_pca)
 
-    # shap_values: (n_samples, n_pcs) for binary → take class=1 (ACL)
+    # SHAP returns differ by version: list[per-class] (old) or ndarray.
+    # Newer SHAP gives (n_samples, n_features, n_classes) for binary trees.
     if isinstance(shap_values, list):
-        sv = shap_values[1]   # class 1 = ACL
+        sv = shap_values[1]                 # class 1 = ACL
     else:
-        sv = shap_values
+        sv = np.asarray(shap_values)
+        if sv.ndim == 3:                    # (n_samples, n_pcs, n_classes)
+            sv = sv[:, :, 1]                # take positive class (ACL)
 
     log.info(f"SHAP values shape: {sv.shape}")
 

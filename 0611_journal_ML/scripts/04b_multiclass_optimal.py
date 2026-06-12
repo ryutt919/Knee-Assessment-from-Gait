@@ -5,7 +5,7 @@ Same feature engineering as 02b_optimal_pipeline.py:
 Target: ACLD / ACLR / HA
 """
 import warnings; warnings.filterwarnings("ignore")
-import json, time
+import os, sys, json, time
 from itertools import combinations
 from pathlib import Path
 
@@ -22,6 +22,14 @@ from sklearn.metrics import (
     f1_score, balanced_accuracy_score,
     roc_auc_score, classification_report, confusion_matrix,
 )
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _models as M
+from _side_utils import to_inj_con
+
+SMOKE       = os.environ.get("SMOKE") == "1"   # fast end-to-end test
+INNER_FOLDS = 3
+N_TRIALS    = 1 if SMOKE else 25
 
 ROOT    = Path(__file__).resolve().parents[2]
 SANDBOX = Path(__file__).resolve().parents[1]
@@ -75,10 +83,10 @@ def build_stride_variability(path):
             "stride_id", "n_strides", "injured_leg", "trial_id"}
     num_cols = [c for c in df.columns
                 if c not in META and pd.api.types.is_numeric_dtype(df[c])]
-    if "is_injured" not in df.columns and "side" in df.columns:
-        df["is_injured"] = df["side"].apply(
-            lambda x: True if str(x).lower() in ("injured", "right") else False)
-    grp_cols = ["subject_id", "speed", "is_injured"] if "is_injured" in df.columns \
+    if "side" in df.columns:
+        # side-fixed: stride side is injured/contralateral → inj/con via _side_utils
+        df["side_std"] = df["side"].apply(lambda s: to_inj_con(s, "Right"))
+    grp_cols = ["subject_id", "speed", "side_std"] if "side_std" in df.columns \
                else ["subject_id", "speed"]
     agg = df.groupby(grp_cols)[num_cols].agg(["std", lambda x: x.std()/x.mean()
                                                if x.mean() != 0 else 0])
@@ -91,9 +99,13 @@ def build_stride_variability(path):
     return subj_agg
 
 
-def run_cv_3class(X, y, class_order, seed, topK=TOP_K, ne_sel=200, ne_final=1000):
+def run_cv_3class(X, y, class_order, model_name, seed, topK=TOP_K, ne_sel=200):
+    """Within-fold RF selection + interactions + Optuna-tuned model (multiclass).
+    Returns class-probability matrix (one pass for the given seed)."""
     skf   = StratifiedKFold(n_splits=OUTER_FOLDS, shuffle=False)
-    proba = np.zeros((len(y), len(class_order)))
+    inner = StratifiedKFold(n_splits=INNER_FOLDS, shuffle=True, random_state=seed)
+    n_cls = len(class_order)
+    proba = np.zeros((len(y), n_cls))
 
     for fold, (tr, te) in enumerate(skf.split(X, y)):
         sc  = StandardScaler()
@@ -113,15 +125,20 @@ def run_cv_3class(X, y, class_order, seed, topK=TOP_K, ne_sel=200, ne_final=1000
         Xtr_a = np.hstack([Xtr, np.column_stack(inter_tr)])
         Xte_a = np.hstack([Xte, np.column_stack(inter_te)])
 
-        fm = RandomForestClassifier(n_estimators=ne_final, class_weight="balanced",
-                                    random_state=seed, n_jobs=-1)
-        fm.fit(Xtr_a, y[tr])
-        proba[te] += fm.predict_proba(Xte_a)
+        est, _, _ = M.tune_and_build(model_name, Xtr_a, y[tr], inner,
+                                     n_trials=N_TRIALS, task="multiclass", seed=seed)
+        est.fit(Xtr_a, y[tr])
+        # align predict_proba columns to class_order indices (0..n_cls-1)
+        p = est.predict_proba(Xte_a)
+        cls = list(est.classes_)
+        for j, c in enumerate(range(n_cls)):
+            if c in cls:
+                proba[te, j] += p[:, cls.index(c)]
 
-        f1 = f1_score(y[te], fm.predict_proba(Xte_a).argmax(axis=1), average="macro")
-        print(f"  [seed={seed}] fold={fold} f1_macro={f1:.4f}", flush=True)
+        f1 = f1_score(y[te], proba[te].argmax(axis=1), average="macro")
+        print(f"  [{model_name} seed={seed}] fold={fold} f1_macro={f1:.4f}", flush=True)
 
-    return proba  # raw (not averaged) — caller divides by n_seeds if ensemble
+    return proba
 
 
 def main():
@@ -170,71 +187,71 @@ def main():
     print(f"N={n_total}  Distribution: {dist}", flush=True)
     print(f"Feature dim: {X.shape[1]}", flush=True)
 
-    # ── Ensemble over seeds ───────────────────────────────────────────────────
-    all_proba = np.zeros((n_total, len(class_order)))
-    for seed in ENS_SEEDS:
-        print(f"\n--- seed={seed} ---", flush=True)
-        proba_seed = run_cv_3class(X, y, class_order, seed)
-        all_proba += proba_seed
-    all_proba /= len(ENS_SEEDS)
+    # ── Multi-model benchmark (3-class) ───────────────────────────────────────
+    models  = (['logreg', 'rf'] if SMOKE else M.available_models())
+    skipped = [m for m in M.ALL_MODELS if m not in models]
+    if skipped:
+        print(f"Skipped (unavailable): {skipped}", flush=True)
 
-    # ── Metrics ───────────────────────────────────────────────────────────────
-    y_pred   = all_proba.argmax(axis=1)
-    macro_f1 = f1_score(y, y_pred, average="macro")
-    bal_acc  = balanced_accuracy_score(y, y_pred)
-    auc_ovr  = roc_auc_score(y, all_proba, multi_class="ovr", average="macro")
-    per_cls  = {c: round(roc_auc_score((y == label_map[c]).astype(int),
-                                        all_proba[:, label_map[c]]), 4)
-                for c in class_order}
+    bench, proba_store = [], {}
+    for name in models:
+        print(f"\n--- {M.DISPLAY[name]} ({M.ROLE[name]}) ---", flush=True)
+        proba = run_cv_3class(X, y, class_order, name, seed=42)
+        y_pred   = proba.argmax(axis=1)
+        macro_f1 = f1_score(y, y_pred, average="macro")
+        bal_acc  = balanced_accuracy_score(y, y_pred)
+        auc_ovr  = roc_auc_score(y, proba, multi_class="ovr", average="macro")
+        per_cls  = {c: round(roc_auc_score((y == label_map[c]).astype(int),
+                                            proba[:, label_map[c]]), 4) for c in class_order}
+        proba_store[name] = proba
+        bench.append({"model": name, "display": M.DISPLAY[name], "role": M.ROLE[name],
+                      "macro_f1": round(macro_f1, 4), "balanced_accuracy": round(bal_acc, 4),
+                      "auc_ovr": round(auc_ovr, 4), "per_class_auc": per_cls})
+        print(f"  macro_F1={macro_f1:.4f}  bal_acc={bal_acc:.4f}  AUC(OvR)={auc_ovr:.4f}", flush=True)
 
-    print(f"\n{'='*60}", flush=True)
-    print(f"RESULT  macro_F1={macro_f1:.4f}  bal_acc={bal_acc:.4f}  AUC(OvR)={auc_ovr:.4f}", flush=True)
-    print(f"Per-class AUC: {per_cls}", flush=True)
-    print(f"\n{classification_report(y, y_pred, target_names=class_order)}", flush=True)
+    bench.sort(key=lambda r: r["auc_ovr"], reverse=True)
+    best = bench[0]
+    print(f"\n{'='*60}\nBEST: {best['display']}  AUC(OvR)={best['auc_ovr']:.4f}  "
+          f"macroF1={best['macro_f1']:.4f}", flush=True)
     print(f"Elapsed: {time.time()-t0:.1f}s", flush=True)
 
     # ── Save results ──────────────────────────────────────────────────────────
     result = {
-        "model": "RF_interactions_ensemble",
-        "pipeline": "scalar_pivot_864 + stride_variability + within_fold_interactions",
-        "n_subjects": n_total,
-        "distribution": dist,
-        "class_order": class_order,
-        "ens_seeds": ENS_SEEDS,
-        "macro_f1":  round(macro_f1, 4),
-        "balanced_accuracy": round(bal_acc, 4),
-        "auc_ovr": round(auc_ovr, 4),
-        "per_class_auc": per_cls,
+        "task": "3class_ACLD_ACLR_HA", "side_fixed": True,
+        "pipeline": "scalar_pivot + stride_variability_inj_con + within_fold_interactions + Optuna",
+        "n_subjects": n_total, "distribution": dist, "class_order": class_order,
+        "baseline_model": M.BASELINE, "benchmark": bench,
+        "best": {"model": best["model"], "display": best["display"],
+                 "auc_ovr": best["auc_ovr"], "macro_f1": best["macro_f1"],
+                 "per_class_auc": best["per_class_auc"]},
+        "skipped_models": skipped,
     }
     with open(RESULTS / "04b_multiclass_results.json", "w") as f:
         json.dump(result, f, indent=2)
+    pd.DataFrame([{k: (str(v) if k == "per_class_auc" else v) for k, v in r.items()}
+                  for r in bench]).to_csv(RESULTS / "04b_benchmark.csv", index=False)
 
-    # Also update the CSV for report compatibility
-    row = {
-        "model": "rf_optimal",
-        "macro_f1": round(macro_f1, 4),
-        "balanced_accuracy": round(bal_acc, 4),
-        "auc_ovr": round(auc_ovr, 4),
-        "per_class_auc": str(per_cls),
-        "class_order": str(class_order),
-    }
+    # Update legacy CSV for report compatibility (best model row)
+    row = {"model": "rf_optimal", "macro_f1": best["macro_f1"],
+           "balanced_accuracy": best["balanced_accuracy"], "auc_ovr": best["auc_ovr"],
+           "per_class_auc": str(best["per_class_auc"]), "class_order": str(class_order)}
     old_df = pd.read_csv(RESULTS / "04_multiclass_results.csv")
-    # Append or replace rf_optimal row
     old_df = old_df[old_df["model"] != "rf_optimal"]
-    new_df = pd.concat([old_df, pd.DataFrame([row])], ignore_index=True)
-    new_df.to_csv(RESULTS / "04_multiclass_results.csv", index=False)
-    print(f"Saved: 04b_multiclass_results.json", flush=True)
+    pd.concat([old_df, pd.DataFrame([row])], ignore_index=True).to_csv(
+        RESULTS / "04_multiclass_results.csv", index=False)
+    print("Saved: 04b_multiclass_results.json + 04b_benchmark.csv", flush=True)
 
-    # ── Confusion matrix ──────────────────────────────────────────────────────
-    cm = confusion_matrix(y, y_pred)
+    # ── Confusion matrix (best model) ─────────────────────────────────────────
+    best_proba = proba_store[best["model"]]
+    cm = confusion_matrix(y, best_proba.argmax(axis=1))
     fig, ax = plt.subplots(figsize=(6, 5))
     sns.heatmap(cm, annot=True, fmt="d", cmap="Blues",
                 xticklabels=class_order, yticklabels=class_order, ax=ax)
     ax.set_xlabel("Predicted", fontsize=11)
     ax.set_ylabel("True", fontsize=11)
     ax.set_title(
-        f"3-Class Confusion Matrix — RF Optimal Pipeline\n"
-        f"macro-F1={macro_f1:.3f}  AUC(OvR)={auc_ovr:.3f}",
+        f"3-Class Confusion Matrix — {best['display']} (best, side-fixed)\n"
+        f"macro-F1={best['macro_f1']:.3f}  AUC(OvR)={best['auc_ovr']:.3f}",
         fontsize=11, fontweight="bold",
     )
     plt.tight_layout()

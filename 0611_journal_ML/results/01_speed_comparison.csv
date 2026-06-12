@@ -1,0 +1,4 @@
+comparison,auc_diff,pval_bootstrap,ref_auc,cmp_auc,significant
+all_speeds vs slow_only,0.0541,0.22,0.9467,0.8926,False
+all_speeds vs normal_only,0.1126,0.037,0.9467,0.8341,True
+all_speeds vs fast_only,0.0956,0.04,0.9467,0.8511,True

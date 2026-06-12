@@ -24,20 +24,25 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from sklearn.model_selection import (
-    StratifiedKFold, GroupKFold, StratifiedGroupKFold,
-    cross_val_score
-)
+from sklearn.model_selection import StratifiedKFold, StratifiedGroupKFold
 from sklearn.metrics import roc_auc_score
-from sklearn.pipeline import Pipeline
-import optuna
-optuna.logging.set_verbosity(optuna.logging.WARNING)
-import xgboost as xgb
-import lightgbm as lgb
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _models as M
+from _side_utils import build_injured_leg_map, to_inj_con
+
+
+def _np_default(o):
+    """JSON encoder fallback for numpy scalar types."""
+    if isinstance(o, np.integer):
+        return int(o)
+    if isinstance(o, np.floating):
+        return float(o)
+    if isinstance(o, np.bool_):
+        return bool(o)
+    return str(o)
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 ROOT      = Path(__file__).resolve().parents[2]
@@ -63,11 +68,12 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
+SMOKE        = os.environ.get("SMOKE") == "1"   # fast end-to-end test
 RANDOM_STATE = 42
-N_TRIALS     = 60
+N_TRIALS     = 1 if SMOKE else 25
 OUTER_FOLDS  = 5
 INNER_FOLDS  = 3
-N_BOOTSTRAP  = 1000
+N_BOOTSTRAP  = 50 if SMOKE else 1000
 PCA_VARIANCE = 0.95
 
 CHANNELS = [
@@ -84,29 +90,20 @@ def get_wave_cols(df: pd.DataFrame) -> list:
             if any(c.startswith(ch + '_') for ch in CHANNELS)]
 
 
-def get_injured_leg_map(scalar_df: pd.DataFrame) -> dict:
-    """subject_id → injured_leg (Left/Right); HA → 'Right' (pseudo-injured)."""
-    sub = scalar_df.drop_duplicates('subject_id')[['subject_id', 'group', 'injured_leg']]
-    mapping = {}
-    for _, row in sub.iterrows():
-        leg = row['injured_leg']
-        if pd.isna(leg) or str(leg).strip() == '' or str(leg).lower() == 'nan':
-            leg = 'Right'  # HA pseudo-injured convention
-        mapping[row['subject_id']] = leg
-    return mapping
-
-
 def build_bilateral_asymmetry(wave_df: pd.DataFrame, inj_map: dict,
                                wave_cols: list) -> pd.DataFrame:
     """
     Compute bilateral asymmetry waveforms (injured − contralateral) per subject×speed.
-    Returns DataFrame with 237 rows (79 subjects × 3 speeds).
+    side-fixed: rows split into inj/con via _side_utils.to_inj_con (waveform side
+    is Right/Left → compared against the subject's injured leg).
+    Returns DataFrame with up to 237 rows (79 subjects × 3 speeds).
     """
     rows = []
     for (subj, speed), grp in wave_df.groupby(['subject_id', 'speed']):
         injured_leg = inj_map.get(subj, 'Right')
-        inj_rows = grp[grp['side'] == injured_leg]
-        con_rows = grp[grp['side'] != injured_leg]
+        side_std = grp['side'].apply(lambda s: to_inj_con(s, injured_leg))
+        inj_rows = grp[side_std == 'inj']
+        con_rows = grp[side_std == 'con']
 
         if len(inj_rows) == 0 or len(con_rows) == 0:
             log.warning(f"  Missing side pair: subj={subj} speed={speed} inj_leg={injured_leg}")
@@ -190,84 +187,6 @@ def pca_transform_fold(X_tr, X_te, n_components=PCA_VARIANCE):
     return X_tr_pca, X_te_pca, pca.n_components_
 
 
-# ── Optuna objectives (operate on pre-PCA arrays) ─────────────────────────────
-
-def make_rf_obj(X_tr_pca, y_tr, inner_cv):
-    def obj(trial):
-        params = dict(
-            n_estimators=trial.suggest_int("n_estimators", 100, 800),
-            max_depth=trial.suggest_int("max_depth", 2, 12),
-            min_samples_split=trial.suggest_int("min_samples_split", 2, 20),
-            min_samples_leaf=trial.suggest_int("min_samples_leaf", 1, 10),
-            max_features=trial.suggest_float("max_features", 0.1, 1.0),
-            class_weight='balanced', random_state=RANDOM_STATE, n_jobs=-1,
-        )
-        clf = RandomForestClassifier(**params)
-        return cross_val_score(clf, X_tr_pca, y_tr, cv=inner_cv,
-                               scoring='roc_auc', n_jobs=-1).mean()
-    return obj
-
-
-def make_xgb_obj(X_tr_pca, y_tr, inner_cv):
-    scale_pos = float((y_tr == 0).sum()) / max(float((y_tr == 1).sum()), 1)
-    def obj(trial):
-        params = dict(
-            n_estimators=trial.suggest_int("n_estimators", 100, 600),
-            max_depth=trial.suggest_int("max_depth", 2, 8),
-            learning_rate=trial.suggest_float("learning_rate", 0.01, 0.3, log=True),
-            subsample=trial.suggest_float("subsample", 0.5, 1.0),
-            colsample_bytree=trial.suggest_float("colsample_bytree", 0.5, 1.0),
-            reg_alpha=trial.suggest_float("reg_alpha", 1e-4, 10.0, log=True),
-            reg_lambda=trial.suggest_float("reg_lambda", 1e-4, 10.0, log=True),
-            scale_pos_weight=scale_pos, random_state=RANDOM_STATE,
-            verbosity=0, eval_metric='auc',
-        )
-        clf = xgb.XGBClassifier(**params)
-        return cross_val_score(clf, X_tr_pca, y_tr, cv=inner_cv,
-                               scoring='roc_auc', n_jobs=1).mean()
-    return obj
-
-
-def make_lgb_obj(X_tr_pca, y_tr, inner_cv):
-    def obj(trial):
-        params = dict(
-            n_estimators=trial.suggest_int("n_estimators", 100, 600),
-            num_leaves=trial.suggest_int("num_leaves", 15, 127),
-            learning_rate=trial.suggest_float("learning_rate", 0.01, 0.3, log=True),
-            subsample=trial.suggest_float("subsample", 0.5, 1.0),
-            colsample_bytree=trial.suggest_float("colsample_bytree", 0.5, 1.0),
-            reg_alpha=trial.suggest_float("reg_alpha", 1e-4, 10.0, log=True),
-            reg_lambda=trial.suggest_float("reg_lambda", 1e-4, 10.0, log=True),
-            class_weight='balanced', random_state=RANDOM_STATE, verbose=-1,
-        )
-        clf = lgb.LGBMClassifier(**params)
-        return cross_val_score(clf, X_tr_pca, y_tr, cv=inner_cv,
-                               scoring='roc_auc', n_jobs=1).mean()
-    return obj
-
-
-OBJ_BUILDERS = {'rf': make_rf_obj, 'xgb': make_xgb_obj, 'lgb': make_lgb_obj}
-
-RF_KEYS  = {'n_estimators','max_depth','min_samples_split','min_samples_leaf','max_features'}
-XGB_KEYS = {'n_estimators','max_depth','learning_rate','subsample','colsample_bytree','reg_alpha','reg_lambda'}
-LGB_KEYS = {'n_estimators','num_leaves','learning_rate','subsample','colsample_bytree','reg_alpha','reg_lambda'}
-MODEL_KEYS = {'rf': RF_KEYS, 'xgb': XGB_KEYS, 'lgb': LGB_KEYS}
-
-
-def build_model(model_name, params, y_tr=None):
-    if model_name == 'rf':
-        return RandomForestClassifier(**params, class_weight='balanced',
-                                      random_state=RANDOM_STATE, n_jobs=-1)
-    elif model_name == 'xgb':
-        scale_pos = float((y_tr == 0).sum()) / max(float((y_tr == 1).sum()), 1)
-        return xgb.XGBClassifier(**params, scale_pos_weight=scale_pos,
-                                  random_state=RANDOM_STATE, verbosity=0, eval_metric='auc')
-    elif model_name == 'lgb':
-        return lgb.LGBMClassifier(**params, class_weight='balanced',
-                                   random_state=RANDOM_STATE, verbose=-1)
-    raise ValueError(f"Unknown model: {model_name}")
-
-
 # ── Statistical helpers ────────────────────────────────────────────────────────
 
 def bootstrap_ci(y_true, y_scores, n=N_BOOTSTRAP, rs=RANDOM_STATE):
@@ -341,37 +260,17 @@ def run_feature_set(
         X_tr_pca, X_te_pca, n_comps = pca_transform_fold(X_tr, X_te)
         fold_pca_dims.append(n_comps)
 
-        # Optuna HPO on inner CV
-        study_key = f"{feature_set}_{model_name}_f{fold}_v1"
-        storage   = f"sqlite:///{SANDBOX}/optuna/{study_key}.db"
-        study     = optuna.create_study(
-            direction='maximize',
-            study_name=study_key,
-            storage=storage,
-            load_if_exists=True,
-            sampler=optuna.samplers.TPESampler(seed=RANDOM_STATE + fold),
-            pruner=optuna.pruners.MedianPruner(n_warmup_steps=5),
-        )
-        existing = len(study.trials)
-        needed   = max(0, N_TRIALS - existing)
-
-        obj = OBJ_BUILDERS[model_name](X_tr_pca, y_tr, inner_cv)
-        if needed > 0:
-            study.optimize(obj, n_trials=needed, show_progress_bar=False)
-
-        best_params = {k: v for k, v in study.best_params.items()
-                       if k in MODEL_KEYS[model_name]}
-
-        # Retrain on full training fold
-        clf = build_model(model_name, best_params, y_tr)
-        clf.fit(X_tr_pca, y_tr)
-        proba = clf.predict_proba(X_te_pca)[:, 1]
+        # Optuna HPO on inner CV via shared registry
+        est, _, best_val = M.tune_and_build(
+            model_name, X_tr_pca, y_tr, inner_cv,
+            n_trials=N_TRIALS, task="binary", seed=RANDOM_STATE + fold)
+        est.fit(X_tr_pca, y_tr)
+        proba = est.predict_proba(X_te_pca)[:, 1]
 
         oof_scores[te_idx] = proba
         fold_aucs.append(roc_auc_score(y_te, proba))
         log.info(f"  [{feature_set}/{model_name}] fold={fold} "
-                 f"auc={fold_aucs[-1]:.4f} pca_dims={n_comps} "
-                 f"best_val={study.best_value:.4f}")
+                 f"auc={fold_aucs[-1]:.4f} pca_dims={n_comps} best_val={best_val:.4f}")
 
     mean_auc = roc_auc_score(oof_true, oof_scores)
     ci_lo, ci_hi = bootstrap_ci(oof_true, oof_scores)
@@ -401,7 +300,7 @@ def main():
     wave_df   = pd.read_parquet(WAVE_PATH)
     scalar_df = pd.read_csv(SCALAR_PATH)
     wave_cols = get_wave_cols(wave_df)
-    inj_map   = get_injured_leg_map(scalar_df)
+    inj_map   = build_injured_leg_map(scalar_df)
 
     log.info(f"Waveform data: {wave_df.shape} | wave_cols: {len(wave_cols)}")
     log.info(f"Injured leg map: {len(inj_map)} subjects")
@@ -464,7 +363,10 @@ def main():
         },
     }
 
-    models    = ['rf', 'xgb', 'lgb']
+    models    = (['logreg', 'rf'] if SMOKE else M.available_models())
+    skipped   = [m for m in M.ALL_MODELS if m not in models]
+    if skipped:
+        log.warning(f"Skipped (unavailable): {skipped}")
     all_results = []
     best_by_featset = {}
 
@@ -522,6 +424,12 @@ def main():
             y_t  = np.array(ref_fs['oof_true'])
             s_a  = np.array(ref_fs['oof_scores'])
             s_b  = np.array(res['oof_scores'])
+            # Paired bootstrap requires equal sample counts; feature sets differ
+            # in N (A/B = subject×speed 237, C/D = subject 79) → skip cross-N pairs.
+            if not (len(s_a) == len(s_b) == len(y_t)):
+                log.info(f"  skip paired comparison {ref_fs['feature_set']} vs {fs_name} "
+                         f"(N {len(s_a)} vs {len(s_b)})")
+                continue
             diff, pval = paired_bootstrap_pval(y_t, s_a, s_b)
             comparison_rows.append({
                 'comparison': f"{ref_fs['feature_set']} vs {fs_name}",
@@ -563,8 +471,8 @@ def main():
             'auc':       round(res['auc'], 4),
             'ci_lo':     round(res['ci_lo'], 4),
             'ci_hi':     round(res['ci_hi'], 4),
-            'fold_aucs': [round(a, 4) for a in res['fold_aucs']],
-            'pca_dims':  res['pca_dims'],
+            'fold_aucs': [round(float(a), 4) for a in res['fold_aucs']],
+            'pca_dims':  [int(x) for x in res['pca_dims']],
         }
 
     # Save OOF scores for Script 03 (SHAP)
@@ -572,7 +480,7 @@ def main():
         oof_path = RESULTS / f"02_oof_{fs_name}_{res['model']}.json"
         with open(oof_path, 'w') as f:
             json.dump({'oof_scores': res['oof_scores'], 'oof_true': res['oof_true'],
-                       'feature_set': fs_name, 'model': res['model']}, f)
+                       'feature_set': fs_name, 'model': res['model']}, f, default=_np_default)
 
     with open(RESULTS / "02_waveform_best.json", 'w') as f:
         json.dump({
@@ -583,7 +491,7 @@ def main():
             'n_trials': N_TRIALS,
             'pca_variance_threshold': PCA_VARIANCE,
             'elapsed_sec': round(time.time() - t0, 1),
-        }, f, indent=2)
+        }, f, indent=2, default=_np_default)
 
     # ── Final summary ──────────────────────────────────────────────────────────
     log.info(f"\n{'='*70}")

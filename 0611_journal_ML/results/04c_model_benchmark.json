@@ -1,0 +1,64 @@
+{
+  "baseline_model": "logreg",
+  "benchmark": [
+    {
+      "model": "xgboost",
+      "display": "XGBoost",
+      "role": "benchmark",
+      "binary_auc": 0.9674,
+      "auc_ovr_3class": 0.8549,
+      "macro_f1_3class": 0.7346
+    },
+    {
+      "model": "lightgbm",
+      "display": "LightGBM",
+      "role": "benchmark",
+      "binary_auc": 0.9341,
+      "auc_ovr_3class": 0.8478,
+      "macro_f1_3class": 0.6831
+    },
+    {
+      "model": "rf",
+      "display": "Random Forest",
+      "role": "benchmark",
+      "binary_auc": 0.9237,
+      "auc_ovr_3class": 0.8391,
+      "macro_f1_3class": 0.7204
+    },
+    {
+      "model": "gbt",
+      "display": "Gradient Boosting",
+      "role": "benchmark",
+      "binary_auc": 0.8911,
+      "auc_ovr_3class": 0.8255,
+      "macro_f1_3class": 0.7346
+    },
+    {
+      "model": "catboost",
+      "display": "CatBoost",
+      "role": "benchmark",
+      "binary_auc": 0.9163,
+      "auc_ovr_3class": 0.8111,
+      "macro_f1_3class": 0.6701
+    },
+    {
+      "model": "logreg",
+      "display": "Logistic Regression",
+      "role": "baseline",
+      "binary_auc": 0.8181,
+      "auc_ovr_3class": 0.7725,
+      "macro_f1_3class": 0.606
+    },
+    {
+      "model": "svm_rbf",
+      "display": "SVM (RBF)",
+      "role": "benchmark",
+      "binary_auc": 0.8719,
+      "auc_ovr_3class": 0.7581,
+      "macro_f1_3class": 0.519
+    }
+  ],
+  "skipped_models": [
+    "tabpfn"
+  ]
+}

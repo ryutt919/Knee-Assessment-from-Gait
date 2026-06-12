@@ -1,6 +1,7 @@
 {
-  "model": "RF_interactions_ensemble",
-  "pipeline": "scalar_pivot_864 + stride_variability + within_fold_interactions",
+  "task": "3class_ACLD_ACLR_HA",
+  "side_fixed": true,
+  "pipeline": "scalar_pivot + stride_variability_inj_con + within_fold_interactions + Optuna",
   "n_subjects": 79,
   "distribution": {
     "HA": 25,
@@ -12,16 +13,112 @@
     "ACLR",
     "ACLD"
   ],
-  "ens_seeds": [
-    42,
-    88
+  "baseline_model": "logreg",
+  "benchmark": [
+    {
+      "model": "xgboost",
+      "display": "XGBoost",
+      "role": "benchmark",
+      "macro_f1": 0.6837,
+      "balanced_accuracy": 0.6874,
+      "auc_ovr": 0.8492,
+      "per_class_auc": {
+        "HA": 0.9578,
+        "ACLR": 0.8234,
+        "ACLD": 0.7664
+      }
+    },
+    {
+      "model": "gbt",
+      "display": "Gradient Boosting",
+      "role": "benchmark",
+      "macro_f1": 0.6622,
+      "balanced_accuracy": 0.6607,
+      "auc_ovr": 0.8271,
+      "per_class_auc": {
+        "HA": 0.9407,
+        "ACLR": 0.8077,
+        "ACLD": 0.7329
+      }
+    },
+    {
+      "model": "catboost",
+      "display": "CatBoost",
+      "role": "benchmark",
+      "macro_f1": 0.6951,
+      "balanced_accuracy": 0.7007,
+      "auc_ovr": 0.8205,
+      "per_class_auc": {
+        "HA": 0.9467,
+        "ACLR": 0.7771,
+        "ACLD": 0.7379
+      }
+    },
+    {
+      "model": "lightgbm",
+      "display": "LightGBM",
+      "role": "benchmark",
+      "macro_f1": 0.6108,
+      "balanced_accuracy": 0.6257,
+      "auc_ovr": 0.8202,
+      "per_class_auc": {
+        "HA": 0.9415,
+        "ACLR": 0.7934,
+        "ACLD": 0.7258
+      }
+    },
+    {
+      "model": "rf",
+      "display": "Random Forest",
+      "role": "benchmark",
+      "macro_f1": 0.6407,
+      "balanced_accuracy": 0.6514,
+      "auc_ovr": 0.8162,
+      "per_class_auc": {
+        "HA": 0.9237,
+        "ACLR": 0.8034,
+        "ACLD": 0.7215
+      }
+    },
+    {
+      "model": "logreg",
+      "display": "Logistic Regression",
+      "role": "baseline",
+      "macro_f1": 0.6301,
+      "balanced_accuracy": 0.637,
+      "auc_ovr": 0.7705,
+      "per_class_auc": {
+        "HA": 0.837,
+        "ACLR": 0.802,
+        "ACLD": 0.6724
+      }
+    },
+    {
+      "model": "svm_rbf",
+      "display": "SVM (RBF)",
+      "role": "benchmark",
+      "macro_f1": 0.5073,
+      "balanced_accuracy": 0.5106,
+      "auc_ovr": 0.7215,
+      "per_class_auc": {
+        "HA": 0.8148,
+        "ACLR": 0.6859,
+        "ACLD": 0.6638
+      }
+    }
   ],
-  "macro_f1": 0.6794,
-  "balanced_accuracy": 0.6741,
-  "auc_ovr": 0.8672,
-  "per_class_auc": {
-    "HA": 0.9622,
-    "ACLR": 0.8593,
-    "ACLD": 0.7799
-  }
+  "best": {
+    "model": "xgboost",
+    "display": "XGBoost",
+    "auc_ovr": 0.8492,
+    "macro_f1": 0.6837,
+    "per_class_auc": {
+      "HA": 0.9578,
+      "ACLR": 0.8234,
+      "ACLD": 0.7664
+    }
+  },
+  "skipped_models": [
+    "tabpfn"
+  ]
 }

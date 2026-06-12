@@ -1,0 +1,99 @@
+{
+  "strategy": "raw_waveform_ml",
+  "best_by_feature_set": {
+    "A_unilateral": {
+      "model": "catboost",
+      "auc": 0.7114,
+      "ci_lo": 0.6473,
+      "ci_hi": 0.7794,
+      "fold_aucs": [
+        0.8808,
+        0.6646,
+        0.7919,
+        0.6505,
+        0.78
+      ],
+      "pca_dims": [
+        28,
+        28,
+        27,
+        28,
+        28
+      ]
+    },
+    "B_bilateral_asym": {
+      "model": "gbt",
+      "auc": 0.7661,
+      "ci_lo": 0.6939,
+      "ci_hi": 0.8303,
+      "fold_aucs": [
+        0.8,
+        0.8566,
+        0.6505,
+        0.7919,
+        0.7756
+      ],
+      "pca_dims": [
+        29,
+        28,
+        28,
+        29,
+        29
+      ]
+    },
+    "C_speed_delta": {
+      "model": "logreg",
+      "auc": 0.8467,
+      "ci_lo": 0.7544,
+      "ci_hi": 0.9326,
+      "fold_aucs": [
+        0.9273,
+        0.8727,
+        0.7818,
+        0.9636,
+        0.74
+      ],
+      "pca_dims": [
+        33,
+        34,
+        33,
+        34,
+        34
+      ]
+    },
+    "D_multi_speed_bilateral": {
+      "model": "xgboost",
+      "auc": 0.7852,
+      "ci_lo": 0.6589,
+      "ci_hi": 0.8841,
+      "fold_aucs": [
+        0.8182,
+        0.8364,
+        0.6364,
+        0.9455,
+        0.78
+      ],
+      "pca_dims": [
+        32,
+        32,
+        31,
+        32,
+        32
+      ]
+    }
+  },
+  "scalar_baseline_auc": 0.96,
+  "comparisons": [
+    {
+      "comparison": "D_multi_speed_bilateral vs C_speed_delta",
+      "auc_ref": 0.7852,
+      "auc_cmp": 0.8467,
+      "auc_diff": -0.0615,
+      "pval": 0.237,
+      "significant": false
+    }
+  ],
+  "n_trials": 25,
+  "pca_variance_threshold": 0.95,
+  "elapsed_sec": 1643.0
+}
