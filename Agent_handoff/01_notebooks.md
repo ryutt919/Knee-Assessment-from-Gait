@@ -20,3 +20,4 @@ Record only deltas. Do not repeat content already in Component Status.
 | 2026-06-15 23:47 | Fix peak segmentation notebook paths | fixed path constants -> filename-based resolver; `data_descrpition2.csv` only -> `data_descrpition2.csv` or `data_descrpition.csv` candidates |
 | 2026-06-16 00:03 | Align peak segmentation notebook with harness | precomputed peak-record plotting -> direct harness stance/peak computation for knee flexion 10-second segmented graph |
 | 2026-06-16 00:10 | Correct knee flexion peak semantics | stance argmax markers -> first prominence peak markers from `get_first_peak()` because knee flexion peak should be the early-stance loading-response peak |
+| 2026-06-16 00:16 | Guard notebook against stale peak logic | default demo window -> `window_seconds=5`, `window_position=3`; added runtime assertion that valid knee flexion peaks must stay in early stance rather than median timing >=50% |
