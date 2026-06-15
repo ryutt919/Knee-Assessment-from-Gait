@@ -5,10 +5,10 @@ Describe the current state of each component. Update in-place during work.
 Do not duplicate content.
 
 ### Peak Segmentation Notebook
-- **Current value/logic**: `notebooks/peak_segmentation.ipynb` resolves required input files by filename from the detected project root instead of assuming fixed relative paths.
-- **Implementation**: The first setup cell finds `AGENTS.md` by walking up from `Path.cwd()`, then uses `find_project_file()` with direct `data/` and `data/processed/` candidates plus filtered recursive search. Search skips `.git`, virtualenv/cache/runtime folders, and artifact folders. Column metadata accepts either `data_descrpition2.csv` or the current `data_descrpition.csv`.
-- **Related files**: `notebooks/peak_segmentation.ipynb`; `data/ID.csv`; `data/processed/raw_merged.parquet`; `data/processed/analysis_data.csv`; `data/processed/peak_records.csv`; `data/data_descrpition.csv`.
-- **Rationale**: The dependency file layout/name changed, so filename-based resolution keeps the notebook runnable from the project root or `notebooks/` without hard-coding the old `data_descrpition2.csv` path.
+- **Current value/logic**: `notebooks/peak_segmentation.ipynb` now computes knee flexion segmentation directly with the `harness` peak-detection implementation instead of reading precomputed `peak_records.csv` for plotting.
+- **Implementation**: The notebook imports `JOINT_COLS`, `PEAK_DIRECTION`, `build_stance_contact_signal`, `get_stance_segments`, and `detect_peaks_with_iqr` from `harness/scripts/analysis/preprocess.py`. It loads `data/processed/raw_merged.parquet`, resolves injured/contralateral side from `data/ID.csv`, computes stance contact with `heel_toe_or`, detects knee flexion peaks with `peak_method="argextrema"` and the harness IQR limits, then plots a configurable 10-second window with stance shading and IQR pass/rejected peak markers.
+- **Related files**: `notebooks/peak_segmentation.ipynb`; `harness/scripts/analysis/preprocess.py`; `data/ID.csv`; `data/processed/raw_merged.parquet`.
+- **Rationale**: The notebook's prior peak visualization logic diverged from the harness implementation; importing the harness functions keeps segmentation and peak markers aligned with the pipeline source of truth.
 
 ---
 
@@ -18,3 +18,4 @@ Record only deltas. Do not repeat content already in Component Status.
 | Timestamp | Task | Change Summary |
 |-----------|------|----------------|
 | 2026-06-15 23:47 | Fix peak segmentation notebook paths | fixed path constants -> filename-based resolver; `data_descrpition2.csv` only -> `data_descrpition2.csv` or `data_descrpition.csv` candidates |
+| 2026-06-16 00:03 | Align peak segmentation notebook with harness | precomputed peak-record plotting -> direct harness stance/peak computation for knee flexion 10-second segmented graph |
