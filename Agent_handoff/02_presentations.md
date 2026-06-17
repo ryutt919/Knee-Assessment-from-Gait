@@ -1,0 +1,20 @@
+# Presentations — ACL Gait Analysis
+
+## Component Status
+Describe the current state of each component. Update in-place during work.
+Do not duplicate content.
+
+### Capstone Citation Deck
+- **Current value/logic**: The capstone presentation has a cited copy that preserves the source deck and adds inline citation markers, slide-bottom footnotes, and two final References slides.
+- **Implementation**: `PT/scripts/01_add_citations_to_capstone_ppt.py` edits the PPTX package XML directly using `lxml`, because `python-pptx` is not installed in the available Python environments. It reads `PT/스포츠과학과 캡스톤디자인 발표 19101207 김태현.pptx`, writes `PT/스포츠과학과 캡스톤디자인 발표 19101207 김태현_cited.pptx`, corrects the unsupported `ACL surgeries` wording on slide 2 to `ACL injuries`, and cites local `docs/ref_papers` sources for ACL burden, reinjury/OA rates, IMU gait assessment, multi-speed gait, waveform analysis, daily steps, lab-system limitations, and SHAP-based explainable ML.
+- **Related files**: `PT/scripts/01_add_citations_to_capstone_ppt.py`; `PT/스포츠과학과 캡스톤디자인 발표 19101207 김태현_cited.pptx`; `docs/ref_papers/`.
+- **Rationale**: The deck text came from prior studies but lacked traceable references; the cited copy makes the source support visible without overwriting the original presentation.
+
+---
+
+## Change History
+Record only deltas. Do not repeat content already in Component Status.
+
+| Timestamp | Task | Change Summary |
+|-----------|------|----------------|
+| 2026-06-17 10:14 | Add citations to capstone deck | uncited presentation -> cited PPTX copy with inline markers, slide footnotes, References slides, and reproducible PPTX XML edit script |
