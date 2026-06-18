@@ -10,6 +10,12 @@ Do not duplicate content.
 - **Related files**: `docs/ref_papers/2026-06-18_acl_kinematics_summary/01_acl_patient_kinematics_problem_summary.md`; `docs/ref_papers/01_acl_gait_biomechanics_studies/`; `docs/ref_papers/02_acl_gait_reviews_meta_analyses/`.
 - **Rationale**: The user needed a date-stamped literature summary grounded in the local PDF collection, with mandatory original excerpts, interpretation, tables, and references for ACL patient kinematics problems.
 
+### Time to Normalization ACLR Gait Detail Note
+- **Current value/logic**: `docs/ref_papers/2026-06-18_acl_kinematics_summary/02_time_to_normalization_gait_aclr_detailed.md` provides a focused Korean explanation of Chen et al.'s gait normalization meta-analysis.
+- **Implementation**: The note centers on study background, methods, main results, time-based recovery estimates, clinical significance, limitations, and report-ready interpretation sentences. It emphasizes that peak knee flexion angle and peak knee flexion moment remain reduced after ACLR, with model-estimated statistical normalization at 16.2 and 10.1 months, while walking speed is not significantly different and may mask knee-level deficits.
+- **Related files**: `docs/ref_papers/2026-06-18_acl_kinematics_summary/02_time_to_normalization_gait_aclr_detailed.md`; `docs/ref_papers/02_acl_gait_reviews_meta_analyses/Time to normalization of gait following ACL reconstruction compared with healthy controls - A systematic review and meta-analysis.pdf`.
+- **Rationale**: The user requested a deeper single-paper MD explanation focused on results, significance, and background.
+
 ---
 
 ## Change History
@@ -18,3 +24,4 @@ Record only deltas. Do not repeat content already in Component Status.
 | Timestamp | Task | Change Summary |
 |-----------|------|----------------|
 | 2026-06-18 13:01 | Summarize ACL kinematics literature | no date-stamped kinematics summary -> new 17-paper Korean MD summary with short excerpts, interpretations, per-paper tables, and reference entries |
+| 2026-06-18 13:12 | Detail gait normalization meta-analysis | single-paper section in broad summary -> standalone detailed Korean MD focused on background, results, significance, limitations, and report-ready wording |
