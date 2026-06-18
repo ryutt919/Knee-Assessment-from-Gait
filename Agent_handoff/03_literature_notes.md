@@ -22,6 +22,12 @@ Do not duplicate content.
 - **Related files**: `docs/ref_papers/2026-06-18_acl_kinematics_summary/03_whole_waveform_analysis_evidence_summary.md`; `docs/ref_papers/01_acl_gait_biomechanics_studies/`; `docs/ref_papers/02_acl_gait_reviews_meta_analyses/`; `docs/ref_papers/03_wearable_imu_and_portable_sensing/`; `docs/ref_papers/04_machine_learning_and_deep_learning/`.
 - **Rationale**: The user asked whether any prior papers in the full reference collection claim that whole waveform analysis is needed, and wanted a new MD summary if evidence existed.
 
+### Buttner Waveform Analysis Detail Note
+- **Current value/logic**: `docs/ref_papers/2026-06-18_acl_kinematics_summary/04_buttner_waveform_analysis_detailed.md` provides a standalone Korean explanation of Büttner et al.'s bilateral waveform ACLR gait study.
+- **Implementation**: The note clarifies the 2025 Journal of Orthopaedic Research citation, confirms the study is a habitual walking gait study, and explains the background, cohort design, stance-phase waveform methods, vGRF/KFA/KEM/KAM results, bilateral interpretation, peak/discrete-variable limitations, clinical implications, limitations, and report-ready wording.
+- **Related files**: `docs/ref_papers/2026-06-18_acl_kinematics_summary/04_buttner_waveform_analysis_detailed.md`; `docs/ref_papers/01_acl_gait_biomechanics_studies/Bilateral waveform analysis of gait biomechanics presurgery to 12 months following ACL reconstruction compared to controls.pdf`.
+- **Rationale**: The user asked for a new MD file explaining the Büttner et al. study in detail after clarifying that it is a walking gait study.
+
 ---
 
 ## Change History
@@ -32,3 +38,4 @@ Record only deltas. Do not repeat content already in Component Status.
 | 2026-06-18 13:01 | Summarize ACL kinematics literature | no date-stamped kinematics summary -> new 17-paper Korean MD summary with short excerpts, interpretations, per-paper tables, and reference entries |
 | 2026-06-18 13:12 | Detail gait normalization meta-analysis | single-paper section in broad summary -> standalone detailed Korean MD focused on background, results, significance, limitations, and report-ready wording |
 | 2026-06-18 13:36 | Summarize whole-waveform evidence | no whole-waveform evidence note -> new Korean MD separating direct waveform/SPM evidence from indirect peak/discrete-variable limitation evidence |
+| 2026-06-18 13:43 | Detail Buttner waveform gait study | brief cross-paper summary -> standalone Korean MD explaining citation, walking gait design, stance waveform methods, results, significance, and limitations |
