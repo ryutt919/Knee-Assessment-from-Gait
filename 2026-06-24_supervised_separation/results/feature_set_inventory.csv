@@ -1,0 +1,8 @@
+feature_set,subjects,features,HA,ACLD,ACLR
+scalar_pivot,79,864,25,27,27
+pca_slim_subject,79,264,25,27,27
+pca_raw_subject,78,8256,25,27,26
+pca_cycle_subject,79,10908,25,27,27
+fusion_scalar_cycle,79,11772,25,27,27
+fusion_scalar_raw,78,9120,25,27,26
+fusion_all_common,78,20292,25,27,26

@@ -1,0 +1,50 @@
+{
+  "source_slim_gait_parquet": {
+    "path": "data/processed/slim_gait.parquet",
+    "size_bytes": 153385401,
+    "mtime_ns": 1779467963343425449,
+    "mtime": "2026-05-23T01:39:23"
+  },
+  "source_raw_merged_parquet": {
+    "path": "data/processed/raw_merged.parquet",
+    "size_bytes": 6292744641,
+    "mtime_ns": 1774333173000000000,
+    "mtime": "2026-03-24T15:19:33"
+  },
+  "source_cycle_waveforms_101_parquet": {
+    "path": "data/processed/cycle_waveforms_101.parquet",
+    "size_bytes": 71338518,
+    "mtime_ns": 1780132913762254027,
+    "mtime": "2026-05-30T18:21:53"
+  },
+  "features_scalar": {
+    "path": "data/processed/features_scalar.csv",
+    "size_bytes": 626244,
+    "mtime_ns": 1779707291048873177,
+    "mtime": "2026-05-25T20:08:11"
+  },
+  "pca_slim_subject_features": {
+    "path": "2026-06-24_PCA/results/slim_gait_subject_features.csv",
+    "size_bytes": 297080,
+    "mtime_ns": 1782282954210331822,
+    "mtime": "2026-06-24T15:35:54"
+  },
+  "pca_raw_subject_features": {
+    "path": "2026-06-24_PCA/results/raw_merged_subject_features.csv",
+    "size_bytes": 8655143,
+    "mtime_ns": 1782282985719903731,
+    "mtime": "2026-06-24T15:36:25"
+  },
+  "pca_cycle_subject_features": {
+    "path": "2026-06-24_PCA/results/cycle_waveforms_101_subject_features.csv",
+    "size_bytes": 15170969,
+    "mtime_ns": 1782282988412691771,
+    "mtime": "2026-06-24T15:36:28"
+  },
+  "pca_summary": {
+    "path": "2026-06-24_PCA/results/00_pca_summaries.json",
+    "size_bytes": 49246,
+    "mtime_ns": 1782282989407332246,
+    "mtime": "2026-06-24T15:36:29"
+  }
+}
