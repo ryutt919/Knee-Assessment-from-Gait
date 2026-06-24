@@ -1,98 +1,98 @@
-[2026-06-24 15:55:53] Start supervised separation experiment
-[2026-06-24 15:55:53] Built scalar_subject_pivot: 79 subjects x 864 features
-[2026-06-24 15:55:53] Loaded slim_gait: 79 subjects x 264 features
-[2026-06-24 15:55:53] Loaded raw_merged: 78 subjects x 8256 features
-[2026-06-24 15:55:54] Loaded cycle_waveforms_101: 79 subjects x 10908 features
-[2026-06-24 15:55:54] Built fusion_scalar_cycle: 79 subjects x 11772 features
-[2026-06-24 15:55:54] Built fusion_scalar_raw: 78 subjects x 9120 features
-[2026-06-24 15:55:54] Built fusion_all_common: 78 subjects x 20292 features
-[2026-06-24 15:55:54] Evaluate binary_acl_vs_ha/scalar_pivot
-[2026-06-24 15:55:54] Evaluated binary_acl_vs_ha/scalar_pivot/pca
-[2026-06-24 15:55:54] Evaluated binary_acl_vs_ha/scalar_pivot/lda
-[2026-06-24 15:55:54] Evaluated binary_acl_vs_ha/scalar_pivot/plsda
-[2026-06-24 15:55:55] Evaluated binary_acl_vs_ha/scalar_pivot/nca
-[2026-06-24 15:55:55] Evaluated binary_acl_vs_ha/scalar_pivot/rf_proba
-[2026-06-24 15:55:55] Evaluate binary_acl_vs_ha/pca_slim_subject
-[2026-06-24 15:55:55] Evaluated binary_acl_vs_ha/pca_slim_subject/pca
-[2026-06-24 15:55:56] Evaluated binary_acl_vs_ha/pca_slim_subject/lda
-[2026-06-24 15:55:56] Evaluated binary_acl_vs_ha/pca_slim_subject/plsda
-[2026-06-24 15:55:56] Evaluated binary_acl_vs_ha/pca_slim_subject/nca
-[2026-06-24 15:55:56] Evaluated binary_acl_vs_ha/pca_slim_subject/rf_proba
-[2026-06-24 15:55:56] Evaluate binary_acl_vs_ha/pca_raw_subject
-[2026-06-24 15:55:57] Evaluated binary_acl_vs_ha/pca_raw_subject/pca
-[2026-06-24 15:55:57] Evaluated binary_acl_vs_ha/pca_raw_subject/lda
-[2026-06-24 15:55:57] Evaluated binary_acl_vs_ha/pca_raw_subject/plsda
-[2026-06-24 15:55:57] Evaluated binary_acl_vs_ha/pca_raw_subject/nca
-[2026-06-24 15:55:58] Evaluated binary_acl_vs_ha/pca_raw_subject/rf_proba
-[2026-06-24 15:55:58] Evaluate binary_acl_vs_ha/pca_cycle_subject
-[2026-06-24 15:55:58] Evaluated binary_acl_vs_ha/pca_cycle_subject/pca
-[2026-06-24 15:55:59] Evaluated binary_acl_vs_ha/pca_cycle_subject/lda
-[2026-06-24 15:55:59] Evaluated binary_acl_vs_ha/pca_cycle_subject/plsda
-[2026-06-24 15:55:59] Evaluated binary_acl_vs_ha/pca_cycle_subject/nca
-[2026-06-24 15:56:00] Evaluated binary_acl_vs_ha/pca_cycle_subject/rf_proba
-[2026-06-24 15:56:00] Evaluate binary_acl_vs_ha/fusion_scalar_cycle
-[2026-06-24 15:56:00] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/pca
-[2026-06-24 15:56:00] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/lda
-[2026-06-24 15:56:01] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/plsda
-[2026-06-24 15:56:01] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/nca
-[2026-06-24 15:56:02] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/rf_proba
-[2026-06-24 15:56:02] Evaluate binary_acl_vs_ha/fusion_scalar_raw
-[2026-06-24 15:56:02] Evaluated binary_acl_vs_ha/fusion_scalar_raw/pca
-[2026-06-24 15:56:02] Evaluated binary_acl_vs_ha/fusion_scalar_raw/lda
-[2026-06-24 15:56:03] Evaluated binary_acl_vs_ha/fusion_scalar_raw/plsda
-[2026-06-24 15:56:03] Evaluated binary_acl_vs_ha/fusion_scalar_raw/nca
-[2026-06-24 15:56:04] Evaluated binary_acl_vs_ha/fusion_scalar_raw/rf_proba
-[2026-06-24 15:56:04] Evaluate binary_acl_vs_ha/fusion_all_common
-[2026-06-24 15:56:04] Evaluated binary_acl_vs_ha/fusion_all_common/pca
-[2026-06-24 15:56:04] Evaluated binary_acl_vs_ha/fusion_all_common/lda
-[2026-06-24 15:56:05] Evaluated binary_acl_vs_ha/fusion_all_common/plsda
-[2026-06-24 15:56:05] Evaluated binary_acl_vs_ha/fusion_all_common/nca
-[2026-06-24 15:56:06] Evaluated binary_acl_vs_ha/fusion_all_common/rf_proba
-[2026-06-24 15:56:06] Evaluate multiclass_3group/scalar_pivot
-[2026-06-24 15:56:06] Evaluated multiclass_3group/scalar_pivot/pca
-[2026-06-24 15:56:06] Evaluated multiclass_3group/scalar_pivot/lda
-[2026-06-24 15:56:06] Evaluated multiclass_3group/scalar_pivot/plsda
-[2026-06-24 15:56:07] Evaluated multiclass_3group/scalar_pivot/nca
-[2026-06-24 15:56:07] Evaluated multiclass_3group/scalar_pivot/rf_proba
-[2026-06-24 15:56:07] Evaluate multiclass_3group/pca_slim_subject
-[2026-06-24 15:56:07] Evaluated multiclass_3group/pca_slim_subject/pca
-[2026-06-24 15:56:07] Evaluated multiclass_3group/pca_slim_subject/lda
-[2026-06-24 15:56:08] Evaluated multiclass_3group/pca_slim_subject/plsda
-[2026-06-24 15:56:08] Evaluated multiclass_3group/pca_slim_subject/nca
-[2026-06-24 15:56:08] Evaluated multiclass_3group/pca_slim_subject/rf_proba
-[2026-06-24 15:56:08] Evaluate multiclass_3group/pca_raw_subject
-[2026-06-24 15:56:09] Evaluated multiclass_3group/pca_raw_subject/pca
-[2026-06-24 15:56:09] Evaluated multiclass_3group/pca_raw_subject/lda
-[2026-06-24 15:56:09] Evaluated multiclass_3group/pca_raw_subject/plsda
-[2026-06-24 15:56:09] Evaluated multiclass_3group/pca_raw_subject/nca
-[2026-06-24 15:56:10] Evaluated multiclass_3group/pca_raw_subject/rf_proba
-[2026-06-24 15:56:10] Evaluate multiclass_3group/pca_cycle_subject
-[2026-06-24 15:56:10] Evaluated multiclass_3group/pca_cycle_subject/pca
-[2026-06-24 15:56:10] Evaluated multiclass_3group/pca_cycle_subject/lda
-[2026-06-24 15:56:11] Evaluated multiclass_3group/pca_cycle_subject/plsda
-[2026-06-24 15:56:11] Evaluated multiclass_3group/pca_cycle_subject/nca
-[2026-06-24 15:56:12] Evaluated multiclass_3group/pca_cycle_subject/rf_proba
-[2026-06-24 15:56:12] Evaluate multiclass_3group/fusion_scalar_cycle
-[2026-06-24 15:56:12] Evaluated multiclass_3group/fusion_scalar_cycle/pca
-[2026-06-24 15:56:12] Evaluated multiclass_3group/fusion_scalar_cycle/lda
-[2026-06-24 15:56:13] Evaluated multiclass_3group/fusion_scalar_cycle/plsda
-[2026-06-24 15:56:13] Evaluated multiclass_3group/fusion_scalar_cycle/nca
-[2026-06-24 15:56:14] Evaluated multiclass_3group/fusion_scalar_cycle/rf_proba
-[2026-06-24 15:56:14] Evaluate multiclass_3group/fusion_scalar_raw
-[2026-06-24 15:56:14] Evaluated multiclass_3group/fusion_scalar_raw/pca
-[2026-06-24 15:56:14] Evaluated multiclass_3group/fusion_scalar_raw/lda
-[2026-06-24 15:56:14] Evaluated multiclass_3group/fusion_scalar_raw/plsda
-[2026-06-24 15:56:15] Evaluated multiclass_3group/fusion_scalar_raw/nca
-[2026-06-24 15:56:16] Evaluated multiclass_3group/fusion_scalar_raw/rf_proba
-[2026-06-24 15:56:16] Evaluate multiclass_3group/fusion_all_common
-[2026-06-24 15:56:16] Evaluated multiclass_3group/fusion_all_common/pca
-[2026-06-24 15:56:16] Evaluated multiclass_3group/fusion_all_common/lda
-[2026-06-24 15:56:17] Evaluated multiclass_3group/fusion_all_common/plsda
-[2026-06-24 15:56:17] Evaluated multiclass_3group/fusion_all_common/nca
-[2026-06-24 15:56:18] Evaluated multiclass_3group/fusion_all_common/rf_proba
-[2026-06-24 15:56:18] Generated descriptive full embedding: binary_acl_vs_ha/fusion_scalar_raw/pca
-[2026-06-24 15:56:19] Generated descriptive full embedding: binary_acl_vs_ha/fusion_scalar_raw/rf_proba
-[2026-06-24 15:56:19] Generated descriptive full embedding: multiclass_3group/scalar_pivot/pca
-[2026-06-24 15:56:19] Generated descriptive full embedding: multiclass_3group/scalar_pivot/rf_proba
-[2026-06-24 15:56:20] Source file integrity unchanged=True
-[2026-06-24 15:56:20] Completed supervised separation experiment
+[2026-06-24 19:23:28] Start supervised separation experiment
+[2026-06-24 19:23:28] Built scalar_subject_pivot: 79 subjects x 864 features
+[2026-06-24 19:23:28] Loaded slim_gait: 79 subjects x 264 features
+[2026-06-24 19:23:28] Loaded raw_merged: 78 subjects x 8256 features
+[2026-06-24 19:23:28] Loaded cycle_waveforms_101: 79 subjects x 10908 features
+[2026-06-24 19:23:28] Built fusion_scalar_cycle: 79 subjects x 11772 features
+[2026-06-24 19:23:28] Built fusion_scalar_raw: 78 subjects x 9120 features
+[2026-06-24 19:23:28] Built fusion_all_common: 78 subjects x 20292 features
+[2026-06-24 19:23:28] Evaluate binary_acl_vs_ha/scalar_pivot
+[2026-06-24 19:23:29] Evaluated binary_acl_vs_ha/scalar_pivot/pca
+[2026-06-24 19:23:29] Evaluated binary_acl_vs_ha/scalar_pivot/lda
+[2026-06-24 19:23:29] Evaluated binary_acl_vs_ha/scalar_pivot/plsda
+[2026-06-24 19:23:29] Evaluated binary_acl_vs_ha/scalar_pivot/nca
+[2026-06-24 19:23:29] Evaluated binary_acl_vs_ha/scalar_pivot/rf_proba
+[2026-06-24 19:23:29] Evaluate binary_acl_vs_ha/pca_slim_subject
+[2026-06-24 19:23:29] Evaluated binary_acl_vs_ha/pca_slim_subject/pca
+[2026-06-24 19:23:30] Evaluated binary_acl_vs_ha/pca_slim_subject/lda
+[2026-06-24 19:23:30] Evaluated binary_acl_vs_ha/pca_slim_subject/plsda
+[2026-06-24 19:23:30] Evaluated binary_acl_vs_ha/pca_slim_subject/nca
+[2026-06-24 19:23:30] Evaluated binary_acl_vs_ha/pca_slim_subject/rf_proba
+[2026-06-24 19:23:30] Evaluate binary_acl_vs_ha/pca_raw_subject
+[2026-06-24 19:23:30] Evaluated binary_acl_vs_ha/pca_raw_subject/pca
+[2026-06-24 19:23:31] Evaluated binary_acl_vs_ha/pca_raw_subject/lda
+[2026-06-24 19:23:31] Evaluated binary_acl_vs_ha/pca_raw_subject/plsda
+[2026-06-24 19:23:31] Evaluated binary_acl_vs_ha/pca_raw_subject/nca
+[2026-06-24 19:23:32] Evaluated binary_acl_vs_ha/pca_raw_subject/rf_proba
+[2026-06-24 19:23:32] Evaluate binary_acl_vs_ha/pca_cycle_subject
+[2026-06-24 19:23:32] Evaluated binary_acl_vs_ha/pca_cycle_subject/pca
+[2026-06-24 19:23:32] Evaluated binary_acl_vs_ha/pca_cycle_subject/lda
+[2026-06-24 19:23:32] Evaluated binary_acl_vs_ha/pca_cycle_subject/plsda
+[2026-06-24 19:23:33] Evaluated binary_acl_vs_ha/pca_cycle_subject/nca
+[2026-06-24 19:23:34] Evaluated binary_acl_vs_ha/pca_cycle_subject/rf_proba
+[2026-06-24 19:23:34] Evaluate binary_acl_vs_ha/fusion_scalar_cycle
+[2026-06-24 19:23:34] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/pca
+[2026-06-24 19:23:34] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/lda
+[2026-06-24 19:23:34] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/plsda
+[2026-06-24 19:23:34] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/nca
+[2026-06-24 19:23:35] Evaluated binary_acl_vs_ha/fusion_scalar_cycle/rf_proba
+[2026-06-24 19:23:35] Evaluate binary_acl_vs_ha/fusion_scalar_raw
+[2026-06-24 19:23:35] Evaluated binary_acl_vs_ha/fusion_scalar_raw/pca
+[2026-06-24 19:23:36] Evaluated binary_acl_vs_ha/fusion_scalar_raw/lda
+[2026-06-24 19:23:36] Evaluated binary_acl_vs_ha/fusion_scalar_raw/plsda
+[2026-06-24 19:23:36] Evaluated binary_acl_vs_ha/fusion_scalar_raw/nca
+[2026-06-24 19:23:37] Evaluated binary_acl_vs_ha/fusion_scalar_raw/rf_proba
+[2026-06-24 19:23:37] Evaluate binary_acl_vs_ha/fusion_all_common
+[2026-06-24 19:23:37] Evaluated binary_acl_vs_ha/fusion_all_common/pca
+[2026-06-24 19:23:38] Evaluated binary_acl_vs_ha/fusion_all_common/lda
+[2026-06-24 19:23:38] Evaluated binary_acl_vs_ha/fusion_all_common/plsda
+[2026-06-24 19:23:38] Evaluated binary_acl_vs_ha/fusion_all_common/nca
+[2026-06-24 19:23:39] Evaluated binary_acl_vs_ha/fusion_all_common/rf_proba
+[2026-06-24 19:23:39] Evaluate multiclass_3group/scalar_pivot
+[2026-06-24 19:23:39] Evaluated multiclass_3group/scalar_pivot/pca
+[2026-06-24 19:23:39] Evaluated multiclass_3group/scalar_pivot/lda
+[2026-06-24 19:23:39] Evaluated multiclass_3group/scalar_pivot/plsda
+[2026-06-24 19:23:40] Evaluated multiclass_3group/scalar_pivot/nca
+[2026-06-24 19:23:40] Evaluated multiclass_3group/scalar_pivot/rf_proba
+[2026-06-24 19:23:40] Evaluate multiclass_3group/pca_slim_subject
+[2026-06-24 19:23:40] Evaluated multiclass_3group/pca_slim_subject/pca
+[2026-06-24 19:23:40] Evaluated multiclass_3group/pca_slim_subject/lda
+[2026-06-24 19:23:40] Evaluated multiclass_3group/pca_slim_subject/plsda
+[2026-06-24 19:23:40] Evaluated multiclass_3group/pca_slim_subject/nca
+[2026-06-24 19:23:41] Evaluated multiclass_3group/pca_slim_subject/rf_proba
+[2026-06-24 19:23:41] Evaluate multiclass_3group/pca_raw_subject
+[2026-06-24 19:23:41] Evaluated multiclass_3group/pca_raw_subject/pca
+[2026-06-24 19:23:42] Evaluated multiclass_3group/pca_raw_subject/lda
+[2026-06-24 19:23:42] Evaluated multiclass_3group/pca_raw_subject/plsda
+[2026-06-24 19:23:42] Evaluated multiclass_3group/pca_raw_subject/nca
+[2026-06-24 19:23:43] Evaluated multiclass_3group/pca_raw_subject/rf_proba
+[2026-06-24 19:23:43] Evaluate multiclass_3group/pca_cycle_subject
+[2026-06-24 19:23:43] Evaluated multiclass_3group/pca_cycle_subject/pca
+[2026-06-24 19:23:43] Evaluated multiclass_3group/pca_cycle_subject/lda
+[2026-06-24 19:23:43] Evaluated multiclass_3group/pca_cycle_subject/plsda
+[2026-06-24 19:23:44] Evaluated multiclass_3group/pca_cycle_subject/nca
+[2026-06-24 19:23:45] Evaluated multiclass_3group/pca_cycle_subject/rf_proba
+[2026-06-24 19:23:45] Evaluate multiclass_3group/fusion_scalar_cycle
+[2026-06-24 19:23:45] Evaluated multiclass_3group/fusion_scalar_cycle/pca
+[2026-06-24 19:23:45] Evaluated multiclass_3group/fusion_scalar_cycle/lda
+[2026-06-24 19:23:45] Evaluated multiclass_3group/fusion_scalar_cycle/plsda
+[2026-06-24 19:23:45] Evaluated multiclass_3group/fusion_scalar_cycle/nca
+[2026-06-24 19:23:46] Evaluated multiclass_3group/fusion_scalar_cycle/rf_proba
+[2026-06-24 19:23:46] Evaluate multiclass_3group/fusion_scalar_raw
+[2026-06-24 19:23:46] Evaluated multiclass_3group/fusion_scalar_raw/pca
+[2026-06-24 19:23:47] Evaluated multiclass_3group/fusion_scalar_raw/lda
+[2026-06-24 19:23:47] Evaluated multiclass_3group/fusion_scalar_raw/plsda
+[2026-06-24 19:23:47] Evaluated multiclass_3group/fusion_scalar_raw/nca
+[2026-06-24 19:23:48] Evaluated multiclass_3group/fusion_scalar_raw/rf_proba
+[2026-06-24 19:23:48] Evaluate multiclass_3group/fusion_all_common
+[2026-06-24 19:23:48] Evaluated multiclass_3group/fusion_all_common/pca
+[2026-06-24 19:23:49] Evaluated multiclass_3group/fusion_all_common/lda
+[2026-06-24 19:23:49] Evaluated multiclass_3group/fusion_all_common/plsda
+[2026-06-24 19:23:49] Evaluated multiclass_3group/fusion_all_common/nca
+[2026-06-24 19:23:50] Evaluated multiclass_3group/fusion_all_common/rf_proba
+[2026-06-24 19:23:51] Generated descriptive full embedding: binary_acl_vs_ha/fusion_scalar_raw/pca
+[2026-06-24 19:23:51] Generated descriptive full embedding: binary_acl_vs_ha/fusion_scalar_raw/rf_proba
+[2026-06-24 19:23:51] Generated descriptive full embedding: multiclass_3group/scalar_pivot/pca
+[2026-06-24 19:23:51] Generated descriptive full embedding: multiclass_3group/scalar_pivot/rf_proba
+[2026-06-24 19:23:52] Source file integrity unchanged=True
+[2026-06-24 19:23:52] Completed supervised separation experiment

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import sys
 import time
 import warnings
@@ -220,6 +221,35 @@ def labels_for_task(groups: pd.Series, task: str) -> np.ndarray:
     if task == "binary_acl_vs_ha":
         return np.where(groups.eq("HA"), "HA", "ACL")
     return groups.astype(str).to_numpy()
+
+
+def biological_identity(subject_id: str) -> str:
+    """Map longitudinal ACLD/ACLR sessions to one biological identity."""
+    match = re.fullmatch(r"(ACLD|ACLR|HA)(.+)", str(subject_id))
+    if match is None:
+        return f"UNKNOWN::{subject_id}"
+    cohort, suffix = match.groups()
+    return f"ACL::{suffix}" if cohort in {"ACLD", "ACLR"} else f"HA::{suffix}"
+
+
+def pair_aware_splits(subjects: np.ndarray) -> list[tuple[np.ndarray, np.ndarray]]:
+    """Stratify 52 identities while keeping each ACLD/ACLR pair in one fold."""
+    identities = np.array([biological_identity(subject) for subject in subjects])
+    unique_identities = np.array(sorted(set(identities)))
+    identity_labels = np.array(
+        ["ACL" if identity.startswith("ACL::") else "HA" for identity in unique_identities]
+    )
+    splitter = StratifiedKFold(n_splits=OUTER_FOLDS, shuffle=True, random_state=RANDOM_STATE)
+    splits: list[tuple[np.ndarray, np.ndarray]] = []
+    for identity_train, identity_test in splitter.split(unique_identities, identity_labels):
+        train_ids = set(unique_identities[identity_train])
+        test_ids = set(unique_identities[identity_test])
+        if train_ids & test_ids:
+            raise RuntimeError("Pair-aware split leaked a biological identity")
+        train_idx = np.flatnonzero(np.isin(identities, list(train_ids)))
+        test_idx = np.flatnonzero(np.isin(identities, list(test_ids)))
+        splits.append((train_idx, test_idx))
+    return splits
 
 
 def feature_matrix(df: pd.DataFrame) -> tuple[np.ndarray, list[str]]:
@@ -443,8 +473,9 @@ def evaluate_feature_set(
     x, _feature_names = feature_matrix(df)
     y = labels_for_task(df["group"], task)
     subjects = df["subject_id"].astype(str).to_numpy()
+    identities = np.array([biological_identity(subject) for subject in subjects])
     label_order = TASKS[task]["label_order"]
-    folds = StratifiedKFold(n_splits=OUTER_FOLDS, shuffle=True, random_state=RANDOM_STATE)
+    folds = pair_aware_splits(subjects)
 
     metric_rows: list[dict[str, Any]] = []
     pair_rows: list[dict[str, Any]] = []
@@ -452,8 +483,11 @@ def evaluate_feature_set(
 
     for method in METHODS:
         method_start = time.time()
-        for fold, (train_idx, test_idx) in enumerate(folds.split(x, y), start=1):
+        for fold, (train_idx, test_idx) in enumerate(folds, start=1):
             try:
+                identity_overlap = set(identities[train_idx]) & set(identities[test_idx])
+                if identity_overlap:
+                    raise RuntimeError(f"Biological identity leakage: {sorted(identity_overlap)}")
                 prepared = prepare_fold(x[train_idx], x[test_idx], y[train_idx])
                 train_emb, test_emb, _model_labels = fit_transform_embedding(
                     method, prepared.x_train, prepared.x_test, y[train_idx]
@@ -493,6 +527,9 @@ def evaluate_feature_set(
                         "fold": fold,
                         "n_train": len(train_idx),
                         "n_test": len(test_idx),
+                        "n_train_identities": len(set(identities[train_idx])),
+                        "n_test_identities": len(set(identities[test_idx])),
+                        "identity_overlap": len(identity_overlap),
                         "input_features": x.shape[1],
                         "selected_features": prepared.selected_features,
                         **sep,
@@ -515,6 +552,7 @@ def evaluate_feature_set(
                             "method": method,
                             "fold": fold,
                             "subject_id": subjects[row_idx],
+                            "identity_id": identities[row_idx],
                             "true_group": df["group"].iloc[row_idx],
                             "task_label": y[row_idx],
                             "pred_label": pred_label,
@@ -533,6 +571,9 @@ def evaluate_feature_set(
                         "fold": fold,
                         "n_train": len(train_idx),
                         "n_test": len(test_idx),
+                        "n_train_identities": len(set(identities[train_idx])),
+                        "n_test_identities": len(set(identities[test_idx])),
+                        "identity_overlap": len(set(identities[train_idx]) & set(identities[test_idx])),
                         "input_features": x.shape[1],
                         "selected_features": np.nan,
                         "silhouette": np.nan,
@@ -830,7 +871,7 @@ def render_reports(
         "<h2>Feature set inventory</h2>",
         df_to_html_table(inventory, 20),
         "<h2>Leakage 방지 설계</h2>",
-        "<ul><li>outer fold마다 imputer, variance filter, SelectKBest, scaler, embedding을 train fold에만 fit했다.</li><li>전체 데이터 fit embedding은 descriptive 시각화 전용이며 검증 지표에는 사용하지 않았다.</li></ul>",
+        "<ul><li>25 HA + 27 ACL longitudinal pair를 52 biological identities로 분할하고 ACLD/ACLR 쌍을 같은 fold에 배정했다.</li><li>outer fold마다 imputer, variance filter, SelectKBest, scaler, embedding을 train fold에만 fit했다.</li><li>전체 데이터 fit embedding은 descriptive 시각화 전용이며 검증 지표에는 사용하지 않았다.</li></ul>",
         "<h2>실행 메시지</h2>",
         "<table class='data-table'><thead><tr><th>Time</th><th>Message</th></tr></thead><tbody>",
     ]
@@ -875,7 +916,7 @@ def render_reports(
         [
             "</div>",
             "<h2>방법</h2>",
-            "<ul><li>각 fold 내부에서만 preprocessing과 embedding fit.</li><li>고차원 feature set은 train fold 내부 SelectKBest로 최대 160개 feature만 사용.</li><li>PCA는 비지도 baseline, LDA/PLS-DA/NCA/RF probability는 supervised embedding 후보.</li></ul>",
+            "<ul><li>52 biological identities 기준 pair-aware 5-fold이며 ACLD/ACLR longitudinal pair는 같은 fold에 배정.</li><li>각 fold 내부에서만 preprocessing과 embedding fit.</li><li>고차원 feature set은 train fold 내부 SelectKBest로 최대 160개 feature만 사용.</li><li>PCA는 비지도 baseline, LDA/PLS-DA/NCA/RF probability는 supervised embedding 후보.</li></ul>",
         ]
     )
     write_html(HTML_DIR / "02_supervised_separation_report.html", "\n".join(body))
@@ -920,6 +961,8 @@ def main() -> int:
             "best_by_task": best.to_dict(orient="records"),
             "selection_rule": "highest fold-wise silhouette_mean, then centroid_ratio_mean, then lower davies_bouldin_mean",
             "primary_metric": "embedding separation, not prediction AUC",
+            "validation_unit": "52 biological identities: 25 HA + 27 ACL longitudinal pairs",
+            "pair_aware": True,
             "descriptive_full_embeddings_only": True,
             "figures": figures,
         },
