@@ -1,0 +1,62 @@
+{
+  "slim_gait": {
+    "dataset": "slim_gait",
+    "source_path": "data/processed/slim_gait.parquet",
+    "source_rows": 995144,
+    "source_columns": 27,
+    "numeric_columns_used": 22,
+    "batch_size": 20000,
+    "batches_processed": 50,
+    "rows_seen": 995144,
+    "rows_used_after_reference_filter": 995144,
+    "subject_rows": 79,
+    "subject_counts": {
+      "HA": 25,
+      "ACLD": 27,
+      "ACLR": 27
+    },
+    "subject_feature_columns": 264,
+    "aggregation_seconds": 0.533,
+    "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
+  },
+  "raw_merged": {
+    "dataset": "raw_merged",
+    "source_path": "data/processed/raw_merged.parquet",
+    "source_rows": 1437356,
+    "source_columns": 693,
+    "numeric_columns_used": 688,
+    "batch_size": 20000,
+    "batches_processed": 72,
+    "rows_seen": 1437356,
+    "rows_used_after_reference_filter": 984847,
+    "subject_rows": 78,
+    "subject_counts": {
+      "HA": 25,
+      "ACLD": 27,
+      "ACLR": 26
+    },
+    "subject_feature_columns": 8256,
+    "aggregation_seconds": 26.803,
+    "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
+  },
+  "cycle_waveforms_101": {
+    "dataset": "cycle_waveforms_101",
+    "source_path": "data/processed/cycle_waveforms_101.parquet",
+    "source_rows": 8079,
+    "source_columns": 921,
+    "numeric_columns_used": 909,
+    "batch_size": 20000,
+    "batches_processed": 1,
+    "rows_seen": 8079,
+    "rows_used_after_reference_filter": 8079,
+    "subject_rows": 79,
+    "subject_counts": {
+      "HA": 25,
+      "ACLD": 27,
+      "ACLR": 27
+    },
+    "subject_feature_columns": 10908,
+    "aggregation_seconds": 1.126,
+    "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
+  }
+}

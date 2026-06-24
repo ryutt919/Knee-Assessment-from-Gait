@@ -1,0 +1,868 @@
+<!doctype html><html lang='ko'><head><meta charset='utf-8'><title>02_pca_group_distance_report</title><style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 40px; color: #1f2933; line-height: 1.55; }
+    h1 { font-size: 32px; margin-bottom: 8px; }
+    h2 { font-size: 24px; margin-top: 36px; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; }
+    h3 { font-size: 19px; margin-top: 24px; }
+    h4 { font-size: 16px; margin-bottom: 6px; }
+    .status { display: inline-block; padding: 8px 12px; border-radius: 6px; font-weight: 700; }
+    .ok { background: #e8f5e9; color: #1b5e20; }
+    .bad { background: #ffebee; color: #b71c1c; }
+    .data-table { border-collapse: collapse; width: 100%; margin: 12px 0 24px; font-size: 13px; }
+    .data-table th, .data-table td { border: 1px solid #d9dee7; padding: 7px 8px; text-align: left; vertical-align: top; }
+    .data-table th { background: #f3f6fa; }
+    .figure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; align-items: start; }
+    figure { margin: 0; border: 1px solid #d9dee7; padding: 12px; border-radius: 6px; background: #fff; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { margin-top: 8px; font-size: 13px; color: #52606d; }
+    </style></head><body><h1>2026-06-24 PCA 그룹 거리 및 Clustering 분석 보고서</h1>
+<p>세 parquet 파일을 원본 수정 없이 읽고, subject-level 요약 feature를 만든 뒤 PCA, 그룹 중심 거리, KMeans, hierarchical clustering을 수행했다.</p>
+<h2>분석 기준</h2>
+<ul>
+<li>주 분석 단위: subject-level</li>
+<li>그룹 기준: slim_gait의 HA 25명, ACLD 27명, ACLR 27명 reference cohort</li>
+<li>raw_merged의 Healthy adults는 HA로 매핑하고, Healthy adolescents 및 reference 밖 대상자는 주 분석에서 제외</li>
+<li>대용량 raw_merged는 pyarrow batch read로 처리하며 전체 pandas load를 사용하지 않음</li>
+</ul>
+<h2>Cohort 요약</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>original_group</th>
+      <th>mapped_group</th>
+      <th>subjects_in_file</th>
+      <th>rows_in_file</th>
+      <th>subjects_used_by_reference_rule</th>
+      <th>subjects_extra_vs_reference</th>
+      <th>subjects_missing_from_reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slim_gait</td>
+      <td>ACLD</td>
+      <td>ACLD</td>
+      <td>27</td>
+      <td>350793</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>slim_gait</td>
+      <td>ACLR</td>
+      <td>ACLR</td>
+      <td>27</td>
+      <td>311449</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>slim_gait</td>
+      <td>HA</td>
+      <td>HA</td>
+      <td>25</td>
+      <td>332902</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>ACLD</td>
+      <td>ACLD</td>
+      <td>40</td>
+      <td>510051</td>
+      <td>27</td>
+      <td>13</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>ACLR</td>
+      <td>ACLR</td>
+      <td>27</td>
+      <td>311449</td>
+      <td>26</td>
+      <td>1</td>
+      <td>1.0000</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>Healthy adolescents</td>
+      <td>Healthy adolescents</td>
+      <td>22</td>
+      <td>282954</td>
+      <td>0</td>
+      <td>22</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>Healthy adults</td>
+      <td>HA</td>
+      <td>25</td>
+      <td>332902</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>ACLD</td>
+      <td>ACLD</td>
+      <td>27</td>
+      <td>2938</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>ACLR</td>
+      <td>ACLR</td>
+      <td>27</td>
+      <td>2698</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>HA</td>
+      <td>HA</td>
+      <td>25</td>
+      <td>2443</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+  </tbody>
+</table>
+<h2>핵심 PCA 요약</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>subjects</th>
+      <th>HA</th>
+      <th>ACLD</th>
+      <th>ACLR</th>
+      <th>features</th>
+      <th>PC1_var</th>
+      <th>PC2_var</th>
+      <th>cum_var_5PC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slim_gait</td>
+      <td>79</td>
+      <td>25</td>
+      <td>27</td>
+      <td>27</td>
+      <td>240</td>
+      <td>0.1512</td>
+      <td>0.0909</td>
+      <td>0.4397</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>78</td>
+      <td>25</td>
+      <td>27</td>
+      <td>26</td>
+      <td>7268</td>
+      <td>0.1101</td>
+      <td>0.0888</td>
+      <td>0.3723</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>79</td>
+      <td>25</td>
+      <td>27</td>
+      <td>27</td>
+      <td>10908</td>
+      <td>0.1125</td>
+      <td>0.0972</td>
+      <td>0.3840</td>
+    </tr>
+  </tbody>
+</table>
+<h2>slim_gait.parquet</h2>
+<div class='figure-grid'>
+<figure><img src='../figures/slim_gait_01_pca_scatter.png' alt='PCA subject scatter'><figcaption>PCA subject scatter</figcaption></figure>
+<figure><img src='../figures/slim_gait_02_explained_variance.png' alt='Explained variance'><figcaption>Explained variance</figcaption></figure>
+<figure><img src='../figures/slim_gait_03_group_distance_heatmap.png' alt='Group centroid distance'><figcaption>Group centroid distance</figcaption></figure>
+<figure><img src='../figures/slim_gait_04_dendrogram.png' alt='Hierarchical clustering'><figcaption>Hierarchical clustering</figcaption></figure>
+<figure><img src='../figures/slim_gait_05_cluster_composition.png' alt='KMeans cluster composition'><figcaption>KMeans cluster composition</figcaption></figure>
+</div>
+<h3>Top loading features</h3>
+<h4>PC1</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC1</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slow__jointAngle_49__std</td>
+      <td>0.1613</td>
+      <td>0.1613</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_58__min</td>
+      <td>-0.1608</td>
+      <td>0.1608</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_46__min</td>
+      <td>-0.1602</td>
+      <td>0.1602</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_57__min</td>
+      <td>-0.1601</td>
+      <td>0.1601</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_50__max</td>
+      <td>0.1596</td>
+      <td>0.1596</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_46__max</td>
+      <td>0.1596</td>
+      <td>0.1596</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_58__max</td>
+      <td>0.1591</td>
+      <td>0.1591</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_59__min</td>
+      <td>-0.1586</td>
+      <td>0.1586</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_49__max</td>
+      <td>0.1583</td>
+      <td>0.1583</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_59__max</td>
+      <td>0.1571</td>
+      <td>0.1571</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_46__std</td>
+      <td>0.1567</td>
+      <td>0.1567</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_54__min</td>
+      <td>-0.1565</td>
+      <td>0.1565</td>
+    </tr>
+  </tbody>
+</table>
+<h4>PC2</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC2</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>normal__jointAngle_55__mean</td>
+      <td>0.1542</td>
+      <td>0.1542</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_55__mean</td>
+      <td>0.1475</td>
+      <td>0.1475</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_55__min</td>
+      <td>0.1470</td>
+      <td>0.1470</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_55__mean</td>
+      <td>0.1432</td>
+      <td>0.1432</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_56__mean</td>
+      <td>0.1423</td>
+      <td>0.1423</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_56__mean</td>
+      <td>0.1415</td>
+      <td>0.1415</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_56__min</td>
+      <td>0.1404</td>
+      <td>0.1404</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_55__min</td>
+      <td>0.1390</td>
+      <td>0.1390</td>
+    </tr>
+    <tr>
+      <td>slow__jointAngle_56__mean</td>
+      <td>0.1347</td>
+      <td>0.1347</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_56__min</td>
+      <td>0.1340</td>
+      <td>0.1340</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_57__max</td>
+      <td>-0.1295</td>
+      <td>0.1295</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_57__std</td>
+      <td>-0.1288</td>
+      <td>0.1288</td>
+    </tr>
+  </tbody>
+</table>
+<h4>PC3</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC3</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>normal__jointAngle_49__std</td>
+      <td>0.1426</td>
+      <td>0.1426</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_49__std</td>
+      <td>0.1417</td>
+      <td>0.1417</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_54__std</td>
+      <td>0.1407</td>
+      <td>0.1407</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_61__std</td>
+      <td>0.1347</td>
+      <td>0.1347</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_58__max</td>
+      <td>0.1320</td>
+      <td>0.1320</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_58__max</td>
+      <td>0.1299</td>
+      <td>0.1299</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_62__std</td>
+      <td>0.1272</td>
+      <td>0.1272</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_50__min</td>
+      <td>-0.1240</td>
+      <td>0.1240</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_61__std</td>
+      <td>0.1238</td>
+      <td>0.1238</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_54__std</td>
+      <td>0.1201</td>
+      <td>0.1201</td>
+    </tr>
+    <tr>
+      <td>normal__jointAngle_50__std</td>
+      <td>0.1196</td>
+      <td>0.1196</td>
+    </tr>
+    <tr>
+      <td>fast__jointAngle_42__std</td>
+      <td>0.1195</td>
+      <td>0.1195</td>
+    </tr>
+  </tbody>
+</table>
+<h2>raw_merged.parquet</h2>
+<div class='figure-grid'>
+<figure><img src='../figures/raw_merged_01_pca_scatter.png' alt='PCA subject scatter'><figcaption>PCA subject scatter</figcaption></figure>
+<figure><img src='../figures/raw_merged_02_explained_variance.png' alt='Explained variance'><figcaption>Explained variance</figcaption></figure>
+<figure><img src='../figures/raw_merged_03_group_distance_heatmap.png' alt='Group centroid distance'><figcaption>Group centroid distance</figcaption></figure>
+<figure><img src='../figures/raw_merged_04_dendrogram.png' alt='Hierarchical clustering'><figcaption>Hierarchical clustering</figcaption></figure>
+<figure><img src='../figures/raw_merged_05_cluster_composition.png' alt='KMeans cluster composition'><figcaption>KMeans cluster composition</figcaption></figure>
+</div>
+<h3>Top loading features</h3>
+<h4>PC1</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC1</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>normal__angularAcceleration_4__std</td>
+      <td>0.0276</td>
+      <td>0.0276</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_7__std</td>
+      <td>0.0276</td>
+      <td>0.0276</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_1__std</td>
+      <td>0.0276</td>
+      <td>0.0276</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_10__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_19__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_37__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_22__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_16__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_28__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_43__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_31__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>normal__angularAcceleration_13__std</td>
+      <td>0.0275</td>
+      <td>0.0275</td>
+    </tr>
+  </tbody>
+</table>
+<h4>PC2</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC2</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slow__velocity_58__min</td>
+      <td>0.0323</td>
+      <td>0.0323</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_67__min</td>
+      <td>0.0320</td>
+      <td>0.0320</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_64__min</td>
+      <td>0.0320</td>
+      <td>0.0320</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_49__min</td>
+      <td>0.0320</td>
+      <td>0.0320</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_58__mean</td>
+      <td>0.0320</td>
+      <td>0.0320</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_64__mean</td>
+      <td>0.0319</td>
+      <td>0.0319</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_67__mean</td>
+      <td>0.0319</td>
+      <td>0.0319</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_1__mean</td>
+      <td>0.0319</td>
+      <td>0.0319</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_46__min</td>
+      <td>0.0319</td>
+      <td>0.0319</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_49__mean</td>
+      <td>0.0318</td>
+      <td>0.0318</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_1__min</td>
+      <td>0.0318</td>
+      <td>0.0318</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_46__mean</td>
+      <td>0.0318</td>
+      <td>0.0318</td>
+    </tr>
+  </tbody>
+</table>
+<h4>PC3</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC3</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slow__velocity_58__max</td>
+      <td>0.0326</td>
+      <td>0.0326</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_19__max</td>
+      <td>0.0318</td>
+      <td>0.0318</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_16__max</td>
+      <td>0.0315</td>
+      <td>0.0315</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_43__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_25__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_13__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_31__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_28__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_34__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_37__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_40__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+    <tr>
+      <td>slow__velocity_22__max</td>
+      <td>0.0312</td>
+      <td>0.0312</td>
+    </tr>
+  </tbody>
+</table>
+<h2>cycle_waveforms_101.parquet</h2>
+<div class='figure-grid'>
+<figure><img src='../figures/cycle_waveforms_101_01_pca_scatter.png' alt='PCA subject scatter'><figcaption>PCA subject scatter</figcaption></figure>
+<figure><img src='../figures/cycle_waveforms_101_02_explained_variance.png' alt='Explained variance'><figcaption>Explained variance</figcaption></figure>
+<figure><img src='../figures/cycle_waveforms_101_03_group_distance_heatmap.png' alt='Group centroid distance'><figcaption>Group centroid distance</figcaption></figure>
+<figure><img src='../figures/cycle_waveforms_101_04_dendrogram.png' alt='Hierarchical clustering'><figcaption>Hierarchical clustering</figcaption></figure>
+<figure><img src='../figures/cycle_waveforms_101_05_cluster_composition.png' alt='KMeans cluster composition'><figcaption>KMeans cluster composition</figcaption></figure>
+</div>
+<h3>Top loading features</h3>
+<h4>PC1</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC1</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>normal__hip_int_rotation_077__max</td>
+      <td>0.0239</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_076__max</td>
+      <td>0.0239</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_074__max</td>
+      <td>0.0239</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_075__max</td>
+      <td>0.0239</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_078__max</td>
+      <td>0.0239</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_073__max</td>
+      <td>0.0239</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_071__max</td>
+      <td>0.0238</td>
+      <td>0.0238</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_072__max</td>
+      <td>0.0238</td>
+      <td>0.0238</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_070__max</td>
+      <td>0.0238</td>
+      <td>0.0238</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_069__max</td>
+      <td>0.0238</td>
+      <td>0.0238</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_079__max</td>
+      <td>0.0236</td>
+      <td>0.0236</td>
+    </tr>
+    <tr>
+      <td>normal__hip_int_rotation_068__max</td>
+      <td>0.0236</td>
+      <td>0.0236</td>
+    </tr>
+  </tbody>
+</table>
+<h4>PC2</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC2</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fast__hip_adduction_078__mean</td>
+      <td>0.0219</td>
+      <td>0.0219</td>
+    </tr>
+    <tr>
+      <td>fast__hip_adduction_079__mean</td>
+      <td>0.0219</td>
+      <td>0.0219</td>
+    </tr>
+    <tr>
+      <td>fast__hip_adduction_077__mean</td>
+      <td>0.0218</td>
+      <td>0.0218</td>
+    </tr>
+    <tr>
+      <td>slow__hip_adduction_084__max</td>
+      <td>0.0218</td>
+      <td>0.0218</td>
+    </tr>
+    <tr>
+      <td>slow__hip_adduction_083__max</td>
+      <td>0.0218</td>
+      <td>0.0218</td>
+    </tr>
+    <tr>
+      <td>fast__hip_adduction_080__mean</td>
+      <td>0.0217</td>
+      <td>0.0217</td>
+    </tr>
+    <tr>
+      <td>slow__hip_adduction_085__max</td>
+      <td>0.0217</td>
+      <td>0.0217</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_adduction_039__mean</td>
+      <td>-0.0217</td>
+      <td>0.0217</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_adduction_038__mean</td>
+      <td>-0.0217</td>
+      <td>0.0217</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_adduction_040__mean</td>
+      <td>-0.0217</td>
+      <td>0.0217</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_adduction_037__mean</td>
+      <td>-0.0216</td>
+      <td>0.0216</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_adduction_041__mean</td>
+      <td>-0.0216</td>
+      <td>0.0216</td>
+    </tr>
+  </tbody>
+</table>
+<h4>PC3</h4>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>PC3</th>
+      <th>abs_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slow__ankle_int_rotation_060__mean</td>
+      <td>0.0277</td>
+      <td>0.0277</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_061__mean</td>
+      <td>0.0277</td>
+      <td>0.0277</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_059__mean</td>
+      <td>0.0276</td>
+      <td>0.0276</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_058__mean</td>
+      <td>0.0274</td>
+      <td>0.0274</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_062__mean</td>
+      <td>0.0274</td>
+      <td>0.0274</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_057__mean</td>
+      <td>0.0273</td>
+      <td>0.0273</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_056__mean</td>
+      <td>0.0272</td>
+      <td>0.0272</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_055__mean</td>
+      <td>0.0272</td>
+      <td>0.0272</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_054__mean</td>
+      <td>0.0271</td>
+      <td>0.0271</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_053__mean</td>
+      <td>0.0271</td>
+      <td>0.0271</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_052__mean</td>
+      <td>0.0269</td>
+      <td>0.0269</td>
+    </tr>
+    <tr>
+      <td>slow__ankle_int_rotation_063__mean</td>
+      <td>0.0269</td>
+      <td>0.0269</td>
+    </tr>
+  </tbody>
+</table></body></html>

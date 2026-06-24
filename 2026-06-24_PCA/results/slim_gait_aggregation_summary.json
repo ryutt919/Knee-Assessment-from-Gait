@@ -1,0 +1,20 @@
+{
+  "dataset": "slim_gait",
+  "source_path": "data/processed/slim_gait.parquet",
+  "source_rows": 995144,
+  "source_columns": 27,
+  "numeric_columns_used": 22,
+  "batch_size": 20000,
+  "batches_processed": 50,
+  "rows_seen": 995144,
+  "rows_used_after_reference_filter": 995144,
+  "subject_rows": 79,
+  "subject_counts": {
+    "HA": 25,
+    "ACLD": 27,
+    "ACLR": 27
+  },
+  "subject_feature_columns": 264,
+  "aggregation_seconds": 0.533,
+  "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
+}

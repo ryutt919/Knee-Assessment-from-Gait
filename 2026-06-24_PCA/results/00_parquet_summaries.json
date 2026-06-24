@@ -1,0 +1,17 @@
+{
+  "slim_gait": {
+    "rows": 995144,
+    "columns": 27,
+    "row_groups": 1
+  },
+  "raw_merged": {
+    "rows": 1437356,
+    "columns": 693,
+    "row_groups": 2
+  },
+  "cycle_waveforms_101": {
+    "rows": 8079,
+    "columns": 921,
+    "row_groups": 1
+  }
+}

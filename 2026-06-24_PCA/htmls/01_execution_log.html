@@ -1,0 +1,302 @@
+<!doctype html><html lang='ko'><head><meta charset='utf-8'><title>01_execution_log</title><style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 40px; color: #1f2933; line-height: 1.55; }
+    h1 { font-size: 32px; margin-bottom: 8px; }
+    h2 { font-size: 24px; margin-top: 36px; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; }
+    h3 { font-size: 19px; margin-top: 24px; }
+    h4 { font-size: 16px; margin-bottom: 6px; }
+    .status { display: inline-block; padding: 8px 12px; border-radius: 6px; font-weight: 700; }
+    .ok { background: #e8f5e9; color: #1b5e20; }
+    .bad { background: #ffebee; color: #b71c1c; }
+    .data-table { border-collapse: collapse; width: 100%; margin: 12px 0 24px; font-size: 13px; }
+    .data-table th, .data-table td { border: 1px solid #d9dee7; padding: 7px 8px; text-align: left; vertical-align: top; }
+    .data-table th { background: #f3f6fa; }
+    .figure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; align-items: start; }
+    figure { margin: 0; border: 1px solid #d9dee7; padding: 12px; border-radius: 6px; background: #fff; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { margin-top: 8px; font-size: 13px; color: #52606d; }
+    </style></head><body><h1>2026-06-24 PCA 실행 로그</h1>
+<p class='status ok'>원본 parquet 무결성 확인: 변경 없음</p>
+<h2>원본 파일 상태</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>path</th>
+      <th>size_bytes</th>
+      <th>mtime_ns</th>
+      <th>mtime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slim_gait</td>
+      <td>data/processed/slim_gait.parquet</td>
+      <td>153385401</td>
+      <td>1779467963343425449</td>
+      <td>2026-05-23T01:39:23</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>data/processed/raw_merged.parquet</td>
+      <td>6292744641</td>
+      <td>1774333173000000000</td>
+      <td>2026-03-24T15:19:33</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>data/processed/cycle_waveforms_101.parquet</td>
+      <td>71338518</td>
+      <td>1780132913762254027</td>
+      <td>2026-05-30T18:21:53</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Parquet 구조</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>rows</th>
+      <th>columns</th>
+      <th>row_groups</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slim_gait</td>
+      <td>995144</td>
+      <td>27</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>1437356</td>
+      <td>693</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>8079</td>
+      <td>921</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Cohort 점검</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>original_group</th>
+      <th>mapped_group</th>
+      <th>subjects_in_file</th>
+      <th>rows_in_file</th>
+      <th>subjects_used_by_reference_rule</th>
+      <th>subjects_extra_vs_reference</th>
+      <th>subjects_missing_from_reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slim_gait</td>
+      <td>ACLD</td>
+      <td>ACLD</td>
+      <td>27</td>
+      <td>350793</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>slim_gait</td>
+      <td>ACLR</td>
+      <td>ACLR</td>
+      <td>27</td>
+      <td>311449</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>slim_gait</td>
+      <td>HA</td>
+      <td>HA</td>
+      <td>25</td>
+      <td>332902</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>ACLD</td>
+      <td>ACLD</td>
+      <td>40</td>
+      <td>510051</td>
+      <td>27</td>
+      <td>13</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>ACLR</td>
+      <td>ACLR</td>
+      <td>27</td>
+      <td>311449</td>
+      <td>26</td>
+      <td>1</td>
+      <td>1.0000</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>Healthy adolescents</td>
+      <td>Healthy adolescents</td>
+      <td>22</td>
+      <td>282954</td>
+      <td>0</td>
+      <td>22</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>Healthy adults</td>
+      <td>HA</td>
+      <td>25</td>
+      <td>332902</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>ACLD</td>
+      <td>ACLD</td>
+      <td>27</td>
+      <td>2938</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>ACLR</td>
+      <td>ACLR</td>
+      <td>27</td>
+      <td>2698</td>
+      <td>27</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>HA</td>
+      <td>HA</td>
+      <td>25</td>
+      <td>2443</td>
+      <td>25</td>
+      <td>0</td>
+      <td>0.0000</td>
+    </tr>
+  </tbody>
+</table>
+<h2>집계 요약</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>source_path</th>
+      <th>source_rows</th>
+      <th>source_columns</th>
+      <th>numeric_columns_used</th>
+      <th>batch_size</th>
+      <th>batches_processed</th>
+      <th>rows_seen</th>
+      <th>rows_used_after_reference_filter</th>
+      <th>subject_rows</th>
+      <th>subject_counts</th>
+      <th>subject_feature_columns</th>
+      <th>aggregation_seconds</th>
+      <th>memory_strategy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>slim_gait</td>
+      <td>data/processed/slim_gait.parquet</td>
+      <td>995144</td>
+      <td>27</td>
+      <td>22</td>
+      <td>20000</td>
+      <td>50</td>
+      <td>995144</td>
+      <td>995144</td>
+      <td>79</td>
+      <td>{'HA': 25, 'ACLD': 27, 'ACLR': 27}</td>
+      <td>264</td>
+      <td>0.5330</td>
+      <td>pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load</td>
+    </tr>
+    <tr>
+      <td>raw_merged</td>
+      <td>data/processed/raw_merged.parquet</td>
+      <td>1437356</td>
+      <td>693</td>
+      <td>688</td>
+      <td>20000</td>
+      <td>72</td>
+      <td>1437356</td>
+      <td>984847</td>
+      <td>78</td>
+      <td>{'HA': 25, 'ACLD': 27, 'ACLR': 26}</td>
+      <td>8256</td>
+      <td>26.8030</td>
+      <td>pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load</td>
+    </tr>
+    <tr>
+      <td>cycle_waveforms_101</td>
+      <td>data/processed/cycle_waveforms_101.parquet</td>
+      <td>8079</td>
+      <td>921</td>
+      <td>909</td>
+      <td>20000</td>
+      <td>1</td>
+      <td>8079</td>
+      <td>8079</td>
+      <td>79</td>
+      <td>{'HA': 25, 'ACLD': 27, 'ACLR': 27}</td>
+      <td>10908</td>
+      <td>1.1260</td>
+      <td>pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load</td>
+    </tr>
+  </tbody>
+</table>
+<h2>실행 메시지</h2>
+<table class='data-table'><thead><tr><th>Time</th><th>Message</th></tr></thead><tbody>
+<tr><td>2026-06-24 15:20:51</td><td>Start PCA sandbox analysis</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>Reference cohort from slim_gait: HA=25, ACLD=27, ACLR=27</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>Saved cohort report: results/00_cohort_report.csv</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>slim_gait: start batch aggregation with 22 numeric columns, 995144 rows, batch_size=20000</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 10 batches, rows_seen=200,000, rows_used=200,000</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 20 batches, rows_seen=400,000, rows_used=400,000</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 30 batches, rows_seen=600,000, rows_used=600,000</td></tr>
+<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 40 batches, rows_seen=800,000, rows_used=800,000</td></tr>
+<tr><td>2026-06-24 15:20:52</td><td>slim_gait: processed 50 batches, rows_seen=995,144, rows_used=995,144</td></tr>
+<tr><td>2026-06-24 15:20:52</td><td>slim_gait: saved subject features (79 subjects x 264 features) to results/slim_gait_subject_features.csv</td></tr>
+<tr><td>2026-06-24 15:20:52</td><td>slim_gait: saved 5 figures</td></tr>
+<tr><td>2026-06-24 15:20:52</td><td>slim_gait: PCA, distances, clustering, and figures completed</td></tr>
+<tr><td>2026-06-24 15:20:52</td><td>raw_merged: start batch aggregation with 688 numeric columns, 1437356 rows, batch_size=20000</td></tr>
+<tr><td>2026-06-24 15:20:59</td><td>raw_merged: processed 10 batches, rows_seen=200,000, rows_used=124,585</td></tr>
+<tr><td>2026-06-24 15:21:02</td><td>raw_merged: processed 20 batches, rows_seen=400,000, rows_used=279,172</td></tr>
+<tr><td>2026-06-24 15:21:06</td><td>raw_merged: processed 30 batches, rows_seen=600,000, rows_used=430,445</td></tr>
+<tr><td>2026-06-24 15:21:10</td><td>raw_merged: processed 40 batches, rows_seen=800,000, rows_used=630,445</td></tr>
+<tr><td>2026-06-24 15:21:17</td><td>raw_merged: processed 60 batches, rows_seen=1,200,000, rows_used=747,491</td></tr>
+<tr><td>2026-06-24 15:21:18</td><td>raw_merged: processed 70 batches, rows_seen=1,400,000, rows_used=947,491</td></tr>
+<tr><td>2026-06-24 15:21:19</td><td>raw_merged: saved subject features (78 subjects x 8256 features) to results/raw_merged_subject_features.csv</td></tr>
+<tr><td>2026-06-24 15:21:20</td><td>raw_merged: saved 5 figures</td></tr>
+<tr><td>2026-06-24 15:21:20</td><td>raw_merged: PCA, distances, clustering, and figures completed</td></tr>
+<tr><td>2026-06-24 15:21:21</td><td>cycle_waveforms_101: start batch aggregation with 909 numeric columns, 8079 rows, batch_size=20000</td></tr>
+<tr><td>2026-06-24 15:21:22</td><td>cycle_waveforms_101: saved subject features (79 subjects x 10908 features) to results/cycle_waveforms_101_subject_features.csv</td></tr>
+<tr><td>2026-06-24 15:21:23</td><td>cycle_waveforms_101: saved 5 figures</td></tr>
+<tr><td>2026-06-24 15:21:23</td><td>cycle_waveforms_101: PCA, distances, clustering, and figures completed</td></tr>
+<tr><td>2026-06-24 15:21:23</td><td>Source file integrity unchanged=True</td></tr>
+</tbody></table></body></html>

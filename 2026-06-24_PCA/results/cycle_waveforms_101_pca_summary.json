@@ -1,0 +1,217 @@
+{
+  "dataset": "cycle_waveforms_101",
+  "n_subjects": 79,
+  "group_counts": {
+    "HA": 25,
+    "ACLD": 27,
+    "ACLR": 27
+  },
+  "features_for_pca": 10908,
+  "n_components": 10,
+  "pc1_variance": 0.11254264888665999,
+  "pc2_variance": 0.09716089129958262,
+  "cumulative_variance_5pc": 0.3839682426661337,
+  "cleaning": {
+    "input_feature_columns": 10908,
+    "all_nan_columns_dropped": 0,
+    "zero_variance_columns_dropped": 0,
+    "features_kept_for_pca": 10908,
+    "missing_values_imputed": 0,
+    "non_finite_after_scaling": 0
+  },
+  "distance_components": [
+    "PC1",
+    "PC2",
+    "PC3",
+    "PC4",
+    "PC5"
+  ],
+  "top_loadings": {
+    "PC1": [
+      {
+        "feature": "normal__hip_int_rotation_077__max",
+        "PC1": 0.02394913871013608,
+        "abs_loading": 0.02394913871013608
+      },
+      {
+        "feature": "normal__hip_int_rotation_076__max",
+        "PC1": 0.023938514058297538,
+        "abs_loading": 0.023938514058297538
+      },
+      {
+        "feature": "normal__hip_int_rotation_074__max",
+        "PC1": 0.023932033015244,
+        "abs_loading": 0.023932033015244
+      },
+      {
+        "feature": "normal__hip_int_rotation_075__max",
+        "PC1": 0.023920286159022752,
+        "abs_loading": 0.023920286159022752
+      },
+      {
+        "feature": "normal__hip_int_rotation_078__max",
+        "PC1": 0.023892782317481605,
+        "abs_loading": 0.023892782317481605
+      },
+      {
+        "feature": "normal__hip_int_rotation_073__max",
+        "PC1": 0.023866033953074992,
+        "abs_loading": 0.023866033953074992
+      },
+      {
+        "feature": "normal__hip_int_rotation_071__max",
+        "PC1": 0.023837071421994316,
+        "abs_loading": 0.023837071421994316
+      },
+      {
+        "feature": "normal__hip_int_rotation_072__max",
+        "PC1": 0.023824621713120483,
+        "abs_loading": 0.023824621713120483
+      },
+      {
+        "feature": "normal__hip_int_rotation_070__max",
+        "PC1": 0.023806442440279522,
+        "abs_loading": 0.023806442440279522
+      },
+      {
+        "feature": "normal__hip_int_rotation_069__max",
+        "PC1": 0.02377971067640632,
+        "abs_loading": 0.02377971067640632
+      },
+      {
+        "feature": "normal__hip_int_rotation_079__max",
+        "PC1": 0.02363895441216489,
+        "abs_loading": 0.02363895441216489
+      },
+      {
+        "feature": "normal__hip_int_rotation_068__max",
+        "PC1": 0.023636512280632713,
+        "abs_loading": 0.023636512280632713
+      }
+    ],
+    "PC2": [
+      {
+        "feature": "fast__hip_adduction_078__mean",
+        "PC2": 0.021925829982557557,
+        "abs_loading": 0.021925829982557557
+      },
+      {
+        "feature": "fast__hip_adduction_079__mean",
+        "PC2": 0.02189370792495301,
+        "abs_loading": 0.02189370792495301
+      },
+      {
+        "feature": "fast__hip_adduction_077__mean",
+        "PC2": 0.021822721414509357,
+        "abs_loading": 0.021822721414509357
+      },
+      {
+        "feature": "slow__hip_adduction_084__max",
+        "PC2": 0.021794947388537732,
+        "abs_loading": 0.021794947388537732
+      },
+      {
+        "feature": "slow__hip_adduction_083__max",
+        "PC2": 0.021763762542697303,
+        "abs_loading": 0.021763762542697303
+      },
+      {
+        "feature": "fast__hip_adduction_080__mean",
+        "PC2": 0.02172876677451732,
+        "abs_loading": 0.02172876677451732
+      },
+      {
+        "feature": "slow__hip_adduction_085__max",
+        "PC2": 0.021725784816693156,
+        "abs_loading": 0.021725784816693156
+      },
+      {
+        "feature": "slow__ankle_adduction_039__mean",
+        "PC2": -0.021711505713318053,
+        "abs_loading": 0.021711505713318053
+      },
+      {
+        "feature": "slow__ankle_adduction_038__mean",
+        "PC2": -0.021691610586158483,
+        "abs_loading": 0.021691610586158483
+      },
+      {
+        "feature": "slow__ankle_adduction_040__mean",
+        "PC2": -0.02167796985760384,
+        "abs_loading": 0.02167796985760384
+      },
+      {
+        "feature": "slow__ankle_adduction_037__mean",
+        "PC2": -0.021622648323176286,
+        "abs_loading": 0.021622648323176286
+      },
+      {
+        "feature": "slow__ankle_adduction_041__mean",
+        "PC2": -0.021597603757945085,
+        "abs_loading": 0.021597603757945085
+      }
+    ],
+    "PC3": [
+      {
+        "feature": "slow__ankle_int_rotation_060__mean",
+        "PC3": 0.027695621679271497,
+        "abs_loading": 0.027695621679271497
+      },
+      {
+        "feature": "slow__ankle_int_rotation_061__mean",
+        "PC3": 0.02765688955212434,
+        "abs_loading": 0.02765688955212434
+      },
+      {
+        "feature": "slow__ankle_int_rotation_059__mean",
+        "PC3": 0.02758834621911303,
+        "abs_loading": 0.02758834621911303
+      },
+      {
+        "feature": "slow__ankle_int_rotation_058__mean",
+        "PC3": 0.027447103264793226,
+        "abs_loading": 0.027447103264793226
+      },
+      {
+        "feature": "slow__ankle_int_rotation_062__mean",
+        "PC3": 0.027387170938179488,
+        "abs_loading": 0.027387170938179488
+      },
+      {
+        "feature": "slow__ankle_int_rotation_057__mean",
+        "PC3": 0.027315083755477428,
+        "abs_loading": 0.027315083755477428
+      },
+      {
+        "feature": "slow__ankle_int_rotation_056__mean",
+        "PC3": 0.027228637142663492,
+        "abs_loading": 0.027228637142663492
+      },
+      {
+        "feature": "slow__ankle_int_rotation_055__mean",
+        "PC3": 0.027184996483838278,
+        "abs_loading": 0.027184996483838278
+      },
+      {
+        "feature": "slow__ankle_int_rotation_054__mean",
+        "PC3": 0.02714392549196843,
+        "abs_loading": 0.02714392549196843
+      },
+      {
+        "feature": "slow__ankle_int_rotation_053__mean",
+        "PC3": 0.027059128453800648,
+        "abs_loading": 0.027059128453800648
+      },
+      {
+        "feature": "slow__ankle_int_rotation_052__mean",
+        "PC3": 0.026919439354149702,
+        "abs_loading": 0.026919439354149702
+      },
+      {
+        "feature": "slow__ankle_int_rotation_063__mean",
+        "PC3": 0.026918068804386075,
+        "abs_loading": 0.026918068804386075
+      }
+    ]
+  }
+}

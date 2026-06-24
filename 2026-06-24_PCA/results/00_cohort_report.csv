@@ -1,0 +1,11 @@
+dataset,original_group,mapped_group,subjects_in_file,rows_in_file,subjects_used_by_reference_rule,subjects_extra_vs_reference,subjects_missing_from_reference
+slim_gait,ACLD,ACLD,27,350793,27,0,0.0
+slim_gait,ACLR,ACLR,27,311449,27,0,0.0
+slim_gait,HA,HA,25,332902,25,0,0.0
+raw_merged,ACLD,ACLD,40,510051,27,13,0.0
+raw_merged,ACLR,ACLR,27,311449,26,1,1.0
+raw_merged,Healthy adolescents,Healthy adolescents,22,282954,0,22,
+raw_merged,Healthy adults,HA,25,332902,25,0,0.0
+cycle_waveforms_101,ACLD,ACLD,27,2938,27,0,0.0
+cycle_waveforms_101,ACLR,ACLR,27,2698,27,0,0.0
+cycle_waveforms_101,HA,HA,25,2443,25,0,0.0

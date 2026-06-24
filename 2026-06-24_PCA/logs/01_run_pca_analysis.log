@@ -1,0 +1,28 @@
+[2026-06-24 15:20:51] Start PCA sandbox analysis
+[2026-06-24 15:20:51] Reference cohort from slim_gait: HA=25, ACLD=27, ACLR=27
+[2026-06-24 15:20:51] Saved cohort report: results/00_cohort_report.csv
+[2026-06-24 15:20:51] slim_gait: start batch aggregation with 22 numeric columns, 995144 rows, batch_size=20000
+[2026-06-24 15:20:51] slim_gait: processed 10 batches, rows_seen=200,000, rows_used=200,000
+[2026-06-24 15:20:51] slim_gait: processed 20 batches, rows_seen=400,000, rows_used=400,000
+[2026-06-24 15:20:51] slim_gait: processed 30 batches, rows_seen=600,000, rows_used=600,000
+[2026-06-24 15:20:51] slim_gait: processed 40 batches, rows_seen=800,000, rows_used=800,000
+[2026-06-24 15:20:52] slim_gait: processed 50 batches, rows_seen=995,144, rows_used=995,144
+[2026-06-24 15:20:52] slim_gait: saved subject features (79 subjects x 264 features) to results/slim_gait_subject_features.csv
+[2026-06-24 15:20:52] slim_gait: saved 5 figures
+[2026-06-24 15:20:52] slim_gait: PCA, distances, clustering, and figures completed
+[2026-06-24 15:20:52] raw_merged: start batch aggregation with 688 numeric columns, 1437356 rows, batch_size=20000
+[2026-06-24 15:20:59] raw_merged: processed 10 batches, rows_seen=200,000, rows_used=124,585
+[2026-06-24 15:21:02] raw_merged: processed 20 batches, rows_seen=400,000, rows_used=279,172
+[2026-06-24 15:21:06] raw_merged: processed 30 batches, rows_seen=600,000, rows_used=430,445
+[2026-06-24 15:21:10] raw_merged: processed 40 batches, rows_seen=800,000, rows_used=630,445
+[2026-06-24 15:21:17] raw_merged: processed 60 batches, rows_seen=1,200,000, rows_used=747,491
+[2026-06-24 15:21:18] raw_merged: processed 70 batches, rows_seen=1,400,000, rows_used=947,491
+[2026-06-24 15:21:19] raw_merged: saved subject features (78 subjects x 8256 features) to results/raw_merged_subject_features.csv
+[2026-06-24 15:21:20] raw_merged: saved 5 figures
+[2026-06-24 15:21:20] raw_merged: PCA, distances, clustering, and figures completed
+[2026-06-24 15:21:21] cycle_waveforms_101: start batch aggregation with 909 numeric columns, 8079 rows, batch_size=20000
+[2026-06-24 15:21:22] cycle_waveforms_101: saved subject features (79 subjects x 10908 features) to results/cycle_waveforms_101_subject_features.csv
+[2026-06-24 15:21:23] cycle_waveforms_101: saved 5 figures
+[2026-06-24 15:21:23] cycle_waveforms_101: PCA, distances, clustering, and figures completed
+[2026-06-24 15:21:23] Source file integrity unchanged=True
+[2026-06-24 15:21:23] Completed PCA sandbox analysis
