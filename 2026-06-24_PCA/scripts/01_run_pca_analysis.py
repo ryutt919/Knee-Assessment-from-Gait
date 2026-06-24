@@ -71,6 +71,46 @@ GROUP_ALIASES = {"Healthy adults": "HA"}
 BATCH_SIZE = 20_000
 RANDOM_STATE = 42
 
+JOINT_ANGLE_DESCRIPTION = {
+    "jointAngle_42": ("Right", "hip adduction"),
+    "jointAngle_43": ("Right", "hip internal rotation"),
+    "jointAngle_44": ("Right", "hip flexion"),
+    "jointAngle_45": ("Right", "knee adduction"),
+    "jointAngle_46": ("Right", "knee internal rotation"),
+    "jointAngle_47": ("Right", "knee flexion"),
+    "jointAngle_48": ("Right", "ankle adduction"),
+    "jointAngle_49": ("Right", "ankle internal rotation"),
+    "jointAngle_50": ("Right", "ankle dorsiflexion"),
+    "jointAngle_54": ("Left", "hip adduction"),
+    "jointAngle_55": ("Left", "hip internal rotation"),
+    "jointAngle_56": ("Left", "hip flexion"),
+    "jointAngle_57": ("Left", "knee adduction"),
+    "jointAngle_58": ("Left", "knee internal rotation"),
+    "jointAngle_59": ("Left", "knee flexion"),
+    "jointAngle_60": ("Left", "ankle adduction"),
+    "jointAngle_61": ("Left", "ankle internal rotation"),
+    "jointAngle_62": ("Left", "ankle dorsiflexion"),
+}
+WAVEFORM_MOTIONS = {
+    "hip_adduction",
+    "hip_int_rotation",
+    "hip_flexion",
+    "knee_adduction",
+    "knee_int_rotation",
+    "knee_flexion",
+    "ankle_adduction",
+    "ankle_int_rotation",
+    "ankle_dorsiflexion",
+}
+FEATURE_METADATA_COLUMNS = [
+    "feature_raw",
+    "feature_description",
+    "speed",
+    "side",
+    "statistic",
+    "source_column",
+]
+
 
 class RunLog:
     def __init__(self) -> None:
@@ -146,6 +186,56 @@ def numeric_columns_for_dataset(name: str, path: Path) -> list[str]:
         if is_numeric_type(field.type):
             numeric.append(col)
     return numeric
+
+
+def split_indexed_source(source_column: str) -> tuple[str, str]:
+    prefix, sep, suffix = source_column.rpartition("_")
+    if sep and suffix.isdigit():
+        return prefix, suffix
+    return source_column, ""
+
+
+def describe_feature(feature: str) -> dict[str, str]:
+    parts = feature.split("__")
+    speed = parts[0] if len(parts) == 3 else ""
+    source_column = parts[1] if len(parts) == 3 else feature
+    statistic = parts[2] if len(parts) == 3 else ""
+    side = ""
+    feature_category = ""
+    cycle_point = ""
+
+    if source_column in JOINT_ANGLE_DESCRIPTION:
+        side, motion = JOINT_ANGLE_DESCRIPTION[source_column]
+        feature_category = "joint angle"
+        description = f"{side} {motion}"
+    else:
+        source_prefix, source_index = split_indexed_source(source_column)
+        if source_prefix in WAVEFORM_MOTIONS and source_index:
+            motion = source_prefix.replace("_", " ")
+            feature_category = "cycle waveform"
+            cycle_point = source_index
+            description = f"{motion} cycle point {source_index}"
+        elif source_prefix == "footContacts" and source_index:
+            feature_category = "foot contact"
+            description = f"Foot contact signal {source_index}"
+        else:
+            feature_category = "raw sensor feature"
+            description = f"Raw sensor feature: {source_prefix}"
+
+    return {
+        "feature_raw": feature,
+        "feature_description": description,
+        "speed": speed,
+        "side": side,
+        "statistic": statistic,
+        "source_column": source_column,
+        "feature_category": feature_category,
+        "cycle_point": cycle_point,
+    }
+
+
+def feature_metadata_frame(feature_names: list[str]) -> pd.DataFrame:
+    return pd.DataFrame([describe_feature(feature) for feature in feature_names])
 
 
 def table_unique_values(path: Path, columns: list[str]) -> pd.DataFrame:
@@ -380,8 +470,13 @@ def run_pca_analysis(name: str, feature_df: pd.DataFrame, log: RunLog) -> dict[s
     )
     explained.to_csv(RESULTS_DIR / f"{name}_pca_explained_variance.csv", index=False)
 
-    loadings = pd.DataFrame(pca.components_.T, columns=pc_cols)
-    loadings.insert(0, "feature", feature_names)
+    loadings = pd.concat(
+        [
+            feature_metadata_frame(feature_names),
+            pd.DataFrame(pca.components_.T, columns=pc_cols),
+        ],
+        axis=1,
+    )
     loadings.to_csv(RESULTS_DIR / f"{name}_pca_loadings.csv", index=False)
 
     dist_components = [f"PC{i}" for i in range(1, min(5, n_components) + 1)]
@@ -419,7 +514,9 @@ def run_pca_analysis(name: str, feature_df: pd.DataFrame, log: RunLog) -> dict[s
 
     top_loadings = {}
     for pc in pc_cols[:3]:
-        top = loadings[["feature", pc]].assign(abs_loading=lambda d: d[pc].abs())
+        top = loadings[[*FEATURE_METADATA_COLUMNS, "feature_category", "cycle_point", pc]].assign(
+            abs_loading=lambda d: d[pc].abs()
+        )
         top_loadings[pc] = top.sort_values("abs_loading", ascending=False).head(12).to_dict(orient="records")
 
     summary = {
@@ -575,6 +672,21 @@ def render_execution_log(
         df_to_html_table(cohort_df, max_rows=50),
         "<h2>집계 요약</h2>",
         df_to_html_table(pd.DataFrame(list(aggregation_summaries.values()))),
+        "<h2>Feature description mapping</h2>",
+        "<p>`jointAngle_*` feature descriptions use the repo's JOINT_COLS convention from harness/ML preprocessing code. Right/Left means the original actual side column mapping, not injured/contralateral side.</p>",
+        df_to_html_table(
+            pd.DataFrame(
+                [
+                    {
+                        "source_column": col,
+                        "side": values[0],
+                        "feature_description": f"{values[0]} {values[1]}",
+                    }
+                    for col, values in JOINT_ANGLE_DESCRIPTION.items()
+                ]
+            ),
+            max_rows=30,
+        ),
         "<h2>실행 메시지</h2>",
         "<table class='data-table'><thead><tr><th>Time</th><th>Message</th></tr></thead><tbody>",
     ]
@@ -598,6 +710,8 @@ def render_final_report(
         "<li>raw_merged의 Healthy adults는 HA로 매핑하고, Healthy adolescents 및 reference 밖 대상자는 주 분석에서 제외</li>",
         "<li>대용량 raw_merged는 pyarrow batch read로 처리하며 전체 pandas load를 사용하지 않음</li>",
         "</ul>",
+        "<h2>Feature 표기 기준</h2>",
+        "<p>Top loading 표의 `feature_description`은 repo의 JOINT_COLS 매핑을 따른다. `Right`/`Left`는 원본 actual side 기준이며 injured/contralateral 변환명이 아니다. 원시 컬럼 추적을 위해 `source_column`과 `feature_raw`를 함께 남겼다.</p>",
         "<h2>Cohort 요약</h2>",
         df_to_html_table(cohort_df, max_rows=50),
         "<h2>핵심 PCA 요약</h2>",
@@ -635,7 +749,18 @@ def render_final_report(
             ]
         )
         for pc, rows in summary["top_loadings"].items():
-            top_df = pd.DataFrame(rows)[["feature", pc, "abs_loading"]]
+            top_df = pd.DataFrame(rows)[
+                [
+                    "feature_description",
+                    "speed",
+                    "side",
+                    "statistic",
+                    "source_column",
+                    "feature_raw",
+                    pc,
+                    "abs_loading",
+                ]
+            ]
             body.append(f"<h4>{pc}</h4>")
             body.append(df_to_html_table(top_df, max_rows=12))
     write_html(HTML_DIR / "02_pca_group_distance_report.html", "\n".join(body))

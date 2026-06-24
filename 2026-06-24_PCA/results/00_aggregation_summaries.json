@@ -16,7 +16,7 @@
       "ACLR": 27
     },
     "subject_feature_columns": 264,
-    "aggregation_seconds": 0.533,
+    "aggregation_seconds": 0.531,
     "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
   },
   "raw_merged": {
@@ -36,7 +36,7 @@
       "ACLR": 26
     },
     "subject_feature_columns": 8256,
-    "aggregation_seconds": 26.803,
+    "aggregation_seconds": 30.905,
     "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
   },
   "cycle_waveforms_101": {
@@ -56,7 +56,7 @@
       "ACLR": 27
     },
     "subject_feature_columns": 10908,
-    "aggregation_seconds": 1.126,
+    "aggregation_seconds": 1.198,
     "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
   }
 }

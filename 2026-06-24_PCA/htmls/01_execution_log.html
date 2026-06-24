@@ -233,7 +233,7 @@
       <td>79</td>
       <td>{'HA': 25, 'ACLD': 27, 'ACLR': 27}</td>
       <td>264</td>
-      <td>0.5330</td>
+      <td>0.5310</td>
       <td>pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load</td>
     </tr>
     <tr>
@@ -249,7 +249,7 @@
       <td>78</td>
       <td>{'HA': 25, 'ACLD': 27, 'ACLR': 26}</td>
       <td>8256</td>
-      <td>26.8030</td>
+      <td>30.9050</td>
       <td>pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load</td>
     </tr>
     <tr>
@@ -265,38 +265,141 @@
       <td>79</td>
       <td>{'HA': 25, 'ACLD': 27, 'ACLR': 27}</td>
       <td>10908</td>
-      <td>1.1260</td>
+      <td>1.1980</td>
       <td>pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Feature description mapping</h2>
+<p>`jointAngle_*` feature descriptions use the repo's JOINT_COLS convention from harness/ML preprocessing code. Right/Left means the original actual side column mapping, not injured/contralateral side.</p>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source_column</th>
+      <th>side</th>
+      <th>feature_description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>jointAngle_42</td>
+      <td>Right</td>
+      <td>Right hip adduction</td>
+    </tr>
+    <tr>
+      <td>jointAngle_43</td>
+      <td>Right</td>
+      <td>Right hip internal rotation</td>
+    </tr>
+    <tr>
+      <td>jointAngle_44</td>
+      <td>Right</td>
+      <td>Right hip flexion</td>
+    </tr>
+    <tr>
+      <td>jointAngle_45</td>
+      <td>Right</td>
+      <td>Right knee adduction</td>
+    </tr>
+    <tr>
+      <td>jointAngle_46</td>
+      <td>Right</td>
+      <td>Right knee internal rotation</td>
+    </tr>
+    <tr>
+      <td>jointAngle_47</td>
+      <td>Right</td>
+      <td>Right knee flexion</td>
+    </tr>
+    <tr>
+      <td>jointAngle_48</td>
+      <td>Right</td>
+      <td>Right ankle adduction</td>
+    </tr>
+    <tr>
+      <td>jointAngle_49</td>
+      <td>Right</td>
+      <td>Right ankle internal rotation</td>
+    </tr>
+    <tr>
+      <td>jointAngle_50</td>
+      <td>Right</td>
+      <td>Right ankle dorsiflexion</td>
+    </tr>
+    <tr>
+      <td>jointAngle_54</td>
+      <td>Left</td>
+      <td>Left hip adduction</td>
+    </tr>
+    <tr>
+      <td>jointAngle_55</td>
+      <td>Left</td>
+      <td>Left hip internal rotation</td>
+    </tr>
+    <tr>
+      <td>jointAngle_56</td>
+      <td>Left</td>
+      <td>Left hip flexion</td>
+    </tr>
+    <tr>
+      <td>jointAngle_57</td>
+      <td>Left</td>
+      <td>Left knee adduction</td>
+    </tr>
+    <tr>
+      <td>jointAngle_58</td>
+      <td>Left</td>
+      <td>Left knee internal rotation</td>
+    </tr>
+    <tr>
+      <td>jointAngle_59</td>
+      <td>Left</td>
+      <td>Left knee flexion</td>
+    </tr>
+    <tr>
+      <td>jointAngle_60</td>
+      <td>Left</td>
+      <td>Left ankle adduction</td>
+    </tr>
+    <tr>
+      <td>jointAngle_61</td>
+      <td>Left</td>
+      <td>Left ankle internal rotation</td>
+    </tr>
+    <tr>
+      <td>jointAngle_62</td>
+      <td>Left</td>
+      <td>Left ankle dorsiflexion</td>
     </tr>
   </tbody>
 </table>
 <h2>실행 메시지</h2>
 <table class='data-table'><thead><tr><th>Time</th><th>Message</th></tr></thead><tbody>
-<tr><td>2026-06-24 15:20:51</td><td>Start PCA sandbox analysis</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>Reference cohort from slim_gait: HA=25, ACLD=27, ACLR=27</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>Saved cohort report: results/00_cohort_report.csv</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>slim_gait: start batch aggregation with 22 numeric columns, 995144 rows, batch_size=20000</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 10 batches, rows_seen=200,000, rows_used=200,000</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 20 batches, rows_seen=400,000, rows_used=400,000</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 30 batches, rows_seen=600,000, rows_used=600,000</td></tr>
-<tr><td>2026-06-24 15:20:51</td><td>slim_gait: processed 40 batches, rows_seen=800,000, rows_used=800,000</td></tr>
-<tr><td>2026-06-24 15:20:52</td><td>slim_gait: processed 50 batches, rows_seen=995,144, rows_used=995,144</td></tr>
-<tr><td>2026-06-24 15:20:52</td><td>slim_gait: saved subject features (79 subjects x 264 features) to results/slim_gait_subject_features.csv</td></tr>
-<tr><td>2026-06-24 15:20:52</td><td>slim_gait: saved 5 figures</td></tr>
-<tr><td>2026-06-24 15:20:52</td><td>slim_gait: PCA, distances, clustering, and figures completed</td></tr>
-<tr><td>2026-06-24 15:20:52</td><td>raw_merged: start batch aggregation with 688 numeric columns, 1437356 rows, batch_size=20000</td></tr>
-<tr><td>2026-06-24 15:20:59</td><td>raw_merged: processed 10 batches, rows_seen=200,000, rows_used=124,585</td></tr>
-<tr><td>2026-06-24 15:21:02</td><td>raw_merged: processed 20 batches, rows_seen=400,000, rows_used=279,172</td></tr>
-<tr><td>2026-06-24 15:21:06</td><td>raw_merged: processed 30 batches, rows_seen=600,000, rows_used=430,445</td></tr>
-<tr><td>2026-06-24 15:21:10</td><td>raw_merged: processed 40 batches, rows_seen=800,000, rows_used=630,445</td></tr>
-<tr><td>2026-06-24 15:21:17</td><td>raw_merged: processed 60 batches, rows_seen=1,200,000, rows_used=747,491</td></tr>
-<tr><td>2026-06-24 15:21:18</td><td>raw_merged: processed 70 batches, rows_seen=1,400,000, rows_used=947,491</td></tr>
-<tr><td>2026-06-24 15:21:19</td><td>raw_merged: saved subject features (78 subjects x 8256 features) to results/raw_merged_subject_features.csv</td></tr>
-<tr><td>2026-06-24 15:21:20</td><td>raw_merged: saved 5 figures</td></tr>
-<tr><td>2026-06-24 15:21:20</td><td>raw_merged: PCA, distances, clustering, and figures completed</td></tr>
-<tr><td>2026-06-24 15:21:21</td><td>cycle_waveforms_101: start batch aggregation with 909 numeric columns, 8079 rows, batch_size=20000</td></tr>
-<tr><td>2026-06-24 15:21:22</td><td>cycle_waveforms_101: saved subject features (79 subjects x 10908 features) to results/cycle_waveforms_101_subject_features.csv</td></tr>
-<tr><td>2026-06-24 15:21:23</td><td>cycle_waveforms_101: saved 5 figures</td></tr>
-<tr><td>2026-06-24 15:21:23</td><td>cycle_waveforms_101: PCA, distances, clustering, and figures completed</td></tr>
-<tr><td>2026-06-24 15:21:23</td><td>Source file integrity unchanged=True</td></tr>
+<tr><td>2026-06-24 15:35:53</td><td>Start PCA sandbox analysis</td></tr>
+<tr><td>2026-06-24 15:35:53</td><td>Reference cohort from slim_gait: HA=25, ACLD=27, ACLR=27</td></tr>
+<tr><td>2026-06-24 15:35:53</td><td>Saved cohort report: results/00_cohort_report.csv</td></tr>
+<tr><td>2026-06-24 15:35:53</td><td>slim_gait: start batch aggregation with 22 numeric columns, 995144 rows, batch_size=20000</td></tr>
+<tr><td>2026-06-24 15:35:53</td><td>slim_gait: processed 10 batches, rows_seen=200,000, rows_used=200,000</td></tr>
+<tr><td>2026-06-24 15:35:53</td><td>slim_gait: processed 20 batches, rows_seen=400,000, rows_used=400,000</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>slim_gait: processed 30 batches, rows_seen=600,000, rows_used=600,000</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>slim_gait: processed 40 batches, rows_seen=800,000, rows_used=800,000</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>slim_gait: processed 50 batches, rows_seen=995,144, rows_used=995,144</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>slim_gait: saved subject features (79 subjects x 264 features) to results/slim_gait_subject_features.csv</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>slim_gait: saved 5 figures</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>slim_gait: PCA, distances, clustering, and figures completed</td></tr>
+<tr><td>2026-06-24 15:35:54</td><td>raw_merged: start batch aggregation with 688 numeric columns, 1437356 rows, batch_size=20000</td></tr>
+<tr><td>2026-06-24 15:36:02</td><td>raw_merged: processed 10 batches, rows_seen=200,000, rows_used=124,585</td></tr>
+<tr><td>2026-06-24 15:36:04</td><td>raw_merged: processed 20 batches, rows_seen=400,000, rows_used=279,172</td></tr>
+<tr><td>2026-06-24 15:36:09</td><td>raw_merged: processed 30 batches, rows_seen=600,000, rows_used=430,445</td></tr>
+<tr><td>2026-06-24 15:36:12</td><td>raw_merged: processed 40 batches, rows_seen=800,000, rows_used=630,445</td></tr>
+<tr><td>2026-06-24 15:36:22</td><td>raw_merged: processed 60 batches, rows_seen=1,200,000, rows_used=747,491</td></tr>
+<tr><td>2026-06-24 15:36:24</td><td>raw_merged: processed 70 batches, rows_seen=1,400,000, rows_used=947,491</td></tr>
+<tr><td>2026-06-24 15:36:25</td><td>raw_merged: saved subject features (78 subjects x 8256 features) to results/raw_merged_subject_features.csv</td></tr>
+<tr><td>2026-06-24 15:36:27</td><td>raw_merged: saved 5 figures</td></tr>
+<tr><td>2026-06-24 15:36:27</td><td>raw_merged: PCA, distances, clustering, and figures completed</td></tr>
+<tr><td>2026-06-24 15:36:27</td><td>cycle_waveforms_101: start batch aggregation with 909 numeric columns, 8079 rows, batch_size=20000</td></tr>
+<tr><td>2026-06-24 15:36:28</td><td>cycle_waveforms_101: saved subject features (79 subjects x 10908 features) to results/cycle_waveforms_101_subject_features.csv</td></tr>
+<tr><td>2026-06-24 15:36:29</td><td>cycle_waveforms_101: saved 5 figures</td></tr>
+<tr><td>2026-06-24 15:36:29</td><td>cycle_waveforms_101: PCA, distances, clustering, and figures completed</td></tr>
+<tr><td>2026-06-24 15:36:29</td><td>Source file integrity unchanged=True</td></tr>
 </tbody></table></body></html>

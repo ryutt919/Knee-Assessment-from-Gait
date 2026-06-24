@@ -23,6 +23,8 @@
 <li>raw_merged의 Healthy adults는 HA로 매핑하고, Healthy adolescents 및 reference 밖 대상자는 주 분석에서 제외</li>
 <li>대용량 raw_merged는 pyarrow batch read로 처리하며 전체 pandas load를 사용하지 않음</li>
 </ul>
+<h2>Feature 표기 기준</h2>
+<p>Top loading 표의 `feature_description`은 repo의 JOINT_COLS 매핑을 따른다. `Right`/`Left`는 원본 actual side 기준이며 injured/contralateral 변환명이 아니다. 원시 컬럼 추적을 위해 `source_column`과 `feature_raw`를 함께 남겼다.</p>
 <h2>Cohort 요약</h2>
 <table class="dataframe data-table">
   <thead>
@@ -204,68 +206,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC1</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>Right ankle internal rotation</td>
+      <td>slow</td>
+      <td>Right</td>
+      <td>std</td>
+      <td>jointAngle_49</td>
       <td>slow__jointAngle_49__std</td>
       <td>0.1613</td>
       <td>0.1613</td>
     </tr>
     <tr>
+      <td>Left knee internal rotation</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_58</td>
       <td>slow__jointAngle_58__min</td>
       <td>-0.1608</td>
       <td>0.1608</td>
     </tr>
     <tr>
+      <td>Right knee internal rotation</td>
+      <td>slow</td>
+      <td>Right</td>
+      <td>min</td>
+      <td>jointAngle_46</td>
       <td>slow__jointAngle_46__min</td>
       <td>-0.1602</td>
       <td>0.1602</td>
     </tr>
     <tr>
+      <td>Left knee adduction</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_57</td>
       <td>slow__jointAngle_57__min</td>
       <td>-0.1601</td>
       <td>0.1601</td>
     </tr>
     <tr>
+      <td>Right ankle dorsiflexion</td>
+      <td>slow</td>
+      <td>Right</td>
+      <td>max</td>
+      <td>jointAngle_50</td>
       <td>slow__jointAngle_50__max</td>
       <td>0.1596</td>
       <td>0.1596</td>
     </tr>
     <tr>
+      <td>Right knee internal rotation</td>
+      <td>slow</td>
+      <td>Right</td>
+      <td>max</td>
+      <td>jointAngle_46</td>
       <td>slow__jointAngle_46__max</td>
       <td>0.1596</td>
       <td>0.1596</td>
     </tr>
     <tr>
+      <td>Left knee internal rotation</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>max</td>
+      <td>jointAngle_58</td>
       <td>slow__jointAngle_58__max</td>
       <td>0.1591</td>
       <td>0.1591</td>
     </tr>
     <tr>
+      <td>Left knee flexion</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_59</td>
       <td>slow__jointAngle_59__min</td>
       <td>-0.1586</td>
       <td>0.1586</td>
     </tr>
     <tr>
+      <td>Right ankle internal rotation</td>
+      <td>slow</td>
+      <td>Right</td>
+      <td>max</td>
+      <td>jointAngle_49</td>
       <td>slow__jointAngle_49__max</td>
       <td>0.1583</td>
       <td>0.1583</td>
     </tr>
     <tr>
+      <td>Left knee flexion</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>max</td>
+      <td>jointAngle_59</td>
       <td>slow__jointAngle_59__max</td>
       <td>0.1571</td>
       <td>0.1571</td>
     </tr>
     <tr>
+      <td>Right knee internal rotation</td>
+      <td>slow</td>
+      <td>Right</td>
+      <td>std</td>
+      <td>jointAngle_46</td>
       <td>slow__jointAngle_46__std</td>
       <td>0.1567</td>
       <td>0.1567</td>
     </tr>
     <tr>
+      <td>Left hip adduction</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_54</td>
       <td>slow__jointAngle_54__min</td>
       <td>-0.1565</td>
       <td>0.1565</td>
@@ -276,68 +343,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC2</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>Left hip internal rotation</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>mean</td>
+      <td>jointAngle_55</td>
       <td>normal__jointAngle_55__mean</td>
       <td>0.1542</td>
       <td>0.1542</td>
     </tr>
     <tr>
+      <td>Left hip internal rotation</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>mean</td>
+      <td>jointAngle_55</td>
       <td>fast__jointAngle_55__mean</td>
       <td>0.1475</td>
       <td>0.1475</td>
     </tr>
     <tr>
+      <td>Left hip internal rotation</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_55</td>
       <td>fast__jointAngle_55__min</td>
       <td>0.1470</td>
       <td>0.1470</td>
     </tr>
     <tr>
+      <td>Left hip internal rotation</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>mean</td>
+      <td>jointAngle_55</td>
       <td>slow__jointAngle_55__mean</td>
       <td>0.1432</td>
       <td>0.1432</td>
     </tr>
     <tr>
+      <td>Left hip flexion</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>mean</td>
+      <td>jointAngle_56</td>
       <td>normal__jointAngle_56__mean</td>
       <td>0.1423</td>
       <td>0.1423</td>
     </tr>
     <tr>
+      <td>Left hip flexion</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>mean</td>
+      <td>jointAngle_56</td>
       <td>fast__jointAngle_56__mean</td>
       <td>0.1415</td>
       <td>0.1415</td>
     </tr>
     <tr>
+      <td>Left hip flexion</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_56</td>
       <td>fast__jointAngle_56__min</td>
       <td>0.1404</td>
       <td>0.1404</td>
     </tr>
     <tr>
+      <td>Left hip internal rotation</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_55</td>
       <td>normal__jointAngle_55__min</td>
       <td>0.1390</td>
       <td>0.1390</td>
     </tr>
     <tr>
+      <td>Left hip flexion</td>
+      <td>slow</td>
+      <td>Left</td>
+      <td>mean</td>
+      <td>jointAngle_56</td>
       <td>slow__jointAngle_56__mean</td>
       <td>0.1347</td>
       <td>0.1347</td>
     </tr>
     <tr>
+      <td>Left hip flexion</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>min</td>
+      <td>jointAngle_56</td>
       <td>normal__jointAngle_56__min</td>
       <td>0.1340</td>
       <td>0.1340</td>
     </tr>
     <tr>
+      <td>Left knee adduction</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>max</td>
+      <td>jointAngle_57</td>
       <td>normal__jointAngle_57__max</td>
       <td>-0.1295</td>
       <td>0.1295</td>
     </tr>
     <tr>
+      <td>Left knee adduction</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>std</td>
+      <td>jointAngle_57</td>
       <td>normal__jointAngle_57__std</td>
       <td>-0.1288</td>
       <td>0.1288</td>
@@ -348,68 +480,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC3</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>Right ankle internal rotation</td>
+      <td>normal</td>
+      <td>Right</td>
+      <td>std</td>
+      <td>jointAngle_49</td>
       <td>normal__jointAngle_49__std</td>
       <td>0.1426</td>
       <td>0.1426</td>
     </tr>
     <tr>
+      <td>Right ankle internal rotation</td>
+      <td>fast</td>
+      <td>Right</td>
+      <td>std</td>
+      <td>jointAngle_49</td>
       <td>fast__jointAngle_49__std</td>
       <td>0.1417</td>
       <td>0.1417</td>
     </tr>
     <tr>
+      <td>Left hip adduction</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>std</td>
+      <td>jointAngle_54</td>
       <td>fast__jointAngle_54__std</td>
       <td>0.1407</td>
       <td>0.1407</td>
     </tr>
     <tr>
+      <td>Left ankle internal rotation</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>std</td>
+      <td>jointAngle_61</td>
       <td>normal__jointAngle_61__std</td>
       <td>0.1347</td>
       <td>0.1347</td>
     </tr>
     <tr>
+      <td>Left knee internal rotation</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>max</td>
+      <td>jointAngle_58</td>
       <td>normal__jointAngle_58__max</td>
       <td>0.1320</td>
       <td>0.1320</td>
     </tr>
     <tr>
+      <td>Left knee internal rotation</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>max</td>
+      <td>jointAngle_58</td>
       <td>fast__jointAngle_58__max</td>
       <td>0.1299</td>
       <td>0.1299</td>
     </tr>
     <tr>
+      <td>Left ankle dorsiflexion</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>std</td>
+      <td>jointAngle_62</td>
       <td>normal__jointAngle_62__std</td>
       <td>0.1272</td>
       <td>0.1272</td>
     </tr>
     <tr>
+      <td>Right ankle dorsiflexion</td>
+      <td>normal</td>
+      <td>Right</td>
+      <td>min</td>
+      <td>jointAngle_50</td>
       <td>normal__jointAngle_50__min</td>
       <td>-0.1240</td>
       <td>0.1240</td>
     </tr>
     <tr>
+      <td>Left ankle internal rotation</td>
+      <td>fast</td>
+      <td>Left</td>
+      <td>std</td>
+      <td>jointAngle_61</td>
       <td>fast__jointAngle_61__std</td>
       <td>0.1238</td>
       <td>0.1238</td>
     </tr>
     <tr>
+      <td>Left hip adduction</td>
+      <td>normal</td>
+      <td>Left</td>
+      <td>std</td>
+      <td>jointAngle_54</td>
       <td>normal__jointAngle_54__std</td>
       <td>0.1201</td>
       <td>0.1201</td>
     </tr>
     <tr>
+      <td>Right ankle dorsiflexion</td>
+      <td>normal</td>
+      <td>Right</td>
+      <td>std</td>
+      <td>jointAngle_50</td>
       <td>normal__jointAngle_50__std</td>
       <td>0.1196</td>
       <td>0.1196</td>
     </tr>
     <tr>
+      <td>Right hip adduction</td>
+      <td>fast</td>
+      <td>Right</td>
+      <td>std</td>
+      <td>jointAngle_42</td>
       <td>fast__jointAngle_42__std</td>
       <td>0.1195</td>
       <td>0.1195</td>
@@ -429,68 +626,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC1</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_4</td>
       <td>normal__angularAcceleration_4__std</td>
       <td>0.0276</td>
       <td>0.0276</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_7</td>
       <td>normal__angularAcceleration_7__std</td>
       <td>0.0276</td>
       <td>0.0276</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_1</td>
       <td>normal__angularAcceleration_1__std</td>
       <td>0.0276</td>
       <td>0.0276</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_10</td>
       <td>normal__angularAcceleration_10__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_19</td>
       <td>normal__angularAcceleration_19__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_37</td>
       <td>normal__angularAcceleration_37__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_22</td>
       <td>normal__angularAcceleration_22__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_16</td>
       <td>normal__angularAcceleration_16__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_28</td>
       <td>normal__angularAcceleration_28__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_43</td>
       <td>normal__angularAcceleration_43__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_31</td>
       <td>normal__angularAcceleration_31__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: angularAcceleration</td>
+      <td>normal</td>
+      <td></td>
+      <td>std</td>
+      <td>angularAcceleration_13</td>
       <td>normal__angularAcceleration_13__std</td>
       <td>0.0275</td>
       <td>0.0275</td>
@@ -501,68 +763,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC2</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>min</td>
+      <td>velocity_58</td>
       <td>slow__velocity_58__min</td>
       <td>0.0323</td>
       <td>0.0323</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>min</td>
+      <td>velocity_67</td>
       <td>slow__velocity_67__min</td>
       <td>0.0320</td>
       <td>0.0320</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>min</td>
+      <td>velocity_64</td>
       <td>slow__velocity_64__min</td>
       <td>0.0320</td>
       <td>0.0320</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>min</td>
+      <td>velocity_49</td>
       <td>slow__velocity_49__min</td>
       <td>0.0320</td>
       <td>0.0320</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>velocity_58</td>
       <td>slow__velocity_58__mean</td>
       <td>0.0320</td>
       <td>0.0320</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>velocity_64</td>
       <td>slow__velocity_64__mean</td>
       <td>0.0319</td>
       <td>0.0319</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>velocity_67</td>
       <td>slow__velocity_67__mean</td>
       <td>0.0319</td>
       <td>0.0319</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>velocity_1</td>
       <td>slow__velocity_1__mean</td>
       <td>0.0319</td>
       <td>0.0319</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>min</td>
+      <td>velocity_46</td>
       <td>slow__velocity_46__min</td>
       <td>0.0319</td>
       <td>0.0319</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>velocity_49</td>
       <td>slow__velocity_49__mean</td>
       <td>0.0318</td>
       <td>0.0318</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>min</td>
+      <td>velocity_1</td>
       <td>slow__velocity_1__min</td>
       <td>0.0318</td>
       <td>0.0318</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>velocity_46</td>
       <td>slow__velocity_46__mean</td>
       <td>0.0318</td>
       <td>0.0318</td>
@@ -573,68 +900,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC3</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_58</td>
       <td>slow__velocity_58__max</td>
       <td>0.0326</td>
       <td>0.0326</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_19</td>
       <td>slow__velocity_19__max</td>
       <td>0.0318</td>
       <td>0.0318</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_16</td>
       <td>slow__velocity_16__max</td>
       <td>0.0315</td>
       <td>0.0315</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_43</td>
       <td>slow__velocity_43__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_25</td>
       <td>slow__velocity_25__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_13</td>
       <td>slow__velocity_13__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_31</td>
       <td>slow__velocity_31__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_28</td>
       <td>slow__velocity_28__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_34</td>
       <td>slow__velocity_34__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_37</td>
       <td>slow__velocity_37__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_40</td>
       <td>slow__velocity_40__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
     </tr>
     <tr>
+      <td>Raw sensor feature: velocity</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>velocity_22</td>
       <td>slow__velocity_22__max</td>
       <td>0.0312</td>
       <td>0.0312</td>
@@ -654,68 +1046,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC1</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>hip int rotation cycle point 077</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_077</td>
       <td>normal__hip_int_rotation_077__max</td>
       <td>0.0239</td>
       <td>0.0239</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 076</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_076</td>
       <td>normal__hip_int_rotation_076__max</td>
       <td>0.0239</td>
       <td>0.0239</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 074</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_074</td>
       <td>normal__hip_int_rotation_074__max</td>
       <td>0.0239</td>
       <td>0.0239</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 075</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_075</td>
       <td>normal__hip_int_rotation_075__max</td>
       <td>0.0239</td>
       <td>0.0239</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 078</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_078</td>
       <td>normal__hip_int_rotation_078__max</td>
       <td>0.0239</td>
       <td>0.0239</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 073</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_073</td>
       <td>normal__hip_int_rotation_073__max</td>
       <td>0.0239</td>
       <td>0.0239</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 071</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_071</td>
       <td>normal__hip_int_rotation_071__max</td>
       <td>0.0238</td>
       <td>0.0238</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 072</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_072</td>
       <td>normal__hip_int_rotation_072__max</td>
       <td>0.0238</td>
       <td>0.0238</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 070</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_070</td>
       <td>normal__hip_int_rotation_070__max</td>
       <td>0.0238</td>
       <td>0.0238</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 069</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_069</td>
       <td>normal__hip_int_rotation_069__max</td>
       <td>0.0238</td>
       <td>0.0238</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 079</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_079</td>
       <td>normal__hip_int_rotation_079__max</td>
       <td>0.0236</td>
       <td>0.0236</td>
     </tr>
     <tr>
+      <td>hip int rotation cycle point 068</td>
+      <td>normal</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_int_rotation_068</td>
       <td>normal__hip_int_rotation_068__max</td>
       <td>0.0236</td>
       <td>0.0236</td>
@@ -726,68 +1183,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC2</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>hip adduction cycle point 078</td>
+      <td>fast</td>
+      <td></td>
+      <td>mean</td>
+      <td>hip_adduction_078</td>
       <td>fast__hip_adduction_078__mean</td>
       <td>0.0219</td>
       <td>0.0219</td>
     </tr>
     <tr>
+      <td>hip adduction cycle point 079</td>
+      <td>fast</td>
+      <td></td>
+      <td>mean</td>
+      <td>hip_adduction_079</td>
       <td>fast__hip_adduction_079__mean</td>
       <td>0.0219</td>
       <td>0.0219</td>
     </tr>
     <tr>
+      <td>hip adduction cycle point 077</td>
+      <td>fast</td>
+      <td></td>
+      <td>mean</td>
+      <td>hip_adduction_077</td>
       <td>fast__hip_adduction_077__mean</td>
       <td>0.0218</td>
       <td>0.0218</td>
     </tr>
     <tr>
+      <td>hip adduction cycle point 084</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_adduction_084</td>
       <td>slow__hip_adduction_084__max</td>
       <td>0.0218</td>
       <td>0.0218</td>
     </tr>
     <tr>
+      <td>hip adduction cycle point 083</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_adduction_083</td>
       <td>slow__hip_adduction_083__max</td>
       <td>0.0218</td>
       <td>0.0218</td>
     </tr>
     <tr>
+      <td>hip adduction cycle point 080</td>
+      <td>fast</td>
+      <td></td>
+      <td>mean</td>
+      <td>hip_adduction_080</td>
       <td>fast__hip_adduction_080__mean</td>
       <td>0.0217</td>
       <td>0.0217</td>
     </tr>
     <tr>
+      <td>hip adduction cycle point 085</td>
+      <td>slow</td>
+      <td></td>
+      <td>max</td>
+      <td>hip_adduction_085</td>
       <td>slow__hip_adduction_085__max</td>
       <td>0.0217</td>
       <td>0.0217</td>
     </tr>
     <tr>
+      <td>ankle adduction cycle point 039</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_adduction_039</td>
       <td>slow__ankle_adduction_039__mean</td>
       <td>-0.0217</td>
       <td>0.0217</td>
     </tr>
     <tr>
+      <td>ankle adduction cycle point 038</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_adduction_038</td>
       <td>slow__ankle_adduction_038__mean</td>
       <td>-0.0217</td>
       <td>0.0217</td>
     </tr>
     <tr>
+      <td>ankle adduction cycle point 040</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_adduction_040</td>
       <td>slow__ankle_adduction_040__mean</td>
       <td>-0.0217</td>
       <td>0.0217</td>
     </tr>
     <tr>
+      <td>ankle adduction cycle point 037</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_adduction_037</td>
       <td>slow__ankle_adduction_037__mean</td>
       <td>-0.0216</td>
       <td>0.0216</td>
     </tr>
     <tr>
+      <td>ankle adduction cycle point 041</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_adduction_041</td>
       <td>slow__ankle_adduction_041__mean</td>
       <td>-0.0216</td>
       <td>0.0216</td>
@@ -798,68 +1320,133 @@
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
-      <th>feature</th>
+      <th>feature_description</th>
+      <th>speed</th>
+      <th>side</th>
+      <th>statistic</th>
+      <th>source_column</th>
+      <th>feature_raw</th>
       <th>PC3</th>
       <th>abs_loading</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>ankle int rotation cycle point 060</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_060</td>
       <td>slow__ankle_int_rotation_060__mean</td>
       <td>0.0277</td>
       <td>0.0277</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 061</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_061</td>
       <td>slow__ankle_int_rotation_061__mean</td>
       <td>0.0277</td>
       <td>0.0277</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 059</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_059</td>
       <td>slow__ankle_int_rotation_059__mean</td>
       <td>0.0276</td>
       <td>0.0276</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 058</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_058</td>
       <td>slow__ankle_int_rotation_058__mean</td>
       <td>0.0274</td>
       <td>0.0274</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 062</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_062</td>
       <td>slow__ankle_int_rotation_062__mean</td>
       <td>0.0274</td>
       <td>0.0274</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 057</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_057</td>
       <td>slow__ankle_int_rotation_057__mean</td>
       <td>0.0273</td>
       <td>0.0273</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 056</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_056</td>
       <td>slow__ankle_int_rotation_056__mean</td>
       <td>0.0272</td>
       <td>0.0272</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 055</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_055</td>
       <td>slow__ankle_int_rotation_055__mean</td>
       <td>0.0272</td>
       <td>0.0272</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 054</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_054</td>
       <td>slow__ankle_int_rotation_054__mean</td>
       <td>0.0271</td>
       <td>0.0271</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 053</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_053</td>
       <td>slow__ankle_int_rotation_053__mean</td>
       <td>0.0271</td>
       <td>0.0271</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 052</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_052</td>
       <td>slow__ankle_int_rotation_052__mean</td>
       <td>0.0269</td>
       <td>0.0269</td>
     </tr>
     <tr>
+      <td>ankle int rotation cycle point 063</td>
+      <td>slow</td>
+      <td></td>
+      <td>mean</td>
+      <td>ankle_int_rotation_063</td>
       <td>slow__ankle_int_rotation_063__mean</td>
       <td>0.0269</td>
       <td>0.0269</td>

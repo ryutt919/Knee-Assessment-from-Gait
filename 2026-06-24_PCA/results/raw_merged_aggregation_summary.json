@@ -15,6 +15,6 @@
     "ACLR": 26
   },
   "subject_feature_columns": 8256,
-  "aggregation_seconds": 26.803,
+  "aggregation_seconds": 30.905,
   "memory_strategy": "pyarrow ParquetFile.iter_batches with projected columns; no full raw_merged pandas load"
 }
