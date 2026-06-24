@@ -1,138 +1,182 @@
-"""
-Recovery Score 계산기.
-5개 컴포넌트를 균등 가중치(기본) 또는 SHAP 기반 가중치로 합산.
-score = 100 - sigmoid(weighted_sum) × 100  (100 = 완전 정상)
-단조성 검증: ACLD_mean < ACLR_mean < HA_mean 를 확인한다.
-"""
+"""GDI/GPS-inspired normality scoring against healthy gait waveforms."""
 from __future__ import annotations
-import warnings
+
+import json
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
+from sklearn.covariance import LedoitWolf
 
-from .components import (
-    waveform_deviation,
-    lsi_asymmetry,
-    compensation_strategy,
-    spatiotemporal_deviation,
+from .components import EPSILON, raw_distances, top_waveform_regions
+
+SCORE_KEYS = (
+    "overall",
+    "hip",
+    "knee",
+    "ankle",
+    "slow",
+    "normal",
+    "fast",
+    "bilateral",
+    "asymmetry",
 )
 
-COMPONENT_NAMES = [
-    "waveform_dev",
-    "lsi_asym",
-    "compensation",
-    "spatiotemporal",
-]
 
-DEFAULT_WEIGHTS = {name: 1.0 / len(COMPONENT_NAMES) for name in COMPONENT_NAMES}
+class GaitNormalityScorer:
+    """
+    Score trial-balanced session waveforms against an HA reference.
 
+    Scientific outputs are not clipped. A normality score of 100 is the
+    leave-one-out HA mean and each 10-point decrease is one HA SD farther away.
+    """
 
-def _sigmoid(x: np.ndarray) -> np.ndarray:
-    return 1.0 / (1.0 + np.exp(-x))
+    def __init__(self) -> None:
+        self.reference_mean: np.ndarray | None = None
+        self.calibration: dict[str, dict[str, float]] = {}
+        self.reference_subject_ids: list[str] = []
+        self.mahalanobis_location: np.ndarray | None = None
+        self.mahalanobis_precision: np.ndarray | None = None
 
+    @property
+    def is_fitted(self) -> bool:
+        return self.reference_mean is not None and bool(self.calibration)
 
-class RecoveryScorer:
-    def __init__(self, weights: dict[str, float] | None = None):
-        self.weights = weights or DEFAULT_WEIGHTS.copy()
-        self._components: dict[str, np.ndarray] = {}
-        self._groups: np.ndarray | None = None
-
-    def compute(
+    def fit(
         self,
-        features_df: pd.DataFrame,
-        groups: np.ndarray,
-        subject_ids: np.ndarray,
-        waveforms: np.ndarray | None = None,
-    ) -> pd.DataFrame:
-        """
-        모든 컴포넌트를 계산하고 최종 Recovery Score를 반환.
-        Returns DataFrame: subject_id, group, comp_*, recovery_score
-        """
-        self._groups = groups
-        n = len(subject_ids)
-
-        # 컴포넌트 계산
-        comps = {}
-
-        if waveforms is not None:
-            comps["waveform_dev"] = waveform_deviation(subject_ids, groups, waveforms)
+        matrices: np.ndarray,
+        groups: np.ndarray | pd.Series,
+        subject_ids: np.ndarray | pd.Series | None = None,
+    ) -> "GaitNormalityScorer":
+        matrices = np.asarray(matrices, dtype=np.float64)
+        groups = np.asarray(groups, dtype=str)
+        if len(matrices) != len(groups):
+            raise ValueError("matrices and groups must have the same length")
+        ha_indices = np.flatnonzero(groups == "HA")
+        if len(ha_indices) < 5:
+            raise ValueError(f"at least 5 HA reference sessions are required, found {len(ha_indices)}")
+        references = matrices[ha_indices]
+        self.reference_mean = references.mean(axis=0)
+        if subject_ids is None:
+            self.reference_subject_ids = [str(idx) for idx in ha_indices]
         else:
-            comps["waveform_dev"] = np.zeros(n)
+            ids = np.asarray(subject_ids, dtype=str)
+            self.reference_subject_ids = ids[ha_indices].tolist()
 
-        comps["lsi_asym"] = lsi_asymmetry(features_df, groups, subject_ids)
-        comps["compensation"] = compensation_strategy(features_df, groups)
-        comps["spatiotemporal"] = spatiotemporal_deviation(features_df, groups)
+        loo_values: dict[str, list[float]] = {key: [] for key in SCORE_KEYS}
+        loo_log_gvs: list[np.ndarray] = []
+        for reference_idx in range(len(references)):
+            keep = np.arange(len(references)) != reference_idx
+            loo_mean = references[keep].mean(axis=0)
+            distances, gvs = raw_distances(references[reference_idx], loo_mean)
+            for key in SCORE_KEYS:
+                loo_values[key].append(float(distances[key][0]))
+            loo_log_gvs.append(np.log(np.maximum(gvs[0].ravel(), EPSILON)))
 
-        self._components = comps
+        calibration: dict[str, dict[str, float]] = {}
+        for key, values in loo_values.items():
+            logged = np.log(np.maximum(np.asarray(values, dtype=np.float64), EPSILON))
+            sd = float(logged.std(ddof=1))
+            if not np.isfinite(sd) or sd < EPSILON:
+                raise ValueError(f"HA leave-one-out calibration is degenerate for {key}")
+            calibration[key] = {
+                "mean_log_distance": float(logged.mean()),
+                "sd_log_distance": sd,
+                "n_reference": int(len(logged)),
+            }
+        self.calibration = calibration
 
-        # 가중 합산
-        w_sum = np.zeros(n)
-        total_w = sum(self.weights.get(k, 0.0) for k in comps)
-        if total_w < 1e-9:
-            total_w = 1.0
+        covariance = LedoitWolf().fit(np.vstack(loo_log_gvs))
+        self.mahalanobis_location = covariance.location_.copy()
+        self.mahalanobis_precision = covariance.precision_.copy()
+        return self
 
-        for name, vals in comps.items():
-            w = self.weights.get(name, 0.0) / total_w
-            w_sum += w * vals
+    def _require_fitted(self) -> None:
+        if not self.is_fitted:
+            raise RuntimeError("GaitNormalityScorer.fit must be called before scoring")
 
-        # 0~100 매핑 (높을수록 정상에 가까움)
-        scores = 100.0 - _sigmoid(w_sum) * 100.0
+    def score_matrices(self, matrices: np.ndarray) -> pd.DataFrame:
+        self._require_fitted()
+        assert self.reference_mean is not None
+        matrices = np.asarray(matrices, dtype=np.float64)
+        if matrices.ndim == 4:
+            matrices = matrices[np.newaxis, ...]
+        distances, gvs = raw_distances(matrices, self.reference_mean)
+        output: dict[str, np.ndarray] = {}
+        for key in SCORE_KEYS:
+            raw = distances[key]
+            parameters = self.calibration[key]
+            z = (
+                np.log(np.maximum(raw, EPSILON)) - parameters["mean_log_distance"]
+            ) / parameters["sd_log_distance"]
+            if key == "overall":
+                output["raw_distance"] = raw
+                output["z_deviation"] = z
+                output["normality_score"] = 100.0 - 10.0 * z
+            else:
+                output[f"{key}_score"] = 100.0 - 10.0 * z
+                output[f"{key}_z"] = z
 
-        result = pd.DataFrame({
-            "subject_id":     subject_ids,
-            "group":          groups,
-            **{f"comp_{k}": v for k, v in comps.items()},
-            "recovery_score": scores,
-        })
-
-        self._validate_monotonicity(result)
+        if self.mahalanobis_location is not None and self.mahalanobis_precision is not None:
+            log_gvs = np.log(np.maximum(gvs.reshape(len(matrices), -1), EPSILON))
+            centered = log_gvs - self.mahalanobis_location
+            squared = np.einsum("ij,jk,ik->i", centered, self.mahalanobis_precision, centered)
+            output["mahalanobis_distance"] = np.sqrt(np.maximum(squared, 0.0))
+        result = pd.DataFrame(output)
+        if not np.isfinite(result.to_numpy(dtype=float)).all():
+            raise ValueError("normality scoring produced non-finite values")
         return result
 
-    def update_weights_from_shap(self, shap_importance: dict[str, float]) -> None:
-        """
-        SHAP feature importance를 컴포넌트 그룹별로 합산해 가중치 재조정.
-        shap_importance: {feature_name: mean_abs_shap_value}
-        """
-        component_keywords = {
-            "waveform_dev":   ["waveform", "wave", "rmsd"],
-            "lsi_asym":       ["lsi", "asym"],
-            "compensation":   ["hip", "ankle", "comp"],
-            "spatiotemporal": ["step", "cadence", "stride", "stance", "swing", "velocity"],
+    def gvs_features(self, matrices: np.ndarray) -> np.ndarray:
+        """Log-GVS features used only by research comparators."""
+        self._require_fitted()
+        assert self.reference_mean is not None
+        _, gvs = raw_distances(np.asarray(matrices, dtype=np.float64), self.reference_mean)
+        return np.log(np.maximum(gvs.reshape(len(gvs), -1), EPSILON))
+
+    def explain_matrix(self, matrix: np.ndarray, limit: int = 5) -> str:
+        self._require_fitted()
+        assert self.reference_mean is not None
+        return top_waveform_regions(matrix, self.reference_mean, limit=limit)
+
+    def to_dict(self) -> dict[str, Any]:
+        self._require_fitted()
+        assert self.reference_mean is not None
+        return {
+            "model_type": "GDI_GPS_HA_normative_waveform",
+            "score_definition": "normality_score = 100 - 10 * z(log(GPS_distance))",
+            "reference_subject_ids": self.reference_subject_ids,
+            "reference_mean": self.reference_mean.tolist(),
+            "calibration": self.calibration,
+            "mahalanobis_location": (
+                self.mahalanobis_location.tolist() if self.mahalanobis_location is not None else None
+            ),
+            "mahalanobis_precision": (
+                self.mahalanobis_precision.tolist() if self.mahalanobis_precision is not None else None
+            ),
         }
 
-        group_sums: dict[str, float] = {k: 0.0 for k in component_keywords}
-        for feat, imp in shap_importance.items():
-            feat_l = feat.lower()
-            for comp, keywords in component_keywords.items():
-                if any(kw in feat_l for kw in keywords):
-                    group_sums[comp] += imp
-                    break
+    def save(self, path: str | Path) -> Path:
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(self.to_dict(), ensure_ascii=False), encoding="utf-8")
+        return path
 
-        total = sum(group_sums.values())
-        if total < 1e-9:
-            warnings.warn("SHAP 기반 가중치 계산 실패: feature 이름이 컴포넌트와 매칭되지 않음")
-            return
+    @classmethod
+    def load(cls, path: str | Path) -> "GaitNormalityScorer":
+        payload = json.loads(Path(path).read_text(encoding="utf-8"))
+        scorer = cls()
+        scorer.reference_subject_ids = [str(value) for value in payload["reference_subject_ids"]]
+        scorer.reference_mean = np.asarray(payload["reference_mean"], dtype=np.float64)
+        scorer.calibration = payload["calibration"]
+        if payload.get("mahalanobis_location") is not None:
+            scorer.mahalanobis_location = np.asarray(payload["mahalanobis_location"], dtype=np.float64)
+        if payload.get("mahalanobis_precision") is not None:
+            scorer.mahalanobis_precision = np.asarray(payload["mahalanobis_precision"], dtype=np.float64)
+        scorer._require_fitted()
+        return scorer
 
-        self.weights = {k: v / total for k, v in group_sums.items()}
-        print("[scorer] SHAP 기반 가중치 업데이트:", self.weights)
 
-    def _validate_monotonicity(self, result: pd.DataFrame) -> None:
-        """ACLD_mean < ACLR_mean < HA_mean 단조성 검증."""
-        means = result.groupby("group")["recovery_score"].mean()
-        groups_present = set(means.index)
-
-        if {"ACLD", "ACLR", "HA"} <= groups_present:
-            ok = means["ACLD"] < means["ACLR"] < means["HA"]
-            if not ok:
-                warnings.warn(
-                    f"[scorer] 단조성 위반 — "
-                    f"ACLD={means['ACLD']:.1f}, ACLR={means['ACLR']:.1f}, HA={means['HA']:.1f}"
-                )
-            else:
-                print(f"[scorer] 단조성 검증 통과 — "
-                      f"ACLD={means['ACLD']:.1f}, ACLR={means['ACLR']:.1f}, HA={means['HA']:.1f}")
-        elif {"ACL", "HA"} <= groups_present:
-            ok = means["ACL"] < means["HA"]
-            if not ok:
-                warnings.warn("[scorer] 단조성 위반 — ACL > HA")
+# Import compatibility only. The former scalar-component compute API is intentionally removed.
+RecoveryScorer = GaitNormalityScorer

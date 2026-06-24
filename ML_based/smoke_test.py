@@ -313,22 +313,28 @@ def _test_cv():
 
 check("run_cv (logreg, 2-fold)", _test_cv)
 
-# ── 11. Recovery Score ────────────────────────────────────────────────────────
-section("11. Recovery Score")
+# ── 11. Gait Normality Score ─────────────────────────────────────────────────
+section("11. Gait Normality Score")
 
 def _test_recovery():
-    import pandas as pd
-    from recovery_score.scorer import RecoveryScorer
-    feat_df = pd.read_csv(ML.parent / "data" / "processed" / "features_scalar.csv")
-    groups  = feat_df["group"].values
-    sids    = feat_df["subject_id"].values
-    scorer  = RecoveryScorer()
-    result  = scorer.compute(feat_df, groups, sids)
-    assert "recovery_score" in result.columns
-    means = result.groupby("group")["recovery_score"].mean()
-    print(f"    그룹 평균: { {k: round(v,1) for k,v in means.items()} }")
+    import numpy as np
+    from recovery_score.components import aggregate_cycle_waveforms, load_cycle_waveforms
+    from recovery_score.scorer import GaitNormalityScorer
+    cycle_path = ML.parent / "data" / "processed" / "cycle_waveforms_101.parquet"
+    dataset = aggregate_cycle_waveforms(load_cycle_waveforms(cycle_path))
+    groups = dataset.metadata["group"].to_numpy(dtype=str)
+    scorer = GaitNormalityScorer().fit(
+        dataset.matrices,
+        groups,
+        dataset.metadata["subject_id"].to_numpy(dtype=str),
+    )
+    result = scorer.score_matrices(dataset.matrices[:3])
+    required = {"normality_score", "z_deviation", "hip_score", "fast_score", "asymmetry_score"}
+    assert required <= set(result.columns)
+    assert np.isfinite(result[list(required)].to_numpy()).all()
+    print(f"    sample scores: {result['normality_score'].round(1).tolist()}")
 
-check("RecoveryScorer.compute", _test_recovery)
+check("GaitNormalityScorer.fit/score", _test_recovery)
 
 # ── 12. WaveformScaler ────────────────────────────────────────────────────────
 section("12. WaveformScaler")

@@ -5,7 +5,7 @@
   1. (선택) cycle waveform 추출 — cycle_waveforms_101.parquet 및 stride_raw_waveforms.parquet 생성
   2. 데이터 검증 — verify_data.py
   3. 모델 학습 — orchestrator.py
-  4. Recovery Score 계산
+  4. Gait Normality Score 계산
   5. 리포트 생성
 
 사용 예:
@@ -42,8 +42,8 @@ def parse_args():
                    help="데이터 검증 단계 건너뜀")
     p.add_argument("--skip-train",     action="store_true",
                    help="모델 학습 건너뜀")
-    p.add_argument("--skip-recovery",  action="store_true",
-                   help="Recovery Score 계산 건너뜀")
+    p.add_argument("--skip-scoring", "--skip-recovery", dest="skip_scoring", action="store_true",
+                   help="Gait Normality Score 계산 건너뜀 (--skip-recovery 호환)")
     p.add_argument("--report",         action="store_true",
                    help="--skip-train과 함께 사용 시 리포트만 재생성")
     p.add_argument("--test",           action="store_true",
@@ -106,34 +106,18 @@ def step_train(args) -> dict:
     return results
 
 
-def step_recovery(cfg_path: str, version: str = "v1") -> None:
-    print("[pipeline] Step 4: Recovery Score 계산")
-    from omegaconf import OmegaConf
-    import pandas as pd
+def step_scoring(cfg_path: str, version: str = "v1", test_mode: bool = False) -> None:
+    print("[pipeline] Step 4: Gait Normality Score 계산")
+    from run_gait_normality_scoring import run_from_config
 
-    cfg = OmegaConf.load(cfg_path)
-    data_root = Path(cfg.data.root)
-    if not data_root.is_absolute():
-        data_root = (ML / data_root).resolve()
-
-    features_path = data_root / cfg.data.scalar_subject
-    if not features_path.exists():
-        print(f"[pipeline] Recovery Score: {features_path} 없음, 건너뜀")
-        return
-
-    from recovery_score.scorer import RecoveryScorer
-
-    df = pd.read_csv(features_path)
-    groups      = df["group"].values
-    subject_ids = df["subject_id"].values
-
-    scorer  = RecoveryScorer()
-    result  = scorer.compute(df, groups, subject_ids)
-
-    out_path = ML / f"artifacts-{version}" / "recovery_scores.csv"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    result.to_csv(out_path, index=False)
-    print(f"[pipeline] Recovery Score 저장: {out_path}")
+    paths = run_from_config(
+        config_path=cfg_path,
+        version=version,
+        cv_repeats=1 if test_mode else None,
+        bootstrap=20 if test_mode else None,
+    )
+    print(f"[pipeline] Gait Normality Score 저장: {paths['cohort_scores']}")
+    print(f"[pipeline] Gait Normality report: {paths['report']}")
 
 
 def step_report(version: str = "v1") -> None:
@@ -181,8 +165,8 @@ def main():
     if not args.skip_train:
         _run_step("train", lambda: step_train(args), test_log)
 
-    if not args.skip_recovery:
-        _run_step("recovery", lambda: step_recovery(args.config, version), test_log)
+    if not args.skip_scoring:
+        _run_step("scoring", lambda: step_scoring(args.config, version, test_mode=is_test), test_log)
 
     _run_step("report", lambda: step_report(version), test_log)
 

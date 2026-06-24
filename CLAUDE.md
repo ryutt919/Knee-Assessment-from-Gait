@@ -6,7 +6,7 @@ IMU-based gait classification for ACL injury groups using waveform and scalar fe
 
 - **Task**: Classify ACLD / ACLR / HA from stride-level biomechanical data
 - **Target**: Binary `{ACLD:1, ACLR:1, HA:0}` (default) or multiclass
-- **Recovery Score**: SHAP-weighted composite of 5 biomechanical components
+- **Gait Normality Score**: GDI/GPS-style HA-referenced waveform deviation with total and domain subscores
 - **Platform**: macOS Apple Silicon, Python 3.11, PyTorch, Optuna, MLflow
 
 ---
@@ -33,6 +33,10 @@ python run_pipeline.py
 python run_pipeline.py --skip-extract --skip-verify   # skip preprocessing
 python run_pipeline.py --models logreg rf xgboost     # select models
 python run_pipeline.py --test                          # fast smoke run (tiny data)
+
+# Gait Normality Score only
+python run_gait_normality_scoring.py
+python run_gait_normality_scoring.py --cv-repeats 2 --bootstrap 20  # fast validation
 
 # Model selection only
 python orchestrator.py --models all
@@ -74,7 +78,7 @@ data/processed/  (harness outputs)
 [Step 1b] features/extract_raw_cycles.py  →  stride_raw_waveforms.parquet
 [Step 2] features/verify_data.py
 [Step 3] orchestrator.py  (Loader → GroupKFold → Optuna → MLflow)
-[Step 4] recovery_score/scorer.py  →  recovery_scores.csv
+[Step 4] recovery_score/scorer.py + validation.py  →  artifacts-vN/gait_normality/
 [Step 5] reports/generate_report.py  →  HTML summary
 ```
 
@@ -90,7 +94,8 @@ data/processed/  (harness outputs)
 | Cycle waveform unit | `subject_id × speed × trial_id × actual_leg × cycle_idx` | preserve per-cycle samples without trial-boundary leakage |
 | Injured side mapping | `data/ID.csv` `Injured leg`; HA uses Right as pseudo-injured | avoid fixed-Right side errors |
 | Waveform norm (classify) | `zscore` (train-fold fit) | scale invariance |
-| Waveform norm (score) | `ha_centered` (HA mean) | deviation from healthy baseline |
+| Waveform norm (score) | trial-balanced GVS vs training HA mean; HA-LOO log-distance calibration | 100=HA mean, −10 points=1 HA SD farther |
+| Scoring CV unit | 52 biological identities (25 HA + 27 ACLD/ACLR pairs) | keep longitudinal ACLD/ACLR sessions in one fold |
 | Optuna metric | `macro_f1` (maximize) | class imbalance |
 | DL execution | `spawn` subprocess isolated | segfault prevention on Apple Silicon |
 

@@ -1,154 +1,235 @@
-"""
-Recovery Score 5개 컴포넌트 산출.
-모든 컴포넌트는 HA 분포 기준으로 표준화된 이탈 점수를 반환한다.
-"""
+"""Waveform aggregation and distance components for gait normality scoring."""
 from __future__ import annotations
+
+import json
+import re
+from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-ML = Path(__file__).parent.parent
+SPEEDS = ("slow", "normal", "fast")
+SIDES = ("injured", "contralateral")
+CHANNELS = (
+    "hip_adduction",
+    "hip_int_rotation",
+    "hip_flexion",
+    "knee_adduction",
+    "knee_int_rotation",
+    "knee_flexion",
+    "ankle_adduction",
+    "ankle_int_rotation",
+    "ankle_dorsiflexion",
+)
+N_TIMEPOINTS = 101
+EPSILON = 1e-12
 
 
-def _ha_zscore(values: np.ndarray, ha_values: np.ndarray) -> np.ndarray:
-    """HA 평균·표준편차 기준으로 z-score 변환."""
-    mu  = ha_values.mean()
-    std = ha_values.std(ddof=1)
-    if std < 1e-9:
-        return np.zeros_like(values, dtype=float)
-    return (values - mu) / std
+@dataclass(frozen=True)
+class WaveformDataset:
+    """One trial-balanced waveform tensor per subject/session."""
+
+    metadata: pd.DataFrame
+    matrices: np.ndarray  # (sessions, speeds, sides, channels, 101)
+    cycle_counts: np.ndarray  # (sessions, speeds, sides)
+    trial_counts: np.ndarray  # (sessions, speeds, sides)
 
 
-# ── 컴포넌트 1: 파형 이탈 (RMSD vs HA mean) ──────────────────────────────────
-def waveform_deviation(
-    subject_ids: np.ndarray,
-    groups: np.ndarray,
-    waveforms: np.ndarray,   # (N, 9, 101) norm_101
-) -> pd.Series:
-    """
-    피험자별 per-channel RMSD(subject_waveform, HA_mean) 평균.
-    HA 기준 z-score로 반환.
-    """
-    ha_mask = groups == "HA"
-    ha_mean = waveforms[ha_mask].mean(axis=0)  # (9, 101)
-
-    def _subj_rmsd(idx: np.ndarray) -> float:
-        sw = waveforms[idx].mean(axis=0)  # (9, 101) — 피험자 평균 파형
-        return float(np.sqrt(((sw - ha_mean) ** 2).mean()))
-
-    scores = {}
-    for sid in np.unique(subject_ids):
-        idx = np.where(subject_ids == sid)[0]
-        scores[sid] = _subj_rmsd(idx)
-
-    s = pd.Series(scores)
-    ha_sids = np.unique(subject_ids[ha_mask])
-    ha_vals = s[ha_sids].values
-    return _ha_zscore(s.values, ha_vals)
+def biological_identity(subject_id: str) -> str:
+    """Collapse ACLD/ACLR longitudinal sessions into one patient identity."""
+    match = re.fullmatch(r"(ACLD|ACLR|HA)(.+)", str(subject_id))
+    if match is None:
+        return f"UNKNOWN::{subject_id}"
+    cohort, suffix = match.groups()
+    return f"ACL::{suffix}" if cohort in {"ACLD", "ACLR"} else f"HA::{suffix}"
 
 
-# ── 컴포넌트 2: LSI 비대칭 ─────────────────────────────────────────────────
-def lsi_asymmetry(
-    features_df: pd.DataFrame,
-    groups: np.ndarray,
-    subject_ids: np.ndarray,
-) -> np.ndarray:
-    """
-    |LSI - 100| 평균 (across all LSI columns).
-    HA 기준 z-score.
-    """
-    lsi_cols = [c for c in features_df.columns if c.endswith("_LSI")]
-    if not lsi_cols:
-        raise ValueError("features_scalar.csv에 _LSI 컬럼 없음")
-
-    ha_mask = groups == "HA"
-    vals = (features_df[lsi_cols].abs() - 100).abs().mean(axis=1).values
-    ha_vals = vals[ha_mask]
-    return _ha_zscore(vals, ha_vals)
+def waveform_columns() -> list[str]:
+    return [f"{channel}_{point:03d}" for channel in CHANNELS for point in range(N_TIMEPOINTS)]
 
 
-# ── 컴포넌트 3: 속도 강건성 (속도 간 CV) ──────────────────────────────────
-def speed_robustness(
-    features_df: pd.DataFrame,
-    groups: np.ndarray,
-    subject_ids: np.ndarray,
-    speeds: list[str] = ("normal", "slow", "fast"),
-) -> np.ndarray:
-    """
-    속도별 feature CV (std/mean) 평균 → HA 기준 z-score.
-    값이 클수록 속도 변화에 불안정 → 더 나쁜 점수.
-    """
-    ha_mask = groups == "HA"
-    scalar_cols = [c for c in features_df.columns
-                   if not c.startswith("LSI_") and not c.startswith("asym_")]
-
-    cv_vals = []
-    for sid in subject_ids:
-        # 피험자별 속도 그룹은 features_df에 없음 (피험자 평균이므로 사용 불가)
-        # 대신 동일 피험자의 여러 행이 있는 stride-level에서 계산
-        # 여기서는 features_df가 피험자 평균이므로 CV 불가 → 0으로 처리
-        cv_vals.append(0.0)
-
-    cv_vals = np.array(cv_vals, dtype=float)
-    ha_vals = cv_vals[ha_mask]
-    return _ha_zscore(cv_vals, ha_vals)
+def load_cycle_waveforms(path: str | Path) -> pd.DataFrame:
+    path = Path(path)
+    columns = [
+        "subject_id",
+        "group",
+        "speed",
+        "trial_id",
+        "side_basis",
+        "cycle_idx",
+        *waveform_columns(),
+    ]
+    frame = pd.read_parquet(path, columns=columns)
+    validate_cycle_frame(frame)
+    return frame
 
 
-# ── 컴포넌트 4: 보상 전략 (hip/ankle z-score vs HA) ───────────────────────
-def compensation_strategy(
-    features_df: pd.DataFrame,
-    groups: np.ndarray,
-) -> np.ndarray:
-    """
-    Hip flexion + ankle dorsiflexion 관련 feature의 HA 기준 |z-score| 평균.
-    무릎 대신 hip/ankle이 과도하게 사용되면 높아짐.
-    """
-    comp_keywords = ("hip_flex", "ankle_dors", "hip_ext", "ankle_plant")
-    numeric_cols = features_df.select_dtypes(include="number").columns.tolist()
-    comp_cols = [c for c in numeric_cols
-                 if any(kw in c.lower() for kw in comp_keywords)]
-
-    if not comp_cols:
-        comp_cols = numeric_cols[:min(10, len(numeric_cols))]
-
-    ha_mask = groups == "HA"
-    arr = features_df[comp_cols].values.astype(float)
-
-    ha_mu  = arr[ha_mask].mean(axis=0)
-    ha_std = arr[ha_mask].std(axis=0, ddof=1)
-    ha_std[ha_std < 1e-9] = 1.0
-
-    z = np.abs((arr - ha_mu) / ha_std)
-    vals    = z.mean(axis=1)
-    ha_vals = vals[ha_mask]
-    return _ha_zscore(vals, ha_vals)
+def validate_cycle_frame(frame: pd.DataFrame) -> None:
+    required = {
+        "subject_id",
+        "group",
+        "speed",
+        "trial_id",
+        "side_basis",
+        *waveform_columns(),
+    }
+    missing = sorted(required - set(frame.columns))
+    if missing:
+        raise ValueError(f"cycle waveform columns missing: {missing[:10]}")
+    if frame.empty:
+        raise ValueError("cycle waveform frame is empty")
+    invalid_speeds = sorted(set(frame["speed"].dropna().astype(str)) - set(SPEEDS))
+    invalid_sides = sorted(set(frame["side_basis"].dropna().astype(str)) - set(SIDES))
+    if invalid_speeds or invalid_sides:
+        raise ValueError(f"unexpected speed/side values: speeds={invalid_speeds}, sides={invalid_sides}")
 
 
-# ── 컴포넌트 5: 시공간 파라미터 이탈 ─────────────────────────────────────
-def spatiotemporal_deviation(
-    features_df: pd.DataFrame,
-    groups: np.ndarray,
-) -> np.ndarray:
-    """
-    보폭, 케이던스, stride velocity 관련 feature의 HA 기준 |z-score| 평균.
-    """
-    st_keywords = ("step_width", "cadence", "stride_len", "velocity", "stance_time", "swing_time")
-    numeric_cols = features_df.select_dtypes(include="number").columns.tolist()
-    st_cols = [c for c in numeric_cols
-               if any(kw in c.lower() for kw in st_keywords)]
+def aggregate_cycle_waveforms(frame: pd.DataFrame) -> WaveformDataset:
+    """Average cycles within trial, then trials within each subject condition."""
+    validate_cycle_frame(frame)
+    wave_cols = waveform_columns()
+    session_cols = ["subject_id", "group"]
+    condition_cols = [*session_cols, "speed", "side_basis"]
+    trial_cols = [*condition_cols, "trial_id"]
 
-    if not st_cols:
-        st_cols = numeric_cols[:min(5, len(numeric_cols))]
+    subject_group_counts = frame.groupby("subject_id", observed=True)["group"].nunique()
+    if (subject_group_counts != 1).any():
+        bad = subject_group_counts[subject_group_counts != 1].index.tolist()
+        raise ValueError(f"subject_id maps to multiple session groups: {bad}")
 
-    ha_mask = groups == "HA"
-    arr = features_df[st_cols].values.astype(float)
+    trial_means = frame.groupby(trial_cols, observed=True, sort=False)[wave_cols].mean()
+    condition_means = trial_means.groupby(condition_cols, observed=True, sort=False).mean()
+    cycle_counts = frame.groupby(condition_cols, observed=True, sort=False).size()
+    trial_counts = frame.groupby(condition_cols, observed=True, sort=False)["trial_id"].nunique()
 
-    ha_mu  = arr[ha_mask].mean(axis=0)
-    ha_std = arr[ha_mask].std(axis=0, ddof=1)
-    ha_std[ha_std < 1e-9] = 1.0
+    metadata = (
+        frame[session_cols]
+        .drop_duplicates()
+        .assign(identity_id=lambda x: x["subject_id"].map(biological_identity))
+        .sort_values(["group", "subject_id"])
+        .reset_index(drop=True)
+    )
+    matrices = np.empty(
+        (len(metadata), len(SPEEDS), len(SIDES), len(CHANNELS), N_TIMEPOINTS),
+        dtype=np.float64,
+    )
+    cycles = np.zeros((len(metadata), len(SPEEDS), len(SIDES)), dtype=np.int32)
+    trials = np.zeros_like(cycles)
 
-    z = np.abs((arr - ha_mu) / ha_std)
-    vals    = z.mean(axis=1)
-    ha_vals = vals[ha_mask]
-    return _ha_zscore(vals, ha_vals)
+    for row_idx, row in metadata.iterrows():
+        for speed_idx, speed in enumerate(SPEEDS):
+            for side_idx, side in enumerate(SIDES):
+                key = (row["subject_id"], row["group"], speed, side)
+                if key not in condition_means.index:
+                    raise ValueError(f"missing required subject condition: {key}")
+                matrices[row_idx, speed_idx, side_idx] = condition_means.loc[key].to_numpy(
+                    dtype=np.float64
+                ).reshape(len(CHANNELS), N_TIMEPOINTS)
+                cycles[row_idx, speed_idx, side_idx] = int(cycle_counts.loc[key])
+                trials[row_idx, speed_idx, side_idx] = int(trial_counts.loc[key])
+
+    if not np.isfinite(matrices).all():
+        raise ValueError("aggregated waveform tensor contains non-finite values")
+    return WaveformDataset(metadata=metadata, matrices=matrices, cycle_counts=cycles, trial_counts=trials)
+
+
+def gvs_matrix(matrix: np.ndarray, reference_mean: np.ndarray) -> np.ndarray:
+    """Gait Variable Score for speed x side x channel blocks."""
+    matrix = np.asarray(matrix, dtype=np.float64)
+    if matrix.ndim == 4:
+        matrix = matrix[np.newaxis, ...]
+    expected = (len(SPEEDS), len(SIDES), len(CHANNELS), N_TIMEPOINTS)
+    if matrix.shape[1:] != expected or reference_mean.shape != expected:
+        raise ValueError(f"unexpected waveform shape: matrix={matrix.shape}, reference={reference_mean.shape}")
+    return np.sqrt(np.mean(np.square(matrix - reference_mean), axis=-1))
+
+
+def raw_distances(matrix: np.ndarray, reference_mean: np.ndarray) -> tuple[dict[str, np.ndarray], np.ndarray]:
+    """Return raw overall/subdomain distances and the 54-element GVS tensor."""
+    matrix = np.asarray(matrix, dtype=np.float64)
+    if matrix.ndim == 4:
+        matrix = matrix[np.newaxis, ...]
+    gvs = gvs_matrix(matrix, reference_mean)
+    joint_indices = {
+        "hip": np.arange(0, 3),
+        "knee": np.arange(3, 6),
+        "ankle": np.arange(6, 9),
+    }
+    distances: dict[str, np.ndarray] = {
+        "overall": np.sqrt(np.mean(np.square(gvs), axis=(1, 2, 3))),
+    }
+    for joint, indices in joint_indices.items():
+        distances[joint] = np.sqrt(np.mean(np.square(gvs[:, :, :, indices]), axis=(1, 2, 3)))
+    for speed_idx, speed in enumerate(SPEEDS):
+        distances[speed] = np.sqrt(np.mean(np.square(gvs[:, speed_idx]), axis=(1, 2)))
+
+    subject_bilateral = matrix.mean(axis=2)
+    reference_bilateral = reference_mean.mean(axis=1)
+    distances["bilateral"] = np.sqrt(
+        np.mean(np.square(subject_bilateral - reference_bilateral), axis=(1, 2, 3))
+    )
+    subject_asymmetry = matrix[:, :, 0] - matrix[:, :, 1]
+    reference_asymmetry = reference_mean[:, 0] - reference_mean[:, 1]
+    distances["asymmetry"] = np.sqrt(
+        np.mean(np.square(subject_asymmetry - reference_asymmetry), axis=(1, 2, 3))
+    )
+    return distances, gvs
+
+
+def top_waveform_regions(
+    matrix: np.ndarray,
+    reference_mean: np.ndarray,
+    limit: int = 5,
+    half_width: int = 5,
+) -> str:
+    """Describe the largest waveform deviations without inferential claims."""
+    if matrix.ndim != 4:
+        raise ValueError("top_waveform_regions expects one session matrix")
+    diff = matrix - reference_mean
+    gvs = np.sqrt(np.mean(np.square(diff), axis=-1))
+    ranked = np.argsort(gvs.ravel())[::-1][:limit]
+    rows: list[dict[str, float | int | str]] = []
+    for flat_idx in ranked:
+        speed_idx, side_idx, channel_idx = np.unravel_index(flat_idx, gvs.shape)
+        curve = diff[speed_idx, side_idx, channel_idx]
+        peak = int(np.argmax(np.abs(curve)))
+        rows.append(
+            {
+                "speed": SPEEDS[speed_idx],
+                "side": SIDES[side_idx],
+                "channel": CHANNELS[channel_idx],
+                "gvs_degrees": round(float(gvs[speed_idx, side_idx, channel_idx]), 5),
+                "peak_cycle_pct": peak,
+                "region_start_pct": max(0, peak - half_width),
+                "region_end_pct": min(100, peak + half_width),
+                "signed_peak_difference_degrees": round(float(curve[peak]), 5),
+            }
+        )
+    return json.dumps(rows, ensure_ascii=False)
+
+
+def hierarchical_bootstrap_matrix(session_frame: pd.DataFrame, rng: np.random.Generator) -> np.ndarray:
+    """Resample trials, then cycles within sampled trials, for one session."""
+    validate_cycle_frame(session_frame)
+    wave_cols = waveform_columns()
+    output = np.empty((len(SPEEDS), len(SIDES), len(CHANNELS), N_TIMEPOINTS), dtype=np.float64)
+    for speed_idx, speed in enumerate(SPEEDS):
+        for side_idx, side in enumerate(SIDES):
+            condition = session_frame[
+                session_frame["speed"].eq(speed) & session_frame["side_basis"].eq(side)
+            ]
+            trial_arrays = [
+                trial[wave_cols].to_numpy(dtype=np.float64).reshape(-1, len(CHANNELS), N_TIMEPOINTS)
+                for _, trial in condition.groupby("trial_id", observed=True, sort=False)
+            ]
+            if not trial_arrays:
+                raise ValueError(f"bootstrap condition missing: speed={speed}, side={side}")
+            sampled_trial_indices = rng.integers(0, len(trial_arrays), size=len(trial_arrays))
+            sampled_trial_means = []
+            for trial_idx in sampled_trial_indices:
+                trial = trial_arrays[int(trial_idx)]
+                cycle_indices = rng.integers(0, len(trial), size=len(trial))
+                sampled_trial_means.append(trial[cycle_indices].mean(axis=0))
+            output[speed_idx, side_idx] = np.mean(sampled_trial_means, axis=0)
+    return output

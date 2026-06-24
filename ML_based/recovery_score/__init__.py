@@ -1,15 +1,26 @@
-from .scorer     import RecoveryScorer
+"""HA-referenced gait normality scoring."""
+
 from .components import (
-    waveform_deviation,
-    lsi_asymmetry,
-    compensation_strategy,
-    spatiotemporal_deviation,
+    CHANNELS,
+    SIDES,
+    SPEEDS,
+    WaveformDataset,
+    aggregate_cycle_waveforms,
+    biological_identity,
+    load_cycle_waveforms,
 )
+from .scorer import GaitNormalityScorer, RecoveryScorer
+from .validation import run_scoring_pipeline
 
 __all__ = [
+    "CHANNELS",
+    "SIDES",
+    "SPEEDS",
+    "WaveformDataset",
+    "aggregate_cycle_waveforms",
+    "biological_identity",
+    "load_cycle_waveforms",
+    "GaitNormalityScorer",
     "RecoveryScorer",
-    "waveform_deviation",
-    "lsi_asymmetry",
-    "compensation_strategy",
-    "spatiotemporal_deviation",
+    "run_scoring_pipeline",
 ]

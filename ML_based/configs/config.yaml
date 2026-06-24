@@ -112,6 +112,13 @@ shap:
   enabled: false    # true 설정 시 각 outer fold에서 SHAP 분석 실행
   top_k: 10         # beeswarm plot 및 η² 비교에 사용할 top-K feature 수
 
+# ── Gait Normality Score ─────────────────────────
+scoring:
+  n_splits: 5                  # 52 biological identities 기준 pair-aware folds
+  cv_repeats: 10               # repeated OOF stability evaluation
+  bootstrap_iterations: 200   # trial → cycle hierarchical bootstrap CI
+  seed: 42
+
 # ── Optuna ───────────────────────────────────────
 optuna:
   n_trials:
