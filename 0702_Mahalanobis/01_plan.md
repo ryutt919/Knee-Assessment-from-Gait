@@ -58,13 +58,11 @@ Walking/
 
 ### 1단계: 데이터 전처리 (`01_data_preprocessing.py`)
 - `/Users/ryutt/Desktop/mini_ryutt/Walking/data/processed/slim_gait.parquet` 로드.
-- `slim_gait.parquet`은 시계열 관절각도 및 발 접촉 정보만 포함된 원본 데이터이므로, 피크(Peak)나 가동범위(ROM) 등의 요약 값들은 포함되어 있지 않습니다. 따라서 전처리 단계에서 아래의 두 가지 특징 추출을 직접 수행합니다.
+- `slim_gait.parquet`은 시계열 관절각도 및 발 접촉 정보만 포함된 원본 데이터입니다. Peak 값 등의 가공된 스칼라 지표는 사용하지 않고, **원본 파형(Waveform) 자체를 입력으로 하여 PCA를 수행**하도록 단일화합니다.
 - 좌/우측 발 접촉 신호(`footContacts_0`, `footContacts_2`)의 heel strike 시점을 검출하여 Stride 분할.
 - 가속/감속 구간의 영향을 최소화하기 위해 각 Trial별 앞/뒤 2 strides 제거 (Trim).
 - 9개 관절 각도 데이터를 Stride당 101 포인트로 선형 보간하여 정규화.
-- Optuna 탐색을 위해 두 종류의 특징 벡터 세트를 직접 계산하여 생성:
-  1. **Waveform 특징**: 관절별 101pt 파형 데이터를 이어 붙인 고차원 벡터 (9개 관절 $\times$ 101 = 909차원).
-  2. **Scalar 특징 (직접 계산)**: 정규화된 101pt 파형 상에서 각 관절별 최대 신전/굴곡 피크 각도(Max/Min Angle), 가동범위(ROM = Max - Min), Stance/Swing 페이즈 도달 시점 및 각도 값 등 (약 30~50차원)을 직접 추출하여 생성.
+- 최종적으로 각 Stride별 **101pt Waveform 특징 벡터**를 생성합니다 (9개 관절 $\times$ 101 = 909차원 벡터).
 
 ### 2단계: 공분산 및 마할라노비스 거리 파이프라인 (`02_mahalanobis_pipeline.py`)
 - 피험자 기준의 데이터 누수 방지를 위해 `GroupKFold(n_splits=5)`(subject_id 기준) 적용.
@@ -78,7 +76,6 @@ Walking/
 
 ### 3단계: Optuna 최적화 (`03_optuna_optimization.py`)
 Optuna 최적화 탐색 공간:
-- `feature_type`: `["waveform", "scalar"]`
 - `scaling`: `["zscore", "robust", "minmax"]`
 - `pca_k_method`: `["kaiser", "variance_ratio", "fixed"]`
 - `pca_variance_ratio` (variance_ratio 사용 시): $0.70 \sim 0.99$
@@ -87,7 +84,7 @@ Optuna 최적화 탐색 공간:
 - `speed_filter`: `["all", "normal", "fast", "slow"]`
 - `distance_metric`: `["mahalanobis", "squared_mahalanobis"]`
 
-**최적화 목적 함수**: Robust MCD (support fraction = 0.75) 기반 마할라노비스 거리를 사용한 Out-of-Fold 분류 AUC-ROC를 최대화.
+**최적화 목적 함수**: 909차원의 원본 Waveform 입력에 대해 Robust MCD (support fraction = 0.75) 기반 마할라노비스 거리를 사용한 Out-of-Fold 분류 AUC-ROC를 최대화.
 
 ---
 
