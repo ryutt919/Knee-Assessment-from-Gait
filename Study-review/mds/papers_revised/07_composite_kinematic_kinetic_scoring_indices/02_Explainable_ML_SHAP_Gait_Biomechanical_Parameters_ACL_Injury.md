@@ -2,7 +2,7 @@
 
 > Kokkotis C, Moustakidis S, Tsatalas T, et al. (2022). *Scientific Reports*, 12, 6647. DOI: 10.1038/s41598-022-10666-2. PMID: 35459787. PMCID: PMC9026057.
 > 원문: https://pmc.ncbi.nlm.nih.gov/articles/PMC9026057/
-> 로컬 PDF: `docs/ref_papers/04_machine_learning_and_deep_learning/Leveraging explainable machine learning to identify gait biomechanical parameters associated with anterior cruciate ligament injury.pdf`
+> 로컬 PDF: `docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Leveraging explainable machine learning to identify gait biomechanical parameters associated with anterior cruciate ligament injury.pdf`
 
 > 이 논문은 명명된 단일 composite score/index를 제시하지 않는다. SHAP은 feature contribution 설명값이며 환자별 정상성·회복 점수가 아니다.
 

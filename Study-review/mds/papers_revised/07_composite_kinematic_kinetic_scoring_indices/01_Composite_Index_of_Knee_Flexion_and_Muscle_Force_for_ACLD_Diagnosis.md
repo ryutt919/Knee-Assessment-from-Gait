@@ -2,7 +2,7 @@
 
 > Li H, Huang H, Ren S, Rong Q. (2023). *Bioengineering*, 10(3), 284. DOI: 10.3390/bioengineering10030284. PMID: 36978675. PMCID: PMC10045096.
 > 원문: https://pmc.ncbi.nlm.nih.gov/articles/PMC10045096/
-> 로컬 PDF: `docs/ref_papers/01_acl_gait_biomechanics_studies/Leveraging Multivariable Linear Regression Analysis to Identify Patients with Anterior Cruciate Ligament Deficiency Using a Composite Index of the Knee Flexion and Muscle Force.pdf`
+> 로컬 PDF: `docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Leveraging Multivariable Linear Regression Analysis to Identify Patients with Anterior Cruciate Ligament Deficiency Using a Composite Index of the Knee Flexion and Muscle Force.pdf`
 
 ## 검증 결과 (AS-IS → TO-BE)
 

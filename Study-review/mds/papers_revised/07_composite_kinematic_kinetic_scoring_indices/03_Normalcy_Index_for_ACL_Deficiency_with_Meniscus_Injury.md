@@ -3,6 +3,7 @@
 > Liu X, Huang H, Ren S, Rong Q, Ao Y. (2020). *Computer Methods in Biomechanics and Biomedical Engineering*, 23(14), 1102–1108. DOI: 10.1080/10255842.2020.1789119. PMID: 32648770.
 > PubMed: https://pubmed.ncbi.nlm.nih.gov/32648770/
 > 저자 공개 원문: https://www.researchgate.net/publication/342855790_Use_of_the_normalcy_index_for_the_assessment_of_abnormal_gait_in_the_anterior_cruciate_ligament_deficiency_combined_with_meniscus_injury
+> 로컬 PDF: `docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Use of the normalcy index for the assessment of abnormal gait in the anterior cruciate ligament deficiency combined with meniscus injury.pdf`
 
 ## 검증 결과 (AS-IS → TO-BE)
 
