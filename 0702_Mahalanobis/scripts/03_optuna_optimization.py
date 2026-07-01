@@ -27,6 +27,7 @@ import numpy as np
 import optuna
 import pandas as pd
 from optuna.samplers import TPESampler
+from optuna.trial import TrialState
 
 ROOT    = Path(__file__).resolve().parent.parent.parent
 SANDBOX = Path(__file__).resolve().parent.parent
@@ -92,9 +93,43 @@ class OptimObjective:
             return 0.0
 
 
+# ─── Early Stopping 콜백 ─────────────────────────────────────────────────────
+
+class EarlyStoppingCallback:
+    """
+    최근 n_patience trials 동안 best value가 개선되지 않으면 최적화를 중단.
+
+    Args:
+        n_patience: 개선 없이 허용할 최대 trial 수
+        min_delta  : '개선'으로 인정할 최소 AUC 향상폭
+    """
+
+    def __init__(self, n_patience: int = 30, min_delta: float = 1e-4) -> None:
+        self.n_patience = n_patience
+        self.min_delta  = min_delta
+        self._best      = -float("inf")
+        self._no_improve = 0
+
+    def __call__(self, study: optuna.Study, trial: optuna.trial.FrozenTrial) -> None:
+        if trial.state != TrialState.COMPLETE:
+            return
+        val = trial.value
+        if val is None:
+            return
+        if val > self._best + self.min_delta:
+            self._best = val
+            self._no_improve = 0
+        else:
+            self._no_improve += 1
+            if self._no_improve >= self.n_patience:
+                print(f"\n[03] ⏹ Early Stop: {self.n_patience} trials 연속 개선 없음 "
+                      f"(best={self._best:.4f})")
+                study.stop()
+
+
 # ─── 메인 ────────────────────────────────────────────────────────────────────
 
-def main(test_mode: bool = False, n_trials: int = 50) -> None:
+def main(test_mode: bool = False, n_trials: int = 200, n_patience: int = 30) -> None:
     src = DATA_PROCESSED / ("mahalanobis_features_test.parquet" if test_mode else "mahalanobis_features.parquet")
     if not src.exists():
         print(f"[03] ❌ 입력 파일 없음: {src}")
@@ -108,9 +143,10 @@ def main(test_mode: bool = False, n_trials: int = 50) -> None:
     n_splits   = min(5, n_subjects // 3) if n_subjects >= 3 else 2
     n_splits   = max(n_splits, 2)
 
-    # 테스트 모드에서는 trials 축소
+    # 테스트 모드에서는 trials/patience 축소
     if test_mode:
-        n_trials = min(n_trials, 5)
+        n_trials  = min(n_trials, 5)
+        n_patience = 3
 
     db_path = RESULTS_DIR / "optuna_mahalanobis.db"
     storage = f"sqlite:///{db_path}"
@@ -129,11 +165,14 @@ def main(test_mode: bool = False, n_trials: int = 50) -> None:
 
     objective = OptimObjective(df, n_splits=n_splits)
 
+    early_stop = EarlyStoppingCallback(n_patience=n_patience)
+
     study.optimize(
         objective,
         n_trials=n_trials,
         show_progress_bar=True,
         n_jobs=1,
+        callbacks=[early_stop],
     )
 
     best = study.best_trial
@@ -160,9 +199,11 @@ def main(test_mode: bool = False, n_trials: int = 50) -> None:
 
 if __name__ == "__main__":
     test_mode = "--test" in sys.argv
-    # --trials N 로 trial 수 지정
-    n_trials = 50
+    n_trials  = 200
+    n_patience = 30
     for i, arg in enumerate(sys.argv):
         if arg == "--trials" and i + 1 < len(sys.argv):
             n_trials = int(sys.argv[i + 1])
-    main(test_mode=test_mode, n_trials=n_trials)
+        if arg == "--patience" and i + 1 < len(sys.argv):
+            n_patience = int(sys.argv[i + 1])
+    main(test_mode=test_mode, n_trials=n_trials, n_patience=n_patience)

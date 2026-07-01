@@ -45,10 +45,11 @@ def run_step(step_name: str, test_mode: bool, **kwargs) -> None:
 
 
 def main() -> None:
-    args     = sys.argv[1:]
-    test     = "--test" in args
-    skip_set = set()
-    n_trials = 50
+    args      = sys.argv[1:]
+    test      = "--test" in args
+    skip_set  = set()
+    n_trials  = 200
+    n_patience = 30
 
     i = 0
     while i < len(args):
@@ -60,6 +61,9 @@ def main() -> None:
         elif args[i] == "--trials" and i + 1 < len(args):
             n_trials = int(args[i + 1])
             i += 2
+        elif args[i] == "--patience" and i + 1 < len(args):
+            n_patience = int(args[i + 1])
+            i += 2
         else:
             i += 1
 
@@ -68,6 +72,7 @@ def main() -> None:
     print(f"  Mahalanobis Impairment Score Pipeline")
     print(f"  모드: {mode_label}")
     print(f"  스킵: {skip_set if skip_set else '없음'}")
+    print(f"  Optuna: n_trials={n_trials}, early_stop patience={n_patience}")
     print(f"{'#'*60}\n")
 
     t_total = time.time()
@@ -86,7 +91,8 @@ def main() -> None:
 
     # 03: Optuna 최적화
     if "03" not in skip_set:
-        run_step("03_optuna_optimization", test_mode=test, n_trials=n_trials)
+        run_step("03_optuna_optimization", test_mode=test,
+                 n_trials=n_trials, n_patience=n_patience)
 
     # 04: SHAP 분석
     if "04" not in skip_set:
