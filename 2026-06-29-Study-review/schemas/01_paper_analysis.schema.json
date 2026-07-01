@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provider", "title", "paper_bibliography", "bibliographic_info",
+    "purpose", "design_and_participants", "methods", "key_results",
+    "author_conclusion", "limitations", "reviewer_thoughts",
+    "prior_research_problems", "study_solution_and_contribution",
+    "referenceable_claims"
+  ],
+  "properties": {
+    "provider": {"type": "string", "enum": ["codex", "claude", "antigravity"]},
+    "title": {"type": "string", "minLength": 1},
+    "paper_bibliography": {"type": "string", "minLength": 1},
+    "bibliographic_info": {
+      "type": "object", "additionalProperties": false,
+      "required": ["authors", "year", "journal", "doi", "source_file"],
+      "properties": {
+        "authors": {"type": "string"}, "year": {"type": "string"},
+        "journal": {"type": "string"}, "doi": {"type": "string"},
+        "source_file": {"type": "string"}
+      }
+    },
+    "purpose": {"$ref": "#/$defs/evidence_items"},
+    "design_and_participants": {"$ref": "#/$defs/evidence_items"},
+    "methods": {"$ref": "#/$defs/evidence_items"},
+    "key_results": {"$ref": "#/$defs/evidence_items"},
+    "author_conclusion": {"$ref": "#/$defs/evidence_items"},
+    "limitations": {"$ref": "#/$defs/evidence_items"},
+    "reviewer_thoughts": {"$ref": "#/$defs/evidence_items"},
+    "prior_research_problems": {"$ref": "#/$defs/evidence_items"},
+    "study_solution_and_contribution": {"$ref": "#/$defs/evidence_items"},
+    "referenceable_claims": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["topic", "original_quote", "korean_translation", "locator", "in_text_citation", "cited_reference", "claim_type", "usage_note"],
+        "properties": {
+          "topic": {"type": "string"},
+          "original_quote": {"type": "string"},
+          "korean_translation": {"type": "string"},
+          "locator": {"type": "string"},
+          "in_text_citation": {"type": "string"},
+          "cited_reference": {"type": "string"},
+          "claim_type": {"type": "string", "enum": ["background_citation", "analyzed_paper_finding", "uncited_author_claim"]},
+          "usage_note": {"type": "string"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["summary", "evidence_quote", "locator"],
+        "properties": {
+          "summary": {"type": "string"},
+          "evidence_quote": {"type": "string"},
+          "locator": {"type": "string"}
+        }
+      }
+    }
+  }
+}

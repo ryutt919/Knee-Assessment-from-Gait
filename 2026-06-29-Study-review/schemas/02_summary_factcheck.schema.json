@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provider", "title", "source_pdf", "source_summary_path",
+    "sections_checked", "issues_found", "overall_verdict",
+    "overall_verdict_reason", "findings", "unverifiable_items"
+  ],
+  "properties": {
+    "provider": {"type": "string", "enum": ["codex", "claude", "antigravity"]},
+    "title": {"type": "string", "minLength": 1},
+    "source_pdf": {"type": "string"},
+    "source_summary_path": {"type": "string"},
+    "sections_checked": {"type": "integer", "minimum": 0},
+    "issues_found": {"type": "integer", "minimum": 0},
+    "overall_verdict": {"type": "string", "enum": ["신뢰 가능", "일부 수정 필요", "신뢰 어려움"]},
+    "overall_verdict_reason": {"type": "string"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "section", "quoted_summary_text", "issue_type", "severity",
+          "explanation", "source_evidence_quote", "source_locator", "suggested_correction"
+        ],
+        "properties": {
+          "section": {
+            "type": "string",
+            "enum": [
+              "bibliographic_info", "purpose", "design_and_participants", "methods",
+              "key_results", "author_conclusion", "limitations", "reviewer_thoughts",
+              "prior_research_problems", "study_solution_and_contribution", "referenceable_claims"
+            ]
+          },
+          "quoted_summary_text": {"type": "string", "minLength": 1},
+          "issue_type": {
+            "type": "string",
+            "enum": [
+              "사실불일치", "번역오류", "과장", "누락", "인과관계오용",
+              "수치오류", "인용표기오류", "근거불충분"
+            ]
+          },
+          "severity": {"type": "string", "enum": ["경미", "중대"]},
+          "explanation": {"type": "string", "minLength": 1},
+          "source_evidence_quote": {"type": "string", "minLength": 1},
+          "source_locator": {"type": "string", "minLength": 1},
+          "suggested_correction": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "unverifiable_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["quoted_summary_text", "reason"],
+        "properties": {
+          "quoted_summary_text": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
