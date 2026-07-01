@@ -1,0 +1,17 @@
+# 사실검증: A scoping review of portable sensing for out-of-lab anterior cruciate ligament injury prevention and rehabilitation
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/A scoping review of portable sensing for out-of-lab anterior cruciate ligament injury prevention and rehabilitation.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/2026-06-29-Study-review/mds/papers/19_A_scoping_review_of_portable_sensing_for_out_of_lab_anterior_cruciate_ligament_injury_prevention_and_rehabilitation.md
+- 검증 provider: codex
+- 검토 항목 수: 31
+- 발견된 문제 수: 0
+- 전체 판정: **신뢰 가능**
+- 판정 근거: 요약의 주요 서지정보, 연구 목적, 설계와 대상, 방법, 핵심 결과, 저자 결론, 한계, 기여 및 레퍼런스 항목은 제공된 SOURCE_TEXT와 사실적으로 일치한다. 다만 분석 provider 표기는 논문 원문에서 확인 가능한 학술 내용이 아니므로 unverifiable_items에 기록했다.
+
+## 발견된 문제
+
+- 문제로 분류된 항목 없음
+
+## 원문에서 확인 불가능한 항목
+
+- “- 분석 provider: antigravity” — SOURCE_TEXT는 논문 원문 추출 텍스트이며, 요약 생성 또는 분석 provider 정보를 포함하지 않는다. 따라서 원문 근거로 확인할 수 없다.

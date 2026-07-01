@@ -1,0 +1,62 @@
+# 사실검증: Functional Performance Testing After Anterior Cruciate Ligament Reconstruction: A Systematic Review
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Functional Performance Testing After Anterior Cruciate Ligament Reconstruction - A Systematic Review.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/2026-06-29-Study-review/mds/papers/41_Functional_Performance_Testing_After_Anterior_Cruciate_Ligament_Reconstruction_A_Systematic_Review.md
+- 검증 provider: codex
+- 검토 항목 수: 43
+- 발견된 문제 수: 5
+- 전체 판정: **신뢰 어려움**
+- 판정 근거: 대부분의 핵심 요약은 원문과 일치하지만, 인용 매핑 오류와 원문보다 강한 해석, 일부 확인 불가 항목이 있다. 특히 레퍼런스 항목에서 인용번호 13, 22를 연간 재건술 시행 건수 근거로만 배정해야 하는데 발생률 문장까지 함께 묶어 제시한 점은 중대한 인용표기 오류다.
+
+## 발견된 문제
+
+### 1. [생각해볼 내용] 누락 (경미)
+
+- 요약 문장: “연구들의 홉 테스트 결과 분석에 따르면 표준 홉 테스트는 6~12개월 사이에 90% 이상의 우수한 LSI 성취를 보여주지만, 피로 상태를 반영하는 홉 테스트(fatigue single-leg hop, 30초 side hop 등)에서는 결손 수치가 더 낮아 스포츠 복귀 기준 평가 시 단순 표준 테스트 외에 피로도 기반 기능 평가의 추가가 유용할 수 있다. _(근거: PAGE 5, DISCUSSION)_”
+- 설명: 원문은 표준 4개 홉 테스트가 6~9개월에 90% 이상이라고 했고, endurance hop test를 보고한 연구 수가 제한적이라는 한정조건을 명시했다. 요약은 이를 6~12개월로 바꾸고 제한적 근거라는 조건을 약화했다.
+- 원문 근거: “The 4 standard hop tests (single-leg, cross-over, triple, and 6-m timed hop tests) all averaged greater than 90% LSI at 6 to 9 months postoperatively. Interestingly, when more demanding testing was carried out that required increased stamina in the operative leg, results declined. Although the number of studies reporting results of endurance hop tests is limited, the findings presented in this investigation demonstrated that the results of the fatigue single-leg hop and side hop in 30 seconds showed lower LSI values as compared with the standard hop testing regimen.” (PAGE 5, DISCUSSION)
+- 수정 제안: 표준 4개 홉 테스트는 수술 후 6~9개월에 평균 90% 이상의 LSI를 보였고, 보고 연구 수는 제한적이지만 fatigue single-leg hop 및 30초 side hop 등 지구력 기반 홉 테스트에서는 표준 홉 테스트보다 낮은 LSI가 관찰되어 피로 관련 결손 평가의 필요성을 시사한다.
+
+### 2. [연구의 해결 방식과 기여] 과장 (경미)
+
+- 요약 문장: “본 연구는 일차 ACL 재건술 후 환자의 스포츠 복귀 시점을 객관적으로 결정할 수 있도록 기존에 발표된 모든 연구들의 기능 평가 수치를 체계적으로 분석하여 표준 데이터(normative data)를 제공하고 이식건 종류에 따른 결과 차이를 규명했다. _(근거: PAGE 2, INTRODUCTION)_”
+- 설명: 원문은 스포츠 복귀 기준 결정을 돕기 위한 normative data 제공과 이식건 유형별 차이 탐색을 목표로 한다고 했지만, '객관적으로 결정할 수 있도록'은 원문보다 단정적이다. 논문은 결론에서도 guidance 또는 assist로 표현한다.
+- 원문 근거: “The goal of this investigation was to perform a systematic review of all available studies to provide normative data for functional tests utilized following primary ACL reconstruction to determine return to play. We also sought to detect any difference in the outcomes of functional testing between different graft types.” (PAGE 2, INTRODUCTION)
+- 수정 제안: 본 연구는 일차 ACL 재건술 후 스포츠 복귀 판단을 돕기 위해 기존 연구들의 기능 평가 결과를 체계적으로 검토하여 표준 참고자료(normative data)를 제공하고, 이식건 종류에 따른 기능 평가 결과 차이를 탐색했다.
+
+### 3. [레퍼런스할 수 있는 내용] 인용표기오류 (중대)
+
+- 요약 문장: “- 원문 내 인용표기: 78, 13, 22
+- 해당 선행문헌: 13. Cuellar JM, Scuderi GJ, Cuellar VG, Golish SR, Yeomans DC.
+Diagnostic utility of cytokine biomarkers in the evaluation of acute
+knee pain. J Bone Joint Surg Am. 2009;91:2313-2320.
+22. Fu FH, West R, Musahl V, Vyas D. Anatomic single- and double-
+bundle anterior cruciate ligament (ACL) reconstruction. http://www.
+orthonet.pitt.edu/content/DoubleBundle.htm. Accessed January 13,
+2013.
+78. Prodromos CC, Han Y, Rogowski J, Joyce B, Shi K. A meta-analysis
+of the incidence of anterior cruciate ligament tears as a function of
+gender, sport, and a knee injury-reduction regimen. Arthroscopy.
+2007;23:1320-1325.e6.”
+- 설명: 원문에서 발생률 0.7~2.5건의 근거는 78이고, 미국 연간 재건술 100,000~200,000건 추정의 근거는 13,22다. 요약은 두 문장을 하나의 주장으로 묶으면서 인용번호 78, 13, 22를 모두 같은 범위의 근거처럼 제시해 인용 매핑이 부정확하다.
+- 원문 근거: “Anterior cruciate ligament (ACL) injuries are common in the young and athletically active population, with a reported incidence of 0.7 to 2.5 ACL tears per 1000 athletic-exposures.78 It has been estimated that between 100,000 and 200,000 reconstructions are performed in the United States each year.13,22” (PAGE 1, INTRODUCTION)
+- 수정 제안: 원문 내 인용표기는 발생률 문장에는 78, 미국 내 연간 재건술 시행 건수 문장에는 13,22로 구분해 적는다.
+
+### 4. [레퍼런스할 수 있는 내용] 인과관계오용 (경미)
+
+- 요약 문장: “- 활용 맥락과 주의: 신경근 결손 및 대퇴사두근 약화가 재파열 위험성을 높이며 기능 회복 상태를 평가하는 객관적 지표로 타당함을 보일 때 인용한다.”
+- 설명: 원문은 하지 신경근 조절 결손이 2차 ACL 손상의 위험요인이라고 했고, 대퇴사두근 근력은 ACL 재건술 후 다리의 물리적 기능과 관련된다고 했다. 요약은 대퇴사두근 약화까지 재파열 위험을 높인다고 연결해 원문보다 인과 범위를 넓혔다.
+- 원문 근거: “Deficits in neuromuscular control of the lower extremity are known to be a risk factor for secondary (retear) ACL injury and are therefore often used in assessing return-to-play readiness.75,100 Quadriceps strength, in particular, has been associated with physical functioning of the leg following ACL reconstruction.16,57” (PAGE 1, INTRODUCTION)
+- 수정 제안: 신경근 조절 결손이 2차 ACL 손상 위험요인으로 제시되고, 대퇴사두근 근력은 ACL 재건술 후 하지 기능과 관련된 지표라는 점을 설명할 때 인용한다.
+
+### 5. [레퍼런스할 수 있는 내용] 과장 (경미)
+
+- 요약 문장: “- 활용 맥락과 주의: 자가 햄스트링 이식건 사용 환자가 슬개건(BPTB) 이식건 환자에 비해 수술 후 1년 시점까지 무릎 굴곡력(flexion) 측면에서 유의한 약화가 있음을 논의 부분에서 지지하는 근거로 재사용 가능하다.”
+- 설명: '수술 후 1년 시점까지'는 1년까지 지속적으로 그러했다는 의미로 읽힐 수 있으나, 원문 근거는 1년 시점에서 BPTB군의 굴곡 결손이 더 적었다는 비교다.
+- 원문 근거: “The knee flexion strength deficit was significantly less in the BPTB autograft group as compared with those having hamstring autograft at 1 year postoperatively, while no significant differences were found in isokinetic extension strength between the 2 groups.” (PAGE 1, Results)
+- 수정 제안: 자가 햄스트링 이식건 사용 환자가 BPTB 자가이식건 환자에 비해 수술 후 1년 시점에서 무릎 굴곡 근력 결손이 더 컸다는 근거로 재사용할 수 있다.
+
+## 원문에서 확인 불가능한 항목
+
+- “- 분석 provider: antigravity” — SOURCE_TEXT에는 요약 생성 또는 분석 provider 정보가 없어 확인할 수 없다.
+- “- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Functional Performance Testing After Anterior Cruciate Ligament Reconstruction - A Systematic Review.pdf” — SOURCE_TEXT에는 로컬 파일 경로 정보가 없어 확인할 수 없다.

@@ -1,0 +1,59 @@
+# 사실검증: IMU-Based Joint Angle Measurement for Gait Analysis
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/IMU-Based Joint Angle Measurement for Gait Analysis.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/2026-06-29-Study-review/mds/papers/23_IMU_Based_Joint_Angle_Measurement_for_Gait_Analysis.md
+- 검증 provider: codex
+- 검토 항목 수: 31
+- 발견된 문제 수: 3
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 대부분의 요약은 원문과 일치하지만, 일부 항목에서 원문의 범위를 넘어선 표현이나 수치 표현의 세부 부정확성이 있다. 중대 오류는 확인되지 않았다.
+
+## 발견된 문제
+
+### 1. [핵심 결과] 수치오류 (경미)
+
+- 요약 문장: “보철물 측과 대조측 모두 발목관절 저측/배측 굴곡 각도 측정에서 편차가 약 1도 내외였다. _(근거: PAGE 15, Figure 9 Caption)_”
+- 설명: Figure 9 캡션은 양쪽 모두 약 1도라고 표현하지만, Table 1의 6회 시험 평균은 보철물 0.81도, 대조측 1.62도로 제시된다. '대조측도 약 1도 내외'라고 단정하면 표의 평균값을 충분히 반영하지 못한다.
+- 원문 근거: “ankle
+prosthesis 0.92◦
+1.03◦
+0.91◦
+0.65◦
+0.67◦
+0.69◦
+0.16◦
+0.81◦
+contralateral 0.95◦
+1.50◦
+1.25◦
+1.53◦
+1.85◦
+2.61◦
+0.57◦
+1.62◦” (PAGE 16, Table 1)
+- 수정 제안: 발목 저측/배측 굴곡 각도 측정에서 보철물 측 평균 RMSE는 0.81도, 대조측 평균 RMSE는 1.62도였으며, 본문과 그림 설명에서는 전체적으로 약 1도 수준의 편차로 설명되었다.
+
+### 2. [생각해볼 내용] 과장 (경미)
+
+- 요약 문장: “마그네토미터를 제외하고 자이로스코프와 가속도계만 사용해 구속조건 식별 및 각도 측정을 성공적으로 완수한 설계 방식은 실생활이나 자성 왜곡이 흔한 병원 실내 임상 시험 환경에서 대단히 유용할 것으로 평가된다. _(근거: PAGE 1, Abstract)_”
+- 설명: 원문은 자이로스코프와 가속도계만 사용하여 균질한 자기장에 의존하지 않는 방법을 제안한다고 설명한다. '실생활이나 자성 왜곡이 흔한 병원 실내 임상 시험 환경에서 대단히 유용'하다는 평가는 원문보다 적용 맥락과 효용을 강하게 확장한 해석이다.
+- 원문 근거: “In particular, we propose methods that use
+only gyroscopes and accelerometers and, therefore, do not rely on a homogeneous magnetic
+field.” (PAGE 1, Abstract)
+- 수정 제안: 마그네토미터를 제외하고 자이로스코프와 가속도계만 사용하도록 설계되어, 균질한 자기장에 의존하지 않는다는 점이 장점으로 제시된다.
+
+### 3. [연구의 해결 방식과 기여] 과장 (경미)
+
+- 요약 문장: “복잡한 수동 측정이나 캘리브레이션 자세/동작 없이 센서를 부착하고 간단히 다리를 움직이기만 하면 실시간 각도를 출력하는 플러그 앤 플레이 방식의 혁신적 보행 분석 환경을 제공한다. _(근거: PAGE 17, Section 5. Conclusions)_”
+- 설명: 원문은 이러한 방법이 플러그 앤 플레이 보행 분석의 가능성을 열며, 온라인 사용 구현과 실시간 측정은 향후 연구 주제라고 서술한다. 요약의 '제공한다'와 '혁신적'은 현재 완성된 환경을 이미 제공한 것처럼 표현해 원문보다 강하다.
+- 원문 근거: “Therefore, andsincetheysupersedemanualmeasurementsandprecisecalibrationmovements, these
+new methods open the door to a plug-and-play gait analysis, in which one simply attaches the IMUs,
+moves the legs for a few seconds and then receives joint angle measurements in real time. This will be
+the subject of our future research, including extensions for 2D and 3D angle measurements on ankle and
+hip joints.” (PAGE 17, Section 5. Conclusions)
+- 수정 제안: 복잡한 수동 측정이나 정밀한 캘리브레이션 자세/동작을 대체할 수 있어, 센서를 부착하고 몇 초간 다리를 움직인 뒤 실시간 관절각을 얻는 플러그 앤 플레이 보행 분석으로 이어질 가능성을 제시한다.
+
+## 원문에서 확인 불가능한 항목
+
+- “원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/IMU-Based Joint Angle Measurement for Gait Analysis.pdf” — SOURCE_TEXT에는 로컬 파일 경로 정보가 포함되어 있지 않아 원문 근거로 확인할 수 없다.
+- “분석 provider: antigravity” — SOURCE_TEXT에는 요약 생성 또는 분석 provider 정보가 포함되어 있지 않아 원문 근거로 확인할 수 없다.
