@@ -71,7 +71,7 @@ Walking/
 - 각 fold에서:
   1. 학습 세트의 정상 대조군(HA) 데이터만을 사용하여 스케일러(StandardScaler 등) 및 PCA 적합.
   2. Kaiser criterion 또는 지정 비율을 기준으로 주요 주성분(PC) 개수 $k$ 선정.
-  3. 학습 세트 HA의 PC Score 분포에 대해 평균 $m$과 공분산 $C$(또는 Robust MCD 공분산 $C_{MCD}$) 추정.
+  3. 학습 세트 HA의 PC Score 분포에 대해 **Robust MCD(Minimum Covariance Determinant) 방식으로 공분산 행렬 및 평균을 추정**합니다. 센서 노이즈와 보행 특이치(Outlier)에 대한 강건성을 보장하기 위해 **support fraction은 0.75로 고정**하여 사용합니다. (일반 공분산은 노이즈에 매우 취약하므로 배제합니다.)
   4. 검증 세트의 HA 및 ACL 데이터를 주성분 공간으로 투영 후 마할라노비스 거리 계산.
   5. 거리를 MHS 또는 NI 점수로 변환.
 - 전체 Fold의 OOF(Out-of-Fold) 예측치에 대해 HA vs ACL 분류 성능(AUC-ROC) 평가.
@@ -83,13 +83,11 @@ Optuna 최적화 탐색 공간:
 - `pca_k_method`: `["kaiser", "variance_ratio", "fixed"]`
 - `pca_variance_ratio` (variance_ratio 사용 시): $0.70 \sim 0.99$
 - `pca_fixed_k` (fixed 사용 시): $2 \sim 50$
-- `use_mcd`: `[True, False]`
-- `mcd_support_fraction`: $0.50 \sim 0.90$
 - `joints_to_use`: 사용할 관절 조합 (9개 관절 각각의 활성화 여부)
 - `speed_filter`: `["all", "normal", "fast", "slow"]`
 - `distance_metric`: `["mahalanobis", "squared_mahalanobis"]`
 
-**최적화 목적 함수**: Out-of-Fold 분류 AUC-ROC를 최대화.
+**최적화 목적 함수**: Robust MCD (support fraction = 0.75) 기반 마할라노비스 거리를 사용한 Out-of-Fold 분류 AUC-ROC를 최대화.
 
 ---
 
