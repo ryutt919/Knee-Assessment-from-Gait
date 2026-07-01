@@ -167,6 +167,21 @@ def validate_shape(data: dict[str, Any], provider: str) -> list[str]:
         for key in ("topic", "original_quote", "korean_translation", "locator", "in_text_citation", "cited_reference", "claim_type", "usage_note"):
             if key not in claim:
                 errors.append(f"claim {i} 누락: {key}")
+    if "title_korean" not in data:
+        errors.append("누락 필드: title_korean")
+    elif not isinstance(data["title_korean"], str) or not data["title_korean"].strip():
+        errors.append("title_korean은 비어 있지 않은 문자열이어야 합니다")
+    tags = data.get("paper_tags")
+    if tags is None:
+        errors.append("누락 필드: paper_tags")
+    elif not isinstance(tags, dict):
+        errors.append("paper_tags는 객체여야 합니다")
+    else:
+        for tag_key in ("acl_research", "uses_imu", "uses_gait_data", "presents_score"):
+            if tag_key not in tags:
+                errors.append(f"paper_tags 누락: {tag_key}")
+            elif not isinstance(tags[tag_key], bool):
+                errors.append(f"paper_tags.{tag_key}는 boolean이어야 합니다")
     return errors
 
 
@@ -384,8 +399,10 @@ def minimal_fixture(provider: str) -> dict[str, Any]:
     return {
         "provider": provider,
         "title": "테스트 논문",
+        "title_korean": "테스트 논문 (한국어 제목)",
         "paper_bibliography": "Kim, A. (2026). Test paper. Test Journal, 1(1), 1-2.",
         "bibliographic_info": {"authors": "Kim, A.", "year": "2026", "journal": "Test Journal", "doi": "확인 불가", "source_file": "fixture.txt"},
+        "paper_tags": {"acl_research": False, "uses_imu": False, "uses_gait_data": False, "presents_score": False},
         "purpose": [{"summary": "한국어 테스트", "evidence_quote": "Test evidence.", "locator": "Page 1, Test"}], "design_and_participants": [], "methods": [],
         "key_results": [], "author_conclusion": [], "limitations": [],
         "reviewer_thoughts": [], "prior_research_problems": [],
@@ -431,6 +448,18 @@ def render_paper(data: dict[str, Any]) -> str:
         f"# {data['title']}", "", data["paper_bibliography"], "",
         "## 서지정보", "", f"- 저자: {b['authors']}", f"- 연도: {b['year']}", f"- 저널: {b['journal']}", f"- DOI: {b['doi']}", f"- 원본 파일: {b['source_file']}", f"- 분석 provider: {data['provider']}", "",
     ]
+    if data.get("title_korean"):
+        parts += [f"> **한국어 제목**: {data['title_korean']}", ""]
+    tags = data.get("paper_tags") or {}
+    if tags:
+        parts += [
+            "## 분류 태그", "",
+            f"- ACL 연구: {'true' if tags.get('acl_research') else 'false'}",
+            f"- IMU 사용: {'true' if tags.get('uses_imu') else 'false'}",
+            f"- 보행 데이터: {'true' if tags.get('uses_gait_data') else 'false'}",
+            f"- Score 제시: {'true' if tags.get('presents_score') else 'false'}",
+            "",
+        ]
     sections = [
         ("연구 목적", "purpose"), ("연구 설계와 대상", "design_and_participants"),
         ("방법", "methods"), ("핵심 결과", "key_results"),
@@ -471,6 +500,38 @@ def render_claims(data: dict[str, Any]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def _rebuild_index_table(records: dict[str, Any], output_root: Path) -> None:
+    rows: list[tuple[int, str, str, dict]] = []
+    for rec in records.values():
+        if rec.get("status") != "success":
+            continue
+        data = rec.get("data") or {}
+        rows.append((
+            rec.get("number", 0),
+            data.get("title", ""),
+            data.get("title_korean", ""),
+            data.get("paper_tags") or {},
+        ))
+    rows.sort(key=lambda r: r[0])
+    lines = [
+        "# 논문 인덱스 표", "",
+        "| # | 논문 제목 | ACL 연구 | IMU 사용 | 보행 데이터 | Score 제시 |",
+        "|---|-----------|:--------:|:--------:|:-----------:|:----------:|",
+    ]
+    for number, title, title_korean, tags in rows:
+        title_cell = f"{title}<br>*{title_korean}*" if title_korean else title
+        lines.append(
+            f"| {number} | {title_cell} | "
+            f"{'✅' if tags.get('acl_research') else '❌'} | "
+            f"{'✅' if tags.get('uses_imu') else '❌'} | "
+            f"{'✅' if tags.get('uses_gait_data') else '❌'} | "
+            f"{'✅' if tags.get('presents_score') else '❌'} |"
+        )
+    out = output_root / "mds" / "06_paper_index_table.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def aggregate(records: dict[str, Any], output_root: Path) -> None:
     successful = [
         v for _, v in sorted(records.items(), key=lambda kv: kv[1].get("number", 10**9))
@@ -485,6 +546,7 @@ def aggregate(records: dict[str, Any], output_root: Path) -> None:
     (output_root / "mds").mkdir(parents=True, exist_ok=True)
     (output_root / "mds" / "01_all_study_reviews.md").write_text("\n".join(full).rstrip() + "\n", encoding="utf-8")
     (output_root / "mds" / "02_referenceable_claims.md").write_text("\n".join(claims).rstrip() + "\n", encoding="utf-8")
+    _rebuild_index_table(records, output_root)
 
 
 def next_handoff_path(output_root: Path) -> Path:

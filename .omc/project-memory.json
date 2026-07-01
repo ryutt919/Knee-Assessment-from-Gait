@@ -1,20 +1,11 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1781157866744,
+  "lastScanned": 1782889235660,
   "projectRoot": "/Users/ryutt/Desktop/mini_ryutt/Walking",
   "techStack": {
-    "languages": [
-      {
-        "name": "Python",
-        "version": null,
-        "confidence": "high",
-        "markers": [
-          "requirements.txt"
-        ]
-      }
-    ],
+    "languages": [],
     "frameworks": [],
-    "packageManager": "pip",
+    "packageManager": null,
     "runtime": null
   },
   "build": {
@@ -47,7 +38,7 @@
       "path": "0529_ML",
       "purpose": null,
       "fileCount": 3,
-      "lastAccessed": 1781157866733,
+      "lastAccessed": 1782889235650,
       "keyFiles": [
         "0529_ML_plan.md",
         "COMPWALK paper.pdf"
@@ -57,47 +48,106 @@
       "path": "0530_ML_waveform",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1781157866733,
+      "lastAccessed": 1782889235650,
       "keyFiles": [
         "0530_plan.md"
+      ]
+    },
+    "0611_journal_ML": {
+      "path": "0611_journal_ML",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1782889235650,
+      "keyFiles": [
+        "0611_plan.md",
+        "0611_plan_2.md"
+      ]
+    },
+    "2026-06-24_PCA": {
+      "path": "2026-06-24_PCA",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1782889235650,
+      "keyFiles": []
+    },
+    "2026-06-24_supervised_separation": {
+      "path": "2026-06-24_supervised_separation",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1782889235651,
+      "keyFiles": []
+    },
+    "2026-06-29-Study-review": {
+      "path": "2026-06-29-Study-review",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1782889235651,
+      "keyFiles": [
+        "README.md",
+        "plan.md",
+        "study_review_ref.md"
+      ]
+    },
+    "Agent_handoff": {
+      "path": "Agent_handoff",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1782889235651,
+      "keyFiles": [
+        "01_notebooks.md",
+        "02_presentations.md",
+        "03_literature_notes.md",
+        "04_pca_analysis.md",
+        "05_supervised_separation.md"
       ]
     },
     "GAI 중간 결과": {
       "path": "GAI 중간 결과",
       "purpose": null,
-      "fileCount": 3,
-      "lastAccessed": 1781157866733,
+      "fileCount": 4,
+      "lastAccessed": 1782889235651,
       "keyFiles": [
         "0527_main.html",
         "intro.md",
-        "statistics_v1.html"
+        "statistics_v1.html",
+        "중간결과 발표 대본.md"
       ]
     },
     "ML_based": {
       "path": "ML_based",
       "purpose": null,
-      "fileCount": 6,
-      "lastAccessed": 1781157866734,
+      "fileCount": 7,
+      "lastAccessed": 1782889235651,
       "keyFiles": [
         "ml-based-plan.md",
         "mlflow.db",
         "orchestrator.py",
         "pipeline_full_train.log",
-        "run_pipeline.py"
+        "run_gait_normality_scoring.py"
       ]
     },
     "PT": {
       "path": "PT",
       "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1782889235651,
+      "keyFiles": [
+        "스포츠과학과 캡스톤디자인 발표 19101207 김태현.pptx",
+        "스포츠과학과 캡스톤디자인 발표 19101207 김태현_cited.pptx"
+      ]
+    },
+    "QnA": {
+      "path": "QnA",
+      "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1781157866734,
+      "lastAccessed": 1782889235651,
       "keyFiles": []
     },
     "artifacts": {
       "path": "artifacts",
       "purpose": null,
       "fileCount": 29,
-      "lastAccessed": 1781157866734,
+      "lastAccessed": 1782889235651,
       "keyFiles": [
         "boxplot_ankle_dorsiflexion_LSI.png",
         "boxplot_ankle_dorsiflexion_contralateral.png",
@@ -110,7 +160,7 @@
       "path": "data",
       "purpose": "Data files",
       "fileCount": 4,
-      "lastAccessed": 1781157866734,
+      "lastAccessed": 1782889235652,
       "keyFiles": [
         "ID.csv",
         "data_descrpition.csv",
@@ -121,17 +171,24 @@
       "path": "docs",
       "purpose": "Documentation",
       "fileCount": 2,
-      "lastAccessed": 1781157866735,
+      "lastAccessed": 1782889235652,
       "keyFiles": [
         "MVN 추출.pdf",
         "research purpose.md"
       ]
     },
+    "figures": {
+      "path": "figures",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1782889235652,
+      "keyFiles": []
+    },
     "harness": {
       "path": "harness",
       "purpose": null,
       "fileCount": 6,
-      "lastAccessed": 1781157866735,
+      "lastAccessed": 1782889235652,
       "keyFiles": [
         "__init__.py",
         "config.yaml",
@@ -144,7 +201,7 @@
       "path": "htmls",
       "purpose": null,
       "fileCount": 7,
-      "lastAccessed": 1781157866735,
+      "lastAccessed": 1782889235652,
       "keyFiles": [
         "h3_novelty_validation.html",
         "paper_report.html",
@@ -157,7 +214,7 @@
       "path": "mds",
       "purpose": null,
       "fileCount": 13,
-      "lastAccessed": 1781157866735,
+      "lastAccessed": 1782889235653,
       "keyFiles": [
         "0528_H3_Refine.html",
         "0528_H3_Refine.md",
@@ -169,8 +226,8 @@
     "misc": {
       "path": "misc",
       "purpose": null,
-      "fileCount": 14,
-      "lastAccessed": 1781157866735,
+      "fileCount": 16,
+      "lastAccessed": 1782889235653,
       "keyFiles": [
         "02_Refined_Pipeline.ipynb",
         "COMP-WALK.ipynb",
@@ -182,21 +239,21 @@
     "notebooks": {
       "path": "notebooks",
       "purpose": null,
-      "fileCount": 5,
-      "lastAccessed": 1781157866735,
+      "fileCount": 6,
+      "lastAccessed": 1782889235653,
       "keyFiles": [
+        "06_cluster_significant_features.ipynb",
         "check_preprocessing.ipynb",
         "data_info.ipynb",
         "peak_segmentation.ipynb",
-        "slim_parquet_info.ipynb",
-        "waveform_group_results_review.ipynb"
+        "slim_parquet_info.ipynb"
       ]
     },
     "zip": {
       "path": "zip",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1781157866736,
+      "lastAccessed": 1782889235653,
       "keyFiles": [
         "ACLR.zip"
       ]
@@ -205,29 +262,97 @@
       "path": "0529_ML/data",
       "purpose": "Data files",
       "fileCount": 0,
-      "lastAccessed": 1781157866736,
+      "lastAccessed": 1782889235653,
       "keyFiles": []
     },
     "0529_ML/models": {
       "path": "0529_ML/models",
       "purpose": "Data models",
       "fileCount": 1,
-      "lastAccessed": 1781157866736,
+      "lastAccessed": 1782889235653,
       "keyFiles": [
         "01_best_traditional_ml_model.joblib"
+      ]
+    },
+    "0611_journal_ML/models": {
+      "path": "0611_journal_ML/models",
+      "purpose": "Data models",
+      "fileCount": 0,
+      "lastAccessed": 1782889235653,
+      "keyFiles": []
+    },
+    "2026-06-24_PCA/scripts": {
+      "path": "2026-06-24_PCA/scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1782889235654,
+      "keyFiles": [
+        "01_run_pca_analysis.py"
+      ]
+    },
+    "2026-06-24_supervised_separation/scripts": {
+      "path": "2026-06-24_supervised_separation/scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1782889235654,
+      "keyFiles": [
+        "01_supervised_separation.py"
+      ]
+    },
+    "2026-06-29-Study-review/schemas": {
+      "path": "2026-06-29-Study-review/schemas",
+      "purpose": "Schema definitions",
+      "fileCount": 2,
+      "lastAccessed": 1782889235654,
+      "keyFiles": [
+        "01_paper_analysis.schema.json",
+        "02_summary_factcheck.schema.json"
+      ]
+    },
+    "2026-06-29-Study-review/scripts": {
+      "path": "2026-06-29-Study-review/scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 4,
+      "lastAccessed": 1782889235654,
+      "keyFiles": [
+        "01_analyze_reference_papers.py",
+        "02_review_paper_summaries.py",
+        "03_apply_factcheck_revisions.py"
       ]
     },
     "ML_based/data": {
       "path": "ML_based/data",
       "purpose": "Data files",
       "fileCount": 1,
-      "lastAccessed": 1781157866736,
+      "lastAccessed": 1782889235654,
       "keyFiles": [
         "manifest.yaml"
       ]
+    },
+    "PT/scripts": {
+      "path": "PT/scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1782889235654,
+      "keyFiles": [
+        "01_add_citations_to_capstone_ppt.py"
+      ]
+    },
+    "notebooks/data": {
+      "path": "notebooks/data",
+      "purpose": "Data files",
+      "fileCount": 0,
+      "lastAccessed": 1782889235655,
+      "keyFiles": []
     }
   },
   "hotPaths": [
+    {
+      "path": "0611_journal_ML/scripts/06_results_report.py",
+      "accessCount": 25,
+      "lastAccessed": 1781657655354,
+      "type": "file"
+    },
     {
       "path": "CLAUDE.md",
       "accessCount": 14,
@@ -241,9 +366,51 @@
       "type": "file"
     },
     {
+      "path": "0611_journal_ML/scripts/02_raw_waveform_ml.py",
+      "accessCount": 14,
+      "lastAccessed": 1781247230605,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/Agent_handoff/01_ml_pipeline.md",
+      "accessCount": 14,
+      "lastAccessed": 1781266492659,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/04c_speed_analysis.py",
+      "accessCount": 12,
+      "lastAccessed": 1781247543215,
+      "type": "file"
+    },
+    {
       "path": "ML_based/reports/status_report.html",
       "accessCount": 9,
       "lastAccessed": 1780092022908,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/05_journal_report.py",
+      "accessCount": 9,
+      "lastAccessed": 1781164389301,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/01_speed_ablation.py",
+      "accessCount": 6,
+      "lastAccessed": 1781247113240,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/04b_multiclass_optimal.py",
+      "accessCount": 6,
+      "lastAccessed": 1781247470987,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/0529_ML_plan.md",
+      "accessCount": 5,
+      "lastAccessed": 1781186884382,
       "type": "file"
     },
     {
@@ -253,27 +420,39 @@
       "type": "file"
     },
     {
-      "path": "0529_ML/0529_ML_plan.md",
+      "path": "0529_ML/results/13_boost_best_summary.json",
       "accessCount": 4,
-      "lastAccessed": 1781158313844,
+      "lastAccessed": 1781186898909,
       "type": "file"
     },
     {
-      "path": "0529_ML/results/13_boost_best_summary.json",
+      "path": "0611_journal_ML/scripts/02b_optimal_pipeline.py",
+      "accessCount": 4,
+      "lastAccessed": 1781247344407,
+      "type": "file"
+    },
+    {
+      "path": "0530_ML_waveform/0530_plan.md",
       "accessCount": 3,
-      "lastAccessed": 1781158302662,
+      "lastAccessed": 1781186884619,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/03_shap_waveform.py",
+      "accessCount": 3,
+      "lastAccessed": 1781247878601,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/_watch.sh",
+      "accessCount": 3,
+      "lastAccessed": 1781266503231,
       "type": "file"
     },
     {
       "path": ".claude/settings.local.json",
       "accessCount": 2,
       "lastAccessed": 1780219778028,
-      "type": "file"
-    },
-    {
-      "path": "0530_ML_waveform/0530_plan.md",
-      "accessCount": 2,
-      "lastAccessed": 1781158301765,
       "type": "file"
     },
     {
@@ -286,6 +465,30 @@
       "path": "0529_ML/scripts/01_run_ml_pipeline.py",
       "accessCount": 2,
       "lastAccessed": 1781158315236,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 2,
+      "lastAccessed": 1781186884824,
+      "type": "file"
+    },
+    {
+      "path": "0529_ML/results/10_overall_best_candidate.json",
+      "accessCount": 2,
+      "lastAccessed": 1781186911258,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/figures/fig_04c_pca_overlap.png",
+      "accessCount": 2,
+      "lastAccessed": 1781189538709,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/_models.py",
+      "accessCount": 2,
+      "lastAccessed": 1781239568256,
       "type": "file"
     },
     {
@@ -322,12 +525,6 @@
       "path": "ML_based/ml-based-plan.md",
       "accessCount": 1,
       "lastAccessed": 1779971653643,
-      "type": "file"
-    },
-    {
-      "path": "README.md",
-      "accessCount": 1,
-      "lastAccessed": 1779971658342,
       "type": "file"
     },
     {
@@ -391,15 +588,63 @@
       "type": "file"
     },
     {
-      "path": "0529_ML/results/10_overall_best_candidate.json",
-      "accessCount": 1,
-      "lastAccessed": 1781158314844,
-      "type": "file"
-    },
-    {
       "path": "GAI 중간 결과/intro.md",
       "accessCount": 1,
       "lastAccessed": 1781158592745,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/reports/results_report.html",
+      "accessCount": 1,
+      "lastAccessed": 1781165811478,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/results/02b_subject_predictions.csv",
+      "accessCount": 1,
+      "lastAccessed": 1781183589751,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/scripts/04_multiclass.py",
+      "accessCount": 1,
+      "lastAccessed": 1781184129864,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/0611_plan.md",
+      "accessCount": 1,
+      "lastAccessed": 1781186883989,
+      "type": "file"
+    },
+    {
+      "path": "data/ID.csv",
+      "accessCount": 1,
+      "lastAccessed": 1781186889274,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/results/04b_multiclass_results.json",
+      "accessCount": 1,
+      "lastAccessed": 1781186898824,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/results/02b_optimal_results.json",
+      "accessCount": 1,
+      "lastAccessed": 1781186898853,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/results/01_speed_ablation_best.json",
+      "accessCount": 1,
+      "lastAccessed": 1781186911540,
+      "type": "file"
+    },
+    {
+      "path": "0611_journal_ML/0611_plan_2.md",
+      "accessCount": 1,
+      "lastAccessed": 1781201855711,
       "type": "file"
     }
   ],

@@ -20,6 +20,12 @@
 14. 목적·설계·방법·결과·결론·한계·해석·선행연구 문제·기여의 모든 배열 항목은 `summary`, `evidence_quote`, `locator`를 갖는다.
 15. `summary`는 한국어 요약, `evidence_quote`는 그 요약을 직접 뒷받침하는 논문의 원문 그대로, `locator`는 PDF 페이지와 절이다. 하나의 근거가 지지하지 않는 여러 주장을 한 summary에 합치지 않는다.
 16. 수치, 표본수, 통계 결과, 시점과 분석 방법은 원문 근거에 명시된 범위만 적고 추정하거나 반올림해 만들지 않는다.
+17. `title_korean`은 논문 제목(title)을 자연스러운 한국어로 번역한다. 전문 용어는 영문을 괄호 병기할 수 있다.
+18. `paper_tags`는 논문 전체를 읽고 아래 4가지를 각각 true/false로 판단한다:
+    - `acl_research`: ACL(전방십자인대) 관련 연구이면 true
+    - `uses_imu`: IMU, 관성 측정 장치, 또는 웨어러블 센서를 실험에 사용하면 true
+    - `uses_gait_data`: 보행(gait/walking) 데이터를 수집하거나 분석하면 true
+    - `presents_score`: 새로운 점수(score) 또는 지수(index)를 제안·제시하면 true
 
 ## 재사용용 사용자 요청 템플릿
 

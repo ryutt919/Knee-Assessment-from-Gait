@@ -14,6 +14,7 @@ REPO_ROOT = TASK_ROOT.parent
 SCRIPTS_DIR = TASK_ROOT / "scripts"
 SCRIPT_01 = SCRIPTS_DIR / "01_analyze_reference_papers.py"
 SCRIPT_02 = SCRIPTS_DIR / "02_review_paper_summaries.py"
+SCRIPT_06 = SCRIPTS_DIR / "06_update_paper_index_table.py"
 DEFAULT_INPUT = REPO_ROOT / "docs" / "ref_papers"
 EXIT_ALL_UNAVAILABLE = 75
 PROVIDERS = ("codex", "claude", "antigravity")
@@ -73,6 +74,8 @@ def main() -> int:
                         help="실제 실행 없이 처리 대상과 명령어를 출력합니다")
     parser.add_argument("--provider-test-all", action="store_true",
                         help="세 provider 응답 테스트만 실행하고 종료합니다")
+    parser.add_argument("--table-only", action="store_true",
+                        help="분석·검증 없이 논문 인덱스 표만 갱신합니다")
     parser.add_argument("--skip-provider-gate", action="store_true",
                         help=argparse.SUPPRESS)
     args = parser.parse_args()
@@ -84,6 +87,16 @@ def main() -> int:
     if args.provider_test_all:
         return _run([sys.executable, str(SCRIPT_01), "--provider-test-all"]
                     + _passthrough(args))
+
+    # --table-only: 분석·검증 없이 인덱스 표만 갱신
+    if args.table_only:
+        cmd = [sys.executable, str(SCRIPT_06), "--provider", args.provider,
+               "--output-dir", str(args.output_dir)]
+        if args.model:
+            cmd += ["--model", args.model]
+        if args.overwrite:
+            cmd.append("--overwrite")
+        return _run(cmd)
 
     pdfs = _discover_pdfs(args.input_dir)
     if args.only:

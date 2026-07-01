@@ -3,7 +3,8 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "provider", "title", "paper_bibliography", "bibliographic_info",
+    "provider", "title", "title_korean", "paper_bibliography", "bibliographic_info",
+    "paper_tags",
     "purpose", "design_and_participants", "methods", "key_results",
     "author_conclusion", "limitations", "reviewer_thoughts",
     "prior_research_problems", "study_solution_and_contribution",
@@ -12,7 +13,19 @@
   "properties": {
     "provider": {"type": "string", "enum": ["codex", "claude", "antigravity"]},
     "title": {"type": "string", "minLength": 1},
+    "title_korean": {"type": "string", "minLength": 1},
     "paper_bibliography": {"type": "string", "minLength": 1},
+    "paper_tags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["acl_research", "uses_imu", "uses_gait_data", "presents_score"],
+      "properties": {
+        "acl_research":   {"type": "boolean"},
+        "uses_imu":       {"type": "boolean"},
+        "uses_gait_data": {"type": "boolean"},
+        "presents_score": {"type": "boolean"}
+      }
+    },
     "bibliographic_info": {
       "type": "object", "additionalProperties": false,
       "required": ["authors", "year", "journal", "doi", "source_file"],

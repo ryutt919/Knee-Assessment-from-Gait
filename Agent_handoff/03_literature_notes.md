@@ -72,6 +72,28 @@ Do not duplicate content.
 - **Related files**: `Study-review/scripts/path_utils.py`; `Study-review/scripts/05_categorize_existing_outputs.py`; `Study-review/mds/papers/`; `Study-review/mds/reviews/`; `Study-review/mds/papers_revised/`; `Study-review/logs/manifest.json`; `Study-review/logs/review/review_manifest.json`.
 - **Rationale**: The user wanted existing one-paper-per-MD review outputs organized by the existing reference-paper taxonomy and wanted future runs to save directly into that taxonomy.
 
+### Web-search Literature Review — Composite Kinematic/Kinetic Scoring for ACL Severity/Recovery/Asymmetry
+- **Current value/logic**: `Study-review/mds/papers_revised/07_composite_kinematic_kinetic_scoring_indices/` contains four source-verified notes on ACL kinematic/kinetic scoring. Under the strict definition (single patient-level score, ACLD/ACLR cohort, biomechanical basis, peer reviewed, 2021–2026), no paper fully qualifies: Li 2023 is a close multi-component PCA/classifier study, Kokkotis 2022 is classifier/SHAP rather than a score, and Liu 2020 is a true healthy-reference NI but outside the date window.
+- **Implementation**: The three paper notes were checked against full text and rewritten with explicit `AS-IS → TO-BE` tables. Key corrections include Li's 43 leg-level samples and multiple PCA components, Kokkotis's trial-level 70/30 random split, and Liu's 20 discrete-variable healthy-control-referenced NI plus overlapping patient-group ranges. The synthesis now separates zero strict matches from related studies and uses scoping-level novelty wording. All three source PDFs are classified under `docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices`; the Liu 2020 PDF was supplied by the user and renamed to its full official title.
+- **Related files**:
+  - `Study-review/mds/papers_revised/07_composite_kinematic_kinetic_scoring_indices/`
+  - `docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/`
+- **Rationale**: Claims about composite scoring and novelty must distinguish a single normative patient score from multi-component PCA features, classifier output, and feature attribution, and must disclose validation-unit leakage risks.
+
+### Notion Literature Database Sync
+- **Current value/logic**: Sycned all 48 literature reviews (01-06 revised papers and 07 composite index reviews) to a structured Notion database ("ACL 문헌 리뷰 DB") and appended the index table + search synthesis to the parent "레퍼런스" page.
+- **Implementation**: Written conversion and upload scripts (`Study-review/scripts/07_export_to_notion.py` etc.) to:
+  1. Parse all 48 papers, clean bibliographic properties, clean and omit Korean-corrupted DOI URLs, and format bodies into Notion-flavored Markdown (escaping reserved characters `<`/`>`/`[`/`]` and converting sub-bullets to tabs).
+  2. Merge multi-line `>` blockquotes (AS-IS/TO-BE and 사실검증 blocks) into single-paragraph paragraphs separated by `<br>` to render cleanly without empty/fragmented quotes.
+  3. Create a Notion database (`7094580f-5300-4db1-8a7c-518e54a6a632`, data source `abbf6f04-8f34-4f53-a134-a97ef4a55a25`) under parent page "레퍼런스" (`32e32e0c-7dbe-8051-b618-d691b63486f4`).
+  4. Perform bulk uploads for all 48 pages sequentially using Python-subprocesses calling `npx @notionhq/notion-mcp-server` to respect API rate limits.
+  5. Add "검색 종합: ACL kinematics/kinetics 기반 복합 점수 문헌 검증 (2021–2026)" document as a subpage.
+  6. Convert `06_paper_index_table.md` to a Notion HTML-like `<table>` block and append it to the end of the parent page.
+- **Related files**:
+  - Scripts: `Study-review/scripts/07_export_to_notion.py`, `Study-review/scripts/09_convert_synthesis.py`, `Study-review/scripts/10_upload_synthesis.py`, `Study-review/scripts/11_append_table.py`
+  - Converted assets: `Study-review/logs/notion_export/papers_manifest.json`, `Study-review/logs/notion_export/06_table_notion.md`, `Study-review/logs/notion_export/04_synthesis_notion.md`
+- **Rationale**: The user wanted to upload the detailed reviews and index table to Notion in a database format to enable categorization and page-per-paper organization.
+
 ---
 
 ## Change History
@@ -86,3 +108,9 @@ Record only deltas. Do not repeat content already in Component Status.
 | 2026-06-30 03:35 | Automate reference paper analysis | Initial 1-paper baseline -> Multi-CLI adapter completed and executed for 45 papers, correcting JSON escapes and hyphen splits to achieve 45/45 success |
 | 2026-06-30 04:25 | Fact-check 45 paper summaries vs source PDFs | No second-pass verification -> new 02 script/prompt/schema reusing 01's CLI pattern, executed for 45/45 papers as an exception report (122 issues flagged, 14 papers rated 신뢰 어려움) |
 | 2026-07-01 19:44 | Categorize Study-review MD outputs | Flat `papers`/`reviews`/`papers_revised` per-paper files -> category subfolders matching `docs/ref_papers/01_*` to `06_*`; future pipeline writes and manifests now use categorized paths |
+| 2026-07-01 23:10 | Web-search literature review: composite kinematic/kinetic ACL scoring | No `07_*` category, no web-sourced (non-PDF) literature notes -> new `07_composite_kinematic_kinetic_scoring_indices/` folder with 3 per-paper MDs (2 fully in-window + 1 background) + 1 synthesis/exclusion-table MD, Korean explanations with verbatim English quotes |
+| 2026-07-01 23:44 | Verify composite-scoring literature against full text | Unverified claims and two claimed in-window matches -> four corrected `papers_revised/07_*` notes with AS-IS/TO-BE audit, zero strict in-window matches, validation-unit caveats, and classified source PDFs |
+| 2026-07-01 23:50 | Correct reference-paper category | PDFs split across `01_*` and `04_*` -> Li 2023 and Kokkotis 2022 moved into dedicated `docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/` category |
+| 2026-07-01 23:52 | Register user-supplied Liu source PDF | User-supplied filename without spaces -> verified 8-page Liu 2020 source PDF renamed to full paper title and linked from revised note 03 |
+| 2026-07-02 00:18 | Sync literature reviews to Notion database | No Notion database setup -> created new database ("ACL 문헌 리뷰 DB") under parent "레퍼런스" page, uploaded all 48 papers with transformed markdown bodies and clean properties, uploaded search synthesis document as subpage, and appended index table as a Notion table block |
+
