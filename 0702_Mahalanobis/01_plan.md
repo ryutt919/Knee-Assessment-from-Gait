@@ -48,6 +48,7 @@ Walking/
 └── 0702_Mahalanobis/
     ├── 01_plan.md                         # 본 기획안 (한국어)
     ├── scripts/
+    │   ├── 00_extract_subset.py           # raw_merged.parquet에서 핵심 변수만 추출하여 subset parquet 생성
     │   ├── 01_data_preprocessing.py       # Stride 분할, Trim, 101pt 보간 및 피처 추출
     │   ├── 02_mahalanobis_pipeline.py     # PCA, MCD 공분산, 마할라노비스 거리 및 MHS/NI 계산
     │   └── 03_optuna_optimization.py      # Optuna 기반 파이프라인 하이퍼파라미터 최적화
@@ -56,10 +57,17 @@ Walking/
         └── 02_evaluation_report.md        # 교차 검증 결과 요약 보고서
 ```
 
+### 0단계: 데이터 서브셋 추출 (`00_extract_subset.py`)
+- `raw_merged.parquet` (6.29 GB)에서 분석에 사용할 필수 컬럼들만 선별하여 별도의 경량화 파일인 `data/processed/raw_subset_mahalanobis.parquet` (약 200MB 수준)으로 1회성 추출을 수행합니다.
+- 추출할 컬럼 목록:
+  - 메타: `subject_id`, `group`, `speed`, `file_name`, `time_ms`
+  - 발 접촉: `footContacts_0`, `footContacts_1`, `footContacts_2`, `footContacts_3`
+  - IMU 원본: `sensorFreeAcceleration_0~20`, `sensorOrientation_0~27`, `sensorMagneticField_0~20`
+  - 관절 각도: `jointAngle_42~62` (18개 컬럼)
+
 ### 1단계: 데이터 전처리 (`01_data_preprocessing.py`)
-- `/Users/ryutt/Desktop/mini_ryutt/Walking/data/processed/raw_merged.parquet` 로드.
-  - *효율성 고려*: 6.29 GB 전체를 읽지 않고, `subject_id`, `group`, `speed`, `file_name`, `time_ms`, `footContacts_0,2`, `jointAngle_42~62`, `sensorFreeAcceleration_0~20`, `sensorOrientation_0~27` 컬럼만 지정하여 로드 (`pd.read_parquet(columns=[...])`).
-- 좌/우측 발 접촉 신호(`footContacts_0`, `footContacts_2`)의 heel strike 시점을 검출하여 Stride 분할.
+- 생성된 경량 `raw_subset_mahalanobis.parquet` 로드. (6GB 전체 로딩이 불필요하여 학습 및 최적화가 비약적으로 빨라집니다.)
+- 좌/우측 발 접촉 신호(`footContacts_0`, `footContacts_2`)의 heel strike 시점을 검출하여 Stride 분할 (Heel Strike는 신호가 0에서 1로 상승 전이되는 시점으로 감지).
 - 가속/감속 구간의 영향을 최소화하기 위해 각 Trial별 앞/뒤 2 strides 제거 (Trim).
 - 선택된 IMU 센서 원본 채널들과 관절 각도 채널의 데이터를 Stride당 101 포인트로 선형 보간하여 정규화.
 - 최종 특징 벡터:
