@@ -17,6 +17,7 @@ state/
 *.md
 **/*.md
 !CLAUDE.md
+!Agent_handoff/*.md
 __pycache__/
 *.py[cod]
 
@@ -29,6 +30,7 @@ Thumbs.db
 *.png
 *.jpeg
 *.txt
+!environments/*.txt
 
 # 데이터베이스 (MLflow, Optuna)
 *.db

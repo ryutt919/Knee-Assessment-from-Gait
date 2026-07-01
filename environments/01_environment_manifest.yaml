@@ -1,0 +1,56 @@
+schema_version: 1
+generated_at: "2026-07-01 21:28 KST"
+source_platform: "macOS-26.4.1-arm64"
+target_platform: "WSL2 Ubuntu x86_64"
+
+policy:
+  macos_freeze: "Exact output of python -m pip freeze from the source environment."
+  wsl_requirements: "Pinned direct project dependencies; transitive packages are resolved by pip."
+  pytorch: "Install separately for CPU or NVIDIA CUDA using the official PyTorch Linux selector."
+
+environments:
+  root:
+    path: ".venv"
+    python_version: "3.11.15"
+    freeze_file: "02_root_macos_freeze.txt"
+    freeze_package_count: 212
+    wsl_requirements_file: "03_root_wsl_requirements.txt"
+    pytorch_version: "2.11.0"
+    excluded_from_wsl:
+      - "appnope==0.1.4 (macOS-only IPython integration)"
+      - "torch==2.11.0 (install separately for CPU or CUDA)"
+    added_for_wsl:
+      - "shap==0.51.0 (required by ML_based/eval/shap_analysis.py; absent from the source freeze)"
+
+  ml_0529:
+    path: "0529_ML/.venv"
+    python_version: "3.14.4"
+    freeze_file: "04_0529_macos_freeze.txt"
+    freeze_package_count: 19
+    wsl_requirements_file: "05_0529_wsl_requirements.txt"
+    pytorch_version: null
+    excluded_from_wsl: []
+
+  waveform_0530:
+    path: "0530_ML_waveform/.venv"
+    python_version: "3.14.4"
+    freeze_file: "06_0530_macos_freeze.txt"
+    freeze_package_count: 0
+    wsl_requirements_file: "07_0530_wsl_requirements.txt"
+    pytorch_version: null
+    excluded_from_wsl: []
+    note: "The source environment is empty. Package names come from 0530_plan.md; shared package pins follow the 0529 environment and Optuna follows the 0611 environment."
+
+  journal_0611:
+    path: "0611_journal_ML/.venv"
+    python_version: "3.11.15"
+    freeze_file: "08_0611_macos_freeze.txt"
+    freeze_package_count: 83
+    wsl_requirements_file: "09_0611_wsl_requirements.txt"
+    pytorch_version: "2.12.0"
+    excluded_from_wsl:
+      - "mlx==0.31.2 (Apple Silicon-only framework)"
+      - "mlx-metal==0.31.2 (Apple Metal backend)"
+      - "torch==2.12.0 (install separately for CPU or CUDA)"
+    added_for_wsl:
+      - "umap-learn==0.5.11 (required by scripts/08_slim_gait_embedding.py; absent from the source freeze)"
