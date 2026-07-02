@@ -5,7 +5,7 @@
 ### 0702_Mahalanobis 샌드박스 개요
 - **목적**: raw IMU 센서 원본 데이터 + 관절각도 Waveform으로 정상인(HA) 대비 ACL 손상군(ACLD/ACLR)의 보행 손상도(Impairment Score) 산출 및 SHAP 해석
 - **위치**: `Walking/0702_Mahalanobis/`
-- **상태**: 전체 파이프라인 구현 완료, 테스트 검증 통과 (OOF AUC-ROC 0.82 on pilot 9 subjects)
+- **상태**: 구현 및 전체 데이터 실행 산출물은 존재하나, 2026-07-02 기술 감사에서 Optuna test/full 계보 혼합, biological-identity fold overlap, SHAP proxy 한계가 확인됨. 현재 재현 가능한 full 기본 OOF distance AUC는 0.4991이며 최종 검증 성능으로 사용 불가
 
 ---
 
@@ -48,8 +48,13 @@
 
 #### `scripts/04_shap_analysis.py`
 - **기능**: XGBoost Proxy 모델 학습 → TreeSHAP → 채널별 기여도 시각화
-- **Proxy 방식**: f(x) = Impairment_Score 를 XGBoost로 근사 (R=1.00 확인)
+- **Proxy 방식**: 전체 데이터 재적합 score를 XGBoost로 근사. 동일 데이터에서 상관만 출력하며 수치가 artifact에 저장되지 않아 out-of-sample fidelity는 확인되지 않음
 - **출력**: `results/03_shap_interpretation/summary_plot.png` + `{subject_id}_waterfall.png`
+
+#### `scripts/05_generate_detailed_report.py`
+- **기능**: 코드, parquet schema/OOF, Optuna SQLite, ID pairing, SHAP PNG를 읽기 전용으로 교차검증해 단일 독립 HTML 기술 감사 보고서 생성
+- **통계 단위**: stride 결과와 session/biological-identity 집계를 분리하고, AUC CI는 identity-cluster bootstrap으로 계산
+- **출력**: `htmls/01_detailed_experiment_analysis.html`
 
 #### `run_pipeline.py`
 - **기능**: 전체 파이프라인 통합 실행
@@ -78,11 +83,12 @@
 ---
 
 ### 다음 작업 권장사항
-1. **전체 데이터 실행**: `python run_pipeline.py` (서브셋 추출 ~10분, 전처리 ~30분 예상)
-2. **Optuna 확장**: `--trials 100` 이상으로 본격 최적화
-3. **한글 폰트 설정**: matplotlib에 Noto Sans KR 또는 Apple Gothic 적용
-4. **속도별 분리 분석**: `speed_filter` 조합별 성능 비교 리포트
-5. **Impairment Score 임상 해석**: 특정 ACL 피험자의 Waterfall Plot을 논문 Figure로 활용
+1. **P0 — Optuna 계보 격리**: test/full마다 별도 DB·study를 사용하고 dataset hash를 기록
+2. **P0 — Pair-aware nested CV**: ACLD/ACLR biological identity를 같은 outer fold에 고정하고 inner fold에서만 tuning
+3. **P0 — ID 계보 수정**: `ID.csv`에 없는 ACLR38과 features에 없는 ACLR36의 원인을 해결한 뒤 side mapping 재검증
+4. **P0 — 결측 처리 통일**: OOF와 SHAP의 imputation/scaling 순서를 train-fold 기준으로 일치시키고 group별 센서 결측 원인을 감사
+5. **P1 — 점수 명칭/검증**: 외부 임상 anchor 전에는 HA-referenced gait deviation score로 제한하고 identity-safe calibration과 cluster CI 사용
+6. **P2 — SHAP 재설계**: run-specific 출력 폴더, grouped holdout proxy fidelity, 한글 폰트, 실제 시점별 설명을 구현
 
 ---
 
@@ -91,3 +97,4 @@
 | Timestamp | Task | Change Summary |
 |-----------|------|----------------|
 | 2026-07-02 01:16 | 0702_Mahalanobis 파이프라인 구현 | 전체 5개 스크립트 + run_pipeline.py 신규 생성, 테스트 검증 완료 |
+| 2026-07-02 11:26 | 0702_Mahalanobis 정밀 기술 감사 | full 기본 OOF AUC 0.4991 확인; 0.7716이 9-session test Optuna trial임을 규명; 21/26 확인 종단쌍 fold 분리, ACLR38/36 계보 불일치, SHAP proxy 한계 문서화; 재현 가능한 단일 HTML 보고서 추가 |
