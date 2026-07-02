@@ -33,9 +33,10 @@ from sklearn.model_selection import GroupKFold
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SANDBOX = ROOT / "0702_Mahalanobis"
+SANDBOX = Path(__file__).resolve().parent.parent
 RESULTS = SANDBOX / "results"
 FEATURES = ROOT / "data" / "processed" / "mahalanobis_features.parquet"
+RAW_SUBSET = ROOT / "data" / "processed" / "raw_subset_mahalanobis.parquet"
 OOF = RESULTS / "oof_results.parquet"
 OOF_TEST = RESULTS / "oof_results_test.parquet"
 ID_CSV = ROOT / "data" / "ID.csv"
@@ -216,6 +217,85 @@ def feature_inventory() -> tuple[dict[str, object], pd.DataFrame]:
     return inventory, pd.DataFrame(type_rows)
 
 
+def imu_missingness_detail() -> tuple[dict[str, object], pd.DataFrame]:
+    """Audit whether IMU missingness is isolated cells or session-wide blocks."""
+    representative = [
+        "sensorFreeAcceleration_0_001",
+        "sensorOrientation_0_001",
+        "sensorMagneticField_0_001",
+    ]
+    cols = ["subject_id", "group", "speed", "trial_id", *representative]
+    frame = pd.read_parquet(FEATURES, columns=cols)
+    masks = frame[representative].isna()
+    if not masks.eq(masks.iloc[:, 0], axis=0).all().all():
+        raise RuntimeError("Representative IMU modality missingness masks differ")
+    frame["imu_missing"] = masks.iloc[:, 0].to_numpy()
+
+    subject = frame.groupby(["subject_id", "group"], as_index=False).agg(
+        stride_rows=("imu_missing", "size"),
+        missing_strides=("imu_missing", "sum"),
+        trials=("trial_id", "nunique"),
+    )
+    speed = (
+        frame[frame.imu_missing]
+        .groupby(["subject_id", "speed"])
+        .size()
+        .unstack(fill_value=0)
+        .reindex(columns=["slow", "normal", "fast"], fill_value=0)
+        .reset_index()
+    )
+    affected = subject[subject.missing_strides > 0].merge(speed, on="subject_id", how="left")
+    affected["결측 범위"] = "70 IMU channels × 101 points"
+    affected = affected.rename(columns={
+        "subject_id": "session ID", "group": "그룹", "stride_rows": "전체 stride",
+        "missing_strides": "IMU 전체결측 stride", "trials": "trial 수",
+        "slow": "slow", "normal": "normal", "fast": "fast",
+    })
+
+    parquet = pq.ParquetFile(FEATURES)
+    names = parquet.schema_arrow.names
+    imu_cols = [c for c in names if c.startswith((
+        "sensorFreeAcceleration", "sensorOrientation", "sensorMagneticField"
+    ))]
+    null_counts = []
+    for col in imu_cols:
+        idx = names.index(col)
+        count = 0
+        for row_group in range(parquet.metadata.num_row_groups):
+            stats = parquet.metadata.row_group(row_group).column(idx).statistics
+            count += int(stats.null_count or 0) if stats and stats.has_null_count else 0
+        null_counts.append(count)
+    if len(set(null_counts)) != 1:
+        raise RuntimeError("Generated IMU feature columns do not share one null count")
+
+    raw_parquet = pq.ParquetFile(RAW_SUBSET)
+    raw_names = raw_parquet.schema_arrow.names
+    raw_imu_cols = [c for c in raw_names if c.startswith((
+        "sensorFreeAcceleration", "sensorOrientation", "sensorMagneticField"
+    ))]
+    raw_null_counts = []
+    for col in raw_imu_cols:
+        idx = raw_names.index(col)
+        count = 0
+        for row_group in range(raw_parquet.metadata.num_row_groups):
+            stats = raw_parquet.metadata.row_group(row_group).column(idx).statistics
+            count += int(stats.null_count or 0) if stats and stats.has_null_count else 0
+        raw_null_counts.append(count)
+    if len(raw_imu_cols) != 70 or len(set(raw_null_counts)) != 1:
+        raise RuntimeError("Raw IMU columns do not show the expected shared block missingness")
+
+    audit = {
+        "missing_strides": int(frame.imu_missing.sum()),
+        "affected_subjects": int((subject.missing_strides > 0).sum()),
+        "affected_trials": int(frame.loc[frame.imu_missing, ["subject_id", "speed", "trial_id"]].drop_duplicates().shape[0]),
+        "imu_feature_columns": len(imu_cols),
+        "nulls_per_imu_column": int(null_counts[0]),
+        "raw_nulls_per_imu_column": int(raw_null_counts[0]),
+        "mask_match": True,
+    }
+    return audit, affected
+
+
 def make_figures(df: pd.DataFrame, folds: pd.DataFrame, trials: pd.DataFrame) -> dict[str, str]:
     figures: dict[str, str] = {}
 
@@ -286,12 +366,13 @@ def make_figures(df: pd.DataFrame, folds: pd.DataFrame, trials: pd.DataFrame) ->
 
 
 def main() -> None:
-    required = [FEATURES, OOF, OOF_TEST, ID_CSV, OPTUNA_DB, OPTUNA_JSON, EVAL_MD]
+    required = [FEATURES, RAW_SUBSET, OOF, OOF_TEST, ID_CSV, OPTUNA_DB, OPTUNA_JSON, EVAL_MD]
     missing = [str(path) for path in required if not path.exists()]
     if missing:
         raise FileNotFoundError(f"Required audit inputs missing: {missing}")
 
     inventory, feature_types = feature_inventory()
+    imu_audit, imu_affected = imu_missingness_detail()
     paired = pd.read_csv(PAIRING)
     paired = paired[paired["pair_status"] == "paired"].copy()
     confirmed_pair_map: dict[str, str] = {}
@@ -311,9 +392,11 @@ def main() -> None:
     # Reconstruct the deterministic GroupKFold assignment without refitting the pipeline.
     splitter = GroupKFold(n_splits=5)
     fold_rows: list[dict[str, object]] = []
+    fold_class_rows: list[dict[str, object]] = []
     subject_fold: dict[str, int] = {}
     zeros = np.zeros((len(df), 1))
     for fold, (train_idx, val_idx) in enumerate(splitter.split(zeros, df.label, df.subject_id), 1):
+        validation = df.iloc[val_idx]
         for subject in df.iloc[val_idx].subject_id.unique():
             subject_fold[str(subject)] = fold
         train_ids = set(df.iloc[train_idx].identity_id)
@@ -335,7 +418,18 @@ def main() -> None:
             "sigma_inferred": slope,
             "zero_floor": 1 - positive.mean(),
         })
+        validation_sessions = validation[["subject_id", "group"]].drop_duplicates()
+        fold_class_rows.append({
+            "Fold": fold,
+            "HA session": int((validation_sessions.group == "HA").sum()),
+            "ACLD session": int((validation_sessions.group == "ACLD").sum()),
+            "ACLR session": int((validation_sessions.group == "ACLR").sum()),
+            "HA stride": int((validation.group == "HA").sum()),
+            "ACLD stride": int((validation.group == "ACLD").sum()),
+            "ACLR stride": int((validation.group == "ACLR").sum()),
+        })
     folds = pd.DataFrame(fold_rows)
+    fold_class_table = pd.DataFrame(fold_class_rows)
 
     paired_present = paired[
         paired.ID_ACLD.isin(subject_fold) & paired.ID_ACLR.isin(subject_fold)
@@ -494,7 +588,7 @@ def main() -> None:
             "00_extract_subset.py", "01_data_preprocessing.py", "02_mahalanobis_pipeline.py",
             "03_optuna_optimization.py", "04_shap_analysis.py",
         ]),
-        FEATURES, OOF, OOF_TEST, OPTUNA_DB, OPTUNA_JSON, EVAL_MD, ID_CSV, PAIRING,
+        RAW_SUBSET, FEATURES, OOF, OOF_TEST, OPTUNA_DB, OPTUNA_JSON, EVAL_MD, ID_CSV, PAIRING,
         SHAP_DIR / "summary_plot.png", SHAP_DIR / "ACLR24_waterfall.png", SHAP_DIR / "ACLD40_waterfall.png",
     ]
     for path in artifact_paths:
@@ -545,6 +639,11 @@ def main() -> None:
 <li><strong>High:</strong> HA12의 mean distance는 {ha12_mean:.1f}로 HA 평균을 지배합니다. HA12를 제외하는 민감도 계산에서 distance AUC는 {stride_auc:.3f}→{ha12_auc:.3f}, HA mean은 {ha_mean_full:.2f}→{ha_mean_without:.2f}로 변합니다. 이는 제외 근거가 아니라 불안정성 증거입니다.</li>
 <li><strong>High:</strong> SHAP은 원 Mahalanobis 모델이 아닌 in-sample XGBoost proxy 설명이며, 결측 처리도 OOF 파이프라인과 다릅니다. 인과적·임상적 기여도로 사용할 수 없습니다.</li>
 </ol>
+<div class="grid2">
+<div class="callout info"><strong>subject-mean AUC {roc_auc_score(session.label, session.distance_mean):.4f}의 의미</strong><br>각 <code>subject_id</code>를 한 session으로 보고 그 session에 포함된 slow·normal·fast, 여러 trial, 양쪽 다리의 모든 stride raw distance를 단순 평균한 뒤 92개 session 평균값으로 AUC를 계산했습니다. 따라서 9,540 stride의 반복 가중을 줄인 결과이지만, ACLD/ACLR 종단쌍을 한 biological subject로 합친 평균도 아니고 trial-balanced 평균도 아닙니다. 0.5039는 임의 ACL session과 HA session을 하나씩 뽑았을 때 ACL 평균 거리가 더 클 확률이 약 50.4%라는 뜻으로, 사실상 무작위 순위와 같습니다.</div>
+<div class="callout high"><strong>0.7716이 최종 성능이 아닌 이유</strong><br><code>--test</code>가 그룹별 처음 3개 ID만 골라 만든 9-session·1,013-stride pilot에서 3-fold로 탐색한 trial #12의 pooled OOF AUC입니다. 이후 92-session full 탐색도 동일 SQLite와 study name을 이어 썼기 때문에 TPE 이력과 전역 best가 섞였고, JSON은 계속 pilot trial을 가리킵니다. 데이터 크기·fold 수가 다른 값이므로 full 5-fold 성능으로 전용할 수 없습니다.</div>
+</div>
+<div class="callout critical"><strong>21/26 종단쌍 분리의 실제 의미</strong><br>예를 들어 같은 환자의 수술 전 <code>ACLD8</code>과 수술 후 <code>ACLR8</code>이 서로 다른 fold에 들어갑니다. session ID 자체는 겹치지 않지만 biological identity는 train/validation 양쪽에 존재합니다. 이 구현은 모델을 HA stride만으로 적합하므로 ACL train row가 MCD에 직접 들어가는 전형적 feature leakage는 아니지만, 동일 환자가 하이퍼파라미터 선택과 OOF 성능·CI에 두 번의 상관된 관측으로 기여합니다. 따라서 독립 환자 일반화 성능과 종단 변화 검정의 가정이 깨지며, 두 시점은 반드시 같은 outer fold에 고정해야 합니다.</div>
 <div class="grid2"><div class="callout info"><span class="badge low">사용 가능</span><strong>현재 산출물이 보여주는 것</strong><br>기본 설정에서 계산된 HA-referenced multivariate deviation의 OOF 분포와 그 불안정성.</div>
 <div class="callout critical"><span class="badge critical">사용 금지</span><strong>현재 산출물이 보여주지 못하는 것</strong><br>0.7716의 full-data 성능, 독립 검증된 최적 모델, 임상적 impairment/severity, causal sensor contribution.</div></div>
 </section>
@@ -553,6 +652,15 @@ def main() -> None:
 <p class="lead">질문은 “각 stride의 79-channel waveform이 training-fold HA 분포에서 얼마나 멀리 있는가”입니다. 구현은 분류 확률이 아니라 정상 참조 거리입니다.</p>
 <div class="flow"><span>raw trial</span><b>→</b><span>heel-strike stride</span><b>→</b><span>79 × 101 waveform</span><b>→</b><span>HA-only scaler</span><b>→</b><span>HA-only PCA</span><b>→</b><span>HA-only MCD</span><b>→</b><span>D<sub>M</sub></span><b>→</b><span>clipped fold z-score</span></div>
 <p>한 행은 한 trial의 한쪽 발에서 연속 heel strike 사이를 자른 <strong>stride-leg row</strong>입니다. 앞뒤 2 stride를 제거하고 각 채널을 101점으로 선형 보간합니다. 따라서 9,540행은 9,540명이 아니라 92 session에서 반복 측정된 stride입니다.</p>
+<h3>원본 데이터에서 거리까지의 실제 코드 경로</h3>
+<ol>
+<li><strong>열 선택:</strong> <code>raw_merged.parquet</code>에서 subject/group/speed/file/time, foot contact, 관절각도 21개 원열, 가속도 21개, orientation 28개, magnetic field 21개를 선택합니다. 실제 stride 특징은 해당 발의 관절 9채널과 양측 센서를 포함한 IMU 70채널, 총 79채널입니다.</li>
+<li><strong>stride 생성:</strong> <code>subject_id × group × speed × file_name</code>을 trial로 묶고 좌우 heel-contact의 0→1 상승 edge 사이를 stride로 자릅니다. 40 sample 미만 구간은 버리고 각 trial·leg의 처음/마지막 2 stride를 제거합니다.</li>
+<li><strong>파형 벡터화:</strong> 각 채널을 시간 0–100%의 101점으로 선형 보간하고 <code>79 × 101 = 7,979</code>개 수치로 펼칩니다. 이 단계에서 속도와 trial은 메타데이터로 남고 거리식의 별도 공변량은 아닙니다.</li>
+<li><strong>fold별 HA 기준화:</strong> validation subject를 제외한 training fold 중 HA stride만으로 각 특징의 scaler를 적합합니다. 변환 뒤 남은 NaN은 0으로 바뀌며, z-score 설정에서는 해당 특징의 HA 평균값으로 대체한 것과 같습니다.</li>
+<li><strong>PCA와 정상 분포:</strong> 같은 HA training stride로 PCA를 적합하고 선택된 PC 공간에서 MCD가 robust center <code>μ</code>와 covariance <code>Σ</code>를 추정합니다. ACL label은 이 정상 기준 적합에 사용되지 않습니다.</li>
+<li><strong>거리와 점수:</strong> validation stride를 같은 scaler/PCA에 통과시킨 뒤 <code>sqrt((z−μ)ᵀΣ⁺(z−μ))</code>를 계산합니다. 여러 PC 방향에서 HA 중심으로부터 떨어진 정도를 covariance로 보정한 하나의 거리이며, 어느 방향의 변화가 임상적으로 나쁜지는 말하지 않습니다. 마지막으로 fold HA-training 거리의 평균/SD로 z-score화하고 음수를 0으로 자릅니다.</li>
+</ol>
 <div class="callout medium"><span class="badge medium">설계 주의</span>orientation 28개 성분도 일반 선형 보간됩니다. 이 값이 quaternion 구성요소라면 sign continuity, SLERP, unit-norm 재정규화가 없어 물리적 interpolation의 타당성을 별도 확인해야 합니다.</div>
 <p class="source">근거: <code>01_data_preprocessing.py:7–17, 85–103, 146–204</code> · <code>02_mahalanobis_pipeline.py:95–137</code></p>
 </section>
@@ -563,7 +671,12 @@ def main() -> None:
 <p><strong>identity 수 해석:</strong> ID 메타데이터로 확인된 ACLD/ACLR pair만 하나로 합쳤습니다. 25 HA + 26 confirmed ACL pairs + 14 ACLD-only sessions + 1 unresolved ACLR38 = <strong>66 analysis identities</strong>입니다. <code>ACLR38</code>을 suffix만으로 <code>ACLD38</code>과 임의 결합하지 않았습니다.</p>
 <h3>특징 공간과 결측</h3><div class="table-wrap">{table(feature_types)}</div>
 <div class="callout high"><span class="badge high">High</span>총 waveform cell {inventory['total_cells']:,}개 중 {inventory['null_count']:,}개({100*inventory['null_rate']:.2f}%)가 null입니다. 관절각도는 0%지만 IMU 계열은 각각 약 35.9%입니다. OOF와 SHAP의 결측 처리 순서가 달라 설명 대상이 같은 모델이라고 볼 수 없습니다.</div>
+<p><strong>35.9%가 의미하는 실제 결측:</strong> 산발적으로 특정 시점만 비어 있는 형태가 아닙니다. 원본 subset의 IMU 70개 열은 각각 정확히 {imu_audit['raw_nulls_per_imu_column']:,}개 null을 가지며, 생성된 IMU 특징 열 {imu_audit['imu_feature_columns']:,}개도 모두 열당 {imu_audit['nulls_per_imu_column']:,}개 null을 가집니다. 세 계열 대표 채널의 행 마스크도 일치합니다. 즉 아래 {imu_audit['affected_subjects']}개 session ID, {imu_audit['affected_trials']}개 trial, {imu_audit['missing_strides']:,}개 stride에서 가속도 21 + orientation 28 + magnetic field 21의 <strong>70채널 × 101시점 전체</strong>가 비어 있습니다. 관절각도 9채널은 존재합니다.</p>
+<div class="table-wrap">{table(imu_affected)}</div>
+<div class="callout critical"><strong>현재 처리의 영향</strong><br>OOF 기본 z-score 경로는 scaling 뒤 NaN을 0으로 바꾸므로 IMU 전체가 없는 stride를 “70개 IMU 채널이 HA 평균과 정확히 같은 stride”처럼 만듭니다. 결측 여부가 그룹과 수집 시기에 연관되어 있으면 생체 신호가 아니라 acquisition batch를 학습하거나, 반대로 큰 정보 블록을 정상값으로 위장할 수 있습니다. 단순 imputation보다 먼저 원본 MVNX export/merge 단계에서 왜 이 34개 ID의 IMU 블록이 통째로 사라졌는지 확인해야 합니다.</div>
 <h3>속도별 행·세션과 결과</h3><div class="table-wrap">{table(condition)}</div>
+<p><strong>속도가 현재 관여하는 방식:</strong> 기본 OOF의 <code>speed_filter="all"</code>에서는 slow·normal·fast를 한 특징 공간에 합쳐 하나의 HA scaler/PCA/MCD를 만듭니다. 속도를 수치 공변량으로 넣거나, 같은 사람·같은 속도의 HA 기준과 비교하거나, group×speed interaction을 추정하지 않습니다. 단, GroupKFold가 <code>subject_id</code>로 나뉘므로 한 session의 세 속도는 모두 같은 train 또는 validation fold에 머뭅니다.</p>
+<p>Optuna의 <code>speed_filter</code>는 모델링 조정이 아니라 <strong>행 선택</strong>입니다. <code>fast</code>가 선택되면 slow/normal을 버리고 fast stride만으로 다시 CV합니다. 따라서 full-era 최고 trial #53의 fast-only 목적값은 “속도를 보정한 전체 성능”이 아니라 “fast 데이터만 사용한 탐색값”입니다. 논문 분석에서는 속도별 HA reference를 따로 만들거나, identity-balanced 요약 후 group·speed·group×speed를 명시적으로 검정해야 합니다.</p>
 <h3>side basis × actual leg</h3><div class="table-wrap">{table(side_condition)}</div>
 <div class="callout critical"><span class="badge critical">Critical metadata defect</span>데이터의 <code>{esc(', '.join(unexpected))}</code>는 <code>data/ID.csv</code>에 없고, 기대되는 <code>{esc(', '.join(absent_expected))}</code>는 features에 없습니다. 누락 ID는 코드에서 injured leg를 조용히 Right로 기본 지정하므로 <code>ACLR38</code> 108 stride의 side_basis가 검증되지 않았습니다.</div>
 <p class="source">근거: parquet schema/count 직접 계산 · <code>01_data_preprocessing.py:58–82</code> · <code>data/ID.csv</code> · <code>data/processed/id_pairing_summary.csv</code></p>
@@ -573,6 +686,7 @@ def main() -> None:
 <p>Fold <em>f</em>에서 training HA stride만 사용해 scaler, PCA, MCD를 순서대로 적합합니다. 검증 stride <strong>x</strong>의 구현식은 다음과 같습니다.</p>
 <div class="formula">x<sub>s</sub> = scaler<sub>HA,train,f</sub>(x)<br>z = PCA<sub>HA,train,f</sub>(x<sub>s</sub>)<br>D<sub>M</sub>(x) = √[(z − μ<sub>MCD,f</sub>)ᵀ pinv(Σ<sub>MCD,f</sub>)(z − μ<sub>MCD,f</sub>)]<br>score(x) = max(0, [D<sub>M</sub>(x) − mean(D<sub>HA,train,f</sub>)] / sd(D<sub>HA,train,f</sub>))</div>
 <p><strong>구체적 예:</strong> 어떤 fold의 HA training distance 평균이 35, SD가 40이면 distance 55의 stride는 score 0.50입니다. distance 25는 z=-0.25이지만 clipping 후 0이 되어 “평균보다 정상에 가까운 정도” 정보가 사라집니다.</p>
+<div class="callout high"><strong>정보가 사라지면 안 되는가?</strong><br><strong>연속적인 normality/deviation score가 목적이라면 사라지면 안 됩니다.</strong> 현재 clipping은 “HA 평균보다 멀어진 양만 impairment로 센다”는 one-sided 설계 선택이지만, z≤0인 모든 stride의 순위와 변화량을 동일한 0으로 압축합니다. 그 결과 floor effect가 생기고, 치료 후 −0.1에서 −1.0으로 정상 중심에 가까워진 변화도 관찰할 수 없습니다. 권장 산출물은 signed <code>deviation_z=(D−μ_HA)/σ_HA</code>와 raw distance를 보존하고, 꼭 필요할 때만 <code>positive_deviation=max(0,z)</code>를 별도 보조지표로 제공하는 것입니다. 단, signed z도 fold마다 다른 in-sample HA μ/σ를 그대로 쓰면 직접 비교가 약하므로 identity-safe HA leave-one-out 또는 outer-training calibration이 함께 필요합니다.</div>
 <ul>
 <li>PCA 상한 <code>min(n_HA_strides // 5, 100)</code>은 사람 수가 아니라 반복 stride 수를 독립 표본처럼 사용합니다. 실제 독립 HA는 약 20명/fold이므로 공분산 안정성을 과대평가합니다.</li>
 <li>MCD support는 고정 0.75가 아니라 <code>max(floor(0.75n), k+1)/n</code>으로 상향 조정됩니다. 실패하면 empirical covariance로 바뀌지만 산출물에는 fallback 여부가 기록되지 않습니다.</li>
@@ -611,6 +725,8 @@ def main() -> None:
 <h3>누수와 독립성</h3>
 <div class="callout critical"><span class="badge critical">Critical</span>session <code>subject_id</code> overlap은 fold마다 0이지만, ID-confirmed longitudinal pair {len(paired_present)}개 중 {confirmed_split}개가 서로 다른 fold에 있습니다({confirmed_same}개만 같은 fold). Fold별 biological identity train/validation overlap은 {', '.join(map(str, folds.identity_overlap))}개입니다.</div>
 <p>모델 적합은 HA train만 사용하므로 ACL train session이 scaler/PCA/MCD에 직접 들어가지는 않습니다. 그러나 동일 환자의 ACLD/ACLR 시점이 tuning objective와 불확실성 계산에 반복 기여하고, identity 독립성 가정을 위반합니다. 최종 주장을 위해서는 identity 단위 outer split 안에서만 Optuna를 수행하는 nested CV 또는 잠근 independent holdout이 필요합니다.</p>
+<h3>Fold의 class 균형</h3><div class="table-wrap">{table(fold_class_table)}</div>
+<div class="callout high"><strong>질문에 대한 답: 균일하게 나뉘지 않았습니다.</strong><br><code>GroupKFold</code>는 동일 <code>subject_id</code>의 행을 묶고 전체 sample 수를 대략 맞출 뿐, HA/ACLD/ACLR 비율을 stratify하지 않습니다. validation HA session 수가 fold별 9, 5, 3, 4, 4로 변하고 stride 수도 861, 543, 307, 395, 337로 달라집니다. 모든 full fold에는 HA와 ACL이 있어 AUC 계산은 가능하지만, HA reference 학습량과 validation class prevalence가 달라 fold AUC 변동이 커집니다. 개선 시에는 confirmed ACLD/ACLR pair를 하나의 <code>biological_identity</code> group으로 묶고, binary HA/ACL identity 비율과 가능하면 ACLD/ACLR session·속도 분포까지 제약하는 stratified grouped outer split을 고정해야 합니다.</div>
 <h3>반복 stride와 가중</h3><p>stride 수가 많은 session이 PCA/MCD, AUC, SHAP에 더 큰 가중을 갖습니다. 통계적 불확실성은 subject/identity가 단위여야 하며, trial→subject 균형 집계 또는 hierarchical model이 필요합니다.</p>
 <h3>점수의 의미와 바닥효과</h3><p>score=0 비율은 HA {100*(df.loc[df.group=='HA'].impairment_score==0).mean():.1f}%, ACLD {100*(df.loc[df.group=='ACLD'].impairment_score==0).mean():.1f}%, ACLR {100*(df.loc[df.group=='ACLR'].impairment_score==0).mean():.1f}%입니다. clipping은 정상 쪽 차이를 모두 버리고, fold별 다른 기준을 하나의 수치처럼 보이게 합니다.</p>
 <div class="callout info"><span class="badge low">명칭 권고</span>외부 임상 anchor, test-retest, construct validity, responsiveness가 없으므로 <strong>HA-referenced gait deviation score</strong> 또는 <strong>gait normality/deviation score</strong>가 정직합니다. “impairment”, “severity”, “recovery”는 현재 근거 범위를 넘습니다.</div>
@@ -651,12 +767,49 @@ def main() -> None:
 ['P2','Proxy fidelity 검증','subject-grouped holdout R²/MAE/rank agreement; OOF target만 설명','SHAP 신뢰 범위 명시'],
 ['P2','시각/산출물 분리','run-specific SHAP directory, 폰트 지정, 진짜 waterfall/시점 heatmap','혼합 계보와 읽기 오류 제거'],
 ], columns=['우선순위','조치','필요 변경','기대 효과']))}</div>
+<h3>P0-1. Test/full Optuna 계보를 완전히 분리</h3>
+<p><strong>현재 문제:</strong> test와 full이 같은 <code>optuna_mahalanobis.db</code>, <code>mahalanobis_impairment</code> study, TPE history를 공유하고 JSON이 전역 best만 저장합니다. <strong>변경:</strong> 실행마다 mode, dataset SHA-256, feature schema hash, split seed를 포함한 run ID를 만들고 별도 DB/study 또는 최소한 별도 study name을 사용합니다. full study는 오염된 history를 이어받지 않고 trial 0부터 다시 시작해야 합니다. <strong>완료 기준:</strong> JSON의 dataset hash가 full parquet과 일치하고, 모든 trial이 동일 n=92 dataset·동일 outer split을 사용하며 pilot trial이 조회되지 않아야 합니다.</p>
+
+<h3>P0-2. Biological-identity 단위 outer CV와 메타데이터 복구</h3>
+<p><strong>현재 문제:</strong> 26개 확인 종단쌍 중 21개가 분리됐고 <code>ACLR38</code> injured leg는 default Right로 조용히 대체됩니다. <strong>변경:</strong> <code>id_pairing_summary.csv</code>의 confirmed pair를 하나의 identity로 만들고 ACLD·ACLR 두 session을 같은 outer fold에 고정합니다. <code>ACLR38/ACLR36</code>은 원 수집 명부와 MVNX 파일로 대조해 ID와 injured side를 확정하며, 미확정 ID는 분석에서 명시적으로 제외하거나 unknown으로 실패시켜야 합니다. <strong>완료 기준:</strong> 모든 fold의 train/validation identity overlap=0, side default 사용=0, pair별 두 시점 fold 일치=100%입니다.</p>
+
+<h3>P0-3. Nested optimization과 잠긴 OOF 산출물</h3>
+<p><strong>현재 문제:</strong> 동일 5-fold OOF AUC를 수십 번 보고 최적 trial을 고르므로 그 최고값은 선택 편향된 tuning 성능입니다. <strong>변경:</strong> outer identity fold는 최종 평가용으로 잠그고, 각 outer-training set 내부에서만 inner grouped CV로 scaling·PCA·covariance·speed 정책을 선택합니다. 선택된 설정을 outer-training 전체 HA에 재적합해 outer-validation을 한 번만 예측합니다. <strong>저장:</strong> 행별 identity/fold/raw distance/signed score, fold별 scaler·PCA k·MCD fallback·rank·condition·HA calibration, inner trial history와 코드/data hash를 저장합니다. <strong>완료 기준:</strong> 모든 identity가 정확히 한 번 outer OOF 예측되고 outer validation 정보가 tuning에 들어가지 않습니다.</p>
+
+<h3>P0-4. IMU 블록 결측의 원인 규명과 동일한 처리 순서</h3>
+<p><strong>현재 문제:</strong> 34개 session의 IMU 전체가 없고 z-score 뒤 0 대체가 이를 HA 평균 신호처럼 만듭니다. SHAP은 대체 순서도 다릅니다. <strong>변경 순서:</strong> (1) 원 MVNX/export/merge 로그로 센서 미수집인지 파싱 손실인지 확인, (2) group·연도·장비·ID별 missingness 표 작성, (3) 결측 블록 포함 분석과 complete-IMU sensitivity analysis를 사전 정의, (4) imputer는 outer-training HA 또는 training 전체 중 연구 질문에 맞춰 fit하고 validation에는 transform만 적용, (5) OOF와 해석 파이프라인이 같은 fitted preprocessing object를 재사용합니다. 전체 블록 결측은 단순 점별 평균 대체보다 modality exclusion 또는 missing-indicator 포함 모델을 비교해야 합니다. <strong>완료 기준:</strong> 결측 원인·제외 수·처리 순서가 flowchart에 기록되고 OOF/SHAP 입력이 동일해야 합니다.</p>
+
+<h3>P1-1. Stride 수가 아닌 trial·identity 균형 reference</h3>
+<p><strong>현재 문제:</strong> stride가 많은 trial/사람이 scaler, PCA, covariance와 AUC에 더 큰 가중을 갖습니다. <strong>변경:</strong> 정상 reference를 만들 때 먼저 cycle을 trial 내에서 평균하고, trial을 <code>identity × speed × side</code> 내에서 동일 가중 평균하거나, 모든 단계에 inverse-count weight를 적용합니다. stride-level 변이를 연구하려면 trial/identity random effect를 포함한 hierarchical model을 사용합니다. <strong>완료 기준:</strong> 한 사람이 제공하는 stride 수를 인위적으로 복제해도 reference와 subject score가 변하지 않아야 합니다.</p>
+
+<h3>P1-2. 안정적인 covariance 추정과 수치 진단</h3>
+<p><strong>현재 문제:</strong> 최대 100 PC를 약 20명의 독립 HA가 아니라 수백 반복 stride로 정당화하고, singular covariance도 <code>pinv</code>가 조용히 값을 냅니다. <strong>변경:</strong> PC 수 상한을 독립 HA identity 수와 inner CV에 맞추고 Ledoit–Wolf/OAS shrinkage Mahalanobis, diagonal covariance, MCD를 사전 지정 비교합니다. fold마다 effective rank, eigenvalue 범위, condition number, MCD support와 fallback을 저장합니다. <code>D</code>와 <code>D²</code>는 ROC 순위가 같으므로 둘 중 하나만 탐색합니다. <strong>완료 기준:</strong> 작은 데이터 perturbation·bootstrap에서 거리 순위와 score가 안정적이고 fallback이 숨겨지지 않아야 합니다.</p>
+
+<h3>P1-3. Clipping 없는 score calibration</h3>
+<p><strong>현재 문제:</strong> HA 평균 이하의 값이 모두 0이고 fold별 μ/σ가 크게 달라 OOF score를 같은 척도로 합치기 어렵습니다. <strong>변경:</strong> raw distance와 signed deviation z를 항상 보존하고, 분포가 우측으로 긴 경우 사전 정의한 <code>log(distance)</code> calibration도 비교합니다. HA calibration은 validation identity를 제외한 HA leave-one-identity-out 또는 outer-training reference로 생성합니다. 양의 편차만 필요하면 clipped score는 별도 secondary endpoint로 둡니다. <strong>완료 기준:</strong> HA OOF 분포의 중심/척도가 fold 간 유사하고 0 floor가 없으며 동일 대상 반복측정 변화가 보존돼야 합니다.</p>
+
+<h3>P1-4. Identity-cluster 불확실성과 paired longitudinal 분석</h3>
+<p><strong>현재 문제:</strong> stride를 독립 표본처럼 계산한 AUC/검정은 표준오차를 과소평가합니다. 현재 cluster bootstrap도 estimand가 stride-weighted입니다. <strong>변경:</strong> primary estimand를 identity-balanced session score로 사전 지정하고 identity bootstrap으로 CI를 계산합니다. ACLD→ACLR 변화는 같은 환자 내 paired difference와 paired bootstrap/혼합모형으로 분석하며 HA 비교와 분리합니다. HA12 같은 극단값 제외 규칙, complete-IMU subset, 속도별 분석은 결과를 본 뒤 정하지 않고 sensitivity protocol에 미리 씁니다. <strong>완료 기준:</strong> n은 stride가 아니라 독립 identity로 보고되고 paired/unpaired 분석이 혼합되지 않아야 합니다.</p>
+
+<h3>P2-1. SHAP proxy fidelity를 먼저 검증</h3>
+<p><strong>현재 문제:</strong> 같은 9,540행으로 target 생성·XGBoost 학습·상관 평가를 하며 실제 OOF target을 설명하지 않습니다. <strong>변경:</strong> 설명 대상은 잠긴 outer-OOF score로 한정하고 proxy도 biological-identity grouped cross-fitting으로 학습합니다. held-out R², MAE, Spearman rank, calibration plot을 저장하고 사전 임계값을 넘을 때만 SHAP을 제시합니다. 더 직접적인 대안으로 PC별 standardized contribution 또는 covariance-whitened squared contribution을 보고하되 이것도 인과효과가 아니라 거리 분해로 명명합니다. <strong>완료 기준:</strong> 모든 SHAP 값은 해당 identity를 학습에 사용하지 않은 proxy에서 나오고 fidelity 수치가 그림과 함께 저장돼야 합니다.</p>
+
+<h3>P2-2. 실행별 산출물·시각화 분리</h3>
+<p><strong>현재 문제:</strong> test/full PNG가 한 폴더에 남고 한글 glyph가 깨지며 “waterfall”이 실제 additive waterfall이 아닙니다. <strong>변경:</strong> <code>artifacts/{{run_id}}/</code> 아래 config, hashes, OOF, diagnostics, figures를 원자적으로 저장하고 기존 run을 덮어쓰지 않습니다. 검증된 한글 폰트를 명시하고, global 결과는 channel×gait-cycle heatmap, 개인 결과는 base value와 합이 맞는 waterfall 또는 PC contribution plot으로 만듭니다. <strong>완료 기준:</strong> 한 HTML이 정확히 한 run ID만 참조하고 stale 파일·깨진 glyph·잘못된 plot 명칭이 없어야 합니다.</p>
+
+<h3>추가로 잠가야 할 분석 결정</h3>
+<ul>
+<li><strong>속도:</strong> all-speed pooled reference, speed-specific reference, group×speed 추론 중 primary 질문 하나를 사전 지정합니다. 현재 filter 방식은 속도 보정이 아닙니다.</li>
+<li><strong>Orientation:</strong> 28개 값이 quaternion 성분이면 sign continuity, SLERP, unit-norm 보존을 검증하고 일반 선형 보간과 민감도 비교합니다.</li>
+<li><strong>임상적 construct:</strong> 임상 설문·기능검사·return-to-sport·test-retest 같은 외부 anchor 없이 deviation을 impairment/severity/recovery로 부르지 않습니다.</li>
+<li><strong>보고 순서:</strong> feasibility/quality control → locked primary analysis → pre-specified sensitivity → exploratory explanation 순으로 분리해 탐색 결과가 확증 결과처럼 보이지 않게 합니다.</li>
+</ul>
 </section>
 
 <section id="11"><h2>11. 재현성 부록</h2>
 <h3>보고서 생성 환경</h3><div class="table-wrap">{table(environment_table)}</div>
 <h3>감사 입력 파일 fingerprint</h3><div class="table-wrap">{table(artifact_table)}</div>
-<h3>실행 명령</h3><div class="formula"><code>cd {esc(ROOT)}</code><br><code>.venv/bin/python 0702_Mahalanobis/scripts/05_generate_detailed_report.py</code></div>
+<h3>실행 명령</h3><div class="formula"><code>cd {esc(ROOT)}</code><br><code>.venv/bin/python {esc(SANDBOX.name)}/scripts/05_generate_detailed_report.py</code></div>
 <h3>검증 가능한 산출물 계보</h3><ul><li><code>mahalanobis_features.parquet</code> → 기본 hardcoded step 02 → <code>oof_results.parquet</code> + Markdown.</li><li>동일 features → step 03 shared study → DB scalar objectives + global-best JSON. 최적 OOF 없음.</li><li>features + contaminated JSON → full-data refit score → in-sample XGBoost proxy → SHAP PNG.</li></ul>
 <h3>확정할 수 없는 내용</h3><ul><li>최적 full configuration의 저장된 OOF prediction과 독립 성능.</li><li>DB Optuna scalar의 exact replay. trial별 code hash, dataset hash, OOF, fold metadata가 저장되지 않음.</li><li>각 fold의 실제 PCA k, MCD fallback 여부, covariance rank/condition. 현재 산출물에 저장되지 않음.</li><li>SHAP proxy의 out-of-sample fidelity와 저장된 Pearson R.</li><li><code>ACLR38</code>의 실제 injured leg 및 <code>ACLR36</code> 누락 원인.</li><li>HA12가 생물학적 극단값인지 acquisition/preprocessing 오류인지.</li></ul>
 <p class="muted">보고서 생성 시각: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} KST · 외부 CDN/네트워크 의존 없음 · 새 차트는 inline SVG, 기존 SHAP PNG는 base64 내장.</p>

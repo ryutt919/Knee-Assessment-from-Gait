@@ -2,10 +2,10 @@
 
 ## Component Status
 
-### 0702_Mahalanobis 샌드박스 개요
+### Mahalanobis 샌드박스 개요
 - **목적**: raw IMU 센서 원본 데이터 + 관절각도 Waveform으로 정상인(HA) 대비 ACL 손상군(ACLD/ACLR)의 보행 손상도(Impairment Score) 산출 및 SHAP 해석
-- **위치**: `Walking/0702_Mahalanobis/`
-- **상태**: 구현 및 전체 데이터 실행 산출물은 존재하나, 2026-07-02 기술 감사에서 Optuna test/full 계보 혼합, biological-identity fold overlap, SHAP proxy 한계가 확인됨. 현재 재현 가능한 full 기본 OOF distance AUC는 0.4991이며 최종 검증 성능으로 사용 불가
+- **위치**: `Walking/Mahalanobis/`
+- **상태**: 구현 및 전체 데이터 실행 산출물은 존재하나, 2026-07-02 기술 감사에서 Optuna test/full 계보 혼합, biological-identity fold overlap, IMU block missingness, class-unstratified folds, clipped-score floor effect, SHAP proxy 한계가 확인됨. 현재 재현 가능한 full 기본 OOF distance AUC는 0.4991이며 최종 검증 성능으로 사용 불가
 
 ---
 
@@ -15,6 +15,9 @@
   - `Healthy adolescents` → 분석에서 제외
 - **추출 컬럼**: 메타(5) + footContacts(4) + jointAngle_42~62(21) + sensorFreeAcceleration(21) + sensorOrientation(28) + sensorMagneticField(21) = **100 컬럼**
 - **Waveform 특징 벡터 차원**: 채널 수 × 101 ≈ **7,979 차원**
+- **IMU block missingness**: 34 session ID(ACLD 19, ACLR 7, HA 8), 305 trial, 3,427 stride에서 IMU 70채널×101시점 전체가 null; 관절각도는 존재
+- **Subject-mean AUC 0.5039**: 92 session형 subject_id 각각의 모든 속도·trial·양발 stride raw distance 단순 평균에 대한 AUC이며 biological identity/pair 집계가 아님
+- **Fold class 구성**: GroupKFold는 label stratification을 하지 않아 validation HA session이 fold별 9/5/3/4/4로 불균형
 
 ---
 
@@ -54,6 +57,7 @@
 #### `scripts/05_generate_detailed_report.py`
 - **기능**: 코드, parquet schema/OOF, Optuna SQLite, ID pairing, SHAP PNG를 읽기 전용으로 교차검증해 단일 독립 HTML 기술 감사 보고서 생성
 - **통계 단위**: stride 결과와 session/biological-identity 집계를 분리하고, AUC CI는 identity-cluster bootstrap으로 계산
+- **설명 범위**: Mahalanobis 거리의 raw→stride→HA scaler/PCA/MCD 경로, subject-mean/Optuna/identity leakage 의미, IMU 결측 ID 표, 속도 처리, clipping 정보 손실, fold class 불균형, 개선 항목별 구현·검증 기준
 - **출력**: `htmls/01_detailed_experiment_analysis.html`
 
 #### `run_pipeline.py`
@@ -98,3 +102,4 @@
 |-----------|------|----------------|
 | 2026-07-02 01:16 | 0702_Mahalanobis 파이프라인 구현 | 전체 5개 스크립트 + run_pipeline.py 신규 생성, 테스트 검증 완료 |
 | 2026-07-02 11:26 | 0702_Mahalanobis 정밀 기술 감사 | full 기본 OOF AUC 0.4991 확인; 0.7716이 9-session test Optuna trial임을 규명; 21/26 확인 종단쌍 fold 분리, ACLR38/36 계보 불일치, SHAP proxy 한계 문서화; 재현 가능한 단일 HTML 보고서 추가 |
+| 2026-07-02 12:43 | Mahalanobis 감사 보고서 설명 확장 | subject-mean·shared Optuna·종단 identity·거리 계산·속도·clipping·fold 불균형 설명 추가; IMU 전체결측 34 ID/305 trial/3,427 stride 표와 P0–P2 개선 구현·검증 기준 상세화 |
