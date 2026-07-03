@@ -1,108 +1,105 @@
-"""
-run_pipeline.py — 전체 파이프라인 통합 실행 스크립트
+"""Run the leakage-safe Mahalanobis v2 pipeline.
 
-사용법:
-  python run_pipeline.py            # 전체 실행 (대용량 데이터)
-  python run_pipeline.py --test     # 극소량 데이터로 파이프라인 검증
-  python run_pipeline.py --skip 00  # 0단계(추출) 스킵
-  python run_pipeline.py --skip 00 01 --trials 20  # 여러 단계 스킵
-
-단계:
-  00: raw_merged.parquet → raw_subset_mahalanobis.parquet (서브셋 추출)
-  01: raw_subset → mahalanobis_features.parquet (Stride 분할 + 101pt 보간)
-  02: mahalanobis_features → OOF 마할라노비스 거리 + Impairment Score
-  03: Optuna 최적화 (기본 50 trials)
-  04: SHAP 분석 및 시각화
+Examples (run from Mahalanobis/):
+  python run_pipeline.py --mode dry --trials 2 --outer-folds 3 --inner-folds 2
+  python run_pipeline.py --mode full --balance-mode both --trials 20
 """
 from __future__ import annotations
 
+import argparse
 import importlib.util
+import json
+import subprocess
 import sys
-import time
+from datetime import datetime
 from pathlib import Path
 
 SANDBOX = Path(__file__).resolve().parent
 SCRIPTS = SANDBOX / "scripts"
+ARTIFACTS = SANDBOX / "artifacts"
 
 
-def load_module(name: str):
-    path = SCRIPTS / f"{name}.py"
-    spec = importlib.util.spec_from_file_location(name, path)
-    mod  = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+def load_module(filename: str, name: str):
+    spec = importlib.util.spec_from_file_location(name, SCRIPTS / filename)
+    if spec is None or spec.loader is None:
+        raise ImportError(filename)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
 
 
-def run_step(step_name: str, test_mode: bool, **kwargs) -> None:
-    print(f"\n{'='*60}")
-    print(f"  STEP {step_name}")
-    print(f"{'='*60}")
-    t0 = time.time()
-    mod = load_module(step_name)
-    mod.main(test_mode=test_mode, **kwargs)
-    elapsed = time.time() - t0
-    print(f"\n  ✓ {step_name} 완료 ({elapsed:.1f}초)")
+def git_revision() -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=SANDBOX, text=True,
+        capture_output=True, check=False,
+    )
+    return result.stdout.strip() if result.returncode == 0 else "unknown"
 
 
-def main() -> None:
-    args      = sys.argv[1:]
-    test      = "--test" in args
-    skip_set  = set()
-    n_trials  = 200
-    n_patience = 30
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Pair-aware Mahalanobis gait-deviation pipeline v2")
+    parser.add_argument("--mode", choices=["dry", "full"], default="full")
+    parser.add_argument("--balance-mode", choices=["mean_aggregate", "inverse_weight", "both"], default="both")
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--outer-folds", type=int, default=5)
+    parser.add_argument("--inner-folds", type=int, default=3)
+    parser.add_argument("--trials", type=int, default=20)
+    parser.add_argument("--run-id", default=None)
+    parser.add_argument("--resume", action="store_true", help="Refuse unsafe resume; completed immutable runs are never overwritten")
+    return parser.parse_args()
 
-    i = 0
-    while i < len(args):
-        if args[i] == "--skip":
-            i += 1
-            while i < len(args) and not args[i].startswith("--"):
-                skip_set.add(args[i].zfill(2))
-                i += 1
-        elif args[i] == "--trials" and i + 1 < len(args):
-            n_trials = int(args[i + 1])
-            i += 2
-        elif args[i] == "--patience" and i + 1 < len(args):
-            n_patience = int(args[i + 1])
-            i += 2
-        else:
-            i += 1
 
-    mode_label = "테스트 모드 (극소량 데이터)" if test else "전체 데이터 모드"
-    print(f"\n{'#'*60}")
-    print(f"  Mahalanobis Impairment Score Pipeline")
-    print(f"  모드: {mode_label}")
-    print(f"  스킵: {skip_set if skip_set else '없음'}")
-    print(f"  Optuna: n_trials={n_trials}, early_stop patience={n_patience}")
-    print(f"{'#'*60}\n")
-
-    t_total = time.time()
-
-    # 00: 서브셋 추출
-    if "00" not in skip_set:
-        run_step("00_extract_subset", test_mode=test)
-
-    # 01: 전처리
-    if "01" not in skip_set:
-        run_step("01_data_preprocessing", test_mode=test)
-
-    # 02: 마할라노비스 파이프라인
-    if "02" not in skip_set:
-        run_step("02_mahalanobis_pipeline", test_mode=test)
-
-    # 03: Optuna 최적화
-    if "03" not in skip_set:
-        run_step("03_optuna_optimization", test_mode=test,
-                 n_trials=n_trials, n_patience=n_patience)
-
-    # 04: SHAP 분석
-    if "04" not in skip_set:
-        run_step("04_shap_analysis", test_mode=test)
-
-    total = time.time() - t_total
-    print(f"\n{'#'*60}")
-    print(f"  ✅ 전체 파이프라인 완료 (총 {total:.1f}초)")
-    print(f"  결과 디렉토리: {SANDBOX / 'results'}")
-    print(f"{'#'*60}\n")
+def main() -> Path:
+    args = parse_args()
+    if args.outer_folds < 2 or args.inner_folds < 2 or args.trials < 1:
+        raise SystemExit("folds must be >=2 and trials must be >=1")
+    run_id = args.run_id or f"{datetime.now().strftime('%Y%m%d-%H%M%S')}_{args.mode}_s{args.seed}"
+    artifact_dir = ARTIFACTS / run_id
+    engine = load_module("06_v2_nested_pipeline.py", "mahalanobis_v2_engine")
+    report_module = load_module("07_generate_v2_report.py", "mahalanobis_v2_report")
+    if artifact_dir.exists():
+        manifest_path = artifact_dir / "manifest.json"
+        if not args.resume or not manifest_path.exists() or not (artifact_dir / "report.html").exists():
+            raise SystemExit(f"run directory already exists but is not safely resumable: {artifact_dir}")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        expected = {
+            "mode": args.mode, "balance_mode": args.balance_mode, "seed": args.seed,
+            "outer_folds": args.outer_folds, "inner_folds": args.inner_folds,
+            "n_trials_per_study": args.trials,
+            "slim_sha256": engine.sha256(engine.SLIM),
+            "cycles_sha256": engine.sha256(engine.CYCLES),
+            "pairing_sha256": engine.sha256(engine.PAIRING),
+            "engine_source_sha256": engine.sha256(SCRIPTS / "06_v2_nested_pipeline.py"),
+            "report_source_sha256": engine.sha256(SCRIPTS / "07_generate_v2_report.py"),
+            "runner_source_sha256": engine.sha256(Path(__file__)),
+        }
+        mismatches = {key: (manifest.get(key), value) for key, value in expected.items() if manifest.get(key) != value}
+        if mismatches:
+            raise SystemExit(f"resume manifest mismatch: {mismatches}")
+        print(f"verified completed run reused without mutation: {artifact_dir}")
+        return artifact_dir
+    result = engine.run(
+        artifact_dir=artifact_dir,
+        balance_mode=args.balance_mode,
+        mode=args.mode,
+        seed=args.seed,
+        outer_folds=args.outer_folds,
+        inner_folds=args.inner_folds,
+        n_trials=args.trials,
+    )
+    manifest_path = artifact_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["run_id"] = run_id
+    manifest["git_revision"] = git_revision()
+    manifest["cli"] = vars(args)
+    manifest["runner_source_sha256"] = engine.sha256(Path(__file__))
+    manifest["report_source_sha256"] = engine.sha256(SCRIPTS / "07_generate_v2_report.py")
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    report = report_module.generate(artifact_dir)
+    print(result["summary"].to_string(index=False))
+    print(f"report: {report}")
+    return artifact_dir
 
 
 if __name__ == "__main__":

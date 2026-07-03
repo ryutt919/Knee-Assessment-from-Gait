@@ -51,6 +51,7 @@ ML_based/reports/report_*.html
 ML_based/reports/pipeline_report_*.html
 ML_based/mlflow.db
 ML_based/pipeline_full_train.log
+Mahalanobis/artifacts/
 
 # HTML 산출물
 htmls/

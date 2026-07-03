@@ -3,9 +3,21 @@
 ## Component Status
 
 ### Mahalanobis 샌드박스 개요
-- **목적**: raw IMU 센서 원본 데이터 + 관절각도 Waveform으로 정상인(HA) 대비 ACL 손상군(ACLD/ACLR)의 보행 손상도(Impairment Score) 산출 및 SHAP 해석
+- **목적**: 관절각도 cycle waveform으로 HA 대비 gait deviation을 계산하고 실제 Mahalanobis quadratic form을 직접 분해
 - **위치**: `Walking/Mahalanobis/`
-- **상태**: 구현 및 전체 데이터 실행 산출물은 존재하나, 2026-07-02 기술 감사에서 Optuna test/full 계보 혼합, biological-identity fold overlap, IMU block missingness, class-unstratified folds, clipped-score floor effect, SHAP proxy 한계가 확인됨. 현재 재현 가능한 full 기본 OOF distance AUC는 0.4991이며 최종 검증 성능으로 사용 불가
+- **상태**: v1 산출물은 legacy로 보존한다. v2는 matched joint-only cohort, pair-aware nested CV, run-scoped artifacts, 두 cycle balance mode, unclipped signed calibration과 직접 거리분해를 구현했다. 실제 dry end-to-end 검증을 통과했으며 full nested run은 별도 실행이 필요하다.
+
+### v2 Balance Modes and CLI
+- **Current value/logic**: `mean_aggregate`는 cycle→trial→condition 평균, `inverse_weight`는 모든 cycle을 유지하면서 계층 inverse-count weight를 모델 적합과 score에 적용한다. 기본 `both`, primary는 `inverse_weight`다.
+- **Implementation**: `Mahalanobis/scripts/06_v2_nested_pipeline.py`; 실행은 `../.venv/bin/python run_pipeline.py --mode dry|full --balance-mode mean_aggregate|inverse_weight|both`.
+- **Related files**: `Mahalanobis/run_pipeline.py`, `Mahalanobis/scripts/07_generate_v2_report.py`, `Mahalanobis/tests/01_test_v2_pipeline.py`.
+- **Rationale**: 집계 기반의 보수적 결과와 cycle 변동을 보존한 weighted 결과를 같은 identity splits에서 비교한다.
+
+### v2 Data, CV, and Score
+- **Current value/logic**: ACLD/ACLR 27 matched pairs+HA25, 52 identities; outer/inner identity split; slow/normal/fast distance와 robust signed deviation RMS total을 저장한다.
+- **Implementation**: QC 실패 시 `qc_audit.json` 기록 후 중단하며 dry/full과 balance mode별 Optuna DB·model·OOF를 `artifacts/{run_id}/`에 격리한다.
+- **Related files**: `data/processed/slim_gait.parquet`, `data/processed/cycle_waveforms_101.parquet`, `data/processed/id_pairing_summary.csv`.
+- **Rationale**: longitudinal leakage, pilot/full lineage 혼합, clipping floor와 stride-count 과대가중을 제거한다.
 
 ---
 
@@ -103,3 +115,4 @@
 | 2026-07-02 01:16 | 0702_Mahalanobis 파이프라인 구현 | 전체 5개 스크립트 + run_pipeline.py 신규 생성, 테스트 검증 완료 |
 | 2026-07-02 11:26 | 0702_Mahalanobis 정밀 기술 감사 | full 기본 OOF AUC 0.4991 확인; 0.7716이 9-session test Optuna trial임을 규명; 21/26 확인 종단쌍 fold 분리, ACLR38/36 계보 불일치, SHAP proxy 한계 문서화; 재현 가능한 단일 HTML 보고서 추가 |
 | 2026-07-02 12:43 | Mahalanobis 감사 보고서 설명 확장 | subject-mean·shared Optuna·종단 identity·거리 계산·속도·clipping·fold 불균형 설명 추가; IMU 전체결측 34 ID/305 trial/3,427 stride 표와 P0–P2 개선 구현·검증 기준 상세화 |
+| 2026-07-04 00:25 | Mahalanobis v2 고도화 | matched joint-only cohort, identity nested CV, mean/inverse balance flag, 속도별·total score, run-scoped artifacts, direct D² contribution, dry end-to-end 검증 추가 |

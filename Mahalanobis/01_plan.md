@@ -1,4 +1,39 @@
-# 01_plan.md — IMU 센서 및 관절 각도 통합 마할라노비스 거리 기반 보행 점수화 기획서
+# 01_plan.md — HA-referenced Mahalanobis gait deviation
+
+## Revision History
+
+### v1 → v2 Feedback (2026-07-04)
+
+- **이전 버전 요약**: raw IMU+관절각도 stride 행을 session-ID GroupKFold로 분할하고 MCD 거리, clipped impairment score와 별도 XGBoost proxy SHAP을 계산했다.
+- **피드백**: ACLD/ACLR identity leakage, dry/full Optuna 혼합, ACLR38/36 계보, IMU block 결측, silent injured-side fallback, HA outlier, clipping, 속도 처리, stride 과대가중과 proxy SHAP 문제가 확인됐다.
+- **v2 변경**: matched joint-angle cohort, biological-identity nested CV, run-scoped artifacts, mean/inverse cycle balancing, 속도별 거리, robust signed calibration과 실제 quadratic-form contribution으로 교체했다.
+
+## Current v2 Specification
+
+- Canonical source는 `slim_gait.parquet`에서 생성된 joint-only `cycle_waveforms_101.parquet`이며 ACLD 27·ACLR 27·HA 25 sessions, 52 identities를 fail-fast 검증한다.
+- `ACLR38 → ACLR36`은 명시적 alias이며 confirmed pair 외 ACL session은 허용하지 않는다. ID·injured leg·필수 속도/side/trial/관절 파형 문제는 `qc_audit.json`을 남기고 중단한다.
+- Outer 5-fold와 inner 3-fold는 모두 biological identity 단위다. Inner objective는 identity-balanced ACL-vs-HA AUC이며 outer validation은 tuning·전처리에 사용하지 않는다.
+- `--balance-mode mean_aggregate|inverse_weight|both`를 제공한다. 기본값은 `both`, 사전 지정 primary는 `inverse_weight`다.
+  - `mean_aggregate`: cycle→trial 평균 후 trial 동일가중 session×speed×side 파형.
+  - `inverse_weight`: 모든 cycle을 유지하고 cycle→trial→side→speed→session 계층 가중을 scaling/PCA/covariance와 score 집계에 적용.
+- Slow·normal·fast HA-reference 거리를 각각 계산하고 robust log-distance signed deviation의 RMS를 `total_distance`로 정의한다. 세 속도 파형 직접 연결 모델은 mean mode sensitivity로만 저장한다.
+- Raw distance와 signed deviation을 보존하고 primary에 clipping/absolute value를 적용하지 않는다.
+- Proxy SHAP은 사용하지 않는다. 저장된 outer-fold 모델의 quadratic form을 직접 분해하며 feature contribution 합은 D²와 일치한다.
+- 모든 결과는 `artifacts/{run_id}/{balance_mode}/`에 저장하며 dry/full study, DB, OOF, 모델과 그림을 공유하지 않는다.
+
+## v2 Execution
+
+```bash
+cd Mahalanobis
+../.venv/bin/python run_pipeline.py --mode dry --balance-mode both --outer-folds 3 --inner-folds 2 --trials 2
+../.venv/bin/python run_pipeline.py --mode full --balance-mode both --trials 20
+```
+
+---
+
+## Legacy v1 Plan (보존용)
+
+아래 내용은 초기 구현의 의사결정 계보를 보존하기 위한 것으로 현재 실행 사양이 아니다.
 
 이 문서는 `raw_merged.parquet` 데이터를 사용하여 실제 IMU 센서 원본 값(가속도, 오리엔테이션 등)과 관절 각도 데이터를 동기화 및 통합하고, 정상 대조군(HA) 대비 ACL 손상군(ACLD/ACLR)의 보행 손상도(Impairment Score)를 계산하며, SHAP를 통해 그 기여도를 해석하는 상세 실행 계획을 설명합니다.
 
