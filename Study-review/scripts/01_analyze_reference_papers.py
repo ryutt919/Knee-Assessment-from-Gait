@@ -33,7 +33,7 @@ PROMPT_PATH = TASK_ROOT / "prompts" / "01_reference_paper_analysis_prompt.md"
 PROVIDERS = ("codex", "claude", "antigravity")
 EXIT_ALL_UNAVAILABLE = 75
 
-from path_utils import categorized_output_path, category_for_pdf
+from path_utils import categorized_output_path, category_for_pdf, pdfs_from_input_manifest
 
 UNAVAILABLE_PATTERNS = re.compile(
     r"usage limit|quota (?:exhaust|exceed)|insufficient (?:quota|credit)|"
@@ -273,10 +273,56 @@ def discover_pdfs(input_dir: Path) -> list[Path]:
     if input_dir.resolve() == DEFAULT_INPUT.resolve():
         result = []
         for child in sorted(input_dir.iterdir()):
-            if child.is_dir() and re.match(r"^0[1-6]_", child.name):
+            if child.is_dir() and re.match(r"^0[1-7]_", child.name):
                 result.extend(sorted(child.glob("*.pdf")))
         return result
     return sorted(input_dir.rglob("*.pdf"))
+
+
+def select_pdfs(input_dir: Path, input_manifest: Path | None = None) -> list[Path]:
+    """Return either the complete discovered corpus or an exact manifest batch."""
+    return pdfs_from_input_manifest(input_manifest) if input_manifest else discover_pdfs(input_dir)
+
+
+def merge_inventory(existing: Iterable[str], selected: Iterable[Path]) -> list[str]:
+    """Preserve cumulative inventory while recording newly selected PDFs."""
+    merged = list(existing)
+    seen = set(merged)
+    for pdf in selected:
+        key = str(pdf.resolve())
+        if key not in seen:
+            seen.add(key)
+            merged.append(key)
+    return merged
+
+
+def stable_numbers(records: dict[str, Any], selected: Iterable[Path]) -> dict[str, int]:
+    """Keep assigned numbers and allocate new numbers above the manifest maximum."""
+    assigned = {
+        key: int(record["number"])
+        for key, record in records.items()
+        if isinstance(record.get("number"), int) and record["number"] > 0
+    }
+    next_number = max(assigned.values(), default=0)
+    for pdf in selected:
+        key = str(pdf.resolve())
+        if key not in assigned:
+            next_number += 1
+            assigned[key] = next_number
+    return assigned
+
+
+def filter_only(pdfs: list[Path], query: str | None) -> list[Path]:
+    if not query:
+        return pdfs
+    exact = [pdf for pdf in pdfs if pdf.name == query]
+    return exact or [pdf for pdf in pdfs if query.lower() in pdf.name.lower()]
+
+
+def selection_counts(records: dict[str, Any], pdfs: Iterable[Path]) -> tuple[int, int]:
+    selected = [records.get(str(pdf.resolve()), {}) for pdf in pdfs]
+    failures = sum(record.get("status") != "success" for record in selected)
+    return len(selected) - failures, failures
 
 
 def extract_pdf(pdf: Path, cache_dir: Path) -> Path:
@@ -596,6 +642,8 @@ def main() -> int:
     parser.add_argument("--claude-model")
     parser.add_argument("--antigravity-model")
     parser.add_argument("--input-dir", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--input-manifest", type=Path,
+                        help="이 JSON manifest에 명시된 PDF만 정확히 처리합니다")
     parser.add_argument("--output-dir", type=Path, default=TASK_ROOT)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--provider-test", action="store_true")
@@ -610,10 +658,8 @@ def main() -> int:
     output_root = args.output_dir.resolve()
     if not inside(output_root, TASK_ROOT):
         parser.error(f"output-dir는 샌드박스 내부여야 합니다: {TASK_ROOT}")
-    pdfs = discover_pdfs(args.input_dir.resolve())
-    global_index = {str(p.resolve()): i for i, p in enumerate(pdfs, 1)}
-    if args.only:
-        pdfs = [p for p in pdfs if args.only.lower() in p.name.lower()]
+    pdfs = select_pdfs(args.input_dir.resolve(), args.input_manifest)
+    pdfs = filter_only(pdfs, args.only)
     binaries = {p: find_binary(p) for p in PROVIDERS}
     print(f"분석 대상: {len(pdfs)}편")
     for p in PROVIDERS:
@@ -635,17 +681,21 @@ def main() -> int:
             failed |= not result.ok
         return 1 if failed else 0
 
+    gate_passed = False
     if not args.skip_provider_gate:
         gate_results = {p: run_provider_test(p, logs_dir, model_for(p, args)) for p in PROVIDERS}
         if not all(r.ok for r in gate_results.values()):
             print("세 provider 사전 테스트가 모두 통과하지 못해 분석을 시작하지 않습니다.", file=sys.stderr)
             return 1
+        gate_passed = True
 
     manifest_path = logs_dir / "manifest.json"
-    if args.resume and manifest_path.exists():
+    if (args.resume or args.input_manifest) and manifest_path.exists():
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        manifest["inventory"] = [str(p.resolve()) for p in pdfs]
+        manifest["inventory"] = merge_inventory(manifest.get("inventory", []), pdfs)
+        manifest["selection"] = [str(p.resolve()) for p in pdfs]
         manifest["input_dir"] = str(args.input_dir.resolve())
+        manifest["input_manifest"] = str(args.input_manifest.resolve()) if args.input_manifest else None
         manifest["prompt_hash"] = sha256(PROMPT_PATH)
         manifest["schema_hash"] = sha256(SCHEMA_PATH)
     else:
@@ -653,17 +703,26 @@ def main() -> int:
             "run_id": datetime.now().strftime("%Y%m%d_%H%M%S"),
             "created_at": now_iso(), "input_dir": str(args.input_dir.resolve()),
             "inventory": [str(p.resolve()) for p in pdfs],
+            "selection": [str(p.resolve()) for p in pdfs],
+            "input_manifest": str(args.input_manifest.resolve()) if args.input_manifest else None,
             "prompt_hash": sha256(PROMPT_PATH), "schema_hash": sha256(SCHEMA_PATH),
             "provider_states": {p: {"status": "available", "error": ""} for p in PROVIDERS},
             "papers": {},
         }
     records = manifest["papers"]
-    states = manifest["provider_states"]
+    states = manifest.setdefault("provider_states", {})
+    if gate_passed:
+        states.clear()
+    for provider in PROVIDERS:
+        states.setdefault(provider, {"status": "available", "error": ""})
+        if gate_passed:
+            states[provider] = {"status": "available", "error": "", "updated_at": now_iso()}
+    numbers = stable_numbers(records, pdfs)
     started = time.monotonic()
 
     for idx, pdf in enumerate(pdfs, 1):
         key = str(pdf.resolve())
-        paper_number = global_index[str(pdf.resolve())]
+        paper_number = numbers[key]
         category = category_for_pdf(pdf)
         existing = records.get(key, {})
         if existing.get("status") == "success" and not args.overwrite:
@@ -771,7 +830,10 @@ def main() -> int:
             records[key].update({"status": "failed", "errors": errors, "updated_at": now_iso()})
             atomic_json(manifest_path, manifest)
             if not any(states.get(p, {}).get("status") == "available" for p in PROVIDERS):
-                resume = shlex.join([sys.executable, str(Path(__file__).relative_to(REPO_ROOT)), "--provider", args.provider, "--resume", "--input-dir", str(args.input_dir), "--output-dir", str(output_root)])
+                resume_args = [sys.executable, str(Path(__file__).relative_to(REPO_ROOT)), "--provider", args.provider, "--resume", "--input-dir", str(args.input_dir), "--output-dir", str(output_root)]
+                if args.input_manifest:
+                    resume_args += ["--input-manifest", str(args.input_manifest)]
+                resume = shlex.join(resume_args)
                 handoff = write_handoff(output_root, manifest, pdf.name, resume)
                 dashboard(idx - 1, len(pdfs), "none", pdf.name, states, started, f"중단: {handoff.name}")
                 return EXIT_ALL_UNAVAILABLE
@@ -782,8 +844,8 @@ def main() -> int:
     aggregate(records, output_root)
     manifest["completed_at"] = now_iso()
     atomic_json(manifest_path, manifest)
-    failures = sum(rec.get("status") != "success" for rec in records.values())
-    print(f"완료: 성공 {len(records)-failures}, 실패 {failures}")
+    successes, failures = selection_counts(records, pdfs)
+    print(f"완료: 성공 {successes}, 실패 {failures}")
     return 1 if failures else 0
 
 

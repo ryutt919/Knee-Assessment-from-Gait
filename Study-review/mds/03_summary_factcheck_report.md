@@ -1,12 +1,12 @@
 # 논문 요약 사실검증 종합 리포트
 
-- 검증 완료: 45편
+- 검증 완료: 60편
 
 ## 판정 분포
 
-- 신뢰 가능: 2편
-- 일부 수정 필요: 29편
-- 신뢰 어려움: 14편
+- 신뢰 가능: 6편
+- 일부 수정 필요: 36편
+- 신뢰 어려움: 18편
 
 ## 논문별 요약
 
@@ -55,6 +55,21 @@
 - [43] Gait Analysis: Normal and Pathological Function — **일부 수정 필요** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/06_general_gait_and_other_knee_conditions/43_Gait_Analysis_Normal_and_Pathological_Function_review.md`
 - [44] GAIT ANALYSIS USING IMU SENSOR — **신뢰 어려움** (문제 3건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/06_general_gait_and_other_knee_conditions/44_Gait_Analysis_Using_IMU_Sensor_review.md`
 - [45] Gait analysis of patients following total knee replacement: A systematic review — **일부 수정 필요** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/06_general_gait_and_other_knee_conditions/45_Gait_analysis_of_patients_following_total_knee_replacement_A_systematic_review_review.md`
+- [46] 전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징 — **일부 수정 필요** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/01_acl_gait_biomechanics_studies/46_전방_십자_인대_손상_환자의_병적_보행의_특징에_관한_연구_운동_형상학_및_운동_역학적_특징_review.md`
+- [47] Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery: An Observational Longitudinal Study — **신뢰 가능** (문제 0건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/03_wearable_imu_and_portable_sensing/47_Out_of_Laboratory_Longitudinal_Gait_Assessment_of_Participants_Before_and_After_Anterior_Cruciate_Ligament_Reconstructio_review.md`
+- [48] Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors: A Longitudinal Study — **신뢰 어려움** (문제 5건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/03_wearable_imu_and_portable_sensing/48_Gait_Analysis_Post_Anterior_Cruciate_Ligament_Reconstruction_Using_Inertial_Sensors_A_Longitudinal_Study_review.md`
+- [49] Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction — **일부 수정 필요** (문제 1건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/07_composite_kinematic_kinetic_scoring_indices/49_Gait_Classification_Using_Mahalanobis_Taguchi_System_for_Health_Monitoring_Systems_Following_Anterior_Cruciate_Ligament__review.md`
+- [50] Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deﬁcits than triple hop for distance scores in athletes returning to sport — **신뢰 어려움** (문제 1건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/05_return_to_sport_and_functional_tests/50_Individual_hop_analysis_and_reactive_strength_ratios_provide_better_discrimination_of_ACL_reconstructed_limb_deficits_th_review.md`
+- [51] Objective and Subjective Analysis of the Knee Joint Function Using Lower Extremity Assessment Protocol after Anterior Cruciate Ligament Reconstruction — **신뢰 가능** (문제 0건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/05_return_to_sport_and_functional_tests/51_하지_검사_프로토콜을_이용한_전방십자인대_재건술_후_무릎관절의_객관적_및_주관적_분석_review.md`
+- [52] 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향 — **일부 수정 필요** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/05_return_to_sport_and_functional_tests/52_전방십자인대_재건술_후_16_주간의_기능적인_재활운동_프로그램이_여성_축구선수의_슬관절_기능_회복에_미치는_영향_review.md`
+- [53] THE DEVELOPMENT OF A NORMATIVE GAIT DATABASE — **신뢰 가능** (문제 0건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/06_general_gait_and_other_knee_conditions/53_The_Development_of_a_Normative_Gait_Database_review.md`
+- [54] Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study on early post-stroke individuals — **일부 수정 필요** (문제 1건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/07_composite_kinematic_kinetic_scoring_indices/54_Does_kinematic_gait_quality_improve_with_functional_gait_recovery_A_longitudinal_pilot_study_on_early_post_stroke_indivi_review.md`
+- [55] Gait function improvements, using Cardiff Classifier, are related to patient-reported function and pain following hip arthroplasty — **신뢰 가능** (문제 0건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/07_composite_kinematic_kinetic_scoring_indices/55_Gait_function_improvements_using_Cardiff_Classifier_are_related_to_patient_reported_function_and_pain_following_hip_arth_review.md`
+- [56] The functional gait deviation index — **일부 수정 필요** (문제 6건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/07_composite_kinematic_kinetic_scoring_indices/56_The_functional_gait_deviation_index_review.md`
+- [57] Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction — **신뢰 어려움** (문제 1건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/07_composite_kinematic_kinetic_scoring_indices/57_Gait_Analysis_and_Mathematical_Index_Based_Health_Management_Following_Anterior_Cruciate_Ligament_Reconstruction_review.md`
+- [58] Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis — **신뢰 어려움** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/04_machine_learning_and_deep_learning/58_Unsupervised_Detection_of_Pathological_Gait_Patterns_via_Instantaneous_Center_of_Rotation_Analysis_review.md`
+- [59] Derivation of the Gait Deviation Index for Spinal Cord Injury — **일부 수정 필요** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/07_composite_kinematic_kinetic_scoring_indices/59_Derivation_of_the_Gait_Deviation_Index_for_Spinal_Cord_Injury_review.md`
+- [60] Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users — **일부 수정 필요** (문제 2건) → `/Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/reviews/06_general_gait_and_other_knee_conditions/60_Investigating_compensatory_adjustments_induced_by_rhythmic_auditory_stimulation_for_changes_in_temporal_gait_symmetry_in_review.md`
 
 ## 문제가 발견된 논문 상세
 
@@ -1746,5 +1761,356 @@ gender, sport, and a knee injury-reduction regimen. Arthroscopy.
 
 - “- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Gait analysis of patients following total knee replacement - A systematic review.pdf” — SOURCE_TEXT에는 로컬 파일 경로 정보가 포함되어 있지 않아 원문만으로 확인할 수 없다.
 - “- 분석 provider: antigravity” — SOURCE_TEXT에는 요약 작성 또는 분석 provider 정보가 포함되어 있지 않아 원문만으로 확인할 수 없다.
+
+---
+
+# 사실검증: 전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/01_acl_gait_biomechanics_studies/46_전방_십자_인대_손상_환자의_병적_보행의_특징에_관한_연구_운동_형상학_및_운동_역학적_특징.md
+- 검증 provider: antigravity
+- 검토 항목 수: 37
+- 발견된 문제 수: 2
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 굴곡군(Group II)의 양하지 지지기 시간이 다른 군에 비해 유의하게 높은(증가한) 수치를 보임에도 불구하고, 핵심 결과 및 레퍼런스 섹션에서 이를 유의하게 낮은 값을 보였다고 오기한 사실불일치(경미 등급)가 2건 발견되었습니다. 이는 원문 본문(PAGE 38)의 오기를 그대로 수용한 데서 기인한 것으로 보이나, 논문의 핵심 데이터(Table 3) 및 다른 기술(PAGE 8, 46)과 대조 시 사실과 다릅니다. 이를 제외한 서지정보, 연구 목적, 설계, 방법 등의 내용은 원문과 완벽히 일치합니다.
+
+## 발견된 문제
+
+### 1. [핵심 결과] 사실불일치 (경미)
+
+- 요약 문장: “굴곡군(Group II)은 보행 속도, 분속수, 보장, 활보장, 단하지 지지기, 양하지 지지기 시간 등 보행 선형 지수에서 다른 군들에 비해 유의하게 낮은 값을 보임.”
+- 설명: 원문 본문(PAGE 38)에는 '양하지 지지기가 Group I, III의 보행 선형 지수보다 낮았으며'라고 오기되어 있으나, 실제 Table 3의 수치상 Group II의 양하지 지지기 시간(Initial Double support time)은 15.1%로 Group I(10.2%) 및 Group III(9.9%)에 비해 유의하게 높으며(증가함), 국문요지(PAGE 8) 및 고찰(PAGE 46)에서도 '양하지 지지기가 증가했다'고 일관되게 명시하고 있습니다. 따라서 양하지 지지기 시간이 유의하게 낮았다는 요약 서술은 논문의 실제 사실 및 데이터와 부합하지 않습니다.
+- 원문 근거: “상기 보행 선형 지수 중 Group II 의 보행속도(walking velocity), 분속수(cadence), 보장(step length), 활보장(stride length), 단하지 지지기(single support), 양하지 지지기(double support time)가 Group I, III 의 보행 선형 지수보다 낮았으며, 통계적으로도 의미 있는 차이를 보였다(Table 3.).” (PAGE 38, IV-1 이학적 검사 및 보행 선형 지수 및 PAGE 63, Table 3)
+- 수정 제안: 굴곡군(Group II)은 보행 속도, 분속수, 보장, 활보장, 단하지 지지기 시간 등 보행 선형 지수에서 다른 군들에 비해 유의하게 낮은 값을 보였고, 양하지 지지기 시간은 유의하게 높은 값을 보임.
+
+### 2. [레퍼런스할 수 있는 내용] 사실불일치 (경미)
+
+- 요약 문장: “굴곡형 보행 환자군(Group II)은 보행 속도, 분속수, 보장, 활보장, 단하지 및 양하지 지지기 시간 등의 보행 선형 지수가 신전형(Group I) 및 정상 대조군(Group III)에 비해 유의하게 낮았다.”
+- 설명: 원문의 실제 데이터인 Table 3에 따르면 Group II의 양하지 지지기 시간은 15.1%로 Group I(10.2%) 및 Group III(9.9%)보다 유의하게 높으며, 국문요지(PAGE 8)와 고찰(PAGE 46)에서도 양하지 지지기가 증가했다고 설명하고 있습니다. 따라서 양하지 지지기 시간까지 타 군에 비해 유의하게 낮았다고 번역 및 기술한 서술은 오류입니다.
+- 원문 근거: “상기 보행 선형 지수 중 Group II 의 보행속도(walking velocity), 분속수(cadence), 보장(step length), 활보장(stride length), 단하지 지지기(single support), 양하지 지지기(double support time)가 Group I, III 의 보행 선형 지수보다 낮았으며, 통계적으로도 의미 있는 차이를 보였다(Table 3.).” (PAGE 38, IV-1 이학적 검사 및 보행 선형 지수 및 PAGE 63, Table 3)
+- 수정 제안: 굴곡형 보행 환자군(Group II)은 보행 속도, 분속수, 보장, 활보장, 단하지 지지기 시간 등의 보행 선형 지수가 신전형(Group I) 및 정상 대조군(Group III)에 비해 유의하게 낮았으나, 양하지 지지기 시간은 유의하게 높았다.
+
+## 원문에서 확인 불가능한 항목
+
+- “DOI: 확인 불가” — 제공된 원문 텍스트(SOURCE_TEXT) 내에 논문의 DOI(디지털 객체 식별자) 정보가 기록되어 있지 않아 사실 여부를 검증할 수 없습니다.
+- “분석 provider: antigravity” — 제공된 원문 텍스트 내에 존재하지 않는 요약문 고유의 메타데이터(분석 주체)이므로 사실 검증 대상에서 제외됩니다.
+- “IMU 사용: false” — 제공된 원문 텍스트에 IMU(관성측정장비)의 미사용 여부를 명시적으로 서술한 부분이 없어 원문 텍스트만으로는 사실 검증이 불가능합니다. (단, 광학 카메라와 힘판 장비만 사용했다고 기술되어 있어 간접 추정만 가능합니다.)
+- “Score 제시: false” — 제공된 원문 텍스트 내에 임상 평가 점수(Score) 제시 여부를 판단할 수 있는 직접적인 진술이 포함되어 있지 않습니다.
+
+---
+
+# 사실검증: Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors: A Longitudinal Study
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors - A Longitudinal Study.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/03_wearable_imu_and_portable_sensing/48_Gait_Analysis_Post_Anterior_Cruciate_Ligament_Reconstruction_Using_Inertial_Sensors_A_Longitudinal_Study.md
+- 검증 provider: antigravity
+- 검토 항목 수: 40
+- 발견된 문제 수: 5
+- 전체 판정: **신뢰 어려움**
+- 판정 근거: Chapter 3의 종단 연구 설계를 횡단적 연구 한계로 왜곡해 기록한 중대한 오류가 발견되었으며, 다수의 페이지 근거 표기 오류 및 해부학 용어 번역 오류(경골 외과) 등의 경미한 오류들이 포함되어 있어 일부 수정이 필요하고 신뢰하기 어렵습니다.
+
+## 발견된 문제
+
+### 1. [연구 설계와 대상] 수치오류 (경미)
+
+- 요약 문장: “Chapter 4 기능 및 심리 평가 연관성 분석 연구에는 ACLR 환자 19명과 대조군 20명이 참여하였다. _(근거: Page 72, Chapter 4 Abstract)_”
+- 설명: Chapter 4의 Abstract 및 대상자 수 정보는 원문의 72페이지가 아닌 57페이지(Chapter 4 Abstract)에 존재합니다. 72페이지에는 Table 4.2만 위치하고 있습니다.
+- 원문 근거: “19 individuals with ACLR and 20 healthy uninjured controls participated in this study.” (Page 57, Chapter 4 Abstract)
+- 수정 제안: Chapter 4 기능 및 심리 평가 연관성 분석 연구에는 ACLR 환자 19명과 대조군 20명이 참여하였다. _(근거: Page 57, Chapter 4 Abstract)_
+
+### 2. [연구 설계와 대상] 수치오류 (경미)
+
+- 요약 문장: “Chapter 5 경골 각속도와 RTS 기준 상관분석 연구에는 ACLR 환자 17명이 참여하였다. _(근거: Page 92, Chapter 5 Abstract)_”
+- 설명: Chapter 5의 Abstract 및 대상자 수 정보는 원문의 92페이지가 아닌 77페이지(Chapter 5 Abstract)에 존재합니다. 92페이지에는 Table 5.2만 위치하고 있습니다.
+- 원문 근거: “Seventeen individuals with primary, unilateral ACLR were instructed to walk, walk fast, and run along a straight walkway while wearing one wireless inertial sensor on each shank.” (Page 77, Chapter 5 Abstract)
+- 수정 제안: Chapter 5 경골 각속도와 RTS 기준 상관분석 연구에는 ACLR 환자 17명이 참여하였다. _(근거: Page 77, Chapter 5 Abstract)_
+
+### 3. [방법] 번역오류 (경미)
+
+- 요약 문장: “양측 경골 외과 상단 5cm 부위에 자이로스코프 센서를 부착하고 걷기, 빠르게 걷기, 달리기 중 초기 접지기(loading response) 시상면 경골 각속도(SAV) 피크값을 측정했다. _(근거: Page 53, Chapter 3 Methods)_”
+- 설명: 원문의 'on the shanks, about 5 centimeters above the lateral malleoli'에서 lateral malleolus(복사뼈/외과)는 경골(tibia)이 아닌 비골(fibula)에 속하므로 해부학적으로 '경골 외과'는 잘못된 번역입니다. 또한 해당 내용의 근거가 되는 Methods 섹션은 53페이지(Table 3.1)가 아니라 43페이지에 위치합니다.
+- 원문 근거: “two wireless inertial sensors (MTu sensor, Xsens North America, Inc. Culver City, USA), sampling at 75 Hz, were attached bilaterally on the shanks, about 5 centimeters above the lateral malleoli, using Velcro straps” (Page 43, Chapter 3 Methods)
+- 수정 제안: 양측 정강이(하퇴)의 가쪽 복사(외과) 상단 5cm 부위에 자이로스코프 센서를 부착하고 걷기, 빠르게 걷기, 달리기 중 초기 접지기(loading response) 시상면 경골 각속도(SAV) 피크값을 측정했다. _(근거: Page 43, Chapter 3 Methods)_
+
+### 4. [핵심 결과] 수치오류 (경미)
+
+- 요약 문장: “수술 후 4개월과 6개월 시점 모두에서, 수술측 다리의 경골 각속도(SAV) 피크는 모든 속도에서 비수술측 다리보다 유의하게 작았으며 임상적으로 의미 있는 비대칭성을 보였다. _(근거: Page 53-54, Chapter 3 Results)_”
+- 설명: Chapter 3의 Results 데이터 결과가 서술된 페이지는 53~54페이지(Table 3.1 및 Figure 3.3)가 아니라 45~46페이지(Chapter 3 Results)입니다.
+- 원문 근거: “At 4 and 6 months post-ACLR, the involved limb had significantly smaller peak SAV during walking (p<.01, effect sizes = 0.69-0.85), walking fast (p<.005, effect sizes = 1.03-1.07), and running (p<.005, effect sizes = 0.78-1.03) compared to the uninvolved limb. Further, patients with ACLR exhibited meaningful SAV asymmetries at both time points for all gait speeds.” (Page 45-46, Chapter 3 Results)
+- 수정 제안: 수술 후 4개월과 6개월 시점 모두에서, 수술측 다리의 경골 각속도(SAV) 피크는 모든 속도에서 비수술측 다리보다 유의하게 작았으며 임상적으로 의미 있는 비대칭성을 보였다. _(근거: Page 45-46, Chapter 3 Results)_
+
+### 5. [연구의 한계] 사실불일치 (중대)
+
+- 요약 문장: “경골 각속도 비대칭이 무릎 관절염 발생이나 재부상 등의 장기 임상 결과로 직결되는지 인과관계를 입증하지 못한 횡단적 한계를 갖는다. _(근거: Page 64-65, Chapter 3 Discussion)_”
+- 설명: Chapter 3 연구는 수술 후 4개월과 6개월 두 시점을 비교 및 추적한 종단적 연구(Longitudinal/Prospective study)이므로 '횡단적 한계'를 갖는다는 요약은 연구 설계의 근본적인 사실관계를 왜곡한 것입니다. 횡단적 한계는 Chapter 5에 해당하며, Chapter 3 Discussion(64~65페이지)의 본래 내용은 인과관계 한계가 아니라 SAV 비대칭이 장기 임상 결과(관절염, 재부상)와 실제 연관이 있는지에 대한 추가 임상적 유의성 입증 필요성을 다루고 있습니다.
+- 원문 근거: “Second, the smallest meaningful between-limb difference for SAV was presented in our study to provide information about what considered an abnormal asymmetry, which does not mean that these observed asymmetries are necessarily clinically meaningful. Therefore, future studies should investigate whether these SAV asymmetries during gait are clinically meaningful by determining whether they are related to clinical outcomes such as knee degenerative changes or a 2nd ACL injury.” (Page 64-65, Chapter 3 Discussion)
+- 수정 제안: 경골 각속도 비대칭이 무릎 관절염 발생이나 재부상 등의 장기 임상 결과로 직결되는지 임상적 유의성을 입증하지 못한 한계를 갖는다. _(근거: Page 64-65, Chapter 3 Discussion)_
+
+---
+
+# 사실검증: Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/07_composite_kinematic_kinetic_scoring_indices/49_Gait_Classification_Using_Mahalanobis_Taguchi_System_for_Health_Monitoring_Systems_Following_Anterior_Cruciate_Ligament_.md
+- 검증 provider: antigravity
+- 검토 항목 수: 31
+- 발견된 문제 수: 1
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 보행 실험 횟수의 단위(lap)를 왕복으로 잘못 번역하여 자체적인 수치 모순이 발생하는 경미한 오류가 1건 발견되었으나, 그 외 서지정보, 연구 설계, 방법론, 통계 수치 및 결론 등 핵심적인 요약 내용은 원문과 정확히 일치합니다.
+
+## 발견된 문제
+
+### 1. [방법] 번역오류 (경미)
+
+- 요약 문장: “대상자들은 8m 보행로를 7회 걸었으며, 장비 및 환경에 대한 익숙해짐을 위해 처음 2회 왕복을 제외한 나머지 5회 왕복 중에서 대조군은 우측 다리, 환자군은 환측 다리를 대상으로 4회의 보행 주기를 분석하였다.”
+- 설명: 원문에서 대상자들은 8m 보행로를 총 7회(laps, 왕복이 아닌 편도) 걸었으며, 이 중 처음 2회(laps)를 제외한 마지막 5회(laps)를 분석에 사용하였습니다. 요약본에서는 '7회 걸었다'고 하면서도 뒷부분에서 '2회 왕복', '5회 왕복'으로 번역하여 의미상 불일치와 문장 내 수치 모순(7회 걸었는데 어떻게 2회 왕복 + 5회 왕복 = 14회가 되는지)을 야기했습니다.
+- 원문 근거: “Subjects were instructed to walk seven times on an 8 m walkway. The first two laps were not measured to allow for familiarization with the task and instrumentation. The last five laps were assessed to catch four gait cycles, employing the right limb from the HG and the injured limb from the PG.” (PAGE 6, Section 4.2. Procedures)
+- 수정 제안: 대상자들은 8m 보행로를 총 7회 걸었으며, 장비 및 환경에 대한 익숙해짐을 위해 처음 2회 보행을 제외한 나머지 5회 보행 데이터를 평가하여 대조군은 우측 다리, 환자군은 환측 다리를 대상으로 4회의 보행 주기를 분석하였다.
+
+---
+
+# 사실검증: Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deﬁcits than triple hop for distance scores in athletes returning to sport
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deficits than triple hop for distance scores in athletes returning to sport.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/05_return_to_sport_and_functional_tests/50_Individual_hop_analysis_and_reactive_strength_ratios_provide_better_discrimination_of_ACL_reconstructed_limb_deficits_th.md
+- 검증 provider: antigravity
+- 검토 항목 수: 35
+- 발견된 문제 수: 1
+- 전체 판정: **신뢰 어려움**
+- 판정 근거: 반응 근력 비율(RSR)의 정의를 번역하는 과정에서 분모와 분자의 관계를 반대로 기술하여 '접지 시간에 대한 비행 시간의 비율'(Flight Time / Contact Time)로 잘못 적은 중대 수준의 번역 오류가 발견되었습니다. 그 외 서지정보, 연구 설계 및 대상, 방법, 핵심 결과, 저자 결론 등 다른 모든 항목은 원문과 일치합니다.
+
+## 발견된 문제
+
+### 1. [방법] 번역오류 (중대)
+
+- 요약 문장: “반응 근력 비율(RSR)은 각 홉의 접지 시간에 대한 비행 시간의 비율로 계산되었고”
+- 설명: 원문에서는 RSR이 'ratio between contact time and flight time' (접지 시간과 비행 시간의 비율, 즉 Contact Time / Flight Time)으로 계산된다고 설명하고 있으나, 요약본은 이를 '접지 시간에 대한 비행 시간의 비율' (Flight Time / Contact Time)로 잘못 번역하였습니다. RSR의 수학적 정의가 반대로 뒤집혀 결과 데이터 해석에 중대한 왜곡을 초래하므로 severity를 '중대'로 분류합니다.
+- 원문 근거: “Reactive strength ratios (RSR) were subsequently calculated as the ratio between contact time and ﬂight time [38].” (PAGE 3, 2.2.3. Variables)
+- 수정 제안: 반응 근력 비율(RSR)은 각 홉의 비행 시간에 대한 접지 시간의 비율로 계산되었고
+
+---
+
+# 사실검증: 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/05_return_to_sport_and_functional_tests/52_전방십자인대_재건술_후_16_주간의_기능적인_재활운동_프로그램이_여성_축구선수의_슬관절_기능_회복에_미치는_영향.md
+- 검증 provider: antigravity
+- 검토 항목 수: 26
+- 발견된 문제 수: 2
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 대부분의 요약 내용은 원문과 일치하나, 생각해볼 내용 섹션에서 원문에 언급되지 않은 연구의 제한점(대조군 부재 및 표본 크기 제한)을 추정하여 기술해 근거가 불충분하며, 레퍼런스 섹션의 인용 표기에서 미세한 공백 오류가 발견되어 일부 수정이 필요합니다.
+
+## 발견된 문제
+
+### 1. [생각해볼 내용] 근거불충분 (경미)
+
+- 요약 문장: “본 연구는 대조군이 없고 표본 크기가 10명으로 제한적이나, 전방십자인대 재건술을 받은 여성 축구선수를 대상으로 16주간 추적 관찰하여 등속성 신전근력과 홉 테스트 등에서 유의미한 기능 회복을 입증하였다.”
+- 설명: 제시된 근거 원문은 대상자 선정 기준만을 명시하고 있을 뿐, 대조군이 부재하다거나 표본 크기가 10명으로 제한적이라는 연구의 한계점 및 이에 대한 논평은 원문 텍스트에 포함되어 있지 않아 근거가 불충분합니다.
+- 원문 근거: “본연구의대상은스포츠활동중사고로인하여이학적검사및자기공명영상(MRI)검사상슬관절ACL의완전파열을진단받아관절경적전방십자인대재건술(arthroscopicanteriorcruciateligamentreconstruction)중에동종건이식을실시한여성축구선수10명을대상으로선정하였다.” (PAGE 2, Ⅱ.연구방법 1. 연구대상)
+- 수정 제안: 전방십자인대 재건술을 시술받은 10명의 여성 축구선수를 대상으로 16주간 추적 관찰하여 등속성 신전근력과 홉 테스트 등에서 유의미한 기능 회복을 입증하였다.
+
+### 2. [레퍼런스할 수 있는 내용] 인용표기오류 (경미)
+
+- 요약 문장: “원문 내 인용표기: (Murray,Murray,MacKenzie,&Coleman 2005)”
+- 설명: 요약본의 원문 내 인용표기에는 'Coleman'과 '2005' 사이에 공백이 포함되어 있으나, 실제 원문 텍스트 내 인용표기에는 공백 없이 '(Murray,Murray,MacKenzie,&Coleman2005)'로 표기되어 있습니다.
+- 원문 근거: “축구의종주국이라고할수있는영국의경우,모든운동손상의73%가하지손상이며그중29%가무릎손상으로나타났으며스포츠종목중에서축구로인한운동손상이전체운동손상의10%를차지한다(Murray,Murray,MacKenzie,&Coleman2005).” (PAGE 1, Ⅰ.서 론 1. 연구의 필요성 및 목적)
+- 수정 제안: 원문 내 인용표기: (Murray,Murray,MacKenzie,&Coleman2005)
+
+## 원문에서 확인 불가능한 항목
+
+- “DOI: 확인 불가” — 제공된 원문 텍스트 내에서 논문의 DOI(Digital Object Identifier) 정보는 전혀 확인할 수 없습니다.
+
+---
+
+# 사실검증: Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study on early post-stroke individuals
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Does kinematic gait quality improve with functional gait recovery - A longitudinal pilot study on early post-stroke individuals.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/07_composite_kinematic_kinetic_scoring_indices/54_Does_kinematic_gait_quality_improve_with_functional_gait_recovery_A_longitudinal_pilot_study_on_early_post_stroke_indivi.md
+- 검증 provider: antigravity
+- 검토 항목 수: 29
+- 발견된 문제 수: 1
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 대부분의 요약 내용이 원문과 사실적으로 일치하나, 연구 설계와 대상 섹션에서 분석에 포함된 참가자들의 세션 완료 수 관련 설명에 일부 오역(경미)이 존재합니다.
+
+## 발견된 문제
+
+### 1. [연구 설계와 대상] 번역오류 (경미)
+
+- 요약 문장: “분석에 포함된 3명도 12회 미만의 세션을 완료했다.”
+- 설명: 원문은 분석에 포함된 참가자들(총 6명) 중 3명이 12회 미만의 세션을 완료했다고 설명하고 있으나, 요약본은 '분석에 포함된 3명도'라고 번역하여 마치 분석 대상자가 총 3명뿐이거나 분석 대상 전체가 12회 미만을 완료한 것처럼 잘못 해석될 여지가 있습니다.
+- 원문 근거: “Three of the participants included in this analysis completed less than the full 12 recording sessions.” (PAGE 2, 2. Methods - 2.1. Participants)
+- 수정 제안: 분석에 포함된 참가자 중 3명 역시 12회 미만의 세션을 완료했다.
+
+## 원문에서 확인 불가능한 항목
+
+- “분석 provider: antigravity” — 제공된 원문 텍스트(SOURCE_TEXT) 내에는 분석을 진행한 provider에 대한 언급이 없습니다.
+- “원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Does kinematic gait quality improve with functional gait recovery - A longitudinal pilot study on early post-stroke individuals.pdf” — 제공된 원문 텍스트(SOURCE_TEXT) 내에는 로컬 파일 경로 정보가 존재하지 않습니다.
+
+---
+
+# 사실검증: The functional gait deviation index
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/The functional gait deviation index.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/07_composite_kinematic_kinetic_scoring_indices/56_The_functional_gait_deviation_index.md
+- 검증 provider: antigravity
+- 검토 항목 수: 34
+- 발견된 문제 수: 6
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 원문 속 'right-handed'를 한국어 문맥에 맞지 않게 '우수수형'으로 번역한 오타성 번역 오류와 'kinematic variables'를 '기학적 변수'로 잘못 옮긴 번역 오류가 총 6개 항목에서 식별되었습니다. 수치적 검증 결과와 분석 결과 등의 핵심 정보는 모두 원문과 정확히 일치하여 '일부 수정 필요' 판정을 내렸습니다.
+
+## 발견된 문제
+
+### 1. [연구 설계와 대상] 번역오류 (경미)
+
+- 요약 문장: “21명의 우수수형 특발성 파킨슨병(PD) 환자군(여성 5명, 남성 16명)과 42명의 성인 건강한 대조군(여성 18명, 남성 24명)을 대상으로 평가를 수행하였다.”
+- 설명: 원문의 'right-handed'를 '우수수형'으로 번역하였으나, 이는 한국어에서 어색한 번역이거나 오타이며, '오른손잡이' 또는 '우수(右手)형'으로 번역하는 것이 적절합니다.
+- 원문 근거: “It includes data from 21 right-handed idiopathic PD individuals (5 females and 16 males)” (PAGE 7, Section 3)
+- 수정 제안: 21명의 오른손잡이(또는 우수형) 특발성 파킨슨병(PD) 환자군(여성 5명, 남성 16명)과 42명의 성인 건강한 대조군(여성 18명, 남성 24명)을 대상으로 평가를 수행하였다.
+
+### 2. [방법] 번역오류 (경미)
+
+- 요약 문장: “FGDI 산출을 위해 양측 다리 통합 평가, 개별 다리 평가, 단일 관절/평면별 평가 등 세 가지 범주로 기학적 변수 하위집합을 설계하여 적용한다.”
+- 설명: 원문의 'kinematic variables'를 '기학적 변수'로 번역했으나, 기학(geometry)이 아닌 운동학(kinematics)이므로 '운동학적 변수'로 번역하는 것이 학술적으로 올바릅니다.
+- 원문 근거: “For the computation of the FGDI, we concentrate on three distinct subsets of these variables, which are outlined as follows:” (PAGE 4, Section 2)
+- 수정 제안: FGDI 산출을 위해 양측 다리 통합 평가, 개별 다리 평가, 단일 관절/평면별 평가 등 세 가지 범주로 운동학적 변수 하위집합을 설계하여 적용한다.
+
+### 3. [방법] 번역오류 (경미)
+
+- 요약 문장: “통합(Combined) 접근법은 골반을 포함해 좌우 15개의 기학적 변수를 모두 사용하여 전체적인 보행 이상 상태를 하나의 중증도 수치로 제시한다.”
+- 설명: 원문의 'kinematic variables'를 '기학적 변수'로 오역하여 '운동학적 변수'로 수정이 필요합니다.
+- 원문 근거: “This procedure results in the selection of fifteen kinematic variables, designated as u = 1,...,15.” (PAGE 4, Section 2)
+- 수정 제안: 통합(Combined) 접근법은 골반을 포함해 좌우 15개의 운동학적 변수를 모두 사용하여 전체적인 보행 이상 상태를 하나의 중증도 수치로 제시한다.
+
+### 4. [방법] 번역오류 (경미)
+
+- 요약 문장: “개별 다리(Individual Leg) 접근법은 특정 다리의 9개 기학적 변수만을 사용하여 편측성 보행 병리를 개별적으로 정밀 평가한다.”
+- 설명: 원문의 'kinematic variables'를 '기학적 변수'로 오역하여 '운동학적 변수'로 수정이 필요합니다.
+- 원문 근거: “The FGDI can be calculated separately for each leg by utilizing the observations from the nine kinematic variables specific to that leg, designated with indices u = 1,...,9.” (PAGE 4, Section 2)
+- 수정 제안: 개별 다리(Individual Leg) 접근법은 특정 다리의 9개 운동학적 변수만을 사용하여 편측성 보행 병리를 개별적으로 정밀 평가한다.
+
+### 5. [방법] 번역오류 (경미)
+
+- 요약 문장: “관절/평면별(Joint/Plane Specific) 접근법은 개별 기학적 변수 1개씩을 독립적으로 평가하여 특정 관절이나 움직임 평면 수준의 이상을 파악한다.”
+- 설명: 원문의 'kinematic variable'를 '기학적 변수'로 오역하여 '운동학적 변수'로 수정이 필요합니다.
+- 원문 근거: “The FGDI can be computed for each kinematic variable separately, resulting in a measure of severity for each joint or plane, denoted by u = 1.” (PAGE 5, Section 2)
+- 수정 제안: 관절/평면별(Joint/Plane Specific) 접근법은 개별 운동학적 변수 1개씩을 독립적으로 평가하여 특정 관절이나 움직임 평면 수준의 이상을 파악한다.
+
+### 6. [연구의 해결 방식과 기여] 번역오류 (경미)
+
+- 요약 문장: “다변량 함수형 주성분 분석(MFPCA)을 도입하여, 시간 흐름에 따른 보행 데이터의 물리적 연속성(순서)을 보존함과 동시에 기학적 변수 간 다중공선성 문제를 제거하는 이상적인 가중 주성분 특징 공간을 형성했다.”
+- 설명: 원문의 'kinematic variables'에 대응되는 맥락에서 '기학적 변수'로 오역하여 '운동학적 변수'로 수정이 필요합니다.
+- 원문 근거: “MFPCA effectively addresses potential multicollinearity issues due to interdependencies between joints or planes while preserving the temporal ordering throughout the gait cycle.” (PAGE 3-4, Section 1)
+- 수정 제안: 다변량 함수형 주성분 분석(MFPCA)을 도입하여, 시간 흐름에 따른 보행 데이터의 물리적 연속성(순서)을 보존함과 동시에 운동학적 변수 간 다중공선성 문제를 제거하는 이상적인 가중 주성분 특징 공간을 형성했다.
+
+---
+
+# 사실검증: Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/07_composite_kinematic_kinetic_scoring_indices/57_Gait_Analysis_and_Mathematical_Index_Based_Health_Management_Following_Anterior_Cruciate_Ligament_Reconstruction.md
+- 검증 provider: antigravity
+- 검토 항목 수: 25
+- 발견된 문제 수: 1
+- 전체 판정: **신뢰 어려움**
+- 판정 근거: 핵심 결과 요약 중 주요 보행 기여 변수인 X3(Step Width, 보행 너비)를 앞뒤 보행 간격인 '보폭(Step Length)'으로 오역하여 핵심 임상 결과 정보가 왜곡되었으므로 신뢰 어려움으로 판정합니다.
+
+## 발견된 문제
+
+### 1. [핵심 결과] 번역오류 (중대)
+
+- 요약 문장: “기여 요인 분석 결과, 보폭(X3), 단일 지지 시간(X6), 양발 지지 시간(X9)이 환자 개개인의 보행 이상에 가장 큰 영향을 미치는 주요 다변량 요소로 도출되었다.”
+- 설명: 원문 Table 4(11페이지)에서 변수 X3는 'Step Width'(보행 너비)로 정의되어 있습니다. '보폭'은 앞뒤 발걸음 간격인 'Step Length'(X1) 또는 'Stride Length'(X2)에 해당하며, 좌우 지지면의 거리를 의미하는 보행 너비(Step Width)와는 임상적으로 완전히 구분되는 물리 지표입니다. 따라서 이를 '보폭'으로 표기한 것은 명백한 번역오류입니다.
+- 원문 근거: “Step Width (cm) X3
+Lateral distance from the heel center of one footprint to the line of progression formed by two consecutive footprints of the opposite foot.” (PAGE 11, Table 4)
+- 수정 제안: 기여 요인 분석 결과, 보행 너비(X3), 단일 지지 시간(X6), 양발 지지 시간(X9)이 환자 개개인의 보행 이상에 가장 큰 영향을 미치는 주요 다변량 요소로 도출되었다.
+
+## 원문에서 확인 불가능한 항목
+
+- “- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf” — 제공된 원문 텍스트(SOURCE_TEXT)에서는 해당 로컬 파일 경로 정보를 확인할 수 없습니다.
+- “- 분석 provider: antigravity” — 제공된 원문 텍스트(SOURCE_TEXT)에서는 분석 요약본을 도출한 분석 시스템 및 provider 정보를 확인할 수 없습니다.
+
+---
+
+# 사실검증: Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/04_machine_learning_and_deep_learning/58_Unsupervised_Detection_of_Pathological_Gait_Patterns_via_Instantaneous_Center_of_Rotation_Analysis.md
+- 검증 provider: antigravity
+- 검토 항목 수: 28
+- 발견된 문제 수: 2
+- 전체 판정: **신뢰 어려움**
+- 판정 근거: 저자 결론 부분에서 원문의 'meaningful biomechanical descriptor'를 '비 biomechanical 지표'로 정반대로 표기하고, 'clinically significant'를 '기하급수적'으로 잘못 번역하여 사실관계를 왜곡한 중대한 오류들이 발견되었습니다.
+
+## 발견된 문제
+
+### 1. [저자 결론] 사실불일치 (중대)
+
+- 요약 문장: “단순한 2D 측정 마커 정보와 비지도 학습의 결합을 통해, 임상 라벨 없이도 보행의 변동성을 해석적으로 탐색할 수 있는 비 biomechanical 지표로서 ICR 궤적의 유효성을 확인함.”
+- 설명: 원문은 ICR 궤적이 '의미 있는 생체역학적 지표(meaningful biomechanical descriptor)' 역할을 할 수 있다고 제안하나, 요약본은 부정 의미인 '비(非)'를 붙여 '비 biomechanical 지표'라고 서술하여 사실관계를 정반대로 설명했습니다.
+- 원문 근거: “By combining minimal 2D kinematic inputs with unsupervised learning, ICR-LLS provides an interpretable framework for the exploratory analysis of gait variability, and although further validation is required, the findings suggest that ICR trajectories may serve as a meaningful biomechanical descriptor for characterizing pathological locomotion.” (PAGE 1, Abstract)
+- 수정 제안: 단순한 2D 측정 마커 정보와 비지도 학습의 결합을 통해, 임상 라벨 없이도 보행의 변동성을 해석적으로 탐색할 수 있는 생체역학적(biomechanical) 지표로서 ICR 궤적의 유효성을 확인함.
+
+### 2. [저자 결론] 번역오류 (중대)
+
+- 요약 문장: “비지도 학습 모델에 의해 분할된 정상 집단과 이상치(outliers)의 구분이 실제 파킨슨병 환자의 기하급수적 운동 임상 점수(UPDRS 및 H&Y 스테이지) 차이와 통계적으로 부합함.”
+- 설명: 원문의 'clinically significant differences(임상적으로 유의미한 차이)'를 '기하급수적 차이'로 잘못 번역하여 분석 결과와 일치하지 않는 왜곡된 정보를 전달하고 있습니다.
+- 원문 근거: “These findings demonstrate that, although derived from an unsupervised anomaly detection framework, the partition induced by ICR-based clustering aligns with clinically significant differences in the severity of motor symptoms.” (PAGE 20, Section 4)
+- 수정 제안: 비지도 학습 모델에 의해 분할된 정상 집단과 이상치(outliers)의 구분이 실제 파킨슨병 환자의 임상적으로 유의미한 운동 임상 점수(UPDRS 및 H&Y 스테이지) 차이와 통계적으로 부합함.
+
+---
+
+# 사실검증: Derivation of the Gait Deviation Index for Spinal Cord Injury
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Derivation of the Gait Deviation Index for Spinal Cord Injury.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/07_composite_kinematic_kinetic_scoring_indices/59_Derivation_of_the_Gait_Deviation_Index_for_Spinal_Cord_Injury.md
+- 검증 provider: antigravity
+- 검토 항목 수: 25
+- 발견된 문제 수: 2
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 선행연구의 문제점 섹션에서 중요한 문헌 한계 지적 부분이 누락되었으며, 연구의 한계 섹션에서 요약 내용의 일부를 직접 지지하지 못하는 근거 원문이 매핑되어 있어 일부 수정이 필요합니다.
+
+## 발견된 문제
+
+### 1. [선행연구의 문제점] 누락 (경미)
+
+- 요약 문장: “확인된 내용 없음”
+- 설명: 원문에서는 기존 뇌성마비(CP) 기반 GDI를 척수 손상 환자 등 타 질환군에 그대로 적용할 때 발생할 수 있는 보행 데이터의 왜곡된 해석 문제를 지적하고 있으며, 특히 척수 손상 환자군을 대상으로 GDI와 WISCI II를 비교한 선행 연구(Sinovas-Alonso et al., 2022)에서 GDI가 특정 레벨(13, 19, 20 및 대조군) 사이에서만 유의미한 차이를 보여 변별력이 제한적이었다는 한계를 지적하고 있으므로 요약본에서 해당 내용이 누락되었습니다.
+- 원문 근거: “The work presented in Sinovas-Alonso et al. (2022) compared the GDI and the WISCI II, showing limited discriminative properties of the GDI in SCI because there were statistically signiﬁcant differences in the GDI values only between levels 13, 19, 20, and the control group.” (PAGE 3, Section 1)
+- 수정 제안: 기존 소아 뇌성마비(CP) 기준의 GDI를 타 질환군에 적용할 경우 보행 데이터를 왜곡되게 해석할 위험이 있으며, 특히 척수 손상 환자군을 대상으로 한 선행 연구(Sinovas-Alonso et al., 2022)에서는 GDI가 WISCI II 레벨 중 일부(13, 19, 20 및 대조군) 사이에서만 유의미한 차이를 보여 보행 장애의 다양성을 충분히 변별하지 못했다는 한계를 지적하고 있습니다.
+
+### 2. [연구의 한계] 근거불충분 (경미)
+
+- 요약 문장: “SCI-GDI 기저 연산이 안정적인 결과를 나타냈으나, 검증 결과가 훈련 데이터보다 낮아 일반성을 확보하고 stride 수에 무관하게 결과가 독립적임을 확인하기 위해서는 더 큰 데이터셋의 구축이 요구된다.”
+- 설명: 요약본에서 언급한 '검증 결과가 훈련 데이터보다 낮아 일반성을 확보하고'라는 부분은 요약본에 매핑된 근거 원문(First, as mentioned before...)에는 나타나지 않고, PAGE 10의 'Nevertheless, we highlight the fact that...' 문장에 나타나므로, 제시된 근거 원문이 요약 문장을 충분히 지지하지 못합니다.
+- 원문 근거: “Nevertheless, we highlight the fact that all the values obtained when using the validation dataset are lower than the corresponding results in the train dataset, suggesting that using more train data would be recommended to obtain a SCI basis that provides more generalizable results, as reﬂected by smallerdifferencesinperformancewhen evaluatingthe criteriain both sets.” (PAGE 10, Section 4)
+- 수정 제안: SCI-GDI 기저 연산이 안정적인 결과를 나타냈으나, 검증 데이터셋의 결과가 훈련 데이터셋보다 낮게 나타나 더 일반화된 기저를 얻기 위해 더 많은 데이터 활용이 권장되며, 보행 수(strides)에 관계없이 결과가 독립적으로 유지되는지 검증하기 위해 더 큰 데이터셋을 활용한 추가 검증이 필요합니다.
+
+---
+
+# 사실검증: Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users
+
+- 원본 PDF: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users.pdf
+- 검증 대상 요약: /Users/ryutt/Desktop/mini_ryutt/Walking/Study-review/mds/papers/06_general_gait_and_other_knee_conditions/60_Investigating_compensatory_adjustments_induced_by_rhythmic_auditory_stimulation_for_changes_in_temporal_gait_symmetry_in.md
+- 검증 provider: antigravity
+- 검토 항목 수: 38
+- 발견된 문제 수: 2
+- 전체 판정: **일부 수정 필요**
+- 판정 근거: 요약본의 대부분의 내용은 원문과 일치하나, 서지정보 내 분류 태그(Score 제시 여부)와 건장한 대조군(AB)의 보상 기전 서술에서 일부 사실불일치(보폭 기술 오류)가 발견되어 일부 수정이 필요합니다.
+
+## 발견된 문제
+
+### 1. [서지정보] 사실불일치 (경미)
+
+- 요약 문장: “Score 제시: false”
+- 설명: 본 논문에서는 보행 편차를 정량적으로 평가하기 위해 핵심 지표로서 보행 프로파일 점수(Gait Profile Score, GPS) 및 관절별 점수(Gait Variable Score, GVS)를 산출하여 제시하고 있으므로, 'Score 제시' 태그는 true로 수정되어야 합니다.
+- 원문 근거: “The Gait Profile Scores (GPSs) were used to assess the overall gait kinematic changes for each condition (preRAS and RAS) and each group (AB, TFA, and TTA).” (PAGE 6, Data analysis)
+- 수정 제안: Score 제시: true
+
+### 2. [생각해볼 내용] 사실불일치 (경미)
+
+- 요약 문장: “건장한 사람(AB)의 경우 인위적으로 주어지는 비대칭 자극(섭동)에 맞추기 위해 보폭을 늘리려 발목 저측굴곡을 줄이고 고관절 굴곡을 유의하게 증가시키는 적극적인 보상 기전을 관찰할 수 있음.”
+- 설명: 원문에서는 건장한 사람(AB)이 발목 저측굴곡을 줄인 것은 스윙기 동안 다리 속도를 늦추기 위한 것이고, 고관절 굴곡을 증가시킨 것은 지지기 시간(stance phase duration)을 연장하기 위함이라고 설명하고 있습니다. 이를 보폭(step length)을 늘리기 위한 조치로 설명한 것은 사실과 다릅니다.
+- 원문 근거: “Specifically the reduction in the right limb ankle plantarflexion during RAS likely reflects a strategy to slow the right limb during swing, thereby increasing stance phase duration on the left side; this reduced ankle plantarflexion is consistent with diminished push-off requirement at lower swing velocities [38]. Additionally, the increase in hip flexion on the left side likely occurred to prolong the stance phase duration, to achieve temporal asymmetry.” (PAGE 13, Discussion)
+- 수정 제안: 건장한 사람(AB)의 경우 인위적으로 주어지는 비대칭 자극(섭동)에 맞추기 위해, 스윙기 동안 다리 속도를 늦추어 지지기 시간을 늘리고자 발목 저측굴곡을 줄이고 고관절 굴곡을 유의하게 증가시키는 적극적인 보상 기전을 관찰할 수 있음.
 
 ---

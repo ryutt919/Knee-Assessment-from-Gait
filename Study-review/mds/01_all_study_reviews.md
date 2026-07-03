@@ -5916,3 +5916,2167 @@ McClelland, J. A., Webster, K. E., & Feller, J. A. (2007). Gait analysis of pati
 - 활용 맥락과 주의: 보행 속도 변화가 관절 생체역학에 미치는 영향 때문에 보행 실험 시 속도 통제가 필수적임을 설명할 때 활용 가능하다. 실제 영향의 크기와 특성은 1차 문헌인 Kirtley et al. (1985)을 재확인해야 한다.
 
 ---
+
+# A study on the gait deviations in ACL deficient Knees - kinematic and kinetic characteristics during gait
+
+Chung, S. H. (2015). A study on the gait deviations in ACL deficient Knees - kinematic and kinetic characteristics during gait (Doctoral dissertation, Eulji University).
+
+## 서지정보
+
+- 저자: Se Hyun Chung
+- 연도: 2015
+- 저널: Eulji University Graduate School
+- DOI: 확인 불가
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 전방 십자 인대 손상 환자가 보행하는 동안 나타내는 운동 형상학적 및 운동역학적 특징을 3차원 보행 분석을 통해 평가하고자 함. _(근거: PAGE 23, I-6 연구의 목적)_
+  - 근거 원문: “1) 3차원 보행 분석 검사를 시행하여, 전방 십자 인대 손상이 있는
+슬관절(ACL-deficient Knee: ACL-d knee) 환자가 보행 하는 도중
+어떠한 운동 형상학적, 그리고 운동역학적 특징을 보이는지 평가하고자
+하였다.”
+- 전방 십자 인대 손상 환자군이 보행 시 정상인에 비해 나타내는 대퇴골과 경골 간의 병적 회전 운동을 평가하고자 함. _(근거: PAGE 23, I-6 연구의 목적)_
+  - 근거 원문: “2) 전방 십자 인대 손상 환자군이 보행 시 정상인에 비하여 원위
+대퇴골과 근위 경골간에 어떠한 병적 회전 운동(Rotational
+movement)을 보이는지 평가하고자 하였다.”
+
+## 연구 설계와 대상
+
+- 전방십자인대 손상이 확진되고 3차원 보행 분석 검사에 자원한 성인 19례(남 14명, 여 5명)를 연구 대상으로 설정함. _(근거: PAGE 7, 재료 및 방법)_
+  - 근거 원문: “본 연구는 전방십자인대 손상이 확진된 성인 환자 중
+3 차원 보행 분석 검사에 자원한 19 례 (남자 14 명, 여자 5 명)를
+대상으로 하였다.”
+- 추가적인 인대 손상이나 근골격계의 변형 또는 마비가 있는 환자는 연구 대상에서 제외함. _(근거: PAGE 7, 재료 및 방법)_
+  - 근거 원문: “전방십자인대 파열 외에 추가적인 인대 손상이 있거나,
+근 골격계에 변형이나 마비가 있는 경우에는 연구에서 제외하였다.”
+- 대조군으로 근골격계 병변이 없는 정상 성인 11명(평균 연령 21세)을 선정함. _(근거: PAGE 7, 재료 및 방법)_
+  - 근거 원문: “대조군(group III)으로는 근 골격계 병변이 없는 정상 젊은
+성인 남녀 11 명(평균 연령, 21 세)으로 하였다.”
+
+## 방법
+
+- 보행 분석을 위해 Eagle 디지털 시스템과 AMTI 힘판 장비를 사용함. _(근거: PAGE 27, III-1 보행분석검사의 장비-하드웨어)_
+  - 근거 원문: “본 연구의 보행분석검사는 Eagle 디지털 시스템(Eagle digital
+system, MotionAnalysis® CA, USA)과 AMTI 힘판(Advanced
+mechanical technology Inc. force plate, Watertown, MA, USA)을
+사용하였다.”
+- 기본적인 Helen-Hayes marker set 외에 경골 근위부의 내측 및 외측 과에 표식자를 추가로 부착함. _(근거: PAGE 7, 재료 및 방법)_
+  - 근거 원문: “수동적 반사 표식자를 기본적인 Helen-Hayes marker set 외에,
+경골 근위부의 내, 외측 과에 표식자를 추가로 부착하였다.”
+- 슬관절 주위 핵심 표식자 4개의 부착 오차를 줄이기 위해 C-형 영상 증폭기를 사용함. _(근거: PAGE 30, III-3 보행 분석 검사의 준비 및 표식자 부착)_
+  - 근거 원문: “슬관절 주위의 4 개의 표식자(① 원위 대퇴골의 내측과 ② 원위
+대퇴골의 외측과, ③근위 경골의 내측과 ④근위 경골의 외측과)는 본
+연구의 핵심이 되는 표식자로, 부착하는 과정에 생기는 오차를
+최소화하기 위하여 C-형 영상 증폭기를 이용하여 부착하였다.”
+- 회전 운동을 분석하기 위해 SKB 프로그램을 이용하여 대퇴 및 경골 가상 평면을 생성함. _(근거: PAGE 35, III-5 가상 표식자의 생성)_
+  - 근거 원문: “회전 운동을 측정한 가상 평면은 SKB 프로그램으로 대퇴
+가상 평면과 경골 가상 평면을 생성하였다.”
+
+## 핵심 결과
+
+- 굴곡군(Group II)은 보행 속도, 분속수, 보장, 활보장, 단하지 지지기, 양하지 지지기 시간 등 보행 선형 지수에서 다른 군들에 비해 유의하게 낮은 값을 보임. _(근거: PAGE 38, IV-1 이학적 검사 및 보행 선형 지수)_
+  - 근거 원문: “상기 보행 선형 지수 중 Group II 의 보행속도(walking velocity),
+분속수(cadence), 보장(step length), 활보장(stride length),
+단하지 지지기(single support), 양하지
+지지기(double support time)가 Group I, III 의 보행 선형 지수보다
+낮았으며, 통계적으로도 의미 있는 차이를 보였다(Table 3.).”
+- 입각기 동안 신전군(Group I)은 대조군 대비 무릎이 신전된 상태를, 굴곡군(Group II)은 무릎이 굴곡된 상태를 유지함. _(근거: PAGE 39, IV-4. 시상면상에서의 운동형상학)_
+  - 근거 원문: “전체적으로
+입각기에 Group I 은 정상군에 비하여 신전상태였고, Group II 는
+정상군에 비하여 굴곡된 상태를 보였다.”
+- 횡단면 입각기 회전 운동 분석 결과, 신전군(Group I)은 대조군보다 외회전 보행이, 굴곡군(Group II)은 내회전 보행이 관찰됨. _(근거: PAGE 41, IV-7. SKB 프로그램으로 측정한 회전 운동)_
+  - 근거 원문: “횡단면에서 입각기 회전운동은 Group I 에서 Group III 보다 외회전
+보행이, Group II 는 Group III 보다 내회전 보행이 관찰되었고,
+통계적으로도 유의하였다 (p<0.05) (Table 11.).”
+- 세 군 간의 3차원 슬관절 병진 운동(전후방, 내외측, 신연압박)은 통계적으로 유의한 차이를 보이지 않음. _(근거: PAGE 42, IV-8. SKB 프로그램으로 측정한 병진 운동)_
+  - 근거 원문: “세 Group 의 슬관절 병진 운동은 입각기와 유각기에 시상면에서
+전방 견인과 후방 견인 길이를, 관상면에서 내측 전위와 외측 전위
+길이를, 횡단면에서 신연과 압박 길이를 비교하였다(Fig. 16.). 하지만
+통계적 유의한 차이를 보이지는 않았다(p>0.05).”
+
+## 저자 결론
+
+- 굴곡군은 재활이 불충분하고 증상이 남아있는 환자군인 반면, 신전군은 재활이 비교적 잘 이뤄져 증상이 경미한 환자군으로 판단됨. _(근거: PAGE 9, 결론)_
+  - 근거 원문: “본 연구에서 굴곡군은 재활 치료가 충분히 되지 못하고
+증상이 있는 군으로 사료되며, 반면에 신전군은 슬관절 굴곡근과
+신전근의 재활이 이루어진 비교적 증상이 경미한 군으로 사료된다.”
+- 두 군의 서로 다른 보상 기전 적응 양상을 구분하는 기준은 슬관절 주변 근육에 대한 재활 정도임. _(근거: PAGE 9, 결론)_
+  - 근거 원문: “굴곡군과 신전군은 서로 개별적인 보상 기전으로
+전방십자인대 손상에 적응하고 있다고 사료되며, 이를 구분하는
+것은 근육에 대한 재활 정도로 사료된다.”
+
+## 연구의 한계
+
+- 환자 수가 적고, 순수 전방십자인대 단독 손상 환자만이 아니며, 수술 후 치료 결과와의 비교가 결여됨. _(근거: PAGE 53, VI. 결론)_
+  - 근거 원문: “다만, 본 연구는 전방십자인대 손상 군의 환자수가 많지 않고,
+순수한 전방십자인대 손상 환자가 아니며, 전방십자인대 재건술 후
+치료 결과와 비교 분석하지 못했다는 한계점이 있다.”
+- 평지 보행은 전방십자인대에 큰 부하를 주지 못하므로, 향후 계단이나 경사로 보행 등 부하를 유도할 수 있는 표준화된 검사 방법 개발이 필요함. _(근거: PAGE 54, VI. 결론)_
+  - 근거 원문: “따라서 향후에는 단순한 평지 보행 보다는 좀 더
+전방십자인대에 부하를 줄 수 있는 표준화된 검사 형태를 만드는
+것이 반드시 필요하리라고 사료된다.”
+
+## 생각해볼 내용
+
+- 3차원 동작 분석과 SKB 시뮬레이션을 결합하여 슬관절 내부의 관절 운동을 6자유도 측면에서 보다 해부학적으로 평가하려고 시도함. _(근거: PAGE 7, 재료 및 방법)_
+  - 근거 원문: “SKB 프로그램으로 이들 표식자를 이용하여
+인체 내부에 가상 평면과 가상 표식자를 생성하여, 원위 대퇴골과
+근위 경골간에 일어나는 병적 회전 운동과 병진 운동을 세 군에서
+추가로 측정하였다.”
+- 임상 증상 및 슬관절 주위 근육 활동력의 차이가 전방십자인대 손상 환자별로 서로 다른 보행 보상 기전을 유발하는 핵심 요인임을 파악함. _(근거: PAGE 53, VI. 결론)_
+  - 근거 원문: “각 환자들의 동반 손상이나 관절 내 부종 등의
+임상 증상 유, 무와 더불어, 시상면상 작용하는 근육들의 활동력의
+차이가 이러한 보행 양상을 결정하는 것으로 보이며 전방 십자 인대
+손상 환자에서 다양한 양상의 보행이 관찰되는 것 또한 이런 근육의
+보상 정도에 따라 다를 수 있을 것으로 사료된다.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 선행 연구들은 환자들의 다양한 보상 기전으로 인해 일치된 결과를 도출하지 못하는 한계가 있음. _(근거: PAGE 6, 서론)_
+  - 근거 원문: “하지만, 이런
+연구들은 다양한 보상 기전으로 인해 일치된 연구 결과를
+보여주지 못하고 있다.”
+- 기존 연구들은 정적 상태의 통증이나 기능적 평가에 치우쳐, 실제 보행 시 근육 수축이나 체중 부하를 동반한 동적 불안정성을 반영하는 데 제한이 있었음. _(근거: PAGE 21, I-5 전방십자인대 손상 환자의 병적 보행에 대한 기존 연구)_
+  - 근거 원문: “기존에 전방 십자 인대 손상에 대한 많은 연구 들이 있어왔고, 이런
+연구들은 통증 정도나 기능적 평가 등에 초점을 두었고, 실제
+보행 등의 관절 운동학적 상태에서 근육의 수축이나 체중 부하
+상태에서의 슬관절의 불안정성을 직접 반영하는 데는 제한적이었다.”
+
+## 이 연구의 해결 방식과 기여
+
+- 3차원 보행 분석을 통해 기본적인 보행 변수와 함께, SKB 프로그램을 이용해 슬관절 내부의 3차원 병적 회전 및 병진 운동을 직접 측정하는 정밀 분석법을 제시함. _(근거: PAGE 7, 재료 및 방법)_
+  - 근거 원문: “SKB 프로그램으로 이들 표식자를 이용하여
+인체 내부에 가상 평면과 가상 표식자를 생성하여, 원위 대퇴골과
+근위 경골간에 일어나는 병적 회전 운동과 병진 운동을 세 군에서
+추가로 측정하였다.”
+- 보행 분석과 근력 평가를 종합적으로 활용함으로써 전방십자인대 손상 환자의 개별적인 치료 방침 결정 및 재활 치료 효과 판정에 기여할 수 있음. _(근거: PAGE 53, VI. 결론)_
+  - 근거 원문: “이상의 결과로, 전방십자인대 손상 환자의 치료 방침을
+결정하거나, 수술 후 혹은 비수술적 치료로써의 운동 치료나
+보조기를 처방하는 경우, 그리고 치료 효과를 판정하려는 경우에,
+개별 환자 들의 근력 평가와 보행 분석 검사는 decision-making에
+중요한 검사가 될 수 있으리라 사료된다.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 슬관절 안정성에 기여하는 주변 인대성 구조물의 절대적 중요성
+
+- 원문 발췌: “골 구조 자체가 매우 안정적인 Ball-and-socket 관절인 고관절과 달리, 슬관절의 골 구조는 관절의 안정성에 거의 기여하는 바가 없으며, 골 구조 자체로는 불안정한 구조를 갖고 있기 때문에 슬관절의 안정성에는 주위 인대성 구조물의 역할이 매우 중요하다1)
+.”
+- 한국어 번역: 골 구조 자체가 매우 안정적인 고관절과 달리, 슬관절의 골 구조는 안정성에 거의 기여하지 않고 구조적으로 불안정하기 때문에 슬관절의 안정성에는 주변 인대성 구조물의 역할이 매우 중요하다.
+- 원문 위치: PAGE 15, I-1 슬관절의 안정성
+- 원문 내 인용표기: 1)
+- 해당 선행문헌: 1) Markolf KL, Mensch JS, Amstutz HC. Stiffness and laxity of
+the knee-the contributions of the supporting structures. J Bone
+Joint Surg Am. 1976, 58(5):583-594.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 슬관절의 해부학적 구조적 취약성과 이로 인해 발생하는 측부 및 십자인대 구조물들의 안정화 기여도가 절대적임을 설명하기 위한 이론적 배경 지표로 인용 가능함.
+
+### 2. 전방십자인대 손상 굴곡형 환자군(Group II)의 보행속도, 분속수 및 보폭 등 보행 선형 지수의 유의한 저하
+
+- 원문 발췌: “상기 보행 선형 지수 중 Group II 의 보행속도(walking velocity),
+분속수(cadence), 보장(step length), 활보장(stride length),
+단하지 지지기(single support), 양하지
+지지기(double support time)가 Group I, III 의 보행 선형 지수보다
+낮았으며, 통계적으로도 의미 있는 차이를 보였다(Table 3.).”
+- 한국어 번역: 굴곡형 보행 환자군(Group II)은 보행 속도, 분속수, 보장, 활보장, 단하지 및 양하지 지지기 시간 등의 보행 선형 지수가 신전형(Group I) 및 정상 대조군(Group III)에 비해 유의하게 낮았다.
+- 원문 위치: PAGE 38, IV-1 이학적 검사 및 보행 선형 지수
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 전방십자인대 손상 환자 중 재활이 불충분하고 증상이 동반된 굴곡 보행(Group II) 환자들이 감통 보행 패턴을 보여 전체적인 보행 선형 지수가 유의하게 저하됨을 입증하는 근거로 활용할 수 있음.
+
+### 3. 전방십자인대 손상 보상 기전(신전군 대 굴곡군)에 따른 입각기 횡단면 회전 운동의 유의한 차이
+
+- 원문 발췌: “횡단면에서 입각기 회전운동은 Group I 에서 Group III 보다 외회전
+보행이, Group II 는 Group III 보다 내회전 보행이 관찰되었고,
+통계적으로도 유의하였다 (p<0.05) (Table 11.).”
+- 한국어 번역: 횡단면 입각기 회전 운동 시, 신전군(Group I)은 대조군(Group III)에 비해 외회전 보행을, 굴곡군(Group II)은 대조군에 비해 내회전 보행을 나타내며 이는 통계적으로 유의하였다.
+- 원문 위치: PAGE 41, IV-7. SKB 프로그램으로 측정한 회전 운동
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 전방십자인대 손상 환자들이 개별 보상 기전에 따라 횡단면 회전 보행 시 서로 정반대 양상(외회전 대 내회전)의 회전 불안정성을 나타낼 수 있음을 입증하는 정량적 자료로 활용할 수 있음.
+
+---
+
+# Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery: An Observational Longitudinal Study
+
+Yona, T., Peskin, B., & Fischer, A. G. (2025). Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery: An Observational Longitudinal Study. Journal of Athletic Training, 60(12), 823–836. https://doi.org/10.4085/1062-6050-0423.24
+
+## 서지정보
+
+- 저자: Tomer Yona, Bezalel Peskin, Arielle G. Fischer
+- 연도: 2025
+- 저널: Journal of Athletic Training
+- DOI: 10.4085/1062-6050-0423.24
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery - An Observational Longitudinal Study.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 전방십자인대 재건술 전후 대상자의 실험실 외 종단적 보행 평가: 관찰 종단 연구
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: true
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 이 연구의 주 목적은 수술 전과 수술 후 3개월, 5개월 시점에 IMU 시스템을 사용하여 느린 속도, 보통 속도, 빠른 속도의 보행 중 부상 측 무릎과 반대 측 무릎 및 건강한 대조군 무릎 간의 무릎 시상면 운동학적 차이를 평가하는 것이다. _(근거: PAGE 2, INTRODUCTION)_
+  - 근거 원문: “The primary purpose of our study was to evaluate knee sagittal-plane kinematic differences between injured and contralateral limbs and healthy controls pre-ACLR and at 3 and 5 months post-ACLR using an IMU system during slow, normal, and fast walking speeds.”
+- 부차적인 목적으로는 동일한 시점에 고관절 및 발목관절의 시상면 운동학적 차이를 통해 잠재적인 보상적 적응을 묘사하는 것이다. _(근거: PAGE 2, INTRODUCTION)_
+  - 근거 원문: “The secondary purpose was to describe potential compensatory adaptations of hip and ankle sagittal-plane kinematic differences at the same time points.”
+
+## 연구 설계와 대상
+
+- 연구에는 40명의 ACLR 환자(평균 나이 23.9세, 평균 키 1.76m, 평균 체중 76.3kg)와 성별, 체중, 키를 매칭한 17명의 건강한 대조군(평균 나이 28.4세, 평균 키 1.70m, 평균 체중 68.3kg)이 모집되었다. _(근거: PAGE 1, Setting: Hospital. Patients or Other Participants:)_
+  - 근거 원문: “A total of 40 patients with ACLR (age ¼ 23.9 6 5.9 years, height ¼ 1.76 6 0.10 m, mass ¼ 76.03 6 13.4 kg) and 17 healthy matched controls (age ¼ 28.4 6 5.9 years, height ¼ 1.70 6 0.10 m, mass ¼ 68.3 6 15.4 kg) were recruited.”
+
+## 방법
+
+- 각 참가자는 양쪽 발, 무릎 직하부, 허벅지 중간, 골반에 총 7개의 관성측정장치(IMU)를 부착하고 100Hz 샘플링 속도로 보행 데이터를 수집하였다. _(근거: PAGE 3, METHODS - Gait Assessment)_
+  - 근거 원문: “Each participant was ﬁtted with 7 IMUs (Xsens Awinda): 1 on each foot, 1 just below each knee, 1 on each midthigh, and 1 on the pelvis. Data were collected, automatically processed, and ﬁltered using proprietary software (MVN Analyze version 2023.0.0; Xsens) at a sampling rate of 100 Hz.”
+- SPM 분석을 수행하기 전, 모든 시계열 데이터를 보행 주기의 0%에서 100%를 나타내는 101개 데이터 포인트로 선형 보간법을 사용하여 정규화하였다. _(근거: PAGE 4, METHODS - Statistical Analysis)_
+  - 근거 원문: “Before performing the SPM analysis, we normalized all time-series data to 101 data points, representing 0% to 100% of the gait cycle. The data were interpolated to 101 evenly spaced points for each gait cycle using a linear interpolation function (scipy.interpolate.interp1d, SciPy version 1.15.0; SciPy).”
+
+## 핵심 결과
+
+- 수술 전 discrete 분석 결과, 다친 무릎은 반대 측에 비해 보통 및 빠른 보행 시 최소 굴곡 각도에서 더 큰 무릎 굴곡을 나타냈고 빠른 보행 시 첫 번째 피크 각도에서 무릎 굴곡이 더 적었다. _(근거: PAGE 4, RESULTS - Pre-ACLR Knee Kinematics)_
+  - 근거 원문: “The discrete analysis showed that the injured limb exhibited greater knee ﬂexion at the minimum ﬂexion angle compared with the contralateral limb during normal (M ¼ 1.78, SE ¼ 0.78; ES ¼ 0.48; P ¼.006) and fast (M ¼ 1.78, SE ¼ 0.78; ES ¼ 0.57; P ¼.008) walking. The injured limb showed less knee ﬂexion at the ﬁrst peak angle (M ¼ 1.78, SE ¼ 0.88; ES ¼ 0.49; P ¼.006).”
+- 수술 후 3개월 시점에 반대 측 무릎과 비교했을 때 다친 무릎은 느린 보행 시 최소 굴곡 각도에서 더 큰 무릎 굴곡을 보이고 스윙 단계의 두 번째 피크 각도에서 더 작은 굴곡을 보였으며, 빠른 보행 시 최소 굴곡 각도 증가와 첫 번째 및 두 번째 피크 각도 감소를 나타냈다. _(근거: PAGE 5, RESULTS - 3 Months Post-ACLR Knee Kinematics)_
+  - 근거 원문: “The discrete analysis indicated that, compared with the contralateral limb, the injured limb displayed greater knee ﬂexion at the minimum ﬂexion angle (M ¼ 4.38, SE ¼ 0.68; ES ¼ 0.96; P ,.001) and less knee ﬂexion at the second peak angle (M ¼ 4.78, SE ¼ 0.88; ES ¼ 0.92; P , .001) during slow walking. The injured limb had greater knee ﬂexion at the minimum ﬂexion angle (M ¼ 4.38, SE ¼ 0.88; ES ¼ 0.98; P ,.001) and less knee ﬂexion at the ﬁrst (M ¼ 5.28, SE ¼ 0.98; ES ¼ 0.86; P ,.001) and second (M ¼ 2.28, SE ¼ 0.898; ES ¼ 0.60; P ¼ .005) peak angles during fast walking.”
+- 수술 후 5개월 시점에 반대 측 무릎과 비교하여 다친 무릎은 느린 속도 및 보통 속도 보행 중 최소 굴곡 각도에서 여전히 더 많이 굴곡되어 있었다. _(근거: PAGE 5, RESULTS - 5 Months Post-ACLR Knee Kinematics)_
+  - 근거 원문: “Compared with the contralateral knee, the discrete analysis showed that the injured knee was more ﬂexed at the minimum ﬂexion angles during slow (M ¼ 1.58, SE ¼ 0.68; ES ¼ 0.59; P ¼ .03) and normal (M ¼ 2.18, SE ¼ 0.78; ES ¼ 0.76; P ¼ .003) walking speeds.”
+- 수술 후 5개월 시점의 빠른 속도 보행 중 다친 무릎은 여전히 최소 굴곡 각도에서 더 많이 굴곡되고 첫 번째 피크 각도에서 덜 굴곡되어 비대칭이 지속됨을 보였다. _(근거: PAGE 5, RESULTS - 5 Months Post-ACLR Knee Kinematics)_
+  - 근거 원문: “Similarly, during fast walking, the injured knee was more ﬂexed at the minimum ﬂexion angle (M ¼ 2.38, SE ¼ 0.68; ES ¼ 0.86; P ,.001) and less ﬂexed at the ﬁrst peak angle (M ¼ 5.18, SE ¼ 1.08; ES ¼ 0.83; P ,.001).”
+
+## 저자 결론
+
+- ACLR 환자들은 무릎 시상면 운동학에서 점진적인 개선을 보여주며 회복 추세를 보이지만, 회복 과정은 걷기 속도에 따라 비선형적이다. _(근거: PAGE 1, Conclusion)_
+  - 근거 원문: “Patients with ACLR demonstrated progressive improvements in knee sagittal-plane kinematics, indicating a recovery trend. However, the recovery was nonlinear across different walking speeds.”
+- 다양한 보행 속도에 걸친 비선형적인 회복 과정은 재활 프로토콜에서 다양한 보행 속도를 평가하고 통합할 필요가 있음을 강조한다. _(근거: PAGE 1, Key Points)_
+  - 근거 원문: “The nonlinear recovery process across different walking speeds highlights the need for assessing and incorporating varied walking speeds in rehabilitation protocols.”
+
+## 연구의 한계
+
+- 본 연구는 대조군과 ACLR 실험군 사이에 특성 차이가 통계적으로 유의미하지는 않았으나, 대조군 참가자가 더 나이가 많고, 키가 작으며 체중이 덜 나가 보행에 영향을 주었을 가능성이 있다. _(근거: PAGE 10, DISCUSSION - Limitations)_
+  - 근거 원문: “Lastly, although we observed no differences in characteristics between the control and ACLR cohorts, the control participants were older and shorter and weighed less, which could have influenced their gait.”
+- 이식건의 유형과 성별의 차이를 분석에 고려하지 않아 결과에 바이어스가 발생했을 수 있다. _(근거: PAGE 10, DISCUSSION - Limitations)_
+  - 근거 원문: “We did not account for different graft types and sex differences, possibly introducing bias in our results.”
+- 환자들이 외과의와의 예정된 검진에 참석하지 못하는 등의 원인으로 인해 발생한 높은 탈락률이 마모 바이어스를 유발했을 수 있다. _(근거: PAGE 10, DISCUSSION - Limitations)_
+  - 근거 원문: “In addition, the high dropout rate may have introduced attrition bias, potentially linked to participants missing predefined check-up meetings with their surgeon rather than the study itself.”
+
+## 생각해볼 내용
+
+- 대조군 참가자들이 평균적으로 연령이 높고 키와 체중이 작아 보행 특성에 혼란 변수로 작용했을 위험이 존재하므로 대조군 비교 결과를 일반화할 때 주의해야 한다. _(근거: PAGE 10, DISCUSSION - Limitations)_
+  - 근거 원문: “Lastly, although we observed no differences in characteristics between the control and ACLR cohorts, the control participants were older and shorter and weighed less, which could have influenced their gait.”
+- 이식건 종류나 성별 차이를 세부적으로 통제하거나 구분하여 분석하지 않았으므로, 개별 환자군에 따른 편향이 존재할 가능성을 인지해야 한다. _(근거: PAGE 10, DISCUSSION - Limitations)_
+  - 근거 원문: “We did not account for different graft types and sex differences, possibly introducing bias in our results.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 이전의 많은 생체역학 평가 연구는 수술 전 상태를 탐구하지 않고 수술 전후를 모두 평가하지 않는 한계를 가진다. _(근거: PAGE 2, INTRODUCTION)_
+  - 근거 원문: “The role of preoperative biomechanical status is often underexplored, with few researchers providing preoperative and postoperative assessments.5”
+- 보행 속도가 ACLR 환자의 하지 생체역학에 미치는 영향이 매우 큼에도 불구하고 보행 속도의 영향을 평가한 연구는 소수에 불과하다. _(근거: PAGE 2, INTRODUCTION)_
+  - 근거 원문: “However, authors of only a handful of studies have assessed the inﬂuence of walking speed on gait kinematics post-ACLR.11–13”
+- 전통적인 광학 카메라 기반의 모션 분석 시스템은 비싸고 실험실 환경에 국한되어 일상 환경에서의 타당성(ecological validity)을 떨어뜨린다. _(근거: PAGE 2, INTRODUCTION)_
+  - 근거 원문: “Traditional optoelectrical camera systems, while accurate, are expensive and conﬁned to laboratory environments, reduc- ing ecological validity.20,21”
+
+## 이 연구의 해결 방식과 기여
+
+- 본 연구는 수술 전, 수술 후 3개월 및 5개월 시점에 일상 환경(nonlaboratory setting)에서 IMU 모션 캡처 시스템을 사용해 다양한 걷기 속도에 따른 무릎 시상면 운동학을 종단적으로 평가하고 비대칭 추세를 확인하였다. _(근거: PAGE 7, DISCUSSION)_
+  - 근거 원문: “We assessed sagittal-plane kinematics during gait pre- ACLR and post-ACLR using IMUs in a nonlaboratory setting. Our primary ﬁndings indicated progressive improve- ment in knee sagittal-plane kinematics symmetry post- ACLR, particularly at 3 months post-ACLR, with compen- satory adaptations observed in hip and ankle kinematics.”
+- 이 연구는 웨어러블 센서를 활용한 보행 분석이 ACLR 인구집단에서 미세한 생체역학적 변화를 포착하고 외상 후 골관절염 발생 위험이 높은 환자들을 조기 식별하는 객관적 마커로서 기능할 가능성을 제시한다. _(근거: PAGE 10, DISCUSSION - Clinical Implications)_
+  - 근거 원문: “Whereas researchers have primarily focused on primary knee OA, we extended these ﬁndings to the ACLR population, dem- onstrating that IMU-based gait analysis can capture subtle biomechanical changes and potentially early identiﬁcation of patients at risk for developing PTOA.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. ACLR 수술 후 6개월 및 12개월 시점의 대조군 대비 양측 보행 이상
+
+- 원문 발췌: “Furthermore, Davis-Wilson et al observed bilateral gait abnormalities in patients at 6 and 12 months post-ACLR compared with uninjured controls, emphasizing the need to assess recovery across multiple stages and walking speeds.10”
+- 한국어 번역: 나아가, Davis-Wilson 등은 부상당하지 않은 대조군과 비교했을 때 ACLR 후 6개월 및 12개월 시점의 환자들에게서 양측 보행 이상을 관찰하였으며, 이는 여러 단계와 보행 속도에 걸쳐 회복을 평가할 필요가 있음을 강조한다.
+- 원문 위치: PAGE 2, INTRODUCTION
+- 원문 내 인용표기: 10
+- 해당 선행문헌: 10. Davis-Wilson HC, Pfeiffer SJ, Johnston CD, et al. Bilateral gait 6 and
+12 months post-anterior cruciate ligament reconstruction compared
+with controls. Med Sci Sports Exerc. 2020;52(4):785–794. doi:10.
+1249/MSS.0000000000002208
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 수술 후 1년이 지난 시점에서도 건강한 대조군 대비 보행 이상이 지속적으로 나타난다는 선행 연구 근거로 활용 가능하며, 다각적인 회복기 보행 속도 평가의 필요성을 지지한다.
+
+### 2. ACLR 환자의 보행 속도에 따른 비선형적 운동학 회복 경향
+
+- 원문 발췌: “Patients with ACLR demonstrated progressive improvements in knee sagittal-plane kinematics, indicating a recovery trend. However, the recovery was nonlinear across different walking speeds.”
+- 한국어 번역: ACLR 환자들은 무릎 시상면 운동학에서 점진적인 개선을 보여주며 회복 추세를 나타냈다. 그러나 회복은 다양한 보행 속도에 걸쳐 비선형적이었다.
+- 원문 위치: PAGE 1, Conclusion
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 이 연구의 주된 발견으로, 환자들이 회복세를 보이더라도 걷기 속도에 따라 회복 양상이 비선형적이므로 다양한 속도에서의 운동학적 평가가 필수적임을 뒷받침한다.
+
+### 3. 수술 전 상태, 속도 변화, 인접 관절 보상을 통합한 평가의 부재
+
+- 원문 발췌: “Despite its clinical importance, comprehensive biomechanical assessment accounting for preoperative status, varying walking speeds, and hip and ankle compensatory adaptations remains under-explored.”
+- 한국어 번역: 임상적 중요성에도 불구하고, 수술 전 상태, 다양한 보행 속도, 그리고 고관절 및 발목의 보상적 적응을 고려한 포괄적인 생체역학적 평가는 여전히 충분히 탐구되지 않은 상태로 남아있다.
+- 원문 위치: PAGE 1, INTRODUCTION
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: uncited_author_claim
+- 활용 맥락과 주의: 수술 전 상태 및 여러 속도 조건, 인접 관절의 보상 기전을 포괄적으로 다룬 종단적 생체역학 분석 연구가 현저히 부족함을 환기시키는 배경 주장으로 활용된다.
+
+---
+
+# Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors: A Longitudinal Study
+
+Alshehri, Y. S. (2019). Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors: A Longitudinal Study (Doctoral dissertation, University of Kansas Medical Center).
+
+## 서지정보
+
+- 저자: Yasir S. Alshehri
+- 연도: 2019
+- 저널: Doctoral dissertation, University of Kansas Medical Center
+- DOI: 확인 불가
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors - A Longitudinal Study.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 관성 센서를 이용한 전방십자인대 재건술 후 보행 분석: 종단 연구
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: true
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 관성 센서를 사용하여 ACLR 환자의 몸통 가속도와 경골 각속도(SAV) 비대칭을 종단적으로 측정하고, 기능적 및 심리적 평가 항목과의 상관성을 확인하는 것이다. _(근거: Page 3, Abstract)_
+  - 근거 원문: “Therefore, the overall goals of this dissertation project were to use inertial sensors to longitudinally quantify trunk accelerations and SAV asymmetry during gait at different speeds and to determine whether these variables are associated with functional and psychological measures in patients with ACLR.”
+- 가속도계를 통해 시간에 따른 ACLR 환자의 하부 몸통 가속도 패턴의 변화를 비교하고 건강한 대조군과의 차이를 평가하는 것이다. _(근거: Page 4, Chapter 1 (Abstract))_
+  - 근거 원문: “In Chapter 2, the goal of the study was to compare changes in the acceleration patterns of the lower trunk during gait in ACLR patients over time and between ACLR patients and uninjured healthy subjects using accelerometry.”
+- 수술 후 4개월 및 6개월 시점에 다양한 보행 속도에서 수술측과 비수술측 간 유의미한 경골 각속도 비대칭이 나타나는지 분석하는 것이다. _(근거: Page 4, Chapter 1 (Abstract))_
+  - 근거 원문: “In Chapter 3, the goal was to investigate whether patients with ACLR would show significant and meaningful between-limb SAV asymmetries at different gait speeds at 4 and 6 months post-surgery.”
+
+## 연구 설계와 대상
+
+- Chapter 2 몸통 가속도 분석 연구에는 ACLR 환자 17명과 부상 없는 대조군 20명이 참여하였다. _(근거: Page 4, Chapter 1 (Abstract))_
+  - 근거 원문: “A total of 17 individuals with ACLR and 20 healthy uninjured controls participated in this study.”
+- Chapter 3 경골 각속도 분석 연구에는 ACLR 환자 15명이 참여하였고 비대칭 기준값은 건강한 대조군 16명으로부터 유도되었다. _(근거: Page 4, Chapter 1 (Abstract))_
+  - 근거 원문: “A total of 15 patients with ACLR participated in the study. ... From 16 healthy subjects, the smallest meaningful between-limb difference for SAV was estimated for each gait speed.”
+- Chapter 4 기능 및 심리 평가 연관성 분석 연구에는 ACLR 환자 19명과 대조군 20명이 참여하였다. _(근거: Page 72, Chapter 4 Abstract)_
+  - 근거 원문: “19 individuals with ACLR and 20 healthy uninjured controls participated in this study.”
+- Chapter 5 경골 각속도와 RTS 기준 상관분석 연구에는 ACLR 환자 17명이 참여하였다. _(근거: Page 92, Chapter 5 Abstract)_
+  - 근거 원문: “Seventeen individuals with primary, unilateral ACLR were instructed to walk, walk fast, and run along a straight walkway while wearing one wireless inertial sensor on each shank.”
+
+## 방법
+
+- 요추 3번(L3) 부위에 단일 무선 3축 가속도계를 부착하여 세 가지 속도(자가 선택 속도 걷기, 빠르게 걷기, 달리기)로 12미터 걷기 가속도 데이터를 수집했다. _(근거: Page 34, Chapter 2 Materials/Methods)_
+  - 근거 원문: “Trunk accelerations were recorded via a wireless tri-axial accelerometer attached to the subject’s lumbar spine (L3-L4). ... at self-selected speeds along a 12-meter straight walkway.”
+- 가속도의 시간 미분값인 저크(jerk)를 스텝 시간과 스텝 길이로 나누어 단위가 없는 몸통 보행 부드러움 지수(NJ)를 계산하였다. _(근거: Page 34-35, Chapter 2 Materials/Methods)_
+  - 근거 원문: “Gait smoothness was quantified using jerk (i.e., the time derivative of acceleration) normalized by step distance and step duration.”
+- 양측 경골 외과 상단 5cm 부위에 자이로스코프 센서를 부착하고 걷기, 빠르게 걷기, 달리기 중 초기 접지기(loading response) 시상면 경골 각속도(SAV) 피크값을 측정했다. _(근거: Page 53, Chapter 3 Methods)_
+  - 근거 원문: “Participants were instructed to walk, walk fast, and run along a 12-meter walkway while wearing two wireless sensors attached bilaterally on the shanks. The average of sagittal plane SAV peaks during loading response of gait was calculated bilaterally.”
+- 6개월 시점의 대퇴사두근 등척성 최대 수축력(MVIC)은 휴대용 근력계와 고정 벨트를 사용하여 슬관절 90도 굴곡 조건에서 측정하고 LSI를 산출했다. _(근거: Page 83, Chapter 5 Return-to-sport criteria (RTSc))_
+  - 근거 원문: “The maximum voluntary isometric contractions (MVICs) of the quadriceps muscle were quantified using a modified belt-stabilized hand-held dynamometer (microFET2, Hoggan Scientific, LLC; West Jordan, UT). ... Patients were seated in an upright position with their legs hanging from the edge of a treatment table, and with the hip and knee flexed to 90 degrees (Figure 5.1).”
+
+## 핵심 결과
+
+- ACLR 군의 걷기 및 빠르게 걷기 부드러움(NJ)은 수술 후 2개월에서 6개월 사이에 개선되었으며, 걷기 시에는 6개월 시점에 대조군 수준에 도달하였다. _(근거: Page 35, Chapter 2 Conclusions)_
+  - 근거 원문: “Walking smoothness of the ACLR group improved across time, reaching walking smoothness of healthy controls at 6 months post-ACLR.”
+- 빠르게 걷기의 수직 방향 부드러움(VT NJ)과 달리기 시 모든 방향의 부드러움은 수술 후 6개월 시점에도 대조군보다 유의하게 낮았다(NJ 값이 높음). _(근거: Page 35, Chapter 2 Results)_
+  - 근거 원문: “At 6 months, vertical NJ values of the ACLR group during walking fast was still significantly higher than the control group (p<.01). During running at 4 and 6 months, the ACLR group had significantly higher NJ in all directions compared to controls (p<.05).”
+- 수술 후 4개월과 6개월 시점 모두에서, 수술측 다리의 경골 각속도(SAV) 피크는 모든 속도에서 비수술측 다리보다 유의하게 작았으며 임상적으로 의미 있는 비대칭성을 보였다. _(근거: Page 53-54, Chapter 3 Results)_
+  - 근거 원문: “At 4 and 6 months post-ACLR, the involved limb had significantly smaller peak SAV during walking (p<.01, effect sizes = 0.69-0.85), walking fast (p<.005, effect sizes = 1.03-1.07), and running (p<.005, effect sizes = 0.78-1.03) compared to the uninvolved limb. Further, patients with ACLR exhibited meaningful SAV asymmetries at both time points for all gait speeds.”
+- 걷기 시 수직 및 전후 방향 몸통 부드러움은 대퇴사두근 근력 비대칭 및 단일 다리 홉 테스트 성능 비대칭과 유의한 상관관계가 있었다. _(근거: Page 73, Chapter 4 Results)_
+  - 근거 원문: “Walking smoothness in the vertical direction was correlated with between-limb ratios of single hop, triple hop, and triple-crossover hop for distance tests (r = - 0.402-0.561, p < .05). Walking smoothness in the anteroposterior direction was correlated with between-limb ratios of quadriceps strength (r = - 0.434, p < .05) and single hop for distance test (r = - 0.413, p < .05).”
+- 경골 각속도 비대칭은 모든 보행 속도에서 대퇴사두근 근력 비대칭(r = -0.658 ~ -0.781) 및 모든 홉 테스트 비대칭(r = -0.433 ~ -0.859)과 밀접하게 연관되었으며, 달리기 시 각속도 비대칭은 재부상 두려움(TSK-11, r = 0.439)과 상관관계가 있었다. _(근거: Page 93, Chapter 5 Results)_
+  - 근거 원문: “Peak SAV at each gait speed was significantly correlated with quadriceps strength and all hop tests (r = − 0.470-0.859; p<.05 for all). Further, peak SAV during running was significantly correlated with the TSK-11 (r = 0.439; p=.039).”
+
+## 저자 결론
+
+- 수술 후 6개월 시점 걷기 동작의 부드러움은 개선되지만, 달리기 등 높은 충격이 부과되는 빠른 동작에서의 가속도 비정상성은 유지되며, 가속도계를 통해 임상에서 보행 능력을 효과적으로 진단할 수 있다. _(근거: Page 47, Chapter 2 Conclusion)_
+  - 근거 원문: “Walking smoothness of the ACLR group was normalized with that of healthy subjects at 6 months following surgery. However, smoothness of walking fast (in the VT direction) and running (in all directions) of the ACLR group was significantly lower at 6 months post-ACLR, when compared to the control group. ... Quantifying lower trunk accelerations, using a wireless tri-axial accelerometer, may offer an inexpensive, less time-consuming, and objective method to assess and monitor gait quantitatively during rehabilitation in individuals with ACLR.”
+- ACLR 환자는 기능 복귀가 시작되는 수술 후 6개월 시점에도 경골 각속도 비대칭이 지속되며, 관성 센서는 외관상 드러나지 않는 보행 결손을 측정하는 객관적 도구로 유용하다. _(근거: Page 65, Chapter 3 Conclusion)_
+  - 근거 원문: “The findings of this study showed that patients with ACLR had significant and meaningful between-limb asymmetries for SAV at 4 and 6 months following surgery. ... Therefore, inertial sensors may offer an inexpensive and objective gait assessment tool that could help clinicians to monitor gait normalization on a regular basis during rehabilitation in patients with ACLR.”
+- 경골 각속도 비대칭은 환자의 대퇴사두근 근력 및 대칭적인 운동 기능 수행력과 강하게 연관되므로, 대칭성 회복을 위한 훈련 지침과 임상적 방출 기준으로 활용 가능하다. _(근거: Page 104-105, Chapter 5 Conclusion)_
+  - 근거 원문: “At 6 months post-ACLR, the results of this study showed that asymmetry in shank kinematics, measured by inertial sensors, at different gait speeds were related to quadriceps strength and functional measures. ... Therefore, the level of association between gait asymmetry, measured by inertial sensors, and quadriceps strengthening and hop tests may offer clinicians with inexpensive, fast, and objective evaluation to identify patients with side-to-side strength and movement asymmetry at the time for the return to sport/activity following ACLR.”
+
+## 연구의 한계
+
+- 수술 후 6개월 시점까지만 종단 평가를 진행하여, 환자가 치료실을 떠난 이후 달리기 등의 부드러움이 언제 정상 대조군 수준으로 수렴하는지 장기 관찰하지 못했다. _(근거: Page 46, Chapter 2 Discussion)_
+  - 근거 원문: “However, follow-up assessment beyond 6 months was not obtained because most patients were discharged to return to recreational or sports activities by their surgeons. Therefore, future studies with longer follow up periods are needed to determine when patients with ACLR would show smoother walking fast and running patterns that are similar to that of healthy subjects.”
+- 경골 각속도 비대칭이 무릎 관절염 발생이나 재부상 등의 장기 임상 결과로 직결되는지 인과관계를 입증하지 못한 횡단적 한계를 갖는다. _(근거: Page 64-65, Chapter 3 Discussion)_
+  - 근거 원문: “Second, the smallest meaningful between-limb difference for SAV was presented in our study to provide information about what considered an abnormal asymmetry, which does not mean that these observed asymmetries are necessarily clinically meaningful. Therefore, future studies should investigate whether these SAV asymmetries during gait are clinically meaningful by determining whether they are related to clinical outcomes such as knee degenerative changes or a 2nd ACL injury.”
+- 일측성 일차 재건술을 시행받은 환자군만 포함하여 양측성 재건술이나 재수술을 겪은 환자 등 전체 ACLR 집단으로 확대 적용하는 데 한계가 있다. _(근거: Page 104, Chapter 5 Discussion)_
+  - 근거 원문: “First, we did not include patients who had bilateral ACLR or ACL revisions. Therefore, the results of this study cannot be generalized to all patients who undergo ACLR.”
+
+## 생각해볼 내용
+
+- 수술측 하지의 대퇴사두근 약화와 무릎 역학 결손이 초기 접지 시 충격 완화 능력을 저하시켜 진동이 척추(하부 몸통)까지 그대로 전달되면서 몸통 가속도의 부드러움이 감소할 것이라 추론하였다. _(근거: Page 44, Chapter 2 Discussion)_
+  - 근거 원문: “Therefore, these deficits in knee mechanics and quadriceps strength may reduce the ability of the surgical knee to attenuate shock during the early stance phase of gait, allowing gait-related oscillations to be manifested at the lower trunk.”
+- 달리기와 같은 빠른 속도 조건에서는 대퇴사두근 및 슬관절 제어 요구량이 급격히 증가하므로 근력 약화와 무릎의 생체역학 결손이 있는 환자에게서 가속도 부드러움 손상이 더 뚜렷하게 관측되는 것이 타당하다. _(근거: Page 45, Chapter 2 Discussion)_
+  - 근거 원문: “The reasons for these findings could be that at faster gait speeds, the demand imposed on the quadriceps muscle as well as on the control of lower limb joints motion is increased115, 116 , which may compromise the trunk smoothness during running for those patients with quadriceps weakness and altered knee biomechanics.”
+- 수술측 다리에서 나타난 경골 각속도(SAV)의 감소는 슬관절의 불안정성을 방지하기 위해 무릎 가동 범위를 스스로 제한하는 '무릎 강직 전략(knee stiffness strategy)'에서 기인한 것일 수 있다. _(근거: Page 103, Chapter 5 Discussion)_
+  - 근거 원문: “It is likely that reduced SAV during walking on the involved limb may be linked to knee stiffness strategies that are adopted by some patients after ACLR.99, 100 These knee strategies are characterized by lower knee flexion angle and knee extensor moment.99, 100”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 전통적인 동작 분석 및 힘판 측정 시스템은 생체역학 측정의 골드 스탠다드이지만, 비용이 많이 들고 전문적인 교육이 필요하며 넓은 공간을 차지하여 임상 적용이 어렵다. _(근거: Page 3, Abstract)_
+  - 근거 원문: “Although those measurement systems are considered the gold standard to identify alterations in joint biomechanics, they are expensive, require extensive training, and large laboratory space.”
+- 기존 선행연구들은 평지 걷기 속도에서의 변수만 주로 다루었고 빠르게 걷기나 달리기 등의 조건에서 몸통 가속도나 경골 각속도를 다각적으로 평가하지 않았으며 기능·심리 상태와의 관련성 규명이 부재했다. _(근거: Page 3, Abstract)_
+  - 근거 원문: “However, it is unknown whether patients with ACLR would present with altered trunk accelerations and SAV asymmetry at faster gait speeds such as walking fast and running. In addition, the associations between these gait variables and patients’ functional and psychological measures have not been investigated.”
+- 기존의 기능 복귀 기준 평가(RTSc)는 일부 환자에게 잔존 장애나 통증, 재부상 공포로 수행이 불가능할 수 있고 시간이 오래 걸리며 고가의 대퇴사두근 근력 측정 장비가 없는 클리닉에서는 측정이 불가하다. _(근거: Page 22, Chapter 1 Return to sport criteria)_
+  - 근거 원문: “However, these criteria are not without limitations. For instance, some of RTSc tests may not be appropriate for some patients with residual impairments, fear of reinjury, or pain. In addition, these tests are time-consuming for both patients and clinicians. Furthermore, not every clinic is equipped with the electromechanical dynamometer, expensive testing equipment that is commonly used to measure quadriceps strength.”
+
+## 이 연구의 해결 방식과 기여
+
+- 임상에서 쉽게 활용 가능한 단일 무선 가속도계와 경골 부착 자이로스코프를 사용하여 환자들의 비대칭적 보행 패턴과 움직임 부드러움을 간단하고 저렴하게 평가할 수 있는 방안을 제시하였다. _(근거: Page 3, Abstract)_
+  - 근거 원문: “More research studies have been conducted in recent years to develop an inexpensive and practical assessment tool that can quantitively analyze patients’ gait in clinical settings.”
+- 수술 후 6개월 시점 보행 분석 시 관성 센서로 획득한 SAV 비대칭이 근력 및 홉 테스트 성능 결손과 강한 상관성이 있음을 규명하여 임상 선별 도구로서의 가능성을 입증했다. _(근거: Page 104-105, Chapter 5 Conclusion)_
+  - 근거 원문: “Therefore, the level of association between gait asymmetry, measured by inertial sensors, and quadriceps strengthening and hop tests may offer clinicians with inexpensive, fast, and objective evaluation to identify patients with side-to-side strength and movement asymmetry at the time for the return to sport/activity following ACLR.”
+- 달리기 등 빠른 속도 조건의 경골 각속도 비대칭이 대퇴사두근 약화뿐만 아니라 환자의 재부상 공포심리(TSK-11)와 밀접히 연계되어 작동한다는 점을 발견하여 다차원적 보행 평가의 길을 열었다. _(근거: Page 5, Chapters 4 and 5 summary)_
+  - 근거 원문: “Moreover, running with greater SAV asymmetry was moderately correlated with a higher level of fear of movement/reinjury. Therefore, these findings, particularly the ones from SAV, may provide clinical information regarding functional and psychological status following ACLR.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 전방십자인대 재건술 후 스포츠 복귀 환자의 높은 재부상 비율
+
+- 원문 발췌: “In a recent meta-analysis, it is estimated that nearly 1 in 4 ACLR subjects who return to high impact sports will sustain another ACL injury, with the highest risk of re-injury within one year after returning to sports participation.32”
+- 한국어 번역: 최근의 메타 분석에 따르면 고충격 스포츠로 복귀하는 전방십자인대 재건술 환자 중 거의 4명 중 1명이 또 다른 전방십자인대 부상을 입을 것으로 예상되며, 재부상 위험은 스포츠 활동으로 복귀한 후 1년 이내에 가장 높다.
+- 원문 위치: Page 17, Chapter 1 Rates of a secondary injury
+- 원문 내 인용표기: 32
+- 해당 선행문헌: 확인 불가
+- 주장 유형: background_citation
+- 활용 맥락과 주의: ACLR 환자가 스포츠 복귀 후 직면하는 2차 부상 위험과 복귀 초기 1년의 중요성을 강조하는 배경 연구 근거로 활용할 수 있다. 2차 인용에 주의가 필요하다.
+
+### 2. ACLR 후 시간 경과에 따른 걷기 및 달리기 부드러움의 변화
+
+- 원문 발췌: “Walking smoothness of the ACLR group improved across time, reaching walking smoothness of healthy controls at 6 months post-ACLR. Movement smoothness at faster gait speeds, mainly running, of the ACLR group did not reach movement smoothness of the control group at 6 months after surgery.”
+- 한국어 번역: ACLR 집단의 걷기 부드러움은 시간이 지남에 따라 개선되어 수술 후 6개월에 건강한 대조군의 걷기 부드러움에 도달했다. 그러나 더 빠른 보행 속도인 달리기에서의 움직임 부드러움은 수술 후 6개월 시점에도 대조군 수준에 도달하지 못했다.
+- 원문 위치: Page 35, Chapter 2 Conclusions
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: ACLR 후 평지 걷기는 6개월 내에 정상화될 수 있으나 달리기는 더 오래 지속되는 결손을 보인다는 종단적 근거로 활용 가능하다.
+
+### 3. ACLR 후 다양한 속도 조건에서의 경골 각속도(SAV) 비대칭 지속성
+
+- 원문 발췌: “At 4 and 6 months post-ACLR, the involved limb had significantly smaller peak SAV during walking (p<.01, effect sizes = 0.69-0.85), walking fast (p<.005, effect sizes = 1.03-1.07), and running (p<.005, effect sizes = 0.78-1.03) compared to the uninvolved limb.”
+- 한국어 번역: 수술 후 4개월 및 6개월 시점에 수술측 다리는 비수술측 다리에 비해 걷기, 빠르게 걷기, 달리기 전반에 걸쳐 유의하게 더 작은 경골 각속도(SAV) 피크를 나타냈다.
+- 원문 위치: Page 53, Chapter 3 Results
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: ACLR 환자가 수술 후 6개월까지 다양한 속도에서 경골 운동 형상학의 비대칭을 유지함을 보여주는 정량적 근거로 활용 가능하다.
+
+### 4. 달리기 중 경골 각속도 비대칭과 재부상 두려움(TSK-11)의 연관성
+
+- 원문 발췌: “Moreover, running with greater SAV asymmetry was moderately correlated with a higher level of fear of movement/reinjury. Therefore, these findings, particularly the ones from SAV, may provide clinical information regarding functional and psychological status following ACLR.”
+- 한국어 번역: 또한, 더 큰 경골 각속도(SAV) 비대칭을 보이며 달리는 것은 더 높은 수준의 운동/재부상 두려움과 중등도의 상관관계가 있었다. 그러므로 이러한 결과, 특히 SAV의 결과는 ACLR 후 기능적 및 심리적 상태에 관한 임상 정보를 제공할 수 있다.
+- 원문 위치: Page 5, Chapters 4 and 5 summary
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 보행 분석을 통해 도출한 역학적 비대칭(SAV)이 환자의 재부상 두려움이라는 심리적 요소와 연관되어 있음을 지지하는 근거로 활용 가능하다.
+
+---
+
+# Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction
+
+Sakeran, H., Abu Osman, N. A., & Abdul Majid, M. S. (2019). Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction. Applied Sciences, 9(16), 3306. https://doi.org/10.3390/app9163306
+
+## 서지정보
+
+- 저자: Hamzah Sakeran, Noor Azuan Abu Osman, Mohd Shukry Abdul Majid
+- 연도: 2019
+- 저널: Applied Sciences
+- DOI: 10.3390/app9163306
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 전방 십자 인대 재건술 후 건강 모니터링 시스템을 위한 마할라노비스-다구치 시스템 기반 보행 분류
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 마할라노비스 거리(MD)를 사용하여 건강한 대조군과 전방십자인대 재건술(ACLR) 환자군의 보행 패턴을 분류하고, 다구치 방법(TM)을 적용해 유용한 시공간 보행 변수들을 선택하여 환자의 회복 과정 및 업무 복귀(RTW) 가능성을 객관적으로 평가하는 시스템을 제안하는 것이다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “The objective was to use Mahalanobis distance (MD) to classify between the gait patterns of the control and ACLR groups, while the Taguchi Method (TM) was employed to choose the useful features. Moreover, MD was also utilised to ascertain whether the ACLR group approaching RTW. The combination of these two methods is called as Mahalanobis-Taguchi System (MTS).”
+
+## 연구 설계와 대상
+
+- 본 연구는 실험실 환경에서 15명의 건강한 남성 대조군(HG)과 10명의 일측성 일차성 전방십자인대 재건술(ACLR)을 받은 남성 환자군(PG)의 보행 패턴 데이터를 수집하여 비교 및 분석을 진행하였다. 두 집단 간의 나이, 체중, 키 분포는 통계적으로 유의미한 차이가 없었다(p > 0.05). _(근거: PAGE 1, Abstract / PAGE 6, Section 4.1. Participants)_
+  - 근거 원문: “This study compared the gait of 15 control subjects to a group of 10 subjects with laboratory. ... Ten patients with a unilateral primary ACLR were chosen for the ACLR group (PG). This group was composed of 10 males. ... Meanwhile, 15 healthy subjects (HG) were selected for the healthy group with the condition that they had no previous history of lower extremity injuries, surgeries, or neuropathy. The HG consisted of 15 males. The height, age, and weight distribution of the two groups were not significantly (p > 0.05) (Table 1).”
+
+## 방법
+
+- 대상자들은 8m 보행로를 7회 걸었으며, 장비 및 환경에 대한 익숙해짐을 위해 처음 2회 왕복을 제외한 나머지 5회 왕복 중에서 대조군은 우측 다리, 환자군은 환측 다리를 대상으로 4회의 보행 주기를 분석하였다. _(근거: PAGE 6, Section 4.2. Procedures)_
+  - 근거 원문: “Subjects were instructed to walk seven times on an 8 m walkway. The first two laps were not measured to allow for familiarization with the task and instrumentation. The last five laps were assessed to catch four gait cycles, employing the right limb from the HG and the injured limb from the PG.”
+- 모션 캡처 카메라 5대와 지면반력 측정을 위한 힘판 2대를 사용하여 보행 데이터를 획득하였으며, Visual 3D Pro v6 프로그램을 활용하여 보행 패턴을 나타내는 11개의 시공간 변수들을 도출하였다. _(근거: PAGE 6, Section 4.2. Procedures / PAGE 7)_
+  - 근거 원문: “Motion data were collected using five Oqus cameras of a motion capture system (Oqus, Qualisys AB, Gothenburg, Sweden). 36 reflective markers were placed on the joint landmarks and segments of the lower limb as denoted in Figure 2. ... Two force plates were reset for the next trial. The vertical ground reaction force was detected by two force plates with dimensions of 400 × 600 mm (Bertec, Worthington, Ohio, OH, USA) while the subject performed several walks at his own pace. ... The 11 spatiotemporal parameters (Table 2) of the trial were generated in Visual 3D Pro v6.”
+- 마할라노비스-다구치 시스템(MTS) 방법론에 따라, 대조군 데이터를 기준으로 마할라노비스 공간(MS)을 구축(Step I)하고, 환자군 데이터를 이에 정규화하여 대조군 영역 바깥으로 이탈하는지를 검증(Step II)한 후, 직교배열표와 S/N 비의 Gain 분석을 통해 가장 유용한 특징 변수를 추출(Step III)하고 최종 회복도 진단에 활용(Step IV)하는 단계를 수행하였다. _(근거: PAGE 3, Section 2.2.1. Four Steps in MTS / PAGE 4)_
+  - 근거 원문: “There are four steps in a MTS [40]: Step 0: Identification of assessment criteria and collection of patients’ spatiotemporal data Step I: Mahalanobis space (MS) creation ... Step II: Validation of MS ... Step III: Identification of useful features ... Step IV: Future diagnosis”
+
+## 핵심 결과
+
+- MTS 분석 결과 대조군(HG)의 마할라노비스 거리(MD)는 0.560에서 1.180 범위에 분포한 반면, ACLR 환자군(PG)의 MD는 2.308에서 1509.811 범위에 걸쳐 비정상 거리가 대조군에 비해 크게 벗어나 있음을 성공적으로 식별하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “The results showed that gait deviations can be identified successfully, while the ACLR can be classified with higher precision by MTS. The MDs of the healthy group ranged from 0.560 to 1.180, while the MDs of the ACLR group ranged from 2.308 to 1509.811.”
+- 민감도 및 특이도 분석을 수행한 결과, 건강한 대조군과 환자군을 100%의 민감도와 특이도로 구분할 수 있는 마할라노비스 거리(MD)의 최적 임계값(Threshold)은 1.5로 나타났다. _(근거: PAGE 10, Section 4.3. Results (Step II: Validation of MS))_
+  - 근거 원문: “After considering sensitivity and specificity, we discovered the best threshold value was 1.5, which provided 100% sensitivity and specificity.”
+- 11개의 변수 중 L12(2^11) 직교배열표 및 S/N 비의 Gain 분석 결과 음수의 영향력을 가진 Step Length(X1), Stride Length(X2), Stance Time (%GC)(X8)의 3가지 변수가 비정상 식별에 유의미하지 않은 요소로 판명되어 최종 8개의 유용한 변수들로 특징이 압축되었다. _(근거: PAGE 1, Abstract / PAGE 10, Section 4.3. Results (Step III: Identification of useful features))_
+  - 근거 원문: “Out of the 11 spatiotemporal parameters analysed, only eight parameters were considered as useful features. ... As revealed in Tables 10 and 11, X1, X2, and X8 did not have a significant effect on the MD. Hence, the number of attributes was decreased from 11 to 8.”
+- 최종 선정된 8가지 핵심 보행 변수는 Step Width, Swing Time (s), Stance Time (s), Double Support Time (s), Single Support Time (s), Double Support Time (%GC), Gait Speed (m/s), Stride Speed이다. _(근거: PAGE 12, Section 6.1. ACLR Diagnosis)_
+  - 근거 원문: “In this study, eight important features, including step width, swing time (s), stance time (s), double support time (s), single support time (s), double support time (%GC), gait speed (m/s), and stride speed, were selected by utilising OAs and S/N ratios.”
+
+## 저자 결론
+
+- MTS 기법은 줄어든 개수의 유용한 보행 특징 변수들을 가지고도 ACLR 환자의 회복 진행 상황을 효과적으로 감지할 수 있으며, 진단 및 임상 평가 과정에서 주관성을 배제하고 객관적인 지표를 제공할 수 있다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “These results indicate that MTS can effectively detect the ACLR recovery progress with reduced number of useful features. MTS enabled doctors or physiotherapists to provide a clinical assessment of their patients with more objective way.”
+- 계산된 환자의 마할라노비스 거리(MD)의 크기는 비정상 보행 패턴의 심각도(deviation)를 대변하므로, 치료 경과에 따라 환자의 MD 값이 대조군 수준(임계값 1.5 이하)으로 작아질 때 업무에 완전히 복귀(RTW)할 준비가 되었음을 나타내는 강력한 예측 및 평가 도구로 사용될 수 있다. _(근거: PAGE 13, Section 6.2. Return to Work / PAGE 14, Conclusions)_
+  - 근거 원문: “It is obvious that for lower MD values, the deviation from healthy participants is likely be less and the patients will have an excellent likelihood of RTW [31]. ... For individuals with greater MD values, constant rehabilitation should continue until the MD [23]. ... In addition, the size of the MD reflected the degree of abnormality. Hence, MDs can indicate the seriousness of an abnormality.”
+
+## 연구의 한계
+
+- 전방십자인대 재건술 후 환자들의 복귀를 가장 잘 준비시키기 위해서는 추후 신경근 조절 결손(deficits in neuromuscular control), 신경 운동 상태(neuromotor status) 및 심리적 준비 상태(psychological readiness) 등 개별적인 결손 요인을 명확히 표적으로 삼는 추가적인 연구가 수행되어야 한다. _(근거: PAGE 14, Conclusions)_
+  - 근거 원문: “Further research is essential to optimally target deficits in neuromuscular control, neuromotor status, and psychological readiness in order to best prepare individuals for RTW following ACLR.”
+
+## 생각해볼 내용
+
+- 비교 대상이 대조군 15명과 환자군 10명으로 전체 표본의 수가 매우 적어, MTS 모델 자체의 정확도나 임계값(Threshold) 1.5의 신뢰성 및 보편성을 일반화하기에는 한계가 있다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study compared the gait of 15 control subjects to a group of 10 subjects with laboratory.”
+- 우측 하지 지배성(right leg dominance)을 이유로 환자군의 환측 다리를 오직 대조군의 우측 다리와만 비교하였는데, 이는 보행 시 대칭성이나 개인 간 생체역학적 차이를 온전히 보정하지 못할 우려가 있다. _(근거: PAGE 6, Section 4.2. Procedures)_
+  - 근거 원문: “We compared the ACLR to the right limbs only because most individuals are right leg dominant and we wanted to compare those limbs to a right control limb that is more likely to exhibit ideal and stable knee biomechanics [44,45].”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 기존의 스포츠나 신체 활동 복귀 판단 조건들은 주관적이며, 동반 질환 또는 재부상 등의 잠재적 위험 식별 능력이 결여되어 있어 잔류 결손을 정량화하여 평가할 수 있는 객관적인 방법이 필요하다. _(근거: PAGE 2, Section 2.1. ACLR)_
+  - 근거 원문: “Nevertheless, these conditions are subjective and do not include the identification of possible dangers such as potential comorbidities or re-injuries; therefore, methods that quantify residual deficits are likely to be preferable [34].”
+- 전방십자인대 재건술 환자의 재활 성과와 밀접한 관련이 있는 업무 복귀(RTW) 과정을 정량적이고 체계적인 분석적 기법을 통해 평가하고 예측하고자 한 연구는 기존 문헌에서 찾을 수 없었다. _(근거: PAGE 2, Section 1. Introduction)_
+  - 근거 원문: “In our review, we found no significant exiting research that focussed on patients’ return to work (RTW) after ACLR using an analytical strategy.”
+
+## 이 연구의 해결 방식과 기여
+
+- 본 연구는 시공간 보행 매개변수를 활용하여 전방십자인대 재건술 후 환자들의 회복 양상과 복귀(RTW) 가능성을 분석적이고 연속적인 척도로 수치화할 수 있는 마할라노비스-다구치 시스템(MTS)을 도입하여 보행 편차를 정량 진단하는 객관적인 의사결정 보조 시스템의 유효성을 실증하였다. _(근거: PAGE 2, Section 1. Introduction)_
+  - 근거 원문: “This study aims to method of ACLR analysis that can predict RTW according to spatiotemporal data. Our proposed method uses the MD to differentiate the routine of ACLR; based on signal-to-noise ratios (S/N ratios) and orthogonal arrays (OAs), useful features can be identified [19,21,22,24].”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. ACLR 환자의 보행 중 무릎 각도 편차 지속 현상
+
+- 원문 발췌: “It has been proven that ACLR subjects have an inclination to pose altered knee angles during gait, even 12 months after the operation [36].”
+- 한국어 번역: ACLR 환자들은 수술 후 12개월이 지난 시점에도 보행 중에 비정상적인 무릎 각도를 취하는 경향이 있음이 입증되었다.
+- 원문 위치: PAGE 2, Section 2.1. ACLR
+- 원문 내 인용표기: [36]
+- 해당 선행문헌: Culvenor, A.G.; Perraton, L.; Guermazi, A.; Bryant, A.L.; Whitehead, T.S.; Morris, H.G.; Crossley, K.M. Knee kinematics and kinetics are associated with early patellofemoral osteoarthritis following anterior cruciate ligament reconstruction. Osteoarthr. Cartil. 2016, 24, 1548–1553. [CrossRef] [PubMed]
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 전방십자인대 재건술을 거치더라도 약 1년 경과 시까지 기구학적 무릎 정렬 또는 각도의 이상 보행 패턴이 완전히 정상화되지 않고 비정상적으로 유지될 수 있음을 지지하는 근거로 사용 가능하다.
+
+### 2. 마할라노비스 거리(MD)를 이용한 대조군과 ACLR 환자의 보행 패턴 범위 구분
+
+- 원문 발췌: “The MDs of the healthy group ranged from 0.560 to 1.180, while the MDs of the ACLR group ranged from 2.308 to 1509.811.”
+- 한국어 번역: 건강한 대조군의 마할라노비스 거리(MD)는 0.560에서 1.180 범위에 분포했던 반면, ACLR 환자군의 마할라노비스 거리는 2.308에서 1509.811 범위였다.
+- 원문 위치: PAGE 1, Abstract
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 본 연구의 핵심 정량적 결과로, 대조군의 기준 데이터 분포와 환자군의 보행 비정상성 편차가 마할라노비스 거리 척도를 통해 통계적으로 뚜렷하고 큰 폭의 범위 차이로 분류될 수 있음을 증명하는 직접적 수치이다.
+
+### 3. 재활 후 장기적인 하지 운동 루틴 적응 현상
+
+- 원문 발췌: “Biomechanical studies have demonstrated that after two years of rehabilitation injured people tend to adapt their lower limb motion routine for many tasks [26,27].”
+- 한국어 번역: 생체역학 연구들은 부상을 입은 사람들이 2년의 재활을 거친 후에도 여러 동작에서 자신들의 하지 운동 루틴을 적응시켜 나가는(대체 동작을 형성하는) 경향이 있음을 보여주었다.
+- 원문 위치: PAGE 2, Section 2.1. ACLR
+- 원문 내 인용표기: [26,27]
+- 해당 선행문헌: 26. White, K.; Logerstedt, D.; Snyder-Mackler, L. Gait Asymmetries Persist 1 Year After Anterior Cruciate Ligament Reconstruction. Orthop. J. Sport. Med. 2013, 1, 1–6. [CrossRef] [PubMed]
+27. Sigward, S.M.; Lin, P.; Pratt, K. Knee loading asymmetries during gait and running in early rehabilitation following anterior cruciate ligament reconstruction: A longitudinal study. Clin. Biomech. 2016, 32, 249–254. [CrossRef] [PubMed]
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 장기 재활(2년) 후에도 보행 비대칭이나 정상과 다른 보상적 하지 운동 패턴이 잔존하여 고착화될 수 있음을 설명할 때 2차 인용으로 제시할 수 있다.
+
+---
+
+# Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deﬁcits than triple hop for distance scores in athletes returning to sport
+
+Lloyd, R. S., Oliver, J. L., Kember, L. S., Myer, G. D., & Read, P. J. (2020). Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deﬁcits than triple hop for distance scores in athletes returning to sport. The Knee, 27(5), 1357–1364. https://doi.org/10.1016/j.knee.2020.07.003
+
+## 서지정보
+
+- 저자: Rhodri S. Lloyd, Jon L. Oliver, Lucy S. Kember, Gregory D. Myer, Paul J. Read
+- 연도: 2020
+- 저널: The Knee
+- DOI: 10.1016/j.knee.2020.07.003
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deficits than triple hop for distance scores in athletes returning to sport.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 스포츠에 복귀하는 운동선수의 트리플 홉 거리 점수 대비 개별 홉 분석 및 반응 근력 비율의 전방십자인대 재건 사지 결손에 대한 더 우수한 감별력
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: false
+- 보행 데이터: false
+- Score 제시: false
+
+## 연구 목적
+
+- 본 연구는 수술 후 6개월 이상 경과하여 퇴원 평가를 받는 전방십자인대 재건술(ACLR) 환자군을 대상으로, 트리플 홉 테스트 시 총 홉 거리의 LSI 90% 초과 기준과 개별 홉의 반응 근력 비율(RSR)의 변별력을 비교 분석하고자 하였다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “the current study aimed to examine the discriminative ability of the LSI threshold N90% using total hop distance versus reactive strength ratios of individual hops during a triple hop test, in a cohort of ACLR patients during their discharge assessment ≥6 months post-surgery.”
+
+## 연구 설계와 대상
+
+- 이전에 ACL 부상이나 양측 수술 이력이 없고 일측성 ACL 재건술을 받은 20명의 남성 프로 축구 선수들이 연구에 참여하였다. _(근거: PAGE 2, 2.1. Participants)_
+  - 근거 원문: “Twenty male professional soccer players (24.6 ± 4.2 years; height 175.3 ± 10.2 cm; mass 73.6 ± 14.5 kg) volunteered to take part in the study.”
+- 대상자 중 76%는 골-슬개건-골 자가이식편을, 24%는 햄스트링건 자가이식편을 사용하여 수술을 받았다. _(근거: PAGE 2, 2.1. Participants)_
+  - 근거 원문: “All participants underwent surgical reconstruction using an autograft, with 76% and 24% selecting a bone–patellar tendon–bone graft and hamstring tendon graft (semitendinosus and gracilis) respectively.”
+- 테스트 시점에서 수술 후 경과 시간은 평균 36주(범위 24~58주)였다. _(근거: PAGE 2, 2.1. Participants)_
+  - 근거 원문: “The mean time from surgery at the time of testing was 36 ± 10.5 weeks (range 24–58 weeks).”
+
+## 방법
+
+- 테스트는 비수술측, 수술측 순서로 각 사지당 2회씩 측정되었으며 시도 간 30초의 휴식이 제공되었다. _(근거: PAGE 3, 2.2.1. Experimental design)_
+  - 근거 원문: “Two recorded trials were performed on both the non-operated and operated limb in that order, with 30 s of rest provided between trials.”
+- 지면 레벨의 광학 측정 시스템(Optojump)을 사용하여 각 개별 홉의 접지 시간과 비행 시간을 수집하였다. _(근거: PAGE 3, 2.2.2. Triple hop for distance)_
+  - 근거 원문: “Contact time (s) data were collected via a ﬂoor-level optical measurement system (Optojump, Microgate, Italy) with two tracks of bars (one transmitter and one receiver) positioned one meter apart and connected for the entire 10 m capture distance.”
+- 반응 근력 비율(RSR)은 각 홉의 접지 시간에 대한 비행 시간의 비율로 계산되었고, 사지 대칭 지수(LSI)는 수술측 값을 비수술측 값으로 나누어 100을 곱한 비율로 계산되었다. _(근거: PAGE 3, 2.2.3. Variables)_
+  - 근거 원문: “Reactive strength ratios (RSR) were subsequently calculated as the ratio between contact time and ﬂight time [38]. The LSI was reported as a percentage and calculated for each variable according to the formula: [operated limb / non-operated limb] ∗ 100.”
+
+## 핵심 결과
+
+- 첫 번째 홉에서 RSR LSI 90% 이상을 달성한 참가자는 35%, 두 번째 홉에서는 45%에 불과하여, 총 홉 거리의 LSI 기준을 충족한 참가자 비율(80%)과 뚜렷한 대조를 보였다. _(근거: PAGE 4, 3.3. Group and individual LSI pass rates)_
+  - 근거 원문: “During hop 1, 35% of participants passed the N90% LSI threshold, while 45% passed the threshold during hop 2. These data were in contrast to the number of participants (80%) that achieved the LSI threshold for total hop distance.”
+- 비행 시간과 RSR 모두 두 홉 모두에서 수술측 사지에서 유의하게 낮았으며, 중간 내지 큰 효과 크기를 보였다. _(근거: PAGE 3, 3.1. Between-limb comparisons)_
+  - 근거 원문: “This was conﬁrmed with both ﬂight time and RSR being signiﬁcantly lower in the operated limb during both hops, with moderate to large effect sizes.”
+- 수술측 사지에서 첫 번째 홉과 두 번째 홉 사이의 RSR은 유의미하고 큰 차이를 나타냈다. _(근거: PAGE 1, Results)_
+  - 근거 원문: “Large, signiﬁcant differences in RSR were evident between hops one and two on the operated limb (p b 0.05; d = 0.97).”
+
+## 저자 결론
+
+- 트리플 홉 거리에 대한 표준 LSI 합격 기준(90% 초과)은 수술측 사지의 반응 근력 성능에 남아있는 잔류 결손을 은폐할 수 있으므로, 개별 홉 성능의 상세한 분석이 필요하다. _(근거: PAGE 1, Conclusions)_
+  - 근거 원문: “Standardised LSI ‘pass’ thresholds (N90% LSI) for triple hop distance may mask residual deﬁcits in reactive strength performance of operated limbs; therefore, more detailed analyses of individual hop performance may be warranted to enhance return to sport criteria following ACLR.”
+
+## 연구의 한계
+
+- 광학 측정 시스템을 통한 분석은 접지 시간, 비행 시간, RSR 데이터만을 제공했을 뿐, 개별 접지 시의 운동학이나 운동역학 정보는 제공하지 못했다. _(근거: PAGE 6, 4. Discussion)_
+  - 근거 원문: “Firstly, the use of the optical measurement system to quantify hop performance only provided contact time, ﬂight time and RSR data and did not provide insight into the kinetics or kinematics associated with each ground contact as an indicator of movement performance.”
+- 연구가 환자들의 스포츠 복귀 전 퇴원 평가 시점인 단일 수술 후 시점에서만 수행되었기 때문에, 반응 근력 능력의 시간적 회복 경과를 명확히 파악하기 어렵다. _(근거: PAGE 6, 4. Discussion)_
+  - 근거 원문: “Secondly, the study used a single post-operative time point in which athletes were performing a discharge assessment prior to RTS; thus, the exact time course to note temporal recovery in reactive strength capabilities in ACLR patients remains somewhat unclear, which may warrant further research.”
+- LSI와 마찬가지로 RSR 또한 비율이기 때문에 구성 변수들의 변화로 인해 운동 전략에 대한 정보가 가려질 수 있다. _(근거: PAGE 6, 4. Discussion)_
+  - 근거 원문: “Finally, much like the LSI the RSR is a ratio, which can potentially mask information about movement strategies and can be altered by changes in either of the composite variables [38].”
+
+## 생각해볼 내용
+
+- 최근 아이폰의 Runmatic 앱 등을 통해 240fps 고속 촬영으로 접지와 비행 시간을 파악하여 임상 현장에서도 RSR을 편리하게 계산하여 활용할 수 있을 것으로 분석된다. _(근거: PAGE 7, 5. Conclusions)_
+  - 근거 원문: “Using the high-speed recording capabilities of the iPhone (240 frames per second), the Runmatic application identiﬁes the contact and ﬂight times of each step, which could then be used to determine RSR.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 임상 실무에서 흔히 쓰이는 90% 초과의 LSI 임계값은 비수술 사지의 비정상적 기계적 특성에 영향을 받을 수 있으며, 대칭적 홉 거리를 달성하기 위해 보상 전략이 발달할 수 있어 모든 변수에 대해 임의의 LSI 임계값을 사용하는 것은 주의가 필요하다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “However, emerging evidence indicates that compensatory strategies can be developed in order to achieve symmetrical hop distances and caution should be applied when using arbitrary LSI thresholds (e.g. N90% LSI) for all variables [17,19].”
+- 기존의 홉 테스트들은 12개월 시점의 RTS 결과를 예측하지 못했거나 재부상률과의 관련성이 일관되게 나타나지 않았다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “However, research has also indicated that hop testing was unable to predict RTS outcomes at 12 months [24,25] and is not always associated with ACL re-injury rates [26–28].”
+- 트리플 홉 테스트의 LSI는 대개 전체 거리로 계산되는데, 이는 선수가 각 홉마다 이동한 거리나 연속적인 홉 동안 지면과 상호작용하는 방식을 나타내지 못한다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “The LSI is typically cal-culated using total distance; however, this performance variable fails to provide insight into the distance the athlete covers with each hop and importantly fails to characterise the manner in which the athlete interacts with the ground during consecutive hops.”
+
+## 이 연구의 해결 방식과 기여
+
+- 본 연구는 트리플 홉 테스트 중 개별 홉의 RSR LSI 90% 이상 기준이 전체 거리에 대한 LSI 기준에 비해 ACLR 환자의 잔류 결손을 식별하는 데 더 우수한 감별력을 가짐을 확인하였다. _(근거: PAGE 5, 4. Discussion)_
+  - 근거 원문: “Cumulatively, these data indicate that using a N90% LSI threshold for reactive strength ratios from individual hops provides better discriminative ability to identify residual deﬁcits in reactive strength capabilities of the operated limb in individuals following ACLR, compared to a N90% LSI threshold for total hop distance.”
+- 이 연구는 총 홉 거리 외에 각 개별 홉의 성능 및 RSR 분석이 잔류 반응 근력 결손을 감별하는 데 유용하다는 새로운 분석 방향을 제시하였다. _(근거: PAGE 6, 5. Conclusions)_
+  - 근거 원문: “This study has shown that alternative functional hop test metrics such as RSR can be used to identify existing limb deﬁcits in patients who are in the ﬁnal stages of rehabilitation post-ACLR that were not apparent when using the more traditional analysis of total hop distance.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 하체 등속성 근력 대칭성 임계치와 부상 위험
+
+- 원문 발췌: “Furthermore, the commonly used threshold of 15% has previously been noted as a lower limb isokinetic muscle strength cut-off above which injury risk is magniﬁed [8].”
+- 한국어 번역: 또한, 흔히 사용되는 15%의 임계값은 하체 등속성 근력의 차단값(cut-off)으로 이전부터 언급되어 왔으며, 이를 초과할 경우 부상 위험이 확대된다.
+- 원문 위치: PAGE 2, 1. Introduction
+- 원문 내 인용표기: [8]
+- 해당 선행문헌: [8] Croisier JL, Crelaard JM. Hamstring muscle tear with recurrent complaints: an isokinetic profile. Isokinet Exerc Sci. 2000;8:175–80.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 하지 등속성 근력의 좌우 비대칭이 15%를 초과할 때 부상 위험이 높아진다는 선행 연구 결과를 인용할 때 사용한다. 등속성 근력 평가와 트리플 홉 테스트 간의 관계를 논의하거나, 비대칭 임계치 기준의 근거로 적합하다.
+
+### 2. 학습 효과 감소를 위한 연습 시행 수행
+
+- 원문 발췌: “Three practice trials of the triple hop were performed on each leg in accordance with previous research to reduce the presence of a learning effect [13] and to ensure technical competence, which was determined by the principal investigator.”
+- 한국어 번역: 학습 효과의 존재를 줄이고 수석 연구원에 의해 결정되는 기술적 숙련도를 보장하기 위해 이전 연구[13]에 따라 각 다리에서 3회의 트리플 홉 연습 시행을 수행했다.
+- 원문 위치: PAGE 3, 2.2.1. Experimental design
+- 원문 내 인용표기: [13]
+- 해당 선행문헌: [13] Munro AG, Herrington LC. Between-session reliability of four hop tests and the agility T-test. J Strength Cond Res. 2011;25:1470–7.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 홉 테스트 수행 시 측정의 학습 효과를 방지하기 위해 3회의 연습 시행이 권장된다는 프로토콜 설계의 근거로 활용할 수.
+
+### 3. 트리플 홉과 신장-단축 주기(SSC)의 작동 기전
+
+- 원문 발췌: “Rebound tasks such as the triple hop utilize the stretch-shortening cycle, which includes rapid eccentric loading at the point of ground contact, followed by a brief period of amortization, and ﬁnally a concentric muscle action [31].”
+- 한국어 번역: 트리플 홉과 같은 리바운드 과제는 신장-단축 주기를 활용하는데, 이는 지면 접촉 시점에서의 빠른 편심성 부하에 이어 짧은 전환기(amortization), 그리고 최종적으로 동심성 근육 작용을 포함한다.
+- 원문 위치: PAGE 2, 1. Introduction
+- 원문 내 인용표기: [31]
+- 해당 선행문헌: [31] Komi PV. Stretch-shortening cycle: a powerful model to study normal and fatigued muscle. J Biomech. 2000;33:1197–206.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 트리플 홉과 같은 연속 홉 테스트가 신장-단축 주기(SSC) 메커니즘을 기반으로 한다는 과학적 기초를 설명할 때 활용할 수 있다. 2차 인용 시 원저자(Komi, 2000)의 정상 및 피로 근육에 대한 SSC 연구를 참고해야 한다.
+
+### 4. RSR의 계산 정의 및 한계
+
+- 원문 발췌: “Reactive strength ratios (RSR) were subsequently calculated as the ratio between contact time and ﬂight time [38].”
+- 한국어 번역: 반응 근력 비율(RSR)은 접지 시간과 비행 시간 사이의 비율로 계산되었다[38]..
+- 원문 위치: PAGE 3, 2.2.3. Variables
+- 원문 내 인용표기: [38]
+- 해당 선행문헌: [38] Healy R, Kenny IC, Harrison AJ. Reactive strength index: a poor indicator of reactive strength? Int J Sports Physiol Perform. 2018;13:802–9.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: RSR의 공식적인 수학적 정의(접지 시간 대비 비행 시간 비율)를 제시할 때 유용하다. 원래의 RSI(반응근력지수) 개념과 대비하여 RSR을 정의한 원저자(Healy 등, 2018)의 개념을 바탕으로 한다.
+
+### 5. 총 홉 거리 LSI 패스율과 RSR LSI 패스율의 비교
+
+- 원문 발췌: “Despite 80% of participants achieving N90% LSI for total hop distance, less than 50% of participants reached the N90% LSI threshold for RSR.”
+- 한국어 번역: 참가자의 80%가 총 홉 거리에 대해 90% 초과의 LSI를 달성했음에도 불구하고, RSR에 대한 90% 초과 LSI 임계값에 도달한 참가자는 50% 미만이었다.
+- 원문 위치: PAGE 1, Results
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 트리플 홉 거리의 대칭성이 반응 근력 성능(RSR)의 비대칭성을 가릴 수 있음을 보여주는 자체 결과이다. 스포츠 복귀 기준 설정 시 단일 거리 변수만 사용하는 것의 한계를 지적할 때 핵심 근거로 사용될 수 있다.
+
+### 6. 수술측 사지 내 홉 간 RSR의 유의미한 차이
+
+- 원문 발췌: “Large, signiﬁcant differences in RSR were evident between hops one and two on the operated limb (p b 0.05; d = 0.97).”
+- 한국어 번역: 수술을 받은 사지에서 첫 번째 홉과 두 번째 홉 사이에 RSR의 크고 유의미한 차이가 분명하게 나타났다(p < 0.05; d = 0.97).
+- 원문 위치: PAGE 1, Results
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 수술한 다리에서 홉 간의 반응 근력 기능(RSR) 차이가 뚜렷함을 나타내는 결과로, 수술측의 단일 홉들 사이의 기능적 불균형을 보여주는 근거로 활용할 수 있다.
+
+### 7. 임상가들에 대한 트리플 홉 테스트 시 RSR 분석 권장
+
+- 원문 발췌: “Therefore, in addition to examining individual hops, practitioners are encouraged to examine alternative variables such as RSR when analysing triple hop performance to better understand functional performance in ACLR athletes.”
+- 한국어 번역: 따라서 임상가들은 전방십자인대 재건술(ACLR) 환자의 기능적 능력을 더 잘 이해하기 위해 트리플 홉 성능을 분석할 때 개별 홉을 검사하는 것 외에도 RSR과 같은 대안적 변수를 검사할 것을 권장한다.
+- 원문 위치: PAGE 5, 4. Discussion
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: uncited_author_claim
+- 활용 맥락과 주의: 저자들이 임상 실무에 제안하는 제언으로, 트리플 홉 수행 시 RSR과 같은 대안적 평가지표를 접목하여 기능 분석의 정밀도를 높여야 한다는 주장을 뒷받침할 수 있다.
+
+---
+
+# Objective and Subjective Analysis of the Knee Joint Function Using Lower Extremity Assessment Protocol after Anterior Cruciate Ligament Reconstruction
+
+Kim, B. H., Jeon, H. G., Cheo, J. H., Kang, T. K., & Lee, S. Y. (2021). Objective and Subjective Analysis of the Knee Joint Function Using Lower Extremity Assessment Protocol after Anterior Cruciate Ligament Reconstruction. The Korean Journal of Sports Medicine, 39(1), 34-41. https://doi.org/10.5763/kjsm.2021.39.1.34
+
+## 서지정보
+
+- 저자: Byong Hun Kim, Hyung Gyu Jeon, Jong Han Cheo, Tae Kyu Kang, Sae Yong Lee
+- 연도: 2021
+- 저널: The Korean Journal of Sports Medicine
+- DOI: https://doi.org/10.5763/kjsm.2021.39.1.34
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/하지 검사 프로토콜을 이용한 전방십자인대 재건술 후 무릎관절의 객관적 및 주관적 분석.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 하지 검사 프로토콜을 이용한 전방십자인대 재건술 후 무릎관절의 객관적 및 주관적 분석
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: false
+- 보행 데이터: false
+- Score 제시: false
+
+## 연구 목적
+
+- 본 연구의 목적은 하지 검사 프로토콜(LEAP)을 통해 전방십자인대 재건술 후 일상생활에 지장이 없는 대상자의 무릎관절 근력, 근신경 조절 능력, 기능성 능력, 균형능력 등을 평가하여 복귀 가능 수준을 제시하고 환측과 건측의 종합적 기능을 비교하는 것이다. _(근거: PAGE 2, 서론)_
+  - 근거 원문: “따라서 본 연구의 목적은 LEAP를 이용하여 ACLR 이후 일상생활에 무리가 없는 대상자들을 대상으로 무릎관절의 근력, 근신경 조절 능력, 기능성 능력, 균형능력 등을 평가하여 복귀 가능한 수준을 제시하고, 건측과 환측 간의 종합적 기능을 비교하는 것이다.”
+
+## 연구 설계와 대상
+
+- 자가이식 전방십자인대 재건술 후 1년 이상 5년 미만이 경과하고 일상생활 및 스포츠로 복귀한 19~40세 성인 남녀 15명을 모집하였다. _(근거: PAGE 2, 연구 방법)_
+  - 근거 원문: “교내 게시판을 통하여 자발적 연구 참여 의사를 밝힌 15명의 성인 남녀를 모집하였으며(Table 1), 포함 기준은 다음과 같다. (1) 만 19세부터 40세까지의 성인, (2) ACLR 후 1년 이상, 5년 미만인 자, (3) ACLR 수술 시 자가이식조직(autograft)을 사용한 자, (4) 일상생활 및 스포츠로 복귀한 자.”
+- 신체활동 수준이 가벼운 노동조차 불가능한 수준인 대상자는 연구에서 제외되었다. _(근거: PAGE 2, 연구 방법)_
+  - 근거 원문: “다음과 같은 연구 대상자는 본 연구에서 제외되었다. (1) 신체활동 수준(Tegner activity score) level 4에 해당하는 ‘가벼운 노동’이 불가한 자, 2) 수술”
+
+## 방법
+
+- IKDC 주관적 설문지를 통해 일상생활과 스포츠 활동 중 무릎관절의 기능과 통증을 평가하고, LEAP 검사항목은 근력, 정적 균형 조절 능력, 점프 및 착지, 기능성 동작 평가로 구성하였다. _(근거: PAGE 3, 연구 방법)_
+  - 근거 원문: “IKDC 주관적 설문지를 통해 일상생활과 스포츠 활동
+중 무릎관절의 기능과 통증을 검사하였으며, LEAP의 검사항목은
+근력, 정적 균형 조절 능력, 점프 및 착지, 기능성 동작 평가로
+구성하였다(Table 2).”
+- 정적 자세 조절 능력은 AccuSway force plate 위에서 눈을 감고 한 발로 10초간 자세를 유지하며 측정했다. _(근거: PAGE 3, 연구 방법)_
+  - 근거 원문: “정적 자세 조절 능력 측정을 위해 피험자는 AccuSway force
+plate (AMTI, Watertown, MA, USA) 위에서 눈을 감은 채 한
+발로 10초간 자세를 유지하였다(Fig. 2).”
+- 동작 분석 프로그램 Kinovea를 사용하여 LESS 분석을 진행했다. _(근거: PAGE 4, 연구 방법)_
+  - 근거 원문: “LESS를 분석하기 위해 동작 분석 프로그램(Kinovea,
+version 0.8.15; free software available at http://www.kinovea.org)
+을 사용하여 측정하였다.”
+- 환측과 건측의 검사 결과를 비교하기 위하여 대응표본 t-검정을 실시하였다. _(근거: PAGE 4, 연구 방법)_
+  - 근거 원문: “환측과 건측의 LEAP 결과를 비교하기 위하여 대응표본(paired) t-검정을 실시하였다.”
+
+## 핵심 결과
+
+- 전방십자인대 재건술 후 평균 2.33년이 지난 환자의 IKDC 주관적 설문 점수는 평균 71.87점, LESS 점수는 평균 5.40점이었다. _(근거: PAGE 4, 결과)_
+  - 근거 원문: “ACLR 후 평균 2.33년이 지난 대상자의 IKDC 주관적 설문
+점수는 71.87±16.60점으로 나타났으며, LESS는 5.40±2.38점을
+기록하였다.”
+- 등속성 굽힘 근력, 180°/초 등속성 폄 근력, 등척성 폄 근력, 정적 자세 조절, 한 발 3회 도약, 한 발 교차 도약, 6m 도약에서는 건측과 환측 간 통계적으로 유의한 차이가 없었다. _(근거: PAGE 5, 결과)_
+  - 근거 원문: “등속성 굽힘 근력(90°/초, 180°/초),
+폄 근력(180°/초), 등척성 폄 근력, 폄 및 굽힘 근력의 정적 자세
+조절, 한 발 3회 도약, 한 발 교차 도약, 6 m 도약은 통계적으로
+유의한 차이가 나타나지 않았다(p＞0.05).”
+- 환측 무릎은 건측에 비해 등속성 폄 근력(90°/sec), 등척성 굽힘 근력, 한 발 도약 거리에서 유의한 감소를 보였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “Results: Injured knee has significantly decreased isokinetic extension strength (90º/sec), isometric flexion strength
+and one-leg hopping distance (p＜0.05).”
+
+## 저자 결론
+
+- 전방십자인대 재건술 후 스포츠 복귀 여부와 시기를 결정할 때 환자의 주관적 기능부전 및 통증의 존재 여부뿐만 아니라 무릎관절의 다양한 측면이 건측 수준으로 회복되었는지 종합적으로 검사하는 것이 필수적이다. _(근거: PAGE 7, 결론)_
+  - 근거 원문: “그러므로 ACLR 후 복귀 여부와 시기를 고려할 때, 환자의 주관적
+기능부전 및 통증이 존재하는지 확인해야 하며, 무릎관절의 다양
+한 측면에서 건측 관절과 비슷한 수준으로 회복했는지 검사하는
+것이 매우 중요하다.”
+
+## 연구의 한계
+
+- 수술 후 재활 치료 프로그램 참여 여부를 조사하지 않았다는 점이 제한점이다. _(근거: PAGE 6, 고찰)_
+  - 근거 원문: “본 연구의 제한점으로는 첫째, ACL 손상 후에 수술 후 재활
+치료 프로그램의 참여 여부를 조사하지 않았다는 것이다.”
+- 재활 프로그램 참여 여부는 스포츠 복귀 시점과 복귀 이후 무릎 기능에 영향을 줄 수 있으므로 제한점이 된다. _(근거: PAGE 6, 고찰)_
+  - 근거 원문: “이는
+복귀 시점과 복귀 이후 무릎관절의 전반적 기능에 영향을 미칠
+수 있기 때문에 본 연구의 제한점이라 하겠다.”
+
+## 생각해볼 내용
+
+- 스포츠에 성공적으로 복귀했더라도 환측 근력 결손율이 높은 대상자는 재부상 위험이 크므로 지속적인 관리가 요구된다. _(근거: PAGE 5, 고찰)_
+  - 근거 원문: “복귀 이후 결손율이 높은 대상자들은 ACL
+재부상 위험이 높기 때문에, 환측 관절의 근력을 회복하기 위해
+지속적인 관리가 필요할 것으로 생각된다.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 기존 하지 평가 프로토콜(LEAP)은 무릎관절을 다방면으로 평가하지만, 재부상 위험 요인인 건측과 환측 간의 불균형(비대칭)을 제시하지 않아 스포츠 복귀 시점 결정에 제한이 있다. _(근거: PAGE 2, 서론)_
+  - 근거 원문: “이러한 LEAP는 다양한 측면으
+로 무릎관절을 평가하였다는 점에서 의의가 있으나, ACL 재부상
+위험요인으로 알려져 있는 건측과 환측 사이의 불균형에 대해
+제시하지 않았기 때문에 명확한 스포츠 복귀 시점의 제시에 제한
+점이 있을 것으로 판단된다.”
+
+## 이 연구의 해결 방식과 기여
+
+- 성공적으로 복귀한 환자들을 대상으로 IKDC 설문지와 LEAP를 사용해 주관적/객관적 무릎 기능을 평가하여 복귀 기준을 마련하고, 건측과 환측 비교를 통해 잠재적 재부상 위험성을 검사하였다. _(근거: PAGE 5, 고찰)_
+  - 근거 원문: “본 연구는 성공적으로 일상생활 및 스포츠로 복귀한 대상자들
+에게 IKDC 설문지와 LEAP를 이용하여 주관적 및 객관적 무릎관
+절 기능을 평가함으로써 스포츠로 복귀할 수 있는 기준을 마련하
+고, 건측과 환측 관절 간 비교를 통해 잠재적 재부상 위험성을
+검사하기 위한 목적으로 수행되었다.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. ACLR 후 무릎관절 신전 근력 약화
+
+- 원문 발췌: “특히 무릎관절
+의 신전 근력은 ACLR 이후 수 년까지 약화되어
+19
+일상생활과
+스포츠 활동을 제한하고 전반적인 삶의 질에 부정적 영향을 미치
+기 때문에, 이에 대한 평가의 중요성이 강조되었다.”
+- 한국어 번역: 특히 무릎관절의 신전 근력은 ACLR 이후 수 년까지 약화되어 일상생활과 스포츠 활동을 제한하고 전반적인 삶의 질에 부정적 영향을 미치기 때문에, 이에 대한 평가의 중요성이 강조되었다.
+- 원문 위치: PAGE 5, 고찰
+- 원문 내 인용표기: 19
+- 해당 선행문헌: 19. Palmieri-Smith RM, Thomas AC, Wojtys EM. Maximizing
+quadriceps strength after ACL reconstruction. Clin Sports Med
+2008;27:405-24.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 전방십자인대 재건술 후 무릎 신전 근력이 장기간 약화되어 삶의 질과 일상/스포츠 활동에 부정적인 영향을 미친다는 주장의 근거로 활용할 수 있다. 2차 인용 시 원저자인 Palmieri-Smith 등의 연구를 확인해야 한다.
+
+### 2. ACLR 환자와 대조군 간 정적 균형 능력의 차이 부재
+
+- 원문 발췌: “본 연구의 결과와 마찬가지로 선행연구는
+ACLR 환자와 대조군 간 정적 균형 능력의 차이가 없다고 보고하
+였다26 .”
+- 한국어 번역: 본 연구의 결과와 마찬가지로 선행연구는 ACLR 환자와 대조군 간 정적 균형 능력의 차이가 없다고 보고하였다.
+- 원문 위치: PAGE 6, 고찰
+- 원문 내 인용표기: 26
+- 해당 선행문헌: 26. Mattacola CG, Perrin DH, Gansneder BM, Gieck JH, Saliba
+EN, McCue FC 3rd. Strength, functional outcome, and postural
+stability after anterior cruciate ligament reconstruction. J Athl
+Train 2002;37:262-8.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 전방십자인대 재건술 후 환자와 대조군 간 정적 균형 능력에 유의미한 차이가 없다는 주장의 근거로 활용할 수 있다. 2차 인용 시 원저자인 Mattacola 등의 연구를 확인해야 한다.
+
+---
+
+# Effect of 16 Weeks Functional Rehabilitation Exercise on Knee Function Recovery in Women’s Soccer Player after Anterior Cruciate Ligament Reconstruction
+
+장지웅, 김성수, & 김태수. (2011). 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향. 한국사회체육학회지, 45, 863-876.
+
+## 서지정보
+
+- 저자: 장지웅, 김성수, 김태수
+- 연도: 2011
+- 저널: 한국사회체육학회지
+- DOI: 확인 불가
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: false
+- 보행 데이터: false
+- Score 제시: false
+
+## 연구 목적
+
+- 본 연구는 전방십자인대 재건술(ACLR)을 시술받은 10명의 여성 축구선수를 대상으로 16주간 기능적인 재활운동 프로그램의 적합성을 판정하고, 스포츠 현장 복귀 전 재활 과정의 결과를 평가할 수 있는 방법들 사이의 연관성을 제시하는 것을 목적으로 한다. _(근거: PAGE 2, Ⅰ.서 론 1. 연구의 필요성 및 목적)_
+  - 근거 원문: “따라서본연구에서는ACLR을시술받은10명의여성축구선수를대상으로16주간의기능적인재활운동프로그램의적합성판정및스포츠현장으로의복귀전재활과정의결과를판단할수있는평가방법의연관성을제시하는데있다.”
+
+## 연구 설계와 대상
+
+- 스포츠 활동 중 사고로 인해 슬관절 ACL의 완전 파열을 진단받고, 관절경적 전방십자인대 재건술 중 동종건 이식을 실시한 여성 축구선수 10명을 대상으로 하였다. 대상자의 평균 나이는 19.9±4.1세, 신장은 164.1±4.4cm, 체중은 55.9±7.6kg이다. _(근거: PAGE 2, Ⅱ.연구방법 1. 연구대상)_
+  - 근거 원문: “본연구의대상은스포츠활동중사고로인하여이학적검사및자기공명영상(MRI)검사상슬관절ACL의완전파열을진단받아관절경적전방십자인대재건술(arthroscopicanteriorcruciateligamentreconstruction)중에동종건이식을실시한여성축구선수10명을대상으로선정하였다.신체적특징은다음과같다<표1>.”
+
+## 방법
+
+- 등속성 슬관절 근기능 검사는 등속성 근력검사기(Biodex System 3 pro)를 사용하여 무릎 신전 0°에서부터 무릎 굴곡 90° 범위 내에서 측정하였다. 근력 지표인 각속도 60°/sec에서 4회 1세트, 근파워 지표인 각속도 180°/sec에서 7회 1세트를 진행하였고 다리 무게가 미치는 영향을 배제하기 위해 Gravity effect torque를 측정하였다. _(근거: PAGE 2, Ⅱ.연구방법 2. 측정도구 및 방법 1) 슬관절의 등속성 근기능 검사)_
+  - 근거 원문: “등속성슬관절의근기능검사는Perrin(1993)의방법에따라슬관절우측과좌측의신근·굴근을등속성근력검사기(BiodexSystem3pro,biodexmedicalsystemInc,NY,USA)로측정하였다.세부사항은다음과같다.측정시의 무릎관절의 운동범위는 무릎신전 0°에서부터무릎굴곡90°까지로결정하였다.연구대상자의몸통과허리,대퇴부위와발목은가죽벨트(straps)를이용하여고정하였다.검사프로토콜은근력(musclestrength)의 지표인 각속도 60°/sec에서 4회 1세트를 실시하였다.60초휴식후근파워의지표각속도180°/sec에서7회1세트로실시하였다(조종현,박원하,1999).Gravityeffecttorque를측정하여다리의무게가근력에미치는영향을배제하였다.실제측정시검사자는모든실험참가자들이최대능력을발휘할수있도록큰목소리로oralencouragement를유도하였고각세트시마다30초의휴식을취하도록하였다.”
+- BESS를 이용한 정적 균형 감각 평가에서 신뢰도가 떨어진다는 선행연구를 바탕으로 두 발로 서는 자세를 배제한 4동작(평평한 바닥 한 발 서기, 평평한 바닥 일렬 서기, 불안정한 바닥 한 발 서기, 불안정한 바닥 일렬 서기)을 각각 1회씩 실시하여 점수화하였다. _(근거: PAGE 3, Ⅱ.연구방법 2. 측정도구 및 방법 3) Balance Error Scoring System(BESS))_
+  - 근거 원문: “본연구에서는두발서기는신뢰도가떨어진다는선행연구(Tamerah.,Michael,Robert,&Ted,2009)의연구결과를바탕으로하여두발로서는자세는배제하고나머지4동작을가지고평가항목으로삼았으며각각의동작을1회실시하였다.”
+- 동적 기능 상태 평가를 위해 Single-legged hop test(한 발로 한 번 뛰기, 한 발로 세 번 뛰기)를 각각 2회씩 실시하여 그중 최장 거리를 기록하였으며, 착지 후 2초 이상 균형을 유지하고 머물러 있어야 성공으로 간주하였다. _(근거: PAGE 3, Ⅱ.연구방법 2. 측정도구 및 방법 4) Single-legged hop test)_
+  - 근거 원문: “본연구에서는한발로한번뛰기,한발로세번뛰기를각각2회씩실시하여그중에멀리뛴거리를기록하였다.테스트전에실험참가자는각각의테스트동작에대해서건측다리로교육을실시하였으며,피로도를최소로하기위하여1회의테스트실시후에2분간의쉬는시간을가졌다.실험참가자는모든테스트를엄지발가락이시작선뒤에위치를하게하였으며뛴거리의측정또한엄지발가락이위치한거리를기록하였다.테스트도중에손의위치와시선의방향은제한을두지않았으며,신발은실험참가자가편한신발을신게하였다.또한착지후에2초이상머물러있어야성공으로간주하였으며,착지시에반대발이지면에닿을경우,상체가지면에닿을경우,균형을잃고넘어질경우는실패로간주하여실험참가자에게다시한번규칙설명후에다시시도하게하였다.”
+- 기능적 재활운동 프로그램은 수술 2주 후부터 주 5회, 1회당 3~4시간 동안 실시되었으며, 물리치료와 병행하지 않고 환자의 가동범위, 통증 및 붓기 정도, 운동 수행능력, 근력 결손 및 동측근기능비(HQR)를 고려하여 총 4단계로 나누어 진행되었다. _(근거: PAGE 4, Ⅱ.연구방법 3. 기능적 재활운동 프로그램)_
+  - 근거 원문: “본연구에서의기능적재활운동프로그램은여러선행논문들의연구결과를바탕으로총4단계로나누어진행하였다.재활운동프로그램은물리치료와병행되지않았으며수술후2주후부터주5회,1회당3-4시간으로하여실시하였다.각단계별로의진행조건은환자의슬관절가동범위(ROM)의변화,통증및붓기정도,기간 등을 고려하였으며, 운동 수행능력, 근력의 건·환측과동측근기능비(Hamstrings/QuadricepsRatio,HQR)등을고려하였다.각재활운동단계로의이동은아래의각단계의목표가충족될때이루어졌다.”
+
+## 핵심 결과
+
+- 16주간의 재활운동 프로그램을 적용한 결과, 환측 슬관절 신전근의 근력(60°/sec)과 근파워(180°/sec) 관련 대다수의 변인이 유의하게 증가하였다. _(근거: PAGE 10, Ⅴ.결론및제언)_
+  - 근거 원문: “첫째,16주간의재활운동을통하여근력을표지하는60°/sec과근파워를표지하는180°/sec의대다수의변인에서유의한증가를가져왔다.”
+- 16주간의 재활운동 프로그램을 적용한 후 환측과 건측 모두에서 Single hop 및 Triple hop for distance 비거리가 유의하게 증가하였다. _(근거: PAGE 10, Ⅴ.결론및제언)_
+  - 근거 원문: “둘째,16주간의재활운동을통하여환측과건측모두에서Singlehopfordistancesingle,triplehopfordistance가증가하는것으로나타났다.”
+- 16주간의 재활운동 프로그램을 진행한 후 60° 및 180° 신근결손률과 BESS 점수는 유의하게 감소하였으며, Lysholm 슬관절 기능검사 점수는 유의하게 증가하였다. _(근거: PAGE 10, Ⅴ.결론및제언)_
+  - 근거 원문: “셋째,16주간의재활운동을통하여60°신근결손률,180°신근결손률,및BESS에서유의하게감소한반면에슬관절기능검사에서는유의하게증가하였다.”
+- 고속부하인 180deg/sec에서 등속성 굴곡근 측정 결과, 시점에 따른 집단 간 비교와 집단 내 비교 모두에서 유의한 차이가 관찰되지 않았다. _(근거: PAGE 6, Ⅲ.결 과 2. 등속성 각속도에 따른 굴곡근의 환측과 건측 변화)_
+  - 근거 원문: “<표4>에서제시한바와같이고속부하인180deg/sec에서측정시점에따른집단간비교와집단내결과에서유의한차이가없는것으로나타났다.”
+
+## 저자 결론
+
+- 본 연구에서 적용된 16주간의 기능적인 재활운동 프로그램은 전방십자인대 재건술 후 여성 축구선수들의 슬관절 기능 회복에 긍정적인 효과가 있어, 기능 회복을 유도하는 데 매우 적합한 재활 프로그램이라고 결론지을 수 있다. _(근거: PAGE 10, Ⅴ.결론및제언)_
+  - 근거 원문: “이상의결과들을종합하여볼때,본연구에서수행된16주간의기능적인재활운동프로그램은ACLR후여성축구선수들의기능적인회복에긍정적인효과가있는것으로밝혀졌다.따라서ACLR후여성축구선수들의슬관절기능회복을위한매우적합한운동재활프로그램으로생각된다.”
+
+## 연구의 한계
+
+- 확인된 내용 없음
+
+## 생각해볼 내용
+
+- 본 연구는 대조군이 없고 표본 크기가 10명으로 제한적이나, 전방십자인대 재건술을 받은 여성 축구선수를 대상으로 16주간 추적 관찰하여 등속성 신전근력과 홉 테스트 등에서 유의미한 기능 회복을 입증하였다. _(근거: PAGE 2, Ⅱ.연구방법 1. 연구대상)_
+  - 근거 원문: “본연구의대상은스포츠활동중사고로인하여이학적검사및자기공명영상(MRI)검사상슬관절ACL의완전파열을진단받아관절경적전방십자인대재건술(arthroscopicanteriorcruciateligamentreconstruction)중에동종건이식을실시한여성축구선수10명을대상으로선정하였다.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 선행 연구들은 주로 일반인이나 남성을 대상으로 하였고 스포츠 종목의 고유한 특성을 배제하였으며, 단일한 운동방법 적용이나 포괄적인 근기능 변화에만 치중하여 세부적인 근기능 및 기능적 평가 자료가 미흡했고, 특히 스포츠 현장 복귀 전환기인 12주에서 16주 사이의 분석이 부족했다. _(근거: PAGE 2, Ⅰ.서 론 1. 연구의 필요성 및 목적)_
+  - 근거 원문: “그러나선행연구들에서는스포츠선수보다는일반인들을,여성보다는남성을,또한스포츠종목이내재하고있는특성을고려하지않고연구대상자를선별하는경우가많았다.또한기능적인운동방법의적용보다는단일운동방법에주안점을두거나전반적인근기능의변화에대한결과만있을뿐세부적인근기능,전반적인기능의변화에대한연구결과들이없었다.마지막으로12주까지의변화에중점을두고연구되었으며경쟁적인스포츠활동으로의복귀시점이될수있는12주에서16주까지의연구는부족한실정이다.”
+
+## 이 연구의 해결 방식과 기여
+
+- 본 연구는 전방십자인대 재건술 후 스포츠 현장 복귀를 앞둔 여성 축구선수들에게 적용 가능한 기능적인 재활운동 프로그램을 제안하였으며, 이는 일반 청소년 및 성인 여성들의 스포츠 활동 중 발생할 수 있는 전방십자인대 손상 예방 교육 프로그램으로의 확장 및 활용 가치를 가진다. _(근거: PAGE 10, Ⅳ.논 의)_
+  - 근거 원문: “따라서본연구결과는ACLR후여성축구선수들에게적합한재활운동프로그램을제시할수있으리라생각된다.또한청소년을비롯한성인여성들이스포츠활동시에경험할수있는ACL손상을예방할수있는프로그램으로도활용될수있으리라생각된다.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 영국의 스포츠 손상 중 하지 및 무릎 손상과 축구의 기여 비율
+
+- 원문 발췌: “축구의종주국이라고할수있는영국의경우,모든운동손상의73%가하지손상이며그중29%가무릎손상으로나타났으며스포츠종목중에서축구로인한운동손상이전체운동손상의10%를차지한다(Murray,Murray,MacKenzie,&Coleman 2005).”
+- 한국어 번역: 축구의 종주국이라고 할 수 있는 영국의 경우, 모든 운동 손상의 73%가 하지 손상이며 그 중 29%가 무릎 손상으로 나타났으며 스포츠 종목 중에서 축구로 인한 운동 손상이 전체 운동 손상의 10%를 차지한다.
+- 원문 위치: PAGE 1, Ⅰ.서 론 1. 연구의 필요성 및 목적
+- 원문 내 인용표기: (Murray,Murray,MacKenzie,&Coleman 2005)
+- 해당 선행문헌: Murray, I. R., Murray, S.A., MacKenzie, K., & Coleman, S.
+(2005).Howevidencebasedisthemanagementoftwocom-
+monsportsinjuriesinasportsinjuryclinic?,BrJSportsMed.,
+39.912-916.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 스포츠 활동 중 발생하는 전체 부상 가운데 하지 및 슬관절 부상의 비율과 축구 종목의 높은 손상 기여도를 인용하고자 할 때 근거로 활용할 수 있다.
+
+### 2. 성별에 따른 전방십자인대(ACL)의 구조적 특성 차이
+
+- 원문 발췌: “또한십자인대자체의구조적인차이로,남성에비하여여성의ACL은길이,교차-부분의영역,용적,질량이작은것으로나타났다(Chandrashekar,Slauterbeck,&Hashemi,2005).”
+- 한국어 번역: 또한 십자인대 자체의 구조적인 차이로 인해, 남성에 비해 여성의 전방십자인대(ACL)는 길이, 단면적, 용적, 질량이 작은 것으로 나타났다.
+- 원문 위치: PAGE 1, Ⅰ.서 론 1. 연구의 필요성 및 목적
+- 원문 내 인용표기: (Chandrashekar,Slauterbeck,&Hashemi,2005)
+- 해당 선행문헌: Chandrashekar,N.,Slauterbeck,J.,&Hashemi,J.(2005).Sex-
+baseddifferencesintheanthropometriccharacteristicsofthe
+anterior cruciate ligament and its relation to intercondylar
+notchgeometry.Am J Sports Med., 33,1492–1498.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 여성 축구선수가 남성에 비해 전방십자인대 파열 확률이 높은 해부학적 및 구조적 원인을 서술할 때 인용 근거로 적합하다.
+
+### 3. 전방십자인대 재건술 후 조기 가동범위 회복 운동의 이점
+
+- 원문 발췌: “ACLR후조기의관절가동범위회복운동은통증감소,슬개대퇴관절(patellofemoraljoint)합병증의예방,대퇴사두근(Quadriceps)의위축(artrophy)과관절섬유화(arthrofibrosis)의예방,보행형태(gaitpattern)의개선에효과적이다.”
+- 한국어 번역: 전방십자인대 재건술(ACLR) 후 조기의 관절가동범위 회복 운동은 통증 감소, 슬개대퇴관절 합병증 예방, 대퇴사두근의 위축과 관절섬유화 예방, 보행 형태 개선에 효과적이다.
+- 원문 위치: PAGE 5, Ⅱ.연구방법 3. 기능적 재활운동 프로그램 1) 1단계(Phase 1)
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: uncited_author_claim
+- 활용 맥락과 주의: 전방십자인대 재건술 수술 직후 조기 관절가동범위(ROM) 운동의 다각적 이점과 정당성을 뒷받침하고자 할 때 논거로 사용할 수 있다.
+
+### 4. 16주간 기능적 재활운동 후 환측 슬관절 신전근의 근력 및 근파워 개선
+
+- 원문 발췌: “첫째,16주간의재활운동을통하여근력을표지하는60°/sec과근파워를표지하는180°/sec의대다수의변인에서유의한증가를가져왔다.”
+- 한국어 번역: 첫째, 16주간의 재활운동을 통해 근력을 나타내는 60°/sec과 근파워를 나타내는 180°/sec의 대다수 변인에서 유의한 증가를 가져왔다.
+- 원문 위치: PAGE 10, Ⅴ.결론및제언
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 본 연구의 핵심 규명 결과로, 16주간의 체계적인 재활 프로토콜이 전방십자인대 환측의 등속성 신전근 성능을 유의미하게 정상화 및 회복시켰음을 나타내는 근거 자료로 활용될 수 있다.
+
+---
+
+# THE DEVELOPMENT OF A NORMATIVE GAIT DATABASE
+
+Chester, V. L., Tingley, M., & Biden, E. N. (확인 불가). The Development of a Normative Gait Database. Institute of Biomedical Engineering, University of New Brunswick.
+
+## 서지정보
+
+- 저자: Chester, V. L., Tingley, M., and Biden, E. N.
+- 연도: 확인 불가
+- 저널: 확인 불가
+- DOI: 확인 불가
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/The Development of a Normative Gait Database.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 표준 보행 데이터베이스의 개발 (The Development of a Normative Gait Database)
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: true
+
+## 연구 목적
+
+- 뉴브런즈윅 대학교 생체의학공학 연구소(IBME)를 위한 자체 표준 데이터베이스를 개발하여, 동일한 임상의, 장비, 마커 시스템, 데이터 처리 기술을 바탕으로 표준 데이터와 환자 데이터를 신뢰성 있게 비교하고자 함. _(근거: PAGE 1, INTRODUCTION)_
+  - 근거 원문: “the objective of this
+study was to develop a normative database for the
+Institute of Biomedical Engineering (IBME) at the
+University of New Brunswick. In doing so, patient
+data can be compared to normative data obtained by
+the same clinician, equipment, marker systems, and
+data processing techniques. As a result, more reliable
+comparisons of data sets can be achieved.”
+
+## 연구 설계와 대상
+
+- 연구 부서 안내문과 캠퍼스 및 보육원 게시판을 통해 1~13세 아동 58명을 모집하고 학부모 동의를 취득함. _(근거: PAGE 1, METHOD - Subjects)_
+  - 근거 원문: “Fifty-eight
+children aged 1-13 years old were
+recruited from the Fredericton area by distributing
+research bulletins around the University of New
+Brunswick campus and local daycare centres.
+Parental consent was obtained prior to each child’s
+participation in the study.”
+
+## 방법
+
+- 6대의 카메라 Vicon 512 모션 캡처 시스템을 사용하여 60Hz 속도로 반사 마커의 3차원 궤적을 추적하고, 보행 통로에 내장된 두 개의 힘판을 통해 3차원 지면 반력과 모멘트를 수집함. _(근거: PAGE 1, METHOD - Instrumentation/Apparatus)_
+  - 근거 원문: “A Vicon 512 motion capture system (Oxford Metrics
+Ltd.) was employed to track the three-dimensional
+trajectories of reflective markers placed on the
+subjects’ skin at a sampling frequency of 60 Hz. In
+addition, two force plates (Kistler 9281B21 and
+AMTI BP5918), collected the three-dimensional
+ground reaction forces and moments during each
+gait cycle.”
+- 정상 보행 주기와 성공적인 힘판 접지 기준에 따라 보행 평가 시행을 선정하고, 관절 각도는 오일러 각과 투영 각의 두 가지 다른 방법으로 처리함. _(근거: PAGE 2, METHOD - Data Analysis)_
+  - 근거 원문: “From the selected
+trials, cadence, velocity, and percent of cycle spent in
+single stance were calculated for each gait cycle. The
+single gait cycle, which most closely approximated
+the mean of all gait cycles on these three measures,
+was selected as the final trial for analysis. Joint
+angles were then processed using two different
+methods: 1) Euler angles, and 2) projected angles.”
+- 내장 좌표계에서 계산된 선속도, 각속도, 가속도는 5점 도함수를 이용해 구했으며, 6Hz 저역 통과 버터워스 필터로 필터링함. _(근거: PAGE 2, METHOD - Euler Method)_
+  - 근거 원문: “The required absolute linear and angular
+velocities and accelerations were calculated from the
+embedded coordinate systems using a five-point
+derivative. These data were filtered using a 6 Hz
+low-pass Butterworth filter.”
+
+## 핵심 결과
+
+- 3~13세 아동의 71개 보행 주기에 대해 샌디에이고 평균 표준치 기준으로 분류한 결과 49%가 이상 또는 비정상으로 분류됨. _(근거: PAGE 3, RESULTS)_
+  - 근거 원문: “The
+classification of IBME’s kinematic data for
+children aged 3-13 years, based on San Diego mean
+normative values, resulted in 49% of cycles being
+classified as unusual or abnormal.”
+- 분류기를 IBME 표준 데이터로 재보정하였을 때, 새로운 지수는 94%의 보행 주기를 정상으로 분류하였으며 3세 미만 아동의 미성숙 보행 패턴을 80% 감지해 냄. _(근거: PAGE 3, RESULTS)_
+  - 근거 원문: “However, when
+the statistical classifier was recalibrated using the
+IBME normative data, the new index gave results
+similar to those of Tingley et al: the score behaved
+like an F11,61 statistic for the training data, classifying
+94% of cycles as normal. Further testing using the
+gait patterns of younger children showed that the
+classifier was also capable of detecting 80% of
+immature (i.e. abnormal) gait patterns.”
+- 각 실험실 간의 시상면 관절 각도 변위 곡선의 공변량 구조 및 평균 각도 패턴을 비교하는 두 가지 통계 테스트 모두 유의수준이 매우 높게 나타남 (p=0.000). _(근거: PAGE 3, RESULTS)_
+  - 근거 원문: “Both tests
+yielded highly significant P-values (p=0.000).”
+
+## 저자 결론
+
+- 3차원 오일러 각을 사용하는 보행 분석은 동일한 알고리즘을 사용하여 산출된 표준 데이터를 기준으로 삼아야 하며, 보행 정상성을 평가하는 통계 분류기도 최신 데이터베이스로 재보정되어야 함. _(근거: PAGE 4, CONCLUSION)_
+  - 근거 원문: “Gait analyses using three-dimensional Euler angles
+should refer to normative data developed using the
+same algorithms. In addition, statistical classifiers of
+gait normality should be recalibrated on more recent
+databases. Efforts to develop new and large
+normative databases with modern equipment and
+processing techniques are warranted.”
+
+## 연구의 한계
+
+- 확인된 내용 없음
+
+## 생각해볼 내용
+
+- 서로 다른 기술적 및 계산적 방식(Euler 대 Projected 각도 등)으로 생성된 데이터베이스는 동일 지표에서도 편차를 보이기 때문에, 외부 표준 보행 데이터베이스를 오용할 경우 오진이 발생할 수 있음을 나타냄. _(근거: PAGE 3, DISCUSSION)_
+  - 근거 원문: “It is
+possible that a patient’s gait data could be incorrectly
+diagnosed as abnormal using normative data from
+other labs. The results of this study suggest that
+databases developed using different technological
+and computational methods will show different
+normative values.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 마커 셋팅, 데이터 처리 방식, 임상의의 숙련도 차이 및 모션 캡처 장비 기술 수준 차이로 인해 각 실험실 간에 수집된 표준 보행 데이터를 일대일로 비교하기가 어려움. _(근거: PAGE 1, INTRODUCTION)_
+  - 근거 원문: “However, it is often difficult to
+compare data across labs due to differences in marker
+sets, data processing techniques, and reliability of the
+clinician. As a result, caution must be exercised
+when comparing patient data to normative results
+obtained from other labs. Further difficulty in
+comparing patient data to normative data sets is due
+to advances in computer technology which have
+dramatically improved motion analysis systems and
+data processing capability over the last decade.”
+
+## 이 연구의 해결 방식과 기여
+
+- 뉴브런즈윅 대학교 생체의학공학 연구소(IBME)의 마커 시스템, 계측기, 동일한 데이터 처리 기법을 이용해 표준 보행 데이터베이스를 수집 및 제공하여 신뢰할 수 있는 환자 데이터 비교 기준을 마련함. _(근거: PAGE 1, INTRODUCTION)_
+  - 근거 원문: “the objective of this
+study was to develop a normative database for the
+Institute of Biomedical Engineering (IBME) at the
+University of New Brunswick. In doing so, patient
+data can be compared to normative data obtained by
+the same clinician, equipment, marker systems, and
+data processing techniques. As a result, more reliable
+comparisons of data sets can be achieved.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 보행 분석의 주요 목적
+
+- 원문 발췌: “One of the main objectives of gait
+analysis is to identify deviations in a patient’s gait
+from ‘normal’ movement patterns. The underlying
+causes of these abnormal movement patterns are then
+identified and treatment recommendations are
+formulated (Davis, 1997).”
+- 한국어 번역: 보행 분석의 주요 목적 중 하나는 환자의 보행이 '정상' 운동 패턴에서 벗어나는 편차를 식별하는 것이다. 그런 다음 이러한 비정상적인 운동 패턴의 근본 원인을 찾아내고 치료 권장 사항을 수립한다.
+- 원문 위치: PAGE 1, INTRODUCTION
+- 원문 내 인용표기: (Davis, 1997)
+- 해당 선행문헌: Davis, R. B. (1997). Reflections on clinical gait analysis. Journal
+of Electromyography and Kinesiology, 7 (4), p. 251-257.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 임상 보행 분석을 수행하는 근본적인 목표와 치료 계획 도출의 논리적 배경을 서술할 때 인용할 수 있음.
+
+### 2. 관절 시상면 각도의 일관성
+
+- 원문 발췌: “sagittal hip, knee, and
+ankle joint angles tend
+to demonstrate greater consistency across labs than
+smaller rotations in other planes (Biden et al., 1987).”
+- 한국어 번역: 시상면에서의 엉덩관절, 무릎관절, 발목관절 각도는 다른 면에서의 더 작은 회전들에 비해 실험실 간에 더 큰 일관성을 보이는 경향이 있다.
+- 원문 위치: PAGE 3, METHOD - Statistical Analysis
+- 원문 내 인용표기: (Biden et al., 1987)
+- 해당 선행문헌: Biden, E.N., Olshen, R.A., Sutherland, D.H., Gage, J., & Kadaba,
+M. (1987). Comparison of gait data from multiple labs.
+Transactions of the Orthopaedic Research Society, January.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 다른 보행 평면에 비해 시상면 관절 각도 측정값이 여러 실험실 간에도 신뢰성 있게 비교하기 용이함을 뒷받침하는 근거로 사용 가능.
+
+### 3. 각도 계산 방식에 따른 데이터베이스 유사도
+
+- 원문 발췌: “IBME’s normative
+data showed more similarity to the San Diego values
+when joint angles were calculated as projected angles
+instead of Euler angles.”
+- 한국어 번역: 관절 각도를 오일러 각 대신 투영 각으로 계산했을 때, IBME의 표준 데이터가 샌디에이고 값들과 더 유사한 것으로 나타났다.
+- 원문 위치: PAGE 4, DISCUSSION
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 보행 데이터베이스 구축 및 각도 변환 시 오일러 각과 평면 투영 각 중 어떤 알고리즘을 사용하느냐에 따라 정량적 결과가 달라진다는 점의 근거로 사용 가능.
+
+---
+
+# Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study on early post-stroke individuals
+
+Shin, S. Y., Lee, R. K., Spicer, P., & Sulzer, J. (2020). Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study on early post-stroke individuals. Journal of Biomechanics, 109761. https://doi.org/10.1016/j.jbiomech.2020.109761
+
+## 서지정보
+
+- 저자: Sung Yul Shin, Robert K. Lee, Patrick Spicer, James Sulzer
+- 연도: 2020
+- 저널: Journal of Biomechanics
+- DOI: 10.1016/j.jbiomech.2020.109761
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Does kinematic gait quality improve with functional gait recovery - A longitudinal pilot study on early post-stroke individuals.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 기능적 보행 회복에 따라 운동학적 보행 질이 개선되는가? 초기 뇌졸중 후 환자를 대상으로 한 종단적 예비 연구
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: true
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 초기 회복 과정에서 보행 기능(속도)에 따라 보행의 질이 개선되는지 조사하는 것. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “The objective of this observational
+pilot study is to examine whether the gait quality improves with gait function (i.e. speed) over the course
+of early recovery.”
+
+## 연구 설계와 대상
+
+- 1개월 미만의 아급성 뇌졸중 환자 9명을 모집하여 최종적으로 6명의 환자를 12주간의 초기 회복 동안 총 56회의 물리치료 세션에서 종단적으로 관찰하였다. _(근거: PAGE 2, 2. Methods - 2.1. Participants)_
+  - 근거 원문: “We recruited nine individuals with subacute stroke (<1 month)
+to participate in this study approved by the University of Texas
+Institutional Review Board and St. David’s Medical Center, Austin,
+TX. Among nine patients, six individuals were longitudinally mon-
+itored for a total of 56 physical therapy sessions consisting of gait-
+related activity.”
+- 참가자들의 포함 기준은 MRI 기반의 허혈성 뇌경색 진단, 편마비, 병전 독립성, 손상 후 2주 이내 또는 물리치료사가 보행 훈련에 참여할 수 있다고 판단한 직후 등이다. _(근거: PAGE 2, 2. Methods - 2.1. Participants)_
+  - 근거 원문: “Inclusion criteria of this study were: ischemic cerebral infarction based on magnetic resonance imaging (MRI) data, hemiparesis, premorbidly independent, within two weeks following injury or as soon as able to participate in gait training determined by the physical therapist.”
+- 3명의 참가자는 제외되었는데, 2명은 퇴원 전에 걸을 수 없었고 1명은 기록 세션 전에 퇴원했기 때문이다. 분석에 포함된 3명도 12회 미만의 세션을 완료했다. _(근거: PAGE 2, 2. Methods - 2.1. Participants)_
+  - 근거 원문: “Three participants were excluded from the dataset because two of them were not able to walk before discharge and one discharged before the recording session. Three of the participants included in this analysis completed less than the full 12 recording sessions.”
+
+## 방법
+
+- 7개의 상용 관성 측정 장치(IMU) 센서를 환자의 하체에 부착하고 60 Hz의 샘플링 속도로 3차원 분절 방향 및 관절 각도 궤적을 측정하였다. _(근거: PAGE 2, 2. Methods - 2.2. Experimental setup and protocol)_
+  - 근거 원문: “For each session, we attached seven commercial inertial measurement
+unit (IMU) motion sensors (XSens, Enschede, The Netherlands) on
+the pelvis and bilaterally on thighs, shanks and feet using custom-
+made elastic bands.”
+- 시공간적, 사지 및 관절 운동학적 매개변수를 결합한 보행 비대칭 지표로 마할라노비스 거리를 이용한 CGAM을 활용했다. _(근거: PAGE 3, 2. Methods - 2.4. Gait asymmetry measures - 2.4.1. Overall gait asymmetry)_
+  - 근거 원문: “Here we combined all the aforementioned gait parameters
+into one asymmetry measure by employing the combined gait
+asymmetry metric (CGAM) (Ramakrishnan et al., 2018). The CGAM
+combines different asymmetry parameters using the Mahalanobis
+distance.”
+- 보행 속도를 기능적 보행 회복을 대표하는 주요 결과 지표로 선택했다. _(근거: PAGE 3, 2. Methods - 2.3. Gait features and outcomes)_
+  - 근거 원문: “We selected gait speed as the main outcome measure representative of functional gait recovery (Holleran et al., 2014; Hornby et al., 2016).”
+
+## 핵심 결과
+
+- 전반적인 보행 대칭성은 걷기 속도와 함께 개선되었으나 사지와 관절 운동학적 매개변수는 최대 회복 수준에서도 대칭 기준치와 비교하여 여전히 비대칭으로 남아있었다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “We observed that overall gait symmetry improved with walking speed, but limb and joint kine-
+matic parameters remained asymmetric at the maximum level of recovery (both p < 0.01).”
+- 손상측에서는 사지 운동학적 매개변수(R2 = 41.9%)가 관절 운동학적 매개변수(R2 = 33.1%)보다 기능적 보행 회복(보행 속도)과 더 강하게 연관되었다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “We also found
+that limb kinematic parameters (R2
+= 41.9%) of the impaired side was preferentially associated with func-
+tional gait recovery over joint kinematics (R2
+= 33.1%).”
+- 개별 매개변수의 비대칭도 조사 결과 보폭(SL), 다리 신전각(LEA), 엉덩관절 굴곡/신전(Hip Flex/Ex)의 비대칭은 속도에 따라 유의하게 개선되었다. _(근거: PAGE 4, 3. Results - 3.2. Asymmetry of individual gait parameters)_
+  - 근거 원문: “The results revealed that the asymmetry improved
+significantly at SL (b = 0.33, p < 0.05), LEA (b = 0.65, p < 0.01),
+and hip flex/extension (b = 0.15, p < 0.05).”
+
+## 저자 결론
+
+- 뇌졸중 환자가 보행 속도와 시공간적 대칭성과 같은 전형적인 회복 지표를 달성했음에도 불구하고, 진정한 보행 회복(true recovery)에는 도달하지 못했다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “These data suggest that our pilot cohort did not
+achieve ‘‘true” gait recovery despite achieving typical measures of recovery in gait speed and spatiotem-
+poral symmetry.”
+
+## 연구의 한계
+
+- 본 예비 연구는 한 달 이내에 걸을 수 있는 제한된 범위의 장애를 가진 6명의 뇌졸중 환자라는 소규모 표본 크기로 제한되었으며, 단일 병원에서 수행되어 결과를 일반화하기 어렵다. _(근거: PAGE 6, 4. Discussion)_
+  - 근거 원문: “This study was limited to a small sam-
+ple size of six patients with a restricted range of impairments (only
+individuals who were able to walk within one month post-injury).”
+- IMU의 일반적인 단점인 자기 왜곡이나 똑바로 선 자세에서의 부적절한 캘리브레이션 오류가 결과에 영향을 미쳤을 수 있다. _(근거: PAGE 6, 4. Discussion)_
+  - 근거 원문: “Typical drawbacks of IMUs, magnetic distortion
+(De Vries et al., 2009) and improper calibration in a straight stand-
+ing posture, may have influenced our results.”
+
+## 생각해볼 내용
+
+- 연구의 결과는 소규모 표본으로 인해 일반화하기 어려우며 더 큰 규모의 연구가 필요하다. _(근거: PAGE 6, 4. Discussion)_
+  - 근거 원문: “Thus, we cannot generalize these results to a
+larger population of stroke patients. However, our data show the
+feasibility of unobtrusively recording gait during therapy longitu-
+dinally and offer a framework for how it can help improve our
+understanding of recovery.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 임상적 보행 평가는 대부분 보행 속도 등 기능적 능력에 치중되어 대칭성 등의 보행 질 정보를 간과하며, 기존 운동학적 손상 분석은 주로 만성 환자의 단기 측정에 그쳐 아급성기(subacute) 단계의 운동학 변화 정보가 부족하다. _(근거: PAGE 1, 1. Introduction)_
+  - 근거 원문: “While these studies have attempted to char-
+acterize disturbances in joint kinematics after stroke, the majority
+report instantaneous or short-term measurements on chronic
+patients (Kim and Eng, 2004; Woolley, 2001). There is currently a
+lack of information regarding how these joint kinematics change
+over the course of recovery, especially the critical subacute phase
+(<3 months).”
+- 동물의 경우 보행의 협응 및 안정성을 보존하는 기전이 연구되었으나, 인간의 초기 회복 과정에서 시공간적 특성 및 관절/사지 운동학이 어떻게 변화하고 보행 기능과 연관되는지에 대한 증거는 없다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “In humans, however, no evidence
+exists to show how spatiotemporal characteristics, along with limb
+or joint kinematics, change over the course of early recovery and
+whether they correspond with gait function.”
+
+## 이 연구의 해결 방식과 기여
+
+- 착용형 관성 센서(IMU) 모션 캡처 시스템을 이용해 임상 환경에서 12주간 보행 운동학을 종단적으로 측정함으로써, 아급성기 뇌졸중 환자의 초기 회복 과정 중 보행 질의 변화를 최초로 규명하였다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “We overcame this problem by using
+portable, unobtrusive inertial motion capture to measure gait kine-
+matics over the initial recovery stage of 12 weeks.”
+- 이 예비 연구는 뇌졸중 후 초기 회복 과정에서 보행의 질적 저하를 새롭게 규명하고, 보행 회복의 내재적 운동학적 메커니즘을 묘사하며 더 효과적인 치료 요법에 대한 통찰을 제공한다. _(근거: PAGE 2, 1. Introduction)_
+  - 근거 원문: “This preliminary study
+describes a novel characterization of dis-
+turbances in gait quality during the early recovery process after
+stroke. The information from this study details the importance of
+gait quality, it helps delineate underlying kinematic mechanisms
+of gait recovery, and provides insight for more effective therapy
+regimens.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 비대칭 보행 환자의 대사 에너지 소모량 증가
+
+- 원문 발췌: “For instance, patients with asymmetric gait have
+shown greater metabolic energy expenditure from 50% to 67%
+more than that of body weight-matched healthy controls with
+same walking speed (Woolley, 2001).”
+- 한국어 번역: 예를 들어, 비대칭 보행을 하는 환자는 동일한 보행 속도를 가진 체중 매칭된 건강한 대조군보다 대사 에너지 소모량이 50%에서 67% 더 많은 것으로 나타났다 (Woolley, 2001).
+- 원문 위치: PAGE 1, 1. Introduction
+- 원문 내 인용표기: (Woolley, 2001)
+- 해당 선행문헌: Woolley, S.M., 2001. Characteristics of gait in hemiplegia. Top. Stroke Rehabil. 7, 1–
+18.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 비대칭 보행이 환자의 에너지 소모를 심각하게 증가시킨다는 주장의 근거로 사용 가능하며, Woolley (2001)의 2차 인용에 주의해야 한다.
+
+### 2. 보행 속도 변화에 따른 시공간적, 사지 및 관절 대칭성의 변화
+
+- 원문 발췌: “The results indicated that
+the asymmetry improved significantly in spatiotemporal (b = 0.
+47, p<0.01) and limb kinematic parameters (b = 0.36, p<0.05)
+whereas joint kinematics (b = 0.25, p = 0.14) revealed an improv-
+ing trend.”
+- 한국어 번역: 결과에 따르면 시공간적(b = 0.47, p<0.01) 및 사지 운동학적 매개변수(b = 0.36, p<0.05)에서 비대칭성이 유의하게 개선된 반면, 관절 운동학(b = 0.25, p = 0.14)은 개선되는 경향을 보였다.
+- 원문 위치: PAGE 4, 3. Results - 3.1. Asymmetry of overall gait parameters
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 보행 속도 회복과 보행 질(시공간 및 사지 대칭성)의 유의한 개선 관계를 나타내는 자체 연구 결과다.
+
+### 3. 보행 기능 평가에 편중된 기존 임상 평가의 한계
+
+- 원문 발췌: “Typical clinical outcomes focus more on gait function than qual-
+ity (Hornby et al., 2016), resulting in very little knowledge of how
+gait quality develops over the course of recovery.”
+- 한국어 번역: 일반적인 임상 결과는 보행의 질보다 보행 기능에 더 초점을 맞추기 때문에 (Hornby et al., 2016), 회복 과정에서 보행의 질이 어떻게 발달하는지에 대한 지식이 거의 없다.
+- 원문 위치: PAGE 5, 4. Discussion
+- 원문 내 인용표기: (Hornby et al., 2016)
+- 해당 선행문헌: Hornby, T.G., Holleran, C.L., Hennessy, P.W., Leddy, A.L., Connolly, M., Camardo, J.,
+Woodward, J., Mahtani, G., Lovell, L., Roth, E.J., 2016. Variable intensive early
+walking poststroke (VIEWS): a randomized controlled trial. Neurorehabil.
+Neural Repair 30, 440–450. https://doi.org/10.1177/1545968315604396.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 기존 임상 연구가 보행 기능에만 초점을 맞추어 보행 질적 평가가 결여되었음을 지적하는 주장의 근거로 사용할 수 있다.
+
+### 4. 보행 비대칭성과 시공간적 비대칭성의 차이
+
+- 원문 발췌: “However, spatiotemporal asymmetry does not neces-
+sarily equate with asymmetry in other domains such as kinemat-
+ics.”
+- 한국어 번역: 그러나 시공간적 비대칭이 반드시 운동학 등 다른 영역의 비대칭과 일치하는 것은 아니다.
+- 원문 위치: PAGE 3, 2. Methods - 2.4. Gait asymmetry measures - 2.4.1. Overall gait asymmetry
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: uncited_author_claim
+- 활용 맥락과 주의: 시공간적 보행 분석만으로는 뇌졸중 환자의 전체적인 보행 질이나 운동학적 비대칭을 대변하기 어렵다는 논리를 지지하는 데 사용할 수 있다.
+
+---
+
+# Gait function improvements, using Cardiff Classifier, are related to patient‐reported function and pain following hip arthroplasty
+
+Biggs, P., Holsgaard‐Larsen, A., Holt, C. A., & Naili, J. E. (2022). Gait function improvements, using Cardiff Classifier, are related to patient‐reported function and pain following hip arthroplasty. Journal of Orthopaedic Research, 40(5), 1182–1193. https://doi.org/10.1002/jor.25149
+
+## 서지정보
+
+- 저자: Paul Biggs, Anders Holsgaard‐Larsen, Cathy A. Holt, Josefine E. Naili
+- 연도: 2022
+- 저널: Journal of Orthopaedic Research
+- DOI: 10.1002/jor.25149
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait function improvements, using Cardiff Classifier, are related to patient-reported function and pain following hip arthroplasty.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 카디프 분류기(Cardiff Classifier)를 이용한 보행 기능 개선은 고관절 전치환술 후 환자 보고 기능 및 통증과 관련이 있다
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 카디프 분류기로 정량화된 수술 전 보행 기능이 고관절 전치환술(THA) 1년 후 환자 보고 일상생활 동작 및 전반적인 보행 기능 개선을 예측할 수 있는지 평가하고자 하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study aimed to investigate whether preoperative gait function, quantified and summarized using the Cardiff Classifier, can predict improvements in postoperative patient‐reported activities of daily living, and overall gait function 1 year after total hip arthroplasty (THA).”
+- 수술 전후 보행 기능의 변화와 환자 보고 및 수행 기반 기능 변화 간의 관계를 규명하고자 하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “Secondly, to explore relationships between pre‐to‐post surgical change in gait function versus changes in patient‐reported and performance‐based function.”
+
+## 연구 설계와 대상
+
+- 고관절 전치환술 예정인 환자 32명과 비병리적 대조군 25명이 전향적 코호트 연구에 참여하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “Thirty‐two patients scheduled for THA and 25 nonpathological individuals were included in this prospective cohort study.”
+- 환자들은 THA 수술 전과 수술 후 1년에 보행 분석, 설문 조사 및 수행 능력 평가를 받았다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “Patients were evaluated before THA and 1 year postoperatively using 3D gait analysis, patient‐reported outcomes, and performance‐based tests.”
+- 건강한 대조군은 성별과 연령대에 맞춰 매칭되었다. _(근거: PAGE 4, 2.2 | Study participants)_
+  - 근거 원문: “The nonpathological group was matched to the hip OA group by gender and age strata across five age groups (Table 1).”
+
+## 방법
+
+- 3D 보행 분석 시 참가자들은 10m 통로를 스스로 선택한 속도로 맨발로 걸었다. _(근거: PAGE 4, 2.3 | Three‐dimensional gait analysis)_
+  - 근거 원문: “Study participants were instructed to walk barefoot at self‐selected speed along a 10‐m long pathway.”
+- 환자 보고 결과를 위해 모든 참가자는 고관절 장애 및 골관절염 결과 점수(HOOS) 설문지를 작성하였다. _(근거: PAGE 4, 2.4 | Patient‐reported function and pain)_
+  - 근거 원문: “All study participants completed the self‐administered patient‐reported outcome measure Hip Disability and Osteoarthritis Outcome Score (HOOS), a questionnaire divided into five separate subscales; Symptoms, Pain, Function in Activities of Daily Living, Function in Sport, and Recreation, and Hip‐related Quality of Life.”
+- 수행 기반 기능 평가로서 Timed Up and Go(TUG) 테스트는 일어서서 3m 왕복 보행 후 다시 앉는 시간을 측정했다. _(근거: PAGE 4, 2.5 | Performance‐based functional tests)_
+  - 근거 원문: “TheTimed Up and Go test was conducted by recording the time it takes the participant to rise from a chair, walk 3m at a self‐selected speed, turn 180°, and return to a seated position.”
+- 고관절 골관절염 환자들은 Hardinge 직접 외측 접근법을 사용하여 THA 수술을 받았다. _(근거: PAGE 4, 2.6 | Surgical technique and postoperative regimes)_
+  - 근거 원문: “Patients with hip OA received aTHA with a direct lateral approach as described by Hardinge.36”
+- 통계 분석은 MATLAB R2016b 및 IBM SPSS Statistics version 26을 사용했다. _(근거: PAGE 5, 2.8 | Statistical analysis)_
+  - 근거 원문: “Statistical analyses were performed using MATLAB R2016b and IBM SPSS Statistics version 26.”
+
+## 핵심 결과
+
+- 카디프 분류기는 leave-one-out 교차 검증에서 고관절 골관절염 환자와 대조군의 보행 패턴을 96.4%의 정확도로 분류했다. _(근거: PAGE 6, 3.1 | Classification of preoperative gait function and change after surgery)_
+  - 근거 원문: “The trained classifier had an accuracy of 96.4% (using leave one out cross‐validation) in distinguishing between gait patterns of individuals with hip OA and nonpathological individuals (Figure 3A).”
+- 수술 전 보행 기능, 연령, BMI 조합은 수술 후 보행 기능(Belief of OA 감소) 변화량 분산의 30%를 설명했다. _(근거: PAGE 7, 3.2 | Predictive value of preoperative gait function)_
+  - 근거 원문: “Preoperative gait function, age and BMI at baseline explained 30% of the total variance in change in gait function after THA (i.e., a reduction in Belief of OA) (Table 3).”
+- 수술 후 보행 기능 변화와 수행 기반 기능 평가 결과 변화 간에는 유의한 상관관계가 관찰되지 않았다. _(근거: PAGE 7, 3.3 | Relationship between change in gait function and change in patient‐reported and performance‐based function)_
+  - 근거 원문: “On the contrary, no correlations were found between change in gait function and change in any of the three performance‐based functional tests (Table 4).”
+
+## 저자 결론
+
+- 수술 전 보행 기능은 수술 후 임상 결과를 보통 수준으로 예측하며, 수술 후 보행 기능 향상은 기계적 수행력보다 환자가 주관적으로 인지하는 기능과 더 깊은 관련이 있다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “Clinical significance: Preoperative gait function predicts postsurgical function to a moderate degree, while improvements in gait function after surgery are more closely related to how patients perceive function than their maximal performance of functional tests.”
+- 수술 후 1년에 전반적인 보행 기능이 유의하게 향상되었으나 여전히 정상 대조군 대비 보행 패턴의 결함이 남아있었다. _(근거: PAGE 9, 5 | CONCLUSION)_
+  - 근거 원문: “At 1 year after THA surgery, overall gait function was significantly improved, indicated by a reduction in the Belief of OA value. However, gait pattern deficits were still present.”
+- 수술 후 보행 기능 개선은 기능적 작업의 한계 수행력보다 환자가 주관적으로 보고하는 통증 및 기능 상태와 밀접하게 관련된다. _(근거: PAGE 9, 5 | CONCLUSION)_
+  - 근거 원문: “These findings suggest that improvements in overall gait function after surgery are more closely related to how patients self‐report function and pain, rather than their maximal performance of functional tasks of various sorts.”
+
+## 연구의 한계
+
+- 본 연구의 표본 크기가 제한적이고 보행 보조기가 필요 없으며 BMI가 35 미만이고 하지 수술 이력이 없는 환자만 포함하여 모든 THA 환자에게 결과를 일반화하기 어렵다. _(근거: PAGE 9, 4 | DISCUSSION)_
+  - 근거 원문: “The sample size is relatively limited and the heterogeneity restricted as only patients who were able to walk 10 m repeatedly without use of a walking aid, had a BMI below 35, and had not undergone previous lower extremity surgery were considered for inclusion. Therefore, results cannot be generalized to all patients undergoingTHA surgery.”
+- 수술 후 재활 방식이 통제되거나 모니터링되지 않았으며, 추적 관찰이 단일 시점(1년 후)에서만 이루어졌다. _(근거: PAGE 9, 4 | DISCUSSION)_
+  - 근거 원문: “Within this study, postoperative rehabilitation was not monitored, and postoperative recovery was considered at a single time‐point.”
+- 데이터 차원 축소와 분류 기법을 사용하는 과정에서 과적합(over-fitting)의 위험이 발생할 수 있다. _(근거: PAGE 9, 4 | DISCUSSION)_
+  - 근거 원문: “The use of data reduction and classification techniques introduces the risk of over‐fitting, which could over‐estimate the accuracy of the classifier's ability to discriminate the biomechanical features related to severe hip OA.”
+
+## 생각해볼 내용
+
+- 3D 보행 분석은 고비용이 들고 시간이 많이 소요되어 일상적인 임상 진료 현장에 완전히 보급되기에는 실용적인 제약이 존재한다. _(근거: PAGE 9, 4 | DISCUSSION)_
+  - 근거 원문: “Finally, it should be noted that 3D gait analysis is a time‐consuming and costly method, not available everywhere.”
+- 카디프 분류기는 질병과 수술적 중재가 보행 패턴에 미치는 영향을 종합 지표화하여 환자와 의료진에게 직관적인 예상 결과를 제시할 수 있다는 임상적 유용성이 있다. _(근거: PAGE 9, 4 | DISCUSSION)_
+  - 근거 원문: “The clinical utility of the Cardiff Classifier lies in quantifying impact of disease and treatment on gait patterns to inform healthcare providers and patients on what can be expected in terms of change in overall gait patterns.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 기존의 개별적인 보행 변수 분석 방식은 끝없는 변수 개수로 인해 다중성 문제를 유발하며, 이는 위양성 결과를 낳을 위험이 있다. _(근거: PAGE 2, 1 | INTRODUCTION)_
+  - 근거 원문: “Moreover, such discoveries on discrete metrics may in part be false‐positive findings due to multiplicity of potential endless numbers of variables.16”
+- 기존에 제안된 보행 편차 지수(GDI)는 THA 수술 후 점수 변화가 없거나 미미하여 반응성이 떨어진다는 한계가 보고되었다. _(근거: PAGE 2, 1 | INTRODUCTION)_
+  - 근거 원문: “However, the responsiveness of the Gait Deviation Index in patients with hip OA has been questioned since no,21 or only small to moderate improvements in index scores22 were observed following THA.”
+- 고관절 골관절염 환자군을 대상으로 카디프 분류기를 적용하거나 이를 통해 THA 수술 예후를 예측하는 연구는 수행된 바 없었다. _(근거: PAGE 2, 1 | INTRODUCTION)_
+  - 근거 원문: “To date, application of the Cardiff Classifier in patients with hip OA, and whether it has any predictive value for post THA outcomes, remains unknown.”
+
+## 이 연구의 해결 방식과 기여
+
+- 카디프 분류기를 사용하여 복잡한 고관절 환자의 보행 데이터Interdependencies를 반영하는 단일 종합 지표를 정량화해 제시하였다. _(근거: PAGE 2, 1 | INTRODUCTION)_
+  - 근거 원문: “Thus, this study aims to (1) quantify and summarize overall gait function using the Cardiff Classifier, (2) evaluate whether this comprehensive gait measure can predict improvements in postoperative patient‐reported function and overall gait function 1 year after THA.”
+- 분류기를 훈련하기 전 피처 선택 과정을 개선하여 오버피팅의 위험을 최소화하려 노력하였다. _(근거: PAGE 4, 2.7.2 | Data reduction, raking, and selection of input features)_
+  - 근거 원문: “The present study makes improvements on previously published feature‐selection methods before the application of the Cardiff Classifier,23 to reduce the risk of over‐fitting.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 골관절염이 장애에 미치는 전 세계적 영향
+
+- 원문 발췌: “Osteoarthritis (OA) is one of the leading causes of years lost to disability worldwide, and one of the most common chronic diseases of the musculoskeletal system.1,2”
+- 한국어 번역: 골관절염(OA)은 전 세계적으로 장애로 인한 수명 손실의 주요 원인 중 하나이며, 근골격계의 가장 흔한 만성 질환 중 하나이다.
+- 원문 위치: PAGE 2, 1 | INTRODUCTION
+- 원문 내 인용표기: 1,2
+- 해당 선행문헌: 1. Pereira D, Peleteiro B, Araújo J, Branco J, Santos RA, Ramos E. The effect of osteoarthritis definition on prevalence and incidence estimates: a systematic review. Osteoarthritis Cartilage. 2011;19:1270‐1285.
+2. Cross M, Smith E, Hoy D, et al. The global burden of hip and knee osteoarthritis: estimates from the global burden of disease 2010 study. Ann Rheum Dis. 2014;73:1323‐1330.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 골관절염의 높은 유병률과 장애 유발 부담을 입증하기 위해 선행 배경 연구로 인용할 수 있다.
+
+### 2. 고관절 전치환술(THA)의 임상적 성공과 보급률
+
+- 원문 발췌: “Total hip arthroplasty (THA) is a well‐accepted and frequently used surgical intervention for severe hip OA, and is considered one of the most successful orthopedic procedures.10,11”
+- 한국어 번역: 고관절 전치환술(THA)은 중증 고관절 골관절염에 대해 널리 인정받고 빈번하게 사용되는 수술적 개입이며, 가장 성공적인 정형외과적 치료법 중 하나로 간주된다.
+- 원문 위치: PAGE 2, 1 | INTRODUCTION
+- 원문 내 인용표기: 10,11
+- 해당 선행문헌: 10. Herberts P, Malchau H. Long‐term registration has improved the quality of hip replacement—a review of the Swedish THR Register comparing 160,000 cases. Acta Orthop Scand. 2000;71:111‐121.
+11. Nilsdotter AK, Isaksson F. Patient relevant outcome 7 years after total hip replacement for OA—a prospective study. BMC Musculoskelet Disord. 2010;11:47.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 중증 골관절염 환자 대상 THA의 치료 효과성과 보급률을 소개하는 도입부 근거로 사용될 수 있다.
+
+### 3. 수술 전 보행 기능의 예후 예측 가치 및 인지 기능과의 관계
+
+- 원문 발췌: “Preoperative gait function predicts postsurgical function to a moderate degree, while improvements in gait function after surgery are more closely related to how patients perceive function than their maximal performance of functional tests.”
+- 한국어 번역: 수술 전 보행 기능은 수술 후 기능을 어느 정도 예측하며, 수술 후 보행 기능의 개선은 기능 테스트의 최대 수행 능력보다는 환자가 기능을 주관적으로 어떻게 인지하는지와 더욱 밀접한 관련이 있다.
+- 원문 위치: PAGE 1, Abstract
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 수술 후 보행 패턴 개선이 환자 스스로 체감하는 증상 완화(통증 및 주관적 삶의 질)와 동기화된다는 본 연구 자체의 논의적 결론을 지지하는 근거로 인용할 수 있다.
+
+---
+
+# The functional gait deviation index
+
+Minhas, S. K., Sangeux, M., Polak, J., & Carey, M. (2026). The functional gait deviation index. Journal of Applied Statistics, 53(3), 391–411. https://doi.org/10.1080/02664763.2025.2514150
+
+## 서지정보
+
+- 저자: Sajal Kaur Minhas, Morgan Sangeux, Julia Polak and Michelle Carey
+- 연도: 2026
+- 저널: Journal of Applied Statistics
+- DOI: 10.1080/02664763.2025.2514150
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/The functional gait deviation index.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 기능적 보행 편차 지수
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: true
+
+## 연구 목적
+
+- 방대하고 복잡한 보행 분석 데이터에서 환자의 보행 패턴이 건강한 대조군의 평균 프로파일로부터 이탈한 정도를 단일 숫자로 요약하여 정량화하는 지표를 제안하는 것이다. _(근거: PAGE 1, ABSTRACT)_
+  - 근거 원문: “Due to the quantity and complexity of the data, it is useful to calculate the amount by which a subject’s gait deviates from an average normal profile and to represent this deviation as a single number.”
+- 관절 및 평면별 보행 움직임의 고유한 부드러움과 관절 간의 상호 상관관계를 반영하여 보행 편차를 보다 정확히 평가하는 다변량 함수형 주성분 분석(MFPCA) 기반의 기능적 보행 편차 지수(FGDI)를 개발하는 것이다. _(근거: PAGE 1, ABSTRACT)_
+  - 근거 원문: “Utilizing a multivariate functional principal component analysis we propose the functional gait deviation index (FGDI). FGDI accounts for the intrinsic smoothness of the gait movement at each joint/plane and the potential co-variation between the joints.”
+
+## 연구 설계와 대상
+
+- 21명의 우수수형 특발성 파킨슨병(PD) 환자군(여성 5명, 남성 16명)과 42명의 성인 건강한 대조군(여성 18명, 남성 24명)을 대상으로 평가를 수행하였다. _(근거: PAGE 7, Section 3)_
+  - 근거 원문: “It includes data from 21 right-handed idiopathic PD individuals (5 females and 16 males), characterized by the following demographics: average age of 65 ± 10 years, average height of 166.5 ± 7.1cm, and average mass of 71.89 ± 12.37kg. Additionally, a healthy control dataset is available from [6], comprising 42 adults (18 females and 24 males).”
+- 18명의 일측성 대퇴부 절단 환자군(여성 3명, 남성 15명)을 분석에 포함하여 임상적 기능 수준인 K-Level(K2 대 K3)에 따라 나누어 평가하였다. _(근거: PAGE 10, Section 4)_
+  - 근거 원문: “This dataset includes 18 individuals with unilateral above-knee amputations, comprising 3 females and 15 males, with the following demographics: average age of 52 ± 16 years, height of 175.8 ± 9cm, and mass of 88.85 ± 22.61kg.”
+
+## 방법
+
+- FGDI 산출을 위해 양측 다리 통합 평가, 개별 다리 평가, 단일 관절/평면별 평가 등 세 가지 범주로 기학적 변수 하위집합을 설계하여 적용한다. _(근거: PAGE 4, Section 2)_
+  - 근거 원문: “For the computation of the FGDI, we concentrate on three distinct subsets of these variables, which are outlined as follows:”
+- 통합(Combined) 접근법은 골반을 포함해 좌우 15개의 기학적 변수를 모두 사용하여 전체적인 보행 이상 상태를 하나의 중증도 수치로 제시한다. _(근거: PAGE 4, Section 2)_
+  - 근거 원문: “This procedure results in the selection of fifteen kinematic variables, designated as u = 1,...,15. This approach yields a measure of severity by collectively considering both legs, thereby providing an overall assessment of gait abnormality.”
+- 개별 다리(Individual Leg) 접근법은 특정 다리의 9개 기학적 변수만을 사용하여 편측성 보행 병리를 개별적으로 정밀 평가한다. _(근거: PAGE 4, Section 2)_
+  - 근거 원문: “This method provides a measure of gait pathology for each leg individually, facilitating a detailed assessment of gait abnormality in each leg.”
+- 관절/평면별(Joint/Plane Specific) 접근법은 개별 기학적 변수 1개씩을 독립적으로 평가하여 특정 관절이나 움직임 평면 수준의 이상을 파악한다. _(근거: PAGE 5, Section 2)_
+  - 근거 원문: “This method offers a detailed evaluation of gait abnormalities at the individual level of each joint or plane.”
+
+## 핵심 결과
+
+- 파킨슨병 환자 중 동결 보행 증상이 있는 집단(freezers)이 없는 집단(non-freezers)에 비해 척도화된 FGDI 점수가 유의미하게 더 높게 나타났다. _(근거: PAGE 9, Section 3.2)_
+  - 근거 원문: “Subjects identified as freezers demonstrate higher scaled FGDI values compared to non-freezers, as confirmed by a Wilcoxon rank sum test with a continuity correction, which yielded a p-value of 0.007.”
+- 하지 절단 환자군에서 보행 기능 수준이 더 낮은 K2 집단이 K3 집단에 비해 절단측 및 비절단측 다리 모두에서 척도화된 FGDI 값이 통계적으로 유의미하게 높았다. _(근거: PAGE 10, Section 4.1)_
+  - 근거 원문: “A Wilcoxon rank sum exact test confirms that the median scaled FGDI values are significantly higher for individuals classified as K2 compared to those classified as K3, resulting in p-values of 0.03 for the amputated side and 0.009 for the non-amputated side.”
+- 파킨슨병 환자를 대상으로 한 보행 근사 분석에서 FGDI 기반 근사 오차(평균 RMSE 0.46)가 기존 OA 방법(평균 RMSE 0.83)보다 현저히 낮아 원본 움직임 데이터를 복원하고 설명하는 데 더 정밀함을 입증했다. _(근거: PAGE 13, Section 5.1)_
+  - 근거 원문: “In addition, the average RMSE for all joints/planes in PD subjects is 0.46 for FGDI and 0.83 for OA.”
+
+## 저자 결론
+
+- 다변량 함수형 주성분 분석(MFPCA)을 적용한 FGDI는 보행 움직임 고유의 부드러움과 다관절 간 공변이 특성을 파악하여 다중공선성 문제를 제어하면서도 전반적인 보행 기능을 정확하게 정량화한다. _(근거: PAGE 14, Section 7)_
+  - 근거 원문: “This index captures the intrinsic smoothness of gait movements across each joint and plane, and it accounts for potential covariation among them. FGDI is correlated with overall gait function, providing a reliable measure of gait abnormality.”
+- 척도화된 FGDI는 임상 일상 평가에서 사용되는 범주형 척도(ordinal scales)보다 객관적이고 연속적인 보행 품질 측정이 가능하며, 시간에 따른 미세한 진전 추적 및 환자 맞춤형 치료 계획 수립에 강점이 있다. _(근거: PAGE 15, Section 7)_
+  - 근거 원문: “The scaled FGDI provides a quantitative measurement of gait quality, enabling more precise and detailed assessments of gait abnormalities compared to the ordinal scales typically employed by standard measures. Additionally, the scaled FGDI is sensitive enough to detect subtle changes in gait quality over time, making it useful for monitoring progress and evaluating the effectiveness of interventions or treatments.”
+
+## 연구의 한계
+
+- 연구의 한계로서 현재 제안된 MFPCA 기법에는 개인의 성별이나 연령 등의 공변량 정보가 분석 모형에 고려되지 않았으며, 향후 이에 대한 통합 설계가 필요하다. _(근거: PAGE 16, Section 7)_
+  - 근거 원문: “Future research will involve incorporating covariates such as the individual’s sex and age into the MFPCA approach.”
+
+## 생각해볼 내용
+
+- 보행 분석에서 시간 순서에 따른 역학 구조와 다중공선성을 MFPCA로 모델링함으로써 평가 시 발생할 수 있는 왜곡(편향)을 줄이고 임상 의사 결정의 신뢰도를 향상시킨 것으로 분석된다. _(근거: PAGE 4, Section 1)_
+  - 근거 원문: “Additionally, the proposed approach accounts for the structure of the dependence of human gait leading to a more accurate quantification of gait pathology which can improve clinical decision-making.”
+- 임상의들이 복잡한 통계 기법을 몰라도 직관적으로 개별 다리와 관절의 보행 편차를 시각적으로 한눈에 파악할 수 있도록 무료 인터랙티브 R Shiny 웹 애플리케이션 형태의 유틸리티 툴을 제공하여 실용성을 극대화했다. _(근거: PAGE 14, Section 6)_
+  - 근거 원문: “A free R Shiny application has been developed to serve as a graphical user interface (GUI) and is accessible at the following URL: https://michelle-carey-ucd.shinyapps.io/FGDI_ShinyApp/.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 기존의 보행 이상 평가지표인 GDI와 GPS는 보행 주기와 관절 간 데이터의 상호 의존성을 통제하지 않아 이상 정도를 평가할 때 편향을 유발할 수 있다. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “This interdependence of kinematic data may result in biased assessments of overall abnormality when using the GDI and GPS indices, as demonstrated in [16].”
+- 기존에 제안된 OA(Overall Abnormality) 방법의 경우, 주성분 분석(PCA) 모델링 과정에서 보행 주기 내 시간적 순서 구조를 보존하지 못하고 관절 및 평면 간 결합으로 발생하는 다중공선성 문제를 완전히 대처하지 못한다. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “The temporal sequence of kinematic data throughout the gait cycle is crucial in gait analysis and should be preserved. The interconnectedness across joints and planes often leads to multicollinearity, which can introduce bias in the measurement of overall abnormality.”
+
+## 이 연구의 해결 방식과 기여
+
+- 다변량 함수형 주성분 분석(MFPCA)을 도입하여, 시간 흐름에 따른 보행 데이터의 물리적 연속성(순서)을 보존함과 동시에 기학적 변수 간 다중공선성 문제를 제거하는 이상적인 가중 주성분 특징 공간을 형성했다. _(근거: PAGE 3-4, Section 1)_
+  - 근거 원문: “MFPCA effectively addresses potential multicollinearity issues due to interdependencies between joints or planes while preserving the temporal ordering throughout the gait cycle.”
+- GDI, GPS, OA의 강점들을 모아 단일화된 다차원 정량 분석 프레임워크를 제공하여 다리 전체의 이상도뿐만 아니라 편측 및 국소 관절별 비대칭을 직관적으로 상세 평가할 수 있게 기여했다. _(근거: PAGE 4, Section 1)_
+  - 근거 원문: “FGDI combines the advantages of the existing GDI, GPS and OA approaches. As the FGDI index is easy to interpret and can provide a measure of severity on both legs, as well as on each leg and at each joint separately.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 파킨슨병 환자의 임상적 운동 기능 비대칭성
+
+- 원문 발췌: “It is well-established that unilateral motor symptoms are characteristic of PD, as underscored by Miller-Patterson et al. [20], Djaldetti et al. [3].”
+- 한국어 번역: 파킨슨병에서 일측성 운동 증상이 전형적으로 나타난다는 것은 잘 정립되어 있다.
+- 원문 위치: PAGE 8, Section 3.1
+- 원문 내 인용표기: Miller-Patterson et al. [20]
+- 해당 선행문헌: [20] C. Miller-Patterson, R. Buesa, N. McLaughlin, R. Jones, U. Akbar, and J.H. Friedman, Motor asymmetry over time in Parkinson’s disease, J. Neurol. Sci. 393 (2018), pp. 14–17.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 파킨슨병 환자의 관절 각도 비대칭성 연구나 임상적 비대칭 특징을 인용하여 배경 논거를 설명할 때 활용할 수 있으며, 2차 인용에 유의해야 한다.
+
+### 2. 파킨슨병의 보행 동결이 보행 이탈 심각도에 미치는 영향
+
+- 원문 발췌: “Subjects identified as freezers demonstrate higher scaled FGDI values compared to non-freezers, as confirmed by a Wilcoxon rank sum test with a continuity correction, which yielded a p-value of 0.007.”
+- 한국어 번역: 동결 보행이 있는 대상자들은 동결 보행이 없는 대상자들에 비해 더 높은 척도화된 FGDI 값을 보였으며, 이는 연속성 보정이 적용된 Wilcoxon 순위합 검정을 통해 p-value 0.007로 확인되었다.
+- 원문 위치: PAGE 9, Section 3.2
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 파킨슨병에서 보행 동결(freezing of gait) 증상이 정량적인 보행 이상 중증도에 지대하고 유의한 편차를 초래한다는 통계적 근거로 인용할 수 있다.
+
+### 3. 하지 절단 환자의 K-Level 등급별 보행 특징 및 이상 차이
+
+- 원문 발췌: “A Wilcoxon rank sum exact test confirms that the median scaled FGDI values are significantly higher for individuals classified as K2 compared to those classified as K3, resulting in p-values of 0.03 for the amputated side and 0.009 for the non-amputated side.”
+- 한국어 번역: Wilcoxon 순위합 정확 검정을 통해 K2 등급으로 분류된 개인이 K3 등급에 비해 척도화된 FGDI 중앙값이 유의미하게 높음을 확인하였으며, 그 결과 p-value는 절단측 0.03, 비절단측 0.009였다.
+- 원문 위치: PAGE 10, Section 4.1
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 절단 장애 환자의 기능적 등급인 K-Level이 낮을수록(K2 vs K3) 절단된 부위뿐만 아니라 보상 패턴이 작용하는 비절단측 정상 다리 전체에서도 비전형적 보행 이탈 편차가 크게 증가한다는 통계 근거로 제시할 수 있다.
+
+---
+
+# Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction
+
+Sakeran, H., Abu Osman, N. A., Abdul Majid, M. S., Fazalul Rahiman, M. H., Wan Muhamad, W. Z. A., & Mustafa, W. A. (2019). Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction. Applied Sciences, 9(21), 4680. https://doi.org/10.3390/app9214680
+
+## 서지정보
+
+- 저자: Hamzah Sakeran, Noor Azuan Abu Osman, Mohd Shukry Abdul Majid, Mohd Hafiz Fazalul Rahiman, Wan Zuki Azman Wan Muhamad, Wan Azani Mustafa
+- 연도: 2019
+- 저널: Applied Sciences
+- DOI: 10.3390/app9214680
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 전방십자인대 재건술 후 보행 분석 및 수학적 지표 기반의 건강 관리
+
+## 분류 태그
+
+- ACL 연구: true
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: true
+
+## 연구 목적
+
+- 본 연구는 전방십자인대 재건술(ACLR) 후 마할라노비스 다구치 시스템(MTS)과 칸리 거리 계산기(KDC)를 적용하여 보행 이상 수준을 진단하고 이에 기여하는 요인을 파악하는 것을 목적으로 한다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study aims to apply gait analyses and mathematical, index-based health management, using the
+Mahalanobis Taguchi System (MTS) and the Kanri Distance Calculator (KDC) to diagnose the level of
+the gait abnormality and to identify its contributing factors following ACLR.”
+
+## 연구 설계와 대상
+
+- 본 연구는 10명의 전방십자인대 재건술 환자군(PG)과 15명의 건강한 대조군(HG)의 보행 패턴 데이터를 수집하여 상호 비교하는 설계를 적용하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study compared the gait of 10 subjects in the PG group with 15 subjects in the HG.”
+
+## 방법
+
+- 보행 데이터는 5대의 Oqus 카메라로 구성된 모션 캡처 시스템을 활용하여 캡처 및 수집되었다. _(근거: PAGE 10, Section 2.3.2)_
+  - 근거 원문: “Motion data
+were collected using a motion capture system comprising five Oqus cameras (Oqus, Qualisys AB,
+Gothenburg, Sweden).”
+- 수집된 보행 데이터는 마할라노비스 다구치 시스템(MTS) 및 칸리 모델(Kanri Model)의 조합을 바탕으로 진단 및 처방 알고리즘이 적용되었다. _(근거: PAGE 8, Figure 1 Caption)_
+  - 근거 원문: “A patient is first examined using a
+gait analysis unit and/or procedure to obtain the values needed to derive certain scores, such as the
+Mahalanobis Distance (MD). The level of ACLR patient performance is then determined using the MD
+score. Patients with a MD value less than the Mahalanobis Space (MS) value would be considered
+as fully recovered, whereas patients with a MD value more than MS value would need to undergo
+further treatment. The useful features are then analyzed using the Taguchi Method. This method aims
+to reduce the number of required assessments by focusing only on essential factors. Finally, therapies
+are prescribed by using the Kanri Model.”
+
+## 핵심 결과
+
+- 분석을 통해 대조군(HG)은 마할라노비스 공간(MS) 내부의 범위를 만족했으나, 환자군(PG)은 MS 범위를 상회하여 두 그룹의 보행 양상이 명확히 차이 나는 것으로 분류되었다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “In this study, two significant
+groups were recognized: the HG, who achieved results which were within the Mahalanobis space
+(MS), and (ii) the PG who achieved results above the MS.”
+- 기여 요인 분석 결과, 보폭(X3), 단일 지지 시간(X6), 양발 지지 시간(X9)이 환자 개개인의 보행 이상에 가장 큰 영향을 미치는 주요 다변량 요소로 도출되었다. _(근거: PAGE 17, Section 4.2)_
+  - 근거 원문: “In terms of the parameters, X3 (step width) was the most important feature, followed by X6 (single
+support) and X9 (double support).”
+
+## 저자 결론
+
+- 재활 성과에 유의한 영향을 미치는 보행 기여 요인들을 식별하고 집중함으로써 개별적이고 필요한 영역에 특화된 재활 프로그램을 설계할 수 있다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “The results indicated that by focusing on the contributing factors that affect the rehabilitation
+performance of the patients, it is possible to provide individualized and need-based treatment.”
+- 그러므로 수술 후의 재활 계획은 획일화된 기존 프로토콜 패러다임에서 탈피하여 개인별 맞춤형 프로그램으로 이전되어야 한다. _(근거: PAGE 18, Section 4.3)_
+  - 근거 원문: “Therefore, rehabilitation post-ACLR should shift from a protocol-based paradigm to
+an individual-tailored program.”
+
+## 연구의 한계
+
+- 본 연구는 시공간적 변수가 보행 성능에 미치는 영향만을 다루어 제한적이었으며, 향후 동역학, 운동학, 그리고 근전도적 분석 매개변수를 함께 평가하는 연구가 요구된다. _(근거: PAGE 18-19, Section 4.4)_
+  - 근거 원문: “Our study was limited to the effects of spatiotemporal parameters on gait performance.”
+- 본 임상 분석에서는 환자별 개별 매개변수의 기여도 판별에 그쳤으므로, 향후 제시된 재활 훈련이 실질적인 보행 이상 완화로 이어지는지에 대한 추가 검증이 필요하다. _(근거: PAGE 19, Section 4.4)_
+  - 근거 원문: “We only determined the contributions of variables for each patient.”
+
+## 생각해볼 내용
+
+- 현재의 가이드라인에 보행 분석이 누락되어 정성적 평가 중심의 주관적 진단에 머무르고 있는 현실을 지적한 점에서 연구 의의가 크다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “However, the current guidelines for the evaluation of post anterior cruciate
+ligament reconstruction (ACLR) patient outcomes are primarily based on qualitative assessments.”
+- 본 연구는 환자 10명과 대조군 15명이라는 상대적으로 소수의 데이터를 기반으로 수학적 모델을 검증하였기에, 보다 다양한 연령과 환자군을 포함한 다기관 대규모 데이터 검증이 필요하다고 판단된다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study compared the gait of 10 subjects in the PG group with 15 subjects in the HG.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 현존하는 전방십자인대 수술 후 재활 지침 중 그 어느 곳도 보행 분석을 진단이나 환자 평가 도구로 채택하지 않고 누락해 오고 있다. _(근거: PAGE 2, Section 1)_
+  - 근거 원문: “However, none
+of the post-ACLR rehabilitation guidelines included gait analysis as an examination or evaluation tool.
+It is unclear why this approach has been overlooked from the guidelines.”
+- 정성적이고 주관적인 평가 방식은 임상의의 개인 역량과 임상적 직관에 과도하게 의존하게 되어 경험이 적은 임상의의 오진 리스크를 높일 수 있다. _(근거: PAGE 2, Section 1)_
+  - 근거 원문: “A major problem with this kind of subjective assessment is that the clinician’s capacity to provide
+safe and high-qualitycare relies on their abilityto reason, think, and judge appropriately. Theseabilities
+and skills may be lacking among less experienced clinicians [9,10].”
+
+## 이 연구의 해결 방식과 기여
+
+- 마할라노비스 다구치 시스템(MTS) 및 칸리 모델을 결합한 통합 수학적 척도를 적용하여, 전방십자인대 재건술 후 발생 가능한 다변량 데이터 기반의 보행 이상 유무 및 수준을 객관적·정량적으로 식별할 수 있는 프레임워크를 개발하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study aims to apply gait analyses and mathematical, index-based health management, using the
+Mahalanobis Taguchi System (MTS) and the Kanri Distance Calculator (KDC) to diagnose the level of
+the gait abnormality and to identify its contributing factors following ACLR.”
+- 개별 환자의 보행을 악화시키는 주요 변수들의 구체적 기여도를 산출(RCA)함으로써 개별 요구도 기반의 맞춤형 중재법(proprioceptive 훈련 등)을 제시할 수 있는 근거를 제공하였다. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “The results indicated that by focusing on the contributing factors that affect the rehabilitation
+performance of the patients, it is possible to provide individualized and need-based treatment.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. ACLR 환자 조기 재활 지침의 정성적 및 국소적 평가 치중 문제
+
+- 원문 발췌: “These guidelines usually consist of a qualitative assessment of the early intervention plans that
+emphasizes the restoration of flexibility, muscular strength, and ligament stability by using closed
+kinetic chain exercises [1–4].”
+- 한국어 번역: 이러한 지침은 일반적으로 닫힌 사슬 운동을 사용하여 유연성, 근력 및 인대 안정성의 회복을 강조하는 조기 중재 계획에 대한 정성적 평가로 구성된다.
+- 원문 위치: PAGE 2, Section 1
+- 원문 내 인용표기: [1–4]
+- 해당 선행문헌: 1. Konrath, J.M.; Saxby, D.J.; Killen, B.A.; Pizzolato, C.; Vertullo, C.J.; Barrett, R.S.; Lloyd, D.G. Muscle contributions to medial tibiofemoral compartment contact loading following ACL reconstruction using semitendinosus and gracilis tendon grafts. PLoS ONE 2017, 12, e0176016. [CrossRef] [PubMed]
+2. Drechsler, W.I.; Cramp, M.C.; Scott, O.M. Changes in muscle strength and EMG median frequency after anterior cruciate ligament reconstruction. Eur. J. Appl. Physiol. 2006, 98, 613–623. [CrossRef] [PubMed]
+3. Jenkins, P.J.; Clifton, R.; Gillespie, G.N.; Will, E.M.; Keating, J.F. Strength and function recovery after multiple-ligament reconstruction of the knee. Injury 2011, 42, 1426–1429. [CrossRef] [PubMed]
+4. Gokeler, A.; Benjaminse, A.; van Eck, C.F.; Webster, K.E.; Schot, L.; Otten, E. Return of normal gait as an outcome measurement in acl reconstructed patients. A systematic review. Int. J. Sports Phys. Ther. 2013, 8, 441–451.
+- 주장 유형: background_citation
+- 활용 맥락과 주의: ACLR 환자의 현행 재활 및 평가 패러다임이 정량적 보행 분석 없이 정성적 요소와 개별 관절 근력 회복에만 편중되어 있음을 설명할 때 인용하기 적합함.
+
+### 2. 특정 ACLR 환자들의 보행 상태와 건강 대조군의 유사성 검증 결과
+
+- 원문 발췌: “From the results, subjects 2, 7, and 8 recorded MD values which were close to those of the healthy
+participants.”
+- 한국어 번역: 결과로부터, 피험자 2, 7, 8은 건강한 피험자들의 마할라노비스 거리(MD) 값에 근접한 수치를 기록했다.
+- 원문 위치: PAGE 17, Section 4.1
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: MTS 수학적 분류 기법을 통해 환자군 중 일부가 건강한 기준 집단 수준으로 정상화된 보행 데이터를 복구해 냈음을 입증하는 정량적 발견 근거로 인용할 수 있음.
+
+---
+
+# Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis
+
+Molina Arias, L., & Smoleń, M. (2026). Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis. Applied Sciences, 16(8), 3976. https://doi.org/10.3390/app16083976
+
+## 서지정보
+
+- 저자: Ludwin Molina Arias, Magdalena Smoleń
+- 연도: 2026
+- 저널: Applied Sciences
+- DOI: 10.3390/app16083976
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 순간 회전 중심 분석을 통한 병리적 보행 패턴의 비지도 감지
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 순간 회전 중심(ICR) 궤적을 이용하여 병리적 보행 패턴을 감지하는 비지도 학습 프레임워크를 제안하는 것. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study introduces a novel unsupervised framework, ICR-LLS, for detecting pathological gait patterns using instantaneous center of rotation (ICR) trajectories of the shank in the sagittal plane.”
+- 비지도 학습 방식을 사용하여 레이블 데이터에 의존하지 않고 파킨슨병(PD) 환자의 미세한 운동 조절 장애의 감지 정확도를 개선하는 대안을 제시함. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “By leveraging this underutilized biomechanical descriptor, the proposed ICR-LLS methodology offers a novel, data-driven framework to improve the detection of subtle motor control impairments in PD through an unsupervised learning approach without relying on labeled data.”
+
+## 연구 설계와 대상
+
+- 비교 분석을 위해 건강한 대조군 30명과 약물 복용을 중단(OFF)한 상태의 파킨슨병(PD) 환자 10명의 데이터를 기존 공개 데이터셋에서 추출함. _(근거: PAGE 8, Section 3.2)_
+  - 근거 원문: “To allow a comparative analysis between groups, data from 30 neurologically intact healthy participants and 10 individuals diagnosed with PD in the OFF medication state were selected from the original datasets.”
+- 두 그룹 간의 교란 요인을 최소화하기 위해 특히 연령 변수의 인구통계학적 분포가 유사하도록 선정 기준을 설정함. _(근거: PAGE 8, Section 3.2)_
+  - 근거 원문: “The primary inclusion criterion was to ensure comparable demographic distributions between groups, particularly in terms of age, to minimize possible confounding effects.”
+
+## 방법
+
+- 양측 가쪽 넙다리 관절융기와 가쪽 복사 뼈 부위에 부착된 마커의 2D 키네마틱 데이터를 이용해 시상면상에서 섕크(종아리)의 ICR 궤적을 산출함. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “ICR trajectories were computed from two-dimensional kinematic data captured at the lateral femoral epicondyle and lateral malleolus for both shanks, producing four-dimensional multivariate time series for each gait trial.”
+- 보행 주기 간의 시간적 정렬 어긋남을 최소화하기 위해 교차 상관 분석을 적용하여 시간 정렬을 우선 수행함. _(근거: PAGE 5, Section 2.2)_
+  - 근거 원문: “To account for temporal misalignments arising from stride-to-stride variability, each pair of trajectories is first circularly aligned using cross-correlation.”
+- 시상면에서의 기하학적 형태적 구조를 보존하면서 비선형 시간 변형을 다루기 위해 동적 시간 워핑(DTW)을 사용하여 비유사도를 계산함. _(근거: PAGE 5, Section 2.2)_
+  - 근거 원문: “Following circular time alignment, trajectory dissimilarity is quantified using Dynamic Time Warping (DTW), which accommodates non-linear temporal deformations while preserving the spatial structure of the trajectories.”
+
+## 핵심 결과
+
+- 제안한 ICR-LLS 방법론을 데이터셋에 평가한 결과, NMI 0.449 및 군집 분리-조밀도 비율(SCR) 6.754를 달성하여 의미 있는 군집 구조가 관찰됨. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “The framework is evaluated on a public dataset comprising individuals with Parkinson’s disease (PD) and healthy controls, achieving a normalized mutual information (NMI) of 0.449 and a Separation-to-Compactness Ratio (SCR) of 6.754, indicating a meaningful cluster structure.”
+- 비지도 학습 군집화의 성능을 분류 관점에서 매핑하여 분석하였을 때 정확도 90%, 민감도 70%, 특이도 96.7%의 우수한 결과를 보임. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “In addition, classification-oriented metrics yield an accuracy of 90%, sensitivity of 70%, and specificity of 96.7%, supporting the method’s effectiveness in distinguishing pathological gait.”
+- 기존 보행 피처 기반 군집화 모델(NMI 0.101, SCR 3.014, 민감도 40%)에 비해 제안된 ICR-LLS가 더 강인한 탐지 성능과 뚜렷한 군집 분리력을 보여줌. _(근거: PAGE 18, Section 3.4.2)_
+  - 근거 원문: “The baseline based on conventional gait features consistently underperforms the proposed ICR-LLS approach in all configurations.”
+
+## 저자 결론
+
+- 단순한 2D 측정 마커 정보와 비지도 학습의 결합을 통해, 임상 라벨 없이도 보행의 변동성을 해석적으로 탐색할 수 있는 비 biomechanical 지표로서 ICR 궤적의 유효성을 확인함. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “By combining minimal 2D kinematic inputs with unsupervised learning, ICR-LLS provides an interpretable framework for the exploratory analysis of gait variability, and although further validation is required, the findings suggest that ICR trajectories may serve as a meaningful biomechanical descriptor for characterizing pathological locomotion.”
+- 비지도 학습 모델에 의해 분할된 정상 집단과 이상치(outliers)의 구분이 실제 파킨슨병 환자의 기하급수적 운동 임상 점수(UPDRS 및 H&Y 스테이지) 차이와 통계적으로 부합함. _(근거: PAGE 20, Section 4)_
+  - 근거 원문: “These findings demonstrate that, although derived from an unsupervised anomaly detection framework, the partition induced by ICR-based clustering aligns with clinically significant differences in the severity of motor symptoms.”
+
+## 연구의 한계
+
+- 섕크의 2D 시상면상 키네마틱 정보만을 다루기 때문에 다른 평면에서의 변형이나 보상 작용에 따른 보행 특성을 온전히 반영하기 어려움. _(근거: PAGE 21, Section 4)_
+  - 근거 원문: “The exclusive focus on 2D shank kinematics may not fully capture multi-planar or compensatory movements, potentially limiting sensitivity for certain gait phenotypes.”
+- 현재 검증 방식은 통제된 대조군과 파킨슨병 그룹에 한정되어 있으며 뇌졸중이나 다발성 경화증과 같이 이질성이 큰 다양한 질환군으로 일반화하는 것에는 한계가 존재함. _(근거: PAGE 21, Section 4)_
+  - 근거 원문: “In addition, current validation is restricted to a controlled scenario involving healthy controls and individuals with PD. Extending the framework to other neurological conditions, such as stroke or multiple sclerosis, introduces additional complexity, as these populations exhibit high intra-class variability and may not conform to a single-cluster-plus-outliers structure.”
+
+## 생각해볼 내용
+
+- 군집 내 응집 및 분리도(SCR)를 높이기 위해 극단적으로 파라미터를 튜닝할 시 오히려 실제 파킨슨병 진단 분류 정확성(NMI 및 민감도)이 낮아지는 trade-off가 발생함을 고려해야 함. _(근거: PAGE 12, Section 3.3.4)_
+  - 근거 원문: “Each configuration was evaluated using NMI and SCR, excluding trivial solutions that consist of a single cluster with no separation. Figure 7 shows the resulting performance grid and reveals a clear inverse relationship between NMI and SCR: parameter settings that maximize agreement with the ground truth do not necessarily yield the most compact and well-separated clusters.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 기존에 제안된 지도학습 기반 기계학습 모델은 수집된 특정 훈련 데이터셋에 크게 의존하여 새로운 환경이나 경계선 상의 상태 변화를 일반화하기 어려움. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “While supervised models are powerful, they rely on labeled data and may not generalize well to new or ambiguous cases.”
+- 순간 회전 중심(ICR) 개념은 척추나 슬관절 등의 부분 운동성 연구에는 활용되었으나, 동적 보행 전반에 걸친 하지 분절 회전 분석 도구로서는 활용이 부족했음. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “However, its application to gait analysis, especially for capturing continuous segmental rotations during locomotion, has been largely neglected. Prior studies have primarily focused on isolated joint mechanics or specific motor tasks without addressing the dynamic evolution of the ICR throughout the gait cycle.”
+
+## 이 연구의 해결 방식과 기여
+
+- 보행 분석에서 하부 운동성의 섕크 ICR 데이터가 정상과 병리적 상태를 효과적으로 대변한다는 바이오메카닉스 해석 기반의 비지도 탐지 기술을 제안함. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “By leveraging this underutilized biomechanical descriptor, the proposed ICR-LLS methodology offers a novel, data-driven framework to improve the detection of subtle motor control impairments in PD through an unsupervised learning approach without relying on labeled data.”
+- 바닥에 매립된 고가의 지면반력기(GRF)나 대형 3D 장비 없이 단순 카메라 형태의 2D 입력 데이터를 통해서도 강인하게 질환 특징을 파악할 수 있는 인프라 최소화에 기여함. _(근거: PAGE 21, Section 4)_
+  - 근거 원문: “Unlike GRF-based methods that require force plates or 3D motion capture systems, the proposed framework relies on a limited number of sagittal-plane landmarks, allowing compatibility with simplified acquisition systems such as monocular video setups. This facilitates deployment in clinical and outpatient settings and supports longitudinal monitoring.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 파킨슨병 환자의 낙상 비율과 사망률
+
+- 원문 발췌: “It is estimated that approximately 70% of PD patients experience at least one fall annually, and 39% suffer recurrent falls. Importantly, recurrent falls are associated with a median survival of just six years [5].”
+- 한국어 번역: PD 환자의 약 70%가 매년 최소 한 번의 낙상을 경험하고, 39%는 재발성 낙상을 겪는 것으로 추정된다. 중요한 것은, 재발성 낙상이 단 6년의 생존 기간 중앙값과 관련이 있다는 점이다.
+- 원문 위치: PAGE 2, Section 1
+- 원문 내 인용표기: [5]
+- 해당 선행문헌: 5. Allen, N.E.; Schwarzel, A.K.; Canning, C.G. Recurrent Falls in Parkinson’s Disease: A Systematic Review. Park. Dis. 2013, 2013, 906274. [CrossRef]
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 파킨슨병 환자의 운동장애가 야기하는 심각한 낙상 문제와 재발 시의 사망 위험을 임상적 근거로 제시할 때 인용할 수 있음.
+
+### 2. ICR-LLS 방법론과 기존 보행 특징 기반 방식의 성능 비교
+
+- 원문 발췌: “The baseline based on conventional gait features consistently underperforms the proposed ICR-LLS approach in all configurations. The Max NMI solution achieves moderate agreement with clinical labels (NMI = 0.367) and high specificity (100.0%), but limited sensitivity (40.0%), indicating a bias toward correctly identifying healthy controls while not detecting a substantial portion of pathological cases.”
+- 한국어 번역: 전형적인 보행 특징을 기반으로 한 기준 모델은 모든 설정에서 제안된 ICR-LLS 접근법보다 일관되게 낮은 성능을 보였다. 최대 NMI 솔루션은 임상 레이블과 보통 수준의 일치도(NMI = 0.367) 및 높은 특이도(100.0%)를 달성했으나 제한된 민감도(40.0%)를 보여, 건강한 대조군은 정확히 식별하는 반면 병리적 증례의 상당 부분을 감지하지 못하는 편향을 나타냈다.
+- 원문 위치: PAGE 18, Section 3.4.2
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 비지도 학습 환경에서 Joint flexion/extension 등의 일반 각도 특징보다 섕크의 2D 순간 회전 중심 궤적이 정상군과 이상군 분류 성능을 개선하는 핵심적인 증거로 사용될 수 있음.
+
+### 3. 파킨슨병 환자의 보행 시 순간 회전 중심(ICR) 궤적 변화 특징
+
+- 원문 발췌: “Although the overall trajectory patterns are broadly similar between the groups, PD subjects exhibit more pronounced asymptotic patterns and greater variability, especially along the vertical axis. These observations suggest a reduced rotational excursion of the shank in PD, reflecting a more rigid lower-limb movement compared to healthy controls.”
+- 한국어 번역: 비록 전반적인 궤적 패턴은 그룹 간에 대체로 유사하지만, PD 피험자들은 특히 수직 축을 따라 더 뚜렷한 점근적(asymptotic) 패턴과 더 큰 변동성을 보인다. 이러한 관찰 결과는 PD에서 섕크의 회전 운동 범위가 감소했음을 시사하며, 이는 건강한 대조군에 비해 더 경직된 하지 움직임을 반영한다.
+- 원문 위치: PAGE 11, Section 3.3.1
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: uncited_author_claim
+- 활용 맥락과 주의: 파킨슨병 환자들의 하지 경직(rigidity) 특성이 ICR 분석 하에 시상면의 종아리 회전 제한 및 점근선 형태로 발현됨을 설명하는 저자들의 독자적 주장으로 사용 가능함.
+
+---
+
+# Derivation of the Gait Deviation Index for Spinal Cord Injury
+
+Herrera-Valenzuela, D., Sinovas-Alonso, I., Moreno, J. C., Gil-Agudo, Á., & del-Ama, A. J. (2022). Derivation of the Gait Deviation Index for Spinal Cord Injury. Frontiers in Bioengineering and Biotechnology, 10, Article 874074. https://doi.org/10.3389/fbioe.2022.874074
+
+## 서지정보
+
+- 저자: Diana Herrera-Valenzuela, Isabel Sinovas-Alonso, Juan C. Moreno, Ángel Gil-Agudo, Antonio J. del-Ama
+- 연도: 2022
+- 저널: Frontiers in Bioengineering and Biotechnology
+- DOI: 10.3389/fbioe.2022.874074
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Derivation of the Gait Deviation Index for Spinal Cord Injury.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 척수 손상을 위한 보행 편차 지수의 유도
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: false
+- 보행 데이터: true
+- Score 제시: true
+
+## 연구 목적
+
+- 본 연구의 주된 목적은 GDI 이면의 수학적 방법론을 성인 척수 손상(SCI) 환자의 데이터셋에 적용하여 새로운 SCI-GDI를 도출하고, 이를 기존 GDI 및 WISCI II와 비교하여 평가하는 것이다. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “The main objective of this article is to investigate the application of the mathematical methodology behind the GDI (Schwartz and Rozumalski, 2008) to a dataset of adults with SCI, resulting in the new SCI-GDI.”
+
+## 연구 설계와 대상
+
+- C1~L5의 손상 레벨과 ASIA 손상 척도(AIS) C~D를 가진 16~70세 사이의 척수 손상 환자로부터 수집된 302개 보행(strides) 데이터를 분석 대상으로 삼았다. _(근거: PAGE 3, Section 2.1)_
+  - 근거 원문: “A total of 302 strides from patients aged between 16 and 70 years old (33.91 ± 17.86), with injury levels between C1 and L5 and the ASIA impairment scale (AIS) C to D were gathered.”
+- 대조군으로는 보행 병리가 없는 성인의 446개 보행 데이터가 수집되었다. _(근거: PAGE 3, Section 2.1)_
+  - 근거 원문: “In addition, a control group with the 3D kinematic gait data of 446 strides from adults without gait pathologies was collected.”
+
+## 방법
+
+- 하지에 22개 활성 마커를 부착하는 표준 프로토콜 하에 세 대의 스캐너와 두 대의 Kistler 힘판을 구비한 10m 보행로에서 Codamotion 모션 캡처 시스템을 사용하여 3차원 보행 운동학 데이터를 수집하였다. _(근거: PAGE 3, Section 2.2)_
+  - 근거 원문: “A Codamotion® motion capture system (Charnwood Dynamics Ltd, United Kingdom) was used to capture 3D kinematic gait data. The standard protocol with 22 active markers placed on the lower limbs (Charnwood Dynamics Limited, 2004), three scanners, and two force platforms Kistler 9286A (Kistler Group, Switzerland) in the center of a 10-meter walkway were used.”
+- 3D 보행 분석을 기반으로 수집된 9개 관절 각도 데이터를 이용하여 척수 손상 보행 데이터를 가장 높은 피델리티로 재건하고 대부분의 분산을 설명할 수 있는 최적의 축소 정규직교 기저(SCI-GDI 기저)를 계산하였다. _(근거: PAGE 4, Section 2.4)_
+  - 근거 원문: “Using the dataset described previously, the ﬁrst step of the data analysis was the computation of what we call the SCI-GDI basis, that is, the optimal reduced order orthonormal basis to reconstruct gait data of SCI with high ﬁdelity and to account for most of the variance of the SCI dataset (data analysis details in Section 2.4.1).”
+
+## 핵심 결과
+
+- 척수 손상 환자군의 보행 패턴에서 대부분의 분산을 설명하고 보행 곡선의 고품질 재건을 제공하기 위해 21개 특징으로 구성된 기저가 필요함을 보여주었다. _(근거: PAGE 1, ABSTRACT)_
+  - 근거 원문: “Our ﬁndings show that a 21-feature basis is necessary to account for most of the variance in gait patterns in the SCI population and to provide high-quality reconstructions of the gait curves included in the dataset and in foreign data.”
+
+## 저자 결론
+
+- 척수 손상 환자에게 뇌성마비 기반의 오리지널 GDI를 적용하면 보행 기능이 과대평가될 수 있으므로, 보행 장애의 민감한 평가를 위해 새로운 SCI-GDI의 도입을 권장한다. _(근거: PAGE 1, ABSTRACT)_
+  - 근거 원문: “In conclusion, the implementation of the original GDI in SCI may lead to overestimation of gait function, and our new SCI-GDI is moresensitivetolargergaitimpairmentthantheGDI.”
+
+## 연구의 한계
+
+- SCI-GDI 기저 연산이 안정적인 결과를 나타냈으나, 검증 결과가 훈련 데이터보다 낮아 일반성을 확보하고 stride 수에 무관하게 결과가 독립적임을 확인하기 위해서는 더 큰 데이터셋의 구축이 요구된다. _(근거: PAGE 10, Section 4)_
+  - 근거 원문: “First, as mentioned before, even though the computation of the SCI-GDI basis showed stable results, using a larger dataset would allow us to verify that our results (number of features m, VAF and reconstruction percentages) indeed remain independently of the number of strides in the database.”
+
+## 생각해볼 내용
+
+- Codamotion 등 대부분의 모션 캡처 시스템에서 골반 마커 부착 기준으로 사용되는 전상장골극과 후상장골극은 연부 조직 인공물(soft tissue artefacts)의 영향을 받기 쉬워 골반의 3차원 운동학 측정값의 오차 전파를 야기하는 내재적 한계가 있다. _(근거: PAGE 10, Section 4)_
+  - 근거 원문: “The anatomical landmarks used to place or align the pelvic markers on most motion capture systems, including the Codamotion, are the anterior and posterior superior iliac spines. These are bony protuberances in the pelviscovered with adipose tissue; therefore, the markers cannot be placed accurately on the subjects (C-Motion Wiki Documentation, 2019) and are prone to soft tissue artefacts (Langley et al., 2019).”
+- 연구진은 SCI-GDI가 척수 손상 환자의 임상적 및 기능적 다양성을 충실히 반영할 수 있도록 중증도, 손상 수준, 발병 기간, 성별, 연령 측면에서 매우 다양하고 넓은 범위의 보행 데이터를 의도적으로 수집하여 적용 범위를 보장하고자 했다. _(근거: PAGE 11, Section 4)_
+  - 근거 원문: “We intentionally captured a wide variety of gait data of SCI with different severity, neurological level of injury, time since injury onset, sex, and age, to capture the largest variety in gait patterns we had access to, and guarantee that the SCI-GDI could properly represent any of these patterns.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 확인된 내용 없음
+
+## 이 연구의 해결 방식과 기여
+
+- 소아 뇌성마비 환아에 기초해 개발된 기존 GDI의 한계를 극복하기 위해 성인 척수 손상 환자 집단의 3DGA 데이터셋에 동일한 수학적 방법론을 성공적으로 적용하여 척수 손상 전용의 SCI-GDI를 개발해 냈다. _(근거: PAGE 3, Section 1)_
+  - 근거 원문: “The main objective of this article is to investigate the application of the mathematical methodology behind the GDI (Schwartz and Rozumalski, 2008) to a dataset of adults with SCI, resulting in the new SCI-GDI.”
+- 오리지널 GDI의 15개 특징 기저 대신 성인 척수 손상 데이터로부터 도출된 21개 특징 벡터 기저를 이용함으로써 척수 손상 환자의 보행 곡선을 훨씬 정밀하게 복원할 수 있으며 임상적 과대평가 위험을 해결한다. _(근거: PAGE 11, Section 5)_
+  - 근거 원문: “The SCI-GDI is calculated using a 21-feature vectorial basis derived from gait data of adult population with SCI, instead of the 15-feature basis used for the original GDI.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 오리지널 GDI 적용 시 척수 손상 환자의 보행 기능 과대평가 및 SCI-GDI의 민감도
+
+- 원문 발췌: “In conclusion, the implementation of the original GDI in SCI may lead to overestimation of gait function, and our new SCI-GDI is moresensitivetolargergaitimpairmentthantheGDI.”
+- 한국어 번역: 결론적으로, 척수 손상 환자에게 오리지널 GDI를 적용하면 보행 기능이 과대평가될 수 있으며, 우리의 새로운 SCI-GDI가 기존 GDI보다 큰 보행 장애에 더 민감하다.
+- 원문 위치: PAGE 1, ABSTRACT
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 척수 손상 환자의 보행 능력 분석 시 뇌성마비용 GDI를 사용하면 임상적 보행 기능이 실제보다 과대평가될 위험성이 크고, 척수 손상 특이적 지표의 도입 필요성과 민감도를 지지하는 데 활용할 수 있음.
+
+---
+
+# Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users
+
+Gouda, A., Arshad, M. Z., & Andrysek, J. (2026). Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users. PLoS One, 21(6), e0351930. https://doi.org/10.1371/journal.pone.0351930
+
+## 서지정보
+
+- 저자: Aliaa Gouda, Muhammad Zeeshan Arshad, Jan Andrysek
+- 연도: 2026
+- 저널: PLoS One
+- DOI: https://doi.org/10.1371/journal.pone.0351930
+- 원본 파일: /Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users.pdf
+- 분석 provider: antigravity
+
+> **한국어 제목**: 하지 의지 사용자의 시간적 보행 대칭성 변화에 대하여 리듬 청각 자극에 의해 유발되는 보상적 조절 조사
+
+## 분류 태그
+
+- ACL 연구: false
+- IMU 사용: true
+- 보행 데이터: true
+- Score 제시: false
+
+## 연구 목적
+
+- 하지 의지 사용자(LLPU)의 보행 대칭성과 전반적인 움직임 패턴에 리듬 청각 자극(RAS)이 미치는 영향을 분석하고자 함. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study investigated the effects of rhythmic auditory stimulation (RAS) on gait symmetry and overall movement patterns in lower-limb prosthesis users (LLPUs).”
+- 시간적 보행 대칭성 향상을 위해 설계된 RAS가 전반적인 하지 운동학 패턴에 미치는 영향을 규명하고 이것이 보행에 유익한지 혹은 해로운지 판단하고자 함. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “We aimed to determine how RAS, designed to enhance temporal gait symmetry, influenced overall lower-limb kinematic patterns and whether such changes were beneficial or detrimental to gait.”
+
+## 연구 설계와 대상
+
+- RAS 유무에 따른 하지 의지 사용자(LLPU)와 건장한 대조군(AB)의 보행 패턴 변화를 비교 분석하는 전향적 단면 연구 설계를 적용함. _(근거: PAGE 3, Methods)_
+  - 근거 원문: “This prospective cross-sectional study compared gait patterns of LLPU and AB with and without RAS.”
+- 보행 평가 및 대조 기준을 확립하기 위해 10명의 건장한 성인 대조군(여성 7명, 남성 3명, 평균 연령 25.3±8.8세)을 분석에 포함시킴. _(근거: PAGE 4, Participants)_
+  - 근거 원문: “The study also included ten AB participants (7 females, 3 males; 25.3±8.8 years; height 170.5±7.91 cm; weight 66.7±11.7 kg).”
+- 신경학적 요인에 의한 보행 왜곡을 배제하기 위해 이전에 신경 질환을 진단받은 이력이 없는 대상자들로 모집단을 구성함. _(근거: PAGE 4, Participants)_
+  - 근거 원문: “All participants had no previously known neurological disorders.”
+
+## 방법
+
+- 동작 변화 유도를 위한 시간적 자극(RAS) 제공 바이오피드백 시스템과 보행 운동학 데이터를 수집하는 웨어러블 모션 캡처 시스템을 결합하여 분석을 수행함. _(근거: PAGE 4, Dataset – experimental protocol)_
+  - 근거 원문: “They were equipped with two systems: (1) a biofeedback system designed to provide RAS to elicit changes in temporal symmetry and (2) a wearable motion capture system to capture lower limb kinematics.”
+- 웨어러블 동작 분석을 위해 7개의 3축 관성 센서가 내장된 Xsens MVN Awinda 시스템을 장착하여 관절 운동 데이터를 추출함. _(근거: PAGE 4, Dataset – experimental protocol)_
+  - 근거 원문: “The wearable sensor-based motion capture system used was the Xsens MVN Awinda (Movella North America Inc., Henderson, NV, USA) that included seven triaxial inertial sensors.”
+- 개별 보행 주기 동안 나타나는 표준 보행 패턴과의 총체적인 편차(보행 이상도)를 정량화하기 위해 보행 프로파일 점수(GPS)를 산출하여 지표로 활용함. _(근거: PAGE 6, Overall gait changes – gait profile score)_
+  - 근거 원문: “The GPS is calculated as the root mean square (RMS) of all the mean GVSs, providing a single value that reflects overall gait abnormality with lower GPS values being indicative of better gait.”
+- 기계학습 분류기의 성능 최적화를 위한 하이퍼파라미터 탐색 기법으로 5-fold 교차 검증 그리드 서치를 활용함. _(근거: PAGE 7, Feature analysis)_
+  - 근거 원문: “To determine the best hyperparameters, a 5-fold cross-validation grid search was implemented.”
+
+## 핵심 결과
+
+- RAS 제공 시 건장한 대조군(AB)은 보행 이상도가 증가하여 유의미하게 변화한 반면(1.46±1.42°), 대퇴 절단(TFA, -0.03±0.82°)과 하퇴 절단(TTA, 0.24±0.44°) 그룹은 전반적인 보행 편차에서 유의한 변화를 나타내지 않음. _(근거: PAGE 7, Results - Gait profile score)_
+  - 근거 원문: “AB GPS score increased by 1.46 ± 1.42°, while TFA and TTA changed by only –0.03 ± 0.82° and 0.24 ± 0.44°, respectively.”
+- 의지 사용자의 절단 수술 후 경과 기간이 길수록 RAS 개입 하에서 전반적인 보행 패턴(GPS)이 유의하게 개선되는(감소하는) 경향을 보임(r²=0.37, p=0.02). _(근거: PAGE 7, Results - Gait profile score)_
+  - 근거 원문: “For years since amputation, both preRAS and RAS show weak and non-significant relationships, but the GPS difference demonstrates a significant decrease with more years since amputation (r²=0.37, p=0.02).”
+- 의지 사용자 집단의 전반적 수치 변화는 미미했으나, 개별 수준에서 분석 시 14명 중 5명은 특정 관절의 변동성(GVS) 지표에서 1.7° 이상의 임상적으로 유의미한 변화를 보임. _(근거: PAGE 8, Results - Gait profile score)_
+  - 근거 원문: “Specifically, 5 of the 14 LLPU participants had a clinically significant change (greater than 1.7° in magnitude) for at least one joint-level GVS score.”
+- 기계학습 분석 결과, RF 및 SVM 분류 모델은 preRAS 보행 주기와 RAS 보행 주기를 90% 이상의 고성능 정확도로 훌륭하게 분별하였으며, RF 모델의 성능이 가장 우수했음. _(근거: PAGE 7, Results - Machine learning – feature analysis)_
+  - 근거 원문: “Both RF and SVM models performed well (>90%) when classifying the different conditions (preRAS and RAS), with RF performing the best (Table 7).”
+
+## 저자 결론
+
+- RAS는 하지 의지 사용자의 보행 대칭성을 효과적으로 개선할 수 있으며, 이 과정에서 운동학적 관절 움직임에 원치 않는 대규모 보상 조절 작용을 추가로 발생시키지 않으므로 임상 재활 훈련에 긍정적인 도구임. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “This study highlights that RAS can improve gait symmetry in LLPUs without inducing other significant, compensatory changes in their movement patterns, a positive finding for clinical rehabilitation.”
+- RAS에 대응하는 보행 조정 기전은 환자 개인의 절단 위치(의지 형태) 및 의지 사용 숙련도에 따라 개별적으로 달라질 수 있으므로 임상 적용 및 처방 시 이러한 요인을 신중히 고려해야 함. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “However, our results show that individual responses can vary depending on factors such as prosthesis type and user experience and these should be considered in clinical care.”
+
+## 연구의 한계
+
+- 보행 분석에 있어서 상체의 움직임 지표나 동작에 가해지는 역학적 힘(kinetic measures)과 같은 추가적인 보행 지표 데이터들을 획득하여 분석하지 못함. _(근거: PAGE 14, Discussion)_
+  - 근거 원문: “One limitation of this study is the lack of additional gait parameters data, such as upper-body movements or kinetic measures.”
+- 실험실 환경에서의 단기적인 보상 반응 및 적응 전략만 측정했기 때문에, 장기적으로 RAS 시스템을 활용할 경우 보행 운동학에 어떤 영향이 미칠지는 밝혀지지 않음. _(근거: PAGE 14, Discussion)_
+  - 근거 원문: “This study assessed only the short-term compensatory changes, and it remains unclear whether kinematics would change further with longer term use of the RAS system.”
+
+## 생각해볼 내용
+
+- 건장한 사람(AB)의 경우 인위적으로 주어지는 비대칭 자극(섭동)에 맞추기 위해 보폭을 늘리려 발목 저측굴곡을 줄이고 고관절 굴곡을 유의하게 증가시키는 적극적인 보상 기전을 관찰할 수 있음. _(근거: PAGE 1, Abstract)_
+  - 근거 원문: “To further explore lower-limb kinematic changes associated with temporal symmetry, a perturbation-based task involving able-bodied (AB) individuals demonstrated the presence of unique kinematic changes, including reduced ankle plantarflexion and increased hip flexion, reflecting adjustments to synchronize with the asymmetric beat.”
+- 하지 의지 사용자 그룹의 경우 발목 관절 제어 범위가 제한되는 수동 고정형 발목 의지(passive fixed-ankle prostheses)를 사용했기 때문에, 건장한 대조군처럼 특정 발목 및 고관절 각도를 정밀하게 조절하지 못하고 미세하게 분산된 형태로 보행 조절을 달성함. _(근거: PAGE 13, Discussion)_
+  - 근거 원문: “Similar adjustments were not observed in the LLPU group due possibly to the restricted ankle range of motion and movement, as all LLPU participants used passive fixed-ankle prostheses, limiting control over joint response and adjustments.”
+
+## 이 연구가 지적한 선행연구의 문제점
+
+- 재활 보행 훈련 시 하나의 특정 보행 변수(예: stance time)를 표적으로 지정하여 조정하는 것이 의도하지 않은 다른 보행 변수들이나 전체 보행 시너지 패턴에 어떠한 연쇄적 부작용을 일으키는지에 대해 충분히 다루지 못함. _(근거: PAGE 2, Introduction)_
+  - 근거 원문: “However, it remains unclear and has not been thoroughly explored in research how targeting a specific gait parameter (or multiple parameters) will impact other parameters and, consequently, overall gait patterns.”
+- 선행 연구(Roerdink 등)에 의하면 보폭 대칭성(step-length asymmetry)이라는 단일 지표에 의존하여 비대칭을 평가하는 방식은 상반되게 나타나는 몸통 진행이나 발 위치의 비대칭을 간과하게 만들어 불충분함. _(근거: PAGE 2, Introduction)_
+  - 근거 원문: “The authors concluded that analyzing changes in a single gait parameter (for example step-length in their study) was insufficient and did not adequately capture important changes in overall gait symmetry.”
+
+## 이 연구의 해결 방식과 기여
+
+- 하지 의지 사용자의 보행 대칭성을 최적화하는 과제와 건장한 대조군의 보행 대칭성을 교란하는 섭동 과제를 대치 설계함으로써, 신체 기계적 제약 유무에 따라 시스템이 운동을 재조직하는 방식을 체계적으로 대비할 수 있는 프레임워크를 정립함. _(근거: PAGE 3, Introduction)_
+  - 근거 원문: “By examining these two forms of adaptation under matched magnitudes of temporal symmetry change (despite opposite directions of change), we aim to characterize how constrained and unconstrained systems reorganize movement to meet similar temporal demands.”
+- 전통적인 일변량 분석법을 넘어, 독립적으로 다룰 때는 포착하기 힘든 변수 간 상호작용 및 운동 양상을 다변량 기반의 시스템 수준에서 분석할 수 있도록 기계학습 모델링 기법을 보행 분석에 통합함. _(근거: PAGE 13, Discussion)_
+  - 근거 원문: “The machine learning analysis further extends these findings by providing a multivariate, system-level perspective on gait adaptation, complementing traditional statistical approaches by capturing interactions that may not be evident when parameters are examined independently.”
+
+## 레퍼런스할 수 있는 내용
+
+### 1. 편측 하지 의지 사용자의 건측 다리 의존도 증가 경향
+
+- 원문 발췌: “One common deviation in unilateral LLPU gait is increased reliance on the intact limb, which can generate greater propulsion and support during gait to compensate for the limitations, or perceived limitations, of the prosthetic limb [2].”
+- 한국어 번역: 편측성 하지 의지 사용자(LLPU) 보행에서 흔히 나타나는 편차 중 하나는 건측 다리에 대한 의존도 증가이며, 이는 의지측 다리의 한계 또는 인지된 한계를 보상하기 위해 보행 시 더 큰 추진력과 지지력을 생성할 수 있습니다.
+- 원문 위치: PAGE 2, Introduction
+- 원문 내 인용표기: [2]
+- 해당 선행문헌: 2. Rutkowska-Kucharska A, Kowal M, Winiarski S. Relationship between Asymmetry of Gait and Muscle Torque in Patients after Unilateral Transfemoral Amputation. Appl Bionics Biomech. 2018;2018:5190816. https://doi.org/10.1155/2018/5190816 PMID: 29755583
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 편측 하지 절단 환자가 의지 측의 손실된 역량을 메우기 위해 지면 반발력, 지지 시간 등을 건측에 가중시키는 보행 불균형 패턴을 인용하는 기본 학술적 근거로 활용할 수 있다. 2차 인용에 주의가 필요하다.
+
+### 2. 하지 절단 환자의 만성적 보상 보행 비대칭으로 인한 근골격계 문제 유발
+
+- 원문 발췌: “These compensatory mechanisms, while functional, can lead to increased metabolic energy expenditure and joint stress, resulting in long-term musculoskeletal issues such as lower back pain or joint degeneration [2–4].”
+- 한국어 번역: 이러한 보상 메커니즘은 기능적이기는 하지만, 대사 에너지 소비와 관절 스트레스를 증가시켜 요통이나 관절 퇴행과 같은 장기적인 근골격계 문제를 야기할 수 있습니다.
+- 원문 위치: PAGE 2, Introduction
+- 원문 내 인용표기: [2–4]
+- 해당 선행문헌: 2. Rutkowska-Kucharska A, Kowal M, Winiarski S. Relationship between Asymmetry of Gait and Muscle Torque in Patients after Unilateral Transfemoral Amputation. Appl Bionics Biomech. 2018;2018:5190816. https://doi.org/10.1155/2018/5190816 PMID: 29755583
+3. Adamczyk PG, Kuo AD. Mechanisms of Gait Asymmetry Due to Push-Off Deficiency in Unilateral Amputees. IEEE Trans Neural Syst Rehabil Eng. 2015;23(5):776–85. https://doi.org/10.1109/TNSRE.2014.2356722 PMID: 25222950
+4. Richards R, van den Noort JC, Dekker J, Harlaar J. Gait Retraining With Real-Time Biofeedback to Reduce Knee Adduction Moment: Systematic Review of Effects and Methods Used. Arch Phys Med Rehabil. 2017;98(1):137–50. https://doi.org/10.1016/j.apmr.2016.07.006 PMID: 27485366
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 보행 비대칭의 장기화가 인체 역학적 부하(관절 피로, 요통) 및 대사 효율 저하를 초래한다는 의학적 타당성을 학술지에 인용 설명할 때 직접적인 지지 근거로 사용한다.
+
+### 3. 정상 성인 및 의지 사용자의 표준 보행 이상도(GPS) 범주 차이
+
+- 원문 발췌: “The GPS values for typical AB gait lie in the range of 5–6° [24], whereas for LLPUs it is higher at 9.2–10.7° [25,26].”
+- 한국어 번역: 전형적인 건장한 성인(AB) 보행의 GPS 값은 5–6° 범위에 있는 반면, 하지 의지 사용자(LLPUs)의 경우 9.2–10.7°로 더 높습니다.
+- 원문 위치: PAGE 6, Overall gait changes – gait profile score
+- 원문 내 인용표기: [24], [25,26]
+- 해당 선행문헌: 24. Fukuchi CA, Duarte M. Gait Profile Score in able-bodied and post-stroke individuals adjusted for the effect of gait speed. Gait Posture. 2019;69:40–5. https://doi.org/10.1016/j.gaitpost.2019.01.018 PMID: 30660950
+25. Ferreira AEK, Neves EB, Melanda AG, Pauleto AC, Iucksch DD, Knaut LAM, et al. Transtibial Amputee Gait: Kinematics and Temporal-Spatial Analysis. In: XIII Mediterranean Conference on Medical and Biological Engineering and Computing 2013: MEDICON 2013, 25-28 September 2013, Seville, Spain. 2014. p. 61–4.
+26. Kark L, Vickers D, McIntosh A, Simmons A. Use of gait summary measures with lower limb amputees. Gait Posture. 2012;35(2):238–43. https://doi.org/10.1016/j.gaitpost.2011.09.013 PMID: 22000790
+- 주장 유형: background_citation
+- 활용 맥락과 주의: 동작분석 시 GPS(보행 프로파일 점수)의 해석 준거로서, 건강 대조군의 점수 기준과 절단 환자들의 평균적인 점수 기준을 대조 제시할 때 신뢰성 있는 선행 데이터로 활용할 수 있다.
+
+### 4. RAS를 통한 보상 행동 없는 의지 보행 대칭성 개선
+
+- 원문 발췌: “This study highlights that RAS can improve gait symmetry in LLPUs without inducing other significant, compensatory changes in their movement patterns, a positive finding for clinical rehabilitation.”
+- 한국어 번역: 이 연구는 리듬 청각 자극(RAS)이 하지 의지 사용자(LLPU)의 전반적인 움직임 패턴에서 다른 유의미한 보상적 변화를 유발하지 않으면서 보행 대칭성을 개선할 수 있음을 보여주며, 이는 임상 재활에 긍정적인 결과입니다.
+- 원문 위치: PAGE 1, Abstract
+- 원문 내 인용표기: 해당 없음
+- 해당 선행문헌: 해당 없음
+- 주장 유형: analyzed_paper_finding
+- 활용 맥락과 주의: 본 연구의 자체 주요 성과를 인용할 때 활용한다. 청각을 활용한 재활 훈련이 전신 움직임 조절(운동학 패턴)의 다른 2차 왜곡을 수반하지 않는 안전한 훈련 전략임을 지지하는 직접 문항이다.
+
+---

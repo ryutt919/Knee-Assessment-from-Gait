@@ -1,0 +1,199 @@
+{
+  "batch_date": "2026-07-04",
+  "source_directory": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/00_upstream",
+  "input_count": 18,
+  "primary_count": 15,
+  "duplicate_count": 3,
+  "category_counts": {
+    "01_acl_gait_biomechanics_studies": 1,
+    "03_wearable_imu_and_portable_sensing": 2,
+    "04_machine_learning_and_deep_learning": 1,
+    "05_return_to_sport_and_functional_tests": 3,
+    "06_general_gait_and_other_knee_conditions": 2,
+    "07_composite_kinematic_kinetic_scoring_indices": 6
+  },
+  "papers": [
+    {
+      "original_filename": "전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구_ 운동 형상학 및 운동 역학적 특징.pdf",
+      "sha256": "38178205e4e6d0f007d6963b4644821f1d60397c1e832fb9fc1f05e96c33a878",
+      "official_title": "전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/전방 십자 인대 손상 환자의 병적 보행의 특징에 관한 연구 - 운동 형상학 및 운동 역학적 특징.pdf",
+      "category": "01_acl_gait_biomechanics_studies",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "Anterior Cruciate Ligament Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery_ An Observational Longitudinal Study.pdf",
+      "sha256": "07d438dc952ccf83a6dde8076beafc080ff71aca3b32ca654d8ece8cb7402ada",
+      "official_title": "Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery: An Observational Longitudinal Study",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery - An Observational Longitudinal Study.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery - An Observational Longitudinal Study.pdf",
+      "category": "03_wearable_imu_and_portable_sensing",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors_ A Longitudinal Study.pdf",
+      "sha256": "95711e59ba2350625b0eb5d3c87c6fe7e51ad2989f308a02d02b90f7909c8965",
+      "official_title": "Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors: A Longitudinal Study",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors - A Longitudinal Study.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Gait Analysis Post Anterior Cruciate Ligament Reconstruction Using Inertial Sensors - A Longitudinal Study.pdf",
+      "category": "03_wearable_imu_and_portable_sensing",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "applsci-09-03306.pdf",
+      "sha256": "aec7340797f09fd945fbf9dcb5a73c676dc248933ae6cb0848cc20b607662b87",
+      "official_title": "Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "category": "07_composite_kinematic_kinetic_scoring_indices",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deficits than triple hop for distance scores in athletes returning to sport.pdf",
+      "sha256": "42393ff62280f1c3e0d66493cb883fe3fce8a91e59071a838b65d26d24d48dd7",
+      "official_title": "Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deficits than triple hop for distance scores in athletes returning to sport",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deficits than triple hop for distance scores in athletes returning to sport.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Individual hop analysis and reactive strength ratios provide better discrimination of ACL reconstructed limb deficits than triple hop for distance scores in athletes returning to sport.pdf",
+      "category": "05_return_to_sport_and_functional_tests",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "kjsm-39-1-34.pdf",
+      "sha256": "742d3af90ffdb6061ae41bc85af4d358dcdeeaf39d2a3de6af10b0576f187999",
+      "official_title": "하지 검사 프로토콜을 이용한 전방십자인대 재건술 후 무릎관절의 객관적 및 주관적 분석",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/하지 검사 프로토콜을 이용한 전방십자인대 재건술 후 무릎관절의 객관적 및 주관적 분석.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/하지 검사 프로토콜을 이용한 전방십자인대 재건술 후 무릎관절의 객관적 및 주관적 분석.pdf",
+      "category": "05_return_to_sport_and_functional_tests",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기.pdf",
+      "sha256": "c6699fa78420a3c5826919512b8de7bb19036ca0d30999b9a282225d8d6eddf7",
+      "official_title": "전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향.pdf",
+      "category": "05_return_to_sport_and_functional_tests",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "75-Submission File-154-1-10-20170816.pdf",
+      "sha256": "97278b6a166bba28166a27c92798ab922903b864f7da28ef2eac290e5ad1eae9",
+      "official_title": "The Development of a Normative Gait Database",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/The Development of a Normative Gait Database.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/The Development of a Normative Gait Database.pdf",
+      "category": "06_general_gait_and_other_knee_conditions",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "shin2020.pdf",
+      "sha256": "9326aee2dc719160c22aede663256a251f4cc428c71012f1cbe56c772fe2c570",
+      "official_title": "Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study on early post-stroke individuals",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Does kinematic gait quality improve with functional gait recovery - A longitudinal pilot study on early post-stroke individuals.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Does kinematic gait quality improve with functional gait recovery - A longitudinal pilot study on early post-stroke individuals.pdf",
+      "category": "07_composite_kinematic_kinetic_scoring_indices",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "Journal Orthopaedic Research - 2021 - Biggs - Gait function improvements  using Cardiff Classifier  are related to.pdf",
+      "sha256": "03737588ed43b0a8e0c49b40f138f1887cc43ed029b34e8bb5ea7cd8d31e1fb5",
+      "official_title": "Gait function improvements, using Cardiff Classifier, are related to patient-reported function and pain following hip arthroplasty",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait function improvements, using Cardiff Classifier, are related to patient-reported function and pain following hip arthroplasty.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait function improvements, using Cardiff Classifier, are related to patient-reported function and pain following hip arthroplasty.pdf",
+      "category": "07_composite_kinematic_kinetic_scoring_indices",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "The functional gait deviation index.pdf",
+      "sha256": "2775d6d50047fce09d65d104cf6f4569fb872bef733ffb23deacdd9bb2882a62",
+      "official_title": "The functional gait deviation index",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/The functional gait deviation index.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/The functional gait deviation index.pdf",
+      "category": "07_composite_kinematic_kinetic_scoring_indices",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "applsci-09-04680-v2.pdf",
+      "sha256": "8ca1278c55dff523285792473053dc0de05ac7c6a0160939860e2e901f34b490",
+      "official_title": "Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "category": "07_composite_kinematic_kinetic_scoring_indices",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "applsci-16-03976.pdf",
+      "sha256": "92d94922b190516aaadff9b7bafd3fbcdfa43ce10b80856fce0b0ffd8cc3410a",
+      "official_title": "Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Unsupervised Detection of Pathological Gait Patterns via Instantaneous Center of Rotation Analysis.pdf",
+      "category": "04_machine_learning_and_deep_learning",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "fbioe-10-874074.pdf",
+      "sha256": "ac6d821bd2a3123440c11f0ce505c1481cad012cda415ff413327a14eaa99eb5",
+      "official_title": "Derivation of the Gait Deviation Index for Spinal Cord Injury",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Derivation of the Gait Deviation Index for Spinal Cord Injury.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Derivation of the Gait Deviation Index for Spinal Cord Injury.pdf",
+      "category": "07_composite_kinematic_kinetic_scoring_indices",
+      "status": "primary",
+      "duplicate_of": null
+    },
+    {
+      "original_filename": "journal.pone.0351930.pdf",
+      "sha256": "a0e1d1cb5fff4b1f8282ce9a1efb8ee1bae0a6fb7d05a3e564b213e0ef2a1082",
+      "official_title": "Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Investigating compensatory adjustments induced by rhythmic auditory stimulation for changes in temporal gait symmetry in lower-limb prosthetic users.pdf",
+      "category": "06_general_gait_and_other_knee_conditions",
+      "status": "primary",
+      "duplicate_of": null
+    }
+  ],
+  "duplicates": [
+    {
+      "original_filename": "applsci-09-03306 (1).pdf",
+      "sha256": "aec7340797f09fd945fbf9dcb5a73c676dc248933ae6cb0848cc20b607662b87",
+      "official_title": "Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/99_duplicates_or_alternate_versions/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "category": "99_duplicates_or_alternate_versions",
+      "status": "duplicate",
+      "duplicate_of": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Classification Using Mahalanobis–Taguchi System for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction.pdf"
+    },
+    {
+      "original_filename": "applsci-09-04680-v2 (1).pdf",
+      "sha256": "8ca1278c55dff523285792473053dc0de05ac7c6a0160939860e2e901f34b490",
+      "official_title": "Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/99_duplicates_or_alternate_versions/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf",
+      "category": "99_duplicates_or_alternate_versions",
+      "status": "duplicate",
+      "duplicate_of": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/07_composite_kinematic_kinetic_scoring_indices/Gait Analysis and Mathematical Index-Based Health Management Following Anterior Cruciate Ligament Reconstruction.pdf"
+    },
+    {
+      "original_filename": "attr-article-p823.pdf",
+      "sha256": "07d438dc952ccf83a6dde8076beafc080ff71aca3b32ca654d8ece8cb7402ada",
+      "official_title": "Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery: An Observational Longitudinal Study",
+      "canonical_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery - An Observational Longitudinal Study.pdf",
+      "final_pdf_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/99_duplicates_or_alternate_versions/Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery - An Observational Longitudinal Study.pdf",
+      "category": "99_duplicates_or_alternate_versions",
+      "status": "duplicate",
+      "duplicate_of": "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Out-of-Laboratory Longitudinal Gait Assessment of Participants Before and After Anterior Cruciate Ligament Reconstruction Surgery - An Observational Longitudinal Study.pdf"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 참고문헌 분석 파이프라인
 
-`docs/ref_papers/01_*`부터 `06_*`까지의 논문을 한 편씩 **분석 → 즉시 검증** 순서로 처리한다.
+`docs/ref_papers/01_*`부터 `07_*`까지의 논문을 한 편씩 **분석 → 즉시 검증** 순서로 처리한다.
 
 ## 통합 실행 (권장)
 
@@ -22,11 +22,18 @@ python3 Study-review/run_pipeline.py --provider codex
 # 다른 탐색 폴더 지정
 python3 Study-review/run_pipeline.py --input-dir path/to/pdfs --provider codex
 
+# batch manifest에 기록된 논문만 증분 분석·검증
+python3 Study-review/run_pipeline.py \
+  --input-manifest Study-review/mds/2026-07-04/01_batch_manifest.json \
+  --provider codex
+
 # provider 응답 테스트만 실행
 python3 Study-review/run_pipeline.py --provider-test-all
 ```
 
-`run_pipeline.py`는 논문별로 `01 → 02`를 순차 실행한다. 분석이 성공한 논문만 즉시 검증 단계로 넘어가며, 모든 provider가 소진되면 종료 코드 75로 중단한다.
+`run_pipeline.py`는 논문별로 `01 → 02`를 순차 실행한다. 분석이 성공한 논문만 즉시 검증 단계로 넘어가며, 모든 provider가 소진되면 종료 코드 75로 중단한다. `--input-manifest` 사용 시 manifest의 `papers[].final_pdf_path`(및 `sha256`)만 정확히 처리하고 선택 배치의 성공 여부만 종료 코드에 반영한다. 기존 분석 번호와 누적 inventory는 보존되며 신규 논문은 기존 최댓값 다음 번호부터 부여된다. 사전검사(`--provider-test-all`)를 통과하면 오래된 `provider_states`를 초기화한 뒤 실행을 시작한다.
+
+날짜 폴더(`Study-review/mds/YYYY-MM-DD/`)에는 해당 배치의 `NN_batch_manifest.json`(원본 파일명·SHA-256·공식 제목·최종 경로·분류 기록)과 `NN_batch_index.md`, 그리고 그 배치가 처리한 분석/검증 MD의 byte-identical 복사본이 저장된다. 정식 산출물은 항상 `mds/papers/{category}`·`mds/reviews/{category}`가 canonical이며, 날짜 폴더는 그 배치 실행분만 모아둔 스냅샷이다.
 
 ## 출력 구조
 
@@ -40,7 +47,8 @@ Study-review/mds/
 │   ├── 03_wearable_imu_and_portable_sensing/
 │   ├── 04_machine_learning_and_deep_learning/
 │   ├── 05_return_to_sport_and_functional_tests/
-│   └── 06_general_gait_and_other_knee_conditions/
+│   ├── 06_general_gait_and_other_knee_conditions/
+│   └── 07_composite_kinematic_kinetic_scoring_indices/
 ├── reviews/
 │   └── ...
 └── papers_revised/

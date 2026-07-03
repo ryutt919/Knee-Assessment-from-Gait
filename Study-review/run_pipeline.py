@@ -5,8 +5,10 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import json
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 TASK_ROOT = Path(__file__).resolve().parent
@@ -20,14 +22,14 @@ EXIT_ALL_UNAVAILABLE = 75
 PROVIDERS = ("codex", "claude", "antigravity")
 
 
-def _discover_pdfs(input_dir: Path) -> list[Path]:
+def _discover_pdfs(input_dir: Path, input_manifest: Path | None = None) -> list[Path]:
     """Mirrors 01's discover_pdfs() by importing it directly to guarantee identical ordering."""
     mod_name = "_pipeline_analyze01"
     spec = importlib.util.spec_from_file_location(mod_name, SCRIPT_01)
     mod = importlib.util.module_from_spec(spec)
     sys.modules[mod_name] = mod  # required for @dataclass to resolve cls.__module__
     spec.loader.exec_module(mod)
-    return mod.discover_pdfs(input_dir)
+    return mod.select_pdfs(input_dir, input_manifest)
 
 
 def _run(cmd: list[str]) -> int:
@@ -46,11 +48,32 @@ def _passthrough(args: argparse.Namespace) -> list[str]:
     if args.antigravity_model:
         flags += ["--antigravity-model", args.antigravity_model]
     flags += ["--input-dir", str(args.input_dir), "--output-dir", str(args.output_dir)]
+    if args.input_manifest:
+        flags += ["--input-manifest", str(args.input_manifest)]
     if args.overwrite:
         flags.append("--overwrite")
     if args.retry_failed:
         flags.append("--retry-failed")
     return flags
+
+
+def _reset_provider_states(output_dir: Path) -> None:
+    """Clear stale provider failures after the parent gate proves all are usable."""
+    for path in (
+        output_dir / "logs" / "manifest.json",
+        output_dir / "logs" / "review" / "review_manifest.json",
+    ):
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["provider_states"] = {
+            provider: {"status": "available", "error": ""} for provider in PROVIDERS
+        }
+        with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as fh:
+            json.dump(data, fh, ensure_ascii=False, indent=2)
+            fh.write("\n")
+            tmp = Path(fh.name)
+        tmp.replace(path)
 
 
 def main() -> int:
@@ -61,6 +84,8 @@ def main() -> int:
     parser.add_argument("--claude-model")
     parser.add_argument("--antigravity-model")
     parser.add_argument("--input-dir", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--input-manifest", type=Path,
+                        help="이 JSON manifest에 명시된 PDF만 정확히 처리합니다")
     parser.add_argument("--output-dir", type=Path, default=TASK_ROOT)
     parser.add_argument("--resume", action="store_true",
                         help="각 스크립트가 이미 성공한 논문을 건너뜁니다 (기본 동작과 동일, 하위 호환성)")
@@ -98,7 +123,7 @@ def main() -> int:
             cmd.append("--overwrite")
         return _run(cmd)
 
-    pdfs = _discover_pdfs(args.input_dir)
+    pdfs = _discover_pdfs(args.input_dir, args.input_manifest)
     if args.only:
         pdfs = [p for p in pdfs if args.only.lower() in p.name.lower()]
 
@@ -121,6 +146,7 @@ def main() -> int:
         if rc != 0:
             print("Provider 테스트 실패 — 파이프라인을 시작하지 않습니다.", file=sys.stderr)
             return 1
+        _reset_provider_states(args.output_dir)
         print()
 
     # 하위 subprocess에 항상 전달되는 공통 flags

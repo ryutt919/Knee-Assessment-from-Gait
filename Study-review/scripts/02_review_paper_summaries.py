@@ -39,7 +39,7 @@ ANALYSIS_MANIFEST_PATH = TASK_ROOT / "logs" / "manifest.json"
 PROVIDERS = ("codex", "claude", "antigravity")
 EXIT_ALL_UNAVAILABLE = 75
 
-from path_utils import categorized_output_path, category_for_pdf
+from path_utils import categorized_output_path, category_for_pdf, pdfs_from_input_manifest
 
 SECTION_LABELS = {
     "bibliographic_info": "서지정보",
@@ -246,7 +246,7 @@ def discover_pdfs(input_dir: Path) -> list[Path]:
     if input_dir.resolve() == DEFAULT_INPUT.resolve():
         result = []
         for child in sorted(input_dir.iterdir()):
-            if child.is_dir() and re.match(r"^0[1-6]_", child.name):
+            if child.is_dir() and re.match(r"^0[1-7]_", child.name):
                 result.extend(sorted(child.glob("*.pdf")))
         return result
     return sorted(input_dir.rglob("*.pdf"))
@@ -259,20 +259,24 @@ class ReviewTarget:
     summary_path: Path
 
 
-def discover_review_targets(input_dir: Path) -> list[ReviewTarget]:
-    if not ANALYSIS_MANIFEST_PATH.exists():
-        raise FileNotFoundError(f"01단계 분석 manifest를 찾을 수 없습니다: {ANALYSIS_MANIFEST_PATH}")
-    analysis_manifest = json.loads(ANALYSIS_MANIFEST_PATH.read_text(encoding="utf-8"))
-    pdfs = discover_pdfs(input_dir)
-    global_index = {str(p.resolve()): i for i, p in enumerate(pdfs, 1)}
+def discover_review_targets(
+    input_dir: Path,
+    input_manifest: Path | None = None,
+    analysis_manifest_path: Path = ANALYSIS_MANIFEST_PATH,
+) -> list[ReviewTarget]:
+    if not analysis_manifest_path.exists():
+        raise FileNotFoundError(f"01단계 분석 manifest를 찾을 수 없습니다: {analysis_manifest_path}")
+    analysis_manifest = json.loads(analysis_manifest_path.read_text(encoding="utf-8"))
+    selected = pdfs_from_input_manifest(input_manifest) if input_manifest else discover_pdfs(input_dir)
+    selected_keys = {str(pdf.resolve()) for pdf in selected}
     targets: list[ReviewTarget] = []
     for key, record in sorted(analysis_manifest.get("papers", {}).items()):
-        if record.get("status") != "success":
+        if record.get("status") != "success" or str(Path(key).resolve()) not in selected_keys:
             continue
         pdf = Path(key)
         summary_path = Path(record["output_path"])
-        number = global_index.get(str(pdf.resolve()))
-        if number is None:
+        number = record.get("number")
+        if not isinstance(number, int) or number < 1:
             continue
         if not summary_path.exists():
             fallback = categorized_output_path(TASK_ROOT, "papers", pdf, f"{number:02d}_{safe_name(pdf)}.md")
@@ -282,6 +286,23 @@ def discover_review_targets(input_dir: Path) -> list[ReviewTarget]:
             continue
         targets.append(ReviewTarget(number=number, pdf=pdf, summary_path=summary_path))
     return sorted(targets, key=lambda t: t.number)
+
+
+def merge_inventory(existing: list[str], targets: list[ReviewTarget]) -> list[str]:
+    merged = list(existing)
+    seen = set(merged)
+    for target in targets:
+        key = str(target.pdf.resolve())
+        if key not in seen:
+            seen.add(key)
+            merged.append(key)
+    return merged
+
+
+def selection_counts(records: dict[str, Any], targets: list[ReviewTarget]) -> tuple[int, int]:
+    selected = [records.get(str(target.pdf.resolve()), {}) for target in targets]
+    failures = sum(record.get("status") != "success" for record in selected)
+    return len(selected) - failures, failures
 
 
 def extract_pdf(pdf: Path, cache_dir: Path) -> Path:
@@ -531,6 +552,8 @@ def main() -> int:
     parser.add_argument("--claude-model")
     parser.add_argument("--antigravity-model")
     parser.add_argument("--input-dir", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--input-manifest", type=Path,
+                        help="이 JSON manifest에 명시된 PDF만 정확히 검증합니다")
     parser.add_argument("--output-dir", type=Path, default=TASK_ROOT)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--provider-test", action="store_true")
@@ -546,9 +569,14 @@ def main() -> int:
     if not inside(output_root, TASK_ROOT):
         parser.error(f"output-dir는 샌드박스 내부여야 합니다: {TASK_ROOT}")
 
-    targets = discover_review_targets(args.input_dir.resolve())
+    targets = discover_review_targets(
+        args.input_dir.resolve(), args.input_manifest, output_root / "logs" / "manifest.json"
+    )
     if args.only:
-        targets = [t for t in targets if args.only.lower() in t.pdf.name.lower()]
+        exact = [target for target in targets if target.pdf.name == args.only]
+        targets = exact or [
+            target for target in targets if args.only.lower() in target.pdf.name.lower()
+        ]
     binaries = {p: find_binary(p) for p in PROVIDERS}
     print(f"검증 대상: {len(targets)}편 (01단계 manifest 기준 성공한 요약만 포함)")
     for p in PROVIDERS:
@@ -570,16 +598,20 @@ def main() -> int:
             failed |= not result.ok
         return 1 if failed else 0
 
+    gate_passed = False
     if not args.skip_provider_gate:
         gate_results = {p: run_provider_test(p, logs_dir, model_for(p, args)) for p in PROVIDERS}
         if not all(r.ok for r in gate_results.values()):
             print("세 provider 사전 테스트가 모두 통과하지 못해 검증을 시작하지 않습니다.", file=sys.stderr)
             return 1
+        gate_passed = True
 
     manifest_path = logs_dir / "review_manifest.json"
-    if args.resume and manifest_path.exists():
+    if (args.resume or args.input_manifest) and manifest_path.exists():
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        manifest["inventory"] = [str(t.pdf.resolve()) for t in targets]
+        manifest["inventory"] = merge_inventory(manifest.get("inventory", []), targets)
+        manifest["selection"] = [str(t.pdf.resolve()) for t in targets]
+        manifest["input_manifest"] = str(args.input_manifest.resolve()) if args.input_manifest else None
         manifest["prompt_hash"] = sha256(PROMPT_PATH)
         manifest["schema_hash"] = sha256(SCHEMA_PATH)
     else:
@@ -587,12 +619,20 @@ def main() -> int:
             "run_id": datetime.now().strftime("%Y%m%d_%H%M%S"),
             "created_at": now_iso(),
             "inventory": [str(t.pdf.resolve()) for t in targets],
+            "selection": [str(t.pdf.resolve()) for t in targets],
+            "input_manifest": str(args.input_manifest.resolve()) if args.input_manifest else None,
             "prompt_hash": sha256(PROMPT_PATH), "schema_hash": sha256(SCHEMA_PATH),
             "provider_states": {p: {"status": "available", "error": ""} for p in PROVIDERS},
             "papers": {},
         }
     records = manifest["papers"]
-    states = manifest["provider_states"]
+    states = manifest.setdefault("provider_states", {})
+    if gate_passed:
+        states.clear()
+    for provider in PROVIDERS:
+        states.setdefault(provider, {"status": "available", "error": ""})
+        if gate_passed:
+            states[provider] = {"status": "available", "error": "", "updated_at": now_iso()}
     started = time.monotonic()
 
     for idx, target in enumerate(targets, 1):
@@ -702,7 +742,10 @@ def main() -> int:
             records[key].update({"status": "failed", "errors": errors, "number": target.number, "updated_at": now_iso()})
             atomic_json(manifest_path, manifest)
             if not any(states.get(p, {}).get("status") == "available" for p in PROVIDERS):
-                resume = shlex.join([sys.executable, str(Path(__file__).relative_to(REPO_ROOT)), "--provider", args.provider, "--resume", "--input-dir", str(args.input_dir), "--output-dir", str(output_root)])
+                resume_args = [sys.executable, str(Path(__file__).relative_to(REPO_ROOT)), "--provider", args.provider, "--resume", "--input-dir", str(args.input_dir), "--output-dir", str(output_root)]
+                if args.input_manifest:
+                    resume_args += ["--input-manifest", str(args.input_manifest)]
+                resume = shlex.join(resume_args)
                 handoff = write_handoff(output_root, manifest, target.pdf.name, resume)
                 dashboard(idx - 1, len(targets), "none", target.pdf.name, states, started, f"중단: {handoff.name}")
                 return EXIT_ALL_UNAVAILABLE
@@ -713,8 +756,8 @@ def main() -> int:
     aggregate_reviews(records, output_root)
     manifest["completed_at"] = now_iso()
     atomic_json(manifest_path, manifest)
-    failures = sum(rec.get("status") != "success" for rec in records.values())
-    print(f"완료: 성공 {len(records)-failures}, 실패 {failures}")
+    successes, failures = selection_counts(records, targets)
+    print(f"완료: 성공 {successes}, 실패 {failures}")
     return 1 if failures else 0
 
 
