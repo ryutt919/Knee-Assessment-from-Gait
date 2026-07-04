@@ -1,0 +1,910 @@
+
+--- PAGE 1 ---
+JOURNALOFAPPLIEDSTATISTICS
+2026,VOL.53,NO.3,391–411
+https://doi.org/10.1080/02664763.2025.2514150
+The functional gait deviation index
+Sajal Kaur Minhasa, Morgan Sangeuxb, Julia Polakc and Michelle Careya
+aSchoolofMathematicsandStatistics,UniversityCollegeDublin,Belﬁeld,Ireland;bUniversityChildren’s
+HospitalBasel,DepartmentofOrthopaedics,Basel,Switzerland;cSchoolofMathematicsandStatistics,
+UniversityofMelbourne,Melbourne,Australia
+ABSTRACT
+Atypicalgaitanalysisrequirestheexaminationofthemotionofnine
+joint angles on the left-hand side and six joint angles on the right-
+handsideacrossmultiplesubjects.Duetothequantityandcomplex-
+ityofthedata,itisusefultocalculatetheamountbywhichasubject’s
+gait deviates from an average normal profile and to represent this
+deviationasasinglenumber.Suchameasurecanquantifytheoverall
+severity of a condition affecting walking, monitor progress, or evalu-
+ate the outcome of an intervention prescribed to improve the gait
+pattern. The gait deviation index, gait profile score, and the overall
+abnormality measure are standard benchmarks for quantifying gait
+abnormality. However, these indices do not account for the intrinsic
+smoothnessofthegaitmovementateachjoint/planeandthepoten-
+tial co-variation between the joints/planes. Utilizing a multivariate
+functional principal component analysis we propose the functional
+gait deviation index (FGDI). FGDI accounts for the intrinsic smooth-
+ness of the gait movement at each joint/plane and the potential
+co-variationbetweenthejoints.WeshowthatFGDIscaleswithover-
+all gait function, provides a consistent measure of gait abnormality,
+and is implemented easily using an interactive web app.
+ARTICLEHISTORY
+Received12February2024
+Accepted10May2025
+KEYWORDS
+Kinematics;multivariate
+functionalprincipal
+components;gaitpathology;
+functionaldataanalysis;
+biomechanics
+MATHEMATICSSUBJECT
+CLASSIFICATIONS
+62R10;62H25
+1. Introduction
+Typical gait data capture the movement of key kinematic variables throughout an indi-
+vidual’s stride. These variables encompass pelvic and hip angles across all three planes,
+knee flexion/extension, ankle dorsiflexion/plantarflexion, and foot internal/external rota-
+tion. Measurements are taken at 1% intervals throughout the entire 100% gait cycle. A
+prevalent objective in this analysis is to determine the extent to which an individual’s gait
+pattern deviates from the average gait pattern observed in a group of healthy subjects.
+Figure 1 presents an illustrative example, displaying the gait patterns of 42 healthy sub-
+jects (depicted in grey) and their mean (shown in black), alongside the gait pattern of
+a subject with Parkinson’s disease (highlighted in green). This figure includes nine joint
+angles on the left-hand side and six on the right-hand side1. It is important to note that
+since the pelvis is common to both sides, it is appropriate to include pelvic kinematics
+from only one side.
+CONTACT MichelleCarey michelle.carey@ucd.ie SchoolofMathematicsandStatistics,UniversityCollege
+Dublin,BelﬁeldDublin4,Ireland
+©2025TheAuthor(s). PublishedbyInformaUKLimited,tradingasTaylor&FrancisGroup.
+ThisisanOpenAccessarticledistributedunderthetermsoftheCreativeCommonsAttributionLicense(http://creativecommons.org/licenses/
+by/4.0/),whichpermitsunrestricteduse,distribution,andreproductioninanymedium,providedtheoriginalworkisproperlycited. Theterms
+onwhichthisarticlehasbeenpublishedallowthepostingoftheAcceptedManuscriptinarepositorybytheauthor(s)orwiththeirconsent.
+
+--- PAGE 2 ---
+392 S. K. MINHAS ET AL.
+Figure 1. Thegaitpatternsof42healthysubjects(representedingrey)andtheirmean(showninblack),
+alongsidethegaitpatternofasubjectwithParkinson’sdisease(highlightedingreen).
+As illustrated in Figure 1, the gait data are highly interdependent, with many kinematic
+variablesexhibitingsimilarbehavioracrossthegaitcycle,planes,andjoints.However,sub-
+jectswithconditionsaffectingtheirwalkingpatternsshowsignificantdifferences,primarily
+duetovariationsinthetimingandamplitudeoftheirgaitwaveforms.Giventhesubstantial
+amount and complexity of the data, there is a preference for employing a single metric to
+assess the extent of deviation in an individual’s walking pattern from the average pattern
+observed in a control group. This metric can be useful for assessing the overall severity of
+awalkingimpairment,trackingimprovementsovertime,orevaluatingtheeffectivenessof
+interventions aimed at enhancing walking patterns.
+TheGaitDeviationIndex(GDI)andtheGaitProfileScore(GPS)areestablishedindices
+for assessing gait abnormalities, as detailed in Schwartz (2008) and Baker (2009), respec-
+tively. The GDI employs singular value decomposition on kinematic data from a reference
+database that includes all children who received gait analysis at the Gillette Children’s
+Specialty Healthcare Center between February 1994 and April 2007. This decomposition
+generates fifteen independent gait features that form the basis for projecting the kinematic
+variables of the subjects within any independently collected gait data sample. The GDI
+is calculated by measuring the distance between a subject’s projected kinematics and the
+averageprojectedkinematicsofthecontrolgroup.GDIprovidesametricforrankingindi-
+viduals based on their deviation from the average behavior of the control group, offering
+distinct severity measures for the left and right legs.
+The GPS is derived directly from the collected gait data sample as the root mean square
+difference between a subjects’s kinematic data and the average kinematic data of a control
+
+--- PAGE 3 ---
+JOURNAL OF APPLIED STATISTICS 393
+group. This measure provides an evaluation of gait abnormalities for both legs combined,
+each leg separately, and at the individual joint level. Such a detailed breakdown enhances
+understanding of which specific legs or joints contribute to gait abnormalities, thereby
+facilitating more targeted and effective treatment planning.
+Although the GDI and GPS have been effective in assessing common gait pathologies
+such as cerebral palsy [17,21], rheumatoid arthritis [5], and Parkinson’s disease [8], they
+present inherent challenges. Kinematic variables for any individual are often highly cor-
+related; the motion of one joint can significantly influence the motion of adjacent joints.
+Furthermore, the position of a joint at one point in the gait cycle strongly influences its
+position in later instances. This interdependence of kinematic data may result in biased
+assessments of overall abnormality when using the GDI and GPS indices, as demonstrated
+in [16].
+The Overall Abnormality (OA) approach, introduced by Marks et al. [16], addresses
+the limitations inherent in the GDI and GPS. In contrast to the GDI, which derives its gait
+features from a historical reference database, the OA method applies principal component
+analysis (PCA) to kinematic data collected for the study’s control group, thereby deriv-
+ing K independent gait features. A subject’s kinematic variables are then projected into
+this feature space, and the OA metric calculates the distance between the subject’s pro-
+jected kinematics and the average of the projected kinematics for the control group. This
+methodassessesseverityacrossbothlegs,individuallyforeachleg,andateachjoint.How-
+ever, utilizing PCA solely on the control group may lead to biased abnormality estimates,
+as the control group’s gait features might not adequately represent the patterns observed
+in subjects with significantly abnormal gaits. Moreover, while PCA recognizes the high
+interdependence of kinematic data, it does not fully address the essential structure of this
+dependence. The temporal sequence of kinematic data throughout the gait cycle is crucial
+in gait analysis and should be preserved. The interconnectedness across joints and planes
+often leads to multicollinearity, which can introduce bias in the measurement of overall
+abnormality.
+Ingaitanalysis,measurementsaredenotedbymi,j,l,wherejrangesfrom1to18,covering
+the pelvis and hip angles across all three planes, knee flexion/extension, ankle dorsiflex-
+ion/plantarflexion,andfootinternal/externalrotationforboththeleftandrightsides.The
+index i represents individual subjects, numbered from 1 to N, and l indicates the observed
+pointsthroughoutthegaitcycle,from1toT.Toencapsulatethetemporalorderingandthe
+continuous nature of movement, a commonly employed approach [4,12,23,25] treats the
+set of discrete measurements mi,j,l as noisy realizations of a unified entity, a curve mi,j(t),
+representingthemovementacrosstheentiregaitcyclet foreachindividualiandkinematic
+variable j. By aggregating these curves, we obtain a multivariate functional data set, so that
+for each individual a set of 18 functions is observed representing the movement for each
+of the 18 kinematic variables.
+Multivariate Functional Principal Components Analysis (MFPCA) identifies the prin-
+cipalmodesofvariationwithinthecovariancestructureofthemultivariatefunctionaldata
+set, accounting for potential covariations among the multiple kinematic variables. These
+modes represented as eigenfunctions of the covariance operator, capture significant devia-
+tions from the mean behavior of each kinematic variable. The principal component scores
+derived from these eigenfunctions provide insights into individual deviations from typical
+
+--- PAGE 4 ---
+394 S. K. MINHAS ET AL.
+behavior. MFPCA effectively addresses potential multicollinearity issues due to interde-
+pendencies between joints or planes while preserving the temporal ordering throughout
+the gait cycle.
+Applying MFPCA to the functional dataset yields independent gait features, into which
+any subject’s kinematic variables can be projected. Similar to the GDI and OA approaches,
+the proposed FGDI is calculated by measuring the distance between a subject’s projected
+kinematics and the average of the projected kinematics of the control group. Recently,
+Roach et al. [24] and Yoshida et al. [29] performed MFPCA on kinematic data and exam-
+inedtheresultingfunctionalprincipalcomponentscorestogaininsightintothedifferences
+between two cohorts of individuals. These approaches differ from the proposed approach
+as they do not provide a single measure that can be used to quantify the overall severity of
+a condition or a means to rank the subjects based on gait pathology.
+FGDI combines the advantages of the existing GDI, GPS and OA approaches. As the
+FGDI index is easy to interpret and can provide a measure of severity on both legs, as well
+as on each leg and at each joint separately. Additionally, the proposed approach accounts
+forthestructureofthedependenceofhumangaitleadingtoamoreaccuratequantification
+of gait pathology which can improve clinical decision-making.
+2. Quantifying gait abnormalities
+As discussed in the introduction, the conventional metrics used to quantify gait abnor-
+malities include the GDI [26], the GPS [2], and the OA approach [16]. For more details on
+these approaches, please consult Sections A.1, A.2, and A.3 in Appendix 1.
+In this section, we will begin by demonstrating how to apply the MFPCA technique,
+as described in [11], within the context of gait data. MFPCA is employed to identify the
+dominant modes of variation among individuals functions representing gait at each joint
+and within each plane. Subsequently, we will discuss the utilization of results from the
+MFPCA to compute the FGDI.
+In gait analysis, data collection typically involves the recording of all 18 kinematic
+variables. However, subsequent analyzes focus only on specific subsets of these vari-
+ables, tailored to the particular objectives of the study. For the computation of the
+FGDI, we concentrate on three distinct subsets of these variables, which are outlined as
+follows:
+(1) Combined Approach: The first method involves using the combined observations
+from nine kinematic variables for the left side and six kinematic variables for the
+rightside.Giventhatthepelvisiscommontobothsides,weincludepelvickinemat-
+ics from one side only. This procedure results in the selection of fifteen kinematic
+variables, designated as u = 1,...,15. This approach yields a measure of severity
+by collectively considering both legs, thereby providing an overall assessment of
+gait abnormality.
+(2) Individual Leg Approach: The FGDI can be calculated separately for each leg
+by utilizing the observations from the nine kinematic variables specific to that
+leg, designated with indices u = 1,...,9. This method provides a measure of
+gait pathology for each leg individually, facilitating a detailed assessment of gait
+abnormality in each leg.
+
+--- PAGE 5 ---
+JOURNAL OF APPLIED STATISTICS 395
+(3) Joint/PlaneSpecificApproach:TheFGDIcanbecomputedforeachkinematicvari-
+able separately, resulting in a measure of severity for each joint or plane, denoted
+by u = 1. This method offers a detailed evaluation of gait abnormalities at the
+individual level of each joint or plane.
+Let the specific subset of kinematic variables be denoted by u = 1,...,U, where U
+represents either 15, 9, or 1, as described above.
+2.1. Multivariatefunctionalprincipalcomponentanalysis
+Foreachsubjecti,andkinematicvariableu,themovementthroughouttheentiregaitcycle
+can be expressed as follows:
+mi,u,l = mi,u(tl) + i,u,l, for i = 1,...,N, u = 1,...,U, and l = 1,...,T. (1)
+where mi,u(tl) denotes the curve describing the movement of the uth kinematic variable
+for subject i evaluated at point tl within the gait cycle. The term i,u,l represents the mea-
+surement error, which is presumed to follow a normal distribution with a mean of zero
+and constant variance σ2. The function mi,u(t) represents the inherent smoothness of
+gait movement throughout the entire gait cycle t. Let m̃i,u(t) = mi,u(t) − μu represent the
+centered gait data for the ith subject and the uth kinematic variable, observed at the T
+points over the gait cycle t. Here, μu denotes the mean of mi,u(t) across all subjects for the
+uth kinematic variable. The algorithm for obtaining the multivariate functional principal
+components, as outlined in [11], then proceeds with the following two steps:
+(1) Calculate a univariate functional PCA on m̃i,u(t) for each kinematic variable u.
+HereweusethefunctionalPCAwithfastcovarianceestimationattributableto[28].
+This results in principal component functions φ̂u
+1,...,φ̂u
+Ku
+, and principal compo-
+nentscores,ξ̂u
+i,1,...,ξ̂u
+i,Ku
+,foreachsubjecti = 1,...,N andeachkinematicvariable
+u = 1,...,U. The truncation lag for each variable, Ku, is chosen as the number of
+components that have a proportion of variance explained greater than ω, where ω
+is typically 0.99. When implementing the Joint/Plane Specific Approach, proceed-
+ing to step two is not necessary, as this method involves considering only a single
+joint or plane.
+(2) Find the dominant modes of variation across multiple joints/planes: Combine
+all the principal component scores from each joint/plane into one big matrix
+ ∈ RN×K+ with K+ =
+U
+u=1 Ku having rows i = (ξ̂
+(1)
+i,1 ,...,ξ̂
+(1)
+i,K1
+,...,ξ̂
+(U)
+i,1 ,...,
+ξ̂
+(U)
+i,KU
+), and estimate the joint covariance matrix Ẑ = 1
+N−1T. Perform a matrix
+eigen-analysis on Ẑ, to determine the eigenvectors κ̂w and eigenvalues ν̂w of Ẑ for
+w = 1,...,W, for some truncation lag W < K+. Here the truncation lag W is
+selectedbythenumberofcomponentsthathaveaproportionofvarianceexplained
+greater than ω, where ω is typically 0.99. The estimated multivariate orthonormal
+principal component scores ρ̂i,w are then given by:
+ρ̂i,w = ((N − 1)ν̂w)1/2
+(κ̂T
+wT
+κ̂w)−1/2
+iκ̂w,
+
+--- PAGE 6 ---
+396 S. K. MINHAS ET AL.
+for w = 1,...,W. The MFPCA takes the co-variation between the different
+joints/planesintoaccountbyweightingtheunivariatefunctionalprincipalcompo-
+nent scores ξ̂
+(u)
+i,k by the eigenvector κ̂w of the covariance of the scores, representing
+the dependence across joints/planes, see [11] for further details.
+2.2. Thefunctionalgaitdeviationindex
+Denote the N × P matrix of estimated principal component scores by ϕ̂. If we are inter-
+ested in calculating an index representing the gait abnormality at each joint/plane (the
+joint/plane specific approach) then we use the univariate principal component scores in
+Step 1 in Section 2.1. That is ϕ̂i,k = ξ̂(u)
+i,k , for k = 1,...,Ku, which implies P = Ku. If we
+are interested in calculating an index representing the gait abnormality across multiple
+joints/planes accounting for the co-variation between the joints/planes (i.e. the individ-
+ual leg or combined approach) then we use the multivariate principal component scores
+in Step 2 of the algorithm provided in Section 2.1. That is ϕ̂i,w = ρ̂i,w for w = 1,...,W,
+which implies P = W.
+First, calculate the average of the principal component scores from all healthy subjects,
+¯ ϕ̂
+(H)
+p , for p = 1,...,P. Then calculate the squared distance from the pth principal com-
+ponent score for the ith subject, ϕ̂i,p, to the average pth principal component scores of all
+healthy subjects, which we denote by di,p = (ϕ̂i,p − ¯ ϕ̂
+(H)
+p )2. For details concerning the dis-
+tribution of di,p, please refer to Appendix 2. The FGDI for subject i is then given by the
+logarithm of the square root of the sum of the distances
+FGDIi = log
+⎛
+⎝
+
+
+
+
+P 
+p=1
+di,p
+⎞
+⎠.
+The FGDI can be used in its raw format as a measure of gait pathology. Akin to GDI, to
+improve interpretation, we can scale the FGDIi. Compute the sample mean and standard
+deviationoftheFGDIforthehealthysubjectsdenotedby μFGDIH andσFGDIH respectively.
+Then determine the z-score with respect to the healthy subjects
+sFGDIi =
+FGDIi − μFGDIH
+σFGDIH
+. (2)
+The scaled FGDI, sFGDIi, in (2) can be interpreted as:
+• Higher values of sFGDIi signify greater gait pathology.
+• AnsFGDIi valuearound0suggestsagaitsimilartothatofanaveragehealthyindividual,
+indicating minimal or no gait pathology.
+• Each unit deviation from 0 in the sFGDIi score represents an additional standard devi-
+ation from the average FGDI of healthy subjects. A positive deviation implies that
+the subject’s gait abnormality surpasses the typical level found in healthy individu-
+als. Conversely, a negative deviation suggests that the subject’s gait does not exhibit
+abnormalities exceeding those typically observed in healthy individuals.
+
+--- PAGE 7 ---
+JOURNAL OF APPLIED STATISTICS 397
+3. Assessing the severity of gait impairment in Parkinson’s disease patients
+Parkinson’s disease (PD) is a widely prevalent, progressive neurodegenerative disorder
+characterized by substantial motor control impairments, including bradykinesia, tremors,
+rigidity,andgaitinstability.Globalestimatesin2019indicatedthatover8.5millionindivid-
+uals are affected by PD, representing a doubling of prevalence over the past 25 years [22].
+Gait analysis is routinely utilized in clinical practice for severity stratification, treatment
+evaluation, and management of the condition.
+The PD dataset is publicly accessible, as detailed in [27]. It includes data from 21 right-
+handedidiopathicPDindividuals(5femalesand16males),characterizedbythefollowing
+demographics: average age of 65 ± 10 years, average height of 166.5 ± 7.1cm, and average
+massof71.89±12.37kg.Additionally,ahealthycontroldatasetisavailablefrom[6],com-
+prising 42 adults (18 females and 24 males). All participants were free from orthopedic or
+neurological diseases that could affect their gait. Their demographics are an average age of
+43 ± 19 years, height of 167.1 ± 11cm, and mass of 67.7 ± 11.2kg.
+The Hoehn and Yahr scale [13] is an established method for assessing the progres-
+sion of PD, integrating medical evaluations with reports from patients and caregivers. The
+scale comprises four stages: Scale 1 is characterized by unilateral symptoms with mini-
+mal impact; Scale 2 involves bilateral symptoms without balance impairments; Scale 3
+denotesmoderatebilateralsymptomswithsomeposturalinstability,thoughindependence
+is retained; Scale 4 indicates severe disability, yet the ability to walk or stand is preserved.
+In the PD dataset, the distribution includes one subject at Scale 1, twelve at Scale 2, seven
+at Scale 3, and one at Scale 4.
+The Movement Disorder Society’s Unified Parkinson’s Disease Rating Scale (MDS-
+UPDRS) [9] offers an alternative assessment for Parkinson’s Disease. This scale includes
+Part II, which evaluates motor experiences during daily activities, and Part III, which
+assesses motor functions including rigidity and agility. Higher scores on this scale reflect
+greater impairment. In the PD dataset, MDS-UPDRS Part II ranges from 1 to 13, and Part
+III ranges from 10 to 61.
+Freezing of gait represents a notable motor symptom in PD, characterized by brief,
+episodic interruptions or significant reductions in the forward progression of the feet
+despitetheintentiontowalk.Thissymptomcanleadtofallsanddiminishedindependence.
+Thedatasetcomprisestenpatientsexperiencingfreezingofgait(referredtoasfreezers)and
+eleven who do not exhibit this symptom (referred to as non-freezers).
+For each subject, measurements of nine kinematic variables were recorded on both the
+left and right sides. These variables include pelvic tilt, pelvic obliquity, pelvic rotation, hip
+flexion/extension, hip abduction/adduction, hip rotation, knee flexion/extension, ankle
+dorsiflexion/plantarflexion, and foot internal/external rotation. The measurements con-
+sist of 101 equally-spaced time points throughout a single gait cycle, allowing the motion
+of each kinematic variable to be described in 1% increments of the gait cycle.
+3.1. FGDI:thejoint/planespecificapproach
+The FGDI index is calculated using univariate principal component scores as described in
+Subsection 2.2 with the percentage of variation explained by the univariate principal com-
+ponents set to 99%. This index quantifies the relative abnormality of a subject’s gait across
+
+--- PAGE 8 ---
+398 S. K. MINHAS ET AL.
+Figure 2. TheMAPforasubjectwithParkinson’sdisease.
+each kinematic variable. The Movement Analysis Profile (MAP) displays the sFGDIi,u
+in (2) for the ith subject and uth kinematic variable. The height of each bar in the MAP
+representsthenumberofstandarddeviationsbywhichthesubject’sFGDIi,u deviatesfrom
+the average FGDI of healthy subjects. For illustrative purposes, Figure 2 depicts the MAP
+for a subject with PD, corresponding to the kinematic data presented in Figure 1.
+Figure 2 illustrates that the subject’s left-hand side ankle dorsiflexion/plantarflexion
+exhibits a significant deviation, measuring 4 standard deviations from the average FGDI
+of individuals without gait abnormalities. Conversely, the subject’s foot internal/external
+rotation aligns closely with standard gait patterns, as indicated by an FGDI value that is
+one standard deviation below the average for individuals without gait abnormalities.
+It is well-established that unilateral motor symptoms are characteristic of PD, as under-
+scored by Miller-Patterson et al. [20], Djaldetti et al. [3]. Correspondingly, most joints
+display comparable FGDI scores on both the left-hand side and right-hand side, except
+for notable discrepancies in ankle dorsiflexion/plantarflexion. This asymmetry in ankle
+gait patterns is consistent with recent research findings presented in [1].
+Furthermore, the kinematic data presented in Figure 1 corroborates the values of the
+MAP, with higher values indicating trajectories, highlighted in green, that exhibit greater
+discrepancies from the mean of healthy individuals, shown in black. Conversely, lower
+values correspond to smaller discrepancies.
+Table A1 in Appendix 4 demonstrates the optimal number of principal components
+required to account for 99% of the variance in the kinematic data, as well as 100 times
+the average difference in the FGDI across individuals when varying the number of princi-
+pal components by plus or minus two. This analysis reveals that the FGDI remains highly
+
+--- PAGE 9 ---
+JOURNAL OF APPLIED STATISTICS 399
+Figure 3. The scaled FGDI values for all PD subjects in the sample, grouped according to their Hoehn
+andYahrscale,theirstatusaseitherfreezersornon-freezersandtheirscoresontheMDS-UPDRSPartsII
+andIII.
+stable, exhibiting minimal variations in FGDI values relative to the number of principal
+components.
+3.2. FGDI:thecombinedlegapproach
+We conducted an MFPCA on both legs, extracting 50 multivariate functional principal
+components. These components account for 99% of the variance in the kinematic data.
+Following this, we calculated the scaled FGDI in (2) using the MFPCA scores as described
+in Subsection 2.2.
+Figure 3 presents the scaled FGDI values for all PD subjects in the sample. These values
+are categorized according to the subjects’ Hoehn and Yahr scale classifications, their des-
+ignation as either freezers or non-freezers and their scores on the MDS-UPDRS Parts II
+and III.
+The subject exhibiting the highest scaled FGDI corresponds to the highest level on
+the Hoehn and Yahr scale, while the subject with the lowest scaled FGDI matches the
+scale’s lowest level. A Kruskal-Wallis rank sum test was conducted to evaluate whether
+median differences in scaled FGDI values are statistically significant relative to the Hoehn
+and Yahr scale, resulting in a p-value of 0.08. Subjects identified as freezers demonstrate
+higher scaled FGDI values compared to non-freezers, as confirmed by a Wilcoxon rank
+sumtestwithacontinuitycorrection,whichyieldedap-valueof0.007.Additionally,scaled
+FGDI values exhibit a linear increase with respect to the scores on Parts II and III of
+
+--- PAGE 10 ---
+400 S. K. MINHAS ET AL.
+MDS-UPDRS,withslopesof0.19and0.06andcorrespondingp-valuesof0.002and0.003,
+respectively.
+Figure A7 in Appendix 4 demonstrates 100 times the average difference in the FGDI
+across individuals when varying the optimal number of principal components by five.
+This indicates that the FGDI remains highly stable across different numbers of principal
+components, with minimal differences in the average values.
+4. Assessing the severity of gait impairment in individuals with lower-limb
+amputations
+In 2017, an estimated 57.7 million individuals worldwide were living with limb amputa-
+tions resulting from traumatic causes [18]. The lower-limb amputation data are publicly
+accessible and can be found in [14]. This dataset includes 18 individuals with unilateral
+above-knee amputations, comprising 3 females and 15 males, with the following demo-
+graphics:averageageof52±16years,heightof175.8±9cm,andmassof88.85±22.61kg.
+A healthy control dataset, consisting of 18 females and 24 males, is publicly available
+from [6] and detailed in Section 2.
+The Medicare Functional Classification Level, also known as K-levels, is a scale
+employed by private insurers to evaluate rehabilitation potential in individuals with
+lower limb loss. This scale ranges from 0 (lowest mobility potential when using a pros-
+thesis) to 4 (highest mobility potential when using a prosthesis) and categorizes func-
+tional mobility and rehabilitation prospects [7,19]. Within the study cohort, nine sub-
+jects were classified as full community ambulators (K3), and nine as limited community
+ambulators (K2).
+For each subject, measurements were recorded on both the left and right sides
+for nine kinematic variables: pelvic tilt, pelvic obliquity, pelvic rotation, hip flex-
+ion/extension,hipabduction/adduction,hiprotation,kneeflexion/extension,ankledorsi-
+flexion/plantarflexion,andfootinternal/externalrotation.Thesemeasurementscomprised
+101 equally-spaced time points throughout a single gait cycle, enabling the motion of each
+kinematic variable to be detailed in 1% increments of the gait cycle.
+4.1. FGDI:individuallegapproach
+We conducted a separate MFPCA for each leg individually (left and right). This analysis
+yielded 24 multivariate functional principal components for the left leg and 22 multivari-
+ate functional principal components for the right leg. These components account for 99%
+of the observed variability in the respective kinematic data. Subsequently, we calculated
+the scaled FGDI for both the left and right legs, utilizing their respective multivariate
+functional principal component scores as described in Section 2.2.
+Figure 4 displays the scaled FGDI values for all amputees in the sample, categorized
+by their K-Level. A Wilcoxon rank sum exact test confirms that the median scaled FGDI
+values are significantly higher for individuals classified as K2 compared to those classified
+asK3,resultinginp-valuesof0.03fortheamputatedsideand0.009forthenon-amputated
+side.
+
+--- PAGE 11 ---
+JOURNAL OF APPLIED STATISTICS 401
+Figure 4. ThescaledFGDIontheAmputatedLegandnonAmputatedLegwithrespecttotheK-Level.
+5. A comparison of the FGDI with existing approaches
+To facilitate comparison with the GDI approach, we recalculated the FGDI at 51 equally-
+spaced time points within a single gait cycle, corresponding to increments of 2%.
+5.1. Thecombinedlegapproach
+The FGDI, GPS, and OA indices are utilized to assess gait abnormalities in PD patients,
+considering both legs collectively. Kendall’s rank correlation coefficient is employed to
+quantify the association between any pair of indices. The correlation coefficients for the
+indices are as follows: scaled FGDI vs GPS is 0.54, scaled FGDI vs OA is 0.42, and GPS vs
+OA is 0.34. The scaled FGDI demonstrates a moderate correlation with both GPS and OA,
+indicatingthatwhiletheseindicessimilarlymeasuregaitpathology,theydifferintheirspe-
+cific rankings of gait abnormalities. The weaker correlation between GPS and OA suggests
+a more pronounced difference in their assessment of gait pathology.
+Figure 5 presents boxplots that depict the abnormality in both legs for all subjects rela-
+tive to the Hoehn and Yahr scale, utilizing the FGDI, GPS, and OA methods. To facilitate
+direct comparisons among these indices, each severity measure is rescaled to have values
+rangingfrom0to1.Onthisscale,ascoreof0indicatestheleastabnormalgait,andascore
+of 1 represents the most abnormal gait.
+Consistentwithexpectations,allmethodsshowincreasedgaitabnormalityathigherlev-
+elsoftheHoehnandYahrscale.Aone-wayKruskal-Wallisranksumtestwasimplemented
+to determine if the median values for different Hoehn and Yahr scale levels significantly
+
+--- PAGE 12 ---
+402 S. K. MINHAS ET AL.
+Figure 5. Gait abnormality on both legs relative to the Hoehn and Yahr scale for the FGDI, GPS and OA
+methodsrespectively.
+differforeachmethod,withp-valuesof0.08,0.09and0.09forFGDI,GPS,andOArespec-
+tively. It is anticipated that the subject with the most severe gait abnormality corresponds
+tothehighestHoehnandYahrscalelevel,i.e.level4.BoththeFGDIandOAmethodscor-
+rectlyidentifythesubjectatthehighestHoehnandYahrlevelashavingthemostabnormal
+gait. However, the GPS method assigns a subject with a Hoehn and Yahr scale of 3 as hav-
+ing the most abnormal gait and gives a disproportionately high score to a subject with a
+Hoehn and Yahr scale of 2.
+The OA and FGDI methodologies both utilize an independent gait feature space to cal-
+culatetheirrespectivemeasuresofgaitpathology.Toassessthesuitabilityofthisspace,the
+accuracy of gait movement approximations, achieved through basis function expansion
+within this space, can be evaluated. The OA and FGDI must accurately reflect the severity
+of walking conditions; hence, the corresponding gait movement approximations should
+capture essential aspects of gait, including significant timing differences, substantial level
+shifts,andpatternalterations.Ifthegaitmovementapproximationsfailtoencompassthese
+critical features, the corresponding measures of gait pathology will also lack this crucial
+information.Theaccuracyofeachgaitmovementapproximationisassessedbycalculating
+theaverageroot-mean-squarederror(RMSE)betweenthekinematicdataandtheapprox-
+imated curve m̂i,u(t) for each subject. See Appendix 3 for details on the calculation of this
+metric. Figure 6 illustrates the boxplots of the average of the RMSE across each kinematic
+variable relative to the Hoehn and Yahr scale for all subjects.
+Figure 6 illustrates that the FGDI method produces a low approximation error across
+all stages of the Hoehn and Yahr scale. In contrast, the OA method displays significant
+
+--- PAGE 13 ---
+JOURNAL OF APPLIED STATISTICS 403
+Figure 6. TheapproximationerrorrelativetotheHoehnandYahrscaleforallsubjectsfortheFGDIand
+OAmethods.
+Table 1. Kendall’srankcorrelationforeachpairofrankingsfortheleftandrightlegseparately.
+sFGDIvsGDI sFGDIvsGPS sFGDIvsOA GDIvsGPS GDIvsOA GPSvsOA
+Left −0.93 0.95 0.55 −0.93 −0.54 0.57
+Right −0.94 0.95 0.54 −0.93 −0.51 0.55
+differences in the approximation error of healthy individuals and those with PD. In addi-
+tion,theaverageRMSEforalljoints/planesinPDsubjectsis0.46forFGDIand0.83forOA.
+Consequently,theFGDImethodenhancestheaccuracyofgaitmovementapproximations
+in PD patients compared to the OA method.
+5.2. Theindividuallegapproach
+To individually assess the severity of gait abnormalities in both the left and right legs,
+methodologiessuchasthescaledFGDI,GDI,GPS,andOAcanbeemployed.Thesemeth-
+ods are utilized to evaluate gait abnormalities in individuals with lower-limb amputations.
+Kendall’s rank correlation coefficients for these indices are provided in Table 1.
+The sFGDI demonstrates a strong correlation with both the GDI and GPS, while the
+OA method reveals a more pronounced disparity in the ranking of gait abnormalities.
+The scaled FGDI, GDI, and GPS consistently identify the same individual as having the
+most severe gait abnormalities on both the left and right sides, corresponding with their
+K2 classification. Conversely, the OA approach inaccurately identifies an individual with a
+K3 classification as exhibiting the most abnormal movement on the left side. Figure A8 in
+
+--- PAGE 14 ---
+404 S. K. MINHAS ET AL.
+Appendix 5 illustrates the gait patterns of 42 healthy subjects (represented in grey) along-
+sidetheirmean(depictedinblack).Additionally,ithighlightsthegaitpatternofthesubject
+identified as having the most abnormal gait by the scaled FGDI, GDI, and GPS (in green),
+as well as the gait pattern of the subject identified by the OA method (in blue). A detailed
+examinationofthegaitdataontheleft-handsideclearlyshowsthatthegreencurvesexhibit
+less similarity to the black curves than the blue curves.
+A Wilcoxon rank sum test indicates that for the Amputated side, the median values of
+the GDI, GPS, and OA do not show significant variation between K-Levels (GDI p-value:
+0.09, GPS p-value: 0.06; OA p-value: 0.17), but they do on the non-Amputated side (GDI
+p-value:0.03;bothGPSandOAp-valueis0.01).FortheFGDIthecorrespondingp-values
+are 0.02 for the amputated side and 0.01 for the non-amputated side.
+6. The FGDI interactive web app
+A free R Shiny application has been developed to serve as a graphical user interface (GUI)
+and is accessible at the following URL: https://michelle-carey-ucd.shinyapps.io/FGDI_
+ShinyApp/.ThisGUIenablesuserstouploadtheirgaitdataandcomputesthescaledFGDI,
+presenting several outputs:
+• The scaled FGDI for the left, right, and both legs for a user-selected subject.
+• A comparison of the average typically developing gait versus the gait of a user-selected
+subject, akin to that shown in Figure 1.
+• A comparison between observed and approximated gait for a user-selected subject,
+allowing the user to visually assess the quality of the gait approximation.
+• TheMAPsummarizingtheabnormalityofeachofthe15kinematicvariablesforauser-
+selected subject, similar to Figure 2.
+• A comparison of the MAP between two subjects for a pair of user-selected subjects.
+7. Conclusion
+The GDI and GPS are well-established indices for measuring gait abnormalities. How-
+ever,asdiscussedin[16],thenon-independentnatureofkinematicdatacanleadtobiased
+assessments of gait pathology using these indices. While the OA approach was developed
+to address this issue, it fails to account for the inherent dependence structure. The time-
+ordered nature of kinematic data throughout the gait cycle is crucial in gait analysis and
+must be preserved. It is the interdependence across joints and planes that contributes to
+multicollinearity, and thus biases measures of gait pathology.
+We introduce the FGDI, which utilizes MFPCA to establish an independent gait fea-
+ture space. The FGDI calculates the distance between a subject’s projected kinematics and
+the control group’s average projection within this space. This index captures the intrinsic
+smoothness of gait movements across each joint and plane, and it accounts for potential
+covariationamongthem.FGDIiscorrelatedwithoverallgaitfunction,providingareliable
+measure of gait abnormality. Furthermore, it is readily accessible through an interactive
+web application and R package.
+The key distinctions between the GDI and the FGDI are as follows: (i) The GDI derives
+its independent feature space from a PCA of a large gait database, whereas the FGDI
+
+--- PAGE 15 ---
+JOURNAL OF APPLIED STATISTICS 405
+employs MFPCA on sampled data to construct its feature space. (ii) The GDI’s PCA
+identifies primary modes of variation by simultaneously considering time and kinematic
+variables. In contrast, the FGDI treats the movement of each kinematic variable as dis-
+tinct curves. By applying MFPCA to these curves, the FGDI specifically aims to capture
+key variations in movement patterns throughout the gait cycle while accounting for any
+co-variation between the kinematic variables.
+The FGDI, GPS, and OA indices are used to evaluate gait abnormalities in PD patients,
+considering both legs collectively. The scaled FGDI aligns well with the Hoehn and Yahr
+scale, it also effectively distinguishes between individuals classified as freezers or non-
+freezers and shows an increasing trend relative to Parts II and III of the MDS-UPDRS.
+In contrast, the GPS method does not consistently align with the Hoehn and Yahr scale.
+For instance, it incorrectly identifies a subject with a Hoehn and Yahr scale of 3 as having
+the most abnormal gait and assigns an unusually high score to a subject with a Hoehn and
+Yahr scale of 2.
+For the scaled FGDI approach, the average RMSE across all joints shows relative con-
+sistency with respect to the the Hoehn and Yahr scale, with values of 0.58 for the healthy
+group, 0.41 for scale 1 individuals, 0.39 for scale 2, 0.43 for scale 3, and 0.54 for scale 4.
+However,theOAapproachdemonstratesasignificantincreaseingaitapproximationerror
+with advancing Hoehn and Yahr scales. The average RMSE values are 0.13 for the healthy
+group, escalating to 1.42 for scale 1, 2.06 for scale 2, 2.30 for scale 3, and reaching 4.66 for
+scale 4 individuals. The OA method, which relieson agait feature space constructed solely
+from individuals without gait abnormalities, faces challenges in accurately capturing the
+complex gait patterns of individuals with higher Hoehn and Yahr scales. This limitation
+in the gait feature space means that the principal component scores derived from the OA
+method lack critical information about the movement of individuals with higher Hoehn
+and Yahr scales, resulting in a biased assessment of gait pathology.
+To evaluate the severity of gait abnormalities in both the left and right legs individually,
+methodologies such as the scaled FGDI, GDI, GPS, and OA can be employed. Given that
+PD typically manifests with unilateral motor symptoms, we focus on assessing gait abnor-
+malities in individuals with lower-limb amputations for each leg separately. The scaled
+FGDI values are notably higher for K2 compared to K3, both on the amputated and non-
+amputated sides. The scaled FGDI, GDI, and GPS consistently identify individuals with
+the most severe gait abnormalities, aligning with their K2 classification on both the left
+and right sides. Conversely, the OA approach inaccurately identifies an individual with a
+K3 classification as having the most abnormal movement on the left side.
+Providing the scaled FGDI alongside standard measures of gait abnormalities (e.g. the
+Hoehn and Yahr scale, MDS-UPDRS Parts II and III, K-Level) offers multiple advantages.
+The scaled FGDI provides a quantitative measurement of gait quality, enabling more pre-
+ciseanddetailedassessmentsofgaitabnormalitiescomparedtotheordinalscalestypically
+employedbystandardmeasures.Additionally,thescaledFGDIissensitiveenoughtodetect
+subtlechangesingaitqualityovertime,makingitusefulformonitoringprogressandeval-
+uating the effectiveness of interventions or treatments. The FGDI approach yields specific
+information about affected joints, facilitating the development of tailored treatment plans.
+Moreover, the scaled FGDI is more objective as it relies on recorded kinematic data of the
+patient’smovement,incontrasttoclinicalobservationsorpatient-reportedseverity,which
+introduce subjectivity into the assessment process.
+
+--- PAGE 16 ---
+406 S. K. MINHAS ET AL.
+Future research will involve incorporating covariates such as the individual’s sex and
+age into the MFPCA approach. This inclusion aims to determine if there are discernible
+differences in the scaled FGDI relative to these variables and to develop a metric that
+incorporates these variables when quantifying the severity of an individual’s gait pattern.
+Note
+1. Further details on the dataset are provided in Section 3
+Acknowledgments
+The authors would like to thank Bronagh McCann for her work on a prototype of the Shiny app.
+Data Availability Statement
+Thedatasetsmentionedinthisstudyarepubliclyavailable.TheParkinson’sDiseasedatasetisacces-
+siblevia[27],whilethehealthydatasetcanbefoundin[6].Additionally,thelower-limbamputation
+dataset is accessible through [14]. The data and R code for reproducing the results in this article are
+available at fdaatucd.com or in the fgdiR R Package.
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+Funding
+This work was supported by the Science Foundation Ireland under Grant number 18/CRT/6049.
+References
+[1] F. Arippa, B. Leban, M. Monticone, G. Cossu, C. Casula, and M. Pau, A study on lower limb
+asymmetries in Parkinson’s disease during gait assessed through kinematic-derived parameters,
+Bioengineering 9 (2022), pp. 120.
+[2] R. Baker, J.L. McGinley, M.H. Schwartz, S. Beynon, A. Rozumalski, H.K. Graham, and O.
+Tirosh, The gait profile score and movement analysis profile, Gait. Posture. 30 (2009), pp.
+265–269.
+[3] R. Djaldetti, I. Ziv, and E. Melamed, The mystery of motor asymmetry in Parkinson’s disease,
+Lancet Neurol. 5 (2006), pp. 796–802.
+[4] O.A. Donoghue, A.J. Harrison, N. Coffey, and K. Hayes, Functional data analysis of running
+kinematics in chronic achilles tendon injury, Med. Sci. Sports Exerc. 40 (2008), pp. 1323–1335.
+[5] A. Esbjörnsson, A. Rozumalski, M. Iversen, M. Schwartz, P. Wretenberg, and E. Broström,
+Quantifying gait deviations in individuals with rheumatoid arthritis using the gait deviation
+index, Scand. J. Rheumatol. 43 (2014), pp. 124–131.
+[6] C.A. Fukuchi, R.K. Fukuchi, and M. Duarte, A public dataset of overground and treadmill
+walking kinematics and kinetics in healthy individuals, PeerJ 6 (2018), pp. e4640.
+[7] R.S. Gailey, K.E. Roach, E.B. Applegate, B. Cho, B. Cunniffe, S. Licht, M. Maguire, and M.S.
+Nash, The amputee mobility predictor: An instrument to assess determinants of the lower-limb
+Amputee’s ability to ambulate, Arch. Phys. Med. Rehabil. 83 (2002), pp. 613–627.
+[8] M. Galli, V. Cimolin, M.F. De Pandis, M.H. Schwartz, and G. Albertini, Use of the gait devia-
+tion index for the evaluation of patients with Parkinson’s disease, J. Mot. Behav. 44 (2012), pp.
+161–167.
+[9] C.G.Goetz,B.C.Tilley,S.R.Shaftman,G.T.Stebbins,S.Fahn,P.Martinez-Martin,W.Poewe,C.
+Sampaio, M.B. Stern, R. Dodel, B. Dubois, R. Holloway, J. Jankovic, J. Kulisevsky, A.E. Lang, A.
+
+--- PAGE 17 ---
+JOURNAL OF APPLIED STATISTICS 407
+Lees, S. Leurgans, P.A. LeWitt, D. Nyenhuis, C.W. Olanow, O. Rascol, A. Schrag, J.A. Teresi, J.J.
+van Hilten, and N. LaPelle, Movement disorder society-sponsored revision of the unified Parkin-
+son’s disease rating scale (mds-updrs): Scale presentation and clinimetric testing results, Mov.
+Disord.: Off. J. Mov. Dis. Soc. 23 (2008), pp. 2129–2170.
+[10] L. Guttman, Some necessary conditions for common-factor analysis, Psychometrika 19 (1954),
+pp. 149–161.
+[11] C. Happ and S. Greven, Multivariate functional principal component analysis for data observed
+on different (dimensional) domains, J. Am. Stat. Assoc. 113 (2018), pp. 649–659.
+[12] A. Harrison, W. Ryan, and K. Hayes, Functional data analysis of joint coordination in the
+development of vertical jump performance, Sports Biomech. 6 (2007), pp. 199–214.
+[13] M.M. Hoehn and M.D. Yahr, Parkinsonism: Onset, progression, and mortality, Neurology 50
+(1998), pp. 318–318.
+[14] S. Hood, M.K. Ishmael, A. Gunnell, K. Foreman, and T. Lenzi, A kinematic and kinetic dataset
+of 18 above-knee amputees walking at various speeds, Sci. Data 7 (2020), pp. 150.
+[15] H.F. Kaiser, The application of electronic computers to factor analysis, Educ. Psychol. Meas. 20
+(1960), pp. 141–151.
+[16] M. Marks, T. Kingsbury, R. Bryant, J.D. Collins, and M. Wyatt, Measuring abnormality in high
+dimensionalspaceswithapplicationsinbiomechanicalgaitanalysis,Sci.Rep.8(2018),pp.1–12.
+[17] A. Massaad, A. Assi, W. Skalli, and I. Ghanem, Repeatability and validation of gait deviation
+index in children: Typically developing and cerebral palsy, Gait. Posture. 39 (2014), pp. 354–358.
+[18] C.L.McDonald,S.Westcott-McCoy,M.R.Weaver,J.Haagsma,andD.Kartin,Globalprevalence
+of traumatic non-fatal limb amputation, Prosthet. Orthot. Int. 45 (2021), pp. 105–114.
+[19] V. McGowan, Healthcare common procedure coding system chapter, module, (2019).
+[20] C. Miller-Patterson, R. Buesa, N. McLaughlin, R. Jones, U. Akbar, and J.H. Friedman, Motor
+asymmetry over time in Parkinson’s disease, J. Neurol. Sci. 393 (2018), pp. 14–17.
+[21] M. Molloy, B. McDowell, C. Kerr, and A. Cosgrove, Further evidence of validity of the gait
+deviation index, Gait. Posture. 31 (2010), pp. 479–482.
+[22] W.H. Organization, Parkinson Disease: A Public Health Approach, Technical Brief, Geneva,
+2022.
+[23] D. Ormoneit, M.J. Black, T. Hastie, and H. Kjellström, Representing cyclic human motion using
+functional analysis, Image Vis. Comput. 23 (2005), pp. 1264–1276.
+[24] K.E.Roach,V.Pedoia,J.J.Lee,T.Popovic,T.M.Link,S.Majumdar,andR.B.Souza,Multivariate
+functionalprincipalcomponentanalysisidentifieswaveformfeaturesofgaitbiomechanicsrelated
+to early-to-moderate hip osteoarthritis, J. Orthop. Res. 39 (2021), pp. 1722–1731.
+[25] M. Sangeux and J. Polak, A simple method to choose the most representative stride and detect
+outliers, Gait. Posture. 41 (2015), pp. 726–730.
+[26] M.H.SchwartzandA.Rozumalski,The gaitdeviationindex:Anewcomprehensiveindexofgait
+pathology, Gait. Posture. 28 (2008), pp. 351–357.
+[27] T.K.F. Shida, T.M. Costa, C.E.N. de Oliveira, R. de Castro Treza, S.M. Hondo, C. Bernardo, L.
+dosSantosdeOliveira,M.deJesusCarvalho,andD.B.Coelho,Apublicdatasetofwalkingfull-
+bodykinematicsandkineticsinindividualswithParkinson’sdisease,Front.Neurosci.17(2023),
+pp. 992585.
+[28] L.Xiao,C.Li,W.Checkley,andC.Crainiceanu,Fastcovarianceestimationforsparsefunctional
+data, Stat. Comput. 28 (2018), pp. 511–522.
+[29] K.Yoshida,D.Commandeur,S.Hundza,andM.Klimstra,Detectingdifferencesingaitinitiation
+between older adult fallers and non-fallers through multivariate functional principal component
+analysis, J. Biomech. 144 (2022), pp. 111342.
+
+--- PAGE 18 ---
+408 S. K. MINHAS ET AL.
+Appendices
+Appendix 1. Existing approaches for quantifying gait pathology
+Three of the most popular indices for quantifying gait pathology are: the GDI, the GPS, and the OA
+measure. This section briefly reviews each of these approaches.
+A.1 Thegaitdeviationindex
+One barefoot stride was selected from each side of the 3, 351 subjects observed at the Gillette Chil-
+dren’s Specialty Healthcare Center for Gait and Motion Analysis between February 1994 and April
+2007, totaling 6, 702 sides. These data are organized into a vector g comprising of 459 observations
+that pertain to the 9 kinematic variables evaluated across 51 equally spaced points in the gait cycle.
+For example, g1 = [m∗
+1,1,m∗
+1,2,...,m∗
+1,9]T is the data for subject 1 pertaining to the nine kinematic
+variables on the left-hand side and g2 = [m∗
+1,10,m∗
+1,11,...,m∗
+1,18]T contains the data for the same
+subject on the right-hand side, with m∗
+i,j representing a length 51 vector of observations for the ith
+individual in the database and jth kinematic variable. We introduce the notation m∗ to distinguish
+between data from the database and data from the sample, denoted previously as m. Note that there
+are two vectors for each subject one for the left-hand side and one for the right-hand side. These
+vectors are combined to form a 459 × 6702 gait matrix. A singular value decomposition was per-
+formed on this gait matrix to obtain a 459 × 15 matrix containing a reduced set of independent gait
+features (i.e. the left singular vectors) f̂ = [f̂1,f̂2,...,f̂15]. These length 15 singular vectors form an
+orthonormal basis that accounts for 98% of the total variation in the Gillette gait data. The original
+data are not publicly available but the gait features are in the supplementary material of [26].
+We sample the observed data at 51 time points for nine kinematic variables on one selected side
+(either left or right) and combine them into a vector qi of length 459. For illustration, we consider
+the left side, where qi = [mi,1,mi,2,...,mi,9]T, with mi,j representing a length 51 vector of obser-
+vations for the ith individual in the sample and jth kinematic variable. The feature components
+ci,k, which projects the gait vector qi onto the kth feature direction, are given by ci,k = qT
+i
+ˆ fk, where
+k = 1,...,15. Let ci = [ci,1,...,ci,15].
+To calculate the GDI, evaluate the log of the Euclidean distance between the gait features for the
+ithsubject,ci,relativetotheaveragegaitfeaturesderivedfromalltypicallydevelopingsubjects,c̄TD.
+That is, GDIi = log(ci − c̄TD). The GDI offers separate measures of severity for the left and right
+legs.
+ComputethesamplemeanandstandarddeviationoftheGDIforthetypicallydevelopingsubjects
+denoted by μGDITD and σGDITD respectively. To improve interpretation the following scaled GDI
+measure is often reported, sGDIi = 100 − 10 ×
+GDIi−μGDITD
+σGDITD
+. Every 10 points, the scaled GDI falls
+below 100 corresponds to one standard deviation away from the typically developing mean.
+A.2 Thegaitprofilescore
+The Gait Variable Score (GVS), is the root-mean-square difference between the gait vector mi,j and
+the average of the gait vectors for kinematic variable j, for all typically developing subjects. The
+GPS is obtained by evaluating the root-mean-square of the GVS across all kinematic variables for
+a particular side. To obtain an overall GPS, we calculate the root-mean-square average of the GPS
+values from both the left and right sides. Given that the pelvis is common to both sides, we include
+pelvic kinematics from only one side. This results in a total of 15 included kinematic variables: nine
+on the left side and six on the right side.
+A.3 Theoverallabnormality
+TheOAmetriccanbecalculatedusingtwodifferentapproaches.Thefirstmethodinvolvescombin-
+ing the observations of nine kinematic variables for the left side and six for the right side, resulting
+
+--- PAGE 19 ---
+JOURNAL OF APPLIED STATISTICS 409
+inameasureofabnormalitythatconsidersbothlegscollectively.Alternatively,theOAmetriccanbe
+calculated separately for each leg by using the observations of the nine kinematic variables specific
+to that leg. This approach provides an individual severity measure for each leg.
+The observations of the kinematic variables for subject i are combined into a length M = D × T
+vector qi = [mi,1,mi,2,...,mi,D]T. The length of this vector depends on the number of joints or
+angles included, either D = 15 or D = 9 as described in Section 2.2 with T denoting the number
+of observed points in the gait cycle typically T = 101. The vectors qi for the typically developing
+subjectsarecombinedtoformaNTD × Mgaitmatrix,G = [q1 ...qNTD]T,whereNTD isthenumber
+of typically developing subjects in the sample. Let G̃ be the matrix G shifted to be zero-centered
+and scaled to have unit variance. A PCA is performed on G̃ to obtain a M × K matrix containing
+a reduced set of independent gait features (eigen-vectors), r̂ = [r̂1,r̂2,...,r̂K], and corresponding
+eigenvalues γ1,...,γK. The number of principal components K is chosen in accordance with the
+number of eigenvalues greater than or equal to one as recommended in [10,15].
+Calculate the mean, μG̃, and the standard deviation, σG̃, of G̃. Re-scale the ith subjects kine-
+matic data q̃i =
+qi−μG̃
+σG̃
+. One can then compute the feature components si,k which project any scaled
+gait vector q̃i onto the kth feature direction by, si,k = q̃T
+i ˆ rk, where k = 1,...,K. The ith subjects’
+abnormality is measured by
+Ai =
+1
+K
+K 
+k=1
+si,k − s̄TD
+σTD
+,
+where s̄TD, is the average gait features derived from all subjects without gait abnormalities and σTD
+is the standard deviation of the gait features derived from all subjects without gait abnormalities.
+Appendix 2. A note on the distribution of FGDI
+Thefunctionalprincipalcomponentsareassumedtobenormallydistributedifthegaitdataisgener-
+ated from a mean-zero Gaussian process; for further details, see [11]. Let (ϕ̂i,p − ¯ ϕ̂
+(H)
+p ) ∼ Np(0,),
+where  is a positive definite covariance matrix. By the spectral decomposition of , we can write
+ = QQ, where  = diag(λ1,...,λk) are the eigenvalues of , and Q is an orthogonal matrix
+of eigenvectors. Then (ϕ̂i,p − ¯ ϕ̂
+(H)
+p ) = 1/2Z, where Z ∼ Np(0,I), and we obtain (ϕ̂i,p − ¯ ϕ̂
+(H)
+p )2 =
+k
+j=1 λjZ2
+j ,whereZj ∼ N(0,1)arei.i.d.standardnormalvariables.Thus,di,p ∼
+k
+j=1 λjχ2
+1,j,agen-
+eralized chi-squared distribution, i.e. a linear combination of independent chi-squared random
+variables with 1 degree of freedom. The Euclidean norm is given by di,p. This has the distribution
+of the square root of a generalized chi-squared variable and does not have a closed-form expression
+in general. This distribution is non-negative, continuous and has a heavy tail if the largest eigen-
+value dominates. Therefore, a logarithmic transformation is applied to render the distribution more
+symmetric so that standard nonparametric tests can be used to assess differences between groups.
+Appendix 3. Approximation error
+Recallthatthedatasetisrepresentedbymi,u,l,whereurangesfrom1toU,coveringvariouskinematic
+variables. The index i represents individual subjects, numbering from 1 to N, and l indicates the
+observed points throughout the gait cycle, from 1 to T.
+The estimated gait function for kinematic variable u for subject i, m̂i,u(t), can be calculated by
+the univariate functional Karhunen-Loéve approximation of the data,
+m̂i,u(t) ≈ μ̂u(t) +
+W 
+w=1
+ξ̂u
+i,wφ̂u
+w(t), (A1)
+whereμ̂u(t) isan estimatefor themean function for the kinematic variableu across all subjects, ξ̂u
+i,w
+is the wth univariate principal component score for the ith subject and φ̂u
+w(t) is the wth univariate
+principal component function for the uth kinematic variable.
+
+--- PAGE 20 ---
+410 S. K. MINHAS ET AL.
+Table A1. Thenumberofprincipalcomponentsselectedforeachkinematicvariable.
+KinematicVariable No.PCs δ−2 δ−1 δ+1 δ+2
+LHSankledorsiﬂexion/plantarfexion 10 −0.26 0.22 −0.16 −0.16
+LHSfootint/externalrotation 8 −3.06 −0.07 −0.03 −0.01
+LHShipabduction/adduction 7 −0.50 0.04 0.00 −0.04
+LHShipﬂexion/extension 4 −0.50 0.04 0.00 −0.04
+LHShiprotation 5 0.17 0.24 −0.07 −0.05
+LHSkneeﬂexion/extension 7 −0.60 −0.36 −0.04 −0.07
+LHSpelvicobliquity 7 −0.69 −0.15 −0.02 0.08
+LHSpelvicrotation 7 −0.32 −0.13 0.34 0.42
+LHSpelvictilt 3 0.30 0.15 −0.25 −0.32
+RHSankledorsiﬂexion/plantarﬂexion 10 −2.21 −1.87 0.38 0.56
+RHSfootint/externalrotation 8 0.14 0.09 −0.04 −0.01
+RHShipabduction/adduction 7 −0.38 −0.19 −0.05 −0.03
+RHShipﬂexion/extension 4 −0.82 −0.23 −0.03 0.07
+RHShiprotation 5 −0.41 −0.09 0.13 0.17
+RHSkneeﬂexion/extension 7 0.36 0.23 −0.20 −0.24
+The root mean square error (RMSE) between the kinematic data mi,u,l and the approximated
+curve m̂i,u(t) for each subject and kinematic variable is calculated as follows:
+RMSEi,u =
+
+
+
+
+T 
+l=1
+(mi,u,l − m̂i,u(tl))2
+T
+(A2)
+The average value across all kinematic variables is then RMSEi =
+U
+i=1
+RMSEi,u
+U .
+Appendix4.StabilityofFGDIrelativetothenumberofprincipalcomponents
+We examine the stability of the FGDI in relation to the number of principal components using
+both the joint plane-specific and combined approaches. Let δ±j represent 100 times the difference
+between the FGDI calculated with the optimal number of principal components and the FGDI
+obtained when the number of principal components is adjusted by ±j. The optimal number of
+principal components and the corresponding values for δ−2, δ−1, δ+1, and δ+2 for each kinematic
+variable are detailed in Table A1.
+Table A1 demonstrates that the joint plane-specific FGDI remains highly stable across different
+numbersofprincipalcomponents,withminimalvariationsinvalues.FigureA7illustrates100times
+thedifferencebetweenthecombinedFGDIcalculatedwiththeoptimalnumberofprincipalcompo-
+nentsandwhenthenumberisadjustedby±5.Asshown,thereareminimaldifferencesincombined
+FGDI values with changes in the number of principal components.
+Appendix 5. Comparison of methods
+Figure A8 illustrates the gait patterns of 42 healthy subjects (represented in grey) and their mean
+(depicted in black). Additionally, it displays the gait pattern of the subject identified as having the
+mostabnormalgaitbysFGDI,GDI,andGPS(highlightedingreen),aswellasthegaitpatternofthe
+subject identified as having the most abnormal gait by OA (highlighted in blue).
+A detailed examination of the gait data on the left-hand side clearly shows that the green curves
+exhibit less similarity to the black curves than the blue curves.
+
+--- PAGE 21 ---
+JOURNAL OF APPLIED STATISTICS 411
+Figure A7. 100timesthediﬀerencebetweentheFGDIcalculatedwiththeoptimalnumberofprincipal
+componentsandtheFGDIobtainedwhenthenumberofprincipalcomponentsisadjustedby±5.
+Figure A8. The gait patterns of 42 healthy subjects (represented in grey) and their mean (depicted in
+black).Additionally,itdisplaysthegaitpatternofthesubjectidentiﬁedashavingthemostabnormalgait
+by scaled FGDI, GDI, and GPS (highlighted in green), as well as the gait pattern of the subject identiﬁed
+ashavingthemostabnormalgaitbyOA(highlightedinblue).
+
+--- PAGE 22 ---

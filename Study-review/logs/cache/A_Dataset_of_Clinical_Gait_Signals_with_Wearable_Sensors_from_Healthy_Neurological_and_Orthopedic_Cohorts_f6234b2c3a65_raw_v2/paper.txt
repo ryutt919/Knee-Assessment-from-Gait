@@ -1,0 +1,813 @@
+
+--- PAGE 1 ---
+1 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata
+ADatasetofClinicalGaitSignals
+withWearableSensorsfrom
+Healthy,Neurological,and
+OrthopedicCohorts
+CyrilVoisard 1,2✉,RémiBarrois1
+,Nicolasdel’Escalopier3,4
+,NicolasVayatis1
+,
+Pierre-PaulVidal1
+,AlainYelnik5
+,DamienRicard2,3,6
+&LaurentOudre1
+Openaccess,clean,annotateddatabasesarekeyforfuturesignificantadvancesingaitquantification
+withinertialsensors.Thismulti-pathologyandclinicallyannotateddatasetprovides1356gaittrials
+from260participantsequippedwithfourinertialmeasurementunitsplacedonthehead,lowerback,
+anddorsalpartofeachfoot.Participantsfollowedastandardizedprotocol:standingstill,walking
+10meters,turningaround,walkingback10meters,andstopping.Itresultsinalargehumanwalking
+datasetwithover11hoursofgaittimeseriesdata.Thequalityisensuredbythedocumentation
+andmetadataprovided.Thestudypopulationencompasseshealthyindividualsandpatientswith
+neurological(parkinsondisease,cerebrovascularaccident,radiation-inducedleukoencephalopathyand
+chemotherapy-inducedperipheralneuropathy)ororthopedic(hiposteoarthritis,kneeosteoarthritis
+andanteriorcruciateligamentinjury)conditions.Foreachpathology,themostrelevantclinicalor
+radioclinicalscorehasbeencalculatedtoprovideinsightintothegravityofthedisease.Thisdatasetcan
+beusedtostudykinematicparameters,gaitcyclestimeseries,andvariousindicatorsforquantifying
+gaitinroutineclinicalpractice.
+Background&Summary
+Thestudyofgaitanalysishasincreasedexponentiallyinmedicalandpreventiveinterestduetoitscriticalrolein
+understanding various physiological functions and pathologies1
+. Gait involves complex systems, making it par-
+ticularlysusceptibletoalterationsinawiderangeofmedicalspecialities,includingneurological2,3
+,orthopedic4
+,
+cardiac5
+, pulmonary6
+, and even oncological7
+conditions. Consequently, the quality and reliability of instrumen-
+tal gait analysis is a significant challenge and opportunity for the progression of medical practice.
+Traditionally, quantitative gait analysis has been conducted in dedicated laboratories using sophisticated
+motion capture systems. However, the development of inertial measurement units (IMUs) has revolutionized
+this field by offering a more accessible, lighter, and cost-effective alternative8,9
+. Numerous validation studies
+have shown IMUs can provide equivalent accuracy in detecting gait kinematics traditional motion capture sys-
+tems10,11
+. As a result, IMUs have democratized gait analysis, enabling a broader application in both clinical and
+research settings.
+The transition to using IMUs exclusively for gait analysis has highlighted the importance of sharing
+high-quality datasets with precise clinical metadata. These datasets often include annotations with event
+detection and gait characteristics recorded by gold-standard methods (e.g., motion capture, force platforms,
+pressure-sensitive treadmills). Such annotated datasets are crucial for training algorithms to detect events
+and calculate gait parameters using IMUs, thus validating their effectiveness12–17
+. Furthermore, datasets with-
+out these annotations are valuable for the evaluation and learning of gait parameters, provided they contain
+1
+Université ParisSaclay,Université ParisCité, ENS ParisSaclay,CNRS,SSA, INSERM,Centre Borelli,Gif-sur-Yvette,
+France.2
+ServicedeNeurologie,ServicedeSantédesArmées,HIAPercy,Clamart,France.3
+UniversitéParisCité,Université
+ParisSaclay,ENSParisSaclay,CNRS,SSA,INSERM,CentreBorelli,Paris,France.4
+ServicedeChirurgieOrthopédique,
+TraumatologiqueetRéparatricedesMembres,ServicedeSantédesArmées,HIAPercy,Clamart,France.5
+Servicede
+MédecinePhysiqueetdeRéadaptation,HôpitalLariboisière-Fernand-Widal,AssistancePublique-HôpitauxdeParis,
+Paris,France.6
+EcoleduVal-de-Grâce,ServicedeSantédesArmées,Paris,France.✉e-mail:cyril.voisard@etu.u-paris.fr
+Data Descriptor
+OPEN
+
+--- PAGE 2 ---
+2 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+high-qualityclinicalinformationandscores.Thesedatasetscanincludecohortsofhealthysubjectstostandard-
+izemeasurements18–22
+orpathologicalsubjectstostudyspecificgaitalterationsorimprovements23–27
+.Integrating
+IMU data with other signals, such as ECG or EEG, also opens new avenues for comprehensive gait analysis28–30
+.
+However, these databases often lack either the scale, diversity, or clinical depth necessary for translational
+research in digital health and complete gait analysis.
+Various protocols have been used and validated in clinical settings, including the Time-Up and Go test, the
+10-meterwalktestwithorwithoutU-turn,andthe6-minutewalktest31
+.Theseprotocols,whetherconductedin
+real-worldconditions32,33
+orathome34,35
+,alongwiththediversityinthetype,number,andplacementofsensors36
+,
+set challenges in establishing large, rigorously curated meta-analysis databases. Moreover, the advancement of
+smartphonetechnologyhasintroducedanewsourceofgaitdata,contributinglargedatasetsforanalysis37–39
+.
+Given these developments, there is a pressing need to bring together various stakeholders to develop stand-
+ardized analysis protocols that can promote the routine clinical implementation of automated gait quantifica-
+tion. Recent initiatives have made strides in this direction. For instance, Gaitmap40
+compiles a directory of gait
+data processing algorithms and verifies their quality, while the European consortium Mobilise-D41,42
+plans to
+share extensive databases of healthy and pathological subjects, with some data already accessible43,44
+.
+This paper introduces a large inertial gait database that aligns with these initiatives, which stands out due
+to its large-scale, multi-pathology design, standardized clinical annotations, and diverse representation of gait
+impairments, enabling robust cross-pathology comparisons and machine learning applications. Thus total of
+260 subjects have been monitored with 4 sensors (head, trunk, dorsal part of each foot) during a short straight
+walk test with a 180∘ turn, conducted over multiple clinical consultations. The simplicity of the measurement
+protocol allows for the recording of a larger volume of gait signals, while repeated experiments ensure the pos-
+sibility of reproducibility studies3
+. The dataset’s size and quality documentation aim to provide an extensive
+overview of gait indicators across various profiles, including healthy individuals and some with neurological
+or orthopedic pathologies. It includes thus a variety of selected cohorts to capture a wide range of pathologies
+and conditions affecting gait and motor control. Healthy subjects of all ages serve as a reference for evaluating
+normal gait parameters over the course of aging. Patients with hip or knee osteoarthritis illustrate the impact
+of a chronic musculoskeletal disorders on locomotion45
+. The cohort of patients with an anterior cruciate liga-
+ment injury provides a framework to examine the consequences of acute trauma with rehabilitation. Similarly,
+patients who have experienced a cerebrovascular accident (stroke) allow for the study of alterations related to
+acute focal neurological damage and rehabilitation46
+. On the other hand, neurodegenerative diseases, such as
+Parkinson’s disease, enrich the analysis by offering insights into progressive motor control disorders. Finally,
+the cohorts affected by peripheral neuropathies and leukoencephalopathies induced by oncological treatments
+(chemotherapy or radiotherapy) enable the investigation of drug-induced toxicities on motor capacities. For
+leukoencephalopathies, a “radioclinical" assessment based on symptoms and MRI provides valuable insights
+into structural alterations in the white matter, complementing inertial functional measurements47
+. The patient
+cohorts as a whole provide a huge range of gaits, some of which are severely altered, enabling the segmentation
+and detection algorithms to be put to the test.
+Together, these populations offer a multidimensional perspective, allowing the exploration of not only the
+specificities of each pathology but also the complex interactions between the musculoskeletal, central, and
+peripheral nervous systems. This complementarity enhances the clinical and scientific relevance of the dataset
+for studying gait disorders and developing personalized follow-up. We anticipate that the scientific community
+will use this dataset to study various aspects of gait, including initiation, steady-state walking, turning, and
+termination.Toensuretheutilityandreliabilityoftheshareddata,arigorousevaluationofdataqualityisneces-
+sary. Thus, this paper reports the comprehensive quality assessment procedures we completed.
+Methods
+Participants and pathologies. The cohorts for this study were recruited from medical departments at
+Assistance Publique des Hôpitaux de Paris and Hôpital d’Instruction des Armées, Service de Santé des Armées
+betweenJanuary2014andMarch2016.Referencerecordingsinvolvedhealthysubjectswhoenteredthehospitals
+for treatment or accompaniment, based on volunteering. The 73 healthy subjects (HS, 41 males and 32 females
+aged18to87)reportednomedicalimpairmentandwereconsideredhealthyafteraclinicalexaminationbymed-
+icaldoctors.Forpatients,twogroupswereformedamongthosehospitalizedinneurology,physicalmedicineand
+rehabilitation, or orthopedic surgery departments. The orthopedic group included 44 subjects (21 males and 23
+females) and was divided into three cohorts: hip osteoarthritis (HOA, aged 36 to 89), knee osteoarthritis (KOA,
+aged 43 to 90) and anterior cruciate ligament injury (ACL, aged 22 to 64). The neurological group included 143
+subjects (92 males and 51 females) and was divided into four cohorts: cerebrovascular accident (CVA, aged 41
+to 83), Parkinson’s disease (PD, aged 55 to 90), chemotherapy-induced peripheral neuropathy (CIPN, aged 42
+to 81) and radiation-induced leukoencephalopathy (84). On the day of the gait assessment, patients’ clinical or
+radioclinicalimpairmentwasevaluatedbythephysicianusingstandardclinicalassessments,describedinTable1,
+and a specific score adapted to each pathology, described in Table 2. Age differences between cohorts reflect the
+coherent epidemiological profiles of the included pathological groups (e.g., degenerative neurological disorders
+vs. acute orthopedic conditions) and were not due to recruitment bias. The study was validated by the Comité
+de Protection des Personnes Ile de France II (CPP 2014-10-04 RNI), and both patients and healthy subjects gave
+their written consent to participate and share data.
+Recording devices. Four IMU devices were attached to the head (HE), lower back L4/L5 (LB), and on the
+dorsalfaceofeachfoot(LFfortheleftfootandRFfortherightfoot)oftheparticipants.TwosetsofIMUsensors
+were used for the recordings with only one sensor type per session based on device availability at the record-
+ing site: XSens™(autonomy range ±2000 deg/s, dynamic accuracy roll/pitch 0.75 deg RMS, dynamic accuracy
+
+--- PAGE 3 ---
+3 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+heading 1.5 deg 6 h, device dimensions 47 × 30 × 13 mm, weight 16 g, acceleration range ±160 m/s2
+, angular
+velocityRMS)andTechnoconcept®(I4Motion,autonomy4hLi-Ionbattery,devicedimensions4.9cm× 3.8cm
+× 1.9 cm, acceleration range ±6 g, angular velocity range ±500 deg/s, and angular velocity measurement error
+< 1 deg/s). Both type capture the same time-series data, ensuring functional equivalence across all recordings.
+TheywereattachedFig.1tothebodywithmanufacturer-designedadhesivestrapsasshowninFig.2A.TheIMUs
+were synchronized before the start of recording, and data were recorded at a sampling rate of 100 Hz.
+Protocol. The gait quantification test consisted in a short straight walk test between 6m and 10m with a 180°
+turnatthehalfwaypointandareturn.Thetestinglocationwassufficientlywidetoallowthepatienttowalkwith-
+out obstacles and perform the U-turn. The instructions given to the patient were the following:
+• Waitforfewsecondsinastaticstandingpositionafterstartingtherecording,facingthewalkingtestlocation,
+until the operator’s signal;
+• Walk the predefined distance between 6m and 10m at a comfortable and habitual pace;
+• Perform a U-turn within the designated area, without being concerned about slightly stepping outside of it;
+• Return to the starting point at a comfortable and habitual pace;
+• Wait on the finish line for few seconds before the operator’s signal and the sensors stop.
+Figure 2 shows the experimental setup. Subjects walked at their comfortable speed with their shoes and
+without walking aid. Each participant performed between 1 and 29 recordings of the protocol, sometimes dur-
+ing several recording sessions in relation to hospitalizations and consultations. The median duration of a full
+protocol was 22.1 s for a healthy subject (with a minimum of 11.8 s and a maximum of 39.9 s), 25.4 s for the
+orthopedicgroup(between15.0sand117.7s)and30.7sfortheneurologicalgroup(between16.3sand186.4s).
+Data processing. For XSens recordings, the software XSens MVN studio software (MVN Studio, XSens,
+the Netherlands) is used to export the nine-dimensional signal (3D accelerations, 3D angular velocities, and 3D
+magnetic fields) processed by default with the Kalman filter (XSens Kalman Filter, XKF) provided by the manu-
+facturer.ForTechnoconceptrecordings,therawdataaredirectlyextractedandcollectedonthecentralcomputer.
+The raw data are then preprocessed by filling in missing data, centering the signals, and filtering them:
+• Missing data correspond to brief interruptions (less than 1.5 seconds) in the connection between the sensors
+and the control unit. In the processed signal, they were completed by linear interpolation.
+Scorename Short Descriptionandvalues
+Visual Gait Assessment VGA
+Visual assessment by the clinician of gait deterioration with five possible ratings: 0 - None; 1 - Mild; 2 - Moderate; 3 - Severe;
+4 - Very severe.
+Time-Up and Go test TUG
+Simple and widely used clinical tool to assess mobility, balance, and functional independence in individuals. The participant
+starts seated in a chair, stands up, walks a distance of 3 meters, turns around, walks back to the chair, and sits down52
+. The total
+time taken to complete this sequence is recorded. The shorter the total time, the better the performance.
+Table1. Summary of usual clinical assessments in clinical practice rated by the physician.
+Cohort Scorename Short Scale Description
+HOA KOA
+Western Ontario and MACmaster
+Universities osteoarthritis index
+WOMAC 100
+Reference index for assessing symptoms (pain and stifness) and functional limitations
+in patients with osteoarthritis, particularly for hip and knee joints56
+. The higher the
+score, the more severe the symptoms and limitations.
+ACL
+International Knee Documentation
+Commitee evaluation form
+IKDC 100
+Clinical score assessing patients’ subjective perceptions used for many knee
+pathologies, especially after surgery or for rehabilitation57
+. The higher the score, the
+less severe the symptoms.
+CVA
+Fugl-Meyer Assessment Lower
+Extermity subscore
+FMA-LE 34
+Stroke-specific disability index for the lower limb including movement, coordination
+and reflex action on the hip, knee and ankle58
+. The higher the score, the more the
+function is preserved.
+PD
+Unified Parkinson’s Disease Rating
+Scale Part III
+UPDRS III 108
+PD-specific clinical index assessing the progression and the impact of the disease on
+the patient’s daily life59
+. Part III measures motor symptoms. The higher the score, the
+more severe the disease and the greater its impact.
+CIPN Total Neuropathy Score clinical TNSc 28
+Clinical version of the TNS that quantifies motor and sensory impairment in the
+quantification of peripheral neuropathy, without the need for electrophysiology60
+. The
+higher the score, the more severe the neuropathy.
+RIL Original Clinical Score OCS 12
+Radioclinical score calculated from 4 assessments: presence of dysexecutive disorder,
+gait apraxia, urinary incontinence, and severity of white matter MRI involvement.
+The alteration of each dimension has five possible ratings: 0 - None; 1 - Mild;
+2 - Moderate; 3 - Severe. The higher the score, the more severe the symptoms and
+radiological damage.
+Table2. Summary of clinical or radioclinical scores calculated by the physician for each pathology. HOA:
+hip osteoarthritis; KOA: knee osteoarthritis; ACL: anterior cruciate ligament injury; CVA: cerebrovascular
+accident; PD: Parkinson’s disease; CIPN: chemotherapy-induced peripheral neuropathy; RIL: radiation-induced
+leukoencephalopathy.
+
+--- PAGE 4 ---
+4 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+• The subject is assumed to be motionless for at least the first 2 seconds. To correct for gravitational effects and
+isolate gait acceleration, the acceleration signals were processed by subtracting the static acceleration vector
+estimated during this pre-walking static phase from the entire signal. Gyroscope offsets were similarly cor-
+rected using the mean static phase value.
+Fig.1 Distribution of the ages according to the cohorts. HS: healthy subjects; HOA: hip osteoarthritis; KOA:
+knee osteoarthritis; ACL: anterior cruciate ligament injury; CVA: cerebrovascular accident; PD: Parkinson’s
+disease; CIPN: chemotherapy-induced peripheral neuropathy; RIL: radiation-induced leukoencephalopathy.
+Fig.2 Gait trial protocol. A: Sensors (up: XSens; down: Technoconcept); B: Position of the sensors using
+Velcro bands: one sensor in the lower back (vertebra L5) and one sensor on the forehead with their respective
+frames, and one sensor on each foot; C: Position of the inertial sensor on the dorsal part of each foot with their
+respective frames; D: Gait trial: short straight walk test with a U-turn.
+
+--- PAGE 5 ---
+5 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+• Toimprovethequalityoftheprocessedsignal,alow-passButterworthfilteroforder8withacutofffrequency
+of 14Hz is applied. This filter setting is consistent with the trends reported in the literature48
+.
+The preprocessed signals for all sensors are combined in a single file. The main preprocessed time series of a
+lumbar sensor and a foot sensor for an example trial are shown in Fig. 3.
+Metadata collection. At each recording visit, the participant underwent an interview with an experi-
+menter who recorded the patient’s basic physiological data. If the participant was a patient, they also had a
+consultation with a physician who added the clinical or radioclinical score corresponding to the pathology.
+In addition to this, metadata concerning the detection of gait phases (U-turn) and gait events (initial contact
+and final contact for each gait cycle) are included. They are automatically calculated from validated algo-
+rithms49,50
+. The details of the metadata are provided in the Data Records section.
+DataRecords
+Accessibility. The database has been fully uploaded to figshare to provide free access to the public51
+. It com-
+prises a total of 9492 files, with 7 files for each of the 1356 experiments (see Database architecture).
+Database architecture. The dataset51
+is divided into three top-level folders “healthy” and “ortho” and
+“neuro” as illustrated in Fig. 4. In each of these folders, there is a folder for each cohort, and on the level below, a
+folder for each patient. The last node in the architecture is a trial folder, which contains all the files for the corre-
+sponding experiment. Each trial folder contains exactly 7 files: 1 raw file per sensor with acceleration, gyration
+and magnetometry, 1 file with validated preprocessed sensor data (see Data processing section), 1 file containing
+the metadata detailed in this article (see Metadata keys section below), and 1 file with a plot of the gait events
+segmentation.
+Files labelling. Each participant is labeled with a code composed with the ID of the cohort and a ran-
+dom number. Each experiment is numbered from 1 to 29 in the order of recordings, according to the num-
+ber of experiments. For each recording, the 7 files are named as follows, where ‘COH’ is the ID of the cohort,
+‘#’ is the patient label and ‘##’ is the experiment numbering:
+• 4TEXTfilescontainthetimeseriesofthesensors.Thegenericnamingformatisdefinedas‘COH_#_##_raw_
+data_**.txt’, where ‘**’ represents the sensor location (HE, LB, RF or LF);
+• 1 TEXT file contains processed time-series, named ‘COH_#_##_processed.txt’;
+• 1 JSON file with all metadata, named ’COH_#_##_meta.json’.
+• 1 PNG file with the illustration of the gait events detection, named ‘COH_#_##_plot.png’.
+• Figure 4 illustrates this nomenclature. For example, ‘HS_1_3_raw_data_HE.txt’ stands for the raw head
+sensor (‘HE’) data corresponding to the third experiment of the first healthy patient. The processed data
+Fig.3 Preprocessed time-series from sensors. For each of the four sensors, the most relevant time series for trial
+segmentation is displayed on the first row: an estimation of the angular position in the axial plane for the head
+(HE) and trunk (LB) sensors, and the angular velocity in the sagittal plane for the sensors on the feet (RF and
+LF). The following three rows present the accelerations along the three axes of the sensors.
+
+--- PAGE 6 ---
+6 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+file and the metadata file fitting to this experiment are named respectively ‘HS_1_3_processed_data.txt’ and
+‘HS_1_3_meta.json’. The illustration of the gait events detection is named ‘HS_1_3_plot.png’, and is given as
+an example in Fig. 5.
+Rawfilestimeseries. ThemaindatalabelsforbothsensorsaresummarizedinTable3,withcorresponding
+units. To simplify use of the database51
+, column headings and units have been unified between the two types of
+sensor.
+Fig.4 Database51
+architecture. The first level corresponds groups, the second to cohorts, and the third has one
+file per patient. The forth level corresponds to one file per trial. A trial folder contains the 7 corresponding files
+(4 raw files, 1 preprocessed data file, 1 metadata file, 1 plot file).
+Fig.5 Gait events detection. Example for healthy subject 1 trial 3. Swing phases (red) and stance phases (green)
+are separate with toe-off (green to red) and heel-strike (red to green). These gait events are detected with a
+previously detailed and validated algorithm50
+.
+
+--- PAGE 7 ---
+7 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Preprocessedfilestimeseries. Thetime-serieslabelsforeachfilewithpreprocesseddatafromsensorsare
+summarizedinTable4,withthecorrespondingunits.Sincethedatahavebeenpre-processedinthesameway,the
+dataframe columns have the same labels.
+Name Data Unit
+PacketCounter Sample counter sample*
+Acc_X Acceleration, x-axis m/s2
+Acc_Y Acceleration, y-axis m/s2
+Acc_Z Acceleration, z-axis m/s2
+Gyr_X Angular velocity, x-axis rad/s
+Gyr_Y Angular velocity, y-axis rad/s
+Gyr_Z Angular velocity, z-axis rad/s
+Table3. Maintime-serieslabelsforrawdata.Detailsofotherlabelscanbefoundintheusermanual.Theaxesare
+giveninthesensorsreferenceframe.Eachfilecorrespondstoasinglesensor.*
+ForXSens,thecounterwrapsat65535.
+Name Data Unit
+PacketCounter Sample counter sample
+HE_Acc_X Acceleration of the head sensor, x-axis m/s2
+HE_Acc_Y Acceleration of the head sensor, y-axis m/s2
+HE_Acc_Z Acceleration of the head sensor, z-axis m/s2
+HE_FreeAcc_X Acceleration minus gravity of the head sensor, x-axis m/s2
+HE_FreeAcc_Y Acceleration minus gravity of the head sensor, y-axis m/s2
+HE_FreeAcc_Z Acceleration minus gravity of the head sensor, z-axis m/s2
+HE_Gyr_X Angular velocity of the head sensor, x-axis rad/s
+HE_Gyr_Y Angular velocity of the head sensor, y-axis rad/s
+HE_Gyr_Z Angular velocity of the head sensor, z-axis rad/s
+LB_Acc_X Acceleration of the trunk sensor, x-axis m/s2
+LB_Acc_Y Acceleration of the trunk sensor, y-axis m/s2
+LB_Acc_Z Acceleration of the trunk sensor, z-axis m/s2
+LB_FreeAcc_X Acceleration minus gravity of the trunk sensor, x-axis m/s2
+LB_FreeAcc_Y Acceleration minus gravity of the trunk sensor, y-axis m/s2
+LB_FreeAcc_Z Acceleration minus gravity of the trunk sensor, z-axis m/s2
+LB_Gyr_X Angular velocity of the trunk sensor, x-axis rad/s
+LB_Gyr_Y Angular velocity of the trunk sensor, y-axis rad/s
+LB_Gyr_Z Angular velocity of the trunk sensor, z-axis rad/s
+LF_Acc_X Acceleration of the left foot sensor, x-axis m/s2
+LF_Acc_Y Acceleration of the left foot sensor, y-axis m/s2
+LF_Acc_Z Acceleration of the left foot sensor, z-axis m/s2
+LF_FreeAcc_X Acceleration minus gravity of the left foot sensor, x-axis m/s2
+LF_FreeAcc_Y Acceleration minus gravity of the left foot sensor, y-axis m/s2
+LF_FreeAcc_Z Acceleration minus gravity of the left foot sensor, z-axis m/s2
+LF_Gyr_X Angular velocity of the left foot sensor, x-axis rad/s
+LF_Gyr_Y Angular velocity of the left foot sensor, y-axis rad/s
+LF_Gyr_Z Angular velocity of the left foot sensor, z-axis rad/s
+RF_Acc_X Acceleration of the right foot sensor, x-axis m/s2
+RF_Acc_Y Acceleration of the right foot sensor, y-axis m/s2
+RF_Acc_Z Acceleration of the right foot sensor, z-axis m/s2
+RF_FreeAcc_X Acceleration minus gravity of the right foot sensor, x-axis m/s2
+RF_FreeAcc_Y Acceleration minus gravity of the right foot sensor, y-axis m/s2
+RF_FreeAcc_Z Acceleration minus gravity of the right foot sensor, z-axis m/s2
+RF_Gyr_X Angular velocity of the right foot sensor, x-axis rad/s
+RF_Gyr_Y Angular velocity of the right foot sensor, y-axis rad/s
+RF_Gyr_Z Angular velocity of the right foot sensor, z-axis rad/s
+Table4. Main time-series labels for preprocessed data. The axes are given in the sensors reference frame and
+shown in Figure 2. Each file corresponds to a complete trial.
+
+--- PAGE 8 ---
+8 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Metadata keys. The metadata are stored in a dictionary accessible in the JSON file, the keys of which are
+standardized for all files. The first metadata are specific to the patient (epidemiological and demographicdata)at
+the time of registration. They include the subject label, trial numbering, age, gender, height, weight, body mass
+index, laterality, group, pathology and clinical or radioclinical score (see Table 2), etc.
+The second part of the metadata concerns the recording conditions: acquisition frequency, protocol, sensor,
+etc. The third part of the metadata provides information on the trial. Two standard clinical assessments are
+included (see Table 1): a visual and subjective assessment of gait by the clinician in consultation, and the dura-
+tionoftheTime-UpandGotest(TUG)ifcompleted,widelyrecognizedingaitevaluation52
+.Segmentationdata
+from the 10-meter test are also included. For the detection of gait cycles, the results given are those of a recently
+published algorithm which is among the most effective and accurate50
+, with examples in Figures 5 and 6. For
+U-turnboundaries,weuseanalgorithminspiredbyadetectionmethodvalidatedintheliterature49
+(seeFig.7).
+A summary of the metadata and their naming keys and units is given in Table 5.
+Fig.6 Gait events detection. Example for CVA patient 11 trial 1, with an altered gait. Swing phases (red) and
+stance phases (green) are separate with toe-off (green to red) and heel-strike (red to green). These gait events are
+detected with a previously detailed and validated algorithm50
+.
+Fig.7 U-turn boundaries detection. Example for healthy subject 1 trial 3. The signal plotted is the estimated
+angular position of the back sensor in the patient’s sagittal plane. The U-turn corresponds to the 180∘ shift
+and is identified between its dark gray boundaries. These boundaries are detected with a modified version of a
+validated algorithm49
+. The first and last swing phase events correspond to the trial start and end estimates.
+
+--- PAGE 9 ---
+9 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+TechnicalValidation
+Participant’s baseline characteristics. Participants’ baseline characteristics are provided in Table 6, for
+healthy subjects, Table 7 for patients from the orthopedic group, and Table 8 for patients from the neurological
+group. The histograms in Fig. 1 illustrate the age distribution of the cohorts.
+Acrossthe331visitsdistributedamong260patients,datawasmissinginthefollowinginstances:patientagewas
+unrecordedonce,heighttwice,andweightfourtimes.Theclinicalscorewasnotreportedin6/51casesfortheRIL
+cohortand1/19casefortheCIPNcohort.Visualgaitassessmentbythephysicianwasnotdocumentedin13cases,
+including6healthysubjects.TheTUGtestmeasurementwasnotincludedintheprotocolfortheorthopediccohorts
+andwasnotconsistentlyperformedinothermeasurementprotocols;itwasconductedduring127visits(39%).
+Protocolandsensorsvalidation. The aim of the database51
+is to provide an example of gait data acquisi-
+tion in daily clinical practice. For this reason, only data from incomplete recordings were immediately deleted,
+with a new recording immediately afterwards if possible.
+To check the reliability of the sensors, we first look at the mean acceleration taken during the initial standstill
+phase,whichmustbeclosetogravityandtheratiobetweenthevarianceofgyrationatrestandduringthemovement
+phases.Thus,thesensorsusedwerewell-calibrated,withstillaccelerationatthebeginningofeachtrialcorrespond-
+ingtogravity(mean9.95±0.35m/s2
+)andgyrationbelow4%ofthemeangyrationobservedduringmovement.
+Key Parameters Unit Typeofdata
+subject Subject label — integer
+age Subject age years integer
+gender Subject gender — one of ‘male’, ‘female’
+height Subject height cm float
+weight Subject weight kg float
+BMI Subject body mass index kg/m2
+float
+laterality Subject laterality — one of ‘right’, ‘left’
+group Group — text
+pathology Pathology — text
+pathologyKey ID of the pathology cohort — text
+clinicalDeficitSide Deficit side if there is one — one of ‘right’, ‘left’
+evaluationScoreName Evaluation score name — text
+evaluationScoreValue Evaluation score value — float
+session Number of the session — integer
+daysSinceFirstSession Number of days since the first session days integer
+trial Trial number among all sessions — integer
+freq Acquisition frequency Hz float
+sensor Sensor brand — text
+protocol Protocol — text
+TUG Time-Up and Go test duration52
+s float
+visualGaitEvaluation Visual subjective evaluation by the clinician — integer between 0 and 4
+uturnBoundaries U-turn boundaries sample date couple of integers
+leftGaitEvents Left gait events sample date array of couples of integers*
+rightGaitEvents Right gait events sample date array of couples of integers*
+Table5. List of metadata dictionary keys to access each value for a given trial. Unit, data type and some details
+are given. *In the array, each couple of samples corresponds to [Toe-off, Heel-strike], delimiting the swing
+phases of the gait cycle (periods when the foot is off the ground).
+Characteristics HS
+Number of subjects 73
+Number of trials 360
+Trials per subjects 5 [1, 29]
+Sex (M/F) 41/32
+Age (years) 40 (20)
+Height (cm) 171 (11)
+Weight (kg) 70 (13)
+BMI (kg/m2
+) 24 (5)
+Laterality (R/L) 68/5
+Table6. Baseline characteristics of healthy subjects (HS). For trials per subjects, median [minimum,
+maximum] are displayed. For age, height, weight and BMI, means (standard deviations) are displayed.
+
+--- PAGE 10 ---
+10 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Next, we check that the sensors are correctly aligned along the axes shown in Figure 2 during the initial
+standstill phase. For the head and back, we check that acceleration is positively directed along the downward
+vertical axis. For the feet, we check that the acceleration is directed positively along the sagittal plane axes and
+thatthemaingyrationduringthemovementisinthesagittalplane.Ifnecessary,modificationsweremadeinthe
+form of axis interchanges to homogenize the database51
+. Finally, they were correctly positioned on the patient:
+the standstill acceleration of the back and head sensors was aligned with the craniocaudal axis of the patient
+(X-axisofthesensors)at90±11%and93±8%,respectively,andthegyrationofthefootsensorswas73±11%
+in the sagittal plane along the dorsal face’s inclination (Y-axis of the sensors).
+Finally,thequalityoftheprotocolfollow-upisassessedbyestimatingtheimmobilizationtimesatstartandfin-
+ish,andthepresenceofadetectedU-turn.Thus,theprotocolwasfollowedproperly.Foreachrecording,theinitial
+waitingtimeaveraged3.9±1.6seconds,whilethefinalwaitingperiodwas1.0±0.6seconds.TheIMUsdo not
+provide accurate total distance estimates. All recordings included a U-turn in the middle of the trial, which was
+successfullydetectedbythealgorithm.Itshouldalsobenotedthatinapproximately120recordings,patientsper-
+formedatrunkrotationattheendofthetrial,whichdidnotinterferewiththeautomaticdetectionoftheU-turn.
+The indicators presented above provide information on the quality and homogeneity of the database51
+. It is
+important to note that since the measurements take place in a hospital environment, the sensor’s magnetic field
+recordingsandthetime-seriesderivedfromthemmaybedisturbedbythepresenceofmedicalequipment,espe-
+cially ferromagnetic and electrical devices leading to localized distortions in magnetometer data. Even if mag-
+netic data are measured in an arbitrary unit, we verified that in the measurement environments, magnetic field
+variationswerenotsignificant(duringthestaticphase:0.012±0.022U.A.)andcanbeusedtoanalyzethedata53
+.
+Datacollectionvalidation. The maximum duration of a missing data interval is 137 samples (i.e., 1.37 sec-
+onds),andnootherintervalexceeds1second.NodataismissingfromtheTechnoconceptsensors,whileapproxi-
+mately0.7%ofthedataismissingfromtheXSenssensors.Thisdoesnotaffectthequalityofthepreprocesseddata.
+Characteristics HOA KOA ACL
+Number of subjects 15 18 11
+Number of trials 74 78 60
+Trials per subjects 5 [1, 10] 4 [1, 9] 5 [2, 8]
+Sex (M/F) 7/8 7/11 7/4
+Age (years) 70 (13) 70 (14) 37 (12)
+Height (cm) 169 (12) 168 (9) 174 (11)
+Weight (kg) 72 (15) 87 (18) 72 (15)
+BMI (kg/m2
+) 25.2 (4.2) 31.0 (6.0) 23.7 (3.0)
+Laterality (R/L) 15/0 17/1 9/2
+Evaluation score name WOMAC (/100) WOMAC (/100) IKDC (/100)
+Evaluation score type clinical clinical clinical
+Evaluation score value 69 [25, 97] 48.5 [15, 98] 59 [30, 100]
+Table7. Baseline characteristics of patients from the orthopedic group, detailed for each cohort. HOA: hip
+osteoarthritis; KOA: knee osteoarthritis; ACL: anterior cruciate ligament injury. For trials per subjects and
+evaluation score value, median [minimum, maximum] are displayed. For age, height, weight and BMI, means
+(standard deviations) are displayed.
+Characteristics CVA PD CIPN RIL
+Number of subjects 49 24 19 51
+Number of trials 128 160 98 398
+Trials per subjects 2 [2, 16] 5 [5, 15] 5 [4, 9] 5 [1, 24]
+Sex (M/F) 37/12 17/7 10/9 28/23
+Age (years) 59 (9) 74 (11) 63 (11) 60 (14)*
+Height (cm) 170 (8) 171 (9)*
+171 (9) 168 (9)*
+Weight (kg) 76 (16) 70 (16)*
+72 (18) 70 (14)*
+BMI (kg/m2
+) 26.1 (5.0) 23.7 (4.3)*
+24.3 (4.5) 24.8 (3.9)*
+Laterality (R/L/A) 47/2/0 20/0/0*
+16/1/2*
+41/4/1*
+Evaluation score name FMA-LE (/34) UPDRS III (/108) TNSc (/28) OCS (/30)
+Evaluation score type clinical clinical clinical radioclinical
+Evaluation score value 27 [7, 34] 34 [3, 62] 6 [1, 16]*
+6 [0, 12]*
+Table8. Baselinecharacteristicsofpatientsfromtheneurologicalgroup,detailedforeachcohort.CVA:
+cerebrovascularaccident;PD:Parkinson’sdisease;CIPN:chemotherapy-inducedperipheralneuropathy;RIL:
+radiation-inducedleukoencephalopathy;R/L/A:right/left/ambidextrous.Fortrialspersubjectsandclinicalor
+radioclinicalscorevalue,median[minimum,maximum]aredisplayed.Forage,height,weightandBMI,means
+(standarddeviations)aredisplayed.Whencharacteristicsaremarkedwith*
+,itmeansthatsomevaluesaremissing.
+
+--- PAGE 11 ---
+11 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+ThedistributionofrecordingsbysensortypeandanoverviewofdataqualityaredetailedinTable9andAnnexA.It
+shouldbenotedthatforthe5recordingsfromthefirstvisitofpatientRIL_12,theheadsensorreturnedemptydata.
+Gait parameters validation. The mean values, distributions, and units of spatiotemporal parameters,
+including gait velocity, step length, U-turn time, stride time, coefficient of variation of stride time, double stance
+time proportion in the gait cycle, and coefficient of variation of double stance time, are summarized in Table 10.
+Theseparameterswereselectedfortheirestablishedclinicalrelevanceandreproducibility,asdetailedinourprior
+work3,54
+, which also describes their calculation methods. Statistically, the healthy cohort’s results align closely
+with normative literature values, showing no significant differences compared to published norms (p > 0.05,
+independenttwo-samplet-tests)3,55
+(seeTable11).Itenhancestheexternalvalidityofourdataset.Forvisualcom-
+parison, the gait velocity across all cohorts is illustrated in Fig. 8, highlighting inter-group differences.
+Parameters Technoconcept XSens
+Number of trials 787 569
+Percentage of missing sample per trial (%) 0 (0) 0.72 (1.4)
+Maximum duration of missing sample 0 137
+Still raw acceleration (m/s2
+) 9.89 (0.5) 10.03 (0.11)
+Still raw gyration ratio (%) 4.3 (7.1) 2.9 (7.2)
+Percentage of LB sensor still acceleration norm in craniocaudal axe (%) 91.8 (8.5) 94.0 (6.5)
+Percentage of feet sensors gyration norm in sagittal plane (%) 72.6 (11) 73.6 (8.9)
+U-Turn angle amplitude (∘) 172 (18) 173 (14)
+Percentage of right/left alternation in gait events segmentation 99.2 (1.3) 99.1 (1.7)
+Table9. Qualityindicatorsconcerningsensorconnection,calibration,orientationordatasegmentation(mean
+andstandarddeviation).Missingdataarenegligibleandoftenshortandisolatedranges.Standardsforacceleration
+andgyrationinstandstillpositionaretakenduringthestandstillphaseatthebeginning.Stillrawgyrationratio
+correspondstotheratiobetweengyrationvarianceduringthestationaryphaseandduringthemotionphase.
+Parameters
+Healthy Orthopedic Neurological
+HS HOA KOA ACL CVA PD CIPN RIL
+V (m/s) 1.17 (0.22) 0.77 (0.24) 0.76 (0.21) 0.98 (0.24) 0.68 (0.22) 0.86 (0.23) 0.88 (0.22) 0.75 (0.24)
+SteL (m) 0.67 (0.10) 0.50 (0.16) 0.51 (0.12) 0.62 (0.10) 0.43 (0.11) 0.48 (0.12) 0.52 (0.10) 0.44 (0.12)
+UtrT (s) 2.09 (0.61) 3.04 (1.57) 3.36 (1.81) 2.30 (0.61) 4.32 (2.36) 3.05 (0.90) 2.57 (0.90) 3.43 (1.94)
+StrT (s) 1.12 (0.09) 1.21 (0.13) 1.24 (0.12) 1.21 (0.19) 1.28 (0.22) 1.11 (0.10) 1.19 (0.15) 1.18 (0.22)
+CVStrT (%) 2.8 (1.0) 4.1 (3.7) 3.9 (1.6) 2.9 (1.1) 4.8 (2.2) 3.4 (1.2) 3.1 (1.2) 5.0 (3.6)
+dstT (%) 25 (4) 31 (7) 31 (7) 26 (1) 30 (6) 25 (4) 28 (5) 29 (6)
+CVdstT (%) 5.7 (2.2) 5.6 (2.0) 6.0 (1.7) 5.1 (1.3) 8.8 (3.5) 8.1 (4.4) 5.6 (1.9) 9.2 (4.8)
+Table10. Mean and standard deviation for main gait features for each cohort of the database51
+. Means
+(standard deviations) are displayed. HS: healthy subjects; HOA: hip osteoarthritis; KOA: knee osteoarthritis;
+ACL: anterior cruciate ligament injury; CVA: cerebrovascular accident; PD: Parkinson’s disease; CIPN:
+chemotherapy-induced peripheral neuropathy; RIL: radiation-induced leukoencephalopathy; V: velocity; SteL:
+step length; UtrT: U-turn time; StrT: stride time; CVStrT: variation coefficient of the stride time; dstT: double
+stance time proportion in the gait cycle; CVdstT: coefficient of variation of the double stance time.
+Parameters Voisard20233
+Latorre201955
+V (m/s) 1.22 (0.20) 1.19 (0.15)
+SteL (m) 0.68 (0.08) 0.64 (0.07)
+UtrT (s) 2.62 (0.75) —
+StrT (s) 1.10 (0.09) 1.08 (0.09)
+CVStrT (%) 2.34 (0.97) —
+dstT (%) 23 (4) —
+CVdstT (%) 5.63 (2.07) —
+Table11. Mean and standard deviation for main gait features for normative cohorts form the literature3,55
+.
+Means (standard deviations) are displayed. HS: healthy subjects; HOA: hip osteoarthritis; KOA: knee
+osteoarthritis; ACL: anterior cruciate ligament injury; CVA: cerebrovascular accident; PD: Parkinson’s disease;
+CIPN: chemotherapy-induced peripheral neuropathy; RIL: radiation-induced leukoencephalopathy; V: velocity;
+SteL: step length; UtrT: U-turn time; StrT: stride time; CVStrT: variation coefficient of the stride time; dstT:
+double stance time proportion in the gait cycle; CVdstT: coefficient of variation of the double stance time. For
+Latorre201955
+, the reference values corresponding to the mean age of the HS cohort is given when available.
+
+--- PAGE 12 ---
+12 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Limitations. One limitation of the dataset51
+concerns the recruitment of healthy control participants.
+Specifically, healthy individuals were primarily recruited among hospital visitors, which may introduce a selec-
+tion bias and limit the generalizability of the findings to the broader population. It is thus possible that hospital
+visitors differ from the general population in terms of demographic characteristics, health awareness,orphysical
+activitylevels.Thisconsiderationisparticularlyrelevantforstudiesaimingtoestablishnormativegaitparameters
+or to compare pathological and healthy cohorts. Future studies could benefit from including a more diverse and
+representative sample of healthy controls to strengthen the external validity of comparative analyses.
+Another key consideration when using this dataset is the variability in the straight walking path length (6
+to 10 meters), constrained by the clinical environment. While this variability does not significantly affect the
+calculationmethodofspatiotemporalparameters,itmayreducethedurationofthesteady-statewalkingphase,
+after initiation and before deceleration. This could introduce additional variability in parameters value. Future
+studies could mitigate this limitation by standardizing the walking distance.
+UsageNotes
+SomePythonfunctionsareprovidedinfigsharetoassistinplottingandusingthedata.Thesefunctionsdemon-
+strate how to load raw and preprocessed data, plot data and gait events segmentation, etc. Each of these func-
+tions is detailed in the python script in the quick_start package.
+Moreover, these raw datasets are compatible with the demonstration tools developed in the journal Image
+ProcessingOnLine(IPOL),includingthealgorithmforgaitquantificationandsemiologicalrestitutiondesigned
+for clinicians, named Semiogram54
+.
+Dataavailability
+The database is fully available at https://doi.org/10.6084/m9.figshare.2880608651
+.
+Codeavailability
+TheadaptedpythonscriptintheGithubrepository(https://github.com/CyrilVoisard/dataset_gait_1)isavailable
+to load, process and visualize data. In addition, this repository contains a series of codes for plotting data and
+applying the various tools detailed in the article and the repository’s README.md.
+Received: 29April 2025;Accepted: 8 September 2025;
+Published: xx xx xxxx
+Fig.8 Distribution of the mean speed for each trial according to the cohorts. HS: healthy subjects; HOA:
+hip osteoarthritis; KOA: knee osteoarthritis; ACL: anterior cruciate ligament injury; CVA: cerebrovascular
+accident; PD: Parkinson’s disease; CIPN: chemotherapy-induced peripheral neuropathy; RIL: radiation-induced
+leukoencephalopathy.
+
+--- PAGE 13 ---
+13 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+References
+1. Eskofier, B. M. et al. An Overview of Smart Shoes in the Internet of Health Things: Gait and Mobility Assessment in Health
+Promotion and Disease Monitoring. Applied Sciences https://doi.org/10.3390/app7100986 (2017).
+2. Buckley,C.etal.TheRoleofMovementAnalysisinDiagnosingandMonitoringNeurodegenerativeConditions:InsightsfromGait
+and Postural Control. Brain Sciences https://doi.org/10.3390/brainsci9020034 (2019).
+3. Voisard,C.etal.InnovativemultidimensionalgaitevaluationusingIMUinmultiplesclerosis:introducingthesemiogram.Frontiers
+in Neurology 14, 1237162, https://doi.org/10.3389/fneur.2023.1237162 (2023).
+4. de l’Escalopier, N. et al. Evaluation methods to assess the efficacy of equinovarus foot surgery on the gait of post-stroke hemiplegic
+patients: A literature review. Frontiers in Neurology 13, 1042667, https://doi.org/10.3389/fneur.2022.1042667 (2022).
+5. Hwang,R.etal.TimedUpandGoTest:AReliableandValidTestinPatientsWithChronicHeartFailure.JournalofCardiacFailure
+https://doi.org/10.1016/j.cardfail.2015.09.018 (2016).
+6. Buekers, J. Laboratory and free-living gait performance in adults with COPD and healthy controls. European Respiratory Journal
+https://doi.org/10.1183/23120541.00159-2023 (2023).
+7. Hsieh, K. L., Wood, T. A., An, R., Trinh, L. & Sosnoff, J. J. Gait and Balance Impairments in Breast Cancer Survivors: A Systematic
+Review and Meta-analysis of Observational Studies. Archives of Rehabilitation Research and Clinical Translation https://doi.
+org/10.1016/j.arrct.2018.12.001 (2019).
+8. Lee, J., Shin, S. Y., Ghorpade, G., Akbas, T. & Sulzer, J. Sensitivity comparison of inertial to optical motion capture during gait:
+implications for tracking recovery. IEEE 16th International Conference on Rehabilitation Robotics (ICORR) https://doi.org/10.1109/
+ICORR.2019.8779411 (2019).
+9. Jakob, V. et al. Validation of a Sensor-Based Gait Analysis System with a Gold-Standard Motion Capture System in Patients with
+Parkinson’s Disease. Sensors https://doi.org/10.3390/s21227680 (2021).
+10. Kanzler, C. M. et al. Inertial sensor based and shoe size independent gait analysis including heel and toe clearance estimation. 2015
+37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC) https://doi.org/10.1109/
+EMBC.2015.7319618 (2015).
+11. Wagstaff, B., Peretroukhin, V. & Kelly, J. Robust Data-Driven Zero-Velocity Detection for Foot-Mounted Inertial Navigation. IEEE
+Sensors Journal https://doi.org/10.1109/JSEN.2019.2944412 (2020).
+12. Moore, J. K., Hnat, S. K. & Bogert, A. J. v. d. An elaborate data set on human gait and the effect of mechanical perturbations. PeerJ
+https://doi.org/10.7717/peerj.918 (2015).
+13. Santos,D.A.d.,Fukuchi,C.A.,Fukuchi,R.K.&Duarte,M.Adatasetwithkinematicandgroundreactionforcesofhumanbalance.
+PeerJ https://doi.org/10.7717/peerj.3626 (2017).
+14. Schreiber, C. & Moissenet, F. A multimodal dataset of human gait at different walking speeds established on injury-free adult
+participants. Scientific Data https://doi.org/10.1038/s41597-019-0124-4 (2019).
+15. Bahadori, S., Williams, J. M. & Wainwright, T. W. Lower limb kinematic, kinetic and spatial-temporal gait data for healthy adults
+using a self-paced treadmill. Data in Brief https://doi.org/10.1016/j.dib.2020.106613 (2021).
+16. Moreira, L., Figueiredo, J., Fonseca, P., Vilas-Boas, J. P. & Santos, C. P. Lower limb kinematic, kinetic, and EMG data from young
+healthy humans during walking at controlled speeds. Scientific Data https://doi.org/10.1038/s41597-021-00881-3 (2021).
+17. Bertaux, A. et al. Gait analysis dataset of healthy volunteers and patients before and 6 months after total hip arthroplasty. Scientific
+Data https://doi.org/10.1038/s41597-022-01483-3 (2022).
+18. Ngo, T. T., Makihara, Y., Nagahara, H., Mukaigawa, Y. & Yagi, Y. The largest inertial sensor-based gait database and performance
+evaluation of gait-based personal authentication. Pattern Recognition https://doi.org/10.1016/j.patcog.2013.06.028 (2014).
+19. Khandelwal, S. & Wickström, N. Evaluation of the performance of accelerometer-based gait event detection algorithms in different
+real-world scenarios using the MAREA gait database. Gait & Posture https://doi.org/10.1016/j.gaitpost.2016.09.023 (2017).
+20. Wiles,T.M.etal.NONANGaitPrint:AnIMUgaitdatabaseofhealthyyoungadults.ScientificDatahttps://doi.org/10.1038/s41597-
+023-02704-z (2023).
+21. Zhou,L.,Fischer,E.,Brahms,C.M.,Granacher,U.&Arnrich,B.DUO-GAIT:Agaitdatasetforwalkingunderdual-taskandfatigue
+conditions with inertial measurement units. Scientific Data https://doi.org/10.1038/s41597-023-02391-w (2023).
+22. Voisard,C.et al.AReferenceDataSetfortheStudyofHealthySubjectGaitwithInertialMeasurementsUnits.Image Processing On
+Line https://doi.org/10.5201/ipol.2023.497 (2023).
+23. Bachlin, M. et al. Wearable Assistant for Parkinson’s Disease Patients With the Freezing of Gait Symptom. IEEE Transactions on
+Information Technology in Biomedicine https://doi.org/10.1109/TITB.2009.2036165 (2010).
+24. Rampp, A. et al. Inertial sensor-based stride parameter calculation from gait sequences in geriatric patients. IEEE transactions on
+bio-medical engineering https://doi.org/10.1109/TBME.2014.2368211 (2015).
+25. Ribeiro De Souza, C. et al. A Public Data Set of Videos, Inertial Measurement Unit, and Clinical Scales of Freezing of Gait in
+Individuals With Parkinson’s Disease During a Turning-In-Place Task. Frontiers in Neuroscience https://doi.org/10.3389/
+fnins.2022.832463 (2022).
+26. Morgan,C.etal.AmultimodaldatasetofrealworldmobilityactivitiesinParkinson’sdisease.ScientificDatahttps://doi.org/10.1038/
+s41597-023-02663-5 (2023).
+27. Ullrich,M.etal.FallRiskPredictioninParkinson’sDiseaseUsingReal-WorldInertialSensorGaitData.IEEEjournalofbiomedical
+and health informatics https://doi.org/10.1109/JBHI.2022.3215921 (2023).
+28. Dimitrov, H., Bull, A. M. J. & Farina, D. High-density EMG, IMU, kinetic, and kinematic open-source data for comprehensive
+locomotion activities. Scientific Data https://doi.org/10.1038/s41597-023-02679-x (2023).
+29. García-de Villa, S. et al. A database with frailty, functional and inertial gait metrics for the research of fall causes in older adults.
+Scientific Data https://doi.org/10.1038/s41597-023-02428-0 (2023).
+30. Chereshnev, R. & Kertesz-Farkas, A. HuGaDB: Human Gait Database for Activity Recognition from Wearable Inertial Sensor
+Networks. arXiv https://doi.org/10.48550/arXiv.1705.08506 (2017).
+31. Angelini, L. et al. Is a Wearable Sensor-Based Characterisation of Gait Robust Enough to Overcome Differences Between
+Measurement Protocols? A Multi-Centric Pragmatic Study in Patients with Multiple Sclerosis. Sensors https://doi.org/10.3390/
+s20010079 (2021).
+32. Luo, Y. et al. A database of human gait performance on irregular and uneven surfaces collected by wearable sensors. Scientific Data
+https://doi.org/10.1038/s41597-020-0563-y (2020).
+33. Losing, V. & Hasenjäger, M. A Multi-Modal Gait Database of Natural Everyday-Walk in an Urban Environment. Scientific Data
+https://doi.org/10.1038/s41597-022-01580-3 (2022).
+34. Weiss, A. et al. Toward automated, at-home assessment of mobility among patients with Parkinson disease, using a body-worn
+accelerometer. Neurorehabilitation and Neural Repair https://doi.org/10.1177/1545968311424869 (2011).
+35. Salis,F.etal.Amulti-sensorwearablesystemfortheassessmentofdiseasedgaitinreal-worldconditions.FrontiersinBioengineering
+and Biotechnology https://doi.org/10.3389/fbioe.2023.1143248 (2023).
+36. Küderle,A.etal.Theplacementoffoot-mountedIMUsensorsdoesaffecttheaccuracyofspatialparametersduringregularwalking.
+PLOS ONE https://doi.org/10.1371/journal.pone.0269567 (2022).
+37. Anguita, D., Ghio, A., Oneto, L., Parra, X. & Reyes-Ortiz, J. L. A Public Domain Dataset for Human Activity Recognition Using
+Smartphones. Computational Intelligence (2013).
+
+--- PAGE 14 ---
+14 Scientific Data | (2025)12:1674 |https://doi.org/10.1038/s41597-025-05959-w
+www.nature.com/scientificdata www.nature.com/scientificdata/
+38. Bot, B. M. et al. The mPower study, Parkinson disease mobile data collected using ResearchKit. Scientific Data https://doi.
+org/10.1038/sdata.2016.11 (2016).
+39. Weiss, G. M., Yoneda, K. & Hayajneh, T. Smartphone and Smartwatch-Based Biometrics Using Activities of Daily Living. IEEE
+Access https://doi.org/10.1109/ACCESS.2019.2940729 (2019).
+40. Kuderle, A. et al. Gaitmap-An Open Ecosystem for IMU-Based Human Gait Analysis and Algorithm Benchmarking. IEEE open
+journal of engineering in medicine and biology https://doi.org/10.1109/OJEMB.2024.3356791 (2024).
+41. Micó-Amigo, M. E. et al. Assessing real-world gait with digital technology? Validation, insights and recommendations from the
+Mobilise-D consortium. Journal of Neuroengineering and Rehabilitation https://doi.org/10.1186/s12984-023-01198-5 (2023).
+42. Palmerini, L. et al. Mobility recorded by wearable devices and gold standards: the Mobilise-D procedure for data standardization.
+Scientific Data https://doi.org/10.1038/s41597-023-01930-9 (2023).
+43. Salis, F. et al. Data sample INDIP Validation Paper. Zenodo https://doi.org/10.5281/zenodo.7802795 (2023).
+44. Palmerini, L. et al. Example subjects for Mobilise-D data standardization. Zenodo https://doi.org/10.5281/zenodo.7185429 (2022).
+45. Boekesteijn, R. J., van Gerven, J., Geurts, A. C. H. & Smulders, K. Objective gait assessment in individuals with knee osteoarthritis
+usinginertialsensors:Asystematicreviewandmeta-analysis.Gait&Posturehttps://doi.org/10.1016/j.gaitpost.2022.09.002(2022).
+46. Felius, R. a. W. et al. Reliability of IMU-based balance assessment in clinical stroke rehabilitation. Gait & Posture https://doi.
+org/10.1016/j.gaitpost.2022.08.005 (2022).
+47. Terziev, R. et al. Cumulative incidence and risk factors for radiation induced leukoencephalopathy in high grade glioma long term
+survivors. Scientific Reports https://doi.org/10.1038/s41598-021-89216-1 (2021).
+48. Storm, F. A., Cesareo, A., Reni, G. & Biffi, E. Wearable Inertial Sensors to Assess Gait during the 6-Minute Walk Test: A Systematic
+Review. Sensors https://doi.org/10.3390/S20092660 (2020).
+49. Salarian, A. et al. Analyzing 180∘ turns using an inertial system reveals early signs of progress in Parkinson’s Disease. IEEE
+Engineering in Medicine and Biology Conference https://doi.org/10.1109/IEMBS.2009.5333970 (2009).
+50. Voisard, C., de l’Escalopier, N., Ricard, D. & Oudre, L. Automatic gait events detection with inertial measurement units: healthy
+subjects and moderate to severe impaired patients. Journal of NeuroEngineering and Rehabilitation 21(1), 104, https://doi.
+org/10.1186/s12984-024-01405-x (2024).
+51. Voisard,C.et al.Adatasetofclinicalgaitsignalswithwearablesensorsfromhealthy,neurological,andorthopediccohorts.figshare
+https://doi.org/10.6084/m9.figshare.28806086 (2025).
+52. Podsiadlo, D. & Richardson, S. The timed “Up & Go”: a test of basic functional mobility for frail elderly persons. Journal of the
+American Geriatrics Society https://doi.org/10.1111/j.1532-5415.1991.tb01616.x (1991).
+53. Roetenberg,D.,Luinge,H.,Baten,C.&Veltink,P.Compensationofmagneticdisturbancesimprovesinertialandmagneticsensing
+of human body segment orientation. IEEE Transactions on Neural Systems and Rehabilitation Engineering https://doi.org/10.1109/
+TNSRE.2005.847353 (2005).
+54. Voisard,C.,l’Escalopier,N.d.,Ricard,D.&Oudre,L.Semiogram:avisualtoolforgaitquantificationinroutineneurologicalfollow-
+up. Image Processing On Line https://doi.org/10.5201/ipol.2025.535 (2025).
+55. Latorre, J., Colomer, C., Alcañiz Raya, M. & Llorens, R. Gait analysis with the Kinect v2: Normative study with healthy individuals
+and comprehensive study of its sensitivity, validity, and reliability in individuals with stroke. Journal of NeuroEngineering and
+Rehabilitation https://doi.org/10.1186/s12984-019-0568-y (2019).
+56. Bellamy,N.,Buchanan,W.W.,Goldsmith,C.H.,Campbell,J.&Stitt,L.W.ValidationstudyofWOMAC:ahealthstatusinstrument
+formeasuringclinicallyimportantpatientrelevantoutcomestoantirheumaticdrugtherapyinpatientswithosteoarthritisofthehip
+or knee. The Journal of Rheumatology (1988).
+57. Irrgang, J. J. et al. Development and validation of the international knee documentation committee subjective knee form. The
+American Journal of Sports Medicine https://doi.org/10.1177/03635465010290051301 (2001).
+58. Fugl-Meyer, A. R., Jääskö, L., Leyman, I., Olsson, S. & Steglind, S. The post-stroke hemiplegic patient. 1. a method for evaluation of
+physical performance. Scandinavian Journal of Rehabilitation Medicine (1975).
+59. Movement Disorder Society Task Force on Rating Scales for Parkinson’s Disease. The Unified Parkinson’s Disease Rating Scale
+(UPDRS): Status and recommendations. Movement Disorders https://doi.org/10.1002/mds.10473 (2003).
+60. Cavaletti, G. et al. The Total Neuropathy Score as an assessment tool for grading the course of chemotherapy-induced peripheral
+neurotoxicity: comparison with the National Cancer Institute-Common Toxicity Scale. Journal of the peripheral nervous system:
+JPNS https://doi.org/10.1111/j.1529-8027.2007.00141.x (2007).
+Authorcontributions
+C.V., R.B.M. and N.d.E. contributed to data processing and analysis, participated in python scripts development
+andmanuscriptwriting.R.B.M.,L.O.andA.Y.conceivedtheexperimentandorganizedthedatacollection.A.Y.,
+P-P.V., N.V., D.R. and L.O. conceived overall project management. All authors reviewed the manuscript.
+Competinginterests
+The authors declare no competing interests.
+Additionalinformation
+Correspondence and requests for materials should be addressed to C.V.
+Reprintsandpermissionsinformationis available at www.nature.com/reprints.
+Publisher’snote Springer Nature remains neutral with regard to jurisdictional claims in published maps and
+institutional affiliations.
+Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-
+NoDerivatives4.0InternationalLicense,whichpermitsanynon-commercialuse,sharing,distribu-
+tion and reproduction in any medium or format, as long as you give appropriate credit to the original author(s)
+and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed mate-
+rial.Youdonothavepermissionunderthislicencetoshareadaptedmaterialderivedfromthisarticleorpartsof
+it.Theimagesorotherthirdpartymaterialinthisarticleareincludedinthearticle’sCreativeCommonslicence,
+unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative
+Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted
+use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit
+http://creativecommons.org/licenses/by-nc-nd/4.0/.
+© The Author(s) 2025
+
+--- PAGE 15 ---

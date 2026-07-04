@@ -1,0 +1,847 @@
+
+--- PAGE 1 ---
+J Orthop Res. 2022;40:219–230. wileyonlinelibrary.com/journal/jor | 219
+Received: 3 November 2020 | Revised: 10 February 2021 | Accepted: 10 May 2021
+DOI: 10.1002/jor.25117
+SPECIAL IS SUE RESEARCH ARTICLE
+Gait asymmetries are exacerbated at faster walking speeds
+in individuals with acute anterior cruciate ligament
+reconstruction
+Steven A. Garcia1,2
+| Scott R. Brown3
+| Mary Koje1,4
+|
+Chandramouli Krishnan1,4,5
+| Riann M. Palmieri‐Smith1,2,6
+1
+School of Kinesiology, University of
+Michigan, Ann Arbor, Michigan, USA
+2
+Orthopedic Rehabilitation & Biomechanics
+(ORB) Laboratory, School of Kinesiology,
+University of Michigan, Ann Arbor,
+Michigan, USA
+3
+Department of Kinesiology, Aquinas College,
+Grand Rapids, Michigan, USA
+4
+Neuromuscular & Rehabilitation Robotics
+(NeuRRo) Laboratory, Department of Physical
+Medicine & Rehabilitation, University of
+Michigan, Ann Arbor, Michigan, USA
+5
+Robotics Institute, University of Michigan,
+Ann Arbor, Michigan, USA
+6
+Department of Orthopaedic Surgery,
+Michigan Medicine, Ann Arbor, Michigan, USA
+Correspondence
+Riann M. Palmieri‐Smith, Orthopedic
+Rehabilitation & Biomechanics (ORB)
+Laboratory, School of Kinesiology, University
+of Michigan, 401 Washtenaw Ave, Ann Arbor,
+MI 48109, USA.
+Email: riannp@umich.edu
+Funding information
+National Institute of Child Health and Human
+Development, Grant/Award Number: R21
+HD092614‐02
+Abstract
+Previous research suggests more biomechanically demanding tasks (e.g., stair
+descent, hopping) magnify biomechanical asymmetries compared with walking
+after anterior cruciate ligament (ACL) reconstruction. However, it is unclear if
+modifying task‐specific constraints, like walking speed also elicits greater bio-
+mechanical asymmetries in this population. We examined the effects of ma-
+nipulating walking speed on ground reaction force (GRF) asymmetries in
+individuals with ACL reconstruction and uninjured controls. Thirty individuals
+with ACL reconstruction (age = 20.6 ± 5.4 years, body mass index [BMI] = 23.9
+± 3.3 kg/m2
+) and 15 controls (age = 23.1 ± 4.5 years, BMI = 23.6 ± 2.7 kg/m2
+)
+were tested on an instrumented treadmill at three speeds (100%, 120%, and
+80% self‐selected speed). Bilateral vertical and posterior‐anterior GRFs were
+recorded at each speed. GRF asymmetries were calculated by subtracting the
+uninjured from the injured limb at each percent of stance. Statistical parametric
+mapping was used to evaluate the effects of speed on GRF asymmetries across
+stance. We found vertical and posterior GRF asymmetries were exacerbated at
+faster speeds and reduced at slower speeds in ACL individuals but not controls
+(p < .05). No differences in anterior GRF asymmetries were observed between
+speeds in either group (p > .05). Our results suggest increasing walking speed
+magnifies GRF asymmetries in individuals with ACL reconstruction. Statement
+of Clinical Significance: Evaluating both preferred and fast walking speeds may
+aid in characterizing biomechanical asymmetries in individuals with ACL re-
+construction which may be valuable in earlier rehabilitative time points when
+more difficult tasks like hopping and running are not feasible.
+K E Y W O RD S
+asymmetry, ground reaction force, task complexity
+© 2021 Orthopaedic Research Society. Published by Wiley Periodicals LLC
+
+--- PAGE 2 ---
+1 | INTRODUCTION
+Appropriate joint loading is critical for maintaining knee joint health
+and mitigating osteoarthritis risk after anterior cruciate ligament
+(ACL) reconstruction.1–4
+Underloading of the ACL‐reconstructed
+limb (i.e., smaller vertical ground reaction forces [GRFs] relative to
+the uninjured limb) is associated with poorer patient‐reported
+outcomes and lower knee cartilage proteoglycan density, and
+therefore, maybe a detrimental walking strategy employed by
+some individuals with ACL reconstruction.3,5
+Given that asym-
+metrical GRFs during walking are known to negatively affect knee
+joint health and patient outcomes, it is critical to understand un-
+der what conditions GRF asymmetries are present in individuals
+with ACL reconstruction.
+Gait biomechanics, such as GRF limb asymmetries, are most
+commonly evaluated at self‐selected walking speeds to capture one's
+habitual walking pattern and loading environment. Many studies
+have shown that those with ACL reconstruction walk with near
+“normal” vertical GRF symmetry (i.e., <5% interlimb difference) as
+early as 6 months postreconstruction.1,2,5–8
+Although these data may
+indicate a resolution of biomechanical asymmetry, findings should be
+interpreted with caution. For example, early resolution of GRF
+asymmetry could be due to reductions in uninvolved limb GRF
+characteristics which would falsely suggest an improvement in gait
+characteristics.1
+Further, evidence suggests that asymmetry in the
+vertical GRF may be task‐dependent9
+wherein more biomechanically
+demanding tasks (i.e., running, jump landing, etc.) reveal greater
+biomechanical differences between ACL‐reconstructed and healthy
+knees.10–12
+Therefore, it is plausible modifying the difficulty of a
+motor task may be advantageous when attempting to characterize
+biomechanical asymmetries in those after ACL reconstruction as it
+may provide a more rigorous clinical evaluation of a patient's
+functional capabilities.
+One way to increase task difficulty during walking is to increase
+walking speed, as it challenges the neuro‐musculoskeletal system by
+requiring increased attentional and muscular demands.13–18
+Many
+studies have suggested manipulating walking speeds may be useful
+to help better characterize gait impairments like asymmetries in
+pathological populations (e.g., stroke, amputees).19–23
+For example,
+previous work have shown that pathological populations often ex-
+hibit increased gait asymmetries at fast speeds compared to
+preferred.19–23
+In able‐bodied individuals, however, it has generally
+been shown that GRF symmetries are maintained across non‐
+preferred walking speeds;23–25
+though some evidence does exist
+showing that certain gait metrics like support and propulsive im-
+pulses are affected by nonpreferred walking speeds.13,26
+None-
+theless it is not clear if manipulating gait speed from a self‐selected
+pace alters GRF symmetry in individuals with ACL‐reconstruction
+similar to that seen in other pathological gaits. It is plausible in-
+dividuals with ACL reconstruction may indeed exhibit a differential
+response from healthy adults when manipulating walking speeds
+given the long‐term neuromuscular deficits induced after ACL‐
+reconstruction.27–30
+Previous work may lend some support for this
+notion as it has been shown that manipulating walking speed alters
+knee kinematic variability in those with ACL deficiency but not in
+healthy controls.14,31
+As such, understanding the effect of walking
+speed on GRF asymmetries during gait may provide a unique insight
+into the effects of altered task difficulty on biomechanical function in
+those with ACL reconstruction.
+The vertical GRF during gait is often used as an estimate of the
+total load applied up through the lower limbs in individuals with ACL
+reconstruction,1,2,5–8
+and recent work has shown this gait parameter
+is a viable target for gait interventions using real‐time biofeedback
+paradigms.2,32
+However, evaluation of other components of the GRF
+during walking, such as the posterior‐anterior GRF, have received far
+less attention in the literature despite evidence suggesting this
+parameter may provide additional insight into the extent of bio-
+mechanical asymmetries present after surgery. For example, Lim
+et al.33,34
+demonstrated the magnitude of asymmetry in the posterior
+(breaking) GRF was substantially higher than that seen in the vertical
+GRF component (i.e., 11% vs. 4%). Further, posterior GRF limb
+symmetry, but not vertical GRF symmetry has been shown to
+predict knee extensor moment symmetry in those with ACL
+reconstruction.33,34
+Given these findings, there is a need to further
+examine the posterior‐anterior GRF during gait and how walking
+speeds may impact the magnitude of asymmetries observed in in-
+dividuals with ACL reconstruction.
+Therefore, the purpose of this study was to examine the effect of
+gait speed on asymmetry in vertical and posterior‐anterior GRFs in
+individuals with ACL reconstruction and compare the results with
+uninjured controls. Although discrete predetermined time points of
+the GRF waveform are commonly evaluated, we employed statistical
+parametric mapping (SPM) to more comprehensively evaluate the
+entirety of the GRF waveform. Consideration of GRFs across the
+entirety of the stance phase is important as it may provide a more
+robust evaluation of gait characteristics that may not be captured
+when using single discrete time points. We hypothesized that
+(1) asymmetry in GRFs would increase with an increase in walking
+speed in the ACL‐reconstructed group, and (2) uninjured controls
+would be able to maintain symmetrical GRF characteristics regard-
+less of walking speed.
+2 | METHODS
+The data presented herein are from a randomized clinical trial
+(Clinical trial#: NCT03282565) identifying the effect of functional
+resistance training on gait biomechanics in a cohort of ACL‐
+reconstructed individuals (National Institutes of Health Grant# R21
+HD092614‐02). For this manuscript, data were collected from the
+ACL‐reconstructed individuals during their first study visit before
+the administration of any intervention. All participants and legal
+guardian(s) of participants under the age of 18 provided informed
+written consent for this study. The University Medical School In-
+stitutional Review Board approved all procedures of the current
+study.
+220 | GARCIA ET AL.
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 3 ---
+2.1 | Participants
+Thirty individuals with unilateral ACL reconstruction (time from
+surgery: 9.5 ±2.8 weeks, age=20.6±5.4 years, body mass index
+[BMI]=23.9±3.3 kg/m2
+, Table 1) and 15 matched healthy control
+participants who were free from lower extremity injury in the past 6
+months (age=23.1±4.5 years, BMI=23.6±2.7kg/m2
+, Table 1) vo-
+lunteered for this study. Control participants were matched with one
+of the ACL subjects based on age (±3years) and sex. All volunteers,
+regardless of injury status, had to be between 14 and 40 years of age
+to qualify for participation. If any interested person reported
+(1) pregnancy or actively trying to become pregnant, (2) a history of
+untreated diabetes or hypertension, and (3) a diagnosis of any neu-
+rological condition or chronic pain pathology, they were excluded
+from participation in this study. Additional exclusion criteria for the
+ACL reconstruction group included: (1) multiple ACL injuries or
+surgeries, (2) any lower‐extremity injury or surgery other than the
+current ACL reconstruction, and (3) reconstruction with an allograft.
+Participants in the uninjured control group were excluded if they had
+any history of a previous knee injury.
+2.2 | Experimental procedures
+The experiment began by having participants perform a 10‐m walk
+test overground to determine their self‐selected walking speed for
+future treadmill walking conditions similar to several recent
+studies.2,35,36
+All participants wore their own athletic shoes during
+testing. The participants walked over a 12‐m walkway at their pre-
+ferred walking speed while an experimenter used a hand‐held
+stopwatch to time the intermediate 10‐m walk.37
+Participants were
+given one practice trial, and then the average of three successive
+trials was used to determine their self‐selected walking speed. Once
+speed was determined, all participants completed one 65‐s walking
+trial on a fully instrumented Bertec split‐belt treadmill (ITC‐11‐20L/
+R; Bertec, Corp.) at each of the three treadmill speeds (80%, 100%,
+and 120% of self‐selected speed). The vertical and posterior‐anterior
+GRFs were recorded using a custom‐written LabVIEW program
+(LabVIEW 2011; National Instruments Corp.). The GRF data were
+lowpass filtered at 500 Hz using a National Instruments 8th order
+analog antialiasing Butterworth filter (SCXI 1143; National Instru-
+ments Corp.) which were then sampled at 1000Hz using 16‐Bit
+National Instruments data acquisition hardware (USB‐6255). Parti-
+cipants were given standardized verbal instructions to facilitate normal
+walking by asking them to (1) maintain their position on the center of
+the treadmill, (2) walk as normal as possible and attempt not to scuff
+their feet or strike the opposite treadmill belt with their foot (i.e., cross‐
+over step), and (3) keep their eyes forward and not look down at their
+feet for extended periods (other than checking body position). These
+standardized instructions were repeated to participants as needed
+during treadmill conditions. Once the treadmill was initiated and
+reached the set speed, participants were allotted 10s to familiarize
+themselves with the treadmill speed before trial recording was initiated.
+Following each 65s, the treadmill speed was changed to the sub-
+sequent walking speed (i.e., 120% and 80% of self‐selected speed), and
+once the treadmill reached the set speed, participants were again given
+10s of familiarization before initiating the next 65‐s trial recording.
+2.3 | Data reduction
+Analog force data were recorded and further analyzed using an
+offline LabVIEW program (LabVIEW 2011; National Instruments
+Corp.). Force data were low‐pass filtered using a fourth‐order zero‐
+phase lag Butterworth filter (100Hz cut‐off frequency). The stance
+phase for each gait cycle was identified as the period between where
+the vertical GRF exceeded 20 N and subsequently fell below 20N. On
+average, over 50 strides per limb were identified at each walking speed
+TABLE 1 Participant demographics
+ACL‐reconstructed group
+N=30, mean [95% CI]
+Healthy control group
+N=15, mean [95% CI]
+Age (years) 20.63 [18.62, 22.63] 23.1 [20.6, 25.6]
+Height (cm) 172.04 [158.53, 175.43] 173.29 [166.76, 179.82]
+Weight (kg) 70.95 [66.40, 75.51] 71.52 [63.76, 79.27]
+BMI (kg/m2
+) 23.91 [22.70, 25.13] 23.64 [22.14, 25.14]
+Self‐selected speed (m/s) 1.30 [1.24, 1.36]a
+1.47 [1.36, 1.58]
+120% self‐selected Speed (m/s) 1.56 [1.49, 1.63]a
+1.76 [1.63, 1.89]
+80% self‐selected Speed (m/s) 1.04 [0.99, 1.09]a
+1.17 [1.09, 1.26]
+Graft type (n) 25 patellar 4 hamstring tendon 1 quadriceps tendon N/A
+Abbreviations: BMI, body mass index; CI, confidence interval.
+a
+Indicates significant difference between groups (α level=.05).
+GARCIA ET AL. | 221
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 4 ---
+and subsequently used to generate time‐normalized (101‐point) en-
+semble averages of the vertical and posterior‐anterior GRF curves.
+Ensemble GRF curves were normalized to percent body weight (% BW)
+by dividing each element of the GRF waveform by the participant's
+body weight in Newtons and multiplying by 100. We chose to calculate
+interlimb differences (i.e., asymmetry) for each GRF component in our
+cohort instead of using other metrics of symmetry (i.e., limb symmetry
+indices) to more directly evaluate the magnitude of GRF changes (i.e., %
+BW) that may be occurring across walking speeds. For ACL‐
+reconstructed participants, the uninjured limb GRF was subtracted
+from the injured limb GRF across each percent of the stance phase. For
+control participants, we considered the limb with the smaller peak
+vertical GRF from the self‐selected speed as the “injured limb” and the
+limb with the greater peak vertical GRF as the “uninjured limb.” Once
+the “injured” and “uninjured” limbs were identified from the self‐
+selected speed trial, we calculated asymmetry similar to ACL‐
+reconstructed participants where we subtracted “uninjured limb” GRF
+from the “injured” limb GRF across each percent of stance phase shown
+below in Equation 1. For reference, positive value represents higher
+GRFs in the “injured” relative to the “uninjured” limb whereas negative
+values indicate lower GRFs in the “injured” relative to the contralateral
+limb. The identified “injured” and “uninjured” limb in controls were kept
+consistent for the 120% and 80% speed conditions. We opted to
+identify “injured” and “uninjured” limbs for control participants in this
+fashion to give us a conservative estimate of gait GRF asymmetries
+when comparing the effects of walking speed conditions between ACL
+reconstructed participants and controls.
+2.4 | Statistical analyses
+Demographic comparisons between individuals with ACL reconstruc-
+tion and uninjured controls were performed using two‐sample t tests in
+IBM SPSS Statistics for Windows, version 27 (IBM Corp.). To evaluate
+the effects of walking speed on asymmetry in the vertical and posterior‐
+anterior GRFs, we performed two separate 2×3 (group: [ACL re-
+constructed, controls] by speed: [80%, 100%, and 120% self‐selected
+speed]) repeated‐measures analysis of variance (ANOVA2onerm; SPM
+[F]) using one‐dimensional statistical parametric mapping (SPM1D)
+techniques. Analyses were completed via Matlab (R2020b; The Math-
+works Inc.) using open‐source code (SPM1D, v.M0.1, www.spm1d.org)
+detailed elsewhere.38,39
+Briefly, SPM1D analysis first calculates a vector
+field of test statistics (F) at each instantaneous point across the GRF
+waveform. To evaluate the significance of the vector field (F), SPM
+techniques compute a critical F threshold (F*) using Random Field
+Theory (critical threshold 5%; α=.05) wherein portions of the com-
+puted vector field (F) that exceeded the computed critical F threshold
+(F*) were considered significant.39
+We tested the null hypothesis that
+speed does not induce an effect on the observed asymmetry in vertical
+and posterior‐anterior GRFs in individuals with ACL reconstruction and
+uninjured controls.
+Following the inspection of SPM results, significant interactions
+were followed with post hoc paired t tests (TTESTpaired; SPM[t]) to
+evaluate the effects of walking speed on asymmetry in GRFs within
+each respective group. The paired t tests analyses tested three
+planned comparisons: 80%–100% self‐selected speed, 80%–120%
+self‐selected speed, and 100%–120% self‐selected speed. Similar to
+procedures described above, SPM[t] analyses calculate a scalar field
+(t) at each instantaneous point across GRF waveforms, and sig-
+nificance was evaluated at a critical t threshold (t*, α=.05). If any
+portions of the GRF waveform exceed this critical threshold (t*), then
+a significant difference between speeds was considered present. We
+tested the null hypothesis that the magnitude of asymmetry in GRF
+is similar across walking speeds in both ACL‐reconstructed partici-
+pants and uninjured controls.
+3 | RESULTS
+3.1 | Participant demographics
+Participant demographics and walking speeds (mean and 95% con-
+fidence interval [CI]) are provided in Table 1. No significant differ-
+ences were found between groups for age, body‐mass, height, or BMI
+(p>.05). Individuals with ACL reconstruction walked with
+slower self‐selected speeds compared with uninjured controls
+(1.30m/s [95% CI: 1.24, 1.36] vs. 1.47 [95% CI: 1.36, 1.58], p<.01,
+Cohen's d=0.98).
+3.2 | Vertical GRF
+There was a significant group by speed interaction on the asymmetry
+in vertical GRF (F*[2,86] =7.07, p<.05; Figure 1). Post hoc analyses
+of the interaction indicated that the asymmetry in vertical GRF did
+not differ between speeds in the control participants (all p>.05;
+Figure 2) but differed significantly in individuals with ACL reconstruc-
+tion (all p<.05; Figure 3). Specifically, asymmetry increased with in-
+creases in walking speed, with 80% self‐selected speed showing the
+lowest asymmetry and 120% self‐selected speed showing the greatest
+asymmetry (i.e., 100%>80% of self‐selected walking speed and
+120%>80% and 100% of self‐selected walking speeds) (Figure 3). En-
+semble averages of the vertical GRF waveforms for both limbs that
+were used to compute GRF asymmetries can be found in Figure S1.
+3.3 | Posterior‐Anterior GRF
+There was a significant group by speed interaction on the asymmetry
+in posterior‐anterior GRF (F*[2,86] =7.17, p<.05; Figure 1). Post hoc
+analyses of the interaction indicated that the asymmetry in
+posterior‐anterior GRF did not differ between speeds in the control
+participants (All p>.05; Figure 4) but differed significantly in in-
+dividuals with ACL reconstruction (All p<.05; Figure 5). Specifically,
+asymmetry increased in the posterior GRF with increases in walking
+speed, with 80% self‐selected speed showing the lowest asymmetry
+222 | GARCIA ET AL.
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 5 ---
+and 120% self‐selected speed showing the greatest asymmetry (i.e.,
+100%>80% of self‐selected walking speed and 120% >80% and
+100% of self‐selected walking speeds) (Figure 5). Ensemble averages
+of the posterior‐anterior GRF waveforms for both limbs that were
+used to compute GRF asymmetries in each group can be found in
+Figure S2.
+4 | DISCUSSION
+The purpose of this study was to examine the effect of gait speed on
+asymmetry in vertical and posterior‐anterior GRFs in individuals with
+ACL reconstruction and compare the results with uninjured controls.
+We found that the asymmetry in both vertical and posterior‐anterior
+GRFs increased at faster walking speeds but decreased at slower
+speeds in individuals with ACL reconstruction. Conversely, speed did
+not affect GRF asymmetries in uninjured controls. These findings are
+clinically meaningful as assessing gait biomechanics at multiple
+walking speeds may be necessary to magnify existing gait asymme-
+tries in individuals with ACL reconstruction. Ultimately, this may
+improve our ability to identify the extent of underlying gait impair-
+ments simply by manipulating task‐specific constraints like walking
+speed.
+As hypothesized, asymmetry in the vertical GRF was affected by
+walking speed in individuals with ACL reconstruction, but not in healthy
+controls. We found that asymmetries in the vertical GRF were smallest at
+80% of self‐selected speed (approximately 10% BW, Figure 3) but
+greatest at 120% of self‐selected speed (approximately 18%–20% BW,
+Figure 3). Our results appear to be consistent with findings from previous
+investigations in several neurologic/pathological populations (i.e.,
+FIGURE 1 SPM[F] main effects and interaction results for the vertical and posterior‐anterior ground reaction force components. For each graph,
+the red dashed line corresponds to the critical F thresholds, denoted as F*. Any portion of the waveform that exceeded this threshold (shaded in grey)
+indicates a significance difference at p<.05. SPM, statistical parametric mapping [Color figure can be viewed at wileyonlinelibrary.com]
+GARCIA ET AL. | 223
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 6 ---
+poststroke, amputees) which also show an augmentation of gait asym-
+metries when task‐constraints like speed are increased.19–23
+In healthy
+individuals, however, our results and others suggest the effects of in-
+creased speeds on gait symmetries appear to be less pronounced or non‐
+existent.23–25
+Although direct comparison of our results to other ACL
+cohorts is limited, several previous studies provide support that more
+biomechanically demanding tasks (i.e., stair walking, jump landing, and
+running) show greater biomechanical impairments in ACL knees com-
+pared to those seen in self‐selected level walking.9,11,12
+Nonetheless, it is
+important to recognize that tasks like hopping or landing, for example,
+may be contraindicated early after ACL reconstruction, and the bio-
+mechanical and neuromuscular control demands required during these
+tasks differ from those of walking.9,40
+Thus, given the results of our study,
+we believe manipulating walking speed could be a viable option to im-
+pose increased (or decreased) tasks‐demands when evaluating gait bio-
+mechanics. This may be particularly useful in earlier stages of
+rehabilitation when patients are yet to advance to running or hopping. It
+is important to point out, however, that our study limited speed ma-
+nipulations to 20% above and below self‐selected, in part, so that all
+patients were capable of completing each walking condition safely
+without the use of handrails for stabilization and/or support. Thus, it is
+not clear if using even greater speed changes (i.e., 30%–40% above or
+below self‐selected) may more effectively reveal compensatory gait
+strategies in those with ACL reconstruction. Future studies should
+FIGURE 2 SPM[t] Post hoc paired t tests showing the effect of walking speed on asymmetry in vertical GRF (asymmetry: % BW) for uninjured
+control participants. For column 1, positive values represent higher vertical GRFs in the “injured” relative to the contralateral limb whereas negative
+values indicate lower vertical GRFs in the “injured” relative to the contralateral limb. For each graph in column 2, the red dashed line corresponds to the
+critical t thresholds, denoted as t*. Any portion of the waveform exceeding this threshold (shaded in grey) indicates a significance difference between
+speeds at p<.05. Note that the limb that had lower peak vertical GRF during the self‐selected speed walking condition was considered as the “injured
+limb” for the control participants. GRF, ground reaction force; SS, self‐selected speed [Color figure can be viewed at wileyonlinelibrary.com]
+224 | GARCIA ET AL.
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 7 ---
+examine the use of a wider range of speed manipulations when aiming to
+evaluate the effects of speeds on walking mechanics in this patient
+population.
+We observed that individuals with ACL reconstruction walk with
+marked asymmetries in the vertical GRF across the majority of
+stance phase. Our results also demonstrate the magnitude of these
+asymmetries may not be consistent across multiple walking speeds.
+When examining the ensemble averages of the vertical GRF for each
+limb and both groups (Figure S1), it is apparent that ACL subjects
+primarily modulate the vertical GRF of their injured limb by de-
+creasing its magnitude in early and late stance phase while also
+undergoing substantially less unloading during midstance (i.e.,
+greater GRFs in the injured relative to the contralateral). At the
+highest speed, the vertical GRF appears to disproportionately in-
+crease in the uninjured relative to the injured limb, while at the
+slowest speed there is the least modulation in GRF and the greatest
+symmetry between limbs. These alterations in the vertical GRF
+corroborate findings from several previous studies at self‐selected
+speeds 1,8
+and have been generally described as a less “dynamic” or
+blunted GRF waveform (i.e., less midstance unloading). Overall, we
+reason these gait alterations are reflective of ACL participants at-
+tempting to avoid or limit loading of the reconstructed limb by step-
+ping more lightly at faster speeds, possibly because of fear of reinjury or
+apprehension due to increased task‐demands. This aberrant loading
+FIGURE 3 SPM[t] Post hoc paired t tests showing the effect of walking speed on asymmetry in vertical GRF (asymmetry: % BW) for
+individuals with ACL reconstruction. For column 1, positive values represent higher vertical GRFs in the injured relative to the contralateral
+limb whereas negative values indicate lower vertical GRFs in the injured relative to the contralateral limb. Shaded regions in column 1
+correspond to significant regions identified in the SPM[t] results in column 2. For each SPM [t] graph, the red dashed line corresponds to the
+critical t thresholds, denoted as t*. Any portion of the waveform exceeding this threshold (shaded in grey) indicates a significance difference
+between speeds p<.05. ACL, anterior cruciate ligament; GRF, ground reaction force; SPM, statistical parametric mapping; SS, self‐selected
+speed [Color figure can be viewed at wileyonlinelibrary.com]
+GARCIA ET AL. | 225
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 8 ---
+phenomenon has also been accompanied by and associated with
+greater quadriceps‐to‐hamstring cocontraction and less knee flexion
+excursion which is thought to reflect a stiffened knee strategy.41
+Based
+on our findings, it is plausible that these compensatory strategies may
+become magnified by increasing walking speed but additional research
+that includes knee‐specific gait metrics (i.e., moments, angles etc.) are
+needed to substantiate our findings.
+Further, as stated above, our data provide supporting evidence
+that vertical GRF alterations in ACL reconstruction individuals are
+not only apparent in early stance/load acceptance phases but also
+extend into mid‐ and late‐stance.1,8
+While the clinical significance of
+the timing/duration of stance phase GRF alterations are not entirely
+clear, it is reasonable to surmise that consistent loading asymmetries
+could be more detrimental to patient outcomes or knee joint health
+than ones that occur more discretely (e.g., only at initial contact or at
+peak loading). Future research is needed, however, to elucidate the
+biomechanical factors associated with mid‐ and late‐ stance vertical
+GRF alterations and how these aberrant gait mechanics are asso-
+ciated with patient outcomes and/or knee joint health. Furthermore,
+although not measured here, interlimb differences in spatiotemporal
+parameters may partly contribute to these GRF asymmetries as re-
+cent findings have shown patients approximately 8 months post‐ACL
+reconstruction walk with asymmetrical step lengths.42
+Future studies
+should consider evaluating the contributions of spatiotemporal
+FIGURE 4 SPM[t] Post hoc paired t tests showing the effect of walking speed on asymmetry in posterior‐anterior GRF (asymmetry: % BW)
+for uninjured control participants. For column 1, positive values represent higher posterior‐anterior GRFs in the “injured” relative to the
+contralateral limb whereas negative values indicate lower vertical GRF's in the “injured” relative to the contralateral limb. For each SPM[t]
+graph, the red dashed line corresponds to the critical t thresholds, denoted as t*. Any portion of the waveform exceeding this threshold (shaded
+in grey) indicates a significance difference between speeds at p<.05. Note that the limb that had lower peak vertical GRF during the
+self‐selected walking speed condition was considered as the “injured limb” for the control participants. ACL, anterior cruciate ligament; GRF,
+ground reaction force; SPM, statistical parametric mapping; SS, self‐selected speed [Color figure can be viewed at wileyonlinelibrary.com]
+226 | GARCIA ET AL.
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 9 ---
+parameters to loading characteristics in those with ACL
+reconstruction.
+Although many studies have highlighted the importance of ver-
+tical GRF asymmetries after ACL reconstruction,1,2,5–8
+less data is
+available detailing asymmetries in other components like the
+posterior‐anterior GRF.33,34
+Here, we found that asymmetries in the
+posterior GRF (i.e., breaking forces) became exacerbated when
+speeds were increased and reduced at slower speeds in individuals
+with ACL reconstruction, but not in uninjured controls. However, we
+did not observe differences across speeds in the anterior GRF (i.e.,
+propulsive GRF) in either group. The increase in posterior GRF
+asymmetry observed in response to elevated walking speeds could
+be explained by findings that suggest posterior GRFs are primarily
+counteracted by the knee extensors during loading response, while
+other antigravity muscle groups like the hip extensors may also
+contribute.43
+Thus, it is reasonable that the stiffened‐knee gait
+strategy often adopted by patients after ACL‐reconstruction may
+underlie findings of asymmetrical posterior GRFs as this would aid in
+limiting knee extensor demands particularly when walking speeds
+are increased.44
+While it may appear that the observed changes in
+the posterior GRF between walking speeds were small (i.e., ap-
+proximately 2%–5% BW change), we argue that these changes may
+represent important and meaningful alterations in GRF asymmetries
+given that GRF peak magnitudes generally range between 15% and
+FIGURE 5 SPM[t] Post hoc paired t tests showing the effect of walking speed on asymmetry in posterior‐anterior GRF (asymmetry: % BW)
+for individuals with ACL reconstruction. For column 1, positive values represent higher vertical GRFs in the injured relative to the contralateral
+limb whereas negative values indicate lower vertical GRFs in the “injured” relative to the contralateral limb. Shaded regions in column 1
+correspond to significant regions identified in the SPM[t] results in column 2. For each SPM[t] graph, the red dashed line corresponds to the
+critical t thresholds, denoted as t*. Any portion of the waveform exceeding this threshold (shaded in grey) indicates a significance difference
+between speeds p<.05. ACL, anterior cruciate ligament; GRF, ground reaction force; SPM, statistical parametric mapping; SS, self‐selected
+speed [Color figure can be viewed at wileyonlinelibrary.com]
+GARCIA ET AL. | 227
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 10 ---
+25% BW (Figure S2). Thus, a 2%–5% BW change in the posterior GRF
+asymmetries between speeds would correspond to a relatively large
+reduction (or improvement) in GRF symmetry.
+Similar to several recent investigations, our results also suggest that
+asymmetries in the posterior GRF may be more pronounced than the
+vertical component in individuals with ACL reconstruction.33,34
+Although
+only three studies have evaluated posterior GRFs (including the current
+investigation) to date, it appears that posterior forces may be modulated
+to a greater extent than vertical support forces at least in earlier phases
+of rehabilitation. These findings are important given the strong associa-
+tions between posterior GRFs and knee‐specific metrics like the knee
+extensor moment in ACL reconstructed individuals.33,34
+It is possible that
+posterior GRFs could serve as a potential target for gait rehabilitation
+strategies in individuals with ACL reconstruction.33
+However, future re-
+search is needed to elucidate the factors contributing to posterior GRF
+alterations and to identify avenues to target posterior GRF asymmetries;
+knowledge critical to improve our ability to restore gait mechanics in this
+population.
+There are some potential limitations to this study. Our study was
+cross‐sectional in design and included individuals with acute ACL re-
+construction. As such, it is unclear if our results are generalizable to
+individuals in more chronic time‐periods after ACL reconstruction or if
+the effects of speed diminish as individuals progress through rehabilita-
+tion. Nonetheless, evaluating gait characteristics early in the rehabilita-
+tion process may important given that gait alterations also occur in the
+uninjured limb which may confound calculations of symmetry indices at
+later time points. Furthermore, identification of asymmetries early after
+ACL reconstruction and treating them appropriately may allow for more
+symmetrical movements in later periods after ACL reconstruction and
+may also be useful as a criterion to consider before patients are pro-
+gressed to more difficult movement tasks (jogging, hopping, etc.). We also
+did not randomize speed conditions in our study (i.e., the order was
+always self‐selected, 120%, 80%) which may have affected our study
+outcomes. However, we do not suspect this is likely given that speed
+demonstrated similar effects on gait asymmetries here as it has in other
+investigations with pathological populations.19–23
+Each speed condition
+also consisted of 65s trials and it is possible that longer walking and
+familiarization periods would have led to different results. One benefit of
+the treadmill is that it allows for capture of multiple successive gait cycles
+and as such, we captured on average over 50 gait cycles for each con-
+dition and subject which we believe offers a sufficient representation of
+an individual's walking gait. Future investigations should consider ran-
+domizing speeds and using longer familiarization periods when
+assessing gait across walking speeds. We also recognize that the
+presence of quadriceps weakness and/or increased muscle coac-
+tivation may have influenced the magnitude of GRF asymmetry
+and speed effects observed in our cohort.45
+While the aims of this
+study were not to evaluate the effects of impaired quadriceps
+function on GRF asymmetries across walking speeds, future re-
+search should determine if ACL‐reconstructed individuals with
+stronger quadriceps can maintain GRF symmetries despite ma-
+nipulating walking speeds, similar to that of control participants.
+Our data also considered GRF characteristics as global measures
+of gait function after ACL reconstruction. Thus, we are unable to
+ascertain if walking speed has a similar effect on other bio-
+mechanical characteristics like joint‐specific or spatiotemporal
+outcomes in individuals with ACL‐reconstruction. It would be
+beneficial to evaluate if manipulating walking speed similarly leads
+to greater (or lesser) asymmetries in joint‐specific outcomes like
+the knee extensor moment, or if individuals with ACL re-
+construction adopt compensatory strategies at the ankle or hip to
+meet the demands imposed by varying walking speeds. Lastly, we
+note our study design included unequal sample sizes and while
+controls were matched by age (±3) and sex, matching between
+groups was not 1 to 1 which could affect the power of our sta-
+tistical analyses.
+5 | CONCLUSION
+Increased walking speed magnifies biomechanical asymmetries in the
+vertical and posterior‐anterior GRF in individuals with ACL re-
+construction. At slower speeds, individuals with ACL reconstruction
+can walk with more symmetrical GRFs (i.e., decreased interlimb dif-
+ferences) compared with self‐selected and fast speeds. It may be
+beneficial to evaluate speeds at and above self‐selected walking
+speeds to evaluate the extent of gait biomechanical alterations in
+those with ACL reconstruction.
+ACKNOWLEDGEMENTS
+This work was supported by the National Institute of Child Health
+and Human Development of the National Institutes of Health
+(Grant#: R21 HD092614‐02) and the University of Michigan Un-
+dergraduate Research Opportunity Program (UROP).
+CONFLICT OF INTERESTS
+The authors declare that there are no conflict of interests.
+AUTHOR CONTRIBUTIONS
+Steven A. Garcia, Chandramouli Krishnan, and Riann Palmieri‐
+Smith: Substantial contributions to research design, or the acquisi-
+tion, analysis or interpretation of data, drafting the paper or revising
+it critically, approval of the submitted and final versions. Scott R.
+Brown and Mary Koje: Substantial contributions to research design,
+or the acquisition, analysis or interpretation of data, approval of the
+submitted and final versions.
+ORCID
+Steven A. Garcia http://orcid.org/0000-0001-6266-0184
+Chandramouli Krishnan http://orcid.org/0000-0002-7278-7389
+Riann M. Palmieri‐Smith http://orcid.org/0000-0001-6790-3691
+REFERENCES
+1. Davis‐Wilson HC, Pfeiffer SJ, Johnston CD, et al. Bilateral gait six
+and twelve months post‐ACL reconstruction compared to controls.
+Med Sci Sports Exerc. 2019;52(4):785‐794.
+228 | GARCIA ET AL.
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 11 ---
+2. Luc‐Harkey BA, Franz JR, Blackburn JT, Padua DA, Hackney AC,
+Pietrosimone B. Real‐time biofeedback can increase and decrease
+vertical ground reaction force, knee flexion excursion, and knee
+extension moment during walking in individuals with anterior
+cruciate ligament reconstruction. J Biomech. 2018;76:94‐102.
+3. Pfeiffer SJ, Spang J, Nissman D, et al. Gait mechanics and T1rho MRI
+of tibiofemoral cartilage 6 months after ACL reconstruction. Med Sci
+Sports Exerc. 2019;51:630‐639.
+4. Andriacchi TP, Mündermann A, Smith RL, Alexander EJ, Dyrby CO,
+Koo S. A framework for the in vivo pathomechanics of osteoarthritis
+at the knee. Ann Biomed Eng. 2004;32:447‐457.
+5. Pietrosimone B, Blackburn JT, Padua DA, et al. Walking gait asym-
+metries 6 months following anterior cruciate ligament reconstruc-
+tion predict 12‐month patient‐reported outcomes. J Orthop Res.
+2018;36:2932‐2940.
+6. Luc‐Harkey BA, Franz JR, Hackney AC, Blackburn JT, Padua DA,
+Pietrosimone B. Lesser lower extremity mechanical loading associ-
+ates with a greater increase in serum cartilage oligomeric matrix
+protein following walking in individuals with anterior cruciate liga-
+ment reconstruction. Clin Biomech (Bristol, Avon). 2018;60:13‐19.
+7. Pietrosimone B, Blackburn JT, Harkey MS, et al. Greater mechanical
+loading during walking is associated with less collagen turnover in
+individuals with anterior cruciate ligament reconstruction. Am
+J Sports Med. 2016;44:425‐432.
+8. Pietrosimone B, Seeley MK, Johnston C, Pfeiffer SJ, Spang JT,
+Blackburn JT. Walking ground reaction force post‐ACL reconstruc-
+tion: analysis of time and symptoms. Med Sci Sports Exerc. 2019;51:
+246‐254.
+9. Pfeiffer SJ, Blackburn JT, Luc‐Harkey B, et al. Peak knee bio-
+mechanics and limb symmetry following unilateral anterior cruciate
+ligament reconstruction: associations of walking gait and jump‐
+landing outcomes. Clin Biomech (Bristol, Avon). 2018;53:79‐85.
+10. Tashman S, Collon D, Anderson K, Kolowich P, Anderst W. Abnor-
+mal rotational knee motion during running after anterior cruciate
+ligament reconstruction. Am J Sports Med. 2004;32:975‐983.
+11. Tashman S, Kolowich P, Collon D, Anderson K, Anderst W. Dynamic
+function of the ACL‐reconstructed knee during running. Clin Orthop
+Relat Res. 2007;454:66‐73.
+12. Schroeder MJ, Krishnan C, Dhaher YY. The influence of task com-
+plexity on knee joint kinetics following ACL reconstruction. Clin
+Biomech (Bristol, Avon). 2015;30:852‐859.
+13. Rice J, Seeley MK. An investigation of lower‐extremity functional
+asymmetry for non‐preferred able‐bodied walking speeds. Int J Exerc
+Sci. 2010;3:182‐188.
+14. Georgoulis AD, Moraiti C, Ristanis S, Stergiou N. A novel approach
+to measure variability in the anterior cruciate ligament deficient
+knee during walking: the use of the approximate entropy in ortho-
+paedics. J Clin Monit Comput. 2006;20:11‐18.
+15. Chiu SL, Chou LS. Effect of walking speed on inter‐joint coordination
+differs between young and elderly adults. J Biomech. 2012;45:
+275‐280.
+16. Ghanavati T, Salavati M, Karimi N, et al. Intra‐limb coordination
+while walking is affected by cognitive load and walking speed.
+J Biomech. 2014;47:2300‐2305.
+17. Walsh GS, Taylor Z. Complexity, symmetry and variability of for-
+ward and backward walking at different speeds and transfer effects
+on forward walking: implications for neural control. J Biomech. 2019;
+97:109377.
+18. Liu MQ, Anderson FC, Schwartz MH, Delp SL. Muscle contributions
+to support and progression over a range of walking speeds.
+J Biomech. 2008;41:3243‐3252.
+19. Nolan L, Wit A, Dudziñski K, Lees A, Lake M, Wychowañski M.
+Adjustments in gait symmetry with walking speed in trans‐femoral
+and trans‐tibial amputees. Gait Posture. 2003;17:142‐151.
+20. Wang Y, Mukaino M, Ohtsuka K, et al. Gait characteristics of post‐
+stroke hemiparetic patients with different walking speeds. Int
+J Rehabil Res. 2020;43:69‐75.
+21. Sanderson DJ, Martin PE. Lower extremity kinematic and kinetic
+adaptations in unilateral below‐knee amputees during walking. Gait
+Posture. 1997;6:126‐136.
+22. Beaman CB, Peterson CL, Neptune RR, Kautz SA. Differences in
+self‐selected and fastest‐comfortable walking in post‐stroke hemi-
+paretic persons. Gait Posture. 2010;31:311‐316.
+23. Bejek Z, Paróczai R, Illyés A, Kiss RM. The influence of walking speed
+on gait parameters in healthy people and in patients with osteoar-
+thritis. Knee Surg Sports Traumatol Arthrosc. 2006;14:612‐622.
+24. Silverman AK, Fey NP, Portillo A, Walden JG, Bosker G, Neptune RR.
+Compensatory mechanisms in below‐knee amputee gait in response
+to increasing steady‐state walking speeds. Gait Posture. 2008;28:
+602‐609.
+25. Goble DJ, Marino GW, Potvin JR. The influence of horizontal velo-
+city on interlimb symmetry in normal walking. Hum Mov Sci. 2003;
+22:271‐283.
+26. Seeley MK, Umberger BR, Shapiro R. A test of the functional
+asymmetry hypothesis in walking. Gait Posture. 2008;28:24‐28.
+27. Garcia SA, Moffit TJ, Vakula MN, Holmes SC, Montgomery MM,
+Pamukoff DN. Quadriceps muscle size, quality, and strength and
+self‐reported function in individuals with anterior cruciate ligament
+reconstruction. J Athl Train. 2020;55:246‐254.
+28. Kuenze CM, Hertel J, Weltman A, Diduch D, Saliba SA, Hart JM.
+Persistent neuromuscular and corticomotor quadriceps asymmetry
+after anterior cruciate ligament reconstruction. J Athl Train. 2015;
+50:303‐312.
+29. Lisee C, Lepley AS, Birchmeier T, O'Hagan K, Kuenze C. Quadriceps
+strength and volitional activation after anterior cruciate ligament
+reconstruction: a systematic review and meta‐analysis. Sports
+Health. 2019;11:163‐179.
+30. Otzel DM, Chow JW, Tillman MD. Long‐term deficits in quadriceps
+strength and activation following anterior cruciate ligament re-
+construction. Phys Ther Sport. 2015;16:22‐28.
+31. Nazary‐Moghadam S, Salavati M, Esteki A, Akhbari B, Keyhani S,
+Zeinalzadeh A. Gait speed is more challenging than cognitive load on
+the stride‐to‐stride variability in individuals with anterior cruciate
+ligament deficiency. Knee. 2019;26:88‐96.
+32. Evans‐Pickett A, Davis‐Wilson HC, Luc‐Harkey BA, et al. Bio-
+mechanical effects of manipulating peak vertical ground reaction
+force throughout gait in individuals 6‐12 months after anterior
+cruciate ligament reconstruction. Clin Biomech (Bristol, Avon). 2020;
+76:105014.
+33. Lin PE, Sigward SM. Subtle alterations in whole body mechanics
+during gait following anterior cruciate ligament reconstruction. Gait
+Posture. 2019;68:494‐499.
+34. Lin PE, Sigward SM. Contributors to knee loading deficits during gait
+in individuals following anterior cruciate ligament reconstruction.
+Gait Posture. 2018;66:83‐87.
+35. Armitano‐Lago C, Pietrosimone B, Davis‐Wilson HC, et al. Bio-
+feedback augmenting lower limb loading alters the underlying
+temporal structure of gait following anterior cruciate ligament re-
+construction. Hum Mov Sci. 2020;73:102685.
+36. Rutherford D, Baker M, Wong I, Stanish W. The effect of age and
+knee osteoarthritis on muscle activation patterns and knee joint
+biomechanics during dual belt treadmill gait. J Electromyogr Kinesiol.
+2017;34:58‐64.
+37. Washabaugh EP, Kalyanaraman T, Adamczyk PG, Claflin ES,
+Krishnan C. Validity and repeatability of inertial measurement units
+for measuring gait parameters. Gait Posture. 2017;55:87‐93.
+38. Pataky TC. One‐dimensional statistical parametric mapping in Py-
+thon. Comput Methods Biomech Biomed Engin. 2012;15:295‐301.
+GARCIA ET AL. | 229
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 12 ---
+39. Pataky TC, Robinson MA, Vanrenterghem J. Vector field statistical
+analysis of kinematic and force trajectories. J Biomech. 2013;46:
+2394‐2401.
+40. Winters JM, Crago PE. Biomechanics and neural control of posture and
+movement. xxii 683 p. p. New York: Springer; 2000.
+41. Blackburn T, Pietrosimone B, Goodwin JS, Johnston C, Spang
+JT. Co‐activation during gait following anterior cruciate liga-
+ment reconstruction. Clin Biomech (Bristol, Avon). 2019;67:
+153‐159.
+42. Hunnicutt JL, McLeod MM, Slone HS, Gregory CM. Quadriceps
+Neuromuscular and physical function after anterior cruciate liga-
+ment reconstruction. J Athl Train. 2020;55:238‐245.
+43. Liu MQ, Anderson FC, Pandy MG, Delp SL. Muscles that support the
+body also modulate forward progression during walking. J Biomech.
+2006;39:2623‐2630.
+44. Neptune RR, Sasaki K, Kautz SA. The effect of walking speed on
+muscle function and mechanical energetics. Gait Posture. 2008;28:
+135‐143.
+45. Lewek M, Rudolph K, Axe M, Snyder‐Mackler L. The effect of in-
+sufficient quadriceps strength on gait after anterior cruciate liga-
+ment reconstruction. Clin Biomech (Bristol, Avon). 2002;17:56‐63.
+SUPPORTING INFORMATION
+Additional Supporting Information may be found online in the sup-
+porting information tab for this article.
+How to cite this article: Garcia SA, Brown SR, Koje M,
+Krishnan C, Palmieri‐Smith RM. Gait asymmetries are
+exacerbated at faster walking speeds in individuals with acute
+anterior cruciate ligament reconstruction. J Orthop Res. 2022;
+40:219‐230. https://doi.org/10.1002/jor.25117
+230 | GARCIA ET AL.
+1554527x, 2022, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.25117 by Seoul National University Of, Wiley Online Library on [26/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 13 ---

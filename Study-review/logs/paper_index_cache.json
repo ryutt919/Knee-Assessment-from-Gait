@@ -1,0 +1,317 @@
+{
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Bilateral waveform analysis of gait biomechanics presurgery to 12 months following ACL reconstruction compared to controls.pdf": {
+    "title_korean": "전방십자인대(ACL) 재건술 전부터 12개월 후까지의 보행 생체역학 양측 파형 분석 및 대조군과의 비교",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/ACLD patients exhibit additional knee kinematic asymmetries at the speed level of healthy subjects.pdf": {
+    "title_korean": "전방십자인대 결손(ACLD) 환자는 건강한 피험자 수준의 보행 속도에서 추가적인 무릎 운동학적 비대칭을 보인다",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Bilateral Gait Six and Twelve Months Post-ACL Reconstruction Compared to Controls.pdf": {
+    "title_korean": "대조군과 비교한 전방십자인대 재건술 후 6개월 및 12개월의 양측 보행",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Foot and ankle compensation for anterior cruciate ligament deficiency during gait in children.pdf": {
+    "title_korean": "소아의 보행 중 전방십자인대 결손에 대한 발 및 발목의 보상 작용",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Gait Biomechanics in Anterior Cruciate Ligament-Reconstructed Knees at Different Time Frames Postsurgery.pdf": {
+    "title_korean": "수술 후 서로 다른 시기별 전방십자인대 재건 무릎의 보행 생체역학",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Gait asymmetries are exacerbated at faster walking speeds in individuals with acute anterior cruciate ligament reconstruction.pdf": {
+    "title_korean": "급성 전방십자인대 재건술을 받은 환자들의 빠른 보행 속도에서의 보행 비대칭 악화",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Linking Gait Biomechanics and Daily Steps Post ACL-Reconstruction.pdf": {
+    "title_korean": "전방십자인대 재건술(ACLR) 후 보행 생체역학과 일일 걸음 수의 연계",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Longitudinal changes in knee gait mechanics between 2 and 8 years after anterior cruciate ligament reconstruction.pdf": {
+    "title_korean": "전방십자인대 재건술 후 2년에서 8년 사이의 무릎 보행 역학의 종단적 변화",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Mechanical Factors Contributing to Altered Knee Extension Moment during Gait after ACL Reconstruction - A Longitudinal Analysis.pdf": {
+    "title_korean": "전방십자인대(ACL) 재건술 후 보행 중 변형된 무릎 신전 모멘트에 기여하는 역학적 요인: 종단적 분석",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/The effect of insufficient quadriceps strength on gait after anterior cruciate ligament reconstruction.pdf": {
+    "title_korean": "전방십자인대 재건술 후 대퇴사두근 근력 부족이 보행에 미치는 영향",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/01_acl_gait_biomechanics_studies/Whether Patients with Anterior Cruciate Ligament Reconstruction Walking at a Fast Speed Show more Kinematic Asymmetries.pdf": {
+    "title_korean": "전방십자인대 재건술(ACLR) 환자가 빠른 속도로 걸을 때 더 많은 운동학적 비대칭을 보이는가?",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/02_acl_gait_reviews_meta_analyses/Advances in Gait Alterations and Rehabilitation After Anterior Cruciate Ligament Reconstruction - Biomechanics and Emerging Technologies.pdf": {
+    "title_korean": "전방십자인대 재건술 후 보행 변화 및 재활의 발전: 생체역학과 신기술",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/02_acl_gait_reviews_meta_analyses/Gait analysis post anterior cruciate ligament reconstruction - Knee osteoarthritis perspective.pdf": {
+    "title_korean": "전방십자인대 재건술 후 보행 분석: 무릎 골관절염 관점",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/02_acl_gait_reviews_meta_analyses/Knee kinematics and joint moments during gait following anterior cruciate ligament reconstruction - A systematic review and meta-analysis.pdf": {
+    "title_korean": "전방십자인대 재건술 후 보행 중 무릎 운동학 및 관절 모멘트: 체계적 문헌고찰 및 메타분석",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/02_acl_gait_reviews_meta_analyses/Movement Patterns of the Knee During Gait Following ACL Reconstruction - A Systematic Review and Meta-Analysis.pdf": {
+    "title_korean": "전방십자인대 재건술 후 보행 중 무릎의 움직임 패턴: 체계적 문헌고찰 및 메타분석",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/02_acl_gait_reviews_meta_analyses/Progressive Changes in Walking Kinematics and Kinetics After Anterior Cruciate Ligament Injury and Reconstruction - A Review and Meta-Analysis.pdf": {
+    "title_korean": "전방십자인대 손상 및 재건 후 보행 운동학 및 운동역학의 점진적 변화: 문헌고찰 및 메타분석",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/02_acl_gait_reviews_meta_analyses/Time to normalization of gait following ACL reconstruction compared with healthy controls - A systematic review and meta-analysis.pdf": {
+    "title_korean": "건강한 대조군과 비교한 전방십자인대(ACL) 재건술 후 보행 정상화까지의 시간: 체계적 문헌고찰 및 메타분석",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/A Dataset of Clinical Gait Signals with Wearable Sensors from Healthy, Neurological, and Orthopedic Cohorts.pdf": {
+    "title_korean": "건강한 대조군, 신경질환 및 정형외과 질환 코호트로부터 웨어러블 센서로 수집한 임상 보행 신호 데이터셋",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/A scoping review of portable sensing for out-of-lab anterior cruciate ligament injury prevention and rehabilitation.pdf": {
+    "title_korean": "실외 전방십자인대(ACL) 부상 예방 및 재활을 위한 휴대용 센싱에 대한 범위 지정 검토",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Angular Velocities and Linear Accelerations Derived from Inertial Measurement Units Can Be Used as Proxy Measures of Knee Variables Associated with ACL Injury.pdf": {
+    "title_korean": "관성 측정 장치(IMU)에서 파생된 각속도 및 선형 가속도는 전방십자인대(ACL) 부상과 관련된 무릎 변수의 대리 측정값으로 사용될 수 있다",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": false,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Estimation of Kinetics Using IMUs to Monitor and Aid in Clinical Decision-Making during ACL Rehabilitation - A Systematic Review.pdf": {
+    "title_korean": "ACL(전방십자인대) 재활 중 모니터링 및 임상 의사결정 지원을 위한 IMU 기반 운동역학 추정: 체계적 문헌고찰",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Evaluating the Accuracy of IMU Devices in Detecting Clinically Significant Changes in Knee Flexion and Extension Angles.pdf": {
+    "title_korean": "무릎 굴곡 및 신전 각도의 임상적으로 유의한 변화를 감지하는 데 있어 IMU 장치의 정확도 평가",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/IMU-Based Joint Angle Measurement for Gait Analysis.pdf": {
+    "title_korean": "보행 분석을 위한 IMU 기반 관절 각도 측정",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Laboratory Environments Mask Gait Differences Between Healthy Participants and Patients With Anterior Cruciate Ligament Reconstruction.pdf": {
+    "title_korean": "실험실 환경은 건강한 참가자와 전방십자인대 재건술(ACLR) 환자 사이의 보행 차이를 감춘다",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/The COMPWALK-ACL - A Dataset of Multi-pace IMU Gait Kinematics in Adolescents, Adults, and ACL Injured Patients.pdf": {
+    "title_korean": "COMPWALK-ACL: 청소년, 성인 및 전방십자인대(ACL) 부상 환자의 다중 속도 IMU 보행 운동학 데이터셋",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/The Role of Inertial Sensors in the Functional Assessment of the Knee After Anterior Cruciate Ligament Reconstruction Surgery - A Systematic Review.pdf": {
+    "title_korean": "전방십자인대 재건술 후 무릎의 기능적 평가에서 관성 센서의 역할: 체계적 문헌고찰",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Towards Out-of-Lab Anterior Cruciate Ligament Injury Prevention and Rehabilitation Assessment - A Review of Portable Sensing Approaches.pdf": {
+    "title_korean": "실험실 밖의 전방십자인대 부상 예방 및 재활 평가를 향하여: 휴대용 센싱 접근법에 대한 고찰",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/03_wearable_imu_and_portable_sensing/Wearable Devices for the Quantitative Assessment of Knee Joint Function After Anterior Cruciate Ligament Injury or Reconstruction - A Scoping Review.pdf": {
+    "title_korean": "전방십자인대 손상 또는 재건 후 무릎 관절 기능의 정량적 평가를 위한 웨어러블 기기: 범위 검토",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/A Deep Learning-Based Framework Oriented to Pathological Gait Recognition with Inertial Sensors.pdf": {
+    "title_korean": "관성 센서를 활용한 병적 보행 인식을 위한 딥러닝 기반 프레임워크",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Calculate_Distance.pdf": {
+    "title_korean": "일상생활 동작 중 뇌졸중 후 운동 장애 평가를 위한 웨어러블 IMU 센서 기반 움직임 추적",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": false,
+    "presents_score": true
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Clinically relevant predictive modeling for personalized ACL reconstruction classification.pdf": {
+    "title_korean": "개인 맞춤형 전방십자인대(ACL) 재건술 분류를 위한 임상적으로 유의미한 예측 모델링",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Deep Learning in Gait Parameter Prediction for OA and TKA Patients Wearing IMU Sensors.pdf": {
+    "title_korean": "IMU 센서를 착용한 골관절염(OA) 및 인공무릎관절 전치환술(TKA) 환자의 보행 매개변수 예측에 관한 딥러닝",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Identifying Gait-Related Functional Outcomes in Post-Knee Surgery Patients Using Machine Learning - A Systematic Review.pdf": {
+    "title_korean": "머신러닝을 이용한 무릎 수술 후 환자의 보행 관련 기능적 결과 식별: 체계적 문헌고찰",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Learning based lower limb joint kinematic estimation using open source IMU data.pdf": {
+    "title_korean": "오픈 소스 IMU 데이터를 이용한 학습 기반 하지 관절 운동학 추정",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Leveraging explainable machine learning to identify gait biomechanical parameters associated with anterior cruciate ligament injury.pdf": {
+    "title_korean": "설명 가능한 머신러닝을 활용한 전방십자인대 손상 관련 보행 생체역학적 매개변수 식별",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Machine learning models for predicting return to sports after anterior cruciate ligament reconstruction - Physical performance in early rehabilitation.pdf": {
+    "title_korean": "전방십자인대 재건술 후 스포츠 복귀 예측을 위한 머신러닝 모델: 초기 재활에서의 신체 수행 능력",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": false,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Motion Sensors-Based Machine Learning Approach for the Identification of Anterior Cruciate Ligament Gait Patterns in On-the-Field Activities in Rugby Players.pdf": {
+    "title_korean": "럭비 선수의 필드 활동 중 전방십자인대 보행 패턴 식별을 위한 모션 센서 기반 머신러닝 접근법",
+    "acl_research": true,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Optimizing wearable IMU configurations for running gait analysis - a machine learning-based sensor fusion approach.pdf": {
+    "title_korean": "달리기 보행 분석을 위한 웨어러블 IMU 구성 최적화: 머신러닝 기반 센서 퓨전(sensor fusion) 접근법",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/04_machine_learning_and_deep_learning/Transfer Learning of Human Activities Based on IMU Sensors - A Review.pdf": {
+    "title_korean": "IMU 센서 기반 인간 활동의 전이 학습: 리뷰",
+    "acl_research": false,
+    "uses_imu": false,
+    "uses_gait_data": false,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/A test battery for evaluating hop performance in patients with an ACL injury and patients who have undergone ACL reconstruction.pdf": {
+    "title_korean": "전방십자인대(ACL) 손상 환자 및 전방십자인대 재건술을 받은 환자의 홉 수행 능력 평가를 위한 테스트 배터리",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": false,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Functional Performance Testing After Anterior Cruciate Ligament Reconstruction - A Systematic Review.pdf": {
+    "title_korean": "전방십자인대 재건술 후 기능적 수행 평가: 체계적 문헌고찰",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": false,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/05_return_to_sport_and_functional_tests/Gait Patterns Differ Between ACL-Reconstructed Athletes Who Pass Return-to-Sport Criteria and Those Who Fail.pdf": {
+    "title_korean": "스포츠 복귀 기준을 통과한 전방십자인대 재건술을 받은 운동선수와 실패한 운동선수 간의 보행 패턴 차이",
+    "acl_research": true,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Gait Analysis - Normal and Pathological Function.pdf": {
+    "title_korean": "보행 분석: 정상 및 병리학적 기능",
+    "acl_research": false,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Gait Analysis Using IMU Sensor.pdf": {
+    "title_korean": "IMU 센서를 이용한 보행 분석",
+    "acl_research": false,
+    "uses_imu": true,
+    "uses_gait_data": true,
+    "presents_score": false
+  },
+  "/Users/ryutt/Desktop/mini_ryutt/Walking/docs/ref_papers/06_general_gait_and_other_knee_conditions/Gait analysis of patients following total knee replacement - A systematic review.pdf": {
+    "title_korean": "인공 슬관절 전치환술 후 환자의 보행 분석: 체계적 문헌고찰",
+    "acl_research": false,
+    "uses_imu": false,
+    "uses_gait_data": true,
+    "presents_score": false
+  }
+}

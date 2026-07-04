@@ -1,0 +1,429 @@
+
+--- PAGE 1 ---
+THE DEVELOPMENT OF A NORMATIVE GAIT DATABASE
+Chester, V. L., Tingley, M., and Biden, E. N.
+Institute of Biomedical Engineering
+University of New Brunswick, Fredericton, New Brunswick
+ABSTRACT
+Normative data is an essential component of clinical
+gait analyses. The Institute of Biomedical
+Engineering (IBME) at the University of New
+Brunswick has recently collected gait data from 58
+normal children aged 1-13 years to establish a
+normative database. A six-camera Vicon 512 motion
+analysis system and force plates were employed to
+obtain temporal-spatial, kinematic, and kinetic
+parameters during walking. Statistical techniques,
+which allow quantitative comparison between this
+normative data and historical data from the
+Children’s Hospital, San Diego, were used to assess
+normality of the new database. Significant
+differences between the 2 databases were found for
+sagittal joint angle data. It was concluded that data
+processing techniques and instrumentation are
+associated with these differences.
+INTRODUCTION
+Walking is the result of the complex interaction of
+active and passive forces acting about the joints of
+the body. The underlying biomechanics and
+neurophysiological mechanisms that facilitate
+walking are often not appreciated until they are
+impaired due to disease or injury. The loss or
+alteration of a person’s walking skills greatly affects
+their ability to function and their quality of life.
+Clinical gait analysis aims to objectively quantify and
+assess the mechanics of walking. These analyses are
+critical to our understanding of normal and abnormal
+gait and treatment effectiveness.
+A critical component of gait analysis is the
+availability of normative databases to compare
+patient data. One of the main objectives of gait
+analysis is to identify deviations in a patient’s gait
+from ‘normal’ movement patterns. The underlying
+causes of these abnormal movement patterns are then
+identified and treatment recommendations are
+formulated (Davis, 1997). A children’s gait database
+that is commonly used for such analyses was
+developed at the Children’s Hospital, San Diego
+(Sutherland et al., 1988). The database contains joint
+angle data for 348 gait cycles for children aged 1.0 to
+7.0 years old. However, it is often difficult to
+compare data across labs due to differences in marker
+sets, data processing techniques, and reliability of the
+clinician. As a result, caution must be exercised
+when comparing patient data to normative results
+obtained from other labs. Further difficulty in
+comparing patient data to normative data sets is due
+to advances in computer technology which have
+dramatically improved motion analysis systems and
+data processing capability over the last decade. For
+example, San Diego used a manual digitization
+motion analysis system and represented most angles
+as planar projections. Currently, three-dimensional
+analyses of gait using more sophisticated motion
+capture and data analysis techniques are
+commonplace in gait clinics.
+Given the important role of normative data in gait
+analyses and the difficulties associated with
+comparing data across labs, the objective of this
+study was to develop a normative database for the
+Institute of Biomedical Engineering (IBME) at the
+University of New Brunswick. In doing so, patient
+data can be compared to normative data obtained by
+the same clinician, equipment, marker systems, and
+data processing techniques. As a result, more reliable
+comparisons of data sets can be achieved. The
+normative sagittal data was compared to historical
+data from the Children’s Hospital in San Diego. In
+addition, statistical classifiers were used to assess the
+normality of the new database.
+METHOD
+Subjects
+Fifty-eight children aged 1-13 years old were
+recruited from the Fredericton area by distributing
+research bulletins around the University of New
+Brunswick campus and local daycare centres.
+Parental consent was obtained prior to each child’s
+participation in the study. Parents voluntarily
+completed a questionnaire designed to identify
+possible injuries or diseases that could affect their
+child’s walking skills. No children were eliminated
+from the study based on these responses.
+Instrumentation/Apparatus
+A Vicon 512 motion capture system (Oxford Metrics
+Ltd.) was employed to track the three-dimensional
+trajectories of reflective markers placed on the
+subjects’ skin at a sampling frequency of 60 Hz. In
+addition, two force plates (Kistler 9281B21 and
+AMTI BP5918), collected the three-dimensional
+ground reaction forces and moments during each gait
+cycle. The plates were embedded at the center of a
+
+--- PAGE 2 ---
+6.7 X 0.9 meter wooden walkway. The walkway was
+of sufficient length to allow each child to attain
+steady state velocity through the recording area. Two
+digital cameras, a weight scale, and calipers were
+used to obtain anthropometric measures from each
+subject.
+Procedures
+All data collection was conducted at the motion
+analysis laboratory at the University of New
+Brunswick. Twenty-one reflective markers,
+representing key anatomical landmarks, were placed
+on the skin of each subject (skin marker locations:
+left and right heel, lateral malleolus, 2nd
+metatarsal,
+lateral epicondyle, greater trochanter, asis, shoulder;
+sacrum and C7). To ensure accurate placement of
+markers, participants were asked to wear minimal
+clothing or bathing suits during data collection.
+Participants were placed at specific locations at the
+beginning of the walkway to ensure accurate foot
+strikes on the force plates during the gait cycle. Each
+child was encouraged to pay attention to objects (e.g.
+toys) placed at the end of the walkway to avoid
+targeting of the force plates. Several ‘warm-up’ trials
+were conducted to allow the participants to adjust to
+the markers and the walkway. Immediately
+following completion of the gait trials, the reflective
+markers were removed and a new segment inertia
+marker set (Jensen, 1978) was applied. Participants
+were then asked to stand in the anatomical position
+within a calibration frame, while simultaneous front
+and side digital photographs were taken.
+Anthropometric data such as joint width, height and
+mass were then measured.
+Data Analysis
+A comprehensive kinematic and kinetic analysis of
+each child’s gait was performed. The criteria for
+selection of gait trials for each child were based on
+the following: 1) parental acknowledgment of a
+‘normal’ gait cycle for their child and 2) successful
+force plate strikes during the trial. From the selected
+trials, cadence, velocity, and percent of cycle spent in
+single stance were calculated for each gait cycle. The
+single gait cycle, which most closely approximated
+the mean of all gait cycles on these three measures,
+was selected as the final trial for analysis. Joint
+angles were then processed using two different
+methods: 1) Euler angles, and 2) projected angles.
+Euler Method
+The body was modeled as a series of rigid links
+joined by 3 degree of freedom articulations. The
+model consisted of the left and right foot, shank,
+thigh and the pelvis and trunk. Joint center locations
+were estimated in accordance with Davis et al.,
+(1991). Temporal-spatial measures and joint angles
+were calculated from the three-dimensional
+coordinates produced by the Vicon motion analysis
+system. The three non-collinear markers on each
+body segment were used to create embedded
+coordinate systems at the joint centers. Joint angles
+were computed from the relative orientations of the
+embedded coordinate systems using Euler angles in a
+yxz sequence, corresponding to flexion/extension,
+adduction/abduction, and internal/external rotation.
+The joint angle curves were approximated by a finite
+Fourier series using 6 harmonics.
+To calculate joint moments and power during
+walking, the inertial properties of the segments are
+required. A mathematical model (elliptical cylinder
+method) of the human body was used to estimate the
+segment inertial properties of each child (Jensen,
+1978). This technique requires the digitization of the
+full body images obtained from the digital
+photographs of each participant in the anatomical
+position. The model consists of 16 segments and
+each segment is assumed to consist of elliptical
+cylinders created at 1 cm intervals in the transverse
+plane. Given that the volume and density of each
+elliptical cylinder is known, the mass of each
+elliptical cylinder is calculated. The segment mass,
+center of mass location, and moments of inertia are
+then calculated from the stacked elliptical cylinders
+representing each segment.
+Net joint moments and joint power for the hip, knee,
+and ankle joints were estimated using the inverse
+dynamics approach. This technique combines the
+motion data, force plate data and segment inertial
+data. The required absolute linear and angular
+velocities and accelerations were calculated from the
+embedded coordinate systems using a five-point
+derivative. These data were filtered using a 6 Hz
+low-pass Butterworth filter. Frictional torque, center
+of pressure, and ground reaction forces were
+computed from the force plate data. The data was
+then smoothed using a 21 pt Hann moving window
+average.
+San Diego Projection Angle Method
+Joint angle data were also computed for the
+normative group using the projection angle
+algorithms used by Sutherland et al., (1988). Similar
+to Sutherland et al., the joint angle curves were
+approximated by a finite Fourier series using 6
+harmonics.
+Statistical Analysis
+Despite the vast amounts of data computed for the
+normative database, only the sagittal hip, knee, and
+
+--- PAGE 3 ---
+ankle kinematics were analysed statistically to assess
+the normality of the data. This was for 2 reasons: 1)
+only kinematic data was readily available for
+comparison from the San Diego Children’s Hospital,
+and 2) sagittal hip, knee, and ankle joint angles tend
+to demonstrate greater consistency across labs than
+smaller rotations in other planes (Biden et al., 1987).
+Therefore, more reliable comparisons were possible
+using this reduced data set.
+The statistical analysis was based on a one-
+dimensional index of normal gait developed by
+Tingley et al., (2002). Given that the amplitude of
+joint angle data is sensitive to marker positioning
+error, each child’s angular displacement curve was
+recentered by subtracting its mean, prior to analysis.
+To calculate the index of normal gait, Tingley et al.
+calculated eleven interpretable functions from the
+San Diego normative data. These functions represent
+the mean sagittal joint angle patterns for hip, knee
+and ankle (3 functions), the mean angular velocities
+of the three joints (3 more functions), the angular
+acceleration patterns of the three joints (3 functions),
+and two functions which capture the primary
+frequencies of knee and ankle angle patterns. A key
+finding in Tingley’s study was that each child’s
+pattern of variation from the group mean could be
+approximated as a linear combination of these
+interpretable functions. The gait index developed in
+this work is simply a squared distance calculated in
+11 dimensions (Mahalanobis distance). The gait
+index classifies children as normal, abnormal, or
+unusual based on calculations of population
+percentiles.
+We used the interpretable functions and covariance
+matrix supplied by Tingley et al to calculate index
+scores for the 71 left and right gait cycles collected at
+UNB for children aged 3-13 yrs. Children under the
+age of 3.0 years were omitted from this training, as
+their gait patterns were immature (i.e. would be
+classified as abnormal). The analysis classified
+children’s gait patterns based on their deviation from
+San Diego mean normative values. The statistical
+classifier was then ‘recalibrated’ using the IBME
+normative data. New values for the interpretable
+functions and a new covariance matrix (required for
+the distance calculation) were computed. New index
+scores were calculated for the IBME data and the two
+sets of classification results were compared. The
+ability of the recalibrated index to detect abnormal
+gait patterns was tested by computing the index for
+children under the age of 3 years. A further
+examination of the differences between the San
+Diego and IBME normative data sets was conducted
+using a multivariate analogue of the two sample t-test
+of the joint angle data (Seber, 1984). These tests
+compared differences between the San Diego data
+and IBME’s Euler angle data, and San Diego and
+IBME projected angle data.
+RESULTS
+The classification of IBME’s kinematic data for
+children aged 3-13 years, based on San Diego mean
+normative values, resulted in 49% of cycles being
+classified as unusual or abnormal. However, when
+the statistical classifier was recalibrated using the
+IBME normative data, the new index gave results
+similar to those of Tingley et al: the score behaved
+like an F11,61 statistic for the training data, classifying
+94% of cycles as normal. Further testing using the
+gait patterns of younger children showed that the
+classifier was also capable of detecting 80% of
+immature (i.e. abnormal) gait patterns.
+The differences between the two gait index
+calculations were readily explained by appropriate
+statistical tests: the first test compared the covariance
+structure of sagittal angle displacement curves from
+each lab, while the second test compared mean angle
+patterns from each lab. Both tests yielded highly
+significant P-values (p=0.000). Figure 1 shows the
+IBME mean hip, knee and ankle joint angle curves (±
+2 S.E.) with the San Diego mean normative data
+superimposed. Although the graphs appear similar at
+first glance, the two databases are quite distinct. For
+example, the peak mean knee flexion between the
+two databases is more than 2 standard errors apart.
+When IBME angles were recalculated, using a
+projected angle approach similar to that used at San
+Diego, mean angle patterns were slightly closer to
+those of San Diego, but still significantly different
+(p=0.000). Figure 2 shows the mean results for knee
+flexion for San Diego’s data, IBME’s Euler data, and
+IBME’s projected angle data. IBME projected angles
+are more similar to San Diego’s data at the beginning
+and the middle of the gait cycle.
+DISCUSSION
+It is generally accepted that comparisons of data from
+multiple labs should be conducted with caution. It is
+possible that a patient’s gait data could be incorrectly
+diagnosed as abnormal using normative data from
+other labs. The results of this study suggest that
+databases developed using different technological
+and computational methods will show different
+normative values. These differences were evident in
+gait variables that are generally considered to be
+consistent across gait labs. The significant
+differences found between the San Diego and IBME
+
+--- PAGE 4 ---
+10 20 30 40 50 60 70 80 90 100
+-30
+-20
+-10
+0
+10
+20
+HipFlexion
+10 20 30 40 50 60 70 80 90 100
+-20
+0
+20
+40
+KneeFlexion
+D
+e
+g
+r
+e
+e
+s
+10 20 30 40 50 60 70 80 90 100
+-15
+-10
+-5
+0
+5
+10
+AnkleDorsi/Plantarflexion
+%ofCycle
+Figure 1. Mean ± (2 S.E.) hip, knee, and ankle joint
+angles for IBME normative data (thin lines) with San
+Diego mean data superimposed (thick lines).
+0 10 20 30 40 50 60 70 80 90 100
+-30
+-20
+-10
+0
+10
+20
+30
+40
+50
+% Cycle
+D
+e
+g
+r
+e
+e
+s
+Figure 2. Mean results for knee flexion angles using
+IBME’s euler (_) and projected angle data (---) and
+San Diego projected angle data (_ -).
+normative databases are likely due to a combination
+of factors. The results of the multivariate analyses
+show that the data differ in part due to the algorithms
+used to calculate the joint angles. IBME’s normative
+data showed more similarity to the San Diego values
+when joint angles were calculated as projected angles
+instead of Euler angles. This is expected as
+Sutherland et al., (1988) also used projected angles to
+compute their data. The databases may also vary
+because of other differences in data processing
+techniques such as the number of samples used to
+compute the joint angles and methods used to
+identify joint center locations. Differences in the
+motion analysis systems used to collect the databases
+could also be a factor. Sutherland et al. used a
+pseudo three-dimensional, manual digitization
+system. In contrast, IBME uses a three-dimensional,
+semi-automatic digitization system. Therefore,
+efforts to develop normative databases using more
+current techniques are needed.
+The results of the one-dimensional index of normality
+suggest that the retrained classifier should be used for
+future gait analyses at IBME when Euler angles are
+used. An interesting finding was that the recalibrated
+index of normality identified 80% of cycles for
+children under 3 years old as unusual or abnormal.
+This supports the findings of Tingley et al. that the
+eleven interpretable functions can successfully
+classify gait patterns.
+CONCLUSION
+Gait analyses using three-dimensional Euler angles
+should refer to normative data developed using the
+same algorithms. In addition, statistical classifiers of
+gait normality should be recalibrated on more recent
+databases. Efforts to develop new and large
+normative databases with modern equipment and
+processing techniques are warranted. Normative data
+from this study is available at
+www.math.unb.ca/~maureen/gait.
+REFERENCES
+Biden, E.N., Olshen, R.A., Sutherland, D.H., Gage, J., & Kadaba,
+M. (1987). Comparison of gait data from multiple labs.
+Transactions of the Orthopaedic Research Society, January.
+Davis, R. B. (1997). Reflections on clinical gait analysis. Journal
+of Electromyography and Kinesiology, 7 (4), p. 251-257.
+Jensen, R. K. (1978). Estimation of the biomechanical properties
+of three body types using a photogrammetric method. Journal of
+Biomechanics, 11, 349-358.
+Seber, G. (1984). Multivariate Observations. New York: John
+Wiley & Sons.
+Sutherland, D.H., Olshen, R.A., Biden, E.N., & Wyatt, M.P.
+(1988). The Development of Mature Walking. London: MacKeith
+Press.
+Tingley, M., Wilson, C., Biden, & Knight, W. (2002). An index
+to quantify normality of gait in young children. Gait and Posture,
+(In Press).
+
+--- PAGE 5 ---

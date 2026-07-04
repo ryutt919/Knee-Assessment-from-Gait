@@ -1,0 +1,758 @@
+
+--- PAGE 1 ---
+CLINICAL ARTICLE
+Whether Patients with Anterior Cruciate Ligament
+Reconstruction Walking at a Fast Speed Show more
+Kinematic Asymmetries?
+Huahao Lai, MD1
+, Xiaoling Chen, MD2
+, Wenhan Huang, MD, PhD1
+, Zhenyan Xie, MD1
+, Yuan Yan, MD3
+, Ming Kang, MD3
+,
+Yu Zhang, MD, PhD1
+, Jiehua Huang, MD3
+, Xiaolong Zeng, MD, PhD4
+1
+Department of Bone Oncology, Guangdong Provincial People’s Hospital (Guangdong Academy of Medical Sciences), Southern Medical
+University and 4
+Department of Orthopaedics, Guangdong Provincial Hospital of Chinese Medicine, The Second Afﬁliated Hospital of
+Guangzhou University of Chinese Medicine, Guangzhou and Department of 2
+Rehabilitation Medicine and 3
+Orthopaedic Surgery, Huizhou
+Central People’s Hospital, Huizhou, China
+Objective: Knee kinematic asymmetries after anterior cruciate ligament reconstruction (ACLR) are correlated with
+poor clinical outcomes, such as the progression of knee cartilage degenerations or reinjuries. Fast walking in
+patients with knee conditions may exacerbate knee kinematic asymmetries, but its impact on ACLR patients is
+uncertain. The aim of this study is to investigate if fast walking induces more knee kinematic asymmetries in uni-
+lateral ACLR patients.
+Methods: This cross-sectional study enrolled 55 patients with unilateral ACLR from January 2020 to July 2022. There
+were 48 males and seven females with an average age of 30.6  6.4 years. Knee kinematic data were collected at
+three walking speeds: self-selected, fast (150% normal), and slow (50% normal). A 3D knee kinematic analysis system
+measured the data, and self-reported outcomes assessed comfort levels during walking. We used SPM1D for two-way
+repeated ANOVA and posthoc paired t-tests to analyze kinematic differences in groups.
+Results: In fast walking, ACLR knees exhibited more transverse kinematic asymmetries than intact knees, including
+greater external rotation angle (1.8
+, 38%–43%; gait cycle [GC], p < 0.05 & 1.8–2.7
+, 50%–61% GC, p < 0.05) and
+increased proximal tibial translation (2.1–2.5 mm, 2%–6% GC, p < 0.05 & 2.5–3.2 mm, 92%–96% GC, p < 0.05).
+Additionally, ACLR knees showed greater posterior tibial translation than intact knees (3.6–3.7 mm, 7%–8% GC,
+p < 0.05) during fast walking. No posterior tibial translation asymmetries were observed in slow walking compared to
+normal walking levels. ACLR knees have the most comfortable feelings in slow walking speed, and the most uncom-
+fortable feelings in fast walking speed levels (29%).
+Conclusions: Fast walking induces additional external tibial rotation and proximal and posterior tibial transla-
+tion asymmetries in ACLR patients. This raises concerns about long-term safety and health during fast walking.
+Fast walking, not self-selected speed, is beneﬁcial for identifying postoperative gait asymmetries in ACLR
+patients.
+Key words: ACLR; Gait; Kinematic Asymmetries; Walking Speed
+Address for correspondence Yu Zhang, Department of Bone Oncology, Guangdong Provincial People’s Hospital (Guangdong Academy of Medical
+Sciences), Southern Medical University, Guangzhou, China 510080; Email: luck_2001@126.com; Jiehua Huang, Department of Orthopaedic Surgery,
+Huizhou Central People’s Hospital, Huizhou, China 516008; Email: huangjh202207@163.com; Xiaolong Zeng, MD, PhD, Department of
+Orthopaedics, Guangdong Provincial Hospital of Chinese Medicine, The Second Afﬁliated Hospital of Guangzhou University of Chinese Medicine,
+Guangzhou, China 510120 Email: xiaolzeng@126.com
+Huahao Lai and Xiaoling Chen co-ﬁrst authors.
+Received 24 September 2023; accepted 24 January 2024
+864
+© 2024 THE AUTHORS. ORTHOPAEDIC SURGERY PUBLISHED BY TIANJIN HOSPITAL AND JOHN WILEY & SONS AUSTRALIA, LTD.
+Orthopaedic Surgery 2024;16:864–872 • DOI: 10.1111/os.14017
+This is an open access article under the terms of the Creative Commons Attribution-NonCommercial License, which permits use, distribution and
+reproduction in any medium, provided the original work is properly cited and is not used for commercial purposes.
+
+--- PAGE 2 ---
+Introduction
+Anterior cruciate ligament (ACL) rupture is a common
+sports injury, and its incidence is increasing.1
+In the
+United States, more than 250,000 ACL injuries occur per
+year,2
+and anterior cruciate ligament reconstruction (ACLR)
+is the main treatment for ACL rupture. However, ACLR did
+not fully restore normal joint mechanics to prevent post-
+traumatic osteoarthritis (PTOA) or reinjuries of knee joint.3
+Patients with ACLR knees exhibit altered knee walking kine-
+matic patterns compared with uninjured contralateral knees
+or healthy patients.4
+In a long period after surgery, the knee
+function was not fully recovered, which was manifested as
+abnormal knee external ﬂexion moments and knee adduction
+moments.5
+Unilateral ACLR results in the asymmetries of
+vertical ground reaction force and muscle activity at different
+stages of the gait cycle.6
+These gait asymmetries were not
+considered to be associated with pure quadriceps muscle
+strength improvement.7
+In daily life, fast walking is a more demanding activ-
+ity than normal speed walking, and it is necessary to
+increase the ﬂexion and extension range of motion to
+adapt to such activities. Most patients with ACL injury
+have a high-intensity exercise habit, and patients need to
+return to sports after ACL reconstruction. The fast speed
+levels of walking were shown to be a challenging issue for
+patients with knee diseases.8,9
+Previous studies have
+reported that those who walk fast show more kinetic
+asymmetries after ACLR,10,11
+but the 3D kinematics of
+ACLR patients at different speeds has not been studied.
+Recently, we used 3D motion capture to discover the
+asymmetry of fast walking in patients with ACL
+deﬁciency,12
+which led us to wonder if this deﬁcit is fully
+addressed by ACL reconstruction. In addition, walking
+speeds are associated with incidences of knee collagen
+breakdown and osteoarthritis.13,14
+This study describes the
+relationship between walking speed and knee 3D kinemat-
+ics during gait after ACLR, which enable us to analyze
+joint degeneration and injury. We hypothesize that fast
+speed levels could result in more knee kinematic
+asymmetries in patients with ACLR.
+The purpose of this study was to explore knee 3D
+kinematics alterations at different walking speed levels. It
+could provide a better reference to analyze the inﬂuencing
+factors that may lead to PTOA, and provide clinical guidance
+to clinicians and rehabilitation practitioners.
+Methods
+Demographic Characteristics
+The inclusion criteria for patients were the following:
+(1) patients diagnosed with complete unilateral ACL tear
+before surgery; (2) patients after single bundle anatomical
+ACLR surgery. Patients were excluded if they (1) had multi-
+ple ligament injuries before or after surgery, such as medial/
+lateral collateral ligament, posterior cruciate ligament, and
+other injuries; (2) their injuries were accompanied by severe
+meniscus tear and unable to be repaired, with more than 1/5
+of the unilateral meniscus to be resected; (3) were older than
+50 years old or diagnosed as a knee osteoarthritis patient;
+(4) had previous history of major surgeries or trauma;
+(5) had neuromuscular diseases that affect normal walking,
+movement, and other functions, such as myelitis, lumbar disc
+herniation, and so forth; (6) needed to walk with the help of
+external objects such as crutches; (7) had other diseases that
+affect motor function; (8) had a positive drawer test or
+Lachman test; (9) were unable to follow-up with the experi-
+menter to complete the experiment.
+Finally, 55 patients (48 males and seven females) were
+included in the study. The demographic data of this cohort
+were normally distributed: age, 30.6  6.4 years; height,
+173.5  6.6 cm; weight, 72.7  10.1 kg; BMI, 24.1  2.8 kg/
+m2
+. Gait kinematics data were collected at review 1 year after
+surgery, and the mean interval between operations was
+22.7  20.0 months.
+Surgical Procedures
+All the ACLR surgeries were performed by the team of the
+chief surgeon. The ACLR operation was performed with
+the semitendinosus/gracilis autograft of the injured side of
+the patient. Under arthroscopy, the femoral tunnel was
+drilled at the anteromedial position of 120
+knee ﬂexion, the
+femoral eccentric guide was used to locate the femoral inser-
+tion of the ACL, the guide pin was drilled at two points, the
+lateral femoral cortex was drilled with a 4.5-mm drill bit,
+and the length of the bone tunnel was measured. An 8-mm
+hollow drill bit was used to drill the bone tunnel about
+10 mm from the lateral femoral outlet. The tibial locator was
+set at 45
+to locate the tibial insertion of the ACL. The mid-
+point was located at the new medial side of the anterior cru-
+ciate ligament stump. A guide pin was drilled, and an 8-mm
+hollow drill was selected to open the tibial bone tunnel
+through the guide pin. Kirschner’s needle is utilized to guide
+the graft into the bone canal. The ACL graft was secured to
+the femur using an Endobutton (Smith and Nephew, Ando-
+ver, Massachusetts, USA). High-strength sutures were used
+to bind the tibial stump of the anterior cruciate ligament to
+the reconstructed ligament and to check that the graft did
+not move during extension and ﬂexion, and did not impinge
+with the front and lateral when straightening. The tendon
+was tensioned outside the tibial canal while the knee joint
+ﬂexion and extension were performed 10 times. Subse-
+quently, the graft was ﬁxed at a 30
+knee ﬂexion angle by
+means of bioresorbable interference screws (DePuy Mitek,
+Raynham, Massachusetts, USA). Following ﬁxation, the
+Lachman test and anterior drawer test were conducted with
+negative results.
+Kinematic Knee Data and Patient-Reported Outcome
+Gait Measurement System
+Kinematic knee measurements were obtained from partici-
+pants using a three-dimensional (3D) motion capture gait
+865
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 3 ---
+system called Opti_Knee, developed by Innomotion in
+Shanghai, China.15
+The gait system consisted of various com-
+ponents, including a navigation stereo infrared tracking
+device (NDI Polaris Spectra; Northern Digital Inc), a high-
+speed optical camera (Basler aca640–90uc; Basler AG), two
+sets of markers, a handheld digital probe, and a treadmill.
+The sampling rate of the gait system was set at 60 Hz. Previ-
+ous reports indicated that the gait system exhibited an accu-
+racy level of 0.3 mm root mean square (RMS) and a
+repeatability of less than 1.3
+in rotation and 0.9 mm in
+translation.16,17
+A high-speed camera was utilized to simulta-
+neously record and identify the gait cycles (GC) of the sub-
+jects, who walked on the treadmill while their knee
+kinematics were being recorded and calculated in real-
+time.(Figure 1).
+Experiment Approach
+Each participant underwent a 5 min adaptation period on a
+motorized bi-directional treadmill set at a level surface. The
+normal walking speed for each individual was determined
+through a gradual increase in treadmill speed, starting from
+a slow pace of 1 km/h. The speed was continuously increased
+until the subject reported that it surpassed their preferred
+walking speed. This procedure was repeated three times, and
+the average speed (3.0  0.3 km/h) obtained from these trials
+was deﬁned as the normal walking speed. Subsequently,
+slower walking speed (50% of normal walking speed) and
+faster walking speed (150% of normal walking speed) were
+calculated based on this average speed.
+Data Collection and Processing
+The data collecting procedure was as follows: (1) Two sets of
+markers were fastened to the subject, and a handheld digitiz-
+ing probe was used to identify bony landmarks to set up a
+personalized 3D coordinate system of the tibia relative to the
+femur with the subject in a neutral standing position15
+;
+(2) ACLR subjects were sequentially tested at three speeds,
+walking at the normal speed, the slow speed, and the fast
+speed; (3) before data collection, subjects walked on the
+treadmill for 1 min to ensure gait stability, after which kine-
+matic data were recorded (as illustrated in Figures 2–7) for a
+duration of 15 s, approximately encompassing 15 gait cycles
+(GCs); (4) during the collection of kinematic data at different
+speeds, subjects were asked if they experienced any knee dis-
+comfort, and such instances were recorded; (5) a 5-min
+interval was provided between tests at different gait speeds
+for each ACLR subject to mitigate the inﬂuence of previous
+tests and potential fatigue effects; (6) these trials collected
+not only ACLR knee joints from patients, but also contralat-
+eral healthy knee joints from each patient as controls.
+The system automatically averaged the kinematics
+from all the gait cycles (about 15 cycles) into an averaged
+gait cycle. The kinematic knee data included three angular
+parameters and three translational parameters. The three
+angular parameters were adduction/abduction angle (degrees,
+
+), ﬂexion/extension angle (degrees, 
+), and internal/external
+rotation angle (degrees, 
+). The three translational parame-
+ters were posterior tibial translation (millimeters, mm), prox-
+imal tibial translation (millimeters, mm), and medial/lateral
+tibial translation (millimeters, mm).
+Statistical Analysis
+To assess the normality of demographic data (age, height,
+weight, and BMI) for the ACL reconstruction (ACLR) sub-
+jects, the Shapiro–Wilk test was performed using SPSS ver-
+sion 24.0 (IBM Corp., Armonk, NY, USA). The signiﬁcance
+level was set at 0.05. To investigate whether different walking
+speeds could induce increased gait asymmetry, the statistical
+parametric mapping with 1D (SPM1D) for two-way repeated
+analysis of variance (ANOVA) and posthoc paired t-test was
+utilized to evaluate kinematic differences among various
+groups: group, velocity, group  velocity interaction, and
+ACLR leg versus intact leg at three walking speeds. The anal-
+ysis was conducted using the SPM1D package available for
+MATLAB (version 0.4.8, http://www.spm1d.org). SPM1D
+employs Random Field Theory and assumes smooth, one-
+dimensional Gaussian Fields to examine statistical inferences
+for a set of 1D measurements.18
+Sample Size Determination
+When there was a signiﬁcant kinematic difference detected
+in the gait cycle between the ACLR limb with the intact limb,
+A B
+FIGURE 1 (A) Anatomical landmarks of the
+femur and tibia were identiﬁed using a handheld
+probe prior to acquisition of kinematic data.
+(B) Kinematic data collected while the subject
+was walking on a treadmill.
+866
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 4 ---
+the range of average value of the kinematic difference (lowest
+value to highest average value of the difference of each per-
+cent of the gait cycle) during the affected parts of the gait
+cycle, the exact affected parts of gait cycle percentage, and
+the exact p-value is reported in the results. Two-way repeated
+ANOVA and post-hoc t-tests was used to compare the aver-
+age range of motion (ROM) of the intact and ACLR knee
+joints under the inﬂuence of three different speeds, and the
+difference between the average ROM among them was
+recorded (Figure 8). The ACLR technique was aimed to
+restore the anteroposterior translation of knees, therefore the
+ROM of anteroposterior translation was selected to calculate
+the power via PASS version 15.0 (NCSS, Kaysville, Utah,
+USA). The study was two (intact knees vs. ACLR knees)
+*three (fast vs. normal vs. slow speed) type. The average
+anteroposterior ROM of intact knees was 24.6 mm. The
+average anteroposterior ROM of control knees was 20.5 mm.
+The average anteroposterior ROM of ACLR knees at fast
+speed level was 25.2 mm, the average anteroposterior ROM
+of ACL deﬁciency patients while walking at normal speed
+A
+B C D
+E F G
+FIGURE 2 Walking adduction/abduction angle alterations of ACLR patients at three different speed levels (normal/slow/fast). Chart (A) shows the
+kinematic comparison between ACLR and intact limbs during one gait cycle at three different speed levels (normal/slow/fast). Charts (B–G) show the
+kinematic differences during one gait cycle among various groups: group, velocity, group  velocity interaction, and anterior cruciate ligament
+reconstruction (ACLR) leg versus intact leg at three walking speeds. The statistical methods were statistical parametric mapping with 1D (SPM1D)
+paired t-test. *: Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+A
+B C D
+E F G
+FIGURE 3 Walking internal/external tibial rotation angle alterations of ACLR patients at three different speed levels (normal/slow/fast). Chart
+(A) shows the kinematic comparison between anterior cruciate ligament reconstruction (ACLR) and intact limbs during one gait cycle at three different
+speed levels (normal/slow/fast). Charts (B–G) show the kinematic differences during one gait cycle among various groups: group, velocity, group 
+velocity interaction, and ACLR leg versus intact leg at three walking speeds. The statistical methods were statistical parametric mapping with 1D
+(SPM1D) paired t-test. *: Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+867
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 5 ---
+level was 22.0 mm, and the average anteroposterior ROM of
+ACL deﬁciency patients while walking at slow speed level
+was 20.5 mm. With the sample size of 55 subjects, this study
+achieves 100% power to test factor B1 if a Geisser–
+Greenhouse Corrected F-test is used with a 5% signiﬁcance
+level and the actual effect standard deviation is 2.050
+(an effect size of 0.9), achieves 100% power to test group,
+velocity and group  velocity interaction a 5% signiﬁcance
+level, respectively. Therefore, the recruited number of sub-
+jects met the sample size requirement for this study.
+Result
+The Patients Reported Outcomes at Three Walking
+Speeds
+Knee discomfort occurred in 29% of patients during fast
+walking (150% normal working speed). This discomfort did
+not occur during the slow walking (50% normal walking
+speed) and the normal walking speed. The patients
+experiencing knee discomfort perceive symptoms of ACLR
+knee instability while engaging in fast walking.
+A
+B C D
+E F G
+FIGURE 4 Walking ﬂexion angle alterations of anterior cruciate ligament reconstruction (ACLR) patients at three different speed levels (normal/slow/
+fast). Chart (A) shows the kinematic comparison between ACLR and intact limbs during one gait cycle at three different speed levels (normal/slow/
+fast). Charts (B–G) show the kinematic differences during one gait cycle among various groups: group, velocity, group  velocity interaction, and
+ACLR leg versus intact leg at three walking speeds. The statistical methods were statistical parametric mapping with 1D (SPM1D) paired t-test. *:
+Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+A
+B C D
+E F G
+FIGURE 5 Walking anteroposterior tibial translation alterations of anterior cruciate ligament reconstruction (ACLR) patients at three different speed
+levels (normal/slow/fast). Chart (A) shows the kinematic comparison between ACLR and intact limbs during one gait cycle at three different speed
+levels (normal/slow/fast). Charts (B–G) show the kinematic differences during one gait cycle among various groups: group, velocity, group  velocity
+interaction, and ACLR leg versus intact leg at three walking speeds. The statistical methods were statistical parametric mapping with 1D (SPM1D)
+paired t-test. *: Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+868
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 6 ---
+The Inﬂuence of Walking Speed on Gait Symmetry in
+Patients with Unilateral ACLR
+The effects of walking speed on 6DOF knee kinematics of
+ACLR knees and intact knees were summarized in
+Figures 2–7. Gait asymmetries during fast walking included
+increased posterior tibial translation at 7%–8% of the gait
+cycle (GC), increased external rotation angle (38%–43% GC,
+50%–61% GC), and increased proximal tibial translation
+(2%–6% GC, 92%–96% GC). ACLR knees showed knee
+extension insufﬁciency (19%–45% GC) and increased poste-
+rior tibial translation (89%–90% GC) during normal walking.
+ACLR knees showed knee extension insufﬁciency (24%–47%
+GC) during slow walking.
+Sagittal Plane
+In the sagittal plane, the knee extension angle of ACLR knees
+was found to be 3.0–3.6
+smaller than that of intact
+knees during 24%–47% of slow walking gait cycles (p < 0.05,
+A
+B C D
+E F G
+FIGURE 6 Walking proximal tibial translation alterations of anterior cruciate ligament reconstruction (ACLR) patients at three different speed levels
+(normal/slow/fast). Chart (A) shows the kinematic comparison between ACLR and intact limbs during one gait cycle at three different speed levels
+(normal/slow/fast). Charts (B–G) show the kinematic differences during one gait cycle among various groups: group, velocity, group  velocity
+interaction, and ACLR leg versus intact leg at three walking speeds. The statistical method was statistical parametric mapping with 1D (SPM1D)
+paired t-test. *: Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+A
+B C D
+E F G
+FIGURE 7 Walking medial/lateral tibial translation alterations of anterior cruciate ligament reconstruction (ACLR) patients at three different speed
+levels (normal/slow/fast). Chart (A) shows the kinematic comparison between ACLR and intact limbs during one gait cycle at three different speed
+levels (normal/slow/fast). Charts (B–G) show the kinematic differences during one gait cycle among various groups: group, velocity, group  velocity
+interaction, and ACLR leg versus intact leg at three walking speeds. The statistical methods were statistical parametric mapping with 1D (SPM1D)
+paired t-test. *: Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+869
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 7 ---
+Figure 4A,E). The ACLR knees showed less extension angle
+than intact knees at normal speed walking (19%–45% GC,
+3.2–3.9
+, p < 0.05, Figure 4A,F). In contrast, gait asymmetry
+of ﬂexion/extension angles of ACLR knees was not shown
+during fast walking. ACLR knees had a greater posterior tib-
+ial translation than the intact knees at normal speed (89%–
+90% GC, 4.6–4.7 mm, p < 0.05, Figure 5A,F). ACLR knees
+had increased posterior tibial translation than intact knees at
+fast walking (7%–8% GC, 3.6–3.7 mm, p < 0.05,
+Figure 5A,G). However, gait asymmetry of posterior tibial
+translation of ACLR knees was not shown at slow walking.
+We found that the range of motion (ROM) of the ﬂexion
+angle of the ACLR leg was smaller than that of the intact leg
+at three walking speeds (the slow speed [4.8
+, p < 0.05]/the
+normal speed [5.2
+, p < 0.05], the fast speed [3.4
+, p < 0.05],
+Figure 8). The ROM of the anteroposterior translation of
+ACLR legs was smaller than that of the intact legs at three
+walking speeds (the slow speed [3.7 mm, p < 0.05]/the nor-
+mal speed [3.9 mm, p < 0.05], the fast speed [4.5 mm,
+p < 0.05], Figure 8).
+Coronal Plane
+In the coronal plane, there was no signiﬁcant difference in
+adduction/abduction angle (Figure 2) and medial/lateral
+translation (Figure 7) between the ACLR knees and the
+intact knees during different speeds of gait. When patients
+walked at the normal (1.9
+, p < 0.05) and the slow (1.9
+,
+p < 0.05) speeds, the ACLR side had signiﬁcantly smaller
+ROM of adduction/abduction angle than the intact side
+(Figure 8).
+Transverse Plane
+In the transverse plane, gait asymmetry was found at fast
+walking, but not at slow and normal walking speeds. ACLR
+knees at fast walking speed had a larger external rotation
+angle than the intact knees (38%–43% GC, 1.8
+, p < 0.05;
+50%–61% GC, 1.8–2.7
+p < 0.05, Figure 3A,G) and greater
+proximal tibial translation (2%–6% GC, 2.1–2.5 mm,
+p < 0.05; 92%–96% GC, 2.5–3.2 mm, p < 0.05, Figure 6A,G).
+During fast walking, the ACLR limb had a reduced mean
+ROM of internal and external rotation compared with the
+intact side (2.1
+, p < 0.05). During the normal speed walking
+speed, there was the same signiﬁcant difference (2.2
+,
+p < 0.05; Figure 8).
+Discussion
+Main Finding of the Study
+The results of knee kinematics showed that gait asymmetries at
+fast walking were manifested in two dimensions: sagittal plane
+(increased posterior tibial translation) and transverse plane
+(greater external rotation angle and greater proximal tibial
+translation). ACLR knees exhibited gait asymmetries in the
+sagittal plane at slow walking (knee extension insufﬁciency)
+and normal walking (knee extension insufﬁciency and
+increased posterior tibial translation). In addition, our results
+showed that ACLR patients exhibited more knee discomfort
+(29%) and more gait asymmetries during fast walking.
+The patients passed the anterior drawer test and the
+Lachman test before the test, and no positive results were
+found, which indicates that the gait test under rapid move-
+ment has higher sensitivity in evaluating knee stability.
+Comparing the Results with Previous Studies
+Sagittal Plane
+In the sagittal plane, ACLR knees had increased posterior
+tibial translation than intact knees at fast walking. Previous
+studies have found increased anterior tibial translation in
+patients with ACL deﬁciency compared with healthy con-
+trols, which is due to quadriceps femoris directly affecting
+knee joint movement by altering patellar tendon tension.19,20
+The results indicate that the asymmetries in anterior tibial
+translation during normal exercise intensity are resolved by
+the ACLR technique. Conversely, the posterior tibial transla-
+tion increased during fast walking, which may be due to the
+FIGURE 8 The range of motion of adduction/abduction angle, internal/external tibial rotation angle, ﬂexion angle, anteroposterior tibial translation,
+proximal tibial translation, and medial/lateral tibial translation of anterior cruciate ligament reconstruction (ACLR) patients during walking at three
+different speed levels (normal/slow/fast). *: Signiﬁcant kinematic differences of ACLR patients between the ACLR limb and the intact one (p < 0.05).
+870
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 8 ---
+greater limiting effect of the reconstructed ACL on anterior
+tibial displacement during fast walking, exceeding the effect
+of the quadriceps femoris. When the walking speed increases,
+the increased posterior tibial translation after ACLR is
+shown. The abnormal anteroposterior translation was signiﬁ-
+cantly correlated with knee cartilage degeneration.21–24
+The
+increased posterior tibial translation may also cause articular
+cartilage damage in ACLR patients.
+Transverse Plane
+In the transverse plane of the knee joint, ACLR knees
+increased external tibial rotation angle and proximal tibial
+translation at fast walking. Other studies have shown the
+greater external rotation angle of the knee on the reconstructed
+leg may suggest that the rotational stability of the lower
+extremity is not sufﬁciently controlled after ACLR.25
+The ante-
+rior cruciate ligament in the well-known limit excessive joint
+rotation plays an important role.25
+Due to the rapid movement
+increasing load ligament reconstruction, ACLR does not fully
+control the rotation of the lower limbs after stability. In other
+words, fast walking could stimulate rotation deﬁciency in
+ACLR patients. Maybe, fast walking could be used to identify
+rotation deﬁciency of ACLR patients in the future. Moreover,
+previous studies have found that increased load levels lead to
+increased proximal translation, which is a description of the
+knee joint space,26
+and we also observed narrowed knee joint
+space during fast walking. The narrowness of the knee joint
+space during fast walking may be due to the protective tension
+of the affected limb muscles of the patient under high load. A
+cross-sectional study showed a signiﬁcant association between
+joint space narrowing and knee pain, which may cause adverse
+effects on the knee joint.27
+However, more relevant work
+should be done to test the possibility.
+ACLR knees exhibited extension insufﬁciency at slow
+walking, extension insufﬁciency, and increased posterior tibial
+translation at normal walking. According to Shabani et al.,28
+ACLR knees still showed a deﬁcit of extension compared with
+healthy control knees. A meta-analysis statistic found that exter-
+nal knee-extensor moments were smaller in the ACLR group
+from 10 to 40 months after ACLR.8
+The reconstructed knees
+had a signiﬁcantly smaller knee ﬂexion angle and less quadriceps
+strength than the contralateral knees.29
+Therefore, this deﬁcit of
+extension in our study could be due to quadriceps weakness.
+These results were similar to the results during normal and slow
+walking, in which sagittal gait asymmetry was observed. Indeed,
+mild atrophy of the quadriceps femoris muscle of ACLR knees
+was also observed in our study. However, we did not detect a
+signiﬁcant extension deﬁcit of ACLR knees at fast walking. The
+difference in ﬂexion/extension angles was not apparent during
+fast movement due to adequate muscle mobilization.
+Coronal Plane
+Previous investigations have reported less coronal plane of
+knee kinematics in patients with ACLR. These studies
+suggested that ACLR patients did not exhibit signiﬁcant gait
+asymmetry in the coronal plane.25,30
+We only found
+signiﬁcant differences in the ROM of adduction and abduc-
+tion during normal and slow walking speeds. Previous stud-
+ies also showed sagittal plane biomechanics, rather than the
+knee adduction moment, appear to be more relevant in
+ACLR patients.31
+The Strengths and Limitations of this Study
+Our study revealed that the ACLR knees face a more chal-
+lenging knee kinematics environment during fast walking.
+Furthermore, this ﬁnding may provide a practical method
+for researchers and clinicians to identify gait asymmetries of
+ACLR patients in fast walking status. Early identiﬁcation
+of gait asymmetry is helpful for doctors to guide the postop-
+erative rehabilitation treatment of ACLR patients. When the
+patient has asymmetry in fast walking after surgery,
+the patient should be guided to wear the corresponding brace
+or muscle patch to protect the ACLR limb, and targeted
+exercise training should be carried out according to the gait
+asymmetry dimension to reduce the occurrence of sports
+injuries. There are some limitations of this study that should
+be noted. In the present study, more men than women were
+recruited. This may have introduced a gender bias into the
+study. However, recruited by gender characteristics is consis-
+tent with ACL deﬁciency prevalence of gender differences.32
+Conclusion
+Overall, we found that more feelings of discomfort and
+walking kinematic asymmetries of ACLR patients were
+found in fast walking. It has been reported that such gait
+asymmetry may increase the risk of KOA or reinjuries.31,33
+Author Contributions
+Huahao Lai: Writing, methodology. Xiaoling Chen: Writ-
+ing, investigation. Wenhan Huang: Investigation.
+Zhenyan Xie: Investigation. Yuan Yan: Investigation. Ming
+Kang: Investigation. Yu Zhang: Methodology. Jiehua Huang:
+Methodology. Xiaolong Zeng: Conceptualization, experimen-
+tal design, statistical analysis.
+Acknowledgements
+The study was supported by the Project of Administration
+of Traditional Chinese Medicine of Guangdong Province
+(No. Z155080000004), Chinese Medicine Leading Talents
+Project (Qihuang Scholar, No. [2022]6 of Chinese Depart-
+ment of TCM Education), Lin Dingkun’s Guangdong Prov-
+ince Famous Traditional Chinese Medicine Inheritance
+Studio Construction Project (No. 0103030912), Lingnan
+Orthopedic School Inheritance Studio Construction Project
+(No. E43607), and Shi Yangshan Academic Experience
+Inheritance Studio Construction Project (No. E43715).
+Ethics Statement
+The study was approved by the independent ethics com-
+mittee (IEC No. 2019-226H-1) of Guangdong Provincial
+People’s Hospital. Informed consent was obtained from each
+871
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 9 ---
+participant. The participants were recruited from January
+2020 to July 2022.
+Conﬂict of Interest Statement
+The authors declare that they have no conﬂict of interest.
+References
+1. Filbay SR, Grindem H. Evidence-based recommendations for the management
+of anterior cruciate ligament (ACL) rupture. Best Pract Res Clin Rheumatol. 2019;
+33:33–47. https://doi.org/10.1016/j.berh.2019.01.018
+2. Grifﬁn LY, Albohm MJ, Arendt EA, Bahr R, Beynnon BD, DeMaio M, et al.
+Understanding and preventing noncontact anterior cruciate ligament injuries.
+Am J Sports Med. 2006;34:1512–32. https://doi.org/10.1177/
+0363546506286866
+3. Wang L, Zeng N, Yan Z, Li J, Ni G. Post-traumatic osteoarthritis following ACL
+injury. Arthritis Res Ther. 2020;22:57. https://doi.org/10.1186/s13075-020-
+02156-5
+4. Dare D, Rodeo S. Mechanisms of post-traumatic osteoarthritis after ACL injury.
+Curr Rheumatol Rep. 2014;16:448. https://doi.org/10.1007/s11926-014-
+0448-1
+5. Kaur M, Ribeiro DC, Theis J, Webster KE, Sole G. Movement patterns of the
+knee during gait following ACL reconstruction: a systematic review and meta-
+analysis. Sports Med. 2016;46:1869–95. https://doi.org/10.1007/s40279-
+016-0510-4
+6. Mantashloo Z, Letafatkar A, Moradi M. Vertical ground reaction force and knee
+muscle activation asymmetries in patients with ACL reconstruction compared to
+healthy individuals. Knee Surg Sports Traumatol Arthrosc. 2020;28:2009–14.
+https://doi.org/10.1007/s00167-019-05743-5
+7. Arhos EK, Capin JJ, Buchanan TS, Snyder-Mackler L. Quadriceps strength
+symmetry does not modify gait mechanics after anterior cruciate ligament
+reconstruction, rehabilitation, and return-to-sport training. Am J Sports Med.
+2021;49:417–25. https://doi.org/10.1177/0363546520980079
+8. Fukuchi CA, Fukuchi RK, Duarte M. Effects of walking speed on gait
+biomechanics in healthy participants: a systematic review and meta-analysis.
+Syst Rev. 2019;8:153. https://doi.org/10.1186/s13643-019-1063-z
+9. Nazary-Moghadam S, Salavati M, Esteki A, Akhbari B, Keyhani S,
+Zeinalzadeh A. Gait speed is more challenging than cognitive load on the stride-
+to-stride variability in individuals with anterior cruciate ligament deﬁciency. Knee.
+2019;26:88–96. https://doi.org/10.1016/j.knee.2018.11.009
+10. Knobel RJ, Ito N, Arhos EK, Capin JJ, Buchanan TS, Snyder-Mackler L.
+Patients walking faster after anterior cruciate ligament reconstruction have more
+gait asymmetry. Int J Sports Phys Ther. 2021;16:169–76. https://doi.org/10.
+26603/001c.18710
+11. Garcia SA, Brown SR, Koje M, Krishnan C, Palmieri-Smith RM. Gait
+asymmetries are exacerbated at faster walking speeds in individuals with acute
+anterior cruciate ligament reconstruction. J Orthop Res. 2022;40:219–30.
+https://doi.org/10.1002/jor.25117
+12. Kong L, Yang T, Wang Q, Ou Y, Huang H, Huang W, et al. ACLD patients
+exhibit additional knee kinematic asymmetries at the speed level of healthy
+subjects. Front Bioeng Biotechnol. 2022;10:930722. https://doi.org/10.3389/
+fbioe.2022.930722
+13. Purser JL, Golightly YM, Feng Q, Helmick CG, Renner JB, Jordan JM.
+Association of slower walking speed with incident knee osteoarthritis–related
+outcomes. Arthritis Care Res. 2010;2012(64):1028–35. https://doi.org/10.
+1002/acr.21655
+14. Pietrosimone B, Troy Blackburn J, Harkey MS, Luc BA, Hackney AC,
+Padua DA, et al. Walking speed As a potential indicator of cartilage breakdown
+following anterior cruciate ligament reconstruction. Arthritis Care Res (Hoboken).
+2016;68:793–800. https://doi.org/10.1002/acr.22773
+15. Zhang Y, Yao Z, Wang S, Huang W, Ma L, Huang H, et al. Motion analysis of
+Chinese normal knees during gait based on a novel portable system. Gait
+Posture. 2015;41:763–8. https://doi.org/10.1016/j.gaitpost.2015.01.020
+16. Elfring R, de la Fuente M, Radermacher K. Assessment of optical localizer
+accuracy for computer aided surgery systems. Comput Aided Surg. 2010;15:1–
+12. https://doi.org/10.3109/10929081003647239
+17. Zhang Y, Huang W, Yao Z, Ma L, Lin Z, Wang S, et al. Anterior cruciate
+ligament injuries Alter the kinematics of knees with or without meniscal
+deﬁciency. Am J Sports Med. 2016;44:3132–9. https://doi.org/10.1177/
+0363546516658026
+18. Pataky TC. One-dimensional statistical parametric mapping in python.
+Comput Methods Biomech Biomed Engin. 2012;15:295–301. https://doi.org/
+10.1080/10255842.2010.527837
+19. Zabala ME, Favre J, Andriacchi TP. Relationship between knee mechanics
+and time since injury in ACL-deﬁcient knees without signs of osteoarthritis.
+Am J Sports Med. 2015;43:1189–96. https://doi.org/10.1177/
+0363546514567296
+20. Chen C, Li J, Hosseini A, Gadikota HR, Gill TJ, Li G. Anteroposterior stability
+of the knee during the stance phase of gait after anterior cruciate ligament
+deﬁciency. Gait Posture. 2012;35:467–71. https://doi.org/10.1016/j.gaitpost.
+2011.11.009
+21. Zaid M, Lansdown D, Su F, Pedoia V, Tufts L, Rizzo S, et al. Abnormal tibial
+position is correlated to early degenerative changes one year following ACL
+reconstruction. J Orthop Res. 2015;33:1079–86. https://doi.org/10.1002/jor.
+22867
+22. Kiapour AM, Fleming BC, Murray MM. Structural and anatomic restoration of
+the anterior cruciate ligament is associated with less cartilage damage 1 year
+after surgery: healing ligament properties affect cartilage damage. Orthop J
+Sports Med. 2017;5:1808771310. https://doi.org/10.1177/
+2325967117723886
+23. Ikuta F, Yoneta K, Miyaji T, Kidera K, Yonekura A, Osaki M, et al. Knee
+kinematics of severe medial knee osteoarthritis showed tibial posterior
+translation and external rotation: a cross-sectional study. Aging Clin Exp Res.
+2020;32:1767–75. https://doi.org/10.1007/s40520-019-01361-w
+24. Li AK, Ochoa JK, Pedoia V, Amano K, Souza RB, Li X, et al. Altered
+tibiofemoral position following ACL reconstruction is associated with cartilage
+matrix changes: a voxel-based relaxometry analysis. J Orthop Res. 2020;38:
+2454–63. https://doi.org/10.1002/jor.24708
+25. Shi H, Ren S, Huang H, Liu H, Liang Z, Yu Y, et al. Bilateral alterations in
+isokinetic strength and knee biomechanics during side-cutting 1 year after
+unilateral ACL reconstruction. Am J Sports Med. 2022;50:2961–71. https://doi.
+org/10.1177/03635465221112940
+26. Yang T, Huang Y, Zhong G, Kong L, Yan Y, Lai H, et al. 6DOF knee kinematic
+alterations due to increased load levels. Front Bioeng Biotechnol. 2022;10:
+927459. https://doi.org/10.3389/fbioe.2022.927459
+27. Muraki S, Akune T, En-yo Y, Yoshida M, Suzuki T, Yoshida H, et al. Joint
+space narrowing, body mass index, and knee pain: the ROAD study
+(OAC1839R1). Osteoarthr Cartil. 2015;23:874–81. https://doi.org/10.1016/j.
+joca.2015.01.011
+28. Shabani B, Bytyqi D, Lustig S, Cheze L, Bytyqi C, Neyret P. Gait knee
+kinematics after ACL reconstruction: 3D assessment. Int Orthop. 2015;39:1187–
+93. https://doi.org/10.1007/s00264-014-2643-0
+29. Freiwald J, Jager A, Starker M. EMG-assisted functional analysis within the
+scope of follow-up of arthroscopically managed injuries of the anterior cruciate
+ligament. Sportverletz Sportschaden. 1993;7:122–8. https://doi.org/10.1055/s-
+2007-993495
+30. Peebles AT, Williams BR, Queen RM. Bilateral squatting mechanics are
+associated with landing mechanics in anterior cruciate ligament reconstruction
+patients. Am J Sports Med. 2021;49:2638–44. https://doi.org/10.1177/
+03635465211023761
+31. Zeng Z, Shan J, Zhang Y, Wang Y, Li C, Li J, et al. Asymmetries and
+relationships between muscle strength, proprioception, biomechanics,
+and postural stability in patients with unilateral knee osteoarthritis. Front Bioeng
+Biotechnol. 2022;10:922832. https://doi.org/10.3389/fbioe.2022.922832
+32. Ellison TM, Flagstaff I, Johnson AE. Sexual dimorphisms in anterior cruciate
+ligament injury: a current concepts review. Orthop J Sports Med. 2021;9:
+941630360. https://doi.org/10.1177/23259671211025304
+33. Paterno MV, Schmitt LC, Ford KR, Rauh MJ, Myer GD, Huang B, et al.
+Biomechanical measures during landing and postural stability predict second
+anterior cruciate ligament injury after anterior cruciate ligament reconstruction
+and return to sport. Am J Sports Med. 2010;38:1968–78. https://doi.org/10.
+1177/0363546510376053
+872
+ORTHOPAEDIC SURGERY
+VOLUME 16 • NUMBER 4 • APRIL, 2024
+ACLR KINEMATICS AND WALKING SPEED
+17577861, 2024, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.14017 by Seoul National University Of, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 10 ---

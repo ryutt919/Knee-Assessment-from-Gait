@@ -1,0 +1,721 @@
+
+--- PAGE 1 ---
+Does kinematic gait quality improve with functional gait recovery? A
+longitudinal pilot study on early post-stroke individuals
+Sung Yul Shina
+, Robert K. Leeb
+, Patrick Spicerc
+, James Sulzera,⇑
+a
+Department of Mechanical Engineering, University of Texas at Austin, USA
+b
+St. David’s Rehabilitation Hospital, St. David’s Medical Center, USA
+c
+Seton Brain and Spine Institute, Ascension, TX, USA
+a r t i c l e i n f o
+Article history:
+Accepted 20 March 2020
+Available online xxxx
+Keywords:
+Gait
+Gait quality
+Functional gait recovery
+Stroke
+Inertial measurement units
+a b s t r a c t
+Typical clinical gait outcomes mostly focus on function; only sparse information exists on gait quality, i.e.
+symmetry or more natural gait patterns. It remains unclear whether functional gait recovery improves
+with gait quality, or whether these are two independent processes. The objective of this observational
+pilot study is to examine whether the gait quality improves with gait function (i.e. speed) over the course
+of early recovery. Full lower body gait kinematics were measured longitudinally in a clinical environment
+using wearable inertial measurement units. We recorded six individuals with subacute stroke (<1 month)
+for a total of 56 physical therapy sessions over the initial recovery stage of 12 weeks. We examined rela-
+tions between gait symmetry in spatiotemporal, limb and joint kinematic parameters compared to gait
+function. We observed that overall gait symmetry improved with walking speed, but limb and joint kine-
+matic parameters remained asymmetric at the maximum level of recovery (both p < 0.01). We also found
+that limb kinematic parameters (R2
+= 41.9%) of the impaired side was preferentially associated with func-
+tional gait recovery over joint kinematics (R2
+= 33.1%). These data suggest that our pilot cohort did not
+achieve ‘‘true” gait recovery despite achieving typical measures of recovery in gait speed and spatiotem-
+poral symmetry. These initial results illustrate the multifaceted nature of recovery and justify further
+research on monitoring gait quality with a larger clinical study, providing insight for more effective train-
+ing regimens.
+Ó 2020 Elsevier Ltd. All rights reserved.
+1. Introduction
+Restoration of gait and motor recovery following neurological
+injury such as stroke involves improvements both in functional
+ability and quality of movements. However, typical clinical out-
+comes for measuring gait are mostly focused on functional ability
+such as gait speed (Tilson et al., 2010), timed-up-and-go
+(Podsiadlo and Richardson, 1991), six minute walk (Enright,
+2003), and others, whereas gait quality is ignored. Disturbances
+in gait quality are associated with an increased risk of falls
+(Weerdesteyn et al., 2008), greater energy expenditure (Finley
+et al., 2013) and may lead to long-term problems such as learned
+non-use or use-dependent plasticity and pain (Jones, 2017; Levin
+et al., 2009). For instance, patients with asymmetric gait have
+shown greater metabolic energy expenditure from 50% to 67%
+more than that of body weight-matched healthy controls with
+same walking speed (Woolley, 2001).
+Parameters to measure gait quality can be broken down into
+more than just spatiotemporal characteristics (i.e., step length or
+step time). Spatiotemporal symmetry has been well charted in
+post-stroke individuals (Balasubramanian et al., 2007; Patterson
+et al., 2015, 2010). However, stroke survivors exhibit significant
+asymmetry in joint kinematics with greater inter-individual
+variability than spatiotemporal characteristics (Woolley, 2001).
+Typical asymmetry in joint kinematics includes reduced hip
+extension, knee flexion and ankle dorsi/plantarflexion, and knee
+hyperextension on the impaired side (Kim and Eng, 2004; Perry
+and Burnfield, 1992). While these studies have attempted to char-
+acterize disturbances in joint kinematics after stroke, the majority
+report instantaneous or short-term measurements on chronic
+patients (Kim and Eng, 2004; Woolley, 2001). There is currently a
+lack of information regarding how these joint kinematics change
+over the course of recovery, especially the critical subacute phase
+(<3 months).
+Limb kinematics, used to describe end-effector (i.e. foot) motion
+in task space, can be used to characterize locomotor function. For
+instance, Chang et al. suggested that joint kinematics were
+https://doi.org/10.1016/j.jbiomech.2020.109761
+0021-9290/Ó 2020 Elsevier Ltd. All rights reserved.
+⇑ Corresponding author.
+E-mail address: james.sulzer@austin.utexas.edu (J. Sulzer).
+Journal of Biomechanics xxx (xxxx) xxx
+Contents lists available at ScienceDirect
+Journal of Biomechanics
+journal homepage: www.elsevier.com/locate/jbiomech
+www.JBiomech.com
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 2 ---
+coordinated with greater variance to preferentially conserve and
+stabilize the limb kinematics of walking after neuromuscular
+injury of cats (Chang et al., 2009). It is reflective of the concept of
+an uncontrolled manifold hypothesis, where control degrees-of-
+freedom are reduced by allowing variability in uncontrolled vari-
+ables (Scholz and Schöner, 1999). In humans, however, no evidence
+exists to show how spatiotemporal characteristics, along with limb
+or joint kinematics, change over the course of early recovery and
+whether they correspond with gait function. Characterizing how
+these gait parameters change over recovery can help determine
+how to time interventions to maximize function.
+The objective of this observational study is to examine changes
+in gait quality in terms of spatiotemporal, limb and joint kinemat-
+ics over the initial stage of recovery. The primary technical chal-
+lenge of this endeavor is measuring kinematics in a clinical
+environment longitudinally. We overcame this problem by using
+portable, unobtrusive inertial motion capture to measure gait kine-
+matics over the initial recovery stage of 12 weeks. Since asymme-
+try in joint kinematics shows greater variability than
+spatiotemporal characteristics (Woolley, 2001), we expected that
+gait quality will remain asymmetric over the course of early recov-
+ery, driven by joint kinematics. Secondly, we also expected that in
+the impaired side, limb kinematic parameters will associate with
+gait speed more than joint kinematics, suggesting an uncontrolled
+manifold in the joint kinematics domain.
+This preliminary study describes a novel characterization of dis-
+turbances in gait quality during the early recovery process after
+stroke. The information from this study details the importance of
+gait quality, it helps delineate underlying kinematic mechanisms
+of gait recovery, and provides insight for more effective therapy
+regimens.
+2. Methods
+2.1. Participants
+We recruited nine individuals with subacute stroke (<1 month)
+to participate in this study approved by the University of Texas
+Institutional Review Board and St. David’s Medical Center, Austin,
+TX. Among nine patients, six individuals were longitudinally mon-
+itored for a total of 56 physical therapy sessions consisting of gait-
+related activity. Individuals ranged in age and impairment level
+(see Table 1). Inclusion criteria of this study were: ischemic cere-
+bral infarction based on magnetic resonance imaging (MRI) data,
+hemiparesis, premorbidly independent, within two weeks follow-
+ing injury or as soon as able to participate in gait training deter-
+mined by the physical therapist. Exclusion criteria include
+cerebellar damage, prior stroke, stroke-related pain syndromes,
+or functionally relevant neuromuscular impairments. Participants
+were allowed to use any assistive devices including a wheelchair,
+body weight support, walker, cane or ankle foot orthosis (AFO)
+during sessions if necessary (see Table 1). Prior to the first session,
+the experimenter and therapist explained all the experimental pro-
+cedures to each participant and obtained informed consent. We
+began monitoring as soon as participants were capable of begin-
+ning gait therapy, i.e., as soon as walk independently without ther-
+apist’s full assistance. Three participants were excluded from the
+dataset because two of them were not able to walk before dis-
+charge and one discharged before the recording session. Three of
+the participants included in this analysis completed less than the
+full 12 recording sessions. One participant was discharged to a dif-
+ferent hospital (P2), one lacked sufficient insurance coverage (P3),
+and one was discharged to home therapy (P4).
+2.2. Experimental setup and protocol
+Our goal was to consecutively monitor gait kinematics during
+physical therapy sessions. We targeted a maximum of 12 recording
+sessions over the course of the first three months throughout the
+inpatient to outpatient phases. Our recording session frequency
+was greater in the earlier stages of recovery, i.e. two/week for three
+weeks, one/week for four weeks, then one every other week. For
+each session, we attached seven commercial inertial measurement
+unit (IMU) motion sensors (XSens, Enschede, The Netherlands) on
+the pelvis and bilaterally on thighs, shanks and feet using custom-
+made elastic bands. The anthropometric measurements were esti-
+mated by height of each subject and used as input of the IMU soft-
+ware (Winter, 2009). IMUs measured three-dimensional
+orientations of all lower body segments as well as joint angle tra-
+jectories at a sampling rate of 60 Hz. Data was transmitted wire-
+lessly to a commercial Latitude E5470 laptop (Dell Computers,
+Round Rock, TX).
+The total setup time took approximately 10–20 min. All setup
+was performed immediately prior to the normally scheduled phys-
+ical therapy sessions. After donning sensors, participants were
+asked to maintain a straight standing position for five seconds to
+calibrate the system as recommended by proprietary IMU manu-
+facturer. Therapist assistance was provided for this calibration as
+necessary. Following calibration, participants performed typical
+1-hour training under the supervision of a physical therapist incor-
+porating a number of tasks including overground and treadmill
+walking. The experimenter used a cart to follow the participant
+and therapist to maintain wireless communication of sensor sig-
+nals (approximately 3–5 m away from the participant). After the
+session, all sensors were removed from the participant.
+2.3. Gait features and outcomes
+On average, approximately 45.5% of the duration of the 1-hour
+therapy session was dedicated to gait training. For each session, we
+sampled normal, straight overground walking (between 5 and 80
+strides depending on participant’s severity) at a comfortable speed
+to extract gait quality measures. Custom software was written in
+Table 1
+Demographics and clinical characteristics of participants.
+Patient # P1 P2 P3 P4 P5 P6
+Age (years) 61 59 68 68 52 27
+Sex M M M M F M
+BMI (kg/cm2
+) 29.6 25.8 28.7 28.2 25.8 40.5
+Affected side L L R R L R
+1st recording after admission (days) 15 5 6 7 20 31
+Recordings (sessions) 12 5 10 5 12 12
+Ankle foot orthosis (used sessions) – 5 10 – – 12
+Assistive device (used sessions) 1 5 3 5 10 11
+Baseline impairment (admission motor FIM score) 18 26 31 22 22 16
+BMI – body mass index, FIM – functional independence measure, M – male, F – female, L – left, R – right.
+2 S.Y. Shin et al./Journal of Biomechanics xxx (xxxx) xxx
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 3 ---
+MATLAB (Mathworks, Inc. R2016a, Natick, MA) to calculate the
+outcomes. The joint angle trajectories of the sampled gait portion
+were truncated and normalized into 100% of gait cycle from heel
+strike to heel strike of the left foot (Zeni Jr. et al., 2008). Fig. 1 illus-
+trates an example of recorded gait kinematics data from a session
+including bilateral joint angle trajectories of single gait cycle in
+sagittal plane. Outcomes were extracted by imposing the gait kine-
+matics data into a lower body kinematic model with the lower
+limb lengths estimated by the anthropometric data based on
+height of each individuals as described below (Winter, 2009).
+Spatiotemporal parameters included step length (SL) and step
+time (ST), defined as the linear distance between right and left feet,
+and the duration of each step, respectively (Fig. 2, left). Limb kine-
+matic parameters incorporated limb length (LL) (Chang et al.,
+2009), leg extension angle (LEA) (Peterson et al., 2010), and foot
+path area (FPA) (Banala et al., 2009) defined as the range of linear
+distance between hip and foot, the angle between a line from hip to
+the foot and vertical before toe-off, and area of foot pattern from
+hip in sagittal plane during gait cycle, respectively (Fig. 2, middle).
+Joint kinematic parameters were defined as the range of motion
+(RoM) from selected joint variables, including all three rotations
+of hip, knee flex/extension and ankle dorsi/plantarflexion (Fig. 2,
+right). All parameters involved affected and unaffected sides,
+enabling symmetry analysis.
+We selected gait speed as the main outcome measure represen-
+tative of functional gait recovery (Holleran et al., 2014; Hornby
+et al., 2016). The number of strides for each session was varied (be-
+tween 5 and 80 strides) due to different impairment levels within
+and between subjects. In each session, the average gait speed was
+calculated by dividing average stride distance by the average time
+of gait cycles. A simple correlation analysis showed a strong
+association between calculated gait speed and clinical outcome
+measure, the six-minute walk test (r = 0.91).
+2.4. Gait asymmetry measures
+2.4.1. Overall gait asymmetry
+Gait symmetry, and its inverse, asymmetry, are common mea-
+sures of gait quality (Ramakrishnan et al., 2018; Viteckova et al.,
+2018). In its simplest form, symmetry is represented by the ratio
+of stance time on each limb or step length (Balasubramanian
+et al., 2007). However, spatiotemporal asymmetry does not neces-
+sarily equate with asymmetry in other domains such as kinemat-
+ics. Here we combined all the aforementioned gait parameters
+into one asymmetry measure by employing the combined gait
+asymmetry metric (CGAM) (Ramakrishnan et al., 2018). The CGAM
+combines different asymmetry parameters using the Mahalanobis
+distance. Mahalanobis distance is a distance measure of a
+multi-dimensional data point in a data distribution space (De
+Maesschalck et al., 2000). Compared to Euclidean distance, the
+Mahalanobis distance takes covariance of data into account to
+standardize the scaling of distance measure in multi-dimensional
+space. The CGAM uses the Mahalanobis distance from ideal sym-
+metry (i.e., zero) to the asymmetry ratio obtained from gait param-
+eters. For each session, the asymmetry ratio of ith
+gait parameter
+was calculated with the asymmetry ratio index given by
+jarij ¼
+jUSi  ASij
+0:5ðUSi þ ASiÞ
+ð1Þ
+where USi and ASi are the ith
+gait parameter of unaffected and
+affected sides, respectively, and i represents each gait parameter.
+Note that the asymmetry ratio, jarij ¼ 0, has no asymmetry. The
+asymmetry of parameters from spatiotemporal, limb and joint kine-
+matic domains was then evaluated with the Mahalanobis dis-
+tance,Dm, given by
+Dm ¼
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+AR  S1
+ ART
+P
+ðS1
+Þ
+s
+ð2Þ
+where AR ¼ jar1j;;jarnj ½  is the vector of asymmetry ratios,
+S 2 Rnn
+is the covariance matrix of asymmetry ratio data, and n
+is the number of gait parameters.
+P
+ðS1
+Þ is the summation of the
+inverse covariance matrix to provide more of a weighted means
+approach to decrease the variability of results for the same gait
+parameters (Ramakrishnan et al., 2018). As a basis for comparison,
+we extracted the symmetric threshold based on the AR of our gait
+database (Yun et al., 2014) obtained from 113 healthy individuals
+walking at 3 km/h (Table 2). The symmetric threshold for CGAM
+was then calculated by combining those symmetric threshold val-
+ues of input gait parameters, and defined as ‘‘symmetric” walking
+if the Mahalanobis distance,Dm, was less than the symmetric
+threshold of CGAM.
+2.4.2. Asymmetry of individual gait parameters
+The asymmetry of individual parameters in spatiotemporal (SL,
+ST), limb (LL, LEA, FPA) and joint kinematic (RoMs) domains was
+then independently analyzed to explore the main contributor of
+overall gait asymmetry. AR was used to evaluate asymmetry of
+individual parameters. Note that with the absolute value in Eq.
+(1), the asymmetry ratio only indicates whether each parameter
+is asymmetric or not, without taking into account the direction
+of which side is greater. Similar to overall asymmetry, an asymme-
+try ratio less than the symmetric threshold value obtained from
+Table 2 was considered ‘‘symmetric” walking for the individual
+parameters.
+Fig. 1. Example joint angle trajectories of single gait cycle (left heel strike to heel strike) in sagittal plane (12th session of patient 5), hip flexion/extension (left), knee flexion/
+extension (middle), and ankle dorsi/plantarflexion (right).
+S.Y. Shin et al./Journal of Biomechanics xxx (xxxx) xxx 3
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 4 ---
+2.4.3. Limb vs. joint kinematics
+Each limb and joint kinematic parameter was transformed into
+a common space (i.e., domain) using the Mahalanobis distance
+metric, which was used in the overall asymmetry test (i.e., CGAM).
+In the limb vs. joint kinematics test, limb kinematic parameters (LL,
+LEA, FPA) and joint kinematic parameters (RoMs) were normalized
+and then combined with the Mahalanobis distance, respectively, in
+order to produce parameters from each limb and joint kinematic
+domain into one value per session. For each side, we examined
+how changes in each kinematic domain associated with changes
+in functional gait recovery (i.e., gait speed).
+2.5. Statistical analysis
+R version 3.4.1 (2017 The R foundation for Statistical Comput-
+ing) was used for the statistical analysis. For the analysis, 53 ses-
+sions from a total of 56 recording sessions were used, excluding
+outliers (8th session of P3, 9th session of P5, 2nd session of P6)
+with an exaggerated range of motion (<60°) at ankle dorsi/plan-
+tarflexion (e.g., distorted by magnetic interference of the IMUs).
+A linear mixed regression model was used to evaluate the rela-
+tionship between asymmetry of gait parameters and speed as a
+functional gait measure with significance level of a < 0:05. For
+the overall gait asymmetry test, the Mahalanobis distances of spa-
+tiotemporal, limb and joint kinematics were standardized and used
+as dependent variables. For the asymmetry test of individual
+parameters, the asymmetry ratio, jarij, of each gait parameter
+was used as a dependent variable. For both tests, gait speed and
+subject were used as fixed and random effects of the mixed model,
+respectively. In addition, a one-sided one-sample t-test was used to
+evaluate the asymmetry of overall and individual gait parameters
+at the maximum functional recovery with significance level of
+a < 0:05. The asymmetry ratio at maximum gait speed of each
+patient was extracted and compared with the symmetric threshold
+value for each gait parameter from Table 2.
+For the limb vs. joint kinematics test, the linear mixed regres-
+sion model was used to evaluate the relations between parameters
+of both kinematic domains and gait speed with significance level of
+a < 0:05. Coefficient of determination (R2
+) (Nakagawa and
+Schielzeth, 2013), Akaike information criteria (AIC), and Bayesian
+information criteria (BIC) were used to compare goodness-of-fit
+of the models.
+3. Results
+3.1. Asymmetry of overall gait parameters
+We first examined the relations of overall asymmetry over spa-
+tiotemporal, limb and joint kinematic domains and gait speed over
+the initial recovery phase of three months based on the CGAM.
+Fig. 3 illustrates changes in the Mahalanobis distances of spa-
+tiotemporal (left), limb (middle), and joint (right) kinematics
+across changing gait speeds, respectively. The results indicated that
+the asymmetry improved significantly in spatiotemporal (b = 0.
+47, p<0.01) and limb kinematic parameters (b = 0.36, p<0.05)
+whereas joint kinematics (b = 0.25, p = 0.14) revealed an improv-
+ing trend. At the session with maximum functional recovery (max-
+imum speed), spatiotemporal parameters (Dmax = 0.11, p=0.11) did
+not reveal significant asymmetry but limb (Dmax = 0.56, p<0.001)
+and joint (Dmax = 0.38, p<0.01) kinematic parameters remained sig-
+nificantly different (asymmetric) compared to the symmetric
+threshold. All results are summarized in Table 3.
+3.2. Asymmetry of individual gait parameters
+According to the overall asymmetry test, all gait parameters
+revealed improving trends but both limb and joint kinematic
+parameters remained asymmetric at the maximum functional
+recovery. Thus, we used linear mixed regression models and one-
+sided one-sample t-tests on individual gait parameters indepen-
+dently to further investigate major contributors of overall gait
+asymmetry. The results revealed that the asymmetry improved
+significantly at SL (b = 0.33, p < 0.05), LEA (b = 0.65, p < 0.01),
+and hip flex/extension (b = 0.15, p < 0.05). At maximum gait
+speed, all limb kinematic parameters including LEA
+(jarmaxj = 0.29, p < 0.05), LL (jarmaxj = 0.62, p < 0.01), and FPA
+(jarmaxj = 0.87, p < 0.01) and joint kinematic parameters including
+Fig. 2. Gait quality domains and their parameters. Spatiotemporal characteristics include step length and step time (left), limb kinematics include leg extension angle, limb
+length and foot path area (middle), and joint kinematics include range of selected joint motions (right).
+Table 2
+Symmetric threshold of gait parameters from gait database of 113 healthy individuals
+walking at 3 km/h.
+Domain Gait parameters jrhjð%Þ
+Spatiotemporal Step length 5.4
+Step time 6.1
+Limb kinematics Leg extension angle 0.6
+Limb length 2.5
+Foot path area 2.9
+Joint kinematics Hip Flex/Ex 1.9
+Hip Abd/Add 0.1
+Hip Int/Ext 1.2
+Knee Flex/Ex 2.7
+Ankle Dorsi/Plantar 7.8
+Flex/Ex – flex/extension, Abd/Add – abd/adduction, Int/Ext – int/external rotation,
+Dorsi/Plantar – dorsi/plantarflexion, jrhj – symmetry ratio threshold of individual
+gait parameters from healthy subjects.
+4 S.Y. Shin et al./Journal of Biomechanics xxx (xxxx) xxx
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 5 ---
+hip flex/extension (jarmaxj = 0.14, p < 0.05), hip abd/adduction
+(jarmaxj = 0.29, p < 0.05), hip int/external rotation (jarmaxj = 0.36,
+p < 0.01), and knee flex/extension (jarmaxj = 0.27, p < 0.05) remained
+significantly different (i.e. asymmetric) compared to the symmetric
+threshold (Table 4). As expected, both spatiotemporal parameters
+(SL and ST) did not show significant differences from the symmet-
+ric threshold.
+3.3. Limb kinematics vs. joint kinematics
+We examined whether limb kinematic parameters were prefer-
+entially associated with functional gait recovery compared to joint
+kinematics, consistent with the uncontrolled manifold hypothesis
+(Chang et al., 2009). For each side, we transformed both limb and
+joint kinematic parameters into a common space by combining
+all parameters of each kinematic domain using the Mahalanobis
+distance. A simple correlation analysis between limb and joint
+kinematic domains revealed r = 0.67 and r = 0.38 for unaffected
+and affected sides, respectively. The results revealed that all
+kinematic parameters in all domains of both sides significantly
+associated with gait speed (all p < 0.001). However, according to
+the goodness-of-fit measures, the variance accounted for of limb
+kinematic parameters (R2
+= 41.9%) was greater than in joint kine-
+matics (R2
+= 33.1%) at the affected side, whereas unaffected side
+showed a greater correlation in joint kinematics (R2
+= 57.6%) than
+limb kinematics (R2
+= 27.5%) with consistent trends in AIC and BIC
+(Table 5).
+4. Discussion
+Typical clinical outcomes focus more on gait function than qual-
+ity (Hornby et al., 2016), resulting in very little knowledge of how
+gait quality develops over the course of recovery. The primary goal
+of this study was to establish initial evidence regarding measure-
+ments of changes in gait quality over the early stage of recovery.
+We observed that asymmetry of gait parameters overall improved
+with gait function, but both limb and joint kinematics remained
+asymmetric at the maximum functional recovery. Second, leg
+extension and hip flex/extension were most associated with
+Fig. 3. Change in overall gait symmetry measures based on combined gait asymmetry metric (CGAM) including spatiotemporal characteristics (left), limb kinematics
+(middle), and joint kinematics (right) with gait speed. The dotted line is considered as the threshold for symmetric walking. The regression lines are based on linear mixed
+regression model (Table 2).
+Table 3
+Results of a linear mixed regression model based on association between combined gait asymmetry metric (CGAM, dependent variable) and gait speed (independent variable).
+The table also includes results of a one-sided, one-sample t-test of CGAM determining gait asymmetry at maximal gait speed (i.e. functional recovery).
+Domain Linear mixed regression One-sided one sample t-test
+b [95% CI] p-value Dmax[95% CI] p-value
+Spatiotemporal 0.47 [0.78, 0.15] < 0.01 0.11 [0.07, inf] 0.11
+Limb kinematics 0.36 [0.68, 0.04] < 0.05 0.56 [0.41, inf] < 0.001
+Joint kinematics 0.25 [0.59, 0.09] 0.14 0.38 [0.27, inf] < 0.01
+CI – confidence interval, b – slope of regression, Dmax – Mahalanobis distance at maximum functional gait recovery (max speed)
+Table 4
+Results of linear mixed regression models with asymmetry ratio of individual gait parameters (dependent variables) and gait speed (independent variable). Additional one-sided,
+one-sample t-tests of gait asymmetry ratio at maximal gait speed are also included.
+Domain Gait parameters Linear mixed regression One-sided one sample t-test
+b [95% CI] p-value jarmaxj[95% CI] p-value
+Spatiotemporal
+characteristics
+Step length 0.33 [0.60, 0.06] < 0.05 0.16 [0.04, inf] 0.07
+Step time 0.06 [0.16, 0.04] 0.26 0.07 [0.01, inf] 0.43
+Limb kinematics Leg extension angle 0.65 [1.05, 0.24] < 0.01 0.29 [0.03, inf] < 0.05
+Limb length 0.09 [0.40, 0.22] 0.55 0.62 [0.29, inf] < 0.01
+Foot path area 0.50 [1.04, 0.04] 0.07 0.87 [0.38, inf] < 0.01
+Joint kinematics Hip Flex/Ex 0.15 [0.30, 0.00] < 0.05 0.14 [0.06, inf] < 0.05
+Hip Abd/Add 0.06 [0.36, 0.23] 0.68 0.29 [0.03, inf] < 0.05
+Hip Int/Ext 0.02 [0.27, 0.24] 0.90 0.36 [0.20, inf] < 0.01
+Knee Flex/Ex 0.22 [0.45, 0.00] 0.05 0.27 [0.03, inf] < 0.05
+Ankle Dorsi/Plantar 0.17 [0.43, 0.08] 0.18 0.30 [0.08, inf] 0.05
+Flex/Ex – flex/extension, Abd/Add – abd/adduction, Int/Ext – int/external rotation, Dorsi/Plantar – dorsi/plantarflexion, b – slope of regression, jarmaxj – asymmetry ratio at
+maximum functional gait recovery (max speed).
+S.Y. Shin et al./Journal of Biomechanics xxx (xxxx) xxx 5
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 6 ---
+improved asymmetry, but many gait parameters remained asym-
+metric at the maximum functional recovery. Third, limb kinemat-
+ics of the impaired side was preferentially associated with
+functional gait recovery over joint kinematics. These results offer
+preliminary evidence justifying the importance of gait quality in
+stroke recovery and indicate a specific set of parameters that
+may be more critical than others in the early recovery process.
+Asymmetry in kinematics is often underreported in literature,
+perhaps due to the difficulties in measuring kinematic data in clin-
+ical settings. Based on our longitudinally measured gait kinematics
+data from wearable IMUs, the spatiotemporal as well as kinematic
+asymmetries were captured and evaluated along with the
+improved gait speed over the course of early recovery. The results
+of our overall asymmetry test indicated that all measures of asym-
+metry improved with gait speed (Fig. 3). This result agrees with
+earlier work that found faster and more symmetric walking
+showed lower metabolic cost than merely walking faster or more
+symmetrically (Awad et al., 2015).
+We observed that leg extension angle and hip flex/extension
+asymmetry measures were most associated with gait speed. This
+suggests that the leg extension and hip flex/extension may be
+important predictors of functional gait recovery. These results
+agree with previous studies that found leg and hip extension were
+significantly associated with propulsive forces during walking as
+well as gait speed (Kim and Eng, 2004; Peterson et al., 2010). How-
+ever, all parameters other than ankle dorsi/plantarflexion
+remained significantly asymmetric compared to the healthy sym-
+metric threshold at the maximum gait speed (Table 4). This could
+mean that the underlying control system involved in gait recovery
+prioritizes motion at the hip and leg extension over other gait
+parameters. It may also suggest that there is still a room to
+improve on those asymmetric gait parameters and additional ther-
+apeutic efforts need to be made to achieve a complete recovery
+with symmetric walking.
+While all kinematic domains of both sides correlated with gait
+speed, the results of goodness-of-fit measure revealed that the
+variance explained by limb kinematic parameters (R2
+= 41.9%)
+was greater than joint kinematics (R2
+= 33.1%) in the affected side,
+indicating stronger association in limb kinematics with gait speed
+over the joint kinematics on impaired side (see Table 5). The
+goodness-of-fit measure for limb kinematics is similar to a clini-
+cally relevant relationship between steps per session and recovery
+(R2
+= 42%) found by Hornby et al. (2016). We also observed an 8.8%
+difference between goodness-of-fit measures of limb and joint
+kinematics. While there is no basis of comparison to judge the
+magnitude of this difference, the result itself suggests that post-
+stroke individuals may preferentially coordinate limb function
+using the limb kinematics and compensate in the joint kinematics.
+These findings are consistent with the concept of an uncontrolled
+manifold in joint kinematics space found previously in animal
+models (Bauman and Chang, 2013; Chang et al., 2009).
+In the unaffected side, joint kinematic parameters (R2
+= 57.6%)
+revealed greater explained variance than limb kinematics
+(R2
+= 27.5%). These results are contrary to the trends observed in
+the affected limb and further, would seem contrary to the uncon-
+trolled manifold hypothesis. While feasible that the uncontrolled
+manifold hypothesis is not an ideal model, this finding may be
+explained by greater residual function in the limb kinematics in
+the unaffected limb compared to joint kinematics. Indeed, our
+additional analysis revealed that the intercept of the unaffected
+limb kinematics (0.39) was over two times greater than that of
+the affected side (0.18) (Supplementary Fig. 1). This indicates that
+a ceiling effect in the limb kinematics of the unaffected side may
+reduce its explanatory ability. These results may provide insight
+into how to interpret kinematic biomarkers of recovery.
+This study represents a proof-of-concept to show how measures
+of gait quality associate with changes in gait function in the most
+critical stage of recovery. However, results need to be interpreted
+with an important proviso. This study was limited to a small sam-
+ple size of six patients with a restricted range of impairments (only
+individuals who were able to walk within one month post-injury).
+The study was also conducted at the same hospital with similar
+training techniques. Thus, we cannot generalize these results to a
+larger population of stroke patients. However, our data show the
+feasibility of unobtrusively recording gait during therapy longitu-
+dinally and offer a framework for how it can help improve our
+understanding of recovery. We expect this study will justify more
+expanded research on gait quality with a larger post-stroke popu-
+lation for more reliable generalization.
+Another important advance of this work is providing a novel
+methodology to track gait quality by measuring joint kinematics
+over the course of the initial recovery stage. However, measuring
+joint kinematics is relatively more sensitive to errors than other
+conventional gait measures such as gait speed or spatiotemporal
+characteristics. Typical drawbacks of IMUs, magnetic distortion
+(De Vries et al., 2009) and improper calibration in a straight stand-
+ing posture, may have influenced our results. To mitigate this
+issues, we used an IMU motion capture system specifically devel-
+oped for measuring kinematics (Paulich et al., 2018) and validated
+in a laboratory environment (Lee et al., 2019). Recalibration was
+performed regularly by the experimenter based on visual inspec-
+tion, although without any template to compare, it is possible
+there were some errors in calibration. Given range-of-motion-
+based outcome measures, it is unlikely that calibration issues sub-
+stantially affected our results. We expect further advances in
+motion capture technology will help to measure more accurate
+kinematics data, providing more detailed and reliable results of
+characterizing post-stroke gait.
+5. Conclusions
+The purpose of this observational study was to monitor changes
+in gait quality with functional gait recovery longitudinally over the
+initial recovery phase by unobtrusively measuring full lower body
+kinematics. We observed that while post-stroke individuals
+Table 5
+Results of linear mixed regression models with Mahalanobis magnitude of limb and joint kinematic parameters at unaffected and affected sides (dependent variables) and gait
+speed (independent variable).
+Side Kinematic domain Linear mixed regression
+Slope [95% CI] R2 AIC BIC
+Unaffected side Limb kinematics 0.53 [0.26, 0.81]***
+27.5% 139.7 147.6
+Joint kinematics 0.77 [0.56, 0.97]***
+57.6% 111.0 118.8
+Affected side Limb kinematics 0.79 [0.49, 1.10]***
+41.9% 131.4 139.2
+Joint kinematics 0.58 [0.35, 0.81]***
+33.1% 135.7 143.6
+***
+p < 0:001, R2
+– coefficient of determination, AIC – Akaike information criteria, BIC – Bayesian information criteria.
+6 S.Y. Shin et al./Journal of Biomechanics xxx (xxxx) xxx
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 7 ---
+exhibited overall improvements in gait quality with gait function,
+symmetry did not fully recover. We conclude that using inertial
+motion capture to longitudinally observe gait quality is feasible
+and may provide a more holistic representation of recovery. These
+initial results justify further research on monitoring gait quality
+with a larger clinical study.
+Declaration of Competing Interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared
+to influence the work reported in this paper.
+Acknowledgments
+This project was funded by Mission Connect, #015-106.
+Appendix A. Supplementary material
+Supplementary data to this article can be found online at
+https://doi.org/10.1016/j.jbiomech.2020.109761.
+References
+Awad, L.N., Palmer, J.A., Pohlig, R.T., Binder-Macleod, S.A., Reisman, D.S., 2015.
+Walking speed and step length asymmetry modify the energy cost of walking
+after stroke. Neurorehabil. Neural Repair 29, 416–423.
+Balasubramanian, C.K., Bowden, M.G., Neptune, R.R., Kautz, S.A., 2007. Relationship
+between step length asymmetry and walking performance in subjects with
+chronic hemiparesis. Arch. Phys. Med. Rehabil. 88, 43–49.
+Banala, S.K., Kim, S.H., Agrawal, S.K., Scholz, J.P., 2009. Robot assisted gait training
+with active leg exoskeleton (ALEX). IEEE Trans. Neural Syst. Rehabil. Eng. 17, 2–
+8.
+Bauman, J.M., Chang, Y.-H., 2013. Rules to limp by: joint compensation conserves
+limb function after peripheral nerve injury. Biol. Lett. 9, 20130484.
+Chang, Y.-H., Auyang, A.G., Scholz, J.P., Nichols, T.R., 2009. Whole limb kinematics
+are preferentially conserved over individual joint kinematics after peripheral
+nerve injury. J. Exp. Biol. 212, 3511–3521.
+De Maesschalck, R., Jouan-Rimbaud, D., Massart, D.L., 2000. The mahalanobis
+distance. Chemom. Intell. Lab. Syst. 50, 1–18.
+De Vries, W.H.K., Veeger, H.E.J., Baten, C.T.M., Van Der Helm, F.C.T., 2009. Magnetic
+distortion in motion labs, implications for validating inertial magnetic sensors.
+Gait Posture 29, 535–541.
+Enright, P.L., 2003. The six-minute walk test. Respir. Care 48, 783–785.
+Finley, J.M., Bastian, A.J., Gottschall, J.S., 2013. Learning to be economical: the energy
+cost of walking tracks motor adaptation. J. Physiol. 591, 1081–1095.
+Holleran, C.L., Straube, D.D., Kinnaird, C.R., Leddy, A.L., Hornby, T.G., 2014.
+Feasibility and potential efficacy of high-intensity stepping training in
+variable contexts in subacute and chronic stroke. Neurorehabil. Neural Repair
+28, 643–651.
+Hornby, T.G., Holleran, C.L., Hennessy, P.W., Leddy, A.L., Connolly, M., Camardo, J.,
+Woodward, J., Mahtani, G., Lovell, L., Roth, E.J., 2016. Variable intensive early
+walking poststroke (VIEWS): a randomized controlled trial. Neurorehabil.
+Neural Repair 30, 440–450. https://doi.org/10.1177/1545968315604396.
+Jones, T.A., 2017. Motor compensation and its effects on neural reorganization after
+stroke. Nat. Rev. Neurosci. 18, 267.
+Kim, C.M., Eng, J.J., 2004. Magnitude and pattern of 3D kinematic and kinetic gait
+profiles in persons with stroke: relationship to walking speed. Gait Posture 20,
+140–146.
+Lee, J., Shin, S.Y., Ghorpade, G., Akbas, T., Sulzer, J., 2019. Sensitivity comparison of
+inertial to optical motion capture during gait: implications for tracking
+recovery, in: 2019 IEEE 16th International Conference on Rehabilitation
+Robotics (ICORR). IEEE, pp. 139–144.
+Levin, M.F., Kleim, J.A., Wolf, S.L., 2009. What do motor ‘‘recovery” and
+‘‘compensation” mean in patients following stroke?. Neurorehabil. Neural
+Repair 23, 313–319.
+Nakagawa, S., Schielzeth, H., 2013. A general and simple method for obtaining R2
+from generalized linear mixed-effects models. Methods Ecol. Evol. 4, 133–142.
+Patterson, K.K., Gage, W.H., Brooks, D., Black, S.E., McIlroy, W.E., 2010. Evaluation of
+gait symmetry after stroke: a comparison of current methods and
+recommendations for standardization. Gait Posture 31, 241–246.
+Patterson, K.K., Mansfield, A., Biasin, L., Brunton, K., Inness, E.L., McIlroy, W.E., 2015.
+Longitudinal changes in poststroke spatiotemporal gait asymmetry over
+inpatient rehabilitation. Neurorehabil. Neural Repair 29, 153–162.
+Paulich, M., Schepers, M., Rudigkeit, N., Bellusci, G., 2018. Xsens MTw Awinda:
+Miniature Wireless Inertial-magnetic Motion Tracker for Highly Accurate 3D
+Kinematic Applications. Xsens, Enschede Neth.
+Perry, J., Burnfield, J.M., 1992. Gait Analysis: Normal and Pathological Function.
+Peterson, C.L., Cheng, J., Kautz, S.A., Neptune, R.R., 2010. Leg extension is an
+important predictor of paretic leg propulsion in hemiparetic walking. Gait
+Posture 32, 451–456.
+Podsiadlo, D., Richardson, S., 1991. The timed ‘‘Up & Go”: a test of basic functional
+mobility for frail elderly persons. J. Am. Geriatr. Soc. 39, 142–148.
+Ramakrishnan, T., Lahiff, C.-A., Reed, K.B., 2018. Comparing gait with multiple
+physical asymmetries using consolidated metrics. Front. Neurorobotics 12, 2.
+Scholz, J.P., Schöner, G., 1999. The uncontrolled manifold concept: identifying
+control variables for a functional task. Exp. Brain Res. 126, 289–306.
+Tilson, J.K., Sullivan, K.J., Cen, S.Y., Rose, D.K., Koradia, C.H., Azen, S.P., Duncan, P.W.,
+Team, L.E.A.P.S. (LEAPS) I., 2010. Meaningful gait speed improvement during the
+first 60 days poststroke: minimal clinically important difference. Phys. Ther. 90,
+196–208.
+Viteckova, S., Kutilek, P., Svoboda, Z., Krupicka, R., Kauler, J., Szabo, Z., 2018. Gait
+symmetry measures: a review of current and prospective methods. Biomed.
+Signal Process. Control 42, 89–100.
+Weerdesteyn, V., de Niet, M., van Duijnhoven, H.J., Geurts, A.C., 2008. Falls in
+individuals with stroke. J. Rehabil. Res. Dev. 45, 1195–1214.
+Winter, D.A., 2009. Biomechanics and Motor Control of Human Movement. John
+Wiley & Sons.
+Woolley, S.M., 2001. Characteristics of gait in hemiplegia. Top. Stroke Rehabil. 7, 1–
+18.
+Yun, Y., Kim, H.-C., Shin, S.Y., Lee, J., Deshpande, A.D., Kim, C., 2014. Statistical
+method for prediction of gait kinematics with Gaussian process regression. J.
+Biomech. 47, 186–192.
+Zeni Jr, J.A., Richards, J.G., Higginson, J.S., 2008. Two simple methods for
+determining gait events during treadmill and overground walking using
+kinematic data. Gait Posture 27, 710–714.
+S.Y. Shin et al./Journal of Biomechanics xxx (xxxx) xxx 7
+Please cite this article as: S. Y. Shin, R. K. Lee, P. Spicer et al., Does kinematic gait quality improve with functional gait recovery? A longitudinal pilot study
+on early post-stroke individuals, Journal of Biomechanics, https://doi.org/10.1016/j.jbiomech.2020.109761
+
+--- PAGE 8 ---

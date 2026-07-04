@@ -1,0 +1,782 @@
+
+--- PAGE 1 ---
+ACLD patients exhibit additional
+knee kinematic asymmetries at
+the speed level of healthy
+subjects
+Lingchuang Kong1†
+, Tao Yang2†
+, Qing Wang1,3
+, Yongliang Ou1
+,
+Huayang Huang1
+, Wenhan Huang2
+, Tao Zhang1
+*, Yu Zhang2,4
+*
+and Xiaolong Zeng2,4
+*
+1
+Department of Orthopaedics, General Hospital of Southern Theater Command, Guangzhou, China,
+2
+Department of Orthopaedics, Guangdong Provincial People’s Hospital, Guangdong Academy of
+Medical Sciences, Guangzhou, China, 3
+Department of Orthopaedic Surgery, The Second Afﬁliated
+Hospital, Guangzhou Medical University, Guangzhou, China, 4
+School of Medicine, South China
+University of Technology, Guangzhou, China
+Anteriorcruciate ligament deﬁciency (ACLD) patients tendto walkslowly but try
+tocatchupwiththespeedlevelofhealthysubjectsdaily.Exploringtheeffectsof
+the walking speed level of healthy subjects on the ACLD patients’ knee
+kinematics is important to improving non-operative treatments and delaying
+the progression of posttraumatic knee osteoarthritis. This study aimed to
+explore whether healthy controls’ walking speed level leads to additional
+knee kinematic asymmetries in patients with ACLD. 27 ACLD patients and
+29 healthy controls were recruited for the study. The ACLD patients walked
+at two levels of walking speed, including self-selected and healthy controls’
+walking speed levels. A three-dimensional gait analysis system was used to
+collect their knee kinematic data. ACLD patients exhibited more kinematic
+asymmetries when walking at healthy controls’ walking speed level than at their
+self-selected speeds. The kinematic asymmetries included increased posterior
+tibial translation (4.6 mm) and anteroposterior tibial ROM (3.9 mm), abduction
+angle (1.5°), and distal tibial translation (3.2 mm) asymmetries (p < 0.05). Our
+ﬁndings are meaningful for developing non-operative treatment strategies for
+patients with ACLD. To get fewer knee kinematic asymmetries, self-selected
+walking speed could be suggested for patients with ACLD daily rather than the
+speed levels of healthy subjects.
+KEYWORDS
+anterior cruciate ligament deﬁciency, non-operative treatment, walking speed,
+kinematic asymmetries, knee
+OPEN ACCESS
+EDITED BY
+Bernardo Innocenti,
+Université Libre de Bruxelles, Belgium
+REVIEWED BY
+Wei Zeng,
+Longyan University, China
+Ahmed Imran,
+Ajman University, United Arab Emirates
+*CORRESPONDENCE
+Tao Zhang,
+gzlupus@126.com
+Yu Zhang,
+luck_2001@126.com
+Xiaolong Zeng,
+xiaolzeng@126.com
+†
+These authors have contributed equally
+to this work
+SPECIALTY SECTION
+This article was submitted to
+Biomechanics,
+a section of the journal
+Frontiers in Bioengineering and
+Biotechnology
+RECEIVED 28 April 2022
+ACCEPTED 21 July 2022
+PUBLISHED 23 August 2022
+CITATION
+Kong L, Yang T, Wang Q, Ou Y, Huang H,
+Huang W, Zhang T, Zhang Y and Zeng X
+(2022), ACLD patients exhibit additional
+knee kinematic asymmetries at the
+speed level of healthy subjects.
+Front. Bioeng. Biotechnol. 10:930722.
+doi: 10.3389/fbioe.2022.930722
+COPYRIGHT
+© 2022 Kong, Yang, Wang, Ou, Huang,
+Huang, Zhang, Zhang and Zeng. This is
+an open-access article distributed
+under the terms of the Creative
+Commons Attribution License (CC BY).
+The use, distribution or reproduction in
+other forums is permitted, provided the
+original author(s) and the copyright
+owner(s) are credited and that the
+original publication in this journal is
+cited, in accordance with accepted
+academic practice. No use, distribution
+orreproductionispermittedwhichdoes
+not comply with these terms.
+Frontiers in Bioengineering and Biotechnology frontiersin.org 01
+TYPE Original Research
+PUBLISHED 23 August 2022
+DOI 10.3389/fbioe.2022.930722
+
+--- PAGE 2 ---
+Introduction
+The anterior cruciate ligament (ACL) is one of the dominant
+structures stabilizing the native knee joint. Over the past decades,
+the prevalence of anterior cruciate ligament deﬁciency (ACLD)
+has been increasing (Herzog et al., 2018). In addition to ACL
+reconstruction, nonoperative treatments are acceptable in
+patients with ACLD (Grindem et al., 2012; Grindem et al.,
+2014; Diermeier et al., 2021). A randomized controlled trial
+by Frobell et al. showed no signiﬁcant clinical differences in
+both nonoperative and operative treatments in active young
+patients with isolated ACLD concerning patient-reported
+outcomes in the follow-up time of up to 5 years (Frobell et al.,
+2010; Frobell et al., 2013). Nevertheless, abnormal knee
+mechanics and long-term health problems (e.g., posttraumatic
+osteoarthritis and PTOA) remain concerns among ACLD
+patients. Knee kinematic asymmetries during walking are
+important mechanical alterations in ACLD patients and have
+been explored by researchers for decades (Von Porat et al., 2007;
+Tashman et al., 2008; Scanlan et al., 2010; Zampeli et al., 2018;
+Agostinone et al., 2021; Zampeli et al., 2021). Furthermore, knee
+kinematic asymmetries have been widely reported to be
+correlated with the development of PTOA (Stergiou et al.,
+2007; Andriacchi et al., 2009; Haughom et al., 2012; Li et al.,
+2018). Scholars have formed evidence-based theories that
+kinematic alterations during gait may play an important role
+in the onset of PTOA (Stergiou et al., 2007; Andriacchi et al.,
+2009).
+Walking speed is a daily, basic, and relevant living issue for
+patients. Patients with knee diseases tend to walk more slowly
+than healthy subjects due to their functional limitations and
+protective strategies for knee health (Gibbs et al., 1993; Fransen
+et al., 1997; Stergiou et al., 2004; Zeni and Higginson, 2009;
+Huang et al., 2017). Zeni and Higginson suggested that
+decreasing their walking speeds may be an effective strategy
+for ACLR patients to relieve gait asymmetries and promote knee
+cartilage health (Zeni and Higginson, 2009). However, most
+ACLD patients are young and active people who often have
+busy work lives and fast-paced lives. For example, they might
+match the walking speeds of their healthy peers. As a result, they
+often struggle when they walk faster than their self-selected
+comfortable speed. Walking speed is reported to signiﬁcantly
+affect knee walking kinematics (Hanlon and Anderson, 2006;
+Chehab et al., 2017). The knee kinematics of ACLD patients may
+also be signiﬁcantly inﬂuenced by walking speed. Knee kinematic
+alterations may lead to the pathological progression of
+osteoarthrosis (Stergiou et al., 2007; Andriacchi et al., 2009).
+The knee kinematic changes induced bygait speed may become a
+concerning issue among ACLD patients.
+Some researchers have explored the effects of walking speed
+on the gait asymmetries of ACL-deﬁcient subjects (Tibone et al.,
+1986; Stergiou et al., 2004; Fuentes et al., 2011; Yim et al., 2015;
+Nazary-Moghadam etal.,2019; Stoelbenetal., 2019;Garcia etal.,
+2021). Nazary-Moghadam et al. found that fast walking speeds
+can signiﬁcantly decrease ﬂexion-extension Lyapunov Exponent
+(a functional stability parameter) in ACLD patients compared to
+healthy controls (Nazary-Moghadam et al., 2019). They
+suggested walking fast can be challenging for patients with
+ACLD (Nazary-Moghadam et al., 2019). Fuentes et al. found
+that ACLD knees could not exhibit pivot-shift avoidance gait to
+prevent anterolateral rotatory knee instability during the
+terminal stance phase while walking fast. They suggested that
+ACLD patients cannot adapt their knee biomechanics as
+effectively during fast walking as healthy controls (Fuentes
+et al., 2011). However, there is limited data on whether fast
+walking can increase kinematic disorders in ACLD patients.
+Walking fast is highly demanding concerning knee function.
+Itwasreported thatwalking as fastashealthycontrols mayreveal
+gait asymmetries and functional disorders among patients with
+ACLD (Tibone et al., 1986; Fuentes et al., 2011; Garcia et al.,
+2021). It is also possible that additional knee kinematic
+asymmetries could be revealed among ACLD patients when
+they are walking fast. This could enhance the understanding
+of the biomechanics of ACLD knees and provide new
+information for non-operative ACLD therapy.
+Above all, it remains unclear whether walking at the speed
+level of healthy individuals could contribute to knee kinematic
+asymmetries in patients with ACLD. Level walking is the most
+frequent and relevant functional activity. The study explored
+whether walking speed levels of healthy individuals signiﬁcantly
+would increase knee kinematic asymmetries of ACLD patients.
+ACLD patients are characterized by anteroposterior disorders.
+We hypothesized that the walking speed level of healthy subjects
+could increase anteroposterior knee kinematic asymmetries.
+Methods
+Subjects
+The study was approved by the ethics committee of the
+hospital. Informed consent was obtained from each participant.
+The inclusion criteria for patients were the following: (1) the
+presence of unilateral, isolated ACLD conﬁrmed via magnetic
+resonance imaging, (2) no history of multi-ligament or meniscus
+injuries, and (3) no radiographic sign of PTOA. Patients were
+excluded if they had (1) musculoskeletal or neurological diseases
+that affect the lower limbs or (2) surgery or severe lower limb
+injury or deformity before/after ACL injury. Healthy controls
+were recruited if they had (1) no histories of major injury or
+surgeryinthelowerlimbsand(2)nokneesymptomsinthelower
+limbs. Healthy controls were excluded if they had
+musculoskeletal or neurological diseases that affect the lower
+limbs. A total of 27 ACLD subjects (24 males and 3 females) and
+29 healthy controls (19 males and 10 females) passed the
+inclusion and exclusion criteria and were recruited for the
+Frontiers in Bioengineering and Biotechnology frontiersin.org 02
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 3 ---
+study. There were no signiﬁcant demographic differences
+between the ACLD patients and healthy controls (ACLD vs.
+healthy controls: age, 27.3 ± 9.1 years old vs. 25.4 ± 2.0, p = 0.293;
+gender 24 (male):3 (female) vs. 19:10, p = 0.058; BMI, 21.3 ±
+1.6 vs. 20.6 ± 2.0, p = 0.169).
+Devices and experiment procedures
+Kinematic knee data were collected from the participants
+using a three-dimensional (3D) motion capture gait system
+(Opti_Knee, Innomotion, Shanghai, China) (Zhang et al.,
+2015). The system was composed of a working station
+computer, a surgical navigation stereo infrared tracking device
+(NDI Polaris Spectra, Northern Digital, Canada), two sets of
+markers, a high-speed optical camera, and a handheld digitizing
+probe. The sampling frequency was 60 Hz. The surgical
+navigation stereo infrared tracking device was reported to
+have an accuracy level of 0.3 mm root mean square (RMS)
+(Elfring et al., 2010). The gait system has a repeatability of
+less than 1.3°in rotation and 0.9 mm in translation (Zhang
+et al., 2016).
+Before data collection, the self-selected gait speeds of the
+ACLD patients (ACLD speed) and healthy controls (the same
+speed as healthy people) were determined using the methods
+reported by Dingwell et al. with a slight modiﬁcation (Dingwell
+and Marin, 2006; Nazary-Moghadam et al., 2019). Each subject
+walked on a level motorized bi-directional treadmill for 5 min to
+adapt to the treadmill. The average healthy subjects’ and ACLD
+and healthy subjects’ self-selected walking speeds were
+determined by beginning from a slow treadmill speed
+(i.e., 1 km/h) and slowly raising the speed until the subject
+stated that the speed was greater than their preferred walking
+speed. The treadmill speed was then decreased until the subject
+stated that the speed was slower than their preferred walking
+speed. This procedure was repeated three times. The average
+speeds of the three “faster” and three “slower” speed levels were
+calculated and discussed with each subject to determine their
+average preferred walking speed levels. The average self-selected
+walking speed of the healthy controls was 4.03 ± 0.19 km/h. The
+speed level of 4 km/h (nearest 4.03 ± 0.19 km/h) was selected as
+the healthy subjects’ walking speed level (normal speed). The
+average self-selected speed of ACLD subjects was 2.93 ± 0.27 km/
+h (ACLD speed). The ﬂow chart is exhibited in Figure 1.
+The healthy controls’ knee kinematic data were collected
+while they walked at their self-selected walking speeds. The
+ACLD patients’ knee kinematic data were collected while they
+walked at self-selected speeds and the speed level of healthy
+controls(4 km/h,normalspeed),respectively.Thedatacollecting
+procedure wasasfollows:(1)twosetsofmarkerswerefastenedto
+the subject, and a handheld digitizing probe was used to identify
+bony landmarks to set up a personalized 3D coordinate system of
+the tibia relative to the femur with the subject in a neutral
+standing position (Zhang et al., 2015); (2) the healthy controls
+were tested with the same speed as healthy controls and the
+ACLD patients were tested at both theACLD speed and the same
+speed as healthy peoples in random order on the treadmill; (3)
+before data were collected, the subjects walked on a treadmill for
+1 min to ensure their gait was stable, and then kinematic data
+were collected while the subjects walked on the treadmill
+(Figure 1D) for 15 s (about 15 gait cycles, GCs); (4) the time
+between the tests at the two gait speeds for each ACLD subject
+was 5 min to avoid the inﬂuence of the previous test and fatigue
+effects.
+The system automatically averaged the kinematics from all
+the gait cycles (about 15 cycles) into an averaged gait cycle. The
+kinematic knee data included three angular parameters and three
+translational parameters. The three angular parameters were
+adduction/abduction angle (degrees, °), ﬂexion/extension angle
+(degrees, °), and internal/external rotation angle (degrees, °). The
+three translational parameters were anterior/posterior tibial
+translation (millimeters, mm), distal/proximal tibial translation
+(millimeters, mm), and medial/lateral tibial translation
+(millimeters, mm).
+Statistical analysis
+One-way ANOVA was undertaken to determine which parts
+of gaitphases ofknee kinematicswere signiﬁcant between groups
+using SPSS version 22.0 (SPSS, Chicago, IL, United States). Then
+the averages of knee kinematics of the affected phases and range
+of motions (ROM) among groups were compared via One-way
+ANOVA and the posthoc tests, Dunnett-t methods (healthy
+controls were set as the reference group).
+Inapilotstudy,10subjects(5ACLDsubjectsandﬁvehealthy
+controls) were recruited for sample size calculation via PASS
+version 15.0 (NCSS, Kaysville, Utah, United States). We selected
+the range of motion (ROM) of anteroposterior translation to
+calculate the sample size. The average anteroposterior ROM of
+FIGURE 1
+The scene of the experiment ﬂow chart.
+Frontiers in Bioengineering and Biotechnology frontiersin.org 03
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 4 ---
+healthycontrolswas12.3 mm.TheaverageanteroposteriorROM
+of ACLD patients at the ACLD walking speed level was 16.0 mm,
+whereas the average anteroposterior ROM of ACLD patients
+while walking at the speed level of healthy people was 18.9 mm.
+The standard deviation of the aforementioned data was 3.5 mm.
+The power (1-β) requirement was set to 90%. The signiﬁcance
+level was set to 0.05. The results showed that a sample size of at
+leastnine patientsineachgroupachieved 93.04%power todetect
+signiﬁcant differences in anteroposterior translation ROM
+among healthy subjects, ACLD patients with ACLD speed,
+and ACLD patients with the speed level of healthy subjects.
+Therefore, the recruited number of 27 ACLD patients and
+29 healthy controls met the sample size requirement for this
+study.
+Results
+Inthesagittalplane (Figure2),ACLDpatientsatself-selected
+speeds had smaller knee ﬂexion angles than healthy controls
+during gait (14–24% GC, 5.6°, p < 0.05 & 54–95% GC, 10.3°, p <
+0.05, Figures 2A,D). In contrast, ACLD patients at normal speed
+(4 km/h) had no signiﬁcant decreased knee ﬂexion angle during
+gait (p > 0.05, Figures 2A,D). The ROM of ﬂexion angle of ACLD
+patients at self-selected speeds was smaller than that of healthy
+controls (11.9°, p < 0.05, Figure 2C), and the ROM of ﬂexion
+angle of ACLD patients at normal speed was smaller than that of
+healthycontrols(5.5°,p<0.05,Figure2C).ACLDpatientsatself-
+selected speeds had greater posterior tibial translation than
+healthy controls during gait (3.4 mm, p < 0.05), and ACLD
+patients had much greater posterior tibial translation than
+healthy controls (4.6 mm, p < 0.05) during 54–91% GC
+(Figures 2B,E). The ROM of anteroposterior translation of
+ACLD patients at normal speed was greater than that of
+healthy controls (3.9 mm, p < 0.05, Figure 2C). In contrast,
+there was no signiﬁcant difference between ACLD patients at
+ACLD speed and healthy controls (p > 0.05, Figure 2C).
+In the coronal plane, the ACLD patients at normal speed had
+greater abduction angles than the healthy controls (8–14% GC,
+1.5°, p < 0.05 & 19–55% GC, 1.5°, p < 0.05, Figures 3A,D). In
+contrast, there was no signiﬁcant difference between the ACLD
+patients at self-selected speeds and the healthy controls (p > 0.05,
+FIGURE 2
+Sagittal knee kinematic alterations of healthy controls and ACLD patients during gait. Chart (A,D) show walking knee ﬂexion angle alterations of
+ACLD patients at ACLD speed and the speed level of healthy controls (normal speed) compared to healthy controls. Chart (B,E) show walking
+anteroposterior tibial translation alterations of ACLD patients at ACLD speed and the speed level of healthy controls (normal speed) compared to
+healthy controls. Chart (C) shows the range of motion of ﬂexion angle and anteroposterior tibial translation of ACLD patients compared to
+healthy controls during walking. # Signiﬁcant kinematic differences were found in ACLD patients who walked at ACLD speed compared to healthy
+controls. * Signiﬁcant kinematic differences were found in ACLD patients who walked at the same speed level as healthy controls (Normal speed)
+compared to healthy controls.
+Frontiers in Bioengineering and Biotechnology frontiersin.org 04
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 5 ---
+Figures 3A,D). The ROM of adduction angle of ACLD patients at
+self-selected speeds was smaller than that of healthy controls
+(1.9°, p < 0.05, Figure 3C), but there was no difference in
+adduction ROM between ACLD patients at normal speed and
+healthy controls (p > 0.05, Figure 3C). There was no signiﬁcance
+of mediolateral translation among healthy controls, ACLD
+patients at self-selected speed and normal speed (p > 0.05,
+Figures 3B,C).
+In the transverse plane (Figure 4), the ACLD patients at
+self-selected speeds exhibited greater internal tibial rotation
+angles than the healthy controls (1–15% GC, 3.4°, p < 0.05 &
+97–100% GC, 3.5°, p < 0.05, Figures 4A,D). In contrast, there
+was no signiﬁcant difference between ACLD patients at
+normal speed and healthy controls (p > 0.05, Figures
+4A,D). ACLD patients at self-selected speeds exhibited no
+signiﬁcant difference in distal/proximal translation
+compared to healthy controls. In contrast, ACLD patients
+at normal speed had greater distal tibial translation than
+healthy controls (50–54% GC, 2.4mm, p < 0.05, Figures
+4B,E). The ROM of distal/proximal translation of ACLD
+patients at self-selected speeds exhibited no signiﬁcant
+difference compared to healthy controls (p > 0.05,
+Figure 4C), but ACLD patients at normal speed had
+greater distal/proximal translation than healthy controls
+(3.2 mm, p < 0.05, Figure 4C).
+Discussion
+Non-operative treatment of ACLD has been promoted as
+an acceptable choice for patients without the high
+requirement of returning to sports (Diermeier et al.,
+2021). However, how to delay the progression of PTOA is
+an essential issue to be explored. Walking is the most
+frequent daily knee functional activity. Most ACLD
+patients are young and active people who often have busy
+work and fast-paced lives. As a result, they often struggle to
+walk faster than their self-selected comfortable speed to
+catch the speed of healthy subjects. Nevertheless, knee
+walking kinematic asymmetries have been reported to be
+factors in the progression of PTOA (Chaudhari et al., 2008;
+Andriacchi et al., 2009; Zaid et al., 2015). Walking speed
+FIGURE 3
+Coronal knee kinematic alterations of healthy controls and ACLD patients during gait. Chart (A,D) show walking adduction/abduction angle
+alterations of ACLD patients at ACLD speed and the speed level of healthy controls (normal speed) compared to healthy controls. Chart (B) shows
+walking medial/lateral tibial translation alterations of ACLD patients at ACLD speed and the speed level of healthy controls (normal speed) compared
+to healthy controls. Chart (C) shows the range of motion of adduction/abduction angle and medial/lateral tibial translation of ACLD patients
+compared tohealthycontrolsduringwalking.#SigniﬁcantkinematicdifferenceswerefoundinACLDpatientswhowalkedatACLDspeedcompared
+to healthy controls. * Signiﬁcant kinematic differences were found in ACLD patients who walked at the same speed level as healthy controls (Normal
+speed) compared to healthy controls.
+Frontiers in Bioengineering and Biotechnology frontiersin.org 05
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 6 ---
+signiﬁcantly changes knee walking kinematics (Hanlon and
+Anderson, 2006; Chehab et al., 2017). Whether the walking
+speed of the healthy subjects leads to additional walking
+kinematic asymmetries remains unclear. We try to ﬁll this
+gap. We aimed to explore whether the walking speed level of
+healthy controls leads to additional kinematic asymmetries
+in patients with ACLD. We hypothesized that the walking
+speed level of healthy subjects could increase anteroposterior
+knee kinematic asymmetries. Our results conﬁrmed the
+hypothesis, showing that ACLD walking at the speed level
+as healthy controls had signiﬁcant increased anteroposterior
+ROM (3.9 mm) compared to controls and signiﬁcantly
+increased greater posterior tibial translation asymmetry
+(4.6 mm) than patients at a self-selected comfortable
+speed (3.4 mm) during walking (Figures 2B–D).
+Furthermore, our results revealed that when ACLD
+patients walked at the speed level of healthy controls, they
+had different results of abduction angles, ﬂexion angle, tibial
+rotation angles, and distal tibial translation compared with
+patients at self-selected speed (Figures 2–4). Our ﬁndings
+add to the knowledge of the inﬂuence of walking speed on
+ACLD knees and suggest that people with ACLD knees may
+exhibit additional kinematic asymmetries when walking at
+the gait speed of healthy controls, which raises concern about
+health problems for patients who walk at healthy control
+speeds.
+Consistent with previous studies (Andriacchi and Dyrby,
+2005; Shin et al., 2007; Zabala et al., 2015), increased
+posterior tibial translation was found in ACLD patients
+compared to healthy controls. Furthermore, greater
+posterior translation and anteroposterior ROM
+asymmetries were exhibited in ACLD knees while walking
+at the speed level of healthy controls than at their self-
+selected speed (Figures 2B,C). The abnormal
+anteroposterior translation was signiﬁcantly correlated
+with knee cartilage degeneration (Zaid et al., 2015;
+Kiapour et al., 2017; Ikuta et al., 2020; Li et al., 2020). Li
+et al. (2020) found increased anterior tibial translation in the
+motion of full extension to ﬂexion 6 months after ACLR to be
+signiﬁcantly correlated with cartilage degeneration in the
+FIGURE 4
+Transverse knee kinematic alterations of healthy controls and ACLD patients during gait. Chart (A,D) show walking internal/external tibial
+rotation angle alterations of ACLD patients at ACLD speed and the speed level of healthy controls (normal speed) compared to healthy controls.
+Chart (B,E) show walking distal/proximal tibial translation alterations of ACLD patients at ACLD speed and the speed level of healthy controls (normal
+speed) compared to healthy controls. Chart (C) shows the range of motion of internal/external tibial rotation angle and distal/proximal tibial
+translation of ACLD patients compared to healthy controls during walking. # Signiﬁcant kinematic differences were found in ACLD patients who
+walked at ACLD speed comparedto healthy controls. * Signiﬁcant kinematicdifferences were found inACLDpatientswho walked at thesame speed
+level as healthy controls (Normal speed) compared to healthy controls.
+Frontiers in Bioengineering and Biotechnology frontiersin.org 06
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 7 ---
+medial tibia plateau at 1- and 2-year follow-ups among
+ACLR patients. Furthermore, Zaid et al. (2015) found the
+increased posterior tibial translation to have stronger effects
+on cartilage degenerations than anterior tibial translation in
+ACLR patients. The increased posterior translation exhibited
+by ACLD patients when walking at the same speed as healthy
+controls may contribute to knee cartilage degeneration. The
+increased anteroposterior ROM was due to the increased
+posterior translation during gait (Figures 2B,C). However, it
+was reported that the increment of anteroposterior ROM
+might risk the knee joint to reinjury (Gupta et al., 2020;
+Yamasaki et al., 2021) and affect the readiness to return to
+sports (Faleide et al., 2021). When walking at the speed level
+as healthy controls, the ACLD patients seemed to have close
+to “normal” (increased) knee ﬂexion angles, especially the
+ROM of ﬂexion angle (Figure 2A). However, researchers
+reported that increased knee ﬂexion angles are signiﬁcantly
+correlated with increases in quadriceps force and joint
+contact force, which accelerate cartilage degeneration
+(Besier et al., 2009; Teng et al., 2017). ACLD patients may
+increase their knee ﬂexion angles as a strategy to adapt to
+walking at the same speed as healthy controls, but the
+potential effects of doing so on the knee joint should be
+noticed and conﬁrmed further.
+Greater adductive angles were exhibited in ACLD knees
+while walking at the speed level of healthy controls than at
+their self-selected speed (Figures 3A,D). Previous studies
+reported that increased abduction angle could play an
+important role in knee disease development. Crema et al.
+(2012) found that abduction or adduction malalignment (<
+178° or > 182°) could be related to meniscus extrusion and,
+thus, increased rates of meniscus injury. Sharma et al. (2001)
+found that increased abduction angle could be associated
+with increased odds of osteoarthritis development.
+Therefore, the increased abduction angle at the speed level
+of healthy subjects could potentially hurt the knee joint of
+ACLD patients.
+In the transverse plane, greater distal tibial translation
+asymmetries were exhibited in ACLD knees at the same
+speed as healthy controls than ACLD speed (Figures
+4B,C). This could be related to the increment of posterior
+tibial translation asymmetry in ACLD knees at healthy
+walking speed compared to that at ACLD walking speed
+(Figure 2B). There is a natural tibial posterior slope in the
+knee structure (Cooper et al., 2019). Hence, once the tibia
+moved posteriorly, the center of femoral condyles rose
+relatively; thus, distal tibial translation increased.
+However, this is only speculation based on the anatomy of
+the knee joint. Whether this mechanism exists needs further
+exploration. The internal tibial rotation of ACLD patients
+was relatively restored when they walked at the speed level of
+healthy controls rather than the ACLD speed. Consistent
+with our study, Chehab et al. (2017) reported tibial internal
+rotation angle increased as the gait speed increased during
+the stance phase. This could be related to increased tibial
+internal moments along with the increased gait speed during
+the stance phase (Chehab et al., 2017).
+Gait speed affects knee kinematics signiﬁcantly (Lelas
+et al., 2003; Bejek et al., 2006; Hanlon and Anderson, 2006;
+Chehab et al., 2017). The present study further found that
+patients with ACLD at the speed level of healthy subjects had
+greater knee kinematic asymmetries than patients at self-
+selected speed, including, greater posterior tibial
+translation, distal tibial translation, and abduction angle
+asymmetries (Figures 2–4). These ﬁndings could be
+meaningful for ACLD patients accepting non-operative
+treatments and keeping their knee joints as possible as
+healthy and away from knee kinematics asymmetries
+during their daily lives. The present study has some
+limitations that should be noticed. Firstly, the recruited
+number of males was greater than females in the present
+study. This may bring gender bias to the study. However, the
+recruited gender characteristics are consistent with the
+gender differences in the prevalence of ACLD (Lyman
+et al., 2009; Ellison et al., 2021). Secondly, this study
+didn’t explore the long-term effects of healthy subjects’
+speed levels on ACLD patients’ knee kinematics and
+health. The effects of these kinematic asymmetries should
+be investigated further in future studies.
+Conclusion
+Our study showed that ACLD patients exhibited more knee
+kinematic asymmetries when they walked at the gait speed of
+healthy controls than at self-selected speeds. The kinematic
+asymmetries included greater posterior tibial translation (up
+to 4.6 mm), distal tibial translation (up to 3.2 mm), and
+abduction angle (up to 1.5°). These ﬁndings are meaningful
+for developing non-operative treatment strategies for patients
+with ACLD. To get fewer knee kinematic asymmetries, self-
+selected walking speed could be suggested for patients with
+ACLD during their daily lives rather than the speed levels of
+healthy subjects.
+Data availability statement
+The data are available from the corresponding authors upon
+a reasonable request.
+Ethics statement
+The studies involving human participants were reviewed and
+approved by the Ethics committee of Guangdong Provincial
+Frontiers in Bioengineering and Biotechnology frontiersin.org 07
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 8 ---
+People’s Hospital. The patients/participants provided their
+written informed consent to participate in this study.
+Author contributions
+XZ proposed theconception and designed thestudy. LK, YO,
+QW, and HH ﬁnished data collection. XZ and LK analyzed the
+data. XZ, LK, and TY drafted the article. XZ, YZ, TY, TZ, and
+WH revised the article critically.
+Funding
+This work was supported by the National Natural Science
+Foundation of China (81972126).
+Conﬂict of interest
+The authors declare that the research was conducted in the
+absence of any commercial or ﬁnancial relationships that could
+be construed as a potential conﬂict of interest.
+Publisher’s note
+All claims expressed in this article are solely those of the
+authors and do not necessarily represent those of their
+afﬁliated organizations, or those of the publisher, the
+editors, and the reviewers. Any product that may be
+evaluated in this article, or claim that may be made by its
+manufacturer, is not guaranteed or endorsed by the
+publisher.
+References
+Agostinone, P., Di Paolo, S., Grassi, A., Pinelli, E., Bontempi, M., Bragonzoni, L.,
+et al. (2021). ACL deﬁciency inﬂuences medio-lateral tibial alignment and knee
+varus-valgus during in vivo activities. Knee Surg. Sports Traumatol. Arthrosc. 29,
+389–397. doi:10.1007/s00167-020-05979-6
+Andriacchi, T. P., and Dyrby, C. O. (2005). Interactions between kinematics and
+loading during walking for the normal and ACL deﬁcient knee. J. Biomech. 38,
+293–298. doi:10.1016/j.jbiomech.2004.02.010
+Andriacchi, T. P., Koo, S., and Scanlan, S. F. (2009). Gait mechanics inﬂuence
+healthy cartilage morphology and osteoarthritis of the knee. J. Bone Jt. Surg. 91 (1),
+95–101. doi:10.2106/jbjs.h.01408
+Bejek, Z., Paroczai, R., Illyes, A., and Kiss, R. M. (2006). The inﬂuence of walking
+speed on gait parameters in healthy people and in patients with osteoarthritis. Knee
+Surg. Sports Traumatol. Arthrosc. 14, 612–622. doi:10.1007/s00167-005-0005-6
+Besier, T. F., Fredericson, M., Gold, G. E., Beaupre, G. S., and Delp, S. L.
+(2009). Knee muscle forces during walking and running in patellofemoral
+pain patients and pain-free controls. J. Biomech. 42, 898–905. doi:10.1016/j.
+jbiomech.2009.01.032
+Chaudhari, A. M., Briant, P. L., Bevill, S. L., Koo, S., and Andriacchi, T. P. (2008).
+Knee kinematics, cartilage morphology, and osteoarthritis after ACL injury. Med.
+Sci. Sports Exerc. 40, 215–222. doi:10.1249/mss.0b013e31815cbb0e
+Chehab, E. F., Andriacchi, T. P., and Favre, J. (2017). Speed, age, sex, and body
+mass index provide a rigorous basis for comparing the kinematic and kinetic
+proﬁles of the lower extremity during walking. J. Biomech. 58, 11–20. doi:10.1016/j.
+jbiomech.2017.04.014
+Cooper, J. D., Wang, W., Prentice, H. A., Funahashi, T. T., and Maletis, G. B.
+(2019). The association between tibial slope and revision anterior cruciate ligament
+reconstruction in patients ≤21 Years old: A matched case-control study including
+317 revisions. Am. J. Sports Med. 47, 3330–3338. doi:10.1177/0363546519878436
+Crema, M. D., Roemer, F. W., Felson, D. T., Englund, M., Wang, K., Jarraya, M.,
+et al. (2012). Factors associated with meniscal extrusion in knees with or at risk for
+osteoarthritis: Themulticenterosteoarthritisstudy. Radiology 264,494–503.doi:10.
+1148/radiol.12110986
+Diermeier, T. A., Rothrauff, B. B., Engebretsen, L., Lynch, A., Svantesson, E.,
+Hamrin Senorski, E. A., et al. (2021). Treatment after ACL injury: Panther
+symposium ACL treatment consensus group. Br. J. Sports Med. 55, 14–22.
+doi:10.1136/bjsports-2020-102200
+Dingwell, J. B., and Marin, L. C. (2006). Kinematic variability and local dynamic
+stability of upper body motions when walking at different speeds. J. Biomech. 39,
+444–452. doi:10.1016/j.jbiomech.2004.12.014
+Elfring, R., De La Fuente, M., and Radermacher, K. (2010). Assessment of optical
+localizer accuracy for computer aided surgery systems. Comput. Aided Surg. 15,
+1–12. doi:10.3109/10929081003647239
+Ellison, T. M., Flagstaff, I., and Johnson, A. E. (2021). Sexual dimorphisms in
+anterior cruciate ligament injury: A current concepts review. Orthop. J. Sports Med.
+9, 232596712110253. doi:10.1177/23259671211025304
+Faleide,A.G.H.,Magnussen,L.H.,Bogen,B.E.,Strand,T.,Mo,I.F.,Vervaat,W.,
+et al. (2021). Association between psychological readiness and knee laxity and their
+predictive value for return to sport in patients with anterior cruciate ligament
+reconstruction. Am. J.Sports Med. 49, 2599–2606. doi:10.1177/03635465211021831
+Fransen, M., Crosbie, J., and Edmonds, J. (1997). Reliability of gait measurements
+in people with osteoarthritis of the knee. Phys. Ther. 77, 944–953. doi:10.1093/ptj/
+77.9.944
+Frobell, R. B., Roos, E. M., Roos, H. P., Ranstam, J., and Lohmander, L. S. (2010).
+A randomized trial of treatment for acute anterior cruciate ligament tears. N. Engl.
+J. Med. Overseas. Ed. 363, 331–342. doi:10.1056/nejmoa0907797
+Frobell, R. B., Roos, H. P., Roos, E. M., Roemer, F. W., Ranstam, J., and
+Lohmander, L. S. (2013). Republished research: Treatment for acute anterior
+cruciate ligament tear: Five year outcome of randomised trial. Br. J. Sports Med.
+47, 373. doi:10.1136/bjsports-2013-f232rep
+Fuentes, A., Hagemeister, N., Ranger, P., Heron, T., and De Guise, J. A. (2011).
+Gait adaptation in chronic anterior cruciate ligament-deﬁcient patients: Pivot-shift
+avoidance gait. Clin. Biomech. (Bristol, Avon. 26, 181–187. doi:10.1016/j.
+clinbiomech.2010.09.016
+Garcia, S. A., Brown, S. R., Koje, M., Krishnan, C., and Palmieri-Smith, R. M.
+(2021). Gait asymmetries are exacerbated at faster walking speeds in individuals
+with acute anterior cruciate ligament reconstruction. J. Orthop. Res. 40, 219–230.
+doi:10.1002/jor.25117
+Gibbs, J., Hughes, S., Dunlop, D., Edelman, P., Singer, R., and Chang, R. (1993).
+Joint impairment and ambulation in the elderly. J. Am. Geriatr. Soc. 41, 1205–1211.
+doi:10.1111/j.1532-5415.1993.tb07304.x
+Grindem, H., Eitzen, I., Engebretsen, L., Snyder-Mackler, L., and Risberg, M. A.
+(2014). Nonsurgical or surgical treatment of ACL injuries: Knee function, sports
+participation, and knee reinjury: The Delaware-oslo ACL cohort study. J. Bone Jt.
+Surg. 96, 1233–1241. doi:10.2106/jbjs.m.01054
+Grindem, H., Eitzen, I., Moksnes, H., Snyder-Mackler, L., and Risberg, M. A.
+(2012). Apair-matched comparison of return topivoting sports at1year inanterior
+cruciate ligament-injured patients after a nonoperative versus an operative
+treatment course. Am. J. Sports Med. 40, 2509–2516. doi:10.1177/
+0363546512458424
+Gupta, R., Singhal, A., Malhotra, A., Soni, A., Masih, G. D., and Raghav, M.
+(2020). Predictors for anterior cruciate ligament (ACL) Re-injury after successful
+primary ACL reconstruction (ACLR). Malays. Orthop. J. 14, 50–56. doi:10.5704/
+moj.2011.009
+Hanlon, M., and Anderson, R. (2006). Prediction methods to account for the
+effect of gait speed on lower limb angular kinematics. Gait Posture 24, 280–287.
+doi:10.1016/j.gaitpost.2005.10.007
+Haughom, B., Schairer, W., Souza, R. B., Carpenter, D., Ma, C. B., and Li, X.
+(2012). Abnormal tibiofemoral kinematics following ACL reconstruction are
+associated with early cartilage matrix degeneration measured by MRI T1rho.
+Knee 19, 482–487. doi:10.1016/j.knee.2011.06.015
+Frontiers in Bioengineering and Biotechnology frontiersin.org 08
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 9 ---
+Herzog, M. M., Marshall, S. W., Lund, J. L., Pate, V., Mack, C. D., and Spang, J. T.
+(2018). Trends in incidence of ACL reconstruction and concomitant procedures
+among commercially insured individuals in the United States, 2002-2014. Sports
+Health. 10, 523–531. doi:10.1177/1941738118803616
+Huang, H., Keijsers, N., Horemans, H., Guo, Q., Yu, Y., Stam, H., et al. (2017).
+Anterior cruciate ligament rupture is associated with abnormal and asymmetrical
+lower limb loading during walking. J. Sci. Med. Sport 20, 432–437. doi:10.1016/j.
+jsams.2016.09.010
+Ikuta, F., Yoneta, K., Miyaji, T., Kidera, K., Yonekura, A., Osaki, M., et al. (2020).
+Knee kinematics of severe medial knee osteoarthritis showed tibial posterior
+translation and external rotation: a cross-sectional study. Aging Clin. Exp. Res.
+32, 1767–1775. doi:10.1007/s40520-019-01361-w
+Kiapour, A. M., Fleming, B. C., and Murray, M. M. (2017). Structural and
+anatomic restoration of the anterior cruciate ligament is associated with less
+cartilage damage 1 Year after surgery: Healing ligament properties affect
+cartilage damage. Orthop. J. Sports Med. 5, 232596711772388. doi:10.1177/
+2325967117723886
+Lelas, J. L., Merriman, G. J., Riley, P. O., and Kerrigan, D. C. (2003). Predicting
+peak kinematic and kinetic parameters from gait speed. Gait Posture 17, 106–112.
+doi:10.1016/s0966-6362(02)00060-7
+Li, A. K., Ochoa, J. K., Pedoia, V., Amano, K., Souza, R. B., Li, X., et al. (2020).
+Altered tibiofemoral position following ACL reconstruction is associated with
+cartilage matrix changes: A voxel-based relaxometry analysis. J. Orthop. Res. 38,
+2454–2463. doi:10.1002/jor.24708
+Li, G., Li, J. S., Torriani, M., and Hosseini, A. (2018). Short-term contact
+kinematic changes and longer-term biochemical changes in the cartilage after
+ACL reconstruction: A pilot study. Ann. Biomed. Eng. 46, 1797–1805. doi:10.1007/
+s10439-018-2079-6
+Lyman, S., Koulouvaris, P., Sherman, S., Do, H., Mandl, L. A., and Marx, R. G.
+(2009). Epidemiology of anterior cruciate ligament reconstruction: Trends,
+readmissions, and subsequent knee surgery. J. Bone Jt. Surgery-American
+Volume 91, 2321–2328. doi:10.2106/jbjs.h.00539
+Nazary-Moghadam, S., Salavati, M., Esteki, A., Akhbari, B., Keyhani, S., and
+Zeinalzadeh, A. (2019). Gait speed is more challenging than cognitive load on the
+stride-to-stride variability in individuals with anterior cruciate ligament deﬁciency.
+Knee 26, 88–96. doi:10.1016/j.knee.2018.11.009
+Scanlan, S. F., Chaudhari, A. M., Dyrby, C. O., and Andriacchi, T. P. (2010).
+Differences in tibial rotation during walking in ACL reconstructed and healthy
+contralateral knees. J. Biomech. 43, 1817–1822. doi:10.1016/j.jbiomech.2010.02.010
+Sharma, L., Song, J., Felson, D. T., Cahue, S., Shamiyeh, E., and Dunlop, D.
+D. (2001). The role of knee alignment in disease progression and functional
+decline in knee osteoarthritis. JAMA 286, 188–195. doi:10.1001/jama.286.
+2.188
+Shin, C. S., Chaudhari, A. M., Dyrby, C. O., and Andriacchi, T. P. (2007). The
+patella ligament insertion angle inﬂuences quadriceps usage during walking of
+anterior cruciate ligament deﬁcient patients. J. Orthop. Res. 25, 1643–1650. doi:10.
+1002/jor.20463
+Stergiou, N., Moraiti, C., Giakas, G., Ristanis, S., and Georgoulis, A. D. (2004).
+The effect of the walking speed on the stability of the anterior cruciate ligament
+deﬁcient knee. Clin. Biomech. (Bristol, Avon. 19, 957–963. doi:10.1016/j.
+clinbiomech.2004.06.008
+Stergiou, N., Ristanis, S., Moraiti, C., and Georgoulis, A. D. (2007). Tibial rotation
+in anterior cruciate ligament (ACL)-deﬁcient and ACL-reconstructed knees: a
+theoretical proposition for the development of osteoarthritis. Sports Med. 37,
+601–613. doi:10.2165/00007256-200737070-00004
+Stoelben, K. J. V., Pappas, E., and Mota, C. B. (2019). Lower extremity joint
+moments throughout gait at two speeds more than 4 years after ACL
+reconstruction. Gait Posture 70, 347–354. doi:10.1016/j.gaitpost.2019.02.025
+Tashman, S., Kopf, S., and Fu, F. H. (2008). The kinematic basis of anterior
+cruciate ligament reconstruction. Oper. Tech. Sports Med. 16, 116–118. doi:10.1053/
+j.otsm.2008.10.005
+Teng, H. L., Wu, D., Su, F., Pedoia, V., Souza, R. B., Ma, C. B., et al. (2017). Gait
+characteristics associated with a greater increase in medial knee cartilage T1ρ and T2
+relaxation times in patients undergoing anterior cruciate ligament reconstruction.
+Am. J. Sports Med. 45, 3262–3271. doi:10.1177/0363546517723007
+Tibone, J. E., Antich, T. J., Fanton, G. S., Moynes, D. R., and Perry, J. (1986).
+Functional analysis of anterior cruciate ligament instability. Am. J. Sports Med. 14,
+276–284. doi:10.1177/036354658601400406
+Von Porat, A., Henriksson, M., Holmström, E., and Roos, E. M. (2007). Knee
+kinematicsand kinetics informer soccerplayers witha16-year-oldACLinjury--the
+effects of twelve weeks of knee-speciﬁc training. BMC Musculoskelet. Disord. 8, 35.
+doi:10.1186/1471-2474-8-35
+Yamasaki, S., Hashimoto, Y., Iida, K., Nishino, K., Nishida, Y., Takigami, J., et al.
+(2021). Risk factors for postoperative graft laxity without re-injury after double-
+bundle anterior cruciate ligament reconstruction in recreational athletes. Knee 28,
+338–345. doi:10.1016/j.knee.2020.12.009
+Yim, J. H., Seon, J. K., Kim, Y. K., Jung, S. T., Shin, C. S., Yang, D. H., et al. (2015).
+Anterior translation and rotational stability of anterior cruciate ligament-deﬁcient
+knees during walking: speed and turning direction. J. Orthop. Sci. 20, 155–162.
+doi:10.1007/s00776-014-0672-6
+Zabala, M. E., Favre, J., and Andriacchi, T. P. (2015). Relationship between
+knee mechanics and time since injury in ACL-deﬁcient knees without signs
+of osteoarthritis. Am. J. Sports Med. 43, 1189–1196. doi:10.1177/
+0363546514567296
+Zaid, M., Lansdown, D., Su, F., Pedoia, V., Tufts, L., Rizzo, S., et al. (2015).
+Abnormal tibial position is correlated to early degenerative changes one year
+following ACL reconstruction. J. Orthop. Res. 33, 1079–1086. doi:10.1002/jor.22867
+Zampeli, F., Pappas, E., Velonakis, G., Roumpelakis, I. M., Poulou, L. S.,
+Papagiannis, G. I., et al. (2021). Development of new cartilage lesions after ACL
+reconstruction is associated with abnormal knee rotation. Knee Surg. Sports
+Traumatol. Arthrosc. 30, 842–851. doi:10.1007/s00167-020-06387-6
+Zampeli, F., Terzidis, I., Espregueira-Mendes, J., Georgoulis, J. D., Bernard, M.,
+Pappas, E., et al. (2018). Restoring tibiofemoral alignment during ACL
+reconstruction results in better knee biomechanics. Knee Surg. Sports
+Traumatol. Arthrosc. 26, 1367–1374. doi:10.1007/s00167-017-4742-0
+Zeni, J. A., Jr., and Higginson, J. S. (2009). Differences in gait parameters between
+healthy subjects and persons with moderate and severe knee osteoarthritis: a result
+of altered walking speed? Clin. Biomech. (Bristol, Avon. 24, 372–378. doi:10.1016/j.
+clinbiomech.2009.02.001
+Zhang, Y., Huang, W., Yao, Z., Ma, L., Lin, Z., Wang, S., et al. (2016). Anterior
+cruciate ligament injuries alter the kinematics of knees with or without meniscal
+deﬁciency. Am. J. Sports Med. 44, 3132–3139. doi:10.1177/0363546516658026
+Zhang, Y., Yao, Z., Wang, S., Huang, W., Ma, L., Huang, H., et al. (2015). Motion
+analysis of Chinese normal knees during gait based on a novel portable system. Gait
+Posture 41, 763–768. doi:10.1016/j.gaitpost.2015.01.020
+Frontiers in Bioengineering and Biotechnology frontiersin.org 09
+Kong et al. 10.3389/fbioe.2022.930722
+
+--- PAGE 10 ---

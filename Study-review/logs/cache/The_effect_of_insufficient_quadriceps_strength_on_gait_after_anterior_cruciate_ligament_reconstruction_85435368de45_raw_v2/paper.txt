@@ -1,0 +1,729 @@
+
+--- PAGE 1 ---
+The eﬀect of insuﬃcient quadriceps strength on gait
+after anterior cruciate ligament reconstruction
+Michael Lewek a
+, Katherine Rudolph a
+, Michael Axe a,b
+, Lynn Snyder-Mackler a,*
+a
+Department of Physical Therapy, 301 McKinly Lab, University of Delaware, Newark, DE 19716, USA
+b
+First State Orthopedics, 4745 Ogletown-Stanton Road, Suite 225, Newark, DE, USA
+Received 16 October 2000; accepted 8 October 2001
+Abstract
+Objective. To determine the eﬀect of quadriceps strength and joint stability on gait patterns after anterior cruciate ligament injury
+and reconstruction.
+Design. Cross-sectional comparative study in which four groups underwent motion analysis with surface electromyography.
+Background. Individuals following anterior cruciate ligament rupture often demonstrate reduced knee angles and moments
+during the early stance phase of gait. Alterations in gait can neither be ascribed to instability nor to quadriceps weakness alone when
+both are present.
+Methods. Twenty-eight individuals with complete anterior cruciate ligament rupture (10 patients with acute rupture, 8 patients
+following reconstruction with quadriceps strength >90% of the uninvolved side [strong-anterior cruciate ligament reconstructed
+group], and 10 patients after reconstruction with quadriceps strength <80% of the uninvolved side [weak-anterior cruciate ligament
+reconstructed group]), and 10 uninjured subjects underwent an examination of their lower extremity to collect kinematics, kinetics,
+and electromyography during walking and jogging. Anterior cruciate ligament reconstruction was arthroscopically assisted and a
+double loop semitendinosis-gracilis autograft or allograft was used as a graft source. All reconstructed subjects had stable knees, full
+range of motion, and no eﬀusion or pain at the time of testing (more than three months after surgery).
+Results. Knee angles and moments of the strong group were indistinguishable from the uninjured group during early stance of
+both walking and jogging. The weak subjects had reduced knee angles and moments during walking, and jogged similarly to the
+deﬁcient subjects. Regression analysis revealed a signiﬁcant eﬀect between early stance phase knee angles and moments and
+quadriceps strength during both walking and jogging.
+Conclusion. Inadequate quadriceps strength contributes to altered gait patterns following anterior cruciate ligament recon-
+struction.
+Relevance
+Rapid strengthening following anterior cruciate ligament injury or reconstruction may contribute to a safe return to high-level
+activities. Ó 2002 Elsevier Science Ltd. All rights reserved.
+Keywords: Quadriceps; Anterior cruciate ligament; Gait; Knee; Quadriceps avoidance
+1. Introduction
+Injury to the anterior cruciate ligament (ACL) is
+common amongst both regular participants in sports and
+other active individuals, and precipitates excessive an-
+terior tibio-femoral laxity [1]. An inability to control this
+laxity results in joint instability and is usually manifested
+as an episode of giving way, a common complaint
+among individuals who are ACL deﬁcient [2–4]. Re-
+search has shown that the amount of joint laxity is
+not associated with a patient’s instability following an
+ACL rupture, so the terms laxity and instability are
+not synonymous [5,6]. Many patients require recon-
+struction of the ACL to reduce the symptoms of in-
+stability and allow a return to high levels of activity [1].
+Individuals who experience instability with ACL
+rupture do so when the injured limb accepts the weight
+of the body in early stance. During weight acceptance,
+the limb accepts full support of the body and attenuates
+shock through knee ﬂexion that is controlled by an
+www.elsevier.com/locate/clinbiomech
+Clinical Biomechanics 17 (2002) 56–63
+*
+Corresponding author.
+E-mail address: smack@udel.edu (L. Snyder-Mackler).
+0268-0033/02/$ - see front matter Ó 2002 Elsevier Science Ltd. All rights reserved.
+PII: S0268-0033(01)00097-3
+
+--- PAGE 2 ---
+eccentric contraction of the quadriceps. When people
+experience knee instability, they alter their movement
+patterns at this point in the gait cycle through reduced
+knee ﬂexion and reduced internal knee extensor mo-
+ments [7,8]. These gait alterations may result from the
+unwillingness to fully activate the quadriceps muscles at
+a range close to full knee extension. Berchuck and An-
+driacchi [7] termed the reduced knee extensor moment
+‘‘quadriceps avoidance’’ because near full extension, a
+quadriceps contraction may lead to anterior tibial
+translation [9,10] that could initiate an episode of giving
+way. The reduced knee moment, however, could repre-
+sent either a reduction in quadriceps activation, or an
+increase in ﬂexor activity provided by the hamstrings [2],
+or the gastrocnemius [11] and EMG data must be used
+to fully understand the implications of a reduced knee
+extensor moment. Altered movement patterns persist
+following anterior cruciate ligament reconstruction
+[12,13] despite surgical restoration of knee stability. This
+suggests that instability is not the sole cause of the gait
+adaptations.
+While the literature provides some evidence that al-
+tered joint angles and moments are compensations for
+knee instability, it is conceivable that they are also the
+result of quadriceps femoris strength deﬁcits. Quadri-
+ceps strength deﬁcits are ubiquitous following both ACL
+rupture [14–16], and ACL reconstruction [17–19], and
+have been correlated with movement characteristics
+during both walking [11,20] and jogging [11,21]. This
+indicates that both instability and quadriceps strength
+deﬁcits could be contributing to the gait deviations seen
+in these patient populations.
+ACL rupture has been associated with early degen-
+erative changes to the articular cartilage of the knee
+[1,22]. The instability that often accompanies an ACL
+rupture may contribute to the development of articular
+cartilage defects [23]. Degenerative changes also occur
+after reconstructive surgery, despite the elimination of
+the patient’s instability [1,22,23], which suggests that
+instability is not the sole cause of the degenerative
+changes. Quadriceps muscle weakness, which is preva-
+lent in both ACL deﬁcient and reconstructed patients,
+has recently been suggested to contribute to knee oste-
+oarthritis [24]. If quadriceps femoris weakness contrib-
+utes to altered movements and muscular adaptations,
+then reduced quadriceps strength might also contribute
+to the increased risk of arthritic changes in patient
+populations following ACL rupture or reconstruction.
+In addition, many of the gait deviations occur during
+weight acceptance, when an eccentric quadriceps con-
+traction is necessary to control knee ﬂexion and provide
+shock absorption. So insuﬃcient quadriceps strength
+could reduce the ability of the knee to attenuate shock,
+which could lead to degenerative changes.
+The purpose of this study was to investigate the eﬀect
+of quadriceps femoris strength and instability on gait in
+persons with anterior cruciate ligament rupture who
+undergo operative stabilization. Those who have quad-
+riceps weakness following surgery were expected to ex-
+hibit diminished knee angles and reduced internal knee
+extensor moments during weight acceptance, similar to
+the adaptation that ACL deﬁcient subjects exhibit fol-
+lowing injury [8]. Subjects with nearly normal quadri-
+ceps strength following reconstruction were expected to
+resume movement characteristics that are similar to
+uninjured subjects.
+2. Methods
+2.1. Subjects
+Twenty-eight individuals who had a complete isolated
+tear of the anterior cruciate ligament and experienced
+instability participated in this study. Instability was
+objectively identiﬁed through a screening process de-
+veloped by Fitzgerald et al. [4]. Ten of these 28 subjects
+(six males, four females) were tested while still ACL
+deﬁcient (ACL-D group) and were all less than 6 months
+from the time of the injury. The other 18 individuals had
+undergone a unilateral, endoscopic, arthroscopically
+assisted ACL reconstruction by one of two surgeons
+using a graft that did not violate the extensor mecha-
+nism (i.e. allograft or double loop semitendinosis-grac-
+ilis autograft). All subjects had knee instability prior to
+reconstruction, but had clinically stable knees at the
+time of testing (e.g. no buckling, shifting, or episodes of
+giving way, normal Lachman and pivot shift tests).
+These 18 subjects were divided into two groups based on
+their quadriceps strength. Eight subjects (ﬁve males,
+three females) comprised the strong-anterior cruciate
+ligament reconstructed (ACLR) group, which was op-
+erationally deﬁned as those with quadriceps strength of
+90% or more in the involved limb compared to the un-
+involved quadriceps. Ten subjects (four males, six fe-
+males) comprised the weak-ACLR group which was
+operationally deﬁned as those with 80% or less than that
+of the uninvolved quadriceps (see Table 1). In a normal
+population, less than a 10% side-to-side diﬀerence in
+quadriceps strength can be expected, however, greater
+than a 20% diﬀerence is considered abnormal [25]. All
+subjects in the weak-ACLR group were tested at a
+minimum of 12 weeks following surgery to allow for
+ample time to recover quadriceps femoris strength. All
+subjects in the ACL-D group and six individuals in each
+of the ACL reconstructed groups were regular partici-
+pants in activities involving jumping, pivoting, hard
+cutting, or lateral movements prior to injury. The
+remaining subjects were involved in either lower level
+activities (jogging, running, or swimming) or were sed-
+entary. Ten uninjured subjects (eight males, two
+females), with no history of knee injury, were also tested
+M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63 57
+
+--- PAGE 3 ---
+as a control group. All subjects were able to extend their
+knees to at least zero degrees of extension, and had
+sustained no damage to the contralateral knee. No
+subject had knee pain or joint eﬀusion at the time of
+testing. Patients with identiﬁed articular cartilage defects
+or concomitant injury to other knee ligaments were ex-
+cluded from the study. Subjects were included in the
+study in order as they presented to our clinic, provided
+they met all inclusion criteria. All subjects were in-
+formed of the purpose of the study, and signed an in-
+formed consent form, approved by the Human Subjects
+Review Board of the University of Delaware, prior to
+testing. All patients completed the Activities of Daily
+Living Scale of the Knee Outcome Survey (KOS-
+ADLS), a self-report of the function on the subject’s
+knee to determine their level of knee instability [26].
+2.2. Strength testing
+Quadricepsstrengthwastestedasdescribedpreviously
+[16,27]. Brieﬂy, each subject was seated on an isokinetic
+dynamometer (KinCom, Chattanooga Group, Chatta-
+nooga, TN, USA) and produced a four second maximum
+voluntary isometric contraction with their knee ﬂexed to
+90°. During this contraction, electrodes (ConMed, Utica,
+NY, USA) placed over the quadriceps femoris muscle
+produced a supramaximal burst of electrical current to
+fully stimulate the quadriceps. If the subject failed to
+generate volitional force within 95% of the electrically
+elicited force, the test was repeated, up to four times with
+5minrestbetweentests.Allsubjectswereabletoproduce
+maximal force on both sides within one session and
+therefore had no reﬂex inhibition. Both legs were tested
+and the quadriceps index, a measure of relative strength,
+was calculated (quadriceps index¼involved volitional
+force/uninvolved volitional force  100).
+2.3. Motion and electromyographic testing
+Electromyographic (EMG) data were collected at 960
+Hz using active surface electrodes with an eight-channel
+hard-wired EMG system (Motion Lab Systems, Baton
+Rouge, LA, USA) for the weak-ACLR and strong-
+ACLR subjects, and an eight-channel telemetry EMG
+system (B&L Engineering, Santa Fe Springs, CA, USA)
+for the ACL-D and uninjured subjects. Elastic bands
+(SuperWrape, Fabrifoam, Exton, PA, USA) were
+wrapped over the electrodes to secure them bilaterally to
+the muscle bellies of the medial head of the gastroc-
+nemius, and mid-muscle belly of the lateral hamstrings
+and vastus lateralis.
+Motion testing was done with a six camera, passive,
+three-dimensional motion analysis system (VICON,
+Oxford Metrics, London, UK) recording at 120 Hz.
+Calibration errors were kept below 3 mm. Force data
+were recorded from a six-component force plate (Ber-
+tec, Worthington, OH, USA) sampling at 960 Hz. The
+cameras detected retro-reﬂective markers aﬃxed to the
+subject’s shoes and placed in triads on rigid shells on
+the posterior aspect of the pelvis, thigh, and shank.
+Anatomical markers were placed over the head of the
+ﬁfth metatarsal, lateral malleolus, lateral femoral con-
+dyle, greater trochanters, and iliac crests. Motion,
+force, and EMG data were collected concurrently as
+subjects performed six trials of free-speed walking and
+jogging along a 30-foot runway. Velocity data were
+monitored with two photoelectric beams to ensure that
+velocity varied not more than 5%. Trials were used if
+the subject remained at a consistent velocity and landed
+with their foot in the center of the force plate without
+targeting.
+2.4. Data management and analysis
+Walking and jogging kinematic data were low-pass
+ﬁltered at 6 and 10 Hz, respectively. Force plate data
+were low-pass ﬁltered at 50 Hz. The marker clusters,
+attached to the subject’s pelvis, thighs, shanks, and feet,
+were used to track each segment’s three-dimensional
+coordinate system. Move3D software (Move3D, NIH
+Biomechanics Laboratory, Bethesda, MD, USA) was
+used to calculate the knee’s sagittal plane motions.
+Table 1
+Subject demographics
+Strong-ACLR Weak-ACLR ACL-D Uninjured
+Age (years) 21.4 (6.0) 25.0 (7.8) 28.1 (8.8) 32.2 (6.6)
+[15–31] [14–42] [16–43] [23–41]
+Time since surgery (weeks) 14.3 (2.4) 20.8 (9.4)
+[9–17] [13–43]
+Quadriceps index (%) 95.3 (5.0)a
+67.6 (10.4) 75.3 (11.3)
+[90.4–103.9] [47.5–80.4] [62.4–97.3]
+KOS-ADLS (%) 90.7 (11.1) 92.0 (6.0)
+[69–100] [85–100]
+Values indicate: mean (SD) [range].
+a
+The strong-ACLR group had a higher quadriceps index than both the weak-ACLR and ACL-D groups ðP ¼ 0:000Þ.
+58 M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63
+
+--- PAGE 4 ---
+Joint kinetics were calculated using inverse dynamics,
+and are expressed as net internal moments. Knee angles
+and moments were normalized to 100% of the stance
+phase of gait. Joint moments were normalized to the
+subject’s body mass multiplied by the leg length. The
+subject’s six trials were averaged to obtain a mean for
+each subject.
+The strong-ACLR and weak-ACLR subjects’ raw
+EMG data were band-pass ﬁltered between 20 and 350
+Hz. Data from the ACL-D and uninjured group’s
+muscles, collected with the telemetric system, were high-
+pass ﬁltered with an eighth-order Butterworth ﬁlter at 90
+Hz. For all groups, a linear envelope was created for
+analysis using full-wave rectiﬁcation, followed by a
+second-order, phase corrected low-pass Butterworth
+ﬁlter with a cut-oﬀ frequency of 20 Hz. The linear en-
+velope was normalized to the maximum muscle activity
+recorded during either a dynamic or maximum volun-
+tary isometric contraction trial. Custom-designed soft-
+ware (Labview, National Instruments, Austin, TX,
+USA) was used to calculate the integral of the muscle
+activity from 100 ms prior to initial contact (to account
+for electro-mechanical delay [28]) until peak knee ﬂex-
+ion. All EMG data were compared to the subject’s un-
+involved side. The diﬀerences in collection equipment
+necessitated the need for diﬀerent ﬁltering parameters,
+and therefore made it impossible to compare between
+groups.
+Group diﬀerences were determined using one-way
+analyses of variance for the knee angle and moment at
+both initial contact and peak knee ﬂexion. When dif-
+ferences were detected, t-tests were used as post hoc tests
+with a Bonferroni adjustment used to account for the
+multiple comparisons performed; therefore, signiﬁcance
+was set at p < 0:017. A MANOVA with two repeated
+measures (muscle and side) was used to analyze the
+EMG integral data within each group, however no
+group comparisons were made because of the use of
+diﬀerent EMG data collection systems. Regression an-
+alyses were used to determine the relative eﬀect of
+quadriceps strength and muscle activity on the knee
+angles and moments at peak knee ﬂexion.
+3. Results
+There was no diﬀerence between the weak-ACLR and
+strong-ACLR groups with respect to mean age
+ðP ¼ 0:296Þ, mean time from surgery to testing
+ðP ¼ 0:076Þ, or mean KOS-ADLS scores ðP ¼ 0:594Þ
+(Table 1). The strong-ACLR group’s quadriceps index
+of 95.3% was signiﬁcantly greater than the weak-ACLR
+group’s quadriceps index of 67.6% ðP ¼ 0:000Þ, and the
+ACL-D group’s 75.3% ðP ¼ 0:000Þ. There was no sig-
+niﬁcant diﬀerence between the quadriceps indices of the
+weak-ACLR and ACL-D groups ðP ¼ 0:140Þ.
+4. Walking
+There was no signiﬁcant diﬀerence in the mean ve-
+locity between groups ðP ¼ 0:089Þ. The weak-ACLR
+and strong-ACLR subjects walked at 1.98 m/s/leg
+length. The ACL-D group maintained 2.07 m/s/leg
+length, while the uninjured subjects walked at 2.22 m/s/
+leg length.
+4.1. Kinematics and kinetics
+The weak-ACLR, strong-ACLR, and ACL-D
+groups’ knee angles at initial contact were not signiﬁ-
+cantly diﬀerent from those of the uninjured group
+ðP ¼ 0:729Þ (Table 2). At peak knee ﬂexion, the weak-
+ACLR group showed a trend towards a diminished knee
+angle ðP ¼ 0:043Þ (Fig. 1) and had a signiﬁcantly re-
+duced knee moment ðP ¼ 0:001Þ (Fig. 2) compared to
+the uninjured group. The ACL-D group had a trend
+toward a decreased internal knee moment at peak knee
+ﬂexion ðP ¼ 0:021Þ.
+The ACL reconstructed subjects’ quadriceps index
+accounted for a signiﬁcant portion of the variance in
+knee angle ðP ¼ 0:036; R2
+¼ 0:260Þ at peak knee ﬂex-
+ion. Quadriceps index and the score on the KOS-ADLS
+together accounted for a signiﬁcant portion of the
+variance in the ACL reconstructed subjects’ knee mo-
+ment at peak knee ﬂexion ðP ¼ 0:010; R2
+¼ 0:604Þ.
+4.2. Muscle activity
+There were no signiﬁcant side-to-side diﬀerences in
+EMG integrals for the medial gastrocnemius, vastus
+lateralis, and lateral hamstrings for all patient groups.
+5. Jogging
+The weak-ACLR and strong-ACLR groups jogged at
+3.36 and 3.48 m/s/leg length, respectively, during testing.
+The ACL-D group jogged at 3.33 m/s/leg length, while
+the uninjured group maintained 3.75 m/s/leg length.
+There was no signiﬁcant diﬀerence in the jogging speed
+between groups ðP ¼ 0:485Þ.
+5.1. Kinematics and kinetics
+At initial contact, the patient groups’ knee angle was
+not signiﬁcantly diﬀerent from that of the uninjured
+group ðP ¼ 0:275Þ (Fig. 3). Both the weak-ACLR
+ðP ¼ 0:056Þ and ACL-D ðP ¼ 0:063Þ groups showed a
+trend towards a reduced knee ﬂexion angle at peak knee
+ﬂexion. The internal knee extension moments of the
+weak-ACLR ðP ¼ 0:003Þ, and ACL-D ðP ¼ 0:014Þ
+groups were signiﬁcantly reduced compared to those of
+the uninjured subjects at peak knee ﬂexion (Fig. 4). The
+M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63 59
+
+--- PAGE 5 ---
+strong-ACLR group, however, was not diﬀerent from
+that of the uninjured group in any kinematic or kinetic
+variable we tested (Table 2).
+There was a signiﬁcant relationship between the quad-
+riceps index and the knee angle ðP ¼ 0:033; R2
+¼ 0:254Þ
+andmomentðP ¼ 0:006; R2
+¼ 0:379Þatpeakkneeﬂexion
+in the weak-ACLR and strong-ACLR subjects. The in-
+clusion of the KOS-ADLS did not strengthen the rela-
+tionship for the reconstructed subjects as a group.
+Separation into the weak-ACLR and strong-ACLR
+groups, however, revealed that for the strong-ACLR
+group, quadriceps index and the KOS-ADLS explained
+88% of the variability in the knee moment at peak knee
+ﬂexion ðP ¼ 0:015; R2
+¼ 0:878Þ. The KOS-ADLS and
+quadricepsindexwerenotabletoexplainthevariabilityin
+thekneemomentatpeakkneeﬂexionfortheweak-ACLR
+group. ðP ¼ 0:221; R2
+¼ 0:530Þ.
+5.2. Muscle activity
+The magnitudes of muscle activity in the vastus lat-
+eralis and gastrocnemius muscles were not diﬀerent in
+the involved and uninvolved sides of the weak-ACLR,
+strong-ACLR, and ACL-D groups. The lateral ham-
+strings, however, were signiﬁcantly more active in the
+involved limb of the ACL-D group ðP ¼ 0:029Þ (Fig. 5).
+6. Discussion
+The hypothesis that quadriceps strength deﬁcits
+contribute to the reduced knee angles and moments
+during early stance in ACL deﬁcient and reconstructed
+subjects was supported by the data, however, the muscle
+Table 2
+Gait characteristics for groups during walking and jogging
+Walking Jogging
+Weak-
+ACLR
+Strong-
+ACLR
+ACL-D Uninjured Weak-
+ACLR
+Strong-
+ACLR
+ACL-D Uninjured
+Knee angle
+Initial contact 5.94 6.00 5.47 7.78 12.09 13.45 12.25 16.34
+(degrees) (3.12) (3.99) (6.11) (5.29) (4.20) (3.93) (6.07) (6.53)
+Peak knee ﬂexion 20.99a
+24.10 21.86 26.54 38.52 41.29 38.98 46.12
+(degrees) (6.20) (3.93) (7.01) (4.87) (7.37) (4.13) (6.76) (9.18)
+Knee moment
+Peak knee ﬂexion 0.25b
+0.41 0.39c
+0.71 1.28d
+1.82 1.49e
+2.34
+ð%BW  LLÞ (0.26) (0.33) (0.30) (0.26) (0.72) (0.64) (0.73) (0.67)
+Values indicate mean (SD).
+a
+P ¼ 0:043.
+b
+P ¼ 0:001.
+c
+P ¼ 0:021.
+d
+P ¼ 0:003.
+e
+P ¼ 0:014.
+Fig. 2. Net internal knee moments during early stance phase of
+walking, normalized to body mass and leg length (N m/kg m). A
+positive value represents a greater relative contribution from the knee
+extensors (i.e. quadriceps femoris).
+Fig. 1. Knee ﬂexion angles during the weight acceptance phase of
+stance during walking.
+60 M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63
+
+--- PAGE 6 ---
+activation patterns used to compensate for the altered
+movements are diﬀerent. Only the strong group walked
+and jogged similarly to the uninjured group. Those who
+had quadriceps weakness following reconstructive sur-
+gery had lower knee ﬂexion angles and internal knee
+extensor moments during weight acceptance than unin-
+jured subjects, similar to the adaptation that ACL de-
+ﬁcient subjects exhibit following injury [7,8]. Subjects
+with nearly normal quadriceps strength following re-
+construction appeared to have suﬃcient eccentric
+quadriceps control during weight acceptance to resume
+normal knee movement patterns.
+The weak-ACLR group’s walking and jogging
+movement patterns strongly resembled those of the un-
+stable ACL-D group, despite the surgical restoration of
+knee stability. Both the weak and strong subjects had
+undergone successful ACL reconstruction as manifested
+by no symptoms of instability, full passive and active
+knee range of motion, and no joint eﬀusion or pain. The
+reduced knee angles and moments characteristic of the
+gait of ACL deﬁcient individuals with instability, how-
+ever, were present in the weak-ACLR group. These data
+support the contention that quadriceps weakness con-
+tributes to, but does not fully explain, the gait adapta-
+tions in individuals with ACL injury.
+The results of this study are consistent with the lit-
+erature and help to complete the picture developed by
+other investigators. DeVita et al. [13] reported that
+despite 6 months of rehabilitation, subjects following
+ACL reconstruction continued to have diminished knee
+moments during early stance compared to controls.
+Timoney and colleagues [29] also reported that fol-
+lowing reconstruction, subjects exhibited diminished
+knee moments during weight acceptance. Quadriceps
+strength testing was not performed in these studies so
+the relationship between quadriceps strength and de-
+creased knee moment cannot be ascertained. Hurwitz
+et al. [21] reported that the internal knee extension
+moment during jogging was signiﬁcantly correlated
+with isokinetic knee extension strength after ACL re-
+construction. Snyder-Mackler et al. [20] reported that
+isokinetic quadriceps indices were signiﬁcantly corre-
+lated with ﬂexion excursion during the early stance
+phase of walking in subjects following ACL recon-
+struction. Our data conﬁrm the ﬁndings of all these
+authors, and provide additional evidence that quadri-
+ceps weakness contributes to the characteristic move-
+ment patterns in these patients during both walking
+and jogging.
+The reduced knee extensor moments during weight
+acceptance in the weak-ACLR group are not attribut-
+able to reduced quadriceps activation, as vastus lateralis
+Fig. 5. Muscle activity during jogging integrated from 100 ms prior to
+initial contact through peak knee ﬂexion. Data represent the vastus
+lateralis (a) and lateral hamstrings (b) for the ACL-D, weak-ACLR
+and strong-ACLR groups.
+Fig. 3. Knee ﬂexion angles during jogging.
+Fig. 4. Net internal knee moments during jogging, normalized to body
+mass and leg length (N m/kg m). A positive value represents a greater
+relative contribution from the knee extensors (i.e. quadriceps femoris).
+M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63 61
+
+--- PAGE 7 ---
+muscle activities were not diﬀerent in the involved and
+uninvolved sides. The full quadriceps activation found
+in our weak-ACLR subjects is consistent with the ﬁnd-
+ings of Bulgerhoni et al. [12], who reported greater
+quadriceps activation during early stance in people fol-
+lowing ACL reconstruction. During jogging, it appears
+that the ACL-D subjects reduced the knee angles and
+moments through an increase in hamstring activity. This
+adaptation has been reported previously [30] as a com-
+pensation for knee instability. The higher level of ham-
+string muscle activation in the ACLD subjects suggests
+that quadriceps femoris weakness exacerbates the
+problem of knee instability and requires a diﬀerent
+compensation strategy. It is important to note that none
+of the groups demonstrated a signiﬁcant reduction in
+quadriceps activity. The assertion that the reduced knee
+extension moment that is seen in persons with ACL
+injury represents an attempt to avoid episodes of insta-
+bility by decreasing quadriceps activation is therefore
+unsubstantiated using the current data.
+The reduced knee ﬂexion in anterior cruciate ligament
+deﬁcient and weak reconstructed subjects may have im-
+portant consequences for long-term joint integrity. Re-
+ducedkneeﬂexioninterfereswiththenormalabilityofthe
+knee to absorb shock during weight acceptance [31], and
+may be associated with early degenerative joint changes.
+A stiﬀer knee, which does not ﬂex suﬃciently, is often
+observed following ACL rupture or reconstruction
+[8,12,13]. Our data provide evidence that quadriceps
+strengthdeﬁcitsmaybeafactorinﬂuencingthisreduction
+inkneeﬂexion,andthereforemightberesponsibleforthe
+increased risk of early degenerative changes. Evidence
+exists to suggest that the rate of loading, which was not
+tested in this study, on articular cartilage may be more
+detrimentaltothejointsurfacesthanthemagnitudeofthe
+joint contact forces [32]. Quadriceps weakness has re-
+cently been associated with an increased knee joint load-
+ing rate in females [33], which bodes poorly for the
+integrity of the joint’s contact surfaces.
+Ifquadricepsfemorisstrengthdeﬁcitsareimplicatedin
+thedevelopmentofearlydegenerativejointarthritis,then
+return to high-level activity with weak quadriceps after
+ACLreconstructionappearsilladvised.‘‘Returntoplay’’
+guidelines are not clearly deﬁned following anterior cru-
+ciate ligament reconstruction. While quadriceps femoris
+strength is often used as a marker for rehabilitation pro-
+gress, return to play criteria vary widely [34,35]. Shel-
+bourne and Foulk [34] allow patients to return to sport
+speciﬁc training with quadriceps index of 65%, but not to
+return to full competition until the quadriceps index is
+greaterthan80%.Othershaveusedacriterionmeasureof
+a quadriceps index greater than 90% for return to sport
+[35]. More recently, DeCarlo and colleagues [36] have
+advocated a practice that allows patients to return to ac-
+tivity when their knees have full range of motion, no ef-
+fusion and the ‘‘knees can be rehabilitated to feeling
+normal to them with everyday activities’’. All of the sub-
+jects in our study met these criteria: they had self-ratings
+of knee function that were high, no eﬀusion and normal
+ROM.However,thegroupwithaquadricepsindexofless
+than 80% had walking and jogging patterns that were
+similar to patients with ACL deﬁciency, and these adap-
+tations may be detrimental to joint integrity which sug-
+gests that full ROM, no eﬀusion, and high self-rating
+scoresoffunctionmaybeinsuﬃcientcriteriontoallowfor
+‘‘return to play’’.
+Clearly, knee instability aﬀects gait patterns [7,11].
+Our data support the hypothesis that quadriceps femoris
+strength deﬁcits also contribute signiﬁcantly to an al-
+tered gait pattern after anterior cruciate ligament re-
+construction. Strong quadriceps appear to be necessary
+to allow for a return of normal joint kinematics, kinetics
+and muscle activities following ACL reconstruction.
+Acknowledgements
+Funds were received in total or partial support of the
+research presented in this article. The funding sources
+were the National Institute of Health (Training grant
+T32 HD07490 and grant # 1RO3HD3554701); the Na-
+tional Athletic Training Association (grant # 396E001);
+and the Foundation for Physical Therapy (Doctoral
+Research Award # 97D12RUD01).
+References
+[1] Daniel DM, Stone ML, Dobson BE, Fithian DC, Rossman DJ,
+Kaufman KR. Fate of the ACL injured patient: a prospective
+outcome study. Am J Sports Med 1994;22:632–44.
+[2] Andriacchi TP, Birac D. Functional testing in the anterior
+cruciate ligament-deﬁcient knee. Clin Orthop 1993;288:40–7.
+[3] Buss DD, Min R, Skyhar M, Galinat B, Warren R, Wickiewicz
+TL. Nonoperative treatment of acute anterior cruciate ligament
+injuries in a selected group of patients. Am J Sports Med
+1995;23:160–5.
+[4] Fitzgerald GK, Axe MJ, Snyder-Mackler L. Proposed practice
+guidelines for nonoperative anterior cruciate ligament rehabilita-
+tion of physically active individuals. J Orthop Sports Phys Ther
+2000;30:194–203.
+[5] Eastlack ME, Axe MJ, Snyder-Mackler L. Laxity, instability, and
+functional outcome after ACL injury: copers versus noncopers.
+Med Sci Sports Exerc 1999;31:210–5.
+[6] Snyder-Mackler L, Fitzgerald GK, Bartolozzi III AR, Ciccotti
+MG. The relationship between passive joint laxity and functional
+outcome after anterior cruciate ligament injury. Am J Sports Med
+1997;25:191–5.
+[7] Berchuck M, Andriacchi TP, Bach BR, Reider B. Gait adapta-
+tions by patients who have a deﬁcient anterior cruciate ligament. J
+Bone Joint Surg Am A 1990;72:871–7.
+[8] Rudolph KS, Eastlack ME, Axe MJ, Snyder-Mackler L. Move-
+ment patterns after anterior cruciate ligament injury: a compar-
+ison of patients who compensate well for the injury and those who
+require operative stabilization. J Electromyogr Kinesiol 1998;8:
+349–62.
+62 M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63
+
+--- PAGE 8 ---
+[9] Hirokawa S, Solomonow M, Lu Y, Lou Z, D’Ambrosia R.
+Anterior–posterior and rotational displacement of the tibia
+elicited by quadriceps contraction. Am J Sports Med
+1992;20:299–306.
+[10] Renstrom P, Arms SW, Stanwyck TS, Johnson RJ, Pope MH.
+Strain within the anterior cruciate ligament during hamstring and
+quadriceps activity. Am J Sports Med 1986;14:83–7.
+[11] Rudolph KS, Axe MJ, Buchanan TS, Scholz JP, Snyder-Mackler
+L. Dynamic stability in the anterior cruciate ligament deﬁcient
+knee. Knee Surg Sports Traumatol Arthrosc 2001;9:62–71.
+[12] Bulgheroni P, Bulgheroni MV, Andrini L, Guﬀanti P, Giughello
+A. Gait patterns after anterior cruciate ligament reconstruction.
+Knee Surg Sports Traumatol Arthrosc 1997;5:14–21.
+[13] DeVita P, Hortobagyi T, Barrier J, Torry M, Glover KL, Speroni
+DL, et al. Gait adaptations before and after anterior cruciate
+ligament reconstruction surgery. Med Sci Sports Exerc
+1997;29:853–9.
+[14] Itoh H, Ichihashi N, Maruyama T, Kurosaka M, Hitohata K.
+Weakness of thigh muscles in individuals sustaining anterior
+cruciate ligament injury. Kobe J Med Sci 1992;38:93–107.
+[15] Lorentzen R, Elmqvist L, Sjostrom M, Fagerlund M, Fugl-Meyer
+AR. Thigh musculature in relation to chronic anterior cruciate
+ligament tear: muscle size, morphology, and mechanical output
+before reconstruction. Am J Sports Med 1989;17:423–9.
+[16] Snyder-Mackler L, DeLuca PF, Williams PR, Eastlack ME,
+Bartolozzi III AR. Reﬂex inhibition of the quadriceps femoris
+muscle after injury or reconstruction of the anterior cruciate
+ligament. J Bone Joint Surg Am A 1994;76:550–60.
+[17] Natri A, J€ a arvinen M, Latvala K, Kannus P. Isokinetic muscle
+performance after anterior cruciate ligament surgery. Int J Sports
+Med 1996;17:223–8.
+[18] Øster a as H, Augestad LB, Tøndel S. Isokinetic muscle strength
+after anterior cruciate ligament reconstruction. Scand J Med Sci
+Sports 1998;8:279–82.
+[19] Wilk K, Romaniello WT, Soscia SM, Arrigo CA, Andrews JR.
+The relationship between subjective knee scores, isokinetic
+testing, and functional testing in the ACL-reconstructed knee. J
+Orthop Sports Phys Ther 1994;20:60–73.
+[20] Snyder-Mackler L, Ladin Z, Schepsis AA, Young JC. Electrical
+stimulation of the thigh muscles after reconstruction of the
+anterior cruciate ligament. J Bone Joint Surg Am 1991;73-
+A:1025–36.
+[21] Hurwitz DE, Wolfensperger KB, Patel R, Kopinski P, Bush-
+Joseph C, Bach BRjrJr, Andriacchi TP. A relationship between
+quadriceps strength and function in patients with ACL recon-
+struction with a patellar tendon autograft. Trans Orthop Res Soc
+1997;43:654.
+[22] Dye SF, Wojtys EM, Fu FH, Fithian DC, Gillquist J. Factors
+contributing to function of the knee joint after injury or
+reconstruction of the anterior cruciate ligament. J Bone Joint
+Surg Am A 1998;80:1380–92.
+[23] Gillquist J, Messner K. Anterior cruciate ligament reconstruction
+and the long term incidence of gonarthrosis. Sports Med
+1999;27:143–56.
+[24] Hurley MV. The role of muscle weakness in the pathogenesis of
+osteoarthritis. Rheum Dis Clin North Am 1999;25:283–98.
+[25] Sapega A. Muscle performance evaluation in orthopaedic prac-
+tice. J Bone Joint Surg Am A 1990;72:1562–74.
+[26] Irrgang JJ, Snyder-Mackler L, Wainner RS, Fu FH, Harner CD.
+Development of a patient-reported measure of function of the
+knee. J Bone Joint Surg Am A 1998;80:1132–45.
+[27] Snyder-Mackler L, Delitto A, Bailey SL, Stralka SW. Strength of
+the quadriceps femoris muscle and functional recovery after
+reconstruction of the anterior cruciate ligament. J Bone Joint
+Surg Am A 1995;77:1166–73.
+[28] Vos EJ, Harlaar J, Van Ingen Schenau GJ. Electromechanical
+delay during knee extensor contractions. Med Sci Sports Exerc
+1991;23:1187–93.
+[29] Timoney JM, Inman WS, Quesada PM, Sharkey PF, Barrack
+RL, Skinner HB, et al. Return of normal gait patterns after
+anterior cruciate ligament reconstruction. Am J Sports Med
+1993;21:887–9.
+[30] Ciccotti MG, Kerlan GK, Perry J, Pink M. An electromyographic
+analysis of the knee during functional activities, Part II: The
+anterior cruciate ligament-deﬁcient and -reconstructed proﬁles.
+Am J Sports Med 1994;22:651–8.
+[31] Cook TM, Farrell KP, Carey IA, Gibbs JM, Wiger GE. Eﬀects of
+restricted knee ﬂexion and walking speed on the vertical ground
+reaction force during gait. J Orthop Sports Phys Ther
+1997;25:236–44.
+[32] Radin EL, Burr DB, Caterson B, Fyhrie D, Brown TD, Boyd
+RD. Mechanical determinants of osteoarthritis. Semin Arthritis
+Rheum 1991;21(3, Suppl 2):12–21.
+[33] Mikesky AE, Meyer A, Thompson KL. Relationship between
+quadriceps strength and rate of loading during gait in women. J
+Orthop Res 2000;18:171–5.
+[34] Shelbourne KD, Foulk DA. Timing of surgery in acute anterior
+cruciate ligament tears on the return of quadriceps muscle
+strength after reconstruction using an autogenous patellar tendon
+graft. Am J Sports Med 1995;23:686–9.
+[35] Manal TJ, Snyder-Mackler L. Practice guidelines for anterior
+cruciate ligament rehabilitation: a criterion-based rehabilitation
+progression. Oper Techn Orthop 1996;6:90–6.
+[36] DeCarlo M, Shelbourne KD, Oneacre K. Rehabilitation program
+for both knees when the contralateral autogenous patellar tendon
+graft is used for primary anterior cruciate ligament reconstruc-
+tion: a case study. J Orthop Sports Phys Ther 1999;29:144–
+59.
+M. Lewek et al. / Clinical Biomechanics 17 (2002) 56–63 63
+
+--- PAGE 9 ---

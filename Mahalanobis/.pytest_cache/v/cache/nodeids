@@ -1,0 +1,7 @@
+[
+  "tests/01_test_v2_pipeline.py::test_all_speed_concatenation_and_cli_balance_choices",
+  "tests/01_test_v2_pipeline.py::test_mean_and_inverse_weight_are_duplicate_invariant",
+  "tests/01_test_v2_pipeline.py::test_pair_aware_splits_have_no_identity_overlap",
+  "tests/01_test_v2_pipeline.py::test_raw_distance_and_exact_contribution_identity",
+  "tests/01_test_v2_pipeline.py::test_signed_calibration_preserves_negative_values"
+]

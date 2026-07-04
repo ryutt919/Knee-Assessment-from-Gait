@@ -1,13 +1,13 @@
 {
-  "best_auc_roc": 0.6817856631850051,
+  "best_auc_roc": 0.7715640712758869,
   "best_params": {
-    "scaling": "zscore",
-    "pca_k_method": "fixed",
-    "speed_filter": "slow",
+    "scaling": "minmax",
+    "pca_k_method": "variance_ratio",
+    "speed_filter": "all",
     "distance_metric": "mahalanobis",
-    "pca_fixed_k": 11
+    "pca_variance_ratio": 0.9882617097309394
   },
-  "n_trials": 5,
+  "n_trials": 84,
   "study_name": "mahalanobis_impairment",
   "db_path": "/Users/ryutt/Desktop/mini_ryutt/Walking/0702_Mahalanobis/results/optuna_mahalanobis.db"
 }

@@ -1,0 +1,794 @@
+
+--- PAGE 1 ---
+Gait Biomechanics in Anterior Cruciate
+Ligament–reconstructed Knees at
+Different Time Frames Postsurgery
+JOHN GOETSCHIUS1
+, JAY HERTEL2
+, SUSAN A. SALIBA2
+, STEPHEN F. BROCKMEIER2
+, and JOSEPH M. HART2
+1
+Department of Exercise Science & Athletic Training, Adrian College, Adrian, MI; 2
+Department of Kinesiology, and
+Department of Orthopaedic Surgery, University of Virginia, Charlottesville, VA
+ABSTRACT
+GOETSCHIUS,J., J.HERTEL, S. A. SALIBA, S.F.BROCKMEIER, and J.M.HART. Gait Biomechanics inAnteriorCruciate Ligament–
+reconstructed Knees at Different Time Frames Postsurgery. Med. Sci. Sports Exerc., Vol. 50, No. 11, pp. 2209–2216, 2018. Purpose: To
+examine knee and hip biomechanics during walking and jogging in groups of ACLR patients at early, mid, and late time frames
+postsurgery and healthy controls. Methods: Participants included individuals with a history of primary, unilateral ACLR, stratified into
+early (1.4 T 0.4 yr post, n = 18), mid (3.3 T 0.6 yr post, n = 20), and late (8.5 T 2.8 yr post, n = 20) ACLR groups based on time
+postsurgery, and a healthy control group (n = 20). Walking and jogging motion capture analysis of knee and hip kinetics and kinematics
+were measured in the sagittal and frontal planes. Interlimb (within groups) and between-group comparisons were performed for all gait
+variables. Statistical comparisons were made across the gait cycle by plotting graphs of means and 90% confidence intervals and
+identifying regions of the gait cycle in which the 90% confidence intervals did not overlap. Results: Early ACLR group demonstrated
+reduced knee flexion, knee extension, knee adduction, and hip adduction moments on the ACLR limb. Mid ACLR group demonstrated
+no gait differences between limbs or other groups. Late ACLR group demonstrated reduced knee flexion moments, and greater knee and
+hip adduction moments in their ACLR limb. Control group demonstrated no interlimb differences. Conclusions: Walking and jogging
+gait biomechanics presented differently in patients at different stages in time after ACLR surgery. The early ACLR group demonstrated
+lower sagittal and frontalplane joint loading ontheACLR limbcompared with contralateral andcontrol limbs. The mid ACLRgroup did not
+demonstrate any gait differences compared with the contralateral or control limb. The late ACLR group demonstrated lower sagittal plane
+joint loading compared with control limbs and greater frontal plane joint loading compared to contralateral and control limbs. Key Words:
+WALK, JOG, KNEE, HIP, FLEXION MOMENT, ADDUCTION MOMENT
+A
+nterior cruciate ligament (ACL) reconstruction
+(ACLR) surgery in combination with postsurgical
+rehabilitation is a common treatment for physically
+active patients wishing to return to sport and exercise after
+ACL injury (1). An estimated 130,000 ACLR surgeries are
+performed each year in the United States and evidence
+suggest that ACLR surgery rates are increasing annually
+(2). Current clinical care after ACLR is focused on the goal of
+a safe and timely return to sport and exercise (3); however,
+evidence suggests that patients with a history of ACLR
+commonly report long-term knee dysfunction (4–6), lower
+physical activity levels (6), and are at a high risk for early
+onset posttraumatic osteoarthritis (PTOA) (5,7). A recent sys-
+tematic review reported that up to 48% of ACLR patients had
+evidence of knee OA within their second decade postsurgery
+(7). This is particularly concerning when considering that the
+highest rates of ACLR are performed in patients under the age
+of 20 yr (8).
+Persistent adaptations in lower extremity joint mechanics
+during repetitive activities such as walking and jogging
+may contribute to the development of PTOA after ACLR (9).
+Unresolved impairments in proprioception (10), muscle func-
+tion (11), and movement coordination (12) may manifest into
+abnormal lower extremity joint motion and loading during
+bipedal activities of daily living and exercise (13). Even small
+deviations in normal knee joint loading between limbs may
+lead to altered wear patterns on the articular tissues of the
+joint, and over time and repetition, these forces could cause
+rapid or higher magnitude joint degeneration (14). Despite an
+emphasis on restoring lower-extremity strength and movement
+symmetry during postsurgical rehabilitation, evidence sug-
+gests that patients may continue to demonstrate changes in
+joint loading patterns for years postsurgery (15).
+Adaptations in sagittal and frontal plane kinetics have
+been indicated as potential signs of unhealthy mechanical
+Addressforcorrespondence:JohnGoetschius,Ph.D.,A.T.C.,110.S.MadisonSt,
+Adrian, MI 49221; E-mail: jgoetschius@adrian.edu.
+Submitted for publication October 2017.
+Accepted for publication June 2018.
+Supplemental digital content is available for this article. Direct URL citations
+appear in the printed text and are provided in the HTML and PDF versions of
+this article on the journal_s Web site (www.acsm-msse.org).
+0195-9131/18/5011-2209/0
+MEDICINE & SCIENCE IN SPORTS & EXERCISEÒ
+Copyright Ó 2018 by the American College of Sports Medicine
+DOI: 10.1249/MSS.0000000000001693
+2209
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 2 ---
+loading on the knee joint during gait (15). Reductions in
+external knee flexion moments during the stance phase of
+gait have been reported in the ACL injured and ACLR knees
+(15,16). This ‘‘quadriceps avoidance’’ gait pattern is thought
+to occur in response to quadriceps muscle dysfunction (17),
+and evidence has shown that ACLR patients with weak
+quadriceps demonstrate a reduced external knee flexion
+moment compared to uninjured controls (18). Additionally,
+research has focused on the external knee adduction moment
+inpatientswitha history ofACLR(19–22) based on evidence
+suggesting that the knee adduction loading pattern may be
+related to tibiofemoral contact forces and the progression of
+osteoarthritis (23,24).
+Posttraumatic osteoarthritis is a condition that develops
+over time after ACLR (7). Despite numerous studies exam-
+ining joint loading patterns during gait in ACLR knees, there
+is still limited understanding of how gait patterns present
+over the long-term course of time postsurgery. Conventional
+theory suggests that although patients do experience gait im-
+provements over time, some level of abnormal joint loading
+may persist long after ACLR. Two longitudinal studies have
+supported this theory, both observing improvements in knee
+sagittal (25) and frontal (21) plane loading that never reached
+normal symmetry after 2 to 3 yr postsurgery. Although these
+twolongitudinalstudies are some of thebest available evidence
+regarding changes in joint loading over time, the 2- to 3-yr
+follow-up times in those studies may be too early to extrapolate
+to long-term gait adaptations. Abnormal knee joint loading in
+the sagittal (26,27) and frontal (19,21,28) planes have been
+observed in samples of ACLR patients averaging 3 to 5 yr
+postsurgery; however, the majority of ACLR samples included
+participants across a wide spectrum of times postsurgery,
+combining patient just returning to activity with those 10+ yr
+postsurgery, thus limiting our true understanding of joint
+loading patients at later time frames postsurgery. To better
+understand the theoretical relationship between posttraumatic
+adaptations in gait and the development of PTOA we need to
+be more intentional about understanding how lower extremity
+gait patterns present over the course of time postsurgery.
+Therefore, the purpose of this study was to evaluate and
+compare the presence of abnormal knee and hip joint biome-
+chanicsduringwalkingandjoggingingroupsofindividualsat
+early, mid, and late time frames after unilateral ACLR surgery
+and a group of healthy controls.
+METHODS
+Data collection was performed in a laboratory setting and
+included three-dimensional motion capture of participants_
+gait during treadmill walking and jogging. Primary gait vari-
+ables included knee and hip kinetics and kinematics in the
+sagittal and frontal planes and vertical ground reaction forces
+(vGRF). Comparisons were made between limbs, involved
+versus uninvolved, within each group and between the in-
+volved limb of all four groups, early ACLR, mid ACLR, late
+ACLR, and healthy controls. For ACLR participants, the
+surgical limb was treated as the involved limb. For control
+participants, one limb was randomly selected using a coin flip
+as the ‘‘involved limb’’ for all interlimb comparisons in an ef-
+fort to remove limb selection bias. This study was approved by
+our university_s institutional review board for health sciences
+researchandallparticipantsprovidedwritteninformedconsent.
+Participants. A total of seventy-six individuals between
+the ages of 18 and 35 yr were recruited from our local uni-
+versity community for participation in this study. Fifty-six
+individuals had a history of primary, unilateral ACLR, were
+greater than 9 months postsurgery and had returned to exercise/
+sport with no physical activity restrictions imposed by their
+healthcare providers (Table 1). The ACLR participants were
+excluded if they had a history of multiligament knee surgery,
+surgical complications, or bilateral knee joint surgery. There
+were no restrictions on participation based on ACLR graft type
+or a history of meniscectomy or repair at the time of ACLR;
+however, participants with active meniscal symptoms (joint
+line pain or clicking/catching) were excluded. The ACLR
+participants were stratified into groups based on their time
+postsurgery:earlyACLR:6to24months(n = 18), mid ACLR:
+2 to 5 yr (n = 20), late ACLR: 5 to 15 yr (n = 18). Twenty
+recreationally active individuals with no history of lower ex-
+tremity injury or surgery and no current symptoms of lower
+extremity pain or neuropathy participated as healthy controls.
+Data collection. Demographic variables, including age,
+sex, mass, height, and time postsurgery, were collected, and all
+TABLE 1. Early, mid, and late ACLR and control groups demographics.
+Early ACLR (n = 18) Mid ACLR (n = 20) Late ACLR (n = 18) Control (n = 20)
+Sex 11 F, 7 M 16 F, 4 M 12 F, 6 M 13 F, 7 M
+Age (yr) 21.7 T 4.1 20.5 T 2.2 26.7 T 4.4* 22.4 T 3.2
+Mass (kg) 68.7 T 15.6 68.5 T 9.9 69.5 T 12.7 68.9 T 13.1
+Height (m) 1.72 T 0.12 1.73 T 0.09 1.73 T 0.10 1.71 T 0.13
+IKDC (0–100) 85.4 T 9.2** 86.0 T 7.2** 89.8 T 10.1** 99.5 T 2.0
+Godin 69.2 T 22.8 74.5 T 13.0 59.9 T 26.4 70.5 T 17.9
+Time postsurgery (yr) 1.4 T 0.4*** 3.3 T 0.6*** 8.6 T 2.8*** NA
+Graft type Patella tendon—7
+Hamstrings—10
+Cadaver—1
+Patella tendon—11
+Hamstrings—5
+Cadaver—4
+Patella tendon—10
+Hamstrings—5
+Cadaver—3
+NA
+*Significantly greater than all other groups (P G 0.001).
+**Significantly lower than control group (P G 0.001).
+***Significantly different from other ACLR groups (P G 0.001).
+F, female; M, male; IKDC, International Knee Documentation Committee Subjective Knee Evaluation Score; Godin, Godin leisure-time activity score.
+http://www.acsm-msse.org 2210 Official Journal of the American College of Sports Medicine
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 3 ---
+participants completed the International Knee Documentation
+Committee subjective knee evaluation (29) and the Godin
+leisure time exercise questionnaire (30) as descriptors of self-
+reported knee function and physical activity levels.
+The motion capture system included Motion Monitor
+(Innovative Sports Training, Inc., Chicago, IL) and Nexus
+(Vicon Motion Systems, Ltd, UK) softwares, 12 Bonita-10
+cameras (Vicon Motion Systems, Ltd, UK) and a split-belt
+instrumented treadmill (Bertec Corporation, Columbus, OH).
+Retro-reflective markers (14 mm) were placed bilaterally on
+the heel,secondtoe,lateral malleoli,lateralshank,lateral knee
+joint, lateral thigh, anterolateral thigh, and anterior superior
+iliac spine (ASIS). A four-marker sacral cluster was secured
+around the pelvis and aligned with the sacrum. Static calibra-
+tion trials were performed standing with feet–shoulder width
+apartandtoesfacingforward.Eachbodysegmentwasdefined
+using a minimum of three markers: foot: heel, second toe,
+lateral malleoli; shank: lateral malleoli, lateral shank, lateral
+knee joint; thigh: lateral knee joint, lateral thigh, anterolateral
+thigh;andpelvis:leftandrightASIS,sacralcluster.Ankleand
+knee joint centers were defined using anthropometric mea-
+sures. The hip joint was defined using ASIS markers and the
+Bell method (31). Participants performed trials in their pre-
+ferred shoes used for jogging exercise. Walking and jogging
+trials were performed at standardized speeds of 1.34 mIsj1
+(3.0mph)and2.68mIsj1
+(6.0mph),respectively, with 5:00min
+warm-up periods for each task prior to collection. Participants
+ambulated continuously while ten sequential capture periods
+of 3 s each were collected during walking and jogging.
+Data processing. Kinematic data were sampled at
+100Hz,treadmillforceplatedataweresampledat1000Hz,and
+all data were smoothed using a low-pass 20-Hz Butterworth
+filter. Kinetic and kinematics variables were reduced to
+100 data points representing 1% to 100% of the gait cycle
+(heel contact to heel contact). Variables were calculated using
+the average of 10 strides for each limb. For each capture pe-
+riod, the first full gait cycle on the involved and uninvolved
+limb were selected using a threshold of 20 N to define heel
+contacts. Vertical ground reaction forces were reported in
+newtons normalized by body mass (NIkgj1
+), kinematic vari-
+ables were reported in rotational degrees, and kinetic variables
+were reported in external moments, newton-meters (NIm)
+normalizedtobodymassandheight(NImIkgj1
+Imj1
+). All gait
+data was processed using the Motion Monitor software.
+Statistical analysis. Demographics and questionnaire
+data were compared between each group using one-way
+ANOVA, Tukey_s LSD, and W2
+analyses (sex, graft-type).
+Each gait variable was compared between the involved and
+uninvolved limbs within each group, between the involved
+limbs of each ACLR group and both healthy limbs of the
+control group, and between the involved limb of each ACLR
+group. Comparisons were made across the entire gait cycle by
+plotting means and 90% confidence interval (CI) ensemble
+curves for each 1% of the gait cycles. Kinematic variables
+were analyzed across 1% to 100% of the gait cycle. Kinetics
+variables were only analyzed across 1% to 60% and 1% to
+40% of the gait cycle for walking and jogging, respectively.
+Statistically significant differences between limbs or groups
+were identified by examining the plots and data for regions of
+the gait cycle where the 90% CI curves did not overlap for a
+minimum of three consecutive percentages (3%) of the gait
+cycle (32,33). Within these regions of the gait cycle, the
+average mean and standard deviation across the region for
+each limb/group and average Cohen_s d effect sizes (34) and
+95% CI between limbs/groups were calculated. Results were
+interpreted using the following gait cycle phases for walking
+(1%–10%, loading-response; 11%–30%, mid-stance; 31%–
+50%, terminal-stance; 51%–60%, preswing; 61%–73%, initial-
+swing; 74%–87%, mid-swing; 88%–100%, terminal swing)
+andjogging(1%–40%,stance;41%–100%,swing).Datafrom
+two participants were not included in the jogging analyses:
+one participant from the mid ACLR group (n = 19) did not
+want to attempt the jogging task and one participant from the
+late ACLR group (n = 17) lost a marker during collection, and
+data were unable to be processed.
+RESULTS
+Group demographics and questionnaire results are presented
+in Table 1. Summary tables containing the results of the
+interlimb comparisons and ACLR versus control limb com-
+parisons are presented in Tables 2 and 3, respectively. Mean
+ensemble curves for the knee sagittal, knee frontal, and hip
+frontal moments are presented for all three ACLR groups
+during walking (Fig. 1) and jogging (Fig. 2). Additional
+figures, including the mean and 90% CI ensembles curves
+for all interlimb and between group comparisons, are presented
+in the Appendix (Figures 1–18, Supplemental Digital Content 1,
+http://links.lww.com/MSS/B313).
+Interlimb comparisons within groups. While walk-
+ing, the early ACLR group demonstrated lower vGRF during
+preswing, lower external knee extension moments during
+terminalstance,greaterkneeflexionmotionduringpre-swing,
+lower external knee adduction moments during preswing, and
+greater hip abduction motion during mid and terminal swing
+on the involved limb compared with the uninvolved limb.
+While jogging, the early ACLR group demonstrated lower
+vGRF during stance, lower external knee flexion moments
+during stance, less knee flexion during stance, lower external
+knee adduction moments during stance, lower external hip
+adduction moments during stance, and less hip adduction
+motion during swing on the involved limb compared with the
+uninvolved limb.
+There were no significant interlimb differences in walk-
+ing or jogging kinetic or kinematic variables in the mid
+ACLR group.
+While walking, the late ACLR group demonstrated greater
+external knee adduction moments during mid-stance and
+greater external hip adduction moments during mid-stance
+through pre-swing on the involved limb compared to the
+uninvolved limb. During the stance phase of jogging, the late
+GAIT, ACL RECONSTRUCTION, AND TIME POSTSURGERY Medicine & Science in Sports & Exercised 2211
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 4 ---
+ACLR group demonstrated greater external hip adduction
+momentsonthe involvedlimbcomparedwiththe uninvolved.
+There were no significant interlimb differences in
+walking or jogging kinetic or kinematic variables in the
+control group.
+Comparisons between ACLR groups and control
+group. While walking, the early ACLR group demonstrated
+lower vGRF during preswing, lower external knee extension
+moments during terminal stance and greater knee flexion
+during terminal stance through preswing compared to the
+healthy controls. During the stance phase of jogging, the early
+ACLR group demonstrated lower vGRF, lower external
+knee flexion moments, less knee flexion motion, and a
+lower external knee adduction moment compared with the
+healthy controls.
+There were no significant differences between the mid
+ACLR group and the healthy controls during walking
+or jogging.
+While walking, the late ACLR group demonstrated
+greater vGRF during terminal stance, lower external knee
+flexion moments during mid stance, less knee abduction
+motion from loading-response through terminal stance and
+TABLE 2. Significant kinetic and kinematic interlimb differences within ACLR and control groups.
+Kinetic and Kinematic Variables Gait Cycle Region Involved Mean T SD Uninvolved Mean T SD Effect Size and 95% CI
+Walking differences
+Early ACLR
+vGRF 52%–56% 6.3 T 1.8 7.1 T 1.7 0.95 [0.26–1.63]
+External knee extension moment 46%–51% 0.15 T 0.11 0.25 T 0.11 0.85 [0.16–1.53]
+Knee flexion motion 47%–59% 14.8 T 5.1 11.4 T 8.9 0.86 [0.17–1.54]
+External knee adduction moment 52%–58% 0.14 T 0.09 0.22 T 0.08 0.98 [0.28–1.67]
+Hip abduction motion 82%–95% 5.2 T 2.7 3.1 T 2.2 0.86 [0.18–1.54]
+Mid ACLR
+(No differences) — — — —
+Late ACLR
+External knee adduction moment 16%–32%, 0.33 T 0.11 0.24 T 0.09 0.87 [0.19–1.56]
+External hip adduction moment 10%–58% 0.48 T 0.15 0.30 T 0.17 1.13 [0.42–1.84]
+Control
+(No differences) — — — —
+Jogging differences
+Early ACLR
+vGRF 19%–24% 19.2 T 1.4 20.6 T 1.2 1.10 [0.40–1.80]
+External knee flexion moment 10%–20% 0.67 T 0.34 0.93 T 0.22 0.91 [0.22–1.59]
+Knee flexion motion 19%–21% 28.3 T 4.2 32.3 T 5.1 0.85 [0.17–1.54]
+External knee adduction moment 23%–25%, 0.33 T 0.23 0.53 T 0.20 0.92 [0.23–1.61]
+External hip adduction moment 23%–25%, 0.59 T 0.38 0.88 T 0.29 0.85 [0.17–1.53]
+Hip adduction motion 86%–96% 1.2 T 3.4 3.8 T 2.5 0.87 [0.18–1.55]
+Mid ACLR
+(No differences) — — — —
+Late ACLR
+External hip adduction moment 7%–9%, 13%–16%, 20%–23%, 27%–30% 1.00 T 0.41 0.61 T 0.36 1.01 [0.29–1.72]
+Control
+(No differences) — — — —
+vGRF, NImIkgj1
+; external moments, NImIkgj1
+Imj1
+; motions, -.
+Gait cycle region, region of gait cycle that significant difference was observed.
+TABLE 3. Significant kinetic and kinematic differences between ACLR groups and the control group.
+Kinetic and Kinematic Variables Gait Cycle Region ACLR Mean T SD Control Mean T SD Effect Size and 95% CI
+Walking differences
+Early ACLR
+vGRF 53%–57% 6.3 T 1.2 7.1 T 0.9 0.77 [0.20–1.35]
+External knee extension moment 44%–53% 0.15 T 0.11 0.23 T 0.08 1.01 [0.42–1.59]
+Knee flexion motion 44%–60% 14.7 T 5.2 11.4 T 3.4 0.84 [0.27–1.42]
+Mid ACLR
+(No differences) — — — —
+Late ACLR
+vGRF 34%–37% 7.4 T 0.4 7.1 T 0.4 0.78 [0.20–1.35]
+External knee flexion moment 14%–17% 0.24 T 0.10 0.31 T 0.10 0.90 [0.30–1.49]
+Knee abduction motion 1%–52%, 96%–100% 0.1 T 2.7 2.2 T 2.5 0.85 [0.27–1.43]
+Hip abduction motion 74%–89% 3.5 T 2.1 5.3 T 2.6 0.76 [0.18–1.33]
+Jogging differences
+Early ACLR
+vGRF 20%–23% 19.3 T 1.3 20.2 T 1.0 0.81 [0.423–1.38]
+External knee flexion moment 9%–22% 0.60 T 0.34 0.91 T 0.23 1.18 [0.58–1.78]
+Knee flexion motion 9%–25% 29.2 T 4.3 33.4 T 4.8 0.90 [0.32–1.48]
+External knee adduction moment 9%–11%, 0.24 T 0.26 0.46 T 0.22 0.97 [0.38–1.55]
+Mid ACLR
+(No differences) — — — —
+Late ACLR
+External knee flexion moment 8%–18% 0.79 T 0.17 0.97 T 0.21 0.90 [0.30–1.49]
+Knee abduction motion 32%–39% 0.4 T 2.2 2.3 T 2.6 0.77 [0.19–1.36]
+External hip adduction moment 21%–23% 1.33 T 0.44 0.94 T 0.35 1.04 [0.44–1.64]
+http://www.acsm-msse.org 2212 Official Journal of the American College of Sports Medicine
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 5 ---
+during terminal-swing, and less hip abduction motion during
+mid-swing compared with the healthy control knees. While
+jogging, the late ACLR group demonstrated lower external
+knee flexion moments during loading-response through mid
+stance, less knee abduction motion during terminal-stance,
+andgreaterexternalhipadductionmoments duringmidstance
+ontheinvolvedlimbcomparedwiththehealthycontrolgroup.
+Comparisons between ACLR groups. The only sig-
+nificant differences observed between the three ACLR groups
+were between the early ACLR and late ACLR group. While
+walking, the late ACLR group demonstrated greater external
+knee extension moments during terminal stance (40%–49%;
+L, 0.30 T 0.10 NImIkgj1
+Imj1
+, E: 0.20 T 0.10 NImIkgj1
+Im,
+d = 0.95 [0.26, 1.64]), greater external hip adduction
+FIGURE 2—jogging gait mean ensemble curves of knee sagittal, knee frontal, and hip frontal moments in the early, mid, and late ACLR groups:
+involved vs uninvolved vs control limbs.
+FIGURE 1—Walking gait mean ensemble curves of knee sagittal, knee frontal, and hip frontal moments in the early, mid, and late ACLR groups:
+involved vs uninvolved vs control limbs.
+GAIT, ACL RECONSTRUCTION, AND TIME POSTSURGERY Medicine & Science in Sports & Exercised 2213
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 6 ---
+moments during mid and terminal-stance (16%–49%; L,
+0.51 T 0.15 NImIkgj1
+Imj1
+, E: 0.36 T 0.20 NImIkgj1
+Imj1
+,
+d = 0.88 [0.20–1.57]), and less hip abduction motion
+during pre, initial, and mid swing (58%–90%, L: 5.2- T
+2.3-; E: 7.5- T 2.6-, d = 0.92 [0.23–1.61]) compared to the
+early ACLR group. During the stance phase of jogging, the late
+ACLR group demonstrated greater external hip adduction
+moments than the early ACLR group (14%–23%, L: 1.33 T
+0.42 NImIkgj1
+Imj1
+, E: 0.83 T 0.52 NImIkgj1
+Imj1
+; d = 1.06
+[0.35, 1.76]).
+DISCUSSION
+Only the early and late ACLR groups demonstrated gait
+abnormalities, with both groups displaying gait asymmetries
+and deviations from healthy controls for multiple variables.
+Neither the mid ACLR nor healthy control groups demon-
+strated interlimb differences for any gait variables. Addition-
+ally, there were no differences in any gait variables between
+the mid ACLR and healthy control groups. The early and late
+ACLR groups were also the only ACLR groups that dem-
+onstrated between group differences. All interlimb differ-
+ences in gait were supported by large magnitude effect-sizes
+(0.85–1.13) and all between groups differences were
+supported by moderate to large effect sizes (0.74–1.18). All
+effectsizes had95% CIthatdid not cross zero, suggestingthat
+all observed gait adaptations may be clinically meaningful.
+The early ACLR group demonstrated lower sagittal and
+frontal plane external moments on their involved knee
+compared to the contralateral or healthy control limbs while
+walking. These findings are consistent with previous studies
+that have observed lower peak external knee extension
+moments in ACLR limbs averaging 9 to 26 months (22,35)
+postsurgery when compared with contralateral (22) and control
+(35) knees, and reduced peak external knee adduction moments
+in ACLR limbs averaging 10 to 26 months postsurgery com-
+pared to contralateral knees (20–22). Lower sagittal and frontal
+knee joint moments and vGRF on the involved limb of the early
+ACLR group may suggest a protective adaptation in walking
+gait early after ACLR to limit joint loading and reduce the
+demand on muscles, such as the quadriceps and hip abductors
+(11,36,37), that are normally used to attenuate joint loads.
+Similar to the walking findings, the early ACLR group
+demonstrated lower joint loading on the ACLR limb during
+jogging. This included lower external knee flexion moments
+and knee flexion motion compared to contralateral and
+control knees, which are patterns suggestive of ‘‘quadriceps
+avoidance’’ (16,17). The higher forces associated with jog-
+ging may explain the presences of quadriceps avoidance
+pattern during jogging but not walking in the early ACLR
+group. Interestingly, despite jogging being a commonly
+recommended sagittal plane exercise for patients in the early
+stages after ACLR, there is limited evidence describing
+jogging biomechanics in individuals early after ACLR (15).
+This may be an area for further clinical study given the high
+forces of jogging and the implications that early adaptations
+may have on long-term movement strategies.
+The most surprising finding of this study was that the mid
+ACLR group demonstrated symmetrical lower extremity
+gait patterns similar to the healthy control group for all
+variables during both walking and jogging. These findings
+may suggest a ‘‘normalization’’ of gait in this group and are
+particularly interesting when we consider that both the early
+ACLR and late ACLR groups demonstrated numerous ab-
+normal joint loading patterns compared to the contralateral
+and healthy control limbs. Some prior studies have also
+observed nodifferencesinexternalkneeflexionmoments(21),
+knee extension moments (21), or knee adduction moments
+(26,38) between ACLR limbs and contralateral or control
+limbs in participants an average of 3.3 to 4.5 yr postsurgery.
+While other studieshaveobservedlower externalkneeflexion
+moments (26) and knee adduction moments (21,28) com-
+pared with contralateral and control knees in participants
+averaging 3.3 to 3.5 yr postsurgery. Despite the average time
+postsurgeryfor all ofthese prior studiesfallingwithinthe 2-to
+5-yr time frame for our mid ACLR group, most of these
+studies included participants from broader times postsurgery
+(6 months to 11 yr), with only one study (21) having a sample
+with a similar narrow time postsurgery (3.3 T 0.4 yr) as our mid
+ACLR group. That study observed no differences in external
+kneeflexionandextensionmoments,buttheexternaladduction
+moment was smaller on the ACLR knee compared with the
+contralateral limb (21).
+The late ACLR group demonstrated lower sagittal plane
+knee joint loading, but greater frontal plane knee and hip
+joint loading on the ACLR limb during walking and jogging.
+Lower external knee flexion moments were observed during
+both walking and jogging when compared to the healthy
+control limb. One previous study of ACLR participants 5+ yr
+postsurgery (5.2 T 3.2 yr) also observed lower external knee
+flexion moments during walking and a trend toward lower
+external knee flexion moments during jogging (27), however,
+another average of 6 yr postsurgery (range, 2–18 yr) reported
+no differences in external knee flexion or extension moments
+compared to contralateral or control knees (39). The presence
+ofthe ‘‘quadriceps avoidance’’ patterninthe lateACLRgroup
+may be related to an inability of the quadriceps muscles to
+eccentrically absorb joint loads. Theoretically, an inability to
+adequately attenuate forces on the knee could lead to pro-
+gressive degradation of articular surfaces (40).
+In the frontal plane, the late ACLR group demonstrated
+greater external knee and hip adduction moments during
+walking compared with the contralateral limb, and greater
+external hip adduction moments during jogging compared to
+the contralateral and healthy control limb. There were no
+differences in knee adduction moment between the ACL
+limb and the control limb, which may suggest that interlimb
+difference in knee adduction moment were driven by a lower-
+knee adduction moment in the contralateral limb. During jog-
+ging, the knee adduction moment was greater in the ACLR
+limbs compared with contralateral for multiple nonconsecutive
+http://www.acsm-msse.org 2214 Official Journal of the American College of Sports Medicine
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 7 ---
+regions of the gait; however, these regions were each only 2%
+of the gait cycle and therefore did not meet our criteria for a
+statistically significant difference. Previous reports of the ex-
+ternal knee adduction moments in ACLR samples averaging
+greater than 5 yr postsurgery have conflicted. One study of
+participants 5.3 T 4.4 yr postsurgery observed greater peak
+externalkneeadductionmomentsduringwalkingcomparedto
+controls (19), while another study with participant an average
+of 6 yr postsurgery (range, 2–18 yr) observed no significant
+difference in external knee adduction moments compared to
+controls (39). Despite increased clinical and scientific focus
+on posttraumatic adaptations in gait and joint loading as
+potential risk factors for the development of OA, there are
+limited investigations examining gait patterns in samples of
+ACLRparticipantsthatareall5+yrpostsurgery.Thepresence
+of a greater knee adduction moment in only the late ACLR
+group is an interesting finding in context of the theoretical
+relationship between the knee adduction moment and the
+development ofknee OA(23,24). Additionally, while it is not
+a commonly reported variable in the ACLR gait literature, the
+external hip adduction moment was greater in the late ACLR
+group for multiple comparisons and may warrant future in-
+vestigation as a variable of interest.
+The findingsofthe currentstudymaysupportanalternative
+to the conventional theory that abnormal gait patterns are a
+consistently present after ACLR. Aligning with conventional
+theory, the early ACLR group demonstrated altered knee and
+hipjointloadingcomparedtocontralateralandhealthycontrol
+limbs. However, the findings that the mid ACLR group
+showed no altered gait patterns while the late ACLR group
+demonstrated potentially harmful knee and hip joint loading
+patternsdeviatesfromconventionaltheory.Boththe early and
+late ACLR groups demonstrated lower external knee flexion
+momentsandalteredkneeandhipadductionmoments,butnot
+the mid ACL group. While this is a cross-sectional analysis,
+the theoretical presence of a temporal curve in joint loading
+from recovery to deterioration could impact how we manage
+and study ACLR patients over the course of time postsurgery.
+Patients in this ‘‘mid’’ time frame postsurgery may present
+clinically as recovered and ‘‘normal,’’ but may still be at risk
+forexperiencingnewchanges injointloadingastheyprogress
+along a greater time postsurgery. Clinical care and research
+efforts could benefit from including serial follow-ups of ACLR
+patients to track and treat progressive changes in muscle func-
+tionandmovementpatternsthatdeveloplateroverthecourseof
+ACLR chronicity. Although the findings of this study provide
+supporting evidence for the theory that gait patterns may im-
+prove then decline over time postsurgery, future longitudinal
+research is necessary to substantial this theory and better
+understand the role of abnormal gait patterns and the etiology
+and prevention of PTOA.
+This study is not without limitations. As an initial investi-
+gation in this area, potential differences due to time postsurgery
+were studied using a cross-sectional design limiting our ability
+to make cause-effect conclusions. Time postsurgery cutoffs for
+stratification were based on clinically relevant time frames:
+G2 yr, a time frame most patients are returning to sport and
+at are highest risk of suffering a secondary ACL injury (41),
+2 to 5 yr, a time frame patients are outside the high-risk
+window and should be backto activity,and 5to15 yr, a long-
+term time frame postsurgery but theoretically before major
+joint degeneration. Statistical comparisons across the gait
+cycle allowed for more comprehensive comparisons between
+limbs and groups; however, a limitation of this analysis tech-
+nique is that it does not account for potential statistical error
+associated with multiple comparisons. Radiographic exami-
+nations were not performed to definitively know whether
+participants were already developing signs of knee OA. This
+makes it particularly difficult to theorize whether gait adap-
+tations observed in the late ACLR group are a precursor to or
+a product of developing knee OA. We attempted to maintain
+homogeneity of demographics between ACLR groups out-
+side of the time postsurgery variable; however, although the
+average age of the late ACLR group was only 26.7 yr, they
+were significantly older than the other groups. Additionally,
+surgical procedures, graft types, postsurgical rehabilitation,
+and joint laxity were not controlled for between groups. Based
+on the evidence suggesting that ACLR tunnel orientation (42)
+and meniscal involvement (43) can alter knee joint kinetics
+and kinematics, not controlling for these factors may have
+influenced our findings.
+CONCLUSIONS
+Walking and jogging gait biomechanics presented differ-
+ently in patients at different stages in time after ACLR sur-
+gery. The early ACLR group demonstrated lower sagittal
+and frontal plane joint loading on the ACLR limb compared
+with contralateral and control limbs. The mid ACLR group
+did not demonstrate any gait differences compared with the
+contralateral or control limb. The late ACLR group dem-
+onstrated lower sagittal plane joint loading compared with
+control limbs and greater frontal plane joint loading com-
+pared with contralateral and control limbs.
+This research was supported by an internal IDEA grant from the
+Curry School of Education at the University of Virginia.
+The authors have no relationships with companies or manufac-
+turers who will benefit from the results of the present study. The
+results of the present study do not constitute endorsement by
+ACSM. The results of this study are presented clearly, honestly, and
+without fabrication, or inappropriate data manipulation.
+REFERENCES
+1. Marx RG, Jones EC, Angel M, Wickiewicz TL, Warren RF. Beliefs
+and attitudes of members of the American Academy of Orthopaedic
+Surgeonsregardingthetreatmentofanteriorcruciateligamentinjury.
+Arthroscopy. 2003;19(7):762–70.
+GAIT, ACL RECONSTRUCTION, AND TIME POSTSURGERY Medicine & Science in Sports & Exercised 2215
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 8 ---
+2. Buller LT, Best MJ, Baraga MG, Kaplan LD. Trends in anterior
+cruciate ligament reconstruction in the United States. Orthop J Sports
+Med. 2014;3(1):2325967114563664.
+3. Ardern CL, Webster KE, Taylor NF, Feller JA. Return to sport
+following anterior cruciate ligament reconstruction surgery: a sys-
+tematic review and meta-analysis of the state of play. Br J Sports
+Med. 2011;45(7):596–606.
+4. Goetschius J, Hart JM. Knee-extension torque variability and
+subjective kneefunctionin patientswitha history ofanteriorcruciate
+ligament reconstruction. J Athl Train. 2016;51(1):22–7.
+5. Oiestad BE, Holm I, Aune AK, et al. Knee function and prevalence
+of knee osteoarthritis after anterior cruciate ligament reconstruction:
+a prospective study with 10 to 15 years of follow-up. Am J Sports
+Med. 2010;38(11):2201–10.
+6. Tengman E, Brax Olofsson L, Nilsson KG, Tegner Y, Lundgren L,
+Häger CK. Anterior cruciate ligament injury after more than
+20 years: I. Physical activity level and knee function. Scand J Med
+Sci Sports. 2014;24(6):e491–500.
+7. Luc B, Gribble PA, Pietrosimone BG. Osteoarthritis prevalence
+following anterior cruciate ligament reconstruction: a systematic review
+and numbers-needed-to-treat analysis. J Athl Train. 2014;49(6):806–19.
+8. Mall NA, Chalmers PN, Moric M, et al. Incidence and trends of
+anterior cruciate ligament reconstruction in the United States. Am J
+Sports Med 2014;42(10):2363–70.
+9. Andriacchi TP, Mundermann A. The role of ambulatory mechanics
+in the initiation and progression of knee osteoarthritis. Curr Opin
+Rheumatol. 2006;18(5):514–8.
+10. Goetschius J, Kuenze CM, Saliba S, Hart JM. Reposition acuity
+and postural control after exercise in anterior cruciate ligament
+reconstructed knees. Med Sci Sports Exerc. 2013;45(12):2314–21.
+11. Hart JM, Pietrosimone B, Hertel J, Ingersoll CD. Quadriceps ac-
+tivation following knee injuries: a systematic review. J Athl Train.
+2010;45(1):87–97.
+12. Kuenze CM, Foot N, Saliba SA, Hart JM. Drop-landing perfor-
+mance and knee-extension strength after anterior cruciate ligament
+reconstruction. J Athl Train. 2015;50(6):596–602.
+13. Palmieri-Smith RM, Thomas AC. A neuromuscular mechanism of
+posttraumatic osteoarthritis associated with ACL injury. Exerc Sport
+Sci Rev. 2009;37(3):147–53.
+14. HerzogW,LonginoD,ClarkA.Theroleof musclesinjointadaptation
+and degeneration. Langenbecks Arch Surg. 2003;388(5):305–15.
+15. Kaur M, Ribeiro DC, Theis JC, Webster KE, Sole G. Movement
+patterns of the knee during gait following ACL reconstruction: a sys-
+tematic review and meta-analysis. Sports Med. 2016;46(12):1869–95.
+16. Hart JM, Ko JW, Konold T, Pietrosimone B. Sagittal plane knee
+joint moments following anterior cruciate ligament injury and
+reconstruction: a systematic review. Clin Biomech (Bristol, Avon).
+2010;25(4):277–83.
+17. Berchuck M, Andriacchi TP, Bach BR, Reider B. Gait adaptations
+by patients who have a deficient anterior cruciate ligament. J Bone
+Joint Surg Am. 1990;72(6):871–7.
+18. Lewek M, Rudolph K, Axe M, Snyder-Mackler L. The effect of
+insufficient quadriceps strength on gait after anterior cruciate ligament
+reconstruction. Clin Biomech (Bristol, Avon). 2002;17(1):56–63.
+19. Butler RJ, Minick KI, Ferber R, Underwood F. Gait mechanics
+after ACL reconstruction: implications for the early onset of knee
+osteoarthritis. Br J Sports Med. 2009;43(5):366–70.
+20. Webster KE, Feller JA. The knee adduction moment in hamstring
+and patellar tendon anterior cruciate ligament reconstructed knees.
+Knee Surg Sports Traumatol Arthrosc. 2012;20(11):2214–9.
+21. Webster KE, Feller JA, Wittwer JE. Longitudinal changes in knee
+joint biomechanics during level walking following anterior cruciate
+ligament reconstruction surgery. Gait Posture. 2012;36(2):167–71.
+22. Zabala ME, Favre J, Scanlan SF, Donahue J, Andriacchi TP. Three-
+dimensional knee moments of ACL reconstructed and control subjects
+duringgait,stair ascent,andstair descent. J Biomech. 2013;46(3):515–20.
+23. Wellsandt E, Gardinier ES, Manal K, Axe MJ, Buchanan TS,
+Snyder-Mackler L. Decreased knee joint loading associated with
+early knee osteoarthritis after anterior cruciate ligament injury. Am
+J Sports Med. 2016;44(1):143–51.
+24. WiseBL, Niu J,YangM, etal.Patterns of compartmentinvolvement in
+tibiofemoral osteoarthritis in men and women and in whites and African
+Americans. Arthritis Care Res (Hoboken). 2012;64(6):847–52.
+25. Roewer BD, Di Stasi SL, Snyder-Mackler L. Quadriceps strength and
+weight acceptance strategies continue to improve two years after ante-
+rior cruciate ligament reconstruction. J Biomech. 2011;44(10):1948–53.
+26. Shin CS, Chaudhari AM, Dyrby CO, Andriacchi TP. The patella
+ligament insertion angle influences quadriceps usage during walking
+of anterior cruciate ligament deficient patients. J Orthop Res. 2007;
+25(12):1643–50.
+27. Noehren B, Wilson H, Miller C, Lattermann C. Long-term gait de-
+viations in anterior cruciate ligament-reconstructed females. Med Sci
+Sports Exerc. 2013;45(7):1340–7.
+28. Patterson MR, Delahunt E, Caulfield B. Peak knee adduction
+moment during gait in anterior cruciate ligament reconstructed
+females. Clin Biomech (Bristol, Avon). 2014;29(2):138–42.
+29. Irrgang JJ, Anderson AF, Boland AL, et al. Development and vali-
+dation of the international knee documentation committee subjective
+knee form. Am J Sports Med. 2001;29(5):600–13.
+30. Godin G, Jobin J, Bouillon J. Assessment of leisure time exercise
+behavior by self-report: a concurrent validity study. Can J Public
+Health. 1986;77(5):359–62.
+31. Bell AL, Pedersen DR, Brand RA. A comparison of the accuracy
+of several hip center location prediction methods. J Biomech.
+1990;23(6):617–21.
+32. Kuenze C, Hertel J, Hart JM. Effects of exercise on lower extremity
+muscle function after anterior cruciate ligament reconstruction.
+J Sport Rehabil. 2013;22(1):33–40.
+33. McKeon PO, Paolini G, Ingersoll CD, et al. Effects of balance
+training on gait parameters in patients with chronic ankle instability:
+a randomized controlled trial. Clin Rehabil. 2009;23(7):609–21.
+34. Cohen J. Statistical Power Analysis for the Behavioral Sciences.
+2nd ed. Hillsdale (NJ): L. Erlbaum Associates; 1988. pp. 20–7.
+35. Webster KE, Wittwer JE, O_Brien J, Feller JA. Gait patterns after
+anterior cruciate ligament reconstruction are related to graft type.
+Am J Sports Med. 2005;33(2):247–54.
+36. Ingersoll CD, Grindstaff TL, Pietrosimone BG, Hart JM. Neuromus-
+cular consequences of anterior cruciate ligament injury. Clin Sports
+Med. 2008;27(3):383–404.
+37. Tengman E, Brax Olofsson L, Stensdotter AK, Nilsson KG, Häger
+CK. Anterior cruciate ligament injury after more than 20 years. II.
+Concentric and eccentric knee muscle strength. Scand J Med Sci
+Sports. 2014;24(6):e501–9.
+38. Varma RK, Duffell LD, Nathwani D, McGregor AH. Knee moments
+of anterior cruciate ligament reconstructed and control participants
+during normal and inclined walking. BMJ Open. 2014;4(6):e004753.
+39. Hall M, Stevermer CA, Gillette JC. Gait analysis post anterior
+cruciate ligament reconstruction: knee osteoarthritis perspective.
+Gait Posture. 2012;36(1):56–60.
+40. Hurley MV. The role of muscle weakness in the pathogenesis of
+osteoarthritis. Rheum Dis Clin North Am. 1999;25(2):283–98.
+41. Paterno MV, Rauh MJ, Schmitt LC, Ford KR, Hewett TE. Incidence
+of second ACL injuries 2 years after primary ACL reconstruction
+and return to sport. Am J Sports Med. 2014;42(7):1567–73.
+42. Wang H, Fleischli JE, Hutchinson ID, Zheng NN. Knee moment
+and shear force are correlated with femoral tunnel orientation after
+single-bundle anterior cruciate ligament reconstruction. Am J
+Sports Med. 2014;42(10):2377–85.
+43. Akpinar B, Thorhauer E, Irrgang JJ, Tashman S, Fu FH, Anderst WJ.
+Alteration of knee kinematics after anatomic anterior cruciate liga-
+mentreconstructionisdependentonassociatedmeniscalinjury. AmJ
+Sports Med. 2018;46(5):1158–65.
+http://www.acsm-msse.org 2216 Official Journal of the American College of Sports Medicine
+CLINICAL SCIENCES
+Copyright © 2018 by the American College of Sports Medicine. Unauthorized reproduction of this article is prohibited.
+
+--- PAGE 9 ---

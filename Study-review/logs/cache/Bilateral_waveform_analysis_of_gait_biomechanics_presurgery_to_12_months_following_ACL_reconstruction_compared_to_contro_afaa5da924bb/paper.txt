@@ -1,0 +1,930 @@
+
+--- PAGE 1 ---
+Received: 13 June 2024     | Revised: 9 September 2024 | Accepted: 16 October 2024
+DOI: 10.1002/jor.26001
+
+
+RESEARCH ARTICLE
+
+
+
+
+Bilateral waveform analysis of gait biomechanics presurgery
+to 12 months following ACL reconstruction compared
+to controls
+
+Christin Büttner1,2 | Caroline Lisee3 | Elizabeth Bjornsen4 | Ashley Buck1,5                                                                          |
+Natália Favoreto1 | Alexander Creighton6 | Ganesh Kamath6 | Jeffrey Spang6                                                                        |
+                         4                                 1                                            1
+Jason R. Franz                 |    Troy Blackburn                  |    Brian Pietrosimone
+
+1
+ Department of Exercise and Sport Science,
+University of North Carolina, Chapel Hill,        Abstract
+North Carolina, USA
+                                                  The purpose of this study was to compare gait biomechanics between limbs and to
+2
+ Institute of Human Movement Science and
+Health, Chemnitz University of Technology,
+                                                  matched uninjured controls (i.e., sex, age, and body mass index) preoperatively and
+Chemnitz, Germany                                 at 2, 4, 6, and 12 months following primary unilateral anterior cruciate ligament
+3
+ Department of Kinesiology, University of         reconstruction (ACLR). Functional mixed effects models were used to identify
+Georgia, Athens, Georgia, USA
+4
+                                                  differences in gait biomechanics throughout the stance phase between the a) ACLR
+ Joint Department of Biomedical Engineering,
+University of North Carolina at Chapel Hill and   limb and uninvolved limb, b) ACLR limb and controls, and c) uninvolved limb and
+North Carolina State University, Chapel Hill,     controls. Compared with the uninvolved limb, the ACLR limb demonstrated lesser
+North Carolina, USA
+5
+                                                  knee extension moment (KEM; within 8–37% range of stance) during early stance as
+ Thurston Arthritis Research Center, School of
+Medicine, University of North Carolina,           well as lesser knee flexion moment (KFM; 45–84%) and greater knee flexion angle
+Chapel Hill, North Carolina, USA
+                                                  (KFA; 43–90%) during mid‐ to late stance at all timepoints. Compared with controls,
+6
+ Deparment of Orthopaedics, University of
+                                                  the ACLR limb demonstrated lesser vertical ground reaction force (vGRF; 5–26%),
+North Carolina, Chapel Hill, North
+Carolina, USA                                     lesser KEM (7–47%), and lesser knee adduction moment (KAM; 12–35%) during
+                                                  early stance as well as greater vGRF (39–63%) and greater KFA (34–95%) during
+Correspondence
+Christin Büttner, The University of North         mid‐ to late stance at all timepoints. Compared with controls, the uninvolved
+Carolina at Chapel Hill, Department of            limb demonstrated lesser KFA (1–56%) and lesser KEM (12–54%) during early to
+Exercise and Sport Science, 209 Fetzer Hall,
+Campus Box 8700, Chapel Hill, NC 27599,           mid‐stance at all timepoints. While gait becomes more symmetrical over the first
+USA.                                              12 months post‐ACLR, the ACLR and uninvolved limbs both demonstrate persistent
+Email: cbue@unc.edu
+                                                  aberrant gait biomechanics compared to controls. Biomechanical waveforms
+Funding information                               throughout stance can be generally described as less dynamic following ACL injury
+Arthritis Foundation; National Institute of
+Arthritis and Musculoskeletal and Skin
+                                                  and ACLR compared with uninjured controls.
+Diseases, Grant/Award Numbers:
+P30AR072580, T32AR082310                          KEYWORDS
+                                                  functional mixed effects model, joint loading, knee osteoarthritis
+
+                                                  Clinical Significance
+                                                  Individuals with ACLR demonstrate less dynamic gait biomechanics waveforms
+                                                  bilaterally from the preop timepoint up to 12 months post‐ACLR, which may
+
+
+
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium,
+provided the original work is properly cited.
+© 2024 The Author(s). Journal of Orthopaedic Research® published by Wiley Periodicals LLC on behalf of Orthopaedic Research Society.
+
+322    |    wileyonlinelibrary.com/journal/jor                                                                             J Orthop Res. 2025;43:322–336.
+
+
+--- PAGE 2 ---
+                                                                                                                                                        1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                               |   323
+
+
+
+
+                                                  contribute to knee joint tissue breakdown. Further, gait retraining interventions
+                                                  need to consider bilateral approaches to normalize gait following unilateral ACLR.
+
+
+
+1   | INTRODUCTION                                                          not yet been broadly adopted in clinical settings. Therefore, the results
+                                                                            of this study are critical for the development of precision gait re-
+Individuals who sustain an anterior cruciate ligament (ACL) injury are at   training interventions to normalize gait biomechanics and mitigate
+high risk for developing knee osteoarthritis (KOA), with a third of in-     future KOA development.
+dividuals developing KOA in the first decade following injury despite           This study aimed to overcome these specific limitations by
+undergoing surgical ACL reconstruction (ACLR) and therapeutic reha-         comparing key gait biomechanics (i.e., vGRF, KFA, KEM, KAM)
+bilitation.1 Aberrant gait biomechanical outcomes, including reduced        throughout the stance phase of gait between the a) ACLR and
+surgical limb vertical ground reaction force (vGRF), knee flexion angle     uninvolved limbs, b) ACLR and matched control limbs, and c)
+(KFA), knee extension moment (KEM), and knee adduction moment               uninvolved and matched control limbs at preop, as well as 2, 4, 6, and
+(KAM) have been associated with deleterious joint tissue metabolism,2,3     12 months post‐ACLR follow‐up timepoints. We hypothesized that
+altered tibiofemoral cartilage composition,4–9 radiographic joint           gait biomechanics of the ACLR and uninvolved limbs would become
+changes,10 and worse knee‐related symptoms in patients with                 more symmetrical over time, however, both limbs would demonstrate
+      11,12
+ACLR.         Therefore, it is important to clearly characterize how gait   less dynamic and more sustained waveforms compared with controls
+biomechanics are affected by ACL injury at early post‐injury and post‐      at all timepoints, with the ACLR limb demonstrating larger differences
+ACLR timepoints when patients are typically engaged in supervised           from controls than the uninvolved limb.
+ACLR rehabilitation13,14 and early KOA‐related joint tissue changes
+have started to develop.5,8,9
+    Previous systematic reviews and meta‐analyses have high-                2 |     METHODS
+lighted key knowledge gaps negatively impacting the ability to
+comprehensively characterize aberrant gait biomechanics at early            2.1 |     Study design
+timepoints following ACLR.15–17 Specifically, previous studies lack
+early longitudinal data between preoperative timepoints (preop; i.e.,       We conducted a prospective, longitudinal cohort study with nested
+following ACL injury but before ACLR) and 12 months post‐ACLR               case‐control comparisons of gait biomechanics (i.e., vGRF, KFA, KEM,
+that may be most relevant for guiding supervised rehabilitation of          and KAM) in individuals with primary unilateral ACL injury and
+aberrant gait biomechanics before returning to unrestricted physical        uninjured matched controls. Gait biomechanics were collected at
+activity. Further, most studies do not systematically compare the           habitual walking speed during preop and at 2, 4, 6, and 12 months
+biomechanical changes exhibited in the ACLR limb to both the                post‐ACLR in individuals with ACL injury and during a single data
+contralateral, uninjured limb and matched‐uninjured controls.               collection session for controls. Uninjured controls were matched
+Research indicates that the uninjured limb undergoes biomechanical          based on sex (female/male), baseline age (±2 years), and baseline
+and biological KOA‐related changes following primary, unilateral            body mass index (BMI ± 4 kg/m2). The decision to use the right or left
+        18–22
+ACLR,           suggesting that a comprehensive multi‐control analysis      limb as the reference limb in each control participant was based on
+(i.e., contralateral limb and matched uninjured controls) is needed to      the limb that was injured on their matched ACLR counterpart. All
+understand the bilateral biomechanical effects of unilateral ACL            study procedures were approved by the Institutional Review Board at
+injury. Finally, previous studies primarily focused on changes in           the University of North Carolina at Chapel Hill and all participants
+discrete features of gait, such as peak magnitudes (e.g., peak vGRF,        provided written consent or assent and permission from their parent
+peak KFA). However, recent research has demonstrated that gait              or legal guardian to participate in the study.
+biomechanics of the ACLR limb can differ at multiple portions of
+stance compared to the uninvolved limb and controls,5,6,19,23 and
+differences at portions of stance other than the peak magnitudes            2.2 |     Participants
+are linked to important changes in knee cartilage composition.6
+Therefore, utilizing waveform analyses to evaluate the entire stance        We recruited individuals with a primary unilateral ACL injury between
+phase instead of just discrete points may provide greater insights into     the ages of 16 and 35 years who were planning to undergo ACLR
+how gait differs between groups. Overall, it is important to improve        from a single academic health system‐based orthopedic practice.
+our knowledge of the bilateral effects of ACL injury and ACLR on gait       We included individuals who underwent either primary unilateral
+throughout the entire stance phase at early time points, especially         arthroscopic bone‐patellar tendon‐bone, quadriceps, or hamstring
+since gait biomechanics can be modified with various traditional            autograft ACLR. We excluded individuals receiving an allograft,
+modalities (e.g., insoles, knee braces)24,25 and emerging precision         requiring ACLR revision surgery, or multiple ligament surgery, or in-
+treatment strategies (e.g., real‐time gait biofeedback),26,27 which have    dividuals who sustained a lower extremity fracture during ACL injury,
+
+
+--- PAGE 3 ---
+                                                                                                                                                 1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+324   |                                                                                                                        BÜTTNER ET AL.
+
+
+
+or were diagnosed with OA or any other disease that affects the knee        We enrolled uninjured control participants to match each
+joint, or were pregnant at the time of enrollment or were planning to   ACLR participant for whom gait data was available for at least one
+become pregnant during the study period. All ACLR participants          timepoint (Figure 1). Controls were included if they had no history of
+received supervised rehabilitation for at least 6 months following      any lower extremity orthopaedic surgery, no history of knee injury,
+surgery.                                                                no lower extremity joint injury or concussion within the last
+
+
+
+
+F I G U R E 1 Strengthening the reporting of observational studies in epidemiology (STROBE) study flowchart.28 The reasons for missing gait
+data included: study dropout, lost to follow‐up, exhibiting an exclusion criterion following enrollment (e.g., chose not to undergo ACLR or
+became pregnant), missed appointments, inability to perform gait assessment, and technical data collection issues.
+
+
+--- PAGE 4 ---
+                                                                                                                                                           1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                                 |     325
+
+
+
+6 months, no diagnosis of inflammatory arthritis, were not pregnant       TABLE 1           Anthropometrics of the ACLR and control groups.
+or had any other medical condition that could influence their gait or      Characteristics       Timepoint       ACLR           Controls      p‐value
+physical activity participation.
+                                                                           Sex (% females)                       57.0           57.0
+
+                                                                           Age (y)                               21.8 ± 4.7     21.6 ± 4.3    0.95
+
+2.3     | Biomechanical gait assessment                                    BMI (kg/m )  2
+                                                                                                                 24.2 ± 3.2     24.5 ± 3.2    0.57
+
+                                                                           Gait speed (m/s)      control visit                  1.36 ± 0.14
+Gait biomechanics were collected as described in previous work29–31
+                                                                                                 preop           1.16 ± 0.18                  <0.001*
+using a 10‐camera 3D motion capture system (Vicon Bonita; Vicon
+                                                                                                 2 months        1.17 ± 0.14                  <0.001*
+Motion Systems Ltd, Oxford, UK) and three staggered and embedded
+force plates (FP406010; Bertec Corporation, Columbus, OH, USA) in                                4 months        1.24 ± 0.13                  <0.001*
+a 6 m walkway. Participants were equipped with 29 retroreflective                                6 months        1.25 ± 0.13                  <0.001*
+markers on the lower limbs, pelvis, and trunk and walked unshod and
+                                                                                                 12 months       1.27 ± 0.13                  <0.001*
+at their self‐selected habitual walking speed. Marker trajectories
+                                                                           Days                  preop           10.6 ± 10.2
+and kinetics were captured at 120 and 1200 Hz, respectively. We
+                                                                           before ACLR
+determined habitual gait speed from a minimum of 5 test trials using
+                                                                           Days                  2 months        56.6 ± 5.5
+two timing gates (Dashr, Dashr, Lincoln, NE, USA) placed 0.97 m
+                                                                           since ACLR
+apart. Next, 5 successful trials of gait biomechanics were collected                             4 months        114.4 ± 6.3
+from both limbs at the habitual walking speed. A gait trial was con-                             6 months        174.6 ± 9.3
+sidered successful if participants walked within ±5% of their average
+                                                                                                 12 months       346.9 ± 15.8
+habitual speed of the test trials and struck the force plate with their
+                                                                           Graft type                            54/3/1
+entire foot (i.e. heal strike to toe off) during stance. Data were pro-
+                                                                           (PT/QT/H)
+cessed using custom scripts in Visual3D (version 2020) and Matlab
+                                                                           Medial meniscal                       24.1
+(version R2022b) and filtered using a recursive fourth‐order low‐pass
+                                                                           injury (%)
+Butterworth filter with a cut‐off frequency of 10 Hz. Biomechanical
+outcomes were time‐normalized to 101 data points (0–100%)                  Lateral meniscal                      69.0
+                                                                           injury (%)
+throughout the stance phase, which was defined as heel strike
+(vGRF>20 N) to toe‐off (vGRF<20 N). KFA was calculated as the              Chondral                              27.6
+                                                                           injury (%)
+angle of the shank relative to the thigh via Euler angles (sagittal/
+frontal/transverse sequence) and an inverse dynamics approach was         *significant difference from Controls.
+used to calculate net internal knee moments. KEM and KAM were             Abbreviations: ACLR, anterior cruciate ligament reconstruction; BMI,
+                                                                          body mass index; H, hamstring; preop, preoperative; PT, patellar tendon;
+normalized to the product of bodyweight and height, and vGRF
+                                                                          QT, quadriceps tendon.
+was normalized to bodyweight. Ensemble average waveforms were
+calculated for each outcome from the 5 recorded trials for statistical
+analysis.                                                                 percentage of medial meniscal injury, lateral meniscal injury, chondral
+                                                                          injury, and Knee Injury and Osteoarthritis Outcome Score (KOOS)
+                                                                          outcomes for the ACLR group are reported in Table 1 and Table 2.
+2.4     | Statistical analysis
+
+2.4.1       | Descriptive data                                            2.4.2 |           Gait biomechanical analysis
+
+Gait biomechanical data were available for at least one timepoint for     We conducted functional waveform analyses to evaluate differences
+a total of 58 out of 62 recruited participants with ACL injury            between biomechanical outcomes throughout stance as previously
+(Figure 1). As a result, we analyzed datasets for the following number    described.29,30,32 Separate functional mixed effects models were
+of participants at each timepoint in the ACLR group: preop n = 50;        compiled at each timepoint for gait biomechanical outcomes (i.e.,
+2 months: n = 54; 4 months: n = 55; 6 months: n = 53; 12 months:          vGRF, KFA, KEM, KAM) to compare differences between the (a)
+n = 50 (Supplement 1; Table S1.1). For further analyses, all available    ACLR and uninvolved limbs, (b) ACLR limb and control limb, and (c)
+gait data of the ACLR group were compared with the 58 matched             uninvolved limb and control limb. All participant's average gait wa-
+control limbs at each timepoint.                                          veforms from 5 successful trials were fit with Bayesian functional
+      Group differences between the ACLR and control group in age         models using a B‐spline model to gain representative waveforms of
+and BMI were assessed at preop and for gait speed at all timepoints       the ACLR limb, uninvolved limb, and control group limb.33 The
+using independent t‐tests or Mann‐Whitney‐U‐tests (α = 0.05) based        functional mixed effects models also computed the mean differences
+on normality of the data. Furthermore, distribution of graft type,        between the representative waveform of each group as well as their
+
+
+--- PAGE 5 ---
+                                                                                                                                                      1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+326      |                                                                                                                          BÜTTNER ET AL.
+
+
+
+T A B L E 2 KOOS outcomes for the ACLR group at preop, 2, 4, 6,              3 |     RESULTS
+and 12 months post‐ACLR.
+ KOOS subscore                      Timepoint              ACLR              3.1 |     Descriptive outcomes
+ Quality of life                    preop                  38.2 ± 18.7
+                                                                             The ACLR group walked at significantly slower speeds at all 5 time-
+                                    2 months               40.0 ± 13.6
+                                                                             points (p < 0.001) compared with controls. No differences in age
+                                    4 months               51.4 ± 17.2       (p = 0.95) or BMI (p = 0.57) were found between groups (Table 1).
+                                    6 months               55.7 ± 17.0
+
+                                    12 months              74.0 ± 20.9
+                                                                             3.2 | Differences in gait biomechanical outcomes
+ Pain                               preop                  73.6 ± 12.3
+                                                                             without gait speed adjustment
+                                    2 months               76.4 ± 11.5
+
+                                    4 months               82.9 ± 9.8        3.2.1 |     Vertical ground reaction force
+                                    6 months               85.6 ± 9.1
+                                                                             ACLR limb versus uninvolved limb
+                                    12 months              92.5 ± 7.6
+                                                                             The ACLR limb demonstrated lesser vGRF during early stance at preop
+ Symptoms                           preop                  68.1 ± 14.4
+                                                                             (7–24% of stance phase), 2 (5–26%), 4 (9–25%), and 6 months (17–23%)
+                                    2 months               65.0 ± 13.1       as well as during late stance at 2 (75–90%) and 4 months (78–89%)
+                                    4 months               74.3 ± 14.5       compared with the uninvolved limb. No differences between limbs were
+                                                                             present at 12 months post‐ACLR (Figures 2A‐J; Table 3).
+                                    6 months               79.7 ± 11.6
+
+                                    12 months              85.7 ± 10.9
+                                                                             ACLR limb versus controls
+ Activities of daily living         preop                  83.1 ± 13.9       The ACLR limb demonstrated lesser vGRF during early stance and
+                                    2 months               87.5 ± 9.0        greater vGRF during midstance at all timepoints compared with controls
+                                                                             (preop: 6–28%, 39–63%; 2 months: 6–30%, 39–63%; 4 months: 8–30%,
+                                    4 months               94.1 ± 7.3
+                                                                             43–62%; 6 months: 10–29%, 44–61%; 12 months: 11–28%, 47–59%).
+                                    6 months               96.1 ± 5.7
+                                                                             Additionally, the ACLR limb exhibited lesser vGRF at preop (75–88%), 2
+                                    12 months              97.2 ± 5.0        (75–90%), and 4 months (77–88%) post‐ACLR during late stance
+ Sport                              preop                  40.2 ± 22.0       (Figures 2A‐E, 2K‐O; Table 3).
+
+                                    2 months               32.8 ± 23.9
+                                                                             Uninvolved limb versus controls
+                                    4 months               51.9 ± 20.1
+                                                                             The uninvolved limb demonstrated greater vGRF during mid‐stance at
+                                    6 months               66.8 ± 18.6       preop (43–63%), 2 (44–59%), 4 (48–55%), and 6 months (49–55%) post‐
+                                    12 months              84.2 ± 19.8       ACLR and lesser vGRF during early stance at 2 months (23–29%) post‐
+                                                                             ACLR compared with the controls. There were no differences between
+Abbreviations: ACLR, anterior cruciate ligament reconstruction; KOOS,
+Knee Injury and Osteoarthritis Outcome Score; preop, preoperative.           groups at 12 months post‐ACLR (Figures 2A‐E, 2P‐T; Table 3).
+
+
+
+corresponding 95% confidence intervals and Cohen's d effect sizes.           3.2.2 |     Knee flexion angle
+Statistically significant differences between waveforms were defined
+as areas in which the 95% confidence interval of the mean difference         ACLR limb versus uninvolved limb
+did not include zero. The waveform analyses were performed in                The ACLR limb displayed greater KFA during the majority of stance at
+                                                                        33
+RStudio (version 4.1.2) utilizing the FunctionalMixedEffects package.        preop (1–93%) compared with the uninvolved limb. KFA during early
+Since gait speed differed at all timepoints between the ACLR                 stance was smaller in the ACLR limb at 2 (12–33%), 4 (11–37%), and 6
+and uninjured controls and is linked to changes in biomechanical             months (10–36%) compared with the uninvolved limb, whereas greater
+outcomes34 and KOA development following ACLR,35,36 we also                  KFA during early stance at 2 (1–6%), 4 (1–4%), and 12 months (1–5%)
+conducted the same waveform analysis as described while statistically        and greater KFA during mid‐ to late stance was found in the ACLR limb
+controlling for the average habitual walking speed of each participant       compared with the uninvolved limb at 2 (43–90%), 4 (49–88%), 6
+at each timepoint (i.e., preop, 2, 4, 6, and 12 months) relative to the      (50–86%), and 12 months (48–91%) post‐ACLR (Figures 3A‐J; Table 4).
+                                                               29,32
+average walking speed of all participants at the same timepoint.       As
+with the analyses without adjusting for gait speed, separate functional      ACLR limb versus controls
+mixed effects models were conducted for all key outcomes (i.e., vGRF,        At preop, the ACLR limb demonstrated greater KFA during the
+KFA, KEM, KAM) at all timepoints between groups.                             majority of stance compared with controls (1‐11%, 34‐95%), whereas
+
+
+--- PAGE 6 ---
+                                                                                                                                                   1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                           |   327
+
+
+
+
+                        (A)                   (B)                     (C)                         (D)                (E)
+
+
+
+
+                       (F)                   (G)                      (H)                        (I)                (J)
+
+
+
+
+                       (K)                   (L)                      (M)                        (N)                (O)
+
+
+
+
+                       (P)                   (Q)                      (R)                        (S)                (T)
+
+
+
+F I G U R E 2 Mean vGRF waveforms and mean vGRF differences with 95% confidence intervals (light blue areas) throughout gait stance
+in the ACLR limb, uninvolved limb, and uninjured control limb at preop, 2, 4, 6, and 12 months post‐ACLR. A‐E display the mean vGRF
+waveforms; F‐J display the mean differences between the ACLR and uninvolved limbs; K‐O display the mean differences between the
+ACLR limb and controls; P‐T display the mean differences between uninvolved limb and controls. Columns 1 to 5 represent the preop, 2, 4,
+6, and 12 months timepoint, respectively. Statistically significant differences in vGRF between groups are highlighted in purple and exist
+when 95% confidence intervals of mean differences do not include zero. ACLR, anterior cruciate ligament reconstruction; BW, body
+weight; vGRF, vertical ground reaction force; preop, preoperative.
+
+
+
+
+smaller KFA during the first 50% of stance and greater KFA during           Uninvolved limb versus controls
+mid‐ to late stance was observed at 2 (3‐42%, 50‐86%), 4 (3‐43%,            KFA in the uninvolved limb was lesser within the first 50% of stance
+52‐86%), 6 (1‐46%, 59‐84%), and 12 months (1‐43%, 56‐92%)                   compared with controls throughout all timepoints (preop: 1‐8%, 16‐
+post‐ACLR in the ACLR limb compared with controls. In addition, the         40%; 2 months: 1‐56%; 4 months: 1‐44%; 6 months: 1‐53%; 12
+ACLR limb demonstrated greater KFA during terminal stance at 2              months: 1‐52%). At 2 months (84‐100%), the uninvolved limb
+(93‐100%) and 6 months (97‐100%) post‐ACLR (Figures 3A‐E, 3K‐O;             also demonstrated smaller KFA during terminal stance (Figures 3A‐
+Table 4).                                                                   E, 3P‐T; Table 4).
+
+
+--- PAGE 7 ---
+                                                                                                                                                    1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+328     |                                                                                                                          BÜTTNER ET AL.
+
+
+
+T A B L E 3 Output of the waveform analyses for vGRF at preop, 2,          6 months: 9‐37%, 68‐73%; 12 months: 13‐26%, 72‐76%; Figures 4A‐J;
+4, 6, and 12 months post‐ACLR between the (a) ACLR and                     Table 5).
+uninvolved limb, (b) ACLR limb and controls, and (c) uninvolved limb
+and controls, including the areas of gait stance with significant
+                                                                           ACLR limb versus controls
+differences, the maximum differences that occurred within those
+areas as well as the mean Cohen's d effect sizes for significant areas.    Lesser KEM was observed for the ACLR limb during the first 50% of
+Small effect size: Cohen's d ≤ 0.2; medium effect size: 0.2 < Cohen's      stance at all timepoints between preop and 12 months (preop:
+d ≤ 0.5; large effect size: Cohen's d ≥ 0.8.28                             9–37%; 2 months: 7–45%; 4 months: 8–45%; 6 months: 7–47%); 12
+                                Areas of        Maximum       Cohen's      months (9–40%) as well as during terminal stance at 2 (88–97%), 4
+                                differences     difference    d effect     (90–94%), and 6 months (89–94%) compared with controls. Lesser
+ Comparison        Timepoint    (%)             (BW)          size         KEM was observed during mid‐ to late stance in the ACLR limb at
+ Uninvolved‐       preop        7–24             0.12           1.16       preop (52–82%), 2 (61–79%), 4 (65–78%), and 12 months (68–79%)
+ ACLR                                                                      post‐ACLR (Figures 4A‐E, 4K‐O; Table 5).
+                   2 months     5–26             0.16           1.53
+
+                                75–90            0.09           1.24
+                                                                           Uninvolved limb versus controls
+                   4 months     9–25             0.09           0.82
+                                                                           For all timepoints, the uninvolved limb demonstrated lesser KEM during
+                                78–89            0.06           1.01       early stance compared with controls (preop: 14–42%; 2 months:
+                   6 months     17–23            0.06           0.60       13–54%; 4 months: 13–41%; 6 months: 12–41%; 12 months: 12–39%;
+                                                                           Figures 4A‐E, 4P‐T; Table 5). In addition, lesser KEM was observed
+                   12 months    –                –              –
+                                                                           during late stance at 2 months (88–91%) post‐ACLR in the uninvolved
+ Control‐ACLR      preop        6–28             0.20           1.38
+                                                                           limb compared with controls.
+                                39–63           −0.06         −1.61
+
+                                75–88            0.13           1.25
+
+                   2 months     6–30             0.19           1.92
+                                                                           3.2.4 |      Knee adduction moment
+
+                                39–63           −0.12         −1.71
+                                                                           ACLR limb versus uninvolved limb
+                                75–90            0.09           1.38       Lesser KAM was observed in the ACLR limb during early and late
+                   4 months     8–30             0.12           1.26       stance at 2 months (12–23%, 69–80%) compared with the uninvolved
+
+                                43–62           −0.08         −1.22        limb. No differences between limbs were observed at preop, 4, 6, and
+                                                                           12 months post‐ACLR (Figures 5A‐J; Table 6).
+                                77–88            0.07           1.04
+
+                   6 months     10–29            0.10           1.07       ACLR limb versus controls
+                                44–61           −0.08         −1.14        The ACLR limb demonstrated lesser KAM during early stance at all
+                   12 months    11–28            0.08           0.85       time points (preop: 14–30%; 2 months: 12–35%; 4 months: 12–29%;
+                                                                           6 months: 13–22%, 12 months: 13–26%) compared with controls
+                                47–59           −0.06         −0.90
+                                                                           (Figures 5A‐E, 5K‐O; Table 6). In addition, lesser KAM was observed
+ Control‐          preop        43–63           −0.10         −1.25
+                                                                           during late stance at 2 months post‐ACLR in the ACLR‐limb com-
+ uninvolved
+                   2 months     23–29            0.06           0.78       pared with controls.
+                                44–59           −0.08         −1.12
+                                                                           Uninvolved limb versus controls
+                   4 months     48–55           −0.06         −0.78
+                                                                           The uninvolved limb had lesser KAM during early stance at time-
+                   6 months     49–55           −0.06         −0.76
+                                                                           points between preop and 6 months (preop: 16–31%; 2 months:
+                   12 months    –                –              –          18–33%; 4 months: 16–30%, 6 months: 16–30%) compared with
+Abbreviations: ACLR, anterior cruciate ligament reconstruction; BW, body   controls, but no differences were observed at 12 months post‐ACLR
+weight; preop, preoperative.                                               (Figures 5A‐E, 5P‐T; Table 6).
+
+
+
+3.2.3       | Knee extension moment                                        3.2.5 | Differences in gait biomechanical outcomes
+                                                                           with gait speed adjustment
+ACLR limb versus uninvolved limb
+The ACLR limb demonstrated lesser KEM during early stance as well          The detailed results of the of the waveform comparisons while
+as a lesser knee flexion moment (KFM) during mid‐to late stance at         adjusting   for   gait   speed can   be   found   in   Supplement   2
+all timepoints compared with the uninvolved limb (preop: 10‐24%,           (Figures S2.1–4; Tables S2.1–4). Overall, the analysis with gait
+45‐84%; 2 months: 8‐34%, 53‐82%; 4 months: 9‐36%, 61‐80%;                  speed adjustment demonstrated similar outcomes as those of the
+
+
+--- PAGE 8 ---
+                                                                                                                                                          1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                                 |   329
+
+
+
+
+                        (A)                    (B)                      (C)                       (D)                    (E)
+
+
+
+
+                       (F)                     (G)                      (H)                      (I)                     (J)
+
+
+
+
+                        (K)                    (L)                      (M)                      (N)                     (O)
+
+
+
+
+                        (P)                    (Q)                      (R)                      (S)                     (T)
+
+
+
+F I G U R E 3 Mean KFA waveforms and mean KFA differences with 95% confidence intervals (light blue areas) throughout gait stance in the
+ACLR limb, uninvolved limb, and uninjured control limb at preop, 2, 4, 6, and 12 months post‐ACLR. A‐E display the mean KFA waveforms;
+F‐J display the mean differences between the ACLR and uninvolved limbs; K‐O display the mean differences between the ACLR limb and
+controls; P‐T display the mean differences between uninvolved limb and controls. Columns 1 to 5 represent the preop, 2, 4, 6, and 12 months
+timepoint, respectively. Statistically significant differences in KFA between groups are highlighted in purple and exist when 95% confidence
+intervals of mean differences do not include zero. ACLR, anterior cruciate ligament reconstruction; KFA, knee flexion angle; preop, preoperative.
+
+
+
+non‐adjusted analysis. After adjusting for gait speed, no differences         late stance at 2 months post‐ACLR in the uninvolved limb compared
+were found for vGRF at 6 and 12 months post‐ACLR and no                       with controls, and greater KFA during terminal stance at the preop
+midstance differences at all timepoints between the ACLR and                  timepoint in the uninvolved limb compared with controls. The results
+uninvolved limbs. In addition, greater vGRF was found in the                  for the KEM are also consistent with the analyses without gait speed
+uninvolved limb during early stance at preop and 2 months post‐               adjustment, except no differences were present in late stance at 2, 4,
+ACLR compared with controls. The adjustment for gait speed led to             and 6 months between the ACLR limb and controls as well as
+marginal changes in the interpretations for between limb and group            between the uninvolved limb and controls at preop and 4 months
+effects for KFA. Deviations from the analyses without gait speed              post‐ACLR. Adjusting for gait speed limited the statistically significant
+adjustment included no differences during early stance at preop and           differences to lesser KAM during early and late stance at 2 months
+
+
+--- PAGE 9 ---
+                                                                                                                                                         1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+330   |                                                                                                                               BÜTTNER ET AL.
+
+
+
+T A B L E 4 Output of the waveform analyses for KFA at preop,             post‐ACLR between the ACLR limb and the uninvolved limb and
+2, 4, 6, and 12 months post‐ACLR between the (a) ACLR and                 lesser KAM during early stance at 2 months post‐ACLR in the ACLR
+uninvolved limb, (b) ACLR limb and controls, and (c) uninvolved           limb compared with controls.
+limb and controls, including the areas of gait stance with
+significant differences, the maximum differences that occurred
+within those areas as well as the mean Cohen's d effect sizes for
+significant areas. Small effect size: Cohen's d ≤ 0.2; medium             4 |     D IS CU SS IO N
+effect size: 0.2 < Cohen's d ≤ 0.5; large effect size: Cohen's
+d ≥ 0.8. 28                                                               Consistent with our hypotheses, individuals with primary unilateral
+                                 Areas of       Maximum        Cohen's    ACLR demonstrated different bilateral gait biomechanics (i.e., vGRF,
+                                 differences    difference     d effect   KFA, KEM, and KAM) at habitual walking speeds compared to
+ Comparison        Timepoint     (%)            (°)            Size
+                                                                          age‐, sex‐, and BMI‐matched controls between preop and 12 months
+ Uninvolved‐       preop         1–93           −8.58          −1.71      post‐ACLR. While the ACLR and uninvolved limbs became more sym-
+ ACLR
+                   2 months      1–6            −3.17          −0.85      metrical over time in all outcome variables, differences between the
+
+                                 12–33            3.04          0.52
+                                                                          ACLR limb and matched controls are greater than the differences
+                                                                          between the uninjured limb and matched controls (Tables 2–5). Our
+                                 43–90          −6.00          −1.35
+                                                                          data indicate that the biomechanics of the ACLR limb are, as expected,
+                                 97–100           2.54          0.50      more impacted than the uninjured limb by injury and surgery within the
+                   4 months      1–4            −2.26          −0.59      first 12 months post‐ACLR. These results indicate that bilateral aber-
+
+                                 11–37            2.26          0.45      rant gait biomechanics are apparent before ACLR and persist beyond
+                                                                          the time at which most individuals have completed formal rehabilitation
+                                 49–88          −3.95          −0.94
+                                                                          and, in many cases, have already returned to unrestricted physical
+                   6 months      10–36            2.53          0.47      activity.14,37 Given the persistent bilateral changes in gait biomechanics
+                                 50–86          −3.22          −0.83      within the first 12 months post‐ACLR, there is a critical need to
+
+                   12 months     1–5            −1.85          −0.51      implement early precision gait retraining following ACLR in the involved
+                                                                          and uninvolved limbs to restore gait biomechanics, which could help
+                                 48–91          −2.92          −0.64
+                                                                          maintaining long‐term knee joint health following ACL injury.
+ Control‐ACLR      preop         1–11           −3.30          −0.75          Overall, biomechanical waveform profiles collected at habitual
+                                 34–95          −9.43          −1.79      walking speeds for vGRF, KFA, KEM, KAM at all time points between
+                   2 months      3–42             6.49          1.12      preop and 12 months post‐ACLR can be characterized as less dynamic
+                                                                          in the ACLR group compared with matched controls. A less dynamic
+                                 50–86          −4.99          −1.05
+                                                                          waveform can be described as exhibiting smaller peaks and an overall
+                                 93–100           3.72          0.72
+                                                                          flatter appearance in time‐normalized graphical waveform representa-
+                   4 months      3–43             5.04          0.88      tions. Less dynamic vGRF waveforms have been reported in individuals
+                                 52–86          −3.80          −0.83      with ACLR as well as those with KOA,19,38,39 and are linked to outcomes
+                                                                          related to KOA development, including worse cartilage composition,
+                   6 months      1–46             5.43          0.96
+                                                                          deleterious joint tissue metabolism, and worse patient reported out-
+                                 59–84          −2.70          −0.62
+                                                                          comes.2,6,8,12 It is hypothesized that less dynamic vGRF waveforms may
+                                 97–100           1.71          0.37      result in more sustained compressive loading to the knee joint, which in
+                   12 months     1–43             3.95          0.71      combination with the viscoelastic nature of joint tissues like articular
+
+                                 56–92          −2.84          −0.61      cartilage,40 may result in greater tissue strain that could perpetuate joint
+                                                                          tissue breakdown. Furthermore, less dynamic KAM as seen within in the
+ Control‐          preop         1–8              1.43          0.32
+ uninvolved                                                               ACLR group has also been linked to KOA development post‐ACLR.10,41
+                                 16–40            1.97          0.34
+                                                                          Our study also found that the ACLR limb demonstrated less dynamic
+                   2 months      1–56             3.68          2.58      KFA and KEM throughout stance with lesser peak KFA and KEM in
+                                 84–100           1.54          0.35      early stance and greater knee flexion in midstance post‐ACLR compared
+                                                                          to controls. A stiffened‐knee gait during stance, caused by lesser overall
+                   4 months      1–44             3.03          0.71
+                                                                          knee range of motion,19 may alter tibiofemoral and patellofemoral
+                   6 months      1–53             2.93          0.54
+                                                                          contact force profiles and localize loading to specific areas of the
+                   12 months     1–52             3.26          0.57      joint.42,43 It can be hypothesized that the combination of more sus-
+Abbreviations: ACLR, anterior cruciate ligament reconstruction; preop,    tained and localized joint loading may contribute to deleterious changes
+preoperative.                                                             in joint tissue health that result in the development of KOA.
+
+
+--- PAGE 10 ---
+                                                                                                                                                 1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                         |   331
+
+
+
+
+                         (A)                    (B)                     (C)                  (D)                   (E)
+
+
+
+
+                        (F)                    (G)                      (H)                 (I)                    (J)
+
+
+
+
+                        (K)                    (L)                      (M)                 (N)                    (O)
+
+
+
+
+                        (P)                    (Q)                      (R)                 (S)                    (T)
+
+
+
+
+F I G U R E 4 Mean KEM waveforms and mean KEM differences with 95% confidence intervals (light blue areas) throughout gait stance in the
+ACLR limb, uninvolved limb, and uninjured control limb at preop, 2, 4, 6, and 12 months post‐ACLR. A‐E display the mean KEM waveforms;
+F‐J display the mean differences between the ACLR and uninvolved limbs; K‐O display the mean differences between the ACLR limb and
+controls; P‐T display the mean differences between uninvolved limb and controls. Columns 1 to 5 represent the preop, 2, 4, 6, and 12 months
+timepoint, respectively. Statistically significant differences in KEM between groups are highlighted in purple and exist when 95% confidence
+intervals of mean differences do not include zero. ACLR, anterior cruciate ligament reconstruction; BW, body weight; KEM, knee extension
+moment; preop, preoperative.
+
+
+
+    We found that primary unilateral ACL injury and ACLR led to           from 6 to 12 months, by adopting biomechanical patterns more
+bilateral gait alterations when collected at habitual walking speeds.     similar to the uninjured limb instead of gait outcomes similar to
+Over time, asymmetries between the ACLR and uninvolved limbs              uninjured controls. However, in the current study, gait biomechanics
+mostly resolve with only marginal differences in KFA and KEM              in the uninvolved limb improved (in vGRF, KAM) or were stable (in
+being present by the 12 months timepoint. Increased limb symmetry         KFA, KEM) over time compared to controls from preop to 12 months
+in gait biomechanics over time has been described in previous             post‐ACLR and differences between the ACLR and uninvolved limb
+literature.16,17,19 However, Davis‐Wilson et al.19 reported that the      decreased from 6 to 12 months. Despite improvements in gait over
+uninvolved side seem to develop more aberrant gait biomechanics           the first 12 months post‐ACLR and improvements in limb symmetry,
+
+
+--- PAGE 11 ---
+                                                                                                                                                     1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+332   |                                                                                                                             BÜTTNER ET AL.
+
+
+
+T A B L E 5 Output of the waveform analyses for KEM at preop, 2,           undergoes deleterious cartilage compositional changes that are
+4, 6, and 12 months post‐ACLR between the (a) ACLR and                     associated with early KOA development.18,22 Yet, it is not fully
+uninvolved limb, (b) ACLR limb and controls, and (c) uninvolved limb       understood what causes the biomechanical and biological alterations
+and controls, including the areas of gait stance with significant
+                                                                           in the uninvolved limb. A slower gait speed, as seen in our ACLR
+differences, the maximum differences that occurred within those
+areas as well as the mean Cohen's d effect sizes for significant areas.    cohort as well as altered neuromuscular function following
+Small effect size: Cohen's d ≤ 0.2; medium effect size: 0.2 < Cohen's      ACLR could contribute to bilateral changes in gait biomechanics,44
+d ≤ 0.5; large effect size: Cohen's d ≥ 0.8.28                             which could negatively affect cartilage composition. Given the bio-
+                                Areas of       Maximum        Cohen's      mechanical and biological changes in the uninvolved limb following
+                                differences    difference     d effect     ACL injury, the uninvolved limb should not be used as the only
+ Comparison        Timepoint    (%)            (BW*height)    size         reference‐control limb in future studies investigating knee‐specific
+ Uninvolved‐       preop        10–24           0.01           0.63        kinematics and kinetics during the stance phase of gait since ana-
+ ACLR                                                                      lytical approaches may lead to misinterpretation of results.
+                                45–84          −0.01          −1.27
+                                                                               Differences in biomechanical key variables are commonly re-
+                   2 months     8–34            0.02           1.43
+                                                                           ported for peak outcomes within the first 50% of stance post‐ACLR.
+                                53–82          −0.01          −1.15
+                                                                           Our results demonstrate that differences between limbs and controls
+                   4 months     9–36            0.01           0.98        may also exist during midstance in vGRF as well as early to late
+                                61–80          −0.01          −0.90        stance in KFA. While aberrant peak values within the first 50% of
+                                                                           stance are associated with outcomes linked to KOA development
+                   6 months     9–37            0.01           1.00
+                                                                           post‐ACLR,2,4,8–10,45,46 initial research has demonstrated that
+                                68–73          −0.01          −0.54
+                                                                           limb loading at or around midstance might be more predictive of
+                   12 months 13–26              0.01           0.48        knee‐related cartilage changes associated with KOA following ACLR
+                                72–76          −0.01          −0.50        than peak vGRF in individuals 12 months post‐ACLR.6 Thus, only
+                                                                           evaluating peak outcomes within the first half of stance may lead to
+ Control‐ACLR      preop        9–37            0.02           1.42
+                                                                           poor interpretations of results. Therefore, future research should
+                                52–82          −0.01          −1.24
+                                                                           investigate if portions of stance other than the first peak (e.g., 2nd
+                   2 months     7–45            0.03           2.38        peak KAM and vGRF, peak KFM, KFA at heel contact, midstance
+                                61–79          −0.01          −0.96        and terminal stance) are associated with later KOA development.
+                                                                           Identifying the portions of stance with the strongest link to KOA
+                                88–97           0.01           1.27
+                                                                           development post‐ACLR for key biomechanical variables would
+                   4 months     8–45            0.02           1.77
+                                                                           help the development of new KOA prevention gait therapies, such
+                                65–78          −0.01          −0.70        as real‐time gait biofeedback,26,27 which could target the most
+                                90–94           0.01           0.91        influential portions of stance to prevent joint breakdown.
+
+                   6 months     7–47            0.02           1.75            Gait speed is known to influence gait biomechanics, with faster
+                                                                           speeds associated with greater peak vGRF, greater peak knee
+                                89–94           0.01           0.83
+                                                                           moments and greater knee flexion angles.44,47–49 In our study, the
+                   12 months 9–40               0.02           1.18
+                                                                           ACLR group walked at slower habitual speeds at all 5 timepoints
+                                68–79          −0.01          −0.60        compared to uninjured controls (mean gait speed ACLR group:
+ Control‐          preop        14–42           0.01           0.80        1.16–1.27 m/s, controls: 1.36 m/s, Table 1). We chose to report our
+ uninvolved                                                                results at each participant's habitual walking speed as measuring
+                   2 months     13–54           0.01           0.97
+                                                                           biomechanics at habitual gait speed may be more representative of
+                                88–91           0.01           0.64
+                                                                           the movements that are occurring in the real‐world and assist
+                   4 months     13–41           0.01           0.64        in preserving a degree of externally validity when determining
+                   6 months     12–41           0.01           0.67        differences in gait biomechanics between limbs and as compared to
+                                                                           uninjured controls at each timepoint. There were marginal differ-
+                   12 months 12–39              0.01           0.67
+                                                                           ences in the outputs of our analyses with and without adjusting for
+Abbreviations: ACLR, anterior cruciate ligament reconstruction; BW, body   gait speed, but both approaches demonstrate that differences in gait
+weight; preop, preoperative.
+                                                                           biomechanics between the ACLR limb, uninvolved limb, and controls
+                                                                           persist up until 12 months post‐ACLR. In particular, when controlling
+the uninvolved limb still does not exhibit normalized gait bio-            for gait speed, we did not find differences in vGRF and KAM between
+mechanics, as defined by our control group, by the 12‐month time-          the ACLR limb and the uninvolved or control limbs at 12 months
+point. Therefore, gait rehabilitation following unilateral ACLR should     post‐ACLR.   However,     differences   between    the    ACLR    limb,
+include bilateral intervention. The need for bilateral rehabilitation is   uninvolved limb, and controls existed for KFA and KEM even after
+highlighted by research demonstrating that the uninvolved limb also        controlling for gait speed. Overall, our analyses with gait speed
+
+
+--- PAGE 12 ---
+                                                                                                                                                    1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                            |   333
+
+
+
+
+                          (A)                    (B)                     (C)                      (D)                   (E)
+
+
+
+
+                        (F)                    (G)                      (H)                     (I)                   (J)
+
+
+
+
+                        (K)                    (L)                      (M)                     (N)                   (O)
+
+
+
+
+                        (P)                    (Q)                      (R)                     (S)                   (T)
+
+
+
+F I G U R E 5 Mean KAM waveforms and mean KAM differences with 95% confidence intervals (light blue areas) throughout gait stance in the
+ACLR limb, uninvolved limb, and uninjured control limb at preop, 2, 4, 6, and 12 months post‐ACLR. A‐E display the mean KAM waveforms;
+F‐J display the mean differences between the ACLR and uninvolved limbs; K‐O display the mean differences between the ACLR limb and
+controls; P‐T display the mean differences between uninvolved limb and controls. Columns 1 to 5 represent the preop, 2, 4, 6, and 12 months
+timepoint, respectively. Statistically significant differences in KAM between groups are highlighted in purple and exist when 95% confidence
+intervals of mean differences do not include zero. ACLR, anterior cruciate ligament reconstruction; BW, body weight; KAM, knee adduction
+moment; preop, preoperative.
+
+
+
+adjustment suggest that slower walking speed may have been a                  biomechanics may be an important part of a comprehensive reha-
+mechanism contributing to some of the differences between limbs               bilitation strategy to restore overall gait post‐ACLR, since slower
+that were found in our analyses without adjusting for gait speed.             speeds have been associated with worse cartilage composition and
+Further, while statistically correcting for walking speed resulted in         cartilage breakdown related to KOA development.35,36
+slightly different results between comparisons, recent work suggests              While this is the first comprehensive waveform analysis of gait
+that increasing gait speed in slow walkers with an ACLR does                  biomechanics from preop to 12 months post‐ACLR including the
+not result in normalized gait biomechanics post‐ACLR.30 However               ACLR limb, uninvolved limb, and uninjured controls, there are limi-
+normalizing gait speed in addition to cueing changes in other gait            tations of our study that should be considered for future research.
+
+
+--- PAGE 13 ---
+                                                                                                                                                          1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+334     |                                                                                                                              BÜTTNER ET AL.
+
+
+
+T A B L E 6 Output of the waveform analyses for KAM at preop, 2,           post‐ACLR in vGRF, KFA, KEM, and KAM compared with controls.
+4, 6, and 12 months post‐ACLR between the (a) ACLR and                     Though the ACLR and uninvolved limbs become more symmetrical
+uninvolved limb, (b) ACLR limb and controls, and (c) uninvolved limb       over time, the ACLR limb persistently demonstrates greater differ-
+and controls, including the areas of gait stance with significant
+                                                                           ences in gait biomechanics compared to controls than the uninvolved
+differences, the maximum differences that occurred within those
+areas as well as the mean Cohen's d effect sizes for significant areas.    limb. Generally, gait biomechanics following ACLR can be charac-
+Small effect size: Cohen's d ≤ 0.2; medium effect size: 0.2 < Cohen's      terized as less dynamic than matched controls, which has been linked
+d ≤ 0.5; large effect size: Cohen's d ≥ 0.8.28                             to KOA development and progression. Our results indicate that early
+                                 Areas of      Maximum        Cohen's      bilateral precision interventions are needed to normalize gait, which
+                                 differences   difference     d effect     could improve long‐term knee joint health outcomes following ACLR.
+ Comparison          Timepoint   (%)           (BW*height)    size
+
+ Uninvolved‐         preop       –             –              –            A UT H O R C O N T R I B U TI O N
+ ACLR                                                                      All authors contributed to a combination of research design, data
+                     2 months    12‐23         0.01           0.79
+                                                                           acquisition, analysis, and interpretation, as well as drafting and critical
+                                 69‐80         0.01           0.45
+                                                                           revision of the manuscript. All authors have read and approved the
+                     4 months    –             –              –
+                                                                           final submitted manuscript.
+                     6 months    –             –              –
+
+                     12 months –               –              –            ACKNOWL EDGEM ENTS
+                                                                           This study was funded by the Arthritis Foundation and the National
+ Control‐ACLR        preop       14‐30         0.01           0.79
+                                                                           Institute of Arthritis and Musculoskeletal and Skin Diseases
+                     2 months    12‐35         0.01           1.12
+                                                                           (T32AR082310 and P30AR072580). Dr. Jason R. Franz and Dr. Brian
+                                 76‐85         0.01           0.46         Pietrosimone are the cofounders of VETTA Solutions Inc. Open
+                     4 months    12‐29         0.01           0.73         Access funding enabled and organized by Projekt DEAL.
+
+                     6 months    13‐22         0.01           0.60
+                                                                           ORC I D
+                     12 months 13‐26           0.01           0.61
+                                                                           Christin Büttner      http://orcid.org/0000-0002-6864-6890
+ Control‐            preop       16‐31         0.01           0.67         Ashley Buck        http://orcid.org/0000-0002-1811-612X
+ uninvolved
+                     2 months    18‐33         0.01           0.58         Troy Blackburn       http://orcid.org/0000-0003-0878-9432
+
+                     4 months    16‐30         0.01           0.60
+                                                                           RE F ER EN CES
+                     6 months    16‐30         0.01           0.56
+                                                                            1.   Luc B, Gribble PA, Pietrosimone BG. Osteoarthritis prevalence fol-
+                     12 months –               –              –                  lowing anterior cruciate ligament reconstruction: a systematic
+                                                                                 review and numbers‐needed‐to‐treat analysis. J Athl Train. 2014;
+Abbreviations: ACLR, anterior cruciate ligament reconstruction; BW, body
+                                                                                 49(6):806‐819.
+weight; preop, preoperative.
+                                                                            2.   Pietrosimone B, Loeser RF, Blackburn JT, et al. Biochemical markers
+                                                                                 of cartilage metabolism are associated with walking biomechanics
+                                                                                 6‐months following anterior cruciate ligament reconstruction.
+We only included individuals with unilateral ACL injury of which most            J Orthop Res. 2017;35(10):2288‐2297.
+                                                                            3.   Luc‐Harkey BA, Franz J, Hackney AC, et al. Immediate biochemical
+(93%) received a bone‐patellar‐bone tendon autograft. Therefore, our
+                                                                                 changes after gait biofeedback in individuals with anterior cruciate
+results are not generalizable to individuals who received different              ligament reconstruction. J Athl Train. 2020;55(10):1106‐1115.
+graft types, had multiple ACL injuries/surgeries, or are ACL‐deficient.     4.   Teng H‐L, Wu D, Su F, et al. Gait characteristics associated with a
+We also did not control the rehabilitation following injury/surgery,             greater increase in medial knee cartilage T1ρ and T2 relaxation times
+                                                                                 in patients undergoing anterior cruciate ligament reconstruction. Am
+however, including individuals who received general postoperative
+                                                                                 J Sports Med. 2017;45(14):3262‐3271.
+care makes the results of our study more generalizable to the current
+                                                                            5.   Evans‐Pickett A, Lisee C, Horton WZ, et al. Worse tibiofemoral car-
+standard of care. We assessed gait biomechanics up until 12 months               tilage composition is associated with insufficient gait kinetics after
+post‐ACLR and can therefore not determine whether aberrant                       ACL reconstruction. Med Sci Sports Exerc. 2022;54(10):1771‐1781.
+bilateral gait biomechanics persist beyond 12 months post‐ACLR.             6.   Bjornsen E, Schwartz TA, Lisee C, et al. Loading during midstance
+                                                                                 of gait is associated with magnetic resonance imaging of cartilage
+Since age can impact gait biomechanical outcomes following ACLR,32
+                                                                                 composition following anterior cruciate ligament reconstruction.
+our results may not be generalizable to individuals with ACLR                    Cartilage. 2022;13(1):19476035211072220.
+that are younger than 16 or older than 35 years old. Furthermore,           7.   Kumar D, Su F, Wu D, et al. Frontal plane knee mechanics and early
+it is unknown whether there were natural differences in gait bio-                cartilage degeneration in people with anterior cruciate ligament
+mechanics and gait speed between the ACLR group and controls                     reconstruction: A longitudinal study. Am J Sports Med. 2018;46(2):
+                                                                                 378‐387.
+before ACL injury.
+                                                                            8.   Pfeiffer SJ, Spang J, Nissman D, et al. Gait mechanics and T1ρ MRI
+      Overall, gait biomechanics, collected at habitual walking speeds,          of tibiofemoral cartilage 6 months after ACL reconstruction. Med Sci
+are changed bilaterally between preoperative and 12 months                       Sports Exercise. 2019;51(4):630‐639.
+
+
+--- PAGE 14 ---
+                                                                                                                                                                   1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BÜTTNER ET AL.                                                                                                                                          |   335
+
+
+
+ 9.   Pietrosimone B, Blackburn JT, Harkey MS, et al. Greater mechanical          26.   Armitano‐Lago C, Pietrosimone B, Evans‐Pickett A, et al. Cueing
+      loading during walking is associated with less collagen turnover in               changes in peak vertical ground reaction force to improve coordi-
+      individuals with anterior cruciate ligament reconstruction. Am                    nation dynamics in walking. J Mot Behav. 2022;54(1):125‐134.
+      J Sports Med. 2016;44(2):425‐432.                                           27.   Evans‐Pickett A, Davis‐Wilson HC, Luc‐Harkey BA, et al. Bio-
+10.   Wellsandt E, Gardinier ES, Manal K, Axe MJ, Buchanan TS, Snyder‐                  mechanical effects of manipulating peak vertical ground reaction
+      Mackler L. Decreased knee joint loading associated with early knee                force throughout gait in individuals 6–12 months after anterior
+      osteoarthritis after anterior cruciate ligament injury. Am J Sports               cruciate ligament reconstruction. Clin Biomech. 2020;76:105014.
+      Med. 2016;44(1):143‐151.                                                    28.   Von Elm E, Altman DG, Egger M, Pocock SJ, Gøtzsche PC,
+11.   Pietrosimone B, Blackburn JT, Padua DA, et al. Walking gait asym-                 Vandenbroucke JP. The strengthening the reporting of observational
+      metries 6 months following anterior cruciate ligament reconstruction              studies in epidemiology (STROBE) statement: guidelines for report-
+      predict 12‐month patient‐reported outcomes. J Orthop Res. 2018;                   ing observational studies. The Lancet. 2007;370(9596):1453‐1457.
+      36(11):2932‐2940.                                                           29.   Büttner C, Lisee C, Buck A, et al. Early gait biomechanics linked to
+12.   Pietrosimone B, Seeley MK, Johnston C, Pfeiffer SJ, Spang JT,                     daily steps following anterior cruciate ligament reconstruction. J Athl
+      Blackburn JT. Walking ground reaction force Post‐ACL reconstruction:              Train. 2024;1:1.
+      analysis of time and symptoms. Med Sci Sports Exerc. 2019;51(2):            30.   Buck AN, Lisee C, Bjornsen E, et al. Acutely normalizing walking
+      246‐254.                                                                          speed does not normalize gait biomechanics Post‐Anterior cruciate
+13.   van Melick N, van Cingel REH, Brooijmans F, et al. Evidence‐based                 ligament reconstruction. Med Sci Sports Exercise. 2023;56:464‐475.
+      clinical practice update: practice guidelines for anterior cruciate         31.   Buck AN, Lisee CM, Bjornsen ES, et al. Biomechanical threshold
+      ligament rehabilitation based on a systematic review and multi-                   values for identifying clinically significant Knee‐Related symptoms
+      disciplinary consensus. Br J Sports Med. 2016;50(24):1506‐1515.                   six months following anterior cruciate ligament reconstruction. J Athl
+14.   Filbay SR, Grindem H. Evidence‐based recommendations for the                      Train. 2024;1:1.
+      management of anterior cruciate ligament (ACL) rupture. Best Pract          32.   Lisee CM, Bjornsen E, Horton WZ, et al. Differences in gait bio-
+      Res Clin Rheumatol. 2019;33(1):33‐47.                                             mechanics between adolescents and young adults with anterior cru-
+15.   Hart HF, Culvenor AG, Collins NJ, et al. Knee kinematics and joint                ciate ligament reconstruction. J Athl Train. 2022;57(9‐10):921‐928.
+      moments during gait following anterior cruciate ligament reconstruction:    33.   Horton WZ 2022. Functional Mixed Effects Modeling via Bayesian
+      a systematic review and meta‐analysis. Br J Sports Med. 2016;50(10):              Penalized Splines. Available from: https://github.com/wzhorton/
+      597‐612.                                                                          FunctionalMixedEffects.Rpkg
+16.   Kaur M, Ribeiro DC, Theis J‐C, Webster KE, Sole G. Movement                 34.   Fukuchi CA, Fukuchi RK, Duarte M. Effects of walking speed on gait
+      patterns of the knee during gait following ACL reconstruction: a                  biomechanics in healthy participants: a systematic review and meta‐
+      systematic review and meta‐analysis. Sports Med. 2016;46(12):                     analysis. Syst Rev. 2019;8(1):153.
+      1869‐1895.                                                                  35.   Pfeiffer S, Harkey MS, Stanley LE, et al. Associations between slower
+17.   Slater LV, Hart JM, Kelly AR, Kuenze CM. Progressive changes in                   walking speed and T1ρ magnetic resonance imaging of femoral car-
+      walking kinematics and kinetics after anterior cruciate ligament                  tilage following anterior cruciate ligament reconstruction. Arthritis
+      injury and reconstruction: a review and meta‐analysis. J Athl Train.              Care Res. 2018;70(8):1132‐1140.
+      2017;52(9):847‐860.                                                         36.   Pietrosimone B, Troy Blackburn J, Harkey MS, et al. Walking speed as a
+18.   Boling MC, Dupell M, Pfeiffer SJ, et al. In vivo compositional changes            potential indicator of cartilage breakdown following anterior cruciate
+      in the articular cartilage of the patellofemoral joint following anterior         ligament reconstruction. Arthritis Care Res. 2016;68(6):793‐800.
+      cruciate ligament reconstruction. Arthritis Care Res. 2022;74(7):           37.   Glattke KE, Tummala SV, Chhabra A. Anterior cruciate ligament
+      1172‐1178.                                                                        reconstruction recovery and rehabilitation: a systematic review.
+19.   Davis‐Wilson HC, Pfeiffer SJ, Johnston CD, et al. Bilateral gait 6 and            J Bone Jt Surg. 2022;104(8):739‐754.
+      12 months post‐anterior cruciate ligament reconstruction compared           38.   Bjornsen E, Berkoff D, Blackburn JT, et al. Sustained Limb‐Level
+      with controls. Med Sci Sports Exerc. 2020;52(4):785‐794.                          loading: a ground reaction force phenotype common to individuals
+20.   Erhart‐Hledik JC, Chu CR, Asay JL, Andriacchi TP. Longitudinal chan-              at high risk for and those with knee osteoarthritis. Arthritis
+      ges in knee gait mechanics between 2 and 8 years after anterior                   Rheumatol (Hoboken, N.J.). 2024;76(4):566‐576.
+      cruciate ligament reconstruction. J Orthop Res. 2018;36(5):1478‐1486.       39.   Childs JD, Sparto PJ, Fitzgerald GK, Bizzini M, Irrgang JJ. Alterations
+21.   Neal K, Williams JR, Alfayyadh A, et al. Knee joint biomechanics                  in lower extremity movement and muscle activation patterns in in-
+      during gait improve from 3 to 6 months after anterior cruciate                    dividuals with knee osteoarthritis. Clin Biomech. 2004;19(1):44‐49.
+      ligament reconstruction. J Orthop Res. 2022;40(9):2025‐2038.                40.   Huang C‐Y, Mow VC, Ateshian GA. The role of Flow‐Independent
+22.   Xie D, Murray J, Lartey R, et al. Multi‐vendor multi‐site quantitative            viscoelasticity in the biphasic tensile and compressive responses of
+      MRI analysis of cartilage degeneration 10 years after anterior cru-               articular cartilage. J Biomech Eng. 2001;123(5):410‐417.
+      ciate ligament reconstruction: MOON‐MRI protocol and preliminary            41.   Evans‐Pickett A, Lisee C, Horton WZ, et al. Worse tibiofemoral carti-
+      results. Osteoarthritis Cartilage. 2022;30(12):1647‐1657.                         lage composition is associated with insufficient gait kinetics after ACL
+23.   Dewig DR, Evans‐Pickett A, Pietrosimone BG, Blackburn JT. Com-                    reconstruction. Med Sci Sports Exercise. 2022;54(10):1771‐1781.
+      parison of discrete and continuous analysis approaches for evalu-           42.   Andriacchi TP, Koo S, Scanlan SF. Gait mechanics influence healthy
+      ating gait biomechanics in individuals with anterior cruciate ligament            cartilage morphology and osteoarthritis of the knee. J Bone Jt Surg.
+      reconstruction. Gait Posture. 2023;100:261‐267.                                   2009;91(suppl ment_1):95‐101.
+24.   Evans‐Pickett A, Davis‐Wilson HC, Johnston CD, Blackburn JT,                43.   Culvenor AG, Cook JL, Collins NJ, Crossley KM. Is patellofemoral
+      Hackney AC, Pietrosimone B. Immediate effects of walking with a                   joint osteoarthritis an under‐recognised outcome of anterior cruci-
+      knee brace after anterior cruciate ligament reconstruction: a bio-                ate ligament reconstruction? A narrative literature review. Br J Sports
+      mechanical, biochemical, and structural approach. J Athl Train. 2023;             Med. 2013;47(2):66‐70.
+      58(6):542‐553.                                                              44.   Zeng X, Yang T, Kong L, et al. Changes in 6DOF knee kinematics during
+25.   Yamaguchi S, Kitamura M, Ushikubo T, Murata A, Akagi R, Sasho T.                  gait with decreasing gait speed. Gait Posture. 2022;91:52‐58.
+      Effect of laterally wedged insoles on the external knee adduction           45.   Kumar D, Kothari A, Souza RB, Wu S, Benjamin Ma C, Li X. Frontal plane
+      moment across different reference frames. PLoS One. 2015;10(9):                   knee mechanics and medial cartilage MR relaxation times in individuals
+      e0138554.                                                                         with ACL reconstruction: a pilot study. Knee. 2014;21(5):881‐885.
+
+
+--- PAGE 15 ---
+                                                                                                                                                           1554527x, 2025, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/jor.26001 by Seoul National University Of, Wiley Online Library on [22/05/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+336    |                                                                                                                                  BÜTTNER ET AL.
+
+
+
+46.   Williams JR, Neal K, Alfayyadh A, et al. Patellofemoral contact forces    SUPP ORTING INFO RM ATION
+      and knee gait mechanics 3 months after ACL reconstruction are             Additional supporting information can be found online in the Sup-
+      associated with cartilage degradation 24 months after surgery.
+                                                                                porting Information section at the end of this article.
+      Osteoarthritis Cartilage. 2023;31(1):96‐105.
+47.   Chung M‐J, Wang MJ. The change of gait parameters during walking
+      at different percentage of preferred walking speed for healthy adults
+      aged 20–60 years. Gait Posture. 2010;31(1):131‐135.
+                                                                                   How to cite this article: Büttner C, Lisee C, Bjornsen E,
+48.   Stoquart G, Detrembleur C, Lejeune T. Effect of speed on kinematic,
+      kinetic, electromyographic and energetic reference values during             et al. Bilateral waveform analysis of gait biomechanics
+      treadmill walking. Neurophysiol Clinique/Clin Neurophysiol. 2008;38(2):      presurgery to 12 months following ACL reconstruction
+      105‐116.                                                                     compared to controls. J Orthop Res. 2025;43:322‐336.
+49.   Nilsson J, Thorstensson A. Ground reaction forces at different
+                                                                                   doi:10.1002/jor.26001
+      speeds of human walking and running. Acta Physiol Scand. 1989;
+      136(2):217‐227.
+
+
+--- PAGE 16 ---

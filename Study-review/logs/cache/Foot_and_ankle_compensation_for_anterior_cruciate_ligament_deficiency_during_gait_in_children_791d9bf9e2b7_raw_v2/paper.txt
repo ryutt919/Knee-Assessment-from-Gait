@@ -1,0 +1,383 @@
+
+--- PAGE 1 ---
+Orthopaedics & Traumatology: Surgery & Research 106 (2020) 179–183
+Contents lists available at ScienceDirect
+Orthopaedics & Traumatology: Surgery & Research
+journal homepage: www.elsevier.com
+Original article
+Foot and ankle compensation for anterior cruciate ligament deﬁciency
+during gait in children
+Monica E. Urseia,∗
+, Franck Accadbleda
+, Marino Scandellab
+, Gorka Knorra
+,
+Caroline Munzera
+, Pascal Swidera
+, Jérome Briota
+, Jérome Sales de Gauzya
+a
+Service d’orthopédie, hôpital des Enfants, CHU de Toulouse, 330, avenue de Grande Bretagne, 31059 Toulouse, France
+b
+Laboratoire d’analyse de la marche, hôpital des Enfants, CHU de Toulouse, 31059 Toulouse, France
+a r t i c l e i n f o
+Article history:
+Received 18 November 2018
+Accepted 8 July 2019
+Keywords:
+Gait analysis
+ACL injury
+Paediatric knee disorders
+Sports medicine
+a b s t r a c t
+Background: Anterior cruciate ligament (ACL) injuries are common in adults and cause knee instability,
+pain, and an increased risk of osteoarthritis. Previous studies demonstrated changed gait patterns in
+adult patients with ACL deﬁciency. In paediatric patients, ACL injuries were once thought to be rare but
+are being increasingly diagnosed due to greater involvement of children in contact sports and to the
+introduction of more effective diagnostic tools such as magnetic resonance imaging (MRI). However,
+little is known about gait adaptation in children with ACL deﬁciency. The objective of this study was to
+look for compensatory foot and ankle behaviours during gait in paediatric patients with symptomatic
+ACL deﬁciency.
+Hypothesis: Compensation for ACL deﬁciency during gait occurs at the foot and ankle in children, because
+compensation at the hip and pelvis would require greater energy expenditure.
+Materialandmethods: Weincluded47patients,33malesand14females,ranginginagefrom9to17years
+(mean, 14.1 years). The patients had a history of unilateral ACL injury documented by MRI and initially
+treated by immobilisation and physical therapy. They were allowed to walk with full weight-bearing on
+the affected limb and were not taking medications at the time of the study. All patients had pain, knee
+instability, or functional limitation. The physical examination showed joint laxity indicating surgical ACL
+reconstruction. None had neurological conditions, congenital musculoskeletal abnormalities, or a history
+of knee surgery. Gait analysis (GA) was performed using a Vicon 460 system. Kinematic data for the ankle
+and foot were compared to those in a control group of 37 healthy children. Ankle angular positions were
+calculated for each group at the following stance time points: initial contact (0% of gait cycle [GC]), mid-
+stance (25% GC), terminal stance (60% GC), and swing (83% GC). Foot progression data were recorded at
+mid-stance (25% GC) and swing (70% GC). Student’s t test was applied to compare the results to reference
+values obtained at our laboratory and to data from the control group.
+Results: Comparedtothereferencevalues,theanklewasinplantarﬂexionatinitialcontactin41patients,
+and ankle dorsiﬂexion during the stance phase was diminished in 39 patients. The external foot pro-
+gression angle was increased in 23 patients during the stance phase and 38 patients during the swing
+phase. Compared to the control group (mean age, 9.1 years), the patients had plantar ﬂexion of the
+ankle at initial contact (3.43◦
+±3.5◦
+vs. 0.74◦
+±3.6◦
+, p<0.05) and decreased dorsiﬂexion during the stance
+phase (3.43◦
+±3.5◦
+vs. 0.74◦
+±3.6◦
+, p<0.05). No signiﬁcant differences were found for any of the other
+parameters.
+Discussion: Children with ACL deﬁciency developed compensatory foot and ankle behaviours during gait
+that improved knee stability. Understanding these compensations may guide treatment optimisation.
+Level of evidence: III, retrospective comparative study.
+© 2019 Elsevier Masson SAS. All rights reserved.
+∗ Corresponding author.
+E-mail address: ursei.m@chu-toulouse.fr (M.E. Ursei).
+1. Introduction
+Anterior cruciate ligament (ACL) tears are common injuries that
+result in knee instability and increase the risk of early osteoarthri-
+tis [1,2]. Several studies in adults with a history of ACL injury
+https://doi.org/10.1016/j.otsr.2019.07.009
+1877-0568/© 2019 Elsevier Masson SAS. All rights reserved.
+
+--- PAGE 2 ---
+180 M.E. Ursei et al. / Orthopaedics & Traumatology: Surgery & Research 106 (2020) 179–183
+documented changes in gait involving walking speed and spa-
+tiotemporal parameters, with decreased knee motion ranges that
+persisted even after ligament reconstruction [1,3]. These changes
+reﬂectcompensatorymuscularbehavioursthatlimitanteriortibial
+translation and improve knee stability. Bulgheroni et al. reported
+that gait parameters improved after ACL reconstruction [4].
+ACL injuries have a rising incidence in paediatric patients [5]
+due to the growing popularity among children of contact sports
+associatedwithseverekneeinjuries.Inaddition,advancesinimag-
+ing techniques, notably magnetic resonance imaging (MRI), have
+improved the diagnosis of injuries to the central knee structures.
+Parkkari et al. [6] reported 265 cruciate ligament injuries (with 92%
+of ACL tears) in a Finnish population-based cohort study of 46 472
+adolescents,yieldinganincidenceof60.9per100000person-years.
+Concomitant injuries to the menisci and collateral ligaments are
+common and further increase the risk of early-onset osteoarthri-
+tis [7,8]. Werner et al. [9] found a signiﬁcant increase in diagnosis
+of ACL injury and ACL reconstruction in paediatric and adolescent
+patients when compared to adults between 2007 and 2011. The
+results of several studies support early ACL reconstruction in chil-
+dren to protect the menisci, restore normal knee motion ranges,
+and allow the return to sports [7–14].
+Althoughtheyhaveincreasedcapacityofmuscleadaptationand
+gaitcompensation,childrenwithACLinjuriescomplainofunstable
+knee and difﬁculties during walking. Most studies rely on radiolog-
+ical data to assess outcomes, and little information is available on
+compensatory behaviours during gait.
+The objective of this study was to look for foot and ankle adap-
+tations during gait in paediatric patients with symptomatic ACL
+deﬁciency. The working hypothesis was that compensation for ACL
+deﬁciency during gait occurs at the foot and ankle in children,
+because compensation at the hip and pelvis would require greater
+energy expenditure.
+2. Material and method
+A retrospective study was conducted in 47 patients, 33 males
+and 14 females, ranging in age from 9 to 17 years (mean, 14.0±1.9
+years). All patients had a history of unilateral ACL injury docu-
+mented by MRI. The injury occurred during sports in 37 (78.7%)
+patients and a trafﬁc accident in 2 (4.2%) patients; no data on the
+circumstances of the injury were available for the remaining 8
+patients. The left knee was affected in 28 patients and the right
+knee in 19 patients. The mean age at injury was 12.0±2.9 years.
+All patients initially received non-operative treatment consisting
+of immobilisation followed by specialised rehabilitation exercises
+including quadriceps strengthening and proprioception training.
+Although the rehabilitation programme was optimally adapted to
+thecharacteristicsoftheinjury,allpatientsremainedsymptomatic
+and had persistent knee instability that precluded their return to
+sports.
+At the time of the study, all patients walked with full weight-
+bearing on the affected side, and none required analgesics. The
+physical examination and knee laxity measurements conﬁrmed
+the instability. The paediatric orthopaedic surgeons managing the
+patients deemed that surgery was necessary based on clinical
+criteria (knee instability, pain, and functional impairments). Gait
+analysis (GA) was performed before surgery. The time from injury
+to GA ranged from 2 to 48 months (mean, 13 months).
+Gait analysis was performed using the Vicon 360 motion cap-
+ture system (Vicon Motion Systems, Oxford, UK). The kinematic
+data were recorded by ﬁve 60-Hz infrared cameras from 15 reﬂec-
+tive markers positioned according to the Helen Hayes model. The
+patientswalkedattheirusualspeedalonga10-metredistance,and
+16 gait cycles (GCs) were recorded. Data analysis was with Vicon
+Polygon software. The following spatiotemporal parameters were
+recorded: speed, cadence, stride and step length, and percentages
+of time spent in single-leg and double-leg stance. Kinematic data
+on the ankle and foot in the sagittal plane were compared to those
+obtainedinacontrolgroupof37childrenfreeoforthopaedicabnor-
+malities, 21 females and 6 males, ranging in age from 3 to 15 years
+(mean, 9±3 years). Ankle ﬂexion and extension were computed
+at the following points of the GC: initial contact (0%), mid-stance
+(25%), terminal stance (60%), and swing phase (83%). The foot pro-
+gression angle was determined at mid-stance (25%) and during the
+swing phase (70%).
+Statistical comparisons were with Student’s t test. Values of p
+below 0.05 were considered signiﬁcant.
+3. Results
+None of the spatiotemporal parameters differed signiﬁcantly
+between the patients and the controls. In contrast, the group of
+patients exhibited modiﬁcations in ankle kinematics that predom-
+inated at the early stance phase (Table 1). At initial contact (0% of
+theGC),theanklewasinplantarﬂexion(0.2◦ to15.1◦)in41patients
+and in dorsal ﬂexion (0.1◦ to 2.6◦) in 6 patients. Mean ankle posi-
+tion at initial contact in the ACL group was 3.4◦ ±3.5◦ of plantar
+ﬂexion. In the control group, mean ankle position at initial contact
+was 0.74◦ ±3.6◦ of dorsiﬂexion (p=2.5510−9). At mid-stance (25%
+of the GC), compared to the controls, ankle dorsiﬂexion was dimin-
+ished in 41 patients and increased in 6 patients. Mean dorsiﬂexion
+was 5.9◦ ±2.1◦ in the ACL group and 7.9◦ ±2.5◦ in the controls
+(p=1.2810−11)(Fig.1).Attheterminalstancephase(60%oftheGC),
+26 patients had increased plantar ﬂexion compared to the controls
+(mean,14.1◦ ±6.3◦ vs.12.9◦ ±6.6◦,respectively),butthedifference
+was not statistically signiﬁcant (p>0.05). Finally, during the swing
+phase 22 ACL patients had less ankle dorsiﬂexion compared to the
+controls (mean, 0.7◦ ±2.7◦ vs. 1.0◦ ±3.4◦, respectively), but again
+the difference was not statistically signiﬁcant.
+The comparison of the foot progression angle showed greater
+external rotation in the patient group than in the control group.
+However, the difference was not statistically signiﬁcant (p>0.05)
+(Table 2).
+4. Discussion
+This study demonstrated that ACL deﬁciency was associated
+with abnormal ankle kinematics. Ankle dorsiﬂexion was decreased
+at the initial contact and early stance phases, during which the
+differences with the control group were statistically signiﬁcant.
+These ﬁndings conﬁrm our working hypothesis. The alterations in
+ankle position in our patients suggest that, when the ACL is deﬁ-
+cient, plantar ﬂexion of the ankle may facilitate knee extension. For
+biomechanical reasons, plantar ﬂexion of the ankle at initial con-
+tact results in passive knee extension because the ground reaction
+forcevectorisanteriortotheknee(withanexternalkneeextension
+moment). This extension of the knee does not require contraction
+of the quadriceps, which might translate the tibia anteriorly. Hicks
+et al. [15] investigated joint stabilisation by the muscles that can
+modify the position of the joints they do not cross and showed, in
+particular, that the soleus muscle is involved in coupling plantar
+ﬂexion of the ankle and extension of the knee.
+Our assessment of the foot progression angle showed increased
+external rotation, which was most marked during the swing phase,
+althoughthedifferencewasnotstatisticallysigniﬁcant(Fig.2).Sim-
+ilarly, Zhang et al. [16] reported increased external rotation of the
+tibia during gait in patients with anterior knee instability. During
+the stance phase, external rotation of the foot results in lateral and
+posterior displacement of the ground reaction force compared to
+
+--- PAGE 3 ---
+M.E. Ursei et al. / Orthopaedics & Traumatology: Surgery & Research 106 (2020) 179–183 181
+Table 1
+Ankle dorsiﬂexion during the stance and swing phases of the gait cycle in the patients with ACL deﬁciency and the healthy controls.
+Ankle dorsiﬂexion,◦
+, mean±SD Patients (n=47) Controls (n=37) p value
+0% of gait cycle −3.44±3.54 0.74±3.67 2.55·10−9
+25% of gait cycle 5.91±2.15 7.96±2.52 1.28·10−11
+60% of gait cycle −14.18±6.40 −12.99±6.60 >0.05
+83% of gait cycle 0.78±2.72 1.09±3.43 >0.05
+Fig.1. Anklekinematics.A.meanvalueinthecontrolgroup;B.individualvaluesinthecontrolgroup;C.meanvalueinthegroupofpatientswithACLdeﬁciency;D.individual
+values in the group of patients with ACL deﬁciency.
+Table 2
+External foot progression angle during the stance and swing phases of the gait cycle in the patients with ACL deﬁciency and the healthy controls.
+Plantar progression,◦
+, mean±SD Patients (n=47) Controls (n=37) p value
+25% of the gait cycle −5.2±4.81 −6.32±5.5 >0.05
+70% of the gait cycle −12.9±7.1 −10.36±6.59 >0.05
+Fig. 2. Foot progression angle. A. mean value in the control group; B. individual values in the control group; C. mean value in the group of patients with ACL deﬁciency; D.
+individual values in the group of patients with ACL deﬁciency.
+
+--- PAGE 4 ---
+182 M.E. Ursei et al. / Orthopaedics & Traumatology: Surgery & Research 106 (2020) 179–183
+its normal position. The effect is shortening of the lever arm with a
+decrease in the extension moment of the knee.
+Ourinstitutionisinanareawherecontactsports,notablyrugby,
+are popular among the paediatric population, notably boys. This
+fact may explain the 3:1 male-to-female ratio in our study, which
+contrasts with several reports that females are at greater risk for
+ACL injury [14,17,18]. Furthermore, in an MRI study by Prince et al.
+[19], ACL tears were common before skeletal maturity in boys and
+after growth completion in girls.
+Several studies have documented gait alterations in patients
+with ACL deﬁciency [4,5,18]. Berchuck et al. [20] analysed the
+abnormalities found during walking, jogging, and ascending and
+descending stairs in 16 patients with unilateral ACL injuries and
+in 10 healthy controls. In the patients, even mild physical activity
+such as walking was associated with a decrease in the knee ﬂexion
+moment,whichavoidedcontractionofthequadriceps.Contraction
+of the quadriceps with the knee between 0◦ and 40◦ of ﬂexion can
+cause anterior translation of the tibia in the ACL-deﬁcient knee.
+The knee extension moment at initial contact was signiﬁcantly
+increased in the patients compared to the controls. Ankle kinemat-
+ics were not signiﬁcantly different between the two groups.
+In 18 patients with anterior knee instability, Roberts et al. [21]
+found no reduction in the internal knee extension moment. They
+concluded from their ﬁndings that the quadriceps avoidance pat-
+tern as a gait adaptation to ACL deﬁciency may be less common
+than previously reported.
+The ACL is among the knee stabilisers, as it prevents anterior
+translation of the tibia. In addition, during gait, the muscles pro-
+vide dynamic stabilisation of the knee. Coordinated activity of the
+quadriceps and hamstrings is crucial to good knee mobility. For
+biomechanical reasons, contraction of the quadriceps promotes
+anteriortranslationoftheproximaltibia,whereastheACLandcon-
+tractionofthehamstringshavetheoppositeeffect[22–25].Several
+studies of the part played by dynamic muscle control identiﬁed the
+gastrocnemius muscles as key knee stabilisers. Using electromyog-
+raphy,changesintheintensityandtimingofgastrocnemiusactivity
+have been documented in adults with ACL injuries [25–27].
+Our study focused on ankle and foot kinematics. The Gait anal-
+ysis results at the hip and knee were not signiﬁcantly different
+between the patients and controls. We are currently performing
+a larger study to investigate the relations linking contraction of the
+hamstrings and quadriceps and also of the hamstrings and triceps
+surae. with narrower age groups to allow for the identiﬁcation of
+age-speciﬁc morphological and functional characteristics.
+To our knowledge, this is the ﬁrst study of gait alterations
+designed to compensate for ACL deﬁciency in children. Conse-
+quently, there are no data to which our ﬁndings can be compared.
+We conﬁned our study to symptomatic patients who had func-
+tionalimpairmentsandwerescheduledforsurgicalstabilisation.In
+the future, studies of patients who have mild symptoms or normal
+function should be performed.
+5. Conclusion
+Our ﬁndings conﬁrm the hypothesis that children alter their
+gaittocompensateforACLdeﬁciency.Thealterationsdifferedfrom
+those reported in adults. In particular, plantar ﬂexion of the ankle
+at initial contact was noted. Compensatory behaviours during gait
+may be difﬁcult to detect during the physical examination. Gait
+analysisisareliabletoolforelucidatingcompensatorymechanisms
+and optimising rehabilitation therapy.
+Disclosure of interest
+The authors declare that they have no competing interest.
+Funding
+None.
+Contributions of each author
+All authors contributed equally to this work.
+References
+[1] Tamires L, Tellini, Lima KO, Alouche SR, Bagesteiro LB. Compliant surface
+after ACL reconstruction and its effects on gait. Acta Scientiarum 2013;35:
+237–42.
+[2] Edward MW, Brower AM. Anterior cruciate ligament injuries in
+the prepubescent and adolescent athlete. J Athl Train 2010;45:
+509–12.
+[3] Gao B, Cordova ML, Zheng NN. Three-dimensional joint kinematics of ACL-
+deﬁcient and ACL-reconstructed knees during stair ascent and descent. Hum
+Mov Sci 2012;31:222–35.
+[4] Bulgheroni P, Bulgheroni MV, Andrini L, Guffanti P, Giughello A. Gait patterns
+after anterior cruciate reconstruction. Knee Surg Sports Traumatol Arthrosc
+1997;1:14–21.
+[5] Kocher MS, Saxon HS, Hovis WD, Hawkins RJ. Management and complica-
+tions of anterior cruciate ligament injury in skeletally immature patients:
+survey of the Heridicus Society and the ACL Study Group. J Pediatr Orthop
+2002;22:452–7.
+[6] Parkkari J, Panansen K, Mattila VM, Kannus P, Rimpela A. The risk of cruciate
+ligament injury of the knee in adolescents and young adults: a population-
+based cohort study of 46500 people with 9-year follow-up. Br J Sports Med
+2008;42:422–6.
+[7] Millet PJ, Willis A, Warren RF. Associated injuries in pediatric and adolescent
+anterior cruciate ligament tears: does a delay in treatment increase the risk of
+meniscal tear? Arthroscopy 2002;18:955–9.
+[8] Roos EMR. Joint injury causes knee osteoarthritis in young adults. Curr Opin
+Rheumatol 2005;17:195–200.
+[9] Werner BC, Yang S, Looney AM, Gwathmey FW. Trends in pediatric and ado-
+lescent anterior cruciate ligament injury and reconstruction. J Pediatr Orthop
+2016;36:447–52.
+[10] Cassard X, Cavaignac E, Maubisson L, Bowen M. Anterior cruciate liga-
+ment reconstruction in children with a quadrupled semitendinosus graft:
+preliminary results with minimum 2 years of follow-up. J Pediatr Orthop
+2014;34:70–7.
+[11] Henry J, Chotel F, Chouteau J, et al. Rupture of the anterior cruciate ligament
+in children: early reconstruction with open physes or delayed reconstruc-
+tion to skeletal maturity. Knee Surg Sports Traumatol Arthrosc 2009;17:
+748–55.
+[12] Vavken P, Murray MM. Treating anterior cruciate ligament tears in skeletally
+immature patients. Arthroscopy 2011;27:704–16.
+[13] Aichroth PM, Patel DV, Zorilla P. The natural history and treatment of rupture
+of the anterior cruciate ligament in children and adolescents. A prospective
+review. J Bone Joint Surg Br 2002;84:38–41.
+[14] Shea KG, Pfeiffer R, Wang JH, Curtin M, Apel PJ. Anterior cruciate ligament
+injury in pediatric and adolescent soccer players: an analysis of insurance data.
+J Pediatr Orthop 2004;24:623–8.
+[15] HicksJL,SchwartzMH,DelpSL.Modellingandsimulationofnormalandpatho-
+logical gait. In: James RG, Schwartz MH, Koop SE, Novacheck TF, editors. In The
+identiﬁcationandtreatmentofgaitproblemsincerebralpalsy.2ndeditionMac
+Keith Press; 2009. p. 285–8.
+[16] Zhang LQ, Shiavi RG, Limbird TJ, Minorik JM. Six degrees-of-freedom kine-
+matics of ACL deﬁcient-compensatory mechanism. Gait Posture 2003;17:
+34–42.
+[17] Arendt E, Dick R. Knee injury patterns in men and women in collegiate bas-
+ketball and soccer. NCAA data and review of literature. Am J Sports Med
+1995;23:694–701.
+[18] Powell JW, Barber-Foss KD. Sex-related injury patterns among selected high-
+school sports. Am J Sports Med 2000;28:385–91.
+[19] Prince JS, Laor T, Bean JA. MRI of anterior cruciate ligament injuries and asso-
+ciated ﬁndings in pediatric knee: changes with skeletal maturity. AJR Am J
+Roentgenol 2005;185:756–62.
+[20] Berchuck M, Andriacchi TP, Bach BR, Reider B. Gait adaptations by patients
+who have a deﬁcient anterior cruciate ligament. J Bone Joint Surg Am
+1990;72A:871–7.
+[21] Roberts CS, Rash GS, Honaker JT, Wachowiak MP, Shaw JC. A deﬁcient ante-
+rior cruciate ligament does not lead to quadriceps avoidance gait. Gait Posture
+1999;10:189–999.
+[22] Hagood S, Solomonow M, Baarrata R, et al. The effect of joint velocity on the
+contribution of the antagonist musculature to knee stiffness and laxity. Am J
+Sports Med 1990;18:182–7.
+
+--- PAGE 5 ---
+M.E. Ursei et al. / Orthopaedics & Traumatology: Surgery & Research 106 (2020) 179–183 183
+[23] Solomonow M, Barrata R, Zhou BH, et al. The synergistic action of the anterior
+cruciate ligament and thigh muscles in maintaining joint stability. Am J Sports
+Med 1987;15:207–13.
+[24] HustonLJ,WojtysE.Neuromuscularperformancecharacteristicsinelitefemale
+athletes. Am J Sports Med 1996;24:427–34.
+[25] Kimmel SA, Schwartz MH. A baseline of dynamic muscle function during gait.
+Gait Posture 2006;23:211–21.
+[26] Lass P, Kaalund S, le Fevre S, et al. Muscle coordination following rupture of
+the anterior cruciate ligament. Electromyographic studies of 14 patients. Acta
+Orthop Scand 1991;62:9–14.
+[27] WojtysEM,HustonLJ.Neuromuscularperformanceinnormalandanteriorcru-
+ciate ligament-deﬁcient lower extremities. Am J Sports Med 1994;22:89–104.
+
+--- PAGE 6 ---

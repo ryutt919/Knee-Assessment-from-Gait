@@ -1,0 +1,693 @@
+
+--- PAGE 1 ---
+Orthopaedic Surgery, 2026; 0:1–8
+https://doi.org/10.1111/os.70261
+1
+Orthopaedic Surgery
+REVIEW ARTICLE OPEN ACCESS
+Advances in Gait Alterations and Rehabilitation After
+Anterior Cruciate Ligament Reconstruction: Biomechanics
+and Emerging Technologies
+TszLeung Yu1 | HengYu Liao1 | ZhenQiang Huo1 | ZhiYu Huang1 | JieRuo Li1 | XinYu Fang2,3,4
+1Department of Sports Medicine Center, The First Affiliated Hospital of Jinan University, Guangzhou, China | 2Department of Orthopaedic Surgery, The
+First Affiliated Hospital of Fujian Medical University, Fuzhou, China | 3Department of Orthopaedic Surgery, National Regional Medical Center, Binhai
+Campus of the First Affiliated Hospital, Fujian Medical University, Fuzhou, China | 4Fujian Provincial Institute of Orthopedics, The First Affiliated
+Hospital, Fujian Medical University, Fuzhou, China
+Correspondence: JieRuo Li (lijieruo@jnu.edu.cn) | XinYu Fang (fangxinyu0417@fjmu.edu.cn)
+Received: 23 May 2025 | Revised: 13 January 2026 | Accepted: 15 January 2026
+Keywords: anterior cruciate ligament injuries | biomechanics | gait analysis | kinematic asymmetries | knee
+ABSTRACT
+Anterior cruciate ligament (ACL) injuries are prevalent in sports and daily life, often leading to functional instability and long-­
+term complications such as osteoarthritis. This literature review synthesizes advancements in postoperative gait analysis follow-
+ing ACL reconstruction (ACLR), focusing on biomechanical alterations, rehabilitation outcomes, and emerging technologies.
+Current methodologies, including three-­ dimensional motion capture, force plate kinetics, surface electromyography (sEMG),
+wearablesensors,machinelearningandartificialintelligence,revealpersistentkinematicasymmetries,andalteredjointloading
+patterns in ACLR patients. Rehabilitation interventions, such as neuromuscular training, biofeedback, and AI-­ assisted systems,
+show promise in restoring dynamic stability but require standardization and cost optimization. Limitations of existing studies
+include small sample sizes, short follow-­ up periods, and methodological inconsistencies. Future research should prioritize mul-
+ticenter longitudinal studies, multimodal data integration, and AI-­ driven precision rehabilitation to optimize recovery and mit-
+igate long-­ term risks. This study aims to elucidate the role of gait analysis in optimizing rehabilitation protocols and mitigating
+long-­ term complications by evaluating the strengths and limitations of existing approaches.
+1   |   Introduction
+Anterior cruciate ligament (ACL) injury is a common type of
+knee joint injury in sports and daily life, and anterior cruciate
+ligament reconstruction (ACLR) is the primary treatment for
+ACL injuries. Sudden stops, jumps, and directional changes
+often subject the knee joint to significant loads, making ACL
+injuries highly likely. ACL damage causes not only functional
+knee instability but also significantly increases the risk of me-
+niscal injuries, cartilage degeneration, and long-­ term osteoar-
+thritis (OA). In Germany, the incidence of ACL injuries is 46 per
+100,000 people [1], while in Australia, this figure is projected to
+reach 77.2 per 100,000 by 2030–2031 [2]. ACL injuries not only
+affect physical health and quality of life but also result in eco-
+nomic losses [3]. Studies have shown that ACL injuries can im-
+pact athletes' careers [4, 5].
+In recent years, research on ACL injuries has garnered wide-
+spread attention, encompassing investigations into injury mech-
+anisms, surgical interventions, rehabilitation strategies, and
+their impact on gait. Numerous studies indicate that ACL inju-
+ries compromise knee joint stability, alter movement patterns,
+and elevate the risk of long-­ term complications such as OA.
+This review aims to synthesize advancements in gait analysis
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium,
+provided the original work is properly cited.
+© 2026 The Author(s). Orthopaedic Surgery published by Tianjin Hospital and John Wiley & Sons Australia, Ltd.
+
+--- PAGE 2 ---
+2 Orthopaedic Surgery, 2026
+research following ACLR. Current studies employ diverse meth-
+odologies, including three-­ dimensional motion capture, force
+plate kinetics, surface electromyography (sEMG), and wearable
+sensor technologies.
+Gait represents an integrative expression of neuromuscular con-
+trol, joint stability, and biomechanical loading, and is therefore
+a sensitive indicator of knee function following ACL injury and
+reconstruction.
+From a clinical perspective, gait analysis can help (1) identify
+residual biomechanical deficits, (2) detect maladaptive compen-
+satory strategies at an early stage, (3) stratify patients at higher
+risk for reinjury or degenerative changes, and (4) establish refer-
+ence indicators to guide individualized rehabilitation progres-
+sion and return-­to-­sport decision-­making.
+While these tools provide valuable insights into lower limb bio-
+mechanics, limitations such as inconsistencies in study design,
+small sample sizes, and short follow-­ up periods hinder the
+generalizability of findings. The integration of artificial intelli-
+gence (AI) and machine learning in gait analysis offers promis-
+ing avenues for early diagnosis and rehabilitation monitoring,
+though their clinical applicability remains to be explored.
+Therefore, the aim of this review is not merely to summarize
+gait analysis techniques, but to synthesize current evidence
+on gait alterations following ACLR, evaluate the clinical and
+prognostic significance of gait assessment across different
+postoperative phases, and discuss how emerging technologies
+may refine rehabilitation strategies and long-­ term outcome
+prediction. By evaluating the strengths and limitations of ex-
+isting approaches, this study seeks to elucidate the role of gait
+analysis in optimizing rehabilitation protocols and mitigating
+long-­term complications.
+2   |   Literature Search Strategy and Study Quality
+Assessment
+2.1   |   Literature Search Strategy
+A comprehensive literature search was conducted to identify
+studies investigating gait analysis in patients with ACL in-
+jury and following ACL reconstruction. The following elec-
+tronic databases were systematically searched: PubMed,
+CNKI. The search covered all relevant articles published up to
+September 2025.
+The search strategy combined Medical Subject Headings
+(MeSH) terms and free-­ text keywords, including but not limited
+to: “anterior cruciate ligament,” “ACL,” “ACL reconstruction,”
+“ACLR,” “gait analysis,” “walking biomechanics,” “kinematics,”
+“kinetics,” “ground reaction force,” “electromyography,” and
+“sEMG.” Boolean operators (“AND” and “OR”) were used to op-
+timize sensitivity and specificity.
+Reference lists of eligible articles and relevant reviews were
+manually screened to identify additional studies not captured in
+the initial database search.
+2.2   |   Inclusion and Exclusion Criteria
+Studies were included if they met the following criteria:
+a. Involved patients with ACL injury or following ACL
+reconstruction;
+b. Employed quantitative gait analysis methods (e.g., motion
+capture, force plates, sEMG, wearable sensors, or AI-­ based
+gait assessment);
+c. Reported biomechanical, neuromuscular, or functional
+gait-­related outcomes;
+d. Were original research articles, including randomized
+controlled trials (RCTs), cohort studies, or case–control
+studies;
+e. Published in English.
+Studies were excluded if they:
+a. Were case reports, conference abstracts, editorials, or ex-
+pert opinions;
+b. No biomechanical data;
+c. Involved non-­ human subjects;
+d. Lacked sufficient methodological detail or quantitative
+outcome measures.
+2.3   |   Study Selection Process
+Three reviewers independently screened titles and abstracts for
+eligibility. Full-­ text articles were subsequently assessed based
+on the inclusion and exclusion criteria (Figure 1).
+3   |   Injury Mechanism
+Current research indicates that over 70% of ACL injuries are non-­
+contact injuries [4], with most occurring when the knee is near
+full extension during landing. Non-­ contact injuries typically result
+from sudden deceleration during directional changes or landing,
+whereas contact injuries are caused by knee valgus collapse [3, 6].
+Non-­ contact ACL injuries result from excessive stress in three an-
+atomicalplanes, including anteriortibialpressure and shear force
+caused by quadriceps contraction, knee valgus, and impingement
+on the medial edge of the intercondylar spine. Under axial com-
+pression forces, an increased vertical tibial slope promotes greater
+posterior sliding of the lateral femoral condyle (LFC) on the lat-
+eral tibial plateau, thereby increasing ACL stress. Excessive joint
+stress may lead to complete ACL rupture, consistent with the
+bone bruising observed on MRI post-­ injury [4].
+In some team sports such as basketball and soccer, even minor
+disturbances before an athlete's injury can lead to incorrect
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 3 ---
+3 Orthopaedic Surgery, 2026
+foot landing positions, resulting in non-­ contact ACL injuries.
+Evidence suggests that foot landing positions are modifiable and
+play a critical role in ACL injury prevention [3, 4].
+4   |   Gait Analysis
+Gait analysis is increasingly utilized in ACL injury research
+to assess lower limb kinematics, including motion at the hip,
+knee, and ankle joints. It is a discipline within biomedical
+fields like biomechanics, kinesiology, or podiatry. Through
+principles of mechanics, anatomy, and physiology, it system-
+atically evaluates kinematics (joint angles, limb trajectories),
+kinetics (ground reaction forces, joint moments), and elec-
+tromyographic activity during walking. Biomechanical and
+clinical studies show that the coordinated actions of hundreds
+of joints and muscles can represent each individual's unique
+walking pattern. Studies indicate that healthy individuals ex-
+hibit consistent gait variability, which is stable yet unique to
+each individual. Gait analysis can reveal the presence of cer-
+tain diseases [7], providing a scientific basis for the diagnosis
+and treatment of ACL injuries.
+4.1   |   Common Methods of Gait Analysis
+1. 3D motion capture system: Tracks surface markers via
+infrared cameras to reconstruct three-­ dimensional joint
+motion trajectories, serving as the “gold standard” in labo-
+ratory settings [8].
+FIGURE 1    |    Flow chart for study screening and inclusion.
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 4 ---
+4 Orthopaedic Surgery, 2026
+2. Force plates and kinetic analysis: Measures ground
+reaction forces (GRF) and their distribution to assess knee
+joint loading patterns. ACL-­ injured patients often exhibit
+reduced GRF peaks during the stance phase, particularly
+in the early and late support phases. Christin Büttner et al.
+[9] used a 3D motion capture system combined with force
+plates and kinetic analysis, comparing the affected and
+unaffected limbs of ACL-­ ruptured patients. They found
+statistically significant differences in key metrics such as
+vertical ground reaction force (vGRF), knee flexion angle
+(KFA), knee extension moment (KEM), and knee adduc-
+tion moment (KAM) between ACL-­ reconstructed pa-
+tients and healthy controls. The 3D motion capture system
+effectivelycapturesthemotionofmultiplejointsandlimbs,
+generating a stereoscopic model of limb movement. With
+its high precision, multi-­ dimensional analysis, and multi-­
+modal data fusion capabilities, it can detect subtle motion
+changes and reveal the biomechanical mechanisms under-
+lying gait abnormalities post-­ ACL injury [10–12].
+3. sEMG: Records the activation timing and intensity of
+muscles such as the quadriceps and hamstrings. Subjects
+undergo sEMG and gait testing during straight leg raises,
+normal-­ speed walking, fast walking, and stair climbing.
+Research results indicate that sEMG and gait analysis can
+effectively assess the motor function of ACL-­ reconstructed
+patients and provide guidance for developing personalized
+rehabilitation plans [13].
+4. Inertial sensors and wearable devices: Portable acceler-
+ometers and gyroscopes enable real-­ time monitoring of
+daily gait parameters, suitable for long-­ term postoperative
+follow-­ up. Islam et al. [7, 8] demonstrated that joint angle
+measurements during walking, squatting, and jumping
+activities using seven wearable inertial measurement units
+(IMUs) were comparable to proprietary software, provid-
+ing accurate objective data for clinical practice.
+5. Machine learning and AI: Deep learning algorithms iden-
+tify abnormal gait patterns (e.g., stiff gait, pivot shift gait)
+to assist in early diagnosis and rehabilitation assessment
+[14]. Kokkotis et al. [14] applied interpretable machine
+learning methods to analyze walking biomechanics in
+ACL-­ injured knees, finding that a support vector machine
+model achieved 94.95% diagnostic accuracy on biome-
+chanical parameters and uncovered important parameters
+overlooked by traditional statistical analysis. Li Haoran
+et al. [10] collected running data through experiments,
+analyzed knee joint flexion and muscle strength using
+a musculoskeletal model, and ultimately constructed a
+multivariate linear regression model with an accuracy of
+81.4%, providing objective evidence for the clinical diagno-
+sis of ACLD. Tedesco et al. [15] used inertial sensors and
+multiple machine learning models to study gait patterns
+during athletes' directional changes, showing that healthy
+and post-­ injury groups could be successfully distinguished
+with 73.07% accuracy.
+Multi-­ modal data fusion utilizing these techniques enables a
+more comprehensiveanalysisofthe biomechanical mechanisms
+before and after ACL injury, thereby providing a scientific foun-
+dation for precise rehabilitation.
+4.2   |   Postoperative Gait Analysis
+and Biomechanical Characteristics
+Gaitrecoveryafteranteriorcruciateligamentreconstructionisa
+dynamic and staged process characterized by continuous adap-
+tive changes in biomechanical and neuromuscular aspects.
+In the early, middle and late postoperative stages, patients ex-
+hibit distinct but interrelated gait asymmetries, altered joint
+loading, and compensatory movement strategies.
+Early recovery is mainly characterized by protective unloading
+and quadriceps inhibition, while mid-­ recovery is characterized
+by partial recovery of kinematics, but there is still persistent
+movement asymmetry.
+In the late stages, although clinical recovery and permission to
+return to sport have been achieved, some subtle but clinically
+significant gait deviations often remain and are associated with
+reinjury risk and post-­ traumatic osteoarthritis.
+Importantly, evidence from randomized controlled trials and
+longitudinal studies suggests that rehabilitation strategies that
+incorporate neuromuscular training, biomechanical feedback,
+and symmetry-­ focused interventions are superior to traditional
+time-­ based programs in restoring gait mechanics.
+4.2.1   |   Preoperative to Early Postoperative Phase
+(Pre-­ Surgery to 3Months)
+The first 12weeks following ACL reconstruction represent
+a critical window of neuromuscular reorganization and
+compensatory gait adaptation. During this stage, patients
+typically exhibit pronounced gait asymmetries, quadriceps in-
+hibition, and reduced joint loading, which if left unaddressed
+may persist chronically and predispose to secondary injuries
+[9, 13, 16–18].
+From a biomechanical perspective, early postoperative gait is
+consistently associated with reduced knee flexion angle during
+loading response, diminished peak knee extensor moments,
+and altered hip-­ knee-­ ankle coordination patterns [13, 17]. These
+changes collectively indicate a cautious gait strategy that limits
+sagittal-­ plane knee loading during stance.
+Surface electromyography further supports the presence of
+neuromuscular inhibition in this phase, demonstrating delayed
+quadriceps activation, prolonged quadriceps–hamstring co-­
+contraction, and compensatory over-­ reliance on the uninvolved
+limb. Such neuromuscular patterns contribute to inefficient
+force transmission across the knee joint and reinforce protective
+unloading behaviors during walking [9, 13].
+Taken together, the dominant gait features in the early postoper-
+ative phase reflect a combination of mechanical protection and
+neural inhibition rather than strength deficiency alone. This
+distinction underscores the clinical importance of early inter-
+ventions that target neuromuscular activation and movement
+quality, rather than focusing exclusively on strength restoration
+or time-­ based progression.
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 5 ---
+5 Orthopaedic Surgery, 2026
+4.2.2   |   Intermediate Recovery Phase (3 to 6Months)
+The mid-­ term postoperative period (3–6months) is considered a
+pivotal transition phase for ACLR patients, during which initial
+pain and swelling subside, and patients gradually re-­ engage in
+functional training. However, persistent neuromuscular defi-
+cits, asymmetries, and compensatory strategies are still com-
+mon during this stage and may influence long-­ term outcomes
+and re-­ injury risk.
+Although patients typically demonstrate improvements in gross
+motor control compared to the early phase, biomechanical
+asymmetries often remain. Multiple studies have reported per-
+sistent reductions in knee flexion angles and moments in the op-
+erated limb during mid-­ stance and terminal stance, suggestive
+of ongoing quadriceps avoidance strategies [12, 19, 20]. Büttner
+et al. [9] further confirmed that joint kinetics and kinematics,
+although partially restored, still display bilateral discrepancies
+up to 6months postoperatively. This phase is also marked by al-
+tered sagittal and frontal plane mechanics, with some patients
+demonstrating excessive hip or trunk compensation to offload
+the affected knee [20].
+The sEMG data suggest ongoing alterations in muscle activation
+patterns at 3–6months. Wu et al. [13] found that ACLR patients
+exhibit lower co-­ contraction indices and delayed onset of ham-
+string activity during stance, which may compromise dynamic
+joint stability. Similarly, clustered muscle synergy analyses have
+identified disrupted coordination patterns in the hamstring-­
+quadriceps complex during jogging, reflecting incomplete neu-
+romuscular recovery [10].
+Biomechanical analyses consistently demonstrate that patients
+continue to exhibit reduced knee extensor moments and altered
+knee joint loading patterns in the operated limb during stance,
+even when sagittal-­ plane kinematics such as knee flexion angles
+appear partially normalized. These findings indicate that im-
+provements in muscle strength do not necessarily translate into
+symmetrical joint kinetics or effective load transmission during
+gait [12, 21, 22].
+From a neuromuscular perspective, sEMG studies reveal per-
+sistent abnormalities in muscle activation timing and coordi-
+nation during this phase. Delayed or insufficient hamstring
+activation and disrupted quadriceps–hamstring coupling have
+beenreported,potentiallycompromisingdynamickneestability
+despiteadequatestrength recovery [10,13]. Inresponse, patients
+may adopt compensatory strategies involving increased hip or
+trunk contribution to reduce mechanical demand on the recon-
+structed knee.
+Collectively, gait characteristics in the 3–6month period
+­ reflect a dissociation between structural or strength recovery
+and functional biomechanical normalization. This mismatch
+highlights the limitation of rehabilitation strategies that
+rely primarily on time-­ based progression or isolated strength
+metrics, and underscores the need for gait-­ informed reha-
+bilitation approaches that explicitly target kinetic symmetry
+and neuromuscular coordination before advancing activity
+intensity.
+4.2.3   |   Late Recovery Phase (>6Months)
+Beyond 6months after ACL reconstruction, many patients are
+considered to have achieved satisfactory clinical recovery, as re-
+flected by restored range of motion, improved muscle strength,
+and clearance for return to sport. However, accumulating ev-
+idence indicates that gait biomechanics frequently remain ab-
+normal during this late recovery phase, revealing a disconnect
+between clinical recovery and biomechanical normalization
+[9, 16, 20, 23, 24].
+4.2.3.1   |   Persistent Gait Asymmetries and Joint Loading
+Deviations. Multiple studies demonstrate that gait-­ related
+asymmetriessuchasreducedpeakkneeflexionangles,decreased
+knee extensor moments, and abnormal anterior tibial transla-
+tion persist at 6 to 12months post-­ ACLR [9, 19, 20]. Büttner et al.
+[9] employed bilateral waveform analyses and confirmed that
+sagittal and frontal plane kinetic discrepancies were still evident
+at one year postoperatively, especially during single-­ limb tasks.
+These deviations are often subtle and may not be evident during
+routine clinical assessments or self-­ selected walking speeds, but
+become pronounced during higher-­ demand tasks such as fast
+walking, running, or sport-­ specific maneuvers [10, 16, 24].
+4.2.3.2   |   Neuromuscular Strategies and EMG Alter-
+ations. Chronic-­ phase ACLR patients exhibit persistent
+disruptions in muscle activation patterns. Wu et al. [13]
+used sEMG and gait analysis to demonstrate abnormal
+hamstring-­ gastrocnemius coactivation even in late-­ stage recov-
+ery. These findings suggest neuromuscular rewiring rather
+than restoration. Lai et al. [24] found that fast-­ walking trials
+uncovered otherwise concealed asymmetries, especially in tib-
+ial rotation and sagittal loading, indicating speed-­ dependent
+compensations. Similar velocity-­ induced discrepancies were
+also found in ACL-­ deficient individuals compared to healthy
+controls [16].
+From a neuromuscular standpoint, sEMG studies suggest that
+late-­ stage gait is characterized not by recovery of pre-­ injury ac-
+tivation patterns, but by the persistence of compensatory muscle
+strategies, including altered quadriceps–hamstring coordination
+and increased reliance on proximal musculature. These neu-
+romuscular adaptations may reduce perceived instability in the
+short term, yet they simultaneously perpetuate abnormal joint
+loadingandmaycontributetothedevelopmentof secondaryACL
+injury and post-­ traumatic osteoarthritis (PTOA) [19, 23, 25].
+4.2.3.3   |   Meta-­ Analyses and Rehabilitation Timeframe
+Re-­Evaluation. Despite increased research volume, cur-
+rent rehabilitation timelines are predominantly time-­ based
+and lack integration of biomechanical endpoints. Meta-­ analyses
+reveal that a significant portion of patients continue to exhibit
+pathological gait mechanics beyond 12months, and few RCTs
+incorporate high-­ resolution motion analysis [18, 26–28].
+Moreover, rehabilitation guidelines often emphasize strength
+and return-­ to-­ sport criteria, rather than joint-­ level symmetry
+or compensatory movement minimization [18, 29, 30].
+For example, Capin et al. [23] reported that patients with sec-
+ond ACL injuries had distinct pre-­ injury gait patterns that were
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 6 ---
+6 Orthopaedic Surgery, 2026
+detectable and potentially modifiable during rehabilitation.
+This underscores the importance of early identification of “at-­
+risk” gait profiles using integrated biomechanical and machine-­
+learning tools.
+4.2.3.4   |   Conclusion. Collectively, the late postopera-
+tive phase highlights that time since surgery and conven-
+tional clinical benchmarks are insufficient indicators of true
+functional recovery. Persistent gait compensations beyond
+6months underscore the necessity of integrating biomechanical
+and neuromuscular gait assessment into long-­ term rehabilita-
+tion and return-­ to-­ sport decision-­ making, rather than relying
+solely on symptom resolution or strength-­ based criteria.
+5   |   Rehabilitation Interventions
+5.1   |   The Shift Toward Biomechanically-­ Informed
+Rehabilitation
+Traditional time-­ based ACLR rehabilitation protocols, while
+widely adopted, often neglect individual biomechanical re-
+covery trajectories. Accumulating evidence reveals that gait
+asymmetries, altered joint loading, and neuromuscular dys-
+function persist well beyond the early postoperative window
+even in those cleared for return to sport (RTS) [9, 13, 20, 23].
+This has prompted a paradigm shift from protocolized time-
+lines to symmetry and function-­ driven rehabilitation, empha-
+sizing personalized, biomechanically-­ anchored interventions
+[18, 29].
+Several meta-­ analyses and systematic reviews have emphasized
+that current rehabilitation timelines may underestimate the du-
+ration required for true movement normalization. For instance,
+gait deviations may persist up to 12months or more, with joint
+loading discrepancies being a key precursor to second ACL in-
+jury and early-­ onset PTOA [23, 28].
+5.2   |   Neuromuscular Training and Asymmetry
+Reduction
+Numerous RCTs have investigated the efficacy of neuromus-
+cular training (NMT) to restore joint mechanics. For example,
+Culvenor et al. [30] implemented a phase-­ based NMT protocol
+aimed at improving proprioceptive sensitivity and reducing
+asymmetric loading, achieving significant improvements in
+frontal-­ plane knee kinetics. Similarly, the use of knee extension
+constraint training has been shown to facilitate improved walk-
+ing biomechanics at 6months post-­ ACLR by modulating inter-
+limb loading patterns [31].
+Some studies explored contralateral limb cross-­ education,
+where strength and control improvements in the uninjured limb
+indirectly enhance function in the reconstructed limb [32]. This
+approach was validated through a randomized controlled trial
+showing better quadriceps symmetry and reduced compensa-
+tory activation patterns compared to control protocols.
+However, limitations in these studies include small sample
+sizes, inconsistent use of motion analysis, and lack of long-­ term
+follow-­ up. Few protocols integrate real-­ time biomechanical
+feedback or dynamic gait re-­ training into standard care.
+5.3   |   Integration of Wearable Sensors and AI
+for Rehabilitation Monitoring
+Recent years have witnessed the rise of wearable inertial
+sensors (IMUs) and markerless motion systems that enable
+high-­ frequency, out-­ of-­ lab monitoring of gait mechanics. For in-
+stance,theMoJoXlabsystemandrelatedsensor-­basedplatforms
+capture critical features such as stance duration, tibial rotation,
+and impact loading with high fidelity [8, 21, 22].
+These data streams, when combined with machine learning
+(ML) models, have enabled identification of key predictive gait
+features associated with delayed recovery or compensatory
+strategies [14, 15]. Explainable AI models further offer real-­
+time interpretability to clinicians, allowing adaptive modifi-
+cation of rehabilitation exercises. One study using AI-­ assisted
+gait classification demonstrated high sensitivity in detecting
+non-­ normalized gait during field-­ based activities, surpassing
+clinician-­ based observational scoring [15].
+Such tools not only facilitate remote monitoring and early detec-
+tion of aberrant mechanics but also support biofeedback-­ based
+interventions, which may accelerate symmetry restoration.
+5.4   |   Evidence-­ Based Guidelines
+and Remaining Gaps
+Consensus documents and systematic reviews have proposed
+updated ACLR rehabilitation guidelines, stressing the need for
+biomechanically validated progression criteria and limb sym-
+metry thresholds rather than purely strength or hop metrics
+[18, 29]. Yet, the uptake of such evidence into clinical practice
+remains limited.
+Several challenges persist:
+• Lack of standardization in defining gait normalization
+across labs and devices
+• Limited translation of research-­ grade biomechanical tools
+into real-­ world clinic settings
+• Insufficient long-­ term RCTs comparing wearable-­ guided
+rehab to standard care
+Despite these gaps, integration of gait biomechanics, wearable
+sensors, and AI-­ supported analytics promises to enhance preci-
+sion rehabilitation, reducing reinjury risk and optimizing func-
+tional outcomes.
+6   |   Conclusion
+ACLRservesasacornerstoneinrestoringkneejointstability,yet
+persistent gait abnormalities and neuromuscular asymmetries
+underscore the complexity of achieving full functional recovery.
+This review delineates a temporal framework for postoperative
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 7 ---
+7 Orthopaedic Surgery, 2026
+gait analysis, from early deficits in loading and support mechan-
+ics to mid-­ term adaptations in joint coordination and long-­ term
+compensatory strategies that may predispose individuals to sec-
+ondary injury. Incorporating wearable sensors, AI-­ assisted ana-
+lytics,andelectromyographicmonitoringenablesamoreprecise
+andlongitudinalunderstandingofgaitbiomechanics.Moreover,
+rehabilitation strategies supported by randomized controlled
+trials (RCTs) and meta-­ analyses suggest that tailored, stage-­
+specific interventions, particularly those targeting neuromus-
+cular symmetry, joint load modulation, and motor relearning,
+are critical to optimizing outcomes. Future directions should
+focus on the integration of real-­ time feedback systems, remote
+gait monitoring platforms, and personalized machine learn-
+ing models to advance individualized rehabilitation protocols.
+Ultimately, a multimodal and technology-­ enhanced approach
+to gait recovery may redefine standards in ACLR rehabilitation
+and secondary prevention.
+Author Contributions
+TszLeungYu:conceptualization,datacuration,formalanalysis,inves-
+tigation, methodology, visualization, writing – original draft, writing
+– review and editing. HengYu Liao: investigation. ZhenQiang Huo:
+investigation. ZhiYu Huang: supervision, writing – review and edit-
+ing. JieRuo Li: conceptualization, supervision, writing – review and
+editing. XinYu Fang: conceptualization, supervision, funding acqui-
+sition, writing – review and editing. All authors read and approved the
+final manuscript and agree to be accountable for all aspects of the work.
+Funding
+ThisworkwassupportedbytheNationalNaturalScienceFoundationof
+China (Grant No. 82571554).
+Conflicts of Interest
+The authors declare no conflicts of interest.
+Data Availability Statement
+Data sharing not applicable to this article as no datasets were generated
+or analyzed during the current study.
+References
+1. L.Kohn,E.Rembeck,andA.Rauch,“VerletzungdesVorderenKreuz-
+bandes Beim Erwachsenen: Diagnostik und Therapie,” Orthopade 49,
+no. 11 (2020): 1013–1028, https://​doi.​org/​10.​1007/​s0013​2-­​020-­​03997​-­​3.
+2. N. Maniar, E. Verhagen, A. L. Bryant, and D. A. Opar, “Trends
+in Australian Knee Injury Rates: An Epidemiological Analysis of
+228,344 Knee Injuries Over 20Years,” Lancet Regional Health—West-
+ern Pacific 21 (2022): 100409, https://​doi.​org/​10.​1016/j.​lanwpc.​2022.​
+100409.
+3. C. C. Kaeding, B. Léger-­ St-­ Jean, and R. A. Magnussen, “Epidemiol-
+ogy and Diagnosis of Anterior Cruciate Ligament Injuries,” Clinics in
+SportsMedicine 36, no. 1 (2017): 1–8, https://​doi.​org/​10.​1016/j.​csm.​2016.​
+08.​001.
+4. B. P. Boden and F. T. Sheehan, “Mechanism of Non-­ Contact ACL In-
+jury: OREF Clinical Research Award 2021,” Journal of Orthopaedic Re-
+search 40, no. 3 (2022): 531–540, https://​doi.​org/​10.​1002/​jor.​25257​.
+5. R. H. Brophy, C. S. Gill, S. Lyman, R. P. Barnes, S. A. Rodeo, and R. F.
+Warren, “Effect of Anterior Cruciate Ligament Reconstruction and Me-
+niscectomy on Length of Career in National Football League Athletes:
+A Case Control Study,” American Journal of Sports Medicine 37, no. 11
+(2009): 2102–2107, https://​doi.​org/​10.​1177/​03635​46509​349035.
+6. B. P. Boden, G. S. Dean, J. A. Feagin, and W. E. Garrett, “Mechanisms
+of Anterior Cruciate Ligament Injury,” Orthopedics 23, no. 6 (2000):
+573–578, https://​doi.​org/​10.​3928/​0147-­​7447-­​20000​601-­​15.
+7. D. Jarchi, J. Pope, T. K. M. Lee, L. Tamjidi, A. Mirzaei, and S. Sanei,
+“A Review on Accelerometry-­ Based Gait Analysis and Emerging Clin-
+ical Applications,” IEEE Reviews in Biomedical Engineering 11 (2018):
+177–194, https://​doi.​org/​10.​1109/​RBME.​2018.​2807182.
+8. R. Islam, M. Bennasar, K. Nicholas, et al., “A Nonproprietary Move-
+mentAnalysisSystem(MoJoXlab)BasedonWearableInertialMeasure-
+ment Units Applicable to Healthy Participants and Those With Anterior
+Cruciate Ligament Reconstruction Across a Range of Complex Tasks:
+Validation Study,” JMIR mHealth and uHealth 8, no. 6 (2020): e17872,
+https://​doi.​org/​10.​2196/​17872​.
+9. C. Büttner, C. Lisee, E. Bjornsen, et al., “Bilateral Waveform Analysis
+of Gait Biomechanics Presurgery to 12 Months Following ACL Recon-
+struction Compared to Controls,” Journal of Orthopaedic Research 43,
+no. 2 (2025): 322–336, https://​doi.​org/​10.​1002/​jor.​26001​.
+10. H. Li, H. Huang, S. Zhang, S. Ren, and Q. Rong, “Muscle Dy-
+namics Analysis by Clustered Categories During Jogging in Patients
+With Anterior Cruciate Ligament Deficiency,” BMC Musculoskeletal
+Disorders 24, no. 1 (2023): 919, https://​doi.​org/​10.​1186/​s1289​1-­​023-­​
+07000​-­​w.
+11. D. Skvortsov, A. Altukhova, S. Kaurkin, and A. Akhpashev, “Long-­
+Term Outcomes of Anterior Cruciate Ligament Reconstruction Based
+on Gait Analysis,” Diagnostics (Basel, Switzerland) 14, no. 17 (2024):
+1977, https://​doi.​org/​10.​3390/​diagn​ostic​s1417​1977.
+12. T. Gao, H. Huang, Y. Yu, H. Liu, and Y. Ao, “Effect of Knee Exten-
+sion Constraint Training on Walking Biomechanics 6 Months After
+Anterior Cruciate Ligament Reconstruction: A Double-­ Blind Ran-
+domized Controlled Clinical Trial,” Journal of Orthopaedic Surgery
+and Research 20, no. 1 (2025): 20, https://​doi.​org/​10.​1186/​s1301​8-­​024-­​
+05447​-­​8.
+13. X.Wu,H.Zhang,H.Cui,et al.,“SurfaceElectromyographyandGait
+Features in Patients After Anterior Cruciate Ligament Reconstruction,”
+Orthopaedic Surgery 17, no. 1 (2025): 62–70, https://​doi.​org/​10.​1111/​os.​
+14256​ .
+14. C. Kokkotis, S. Moustakidis, T. Tsatalas, et al., “Leveraging Explain-
+able Machine Learning to Identify Gait Biomechanical Parameters Asso-
+ciated With Anterior Cruciate Ligament Injury,” Scientific Reports 12, no.
+1 (2022): 6647, https://​doi.​org/​10.​1038/​s4159​8-­​022-­​10666​-­​2.
+15. S. Tedesco, C. Crowe, A. Ryan, et al., “Motion Sensors-­ Based Ma-
+chine Learning Approach for the Identification of Anterior Cruciate
+Ligament Gait Patterns in On-­ The-­ Field Activities in Rugby Players,”
+Sensors (Basel, Switzerland) 20, no. 11 (2020): 3029, https://​doi.​org/​10.​
+3390/​s2011​3029.
+16. L. Kong, T. Yang, Q. Wang, et al., “ACLD Patients Exhibit Additional
+Knee Kinematic Asymmetries at the Speed Level of Healthy Subjects,”
+FrontiersinBioengineeringandBiotechnology10(2022):930722,https://​
+doi.​org/​10.​3389/​fbioe.​2022.​930722.
+17. S. Scataglini, E. Abts, C. Van Bocxlaer, M. den Van Bussche, S. Mele-
+tani, and S. Truijen, “Accuracy, Validity, and Reliability of Markerless
+Camera-­ Based 3D Motion Capture Systems Versus Marker-­ Based 3D
+Motion Capture Systems in Gait Analysis: A Systematic Review and
+Meta-­Analysis,” Sensors (Basel, Switzerland) 24, no. 11 (2024): 3686,
+https://​doi.​org/​10.​3390/​s2411​3686.
+18. N. Van Melick, R. E. H. Cingel, F. Brooijmans, et al., “Evidence-­
+Based Clinical Practice Update: Practice Guidelines for Anterior
+Cruciate Ligament Rehabilitation Based on a Systematic Review
+and Multidisciplinary Consensus,” British Journal of Sports Med-
+icine 50, no. 24 (2016): 1506–1515, https://​doi.​org/​10.​1136/​bjspo​
+rts-­​2015-­​095898.
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 8 ---
+8 Orthopaedic Surgery, 2026
+19. K.Neal,J.R.Williams,A.Alfayyadh,et al.,“KneeJointBiomechan-
+ics During Gait Improve From 3 to 6 Months After Anterior Cruciate
+Ligament Reconstruction,” Journal of Orthopaedic Research 40, no. 9
+(2022): 2025–2038, https://​doi.​org/​10.​1002/​jor.​25250​.
+20. J.C.Erhart-­Hledik,C.R.Chu,J.L.Asay,andT.P.Andriacchi,“Lon-
+gitudinal Changes in Knee Gait Mechanics Between 2 and 8Years After
+Anterior Cruciate Ligament Reconstruction,” Journal of Orthopaedic
+Research 36, no. 5 (2018): 1478–1486, https://​doi.​org/​10.​1002/​jor.​23770​.
+21. T. Tan, A. A. Gatti, B. Fan, et al., “A Scoping Review of Portable
+Sensing for Out-­ Of-­ Lab Anterior Cruciate Ligament Injury Prevention
+and Rehabilitation,” npj Digital Medicine 6, no. 1 (2023): 46, https://​doi.​
+org/​10.​1038/​s4174​6-­​023-­​00782​-­​2.
+22. H. S. R. Jones, V. H. Stiles, J. Verheul, and I. S. Moore, “Angular Ve-
+locities and Linear Accelerations Derived From Inertial Measurement
+Units Can Be Used as Proxy Measures of Knee Variables Associated
+With ACL Injury,” Sensors (Basel) 22, no. 23 (2022): 9286, https://​doi.​
+org/​10.​3390/​s2223​9286.
+23. J. J. Capin, A. Khandha, R. Zarzycki, K. Manal, T. S. Buchanan,
+and L. Snyder-­ Mackler, “Gait Mechanics and Second ACL Rupture: Im-
+plications for Delaying Return-­ To-­ Sport: Gait Biomechanics and ACL
+Re-­Injury,” Journal of Orthopaedic Research 35, no. 9 (2017): 1894–1901,
+https://​doi.​org/​10.​1002/​jor.​23476​.
+24. H. Lai, X. Chen, W. Huang, et al., “Whether Patients With Ante-
+rior Cruciate Ligament Reconstruction Walking at a Fast Speed Show
+More Kinematic Asymmetries?,” Orthopaedic Surgery 16, no. 4 (2024):
+864–872, https://​doi.​org/​10.​1111/​os.​14017​.
+25. K. A. Knurr, S. A. Kliethermes, M. R. Stiffler-­ Joachim, D. G. Co-
+bian, G. S. Baer, and B. C. Heiderscheit, “Running Biomechanics Before
+Injury and 1 Year After Anterior Cruciate Ligament Reconstruction in
+Division I Collegiate Athletes,” American Journal of Sports Medicine 49,
+no. 10 (2021): 2607–2614, https://​doi.​org/​10.​1177/​03635​46521​1026665.
+26. S. Krishnakumar, B. J. F. Van Beijnum, C. T. M. Baten, P. H. Veltink,
+and J. H. Buurke, “Estimation of Kinetics Using IMUs to Monitor and Aid
+in Clinical Decision-­ Making During ACL Rehabilitation: A Systematic
+Review,” Sensors (Basel) 24, no. 7 (2024): 2163, https://​doi.​org/​10.​3390/​
+s2407​2163.
+27.T. Saueressig, T. Braun, N. Steglich, et al., “Primary Surgery Versus
+Primary Rehabilitation for Treating Anterior Cruciate Ligament Injuries:
+A Living Systematic Review and Meta-­ Analysis,” British Journal of Sports
+Medicine 56, no. 21 (2022): 1241–1251, https://​doi.​org/​10.​1136/​bjspo​
+rts-­​2021-­​105359.
+28. B. Pairot-­ de-­ Fontenay, R. W. Willy, A. R. C. Elias, R. L. Mizner, M.-­
+O. Dubé, and J.-­ S. Roy, “Running Biomechanics in Individuals With
+Anterior Cruciate Ligament Reconstruction: A Systematic Review,”
+Sports Medicine 49, no. 9 (2019): 1411–1424, https://​doi.​org/​10.​1007/​
+s4027​9-­​019-­​01120​-­​x.
+29. R. Kotsifaki, V. Korakakis, E. King, et al., “Aspetar Clinical Practice
+Guideline on Rehabilitation After Anterior Cruciate Ligament Recon-
+struction,” British Journal of Sports Medicine 57, no. 9 (2023): 500–514,
+https://​doi.​org/​10.​1136/​bjspo​rts-­​2022-­​106158.
+30. A. G. Culvenor, M. A. Girdwood, C. B. Juhl, et al., “Rehabili-
+tation After Anterior Cruciate Ligament and Meniscal Injuries: A
+Best-­ Evidence Synthesis of Systematic Reviews for the OPTIKNEE
+Consensus,” British Journal of Sports Medicine 56, no. 24 (2022): 1445–
+1453, https://​doi.​org/​10.​1136/​bjspo​rts-­​2022-­​105495.
+31. A. Gokeler, A. Benjaminse, C. F. van Eck, et al., “Return of Normal
+Gait as an Outcome Measurement in Acl Reconstructed Patients. A Sys-
+tematic Review,” International Journal of Sports Physical Therapy 8, no.
+4 (2013): 441–451.
+32. C. Liu, S. Li, J. Li, et al., “The Effects of Contralateral Limb Cross-­
+Education Training on Post-­ Surgical Rehabilitation Outcomes in Pa-
+tients With Anterior Cruciate Ligament Reconstruction: A Randomized
+Controlled Trial,” JournalofOrthopaedicSurgeryandResearch 20, no. 1
+(2025): 118, https://​doi.​org/​10.​1186/​s1301​8-­​024-­​05430​-­​3.
+17577861, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/os.70261, Wiley Online Library on [31/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 9 ---

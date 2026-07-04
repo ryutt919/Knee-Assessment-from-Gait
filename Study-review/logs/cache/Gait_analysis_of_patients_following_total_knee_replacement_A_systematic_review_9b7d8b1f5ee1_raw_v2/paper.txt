@@ -1,0 +1,972 @@
+
+--- PAGE 1 ---
+Review
+Gait analysis of patients following total knee replacement:
+A systematic review
+Jodie A. McClelland⁎, Kate E. Webster, Julian A. Feller
+Musculoskeletal Research Centre, La Trobe University, Melbourne, Victoria 3086, Australia
+Received 22 September 2006; received in revised form 4 April 2007; accepted 7 April 2007
+Abstract
+Gait analysis has been used to objectively measure patients' function following total knee replacement (TKR). Whilst the findings of this
+research may have important implications for the understanding of the outcomes of TKR, the methodology of existing research appears to be
+diverse and many of the results inconsistent. The objective of this systematic review was to synthesise reported findings and to summarise the
+methods used by researchers in this field. Eleven articles published in the medical literature that used gait analysis to compare patients
+following TKR with controls were identified for inclusion in this review. Each article was assessed for methodologic quality and data was
+compared across studies through the calculation of effect sizes. Consistently large effect sizes showed that patients following TKR walk with
+less total knee motion during gait and with less knee flexion during swing than controls. Kinetic discrepancies between patients and controls
+were also identified. The substantial methodologic differences between studies may contribute to the inconsistencies in reported findings for
+many gait outcomes. Future research is needed to determine the clinical relevance of these findings.
+© 2007 Elsevier B.V. All rights reserved.
+Keywords: Total knee replacement; Gait analysis; Gait; Systematic review; Biomechanics
+Contents
+1. Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+2. Materials and methods . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+2.1. Literature search strategy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+2.2. Selection criteria. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+2.3. Assessment of methodological quality. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+2.4. Data extraction and analysis. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+3. Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 254
+3.1. Study design. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 255
+3.2. Outcome measures. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 255
+3.3. Walking speed. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 255
+3.4. Gait analysis protocols . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 255
+3.5. Knee biomechanics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 256
+3.5.1. Kinematic data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 256
+3.5.2. Kinetic data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 257
+The Knee 14 (2007) 253–263
+⁎ Corresponding author. Tel.: +61 3 9479 5715; fax: +61 3 9479 5768.
+E-mail address: j.mcclelland@latrobe.edu.au (J.A. McClelland).
+0968-0160/$ - see front matter © 2007 Elsevier B.V. All rights reserved.
+doi:10.1016/j.knee.2007.04.003
+
+--- PAGE 2 ---
+4. Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 257
+Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 262
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 262
+1. Introduction
+Total knee replacement (TKR) is a widely used interven-
+tion in the management of knee osteoarthritis. The increasing
+prevalence of TKR highlights the need to appropriately
+assess post-operative outcome of this procedure [1]. Gait
+analysis is a tool that has been used by researchers to
+measure functional outcome following TKR. It has been
+proposed that gait analysis is valuable in the clinical
+management of patients undergoing TKR through its ability
+to monitor forces through the knee [2]. In particular, the
+adduction moment across the knee has received attention due
+to its association with TKR component loosening [3].
+Despite the potential usefulness of gait analysis, there are
+marked discrepancies in the research methods that have been
+reported. Variations in subject characteristics, prosthetic
+designs and methodology of gait analysis make comparison
+of findings between studies difficult. Nonetheless, assess-
+ment of TKR patients using gait analysis continues to be
+reported. It is therefore important to identify discrepancies
+between studies to allow for more appropriate comparison of
+findings and potentially to assist in directing future research.
+To date there has been no attempt to systematically review
+the findings of gait analysis in patients following TKR. The
+aim of this systematic review was therefore to identify
+common themes in the methods of research in the gait
+analysis of TKR patients and to summarise the findings
+reported in this literature.
+2. Materials and methods
+2.1. Literature search strategy
+A search for articles on gait analysis in patients following TKR was
+completed in September 2006. The databases of Medline, Cinahl, Embase,
+Current Contents, Pedro, and The Cochrane Library were searched for full
+text articles published in English using combinations and variations of the
+following terms: knee arthroplasty, knee replacement, knee prosthesis, knee
+implant, gait, locomotion, walking, biomechanics, kinetics, kinematics,
+angle, moment and torque. These electronic searches were supplemented by
+cross-checking citations and reference lists of the relevant published studies.
+Details of all articles returned from the searches were saved for application
+of the following selection criteria.
+2.2. Selection criteria
+To be included in the final review, studies had to present original raw
+data, investigate patients who were at least 6 months following TKR
+predominantly for osteoarthritis, compare TKR patient data to an
+unimpaired control population, and describe the kinematic or kinetic
+characteristics of the knee during level gait with simultaneously collected
+spatiotemporal data.
+These selection criteria were chosen to allow comparison of findings
+between studies with minimal influence of confounding factors. Studies that
+did not present original data were excluded to minimise the potential bias of
+their data in cross-study comparisons. The most common indication for TKR
+is a diagnosis of knee osteoarthritis (OA) [1]. Since the effect on gait of other
+indications for TKR remains unclear, only studies where greater than 75% of
+the sample received a TKR for OA were included. Studies in which patients
+were assessed less than 6 months following knee arthroplasty were excluded
+because the patients could not be considered adequately rehabilitated. Only
+studies that compared the biomechanics of patients to that of a healthy control
+population were included in this review to allow calculation of effect sizes. As
+the velocity of a person's walking speed can alter the biomechanics of lower
+limb joints [4], only studies that reported knee biomechanics with reference to
+spatiotemporal parameters (speed, stride length or cadence) were included.
+Theseselectioncriteria were applied tothe title and abstractof all articles
+retrieved in the search of the literature. The full text articles not excluded in
+this initial selectionprocess werethen evaluated for inclusionusing the same
+selection criteria.
+2.3. Assessment of methodological quality
+The methodological quality of each study was assessed using a validated
+assessment tool. In a comprehensive search of the literature four possible
+tools that could assess the methodological quality of non-randomised trials
+were identified [5–8]. The checklistby Downs andBlack was selected for its
+reported inter-rater and intra-rater reliability [5]. Only the criteria relevant to
+assessing potential sources of bias in non-randomised studies were applied.
+In this review, the assessment of methodological quality was principally to
+identify common themes in the methods used in this field of research.
+2.4. Data extraction and analysis
+A form was developed to standardise the amount and type of data
+extracted. A meta-analysis of reported findings was not performed due to the
+heterogeneity of studies' designs and methods. The effect sizes of patient
+group mean scores compared to control group mean scores were calculated
+where sufficient data was reported. The effect size calculator developed by
+The Curriculum, Evaluation and Management Centre [9] was used for this
+purpose.
+Two reviewers (JAM and an independent non-author reviewer)
+performed the selection process, assessment of methodologic quality and
+data extraction to minimise the potential for bias. Disagreements between
+reviewers were resolved by discussion with a third reviewer (KEW).
+3. Results
+Eleven studies were accepted for inclusion in this systematic
+review. Table 1 summarises results from the assessment of
+methodologic quality for each of these studies. All studies satisfied
+a similar number of criteria, yet the methodology varied substan-
+tially across studies.
+Although all studies stated the aim of the research, there were
+marked differences in the research objectives – four aimed to
+describe the gaitof patients with total knee arthroplasty [10–13] and
+six aimed to compare different aspects of prosthetic design, pre-
+operative diagnosis or timing of surgical intervention [14–19]. All
+but one [17] of the studies described subjects adequately in terms of
+254 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 3 ---
+diagnosis, time at follow-up, prosthetic design, and contralateral
+knee involvement. Despite this, no study reported evidence that the
+subjects were representative of the target population.
+An important aspect of research is identifying and minimising
+factors that may confound results. The effects of subjects' age,
+gender, height and weight on gait and the need to adequately control
+for these factors are well documented in the broader gait literature
+[20–23]. Although eight of the ten studies reported the age and
+gender of subjects, six did not report subject height [10,13–
+15,17,24], and four of these did not report subject weight
+[10,15,17,24]. Additionally, only one study [12] reported that
+patients and controls were comparable for these factors at baseline.
+Controlling for these differences between groups was also
+inconsistently reported. Five studies adjusted for subjects' body-
+weight only [12,14,16,18,19], two studies adjusted for subjects
+bodyweight and height [17,24], two studies adjusted for subjects
+bodyweight and leg length [12,15] and the three remaining studies
+did not report on adjustment for body weight or height [10,11,25].
+There were also discrepancies in the way authors described
+relevant outcome measures and reported findings. This was
+particularly evident in the selection of the number of walking trials
+usedforanalysis.Fivestudiesanalysedasingletrial–threereported
+that selection was determined by speed [14,17,24], one reported that
+thebesttrialwaschosen[11]andoneanalysedtheonlytrialcaptured
+[10]. In contrast, three studies analysed an average of multiple trials
+– one analysed the average of three trials [16], one analysed the
+averageofbetweenfiveandeighttrials[12]andtheremainingstudy
+did not specify the number of trials averaged [15]. The effect of this
+discrepancy on results has not been determined.
+3.1. Study design
+Table 2 summarises the design features of each study included in
+this review. This table demonstrates the diversity within the
+literature, particularly with regard to the differences in prosthetic
+design. Also of interest is the lack of consistency with regard to
+inclusion of patients with bilateral TKR. Three studies assessed
+only bilateral TKR patients [15,16,18], three studies excluded
+patients with bilateral TKR [10,11,19] and the remaining 5 studies
+included varying proportions of bilateral TKR patients.
+3.2. Outcome measures
+In addition to the variations in research methods and study
+design, there was a wide range of gait outcomes reported. Table 3
+lists the twenty-nine biomechanical outcome measures that were
+reported across the eleven studies. Results of comparisons between
+patient and control groups are shown in Table 4. To identify the
+consistency of these findings, only outcome measures that were
+reported in three or more studies are presented. Given the ongoing
+debate about the effect of retaining or resecting the posterior
+cruciate ligament (PCL) in TKR the findings of this review are
+presented to reflect these patient groups.
+3.3. Walking speed
+The effect of walking speed on biomechanics during gait is well
+documented and is therefore an important consideration when
+comparing subject groups. This review identified a lack of
+consistency in the determination of walking speed during data
+collection.Twostudiesreportedthatsubjectswereinstructedtowalk
+at a constant speed [10,16]. Two studies selected patient walking
+trials that were of similar speed to controls [17,24]. One study
+reported that the control group subjects were instructed to walk at a
+pace similar to the pre-recorded patient group subjects [12]. One
+study did not specify how walking speed was determined [11] and
+the remaining studies reported analysis of results from subjects and
+controls walking at a self-selected comfortable speed. Itis, however,
+interesting to note that all patients groups across these five studies
+that reported results at patients' self-selected speed walked at a
+similar pace to each other (0.8–1.1 m/s). Furthermore, when
+compared to their respective control groups, eight of the eleven
+patient groups walked at a significantly slower speed [14,15,18,19].
+3.4. Gait analysis protocols
+Table 5 summarises the protocol of gait analysis reported by
+authors. There was an obvious lack of sufficient reporting protocol
+details. Despite this, large variations were seen in the frequency of
+kinematic data collection (50 to 240 Hz), kinetic data collection
+frequency (50 to 2000 Hz), and the number of trials included in
+Table 1
+Assessment of methodologic quality
+Downs and
+Black [5]
+criteria
+Item
+no. 1
+Item
+no. 2
+Item
+no. 3
+Item
+no. 5
+Item
+no. 6
+Item
+no. 7
+Item
+no. 12
+Item
+no. 16
+Item
+no. 18
+Item
+no. 25
+Item
+no. 27
+First author (year) Clear
+aim
+Outcomes
+described
+Patients
+described
+Confounders
+described
+Main findings
+clearly
+described
+Measures of
+random
+variability
+Subjects
+represent
+population
+Planned
+analysis
+Appropriate
+statistics
+Adjustment
+for
+confounders
+Power
+calculation
+Bolanos et al. [15] ✓ × ✓ × ✓ × × ✓ ✓ ✓ ×
+Borden et al. [16] ✓ ✓ ✓ ✓ ✓ ✓ × ✓ ✓ × ×
+Brugioni et al. [24] ✓ ✓ ✓ × × × × ✓ ✓ ✓ ×
+Chassin et al. [17] ✓ ✓ × × ✓ × × ✓ ✓ ✓ ×
+Chen et al. [18] ✓ × ✓ ✓ ✓ × × ✓ ✓ × ×
+Fuchs et al. [10] ✓ ✓ ✓ × ✓ ✓ × ✓ ✓ × ×
+Fuchs et al. [19] ✓ × ✓ ✓ × ✓ × ✓ ✓ × ×
+Saari et al. [14] ✓ ✓ ✓ ✓ ✓ ✓ × ✓ ✓ ✓ ×
+Simon et al. [11] ✓ ✓ ✓ ✓ ✓ × × × ✓ × ×
+Smith et al. [12] ✓ ✓ ✓ ✓ ✓ ✓ × ✓ ✓ × ×
+Wilson et al. [13] ✓ ✓ ✓ ✓ ✓ × × ✓ ✓ ✓ ×
+255 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 4 ---
+analysis (1–5). One study collected data from subjects walking on a
+treadmill [10].
+3.5. Knee biomechanics
+Table 4 summarises the biomechanical findings reported by
+authors when comparing TKR patient groups to controls. Common
+trends that were evident in this table were investigated further as
+described below.
+3.5.1. Kinematic data
+Comparison of kinematic findings across studies was possible
+through the calculation of effect sizes using the patient group and the
+control group means. Effect sizes were calculated for all measures
+where sufficient data were reported for more than two patient groups
+of each prosthetic design type. These were the total range of knee
+motion during gait; the maximum knee flexion during the swing
+phase; the maximum knee flexion during the stance phase; and the
+range of flexion during the loading phase. Forest plots for these
+measures are shown in Figs. 1–4. Fig. 1 clearly shows that all studies
+reported that the patient groups walked with less total range of knee
+motionduringgaitthanthecontrolgroups.Similarly,Fig.2showsthat
+allpatient groups exceptone walked withlessknee flexionduringthe
+swing phase of gait than the control groups. There were inconsistent
+findings from the comparison of the maximum angle of knee flexion
+during stance between patient and control groups, as demonstrated in
+Fig. 3, yet all studies reported that the patient group walked with a
+reduced range of flexion during the loading phase of gait (Fig. 4).
+Table 2
+Study design and patient characteristics
+Author
+(year)
+Nation Prosthetic make Design No.
+surgeons
+Sample
+size
+No.
+controls
+Subject characteristics
+Bilateral
+TKR
+inclusion
+No.
+OA/RA
+Clinical
+rating
+Time of gait
+analysis
+from surgery
+Bolanos
+et al. [15]
+USA Insall-Burstein II PCL-resected
+(posterior
+stabilised)
+1 14 knees 16 All
+bilateral
+10OA/4RA HSS≈93 98 months
+(72–134 months)
+Anatomic Graduated,
+Cruciate Condylar,
+Kinematic Condylar
+PCL-retained 14 knees
+Borden
+et al. [16]
+USA PCA Modular,
+Kinematic, Duracon
+PCL-retained 1 13 patients 9 All
+bilateral
+12OA/
+1RA
+Not
+reported
+46 monthsa
+(30–72 months),
+64 monthsb
+(19–168 months),
+86 monthsc
+(24–153 months)
+Brugioni
+et al. [24]
+USA Total condylar PCL status
+unknown
+1 21 knees 15 7 bilateral OA only not
+reported
+18 months
+(12–22 months)
+Chassin
+et al. [17]
+USA Not stated Not stated Not
+stated
+29 patients 35 Not stated OA only HSS≥90 19 months
+(7–47 months)
+Chen
+et al. [18]
+Taiwan Insall-Burstein PCL resected
+(Posterior
+stabilised)
+1 9 knees 40 All
+bilateral
+OA only Not
+reported
+40.4 months
+Miller-Galante PCL-retained 9 knees
+Fuchs
+et al. [10]
+Germany Genesis-I PCL-retained Not
+stated
+19 patients 22 Bilateral
+excluded
+OA only Not
+reported
+24.6±16.7 months
+Fuchs
+et al. [19]
+Germany GSB PCL-resected
+(posterior
+stabilised)
+1 15 patients 11 Bilateral
+excluded
+OA only Not
+reported
+31.9 months (Sledge),
+26.7 months (GSB)
+Sledge PCL-retained 15 patients
+Saari et al.
+[14]
+Sweden AMK PCL-resected Not
+stated
+12 knees 18 3 bilateral OA only HSS not
+different
+between
+groups
+1–2 years
+PCL resected
+(posterior
+stabilised)
+9 knees
+PCL-retained 11+9 knees
+Simon
+et al. [11]
+USA Duopatellar,
+Duocondylar
+PCL-retained Not
+stated
+12 patients 15 Bilateral
+excluded
+OA only not
+reported
+39 months
+(26–77 months)
+Smith
+et al. [12]
+Australia Profix PCL status
+unknown
+2 41 knees 20 7 bilateral OA only not
+reported
+12–18 months
+Wilson
+et al. [13]
+USA Insall-Burstein II PCL-resected
+(posterior
+stabilised)
+1 16 patients 16 3 bilateral OA only HSS≈93 46 months
+(range 22–98 months)
+TKR, total knee replacement; PCL, posterior cruciate ligament; OA, osteoarthritis; RA, rheumatoid arthritis; HSS, Hospital for Special Surgery Score; KSS,
+Knee Society Score.
+a
+Simultaneous bilateral TKR.
+b
+Right limb staged bilateral TKR.
+c
+Left limb staged bilateral TKR.
+256 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 5 ---
+3.5.2. Kinetic data
+The most commonly reported kinetic analysis as seen in Table 4
+was the determination of the proportion of TKR patients that dis-
+played a biphasic sagittal knee moment pattern. A biphasic moment
+pattern occurs when the initial external momentacross the knee tends
+to extend the knee before rapidly changing to a flexion moment, then
+changing again to extend the knee and then flex the knee towards the
+end of stance, as represented by Fig. 5. This biphasic moment pattern
+is typically associated with normal gait [12,26,27]. Sagittal moment
+patterns that are not biphasic are usually described as being either a
+quadriceps avoidance pattern (where an extension moment is present
+throughout stance) or a quadriceps overuse pattern (where a flexion
+moment is present throughout stance) [28]. The findings of the five
+patient groups that were assessed for the presence of a biphasic
+moment pattern are shown in Table 6. As this table shows,
+approximately 80% of control subjects demonstrated this biphasic
+pattern compared to only 20%–36% of TKR patients.
+The maximum magnitudes of flexion and extension moments
+during gait were also reported in most studies. However, further
+analysis and comparison of results was not possible because effect
+sizes could be calculated for the results of only one study given the
+lack of standard deviations reported in the other relevant studies
+[13–16,24]. Similarly, the vertical ground reaction force was
+measured by a number of studies but insufficient detail in reporting
+prevented the valid calculation of effect sizes.
+Saari et al. were the only authors to compare the maximum
+coronal plane knee moments of patients compared to controls [14].
+Although no significant difference was reported for any patient
+group, the lack of analysis in other studies is surprising given the
+attention that this gait outcome has received in relation to the
+progression of osteoarthritis and TKR component loosening [29–
+32].
+Electromyographic (EMG) data during gait was collected in four
+studies [11,13,15,19]. Wilson et al. [13] were the only authors to
+correlate EMG data with the findings of gait analysis. They reported
+that TKR patients with an abnormal sagittal knee moment pattern
+recorded prolonged activity of stance phase quadriceps and
+preswing hamstrings compared to TKR patients with a normal
+sagittal knee moment pattern.
+4. Discussion
+This review showed that TKR patients walked with less
+total range of knee motion than their control counterparts.
+Contributing to this reduction in overall motion, TKR
+patients walked with less knee flexion during the swing
+phase of gait. The range of flexion during the loading phase
+of stance was also reduced compared to controls. Consis-
+tently large effect sizes across these patient–control
+comparisons indicated the substantial differences between
+groups regarding these kinematic gait variables.
+Despite the consistency of these findings, their implica-
+tion for patients is unclear. The available range of knee
+motion following TKR is considered to be an important
+determinant of patients' functional abilities post-operatively,
+particularly for activities involving greater knee flexion
+[33,34]. However, there appears to be no research that has
+investigated the relationship between a reduction in knee
+motion during gait and patients' functional abilities.
+Additionally, suggestions that the range of knee motion
+may have implications for the wear of the TKR prosthesis
+have not been substantiated [35,36]. Future research is
+needed to assist our understanding of these issues.
+The kinetic findings of this systematic review clearly
+indicate that following TKR, patients walk with a sagittal
+moment pattern about the knee that is different from controls.
+Studies that assessed the sagittal knee moment pattern
+reported that 64% to 80% of patients did not demonstrate the
+so-called biphasic moment pattern that was seen in over 80%
+of control subjects. The presence of a moment that was
+sustained in either a flexion or an extension direction was
+considered abnormal by all studies.
+Whilst an absence of a normal sagittal moment pattern
+in patients was the most consistent kinetic finding in this
+Table 3
+Summary of outcomes measured
+Spatiotemporal Kinematic Kinetic
+Velocity Range of motion GRF F1
+(1st vertical maximum)
+Stride length Angle at initial
+contact
+GRF F2
+(vertical minimum)
+Average step length Maximum angle
+during loading
+GRF F3
+(2nd vertical maximum)
+Cadence Range of motion
+during loading
+GRF F4
+(fore-aft shear maximum)
+Maximum
+angular velocity
+Maximum angle
+during stance
+GRF F5
+(fore-aft shear minimum)
+Stance time Minimum angle
+during stance
+GRF F6
+(medio-lateral
+shear maximum)
+Swing/stance ratio Maximum angle
+during swing
+GRF F7
+(medio-lateral
+shear minimum)
+Time of weight
+acceptance
+Minimum angle
+during swing
+No. subjects
+biphasic sagittal
+moment pattern
+Single limb support
+time
+Maximum
+adduction angle
+Maximum flexion
+moment
+Double limb
+support time
+Maximum
+abduction angle
+Maximum extension
+moment
+Ratio of treated
+to untreated
+SLS time
+Abd/add and IR/ER
+range of motion
+Maximum adduction
+moment
+Stride time Angle at maximum
+angular velocity
+Maximum abduction
+moment
+Step time Maximum IR moment
+Maximum step length Maximum ER moment
+Ratio of treated
+to untreated
+step length
+Maximum extension
+moment at initial contact
+Step width Maximum extension
+moment at terminal stance
+Step width/height Maximum flexion moment
+at pre-swing
+Maximum angular
+velocity
+Time of GRF F3
+GRF, ground reaction force; abd, abduction; IR, internal rotation; add,
+adduction; ER, external rotation.
+257 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 6 ---
+literature, little is known about the cause of this
+phenomenon. It has been suggested that the abnormal
+pattern relates to the absence of the ACL and a subsequent
+reduction in knee proprioception, but this remains unsub-
+stantiated [37]. Although there is some evidence to suggest
+that the abnormal pattern may be a residual characteristic
+Table 4
+Reported outcome measures
+258 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 7 ---
+of pre-operative gait [12], in the only study in this review
+to assess gait pre-operatively almost one third of the
+patients with an abnormal moment pattern post-operatively
+did not demonstrate this pattern prior to surgery [12]. This
+suggests that there are other factors contributing to the
+development of an abnormal sagittal knee moment pattern
+that require further investigation. It is likely that an
+abnormal kinetic pattern results in abnormal muscle
+function as reported by Wilson et al. [13], and it may be
+of importance in terms of patients' functional abilities,
+biomechanical effects on other joints, and prosthetic
+failure. However, as with the interpretation of the kinematic
+characteristics of gait in TKR patients, the implications of
+the abnormal moment patterns for patient outcome and
+function remain unclear.
+Interestingly, only one study [14] compared coronal plane
+kinetic data in patients and controls, despite the potential
+relevance of this information to the outcome of TKR.
+Hilding et al. reported that those patients with prostheses that
+were classified as ‘unstable’ by roentgen stereophotogram-
+metry and therefore likely to demonstrate premature
+component loosening also displayed higher maximum
+adduction moments during gait [3]. There is sufficient
+evidence to support the suggestion that coronal moments in
+Table 5
+Gait analysis protocols
+259 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 8 ---
+TKR patients are related to the prosthetic alignment [38] yet
+the magnitudes of coronal moments that are potentially
+detrimental to the prosthesis have not been investigated. The
+relationship between the alignment of the prosthetic
+components, coronal plane kinetics, and wear and loosening
+of TKR prostheses warrants further research.
+Cross-study comparison of reported findings was limited
+to a core set of gait variables for which effect sizes could be
+calculated for two or more patient groups per prosthetic
+design. Identification of common trends in other gait
+variables reported was not plausible given the relatively
+few studies that reported on each variable with inconsistent
+findings. For instance, twenty-four of the twenty-nine
+variables used in the eleven studies in this review were not
+reported by enough studies or in enough detail to allow
+useful comparison. This diversity in the selection of
+outcomes to describe gait following TKR cannot be
+explained by differences in research objectives of individual
+studies alone. Such diversity in the reporting of parameters
+outside this core set suggests that there is a lack of consensus
+amongst researchers about other aspects of gait that are
+important when assessing the outcome of TKR. Further
+characterisation of the implications of gait analysis for
+clinical practice may assist in identification of the gait
+characteristics that are potentially more important, thereby
+allowing for greater cross-study comparison and the
+synthesis of findings from multiple studies.
+Variations in the methodology of gait analysis were
+identified with regard to the characteristics of the subjects
+selected for assessment. It has been well established that
+subject age, gender, height and weight can all affect the
+results of gait analysis [20–23]. Despite this, only two
+studies reported that these characteristics were similar in
+both the patient and control groups. Normalisation of gait
+data to account for differences in subject height and weight is
+relatively common in the widergait literature [39,40] and can
+minimise the potential confounding of differences in
+findings that may be due to subject anthropometry. Moisio
+et al. [40] compared two common techniques and concluded
+that normalising gait data to bodyweight as a product of
+height was effective in minimising confounding and was also
+more likely to reduce differences related to subject gender. In
+addition, this appears to be the most common normalisation
+technique in the wider gait literature, and therefore it is
+recommended that future gait analysis research in patients
+following TKR should report results normalised to body-
+weight and height.
+As indicated by the diversity in the studies included in this
+review, there are many methodological options for research-
+ers to minimise the potential confounding of speed on
+subject group comparisons. Ideally, walking velocity should
+be the same between subjects when comparing biomechanics
+so that any differences identified can more likely be
+attributed to the variable of interest rather than a difference
+in speed. However, instructing all or some subjects to walk at
+pre-determined speeds may elucidate biomechanics that are
+not representative of subjects' normal gait. Additionally,
+Fig. 3. Effect sizes of patient groups compared to control groups for the
+maximum knee flexion during stance phase.
+Fig. 4. Effect sizes of patient groups compared to control groups for the
+range of flexion during loading phase of stance.
+Fig. 2. Effect sizes of patient groups compared to control groups for the
+maximum knee flexion during swing phase.
+Fig. 1. Effect sizes of patient groups compared to control groups for the total
+range of knee motion during gait.
+260 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 9 ---
+normalisation of walking speed does not account for
+differences in the magnitude of biomechanical parameters.
+The issue of accounting for speed is not unique to research in
+this population and is reflected in other gait literature, but it
+may be more pertinent in this patient population because of
+the more common study design to compare subjects to
+‘normal’ controls rather than comparing pre- and post-
+intervention. It appears that the most common protocol is to
+record subjects walking at their own pace and to use speed as
+a covariate when statistical comparisons are made. The
+authors of this review have certainly adopted this approach.
+Differences in other aspects of the gait analysis protocols
+(summarised in Table 5) may also contribute to the variation
+seen in reported findings, however, insufficient information
+was provided in most studies, precluding a more in depth
+analysis.
+The inconsistency in findings across the studies may also
+reflect the variation in selection of patients with bilateral
+TKR. There is some research indicating that joint replace-
+ment may accelerate OA in the contralateral limb, pre-
+sumably due to altered biomechanics [41]. Indications of
+similar effects on contralateral knees with TKR have not
+been investigated. Given the relatively high incidence of
+bilateral TKR for OA [42], exclusion of these patients in
+research would extensively limit sample size and subse-
+quently reduce power of any findings. Whilst further
+research is necessary to clarify the potential differences in
+biomechanics between patients with unilateral TKR and
+patients with bilateral TKR, there is not yet sufficient
+evidence to justify the exclusion of bilateral TKR patients
+from research considering the limitations caused by exclud-
+ing these patients.
+Substantial differences were also identified in the
+characteristics of the knee replacement prostheses used in
+the various studies. There is ongoing discussion in the
+literature about the biomechanical effects of either retaining
+or resecting the PCL in TKR [26,43–45]. Other prosthetic
+characteristics such as the radii of the articulating surfaces, as
+well as the decision to retain or resurface the patella may also
+influence biomechanics during gait [46,47]. We were unable
+to identify any trend in the gait patterns following either PCL
+resection or retention, compared to controls. Similarly, there
+was insufficient data to determine gait patterns related to
+other prosthetic design characteristics. Therefore, it is
+possible that variation in prosthetic design may contribute
+to the inconsistency of findings across the different studies.
+Several limitations need to be considered when interpret-
+ing the findings of this review. A systematic review cannot
+correct for the biases and methodological flaws present in the
+original studies. All relevant studies were included in this
+review regardless of quality so that the methods of gait
+analysis research could be summarised. It is possible that this
+review is subject to bias through the inclusion of studies
+reported in published literature only. Only published studies
+were included to maximise the availability of the data to all
+readers. This review did not include studies that compared
+patients' pre-operative gait with gait following TKR. Pre-
+operative gait may be important in predicting post-operative
+gait in this patient group as indicated by Smith et al. [12]. A
+search of the literature identified an additional nine studies
+with this pre-post intervention design [3,12,27,44,48–52].
+Although all studies reported improvement in patients' gait
+towards normal following surgery, only two studies
+Fig. 5. Graph representing the biphasic, quadriceps overuse and quadriceps
+avoidance sagittal moment patterns about the knee.
+Table 6
+Sagittal kinetic pattern findings as a percentage of the subject group
+261 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 10 ---
+suggested that patients' post-operative gait could be pre-
+dicted by their pre-operative gait [3,44]. Finally and impor-
+tantly, the design of TKA prosthetic components continues
+to evolve. The designs used in this review were of varying
+ages and it may not be appropriate to apply the knowledge of
+the biomechanics of these designs to those currently used.
+In summary, this review identified several characteristics
+of sagittal plane kinematics and kinetics in patients following
+TKA that were consistently different from unimpaired
+control subjects. However, for most of the reported out-
+comes, the findings were inconsistent between the studies.
+This may relate to discrepancies in the research methodol-
+ogies as well as prosthetic designs. Further research that
+emphasises the clinical usefulness of findings from gait
+analysis may assist in determining which of the myriad of
+gait variables provide the most useful information about the
+gait of patients following TKA.
+Acknowledgements
+This project was funded by an Australian Research
+Council Linkage Grant (LP 0455460).
+References
+[1] Kurtz S, Mowat F, Ong K, Chan N, Lau E, Halpern M. Prevalence of
+primary and revision total hip and knee arthroplasty in the United
+States from 1990 through 2002. J Bone Joint Surg 2005;87A(7):
+1487–97.
+[2] Minns RJ. The role of gait analysis in the management of the knee.
+Knee 2005;12:157–62.
+[3] Hilding MB, Lanshammar H, Ryd L. Knee joint loading and tibial
+component loosening. J Bone Joint Surg 1996;78-B(1):66–73.
+[4] Kirtley C, Whittle MW, Jefferson RJ. Influence of walking speed on
+gait parameters. J Biomed Eng 1985;7(4):282–8.
+[5] Downs SH, Black N. The feasibility of creating a checklist for the
+assessment of the methodological quality both of randomised and non-
+randomised studies of health care interventions. J Epidemiol Commu-
+nity Health 1998;52(6):377–84.
+[6] Reisch JS, Tyson JE, Mize SG. Aid to the evaluation of therapeutic
+studies. Am Acad Pediatr 1989;84:815–27.
+[7] Slim K, Nini E, Forestier D, Kwiatkowski F, Panis Y, Chipponi J.
+Methodological index for non-randomised studies (MINORS): devel-
+opment and validation of a new instrument. ANZ J Surg 2003;73:
+712–6.
+[8] Zaza S, Truman BI,Sosin DM, TeutschSM. Data collectioninstrument
+and procedure for systematic reviews in the Guide to Community
+Preventive Services. Am J Prev Med 2000;18:44–74.
+[9] TheCurriculumEaMC.EffectSizeCalculator.http://www.cemcentre.org/
+ebeuk/research/effectsize/Calculator.htm, 2005; University of Durham.
+[10] Fuchs S, Floren M, Skwara A, Tibesku CO. Quantitative gait analysis
+in unconstrained total knee arthroplasty patients. Int J Rehabil Res
+2002;25(1):65–70.
+[11] Simon SR, Trieschmann HW, Burdett RG, Ewald FC, Sledge CB.
+Quantitativegaitanalysisaftertotalkneearthroplastyformonoarticular
+degenerative arthritis. J Bone Joint Surg 1983;64-A(5):605–13.
+[12] SmithAJ, LloydDG, Wood DJ.Pre-surgery kneejoint loading patterns
+during walking predict the presence and severity of anterior knee pain
+after total knee arthroplasty. J Orthop Res 2004;22(2):260–6.
+[13] Wilson SA, McCann PD, Gotlin RS, Ramakrishnan HK, Wootten ME,
+Insall JN. Comprehensive gait analysis in posterior-stabilized knee
+arthroplasty. J Arthroplasty 1996;11(4):359–67.
+[14] Saari T, Tranberg R, Zugner R, Uvehammer J, Karrholm J. Changed
+gait pattern in patients with total knee arthroplasty but minimal
+influence of tibial insert design: gait analysis during level walking in
+39 TKR patients and 18 healthy controls. Acta Orthop 2005;76(2):
+253–60.
+[15] Bolanos AA, Colizza WA, McCann PD, Gotlin RS, Wootten ME,
+Kahn BA, et al. A comparison of isokinetic strength testing and gait
+analysis in patients with posterior cruciate-retaining and substituting
+knee arthroplasties. J Arthroplasty 1998;13(8):906–15.
+[16] Borden LS, Perry JE, Davis BL, Owings TM, Grabiner MD. A
+biomechanical evaluation of one-stage vs. two-stage bilateral knee
+arthroplasty patients. Gait Posture 1999;9(1):24–30.
+[17] Chassin EP, Mikosz RP, Andriacchi TP, Rosenberg AG. Functional
+analysis of cemented medial unicompartmental knee arthroplasty. J
+Arthroplasty 1996;11(5):553–9.
+[18] Chen PQ, Cheng CK, Shang HC, Wu JJ. Gait analysis after total knee
+replacement for degenerative arthritis. J Formos Med Assoc 1991;90
+(2):160–6.
+[19] Fuchs S, Tibesku CO, Genkinger M, Volmer M, Laass H, Rosenbaum
+D. Clinical and functional comparison of bicondylar sledge prostheses
+retaining all ligaments and constrained total knee replacement. Clin
+Biomech 2004;19(3):263–9.
+[20] Judge JO, Ounpuu S, Davis III RB. Effects of age on the biomechanics
+and physiology of gait. Clin Geriatr Med 1996;12(4):659–78.
+[21] Oberg T, Karsznia A, Oberg K. Joint angle parameters in gait:
+reference data for normal subjects, 10–79 years of age. J Rehabil Res
+Dev 1994;31(3):199–213.
+[22] Biscevic M, Tomic D, Starc V, Smrke D. Gender differences in knee
+kinematics and its possible consequences. Croat Med J 2005;46(2):
+253–60.
+[23] Oberg T, Karsznia A, Oberg K. Basic gait parameters: reference data
+for normal subjects, 10–79 years of age. J Rehabil Res Dev 1993;30
+(2):210–23.
+[24] Brugioni DJ, Andriacchi TP, Galante JO. A functional and radio-
+graphic analysis of the total condylar knee arthroplasty. J Arthroplasty
+1990;5(2):173–80.
+[25] Fuchs S, Tibesku CO, Frisse D, Laas H, Rosenbaum D. Quality of life
+and gait after unicondylar knee prosthesis are inferior to age-matched
+control subjects. Am J Phys Med Rehabil 2003;82(6):441–6.
+[26] Andriacchi TP, Galante JO, Fermier RW. The influence of total knee-
+replacement design on walking and stair-climbing. J Bone Joint Surg–
+Am Vol 1982;64(9):1328–35.
+[27] Whittle MW,JeffersonRJ. Functionalbiomechanical assessment of the
+Oxford Meniscal Knee. J Arthroplasty 1989;4(3):231–43.
+[28] Andriacchi TP. Functional analysis of pre and post-knee surgery: total
+knee arthroplasty and ACL reconstruction. J Biomech Eng 1993;115
+(4B):575–81.
+[29] Andriacchi TP. Dynamics of knee malalignment. Orthop Clin North
+Am 1994;25(3):395–403.
+[30] Andriacchi TP, Lang PL, Alexander EJ, Hurwitz DE. Methods for
+evaluating the progression of osteoarthritis. J RehabilRes Dev 2000;37
+(2).
+[31] Hurwitz DE, Hong R, Case JP, Block JA. Progression of knee
+osteoarthritis is related to higher loading. 48th Annual Meeting of the
+Orthopaedic Research Society; 2002.
+[32] Sharma L, Song J, Felson DT, Cahue S, Shamiyeh E, Dunlop DD. The
+role of knee alignment in disease progression and functional decline in
+knee osteoarthritis. [erratum appears in JAMA 2001 Aug 286 (7) (15)
+792]JAMA 2001;286(2):188–95.
+[33] Miner AL, Lingard EA, Wright EA, Sledge CB, Katz JN. Kinemax
+outcomes: G. Knee range of motion after total knee arthroplasty: how
+important is this as an outcome measure? J Arthroplasty 2003;18(3):
+286–94.
+[34] Myles CM, Rowe PJ, Walker CRC, Nutton RW. Knee joint functional
+range of movement prior to and following total knee arthroplasty
+measured using flexible electrogoniometry. Gait Posture 2002;16(1):
+46–54.
+262 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 11 ---
+[35] Andriacchi TP, Hurwitz DE. Gait biomechanics and total knee
+arthroplasty. Am J Knee Surg 1997;10(4):255–60.
+[36] Wimmer MA, Andriacchi TP. Tractive forces during rolling motion of
+the knee: implications for wear in total knee replacement. J Biomech
+1997;30(2):131–7.
+[37] Andriacchi TP, Hurwitz DE. Gait biomechanics and the evolution of
+total joint replacement. Gait Posture 1997;5:256–64.
+[38] Hilding MB, Lanshammar H, Ryd L. A relationship between dynamic
+and static assessments of knee joint load. Acta Orthop Scand 1995;66
+(4):317–20.
+[39] Pierrynowski MR, Galea V. Enhancing the ability of gait analyses to
+differentiate between groups: scaling gait data to body size. Gait
+Posture 2001;13(3):193–201.
+[40] Moisio KC, Sumner DR, Shott S, Hurwitz DE. Normalization of joint
+moments during gait: a comparison of two techniques. J Biomech
+2003;36(4):599–603.
+[41] McMahon M, Block JA. The risk of contralateral total knee
+arthroplasty after knee replacement for osteoarthritis. J Rheumatol
+2003;30(8):1822–4.
+[42] Mont MA, Mitzner DL, Jones LC, Hungerford DS. History of the
+contralateral knee after primary knee arthroplasty for osteoarthritis.
+Clin Orthop Relat Res 1995(321):145–50.
+[43] Conditt MA, Noble PC, Bertolusso R, Woody J, Parsley BS. The PCL
+significantly affects the functional outcome of total knee arthroplasty. J
+Arthroplasty 2004 (Oct.);19(7):107–12.
+[44] Dorr LD, Ochsner PJL, Gronley J, Perry J. Functional comparison of
+posterior cruciate-retained versus cruciate-sacrificed total knee arthro-
+plasty. Clin Orthop Relat Res 1988;236:36–43.
+[45] Ishii Y, Terajima K, Koga Y, Takahashi HE, Bechtold JE, Gustilo RB.
+Gait analysis after total knee arthroplasty. Comparison of posterior
+cruciate retention and substitution. J Orthop Sci 1998;3(6):310–7.
+[46] Andriacchi TP, Yoder D, Conley A, Rosenberg A, Sum J, Galante JO.
+Patellofemoral design influences function following total knee
+arthroplasty. J Arthroplasty 1997;12(3):243–9.
+[47] Churchill DL, Incavo SJ, Johnson CC, Beynnon BD. The influence of
+femoral rollback on patellofemoral contact loads in total knee
+arthroplasty. J Arthroplasty 2001;16(7):909–18.
+[48] Anderson GBT, Andriacchi TP, Galante JO. Correlations between
+changes in gait and in clinical status after knee arthroplasty. Acta
+Orthop Scand 1981;52:569–73.
+[49] Lee LW, Zavarei K, Evans J, Lelas JL, Riley PO, Kerrigan DC.
+Reduced hip extension in the elderly: dynamic or postural? Arch Phys
+Med Rehabil 2005;86:1851.
+[50] Ouellet D, Moffet H. Locomotor deficits before and two months after
+knee arthroplasty. Arthritis Rheum 2002;47(5):484–93.
+[51] Otsuki T, Nawata K, Okuna M. Quantitative evaluation of gait pattern
+in patients with osteoarthrosis of the knee and after total knee
+arthroplasty. Gait analysis using a pressure measuring system. J Orthop
+Sci 1999;4:99–105.
+[52] Steiner ME, Simon SR, Piscotta JC. Early changes in gait and
+maximum knee torque following knee arthroplasty. Clin Orthop Relat
+Res 1987;238:174–82.
+263 J.A. McClelland et al. / The Knee 14 (2007) 253–263
+
+--- PAGE 12 ---

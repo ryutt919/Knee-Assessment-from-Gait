@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title_korean", "acl_research", "uses_imu", "uses_gait_data", "presents_score"],
+  "properties": {
+    "title_korean":   {"type": "string", "minLength": 1},
+    "acl_research":   {"type": "boolean"},
+    "uses_imu":       {"type": "boolean"},
+    "uses_gait_data": {"type": "boolean"},
+    "presents_score": {"type": "boolean"}
+  }
+}

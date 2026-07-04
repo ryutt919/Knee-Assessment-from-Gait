@@ -1,0 +1,1166 @@
+
+--- PAGE 1 ---
+Functional Performance Testing After
+Anterior Cruciate Ligament Reconstruction
+A Systematic Review
+Geoffrey D. Abrams,*†‡
+MD, Joshua D. Harris,§
+MD, Anil K. Gupta,||
+MD, MBA,
+Frank M. McCormick,{
+MD, Charles A. Bush-Joseph,#
+MD, Nikhil N. Verma,#
+MD,
+Brian J. Cole,#
+MD, MBA, and Bernard R. Bach Jr,#
+MD
+Investigation performed at Rush University Medical Center, Chicago, Illinois, USA
+Background: When to allow an athlete to return to unrestricted sporting activity after anterior cruciate ligament (ACL) recon-
+struction remains controversial.
+Purpose: To report the results of functional performance testing reported in the literature for individuals at differing time points
+following ACL reconstruction and to examine differences between graft types.
+Study Design: Systematic review; Level of evidence, 4.
+Methods: A systematic review of Medline, Scopus, and Cochrane Central Register of Controlled Trials was performed using
+PRISMA guidelines. Inclusion criteria were English-language studies that examined any functional rehabilitation test from 6 months
+to 2 years following ACL reconstruction. All patient-, limb-, and knee-specific demographics were extracted from included inves-
+tigations. All functional rehabilitation tests were analyzed and compared when applicable.
+Results: The search term returned a total of 890 potential studies, with 88 meeting inclusion and exclusion criteria. A total of 4927
+patients were included, of which 66% were male. The mean patient age was 26.5 ± 3.4 years. The predominant graft choices for
+reconstruction were bone–patellar tendon–bone (BPTB) autograft (59.8%) and hamstring autograft (37.9%). The most commonly
+reported functional tests were the hop tests. The results of these functional tests, as reported in the Limb Symmetry Index (LSI),
+improved with increasing time, with nearly all results greater than 90% at 1 year following primary ACL reconstruction. At 6 months
+postoperatively, a number of isokinetic strength measurements failed to reach 80% LSI, most commonly isokinetic knee extension
+testing in both BPTB and hamstring autograft groups. The knee flexion strength deficit was significantly less in the BPTB autograft
+group as compared with those having hamstring autograft at 1 year postoperatively, while no significant differences were found in
+isokinetic extension strength between the 2 groups.
+Conclusion: Hop testing was the most commonly reported functional test following ACL reconstruction. Increases in performance
+on functional tests were predictably seen as time increased following surgery. Those with hamstring autografts may experience
+increased strength deficits with knee flexion versus those having BPTB autograft. These data provide information that may assist
+providers in determining timing of return to unrestricted sporting activity.
+Keywords: ACL; anterior; cruciate; ligament; functional test; hop; isokinetic
+Anterior cruciate ligament (ACL) injuries are common in
+the young and athletically active population, with a
+reported incidence of 0.7 to 2.5 ACL tears per 1000 athletic-
+exposures.78
+It has been estimated that between 100,000
+and 200,000 reconstructions are performed in the United
+States each year.13,22
+Reconstruction of the ACL using
+either bone–patellar tendon–bone (BPTB) autograft,69
+hamstring autograft,97
+or allograft tissue25
+has become
+standard for treatment in patients who have functional
+knee instability and a desire to return to cutting and pivot-
+ing sports. Clinical follow-up has shown a high rate of
+return to previous level of activity using modern arthrosco-
+pically assisted reconstruction techniques.24,58,64,96
+While the need for ACL reconstruction in athletically
+active individuals who desire a return to cutting and pivot-
+ing sports is generally accepted, there is a lack of consensus
+as to when an athlete may return to sport. In their review of
+264 investigations, Barber-Westin and Noyes9
+reported
+that criterion for return to play was not reported in 40%
+of studies, with an additional 32% of investigations using
+only postoperative time. Only 13% of the studies utilized
+objective criteria for determining when an athlete may
+return to sport.
+Deficits in neuromuscular control of the lower extremity
+are known to be a risk factor for secondary (retear) ACL
+injury and are therefore often used in assessing return-to-
+play readiness.75,100
+Quadriceps strength, in particular,
+has been associated with physical functioning of the leg
+following ACL reconstruction.16,57
+Additionally, some
+authors have evaluated the presence of neuromuscular
+The Orthopaedic Journal of Sports Medicine, 2(1), 2325967113518305
+DOI: 10.1177/2325967113518305
+ª The Author(s) 2014
+1
+
+--- PAGE 2 ---
+impairment following ACL reconstruction and its associa-
+tion with secondary reinjury.75
+Hip and knee positions pre-
+dicted a second injury,75
+emphasizing the importance of
+addressing these parameters during rehabilitation.
+To assist with returning a patient to sports, many groups
+have developed rehabilitation protocols, each with their
+own methods and return-to-play criteria.23,31,104
+Areas of
+particular interest in determining return to play are func-
+tional tests (ie, hop testing), lower extremity isokinetic
+strength measurements, and movement and/or landing
+mechanics. Yabroudi and Irrgang104
+recently outlined a
+detailed rehabilitation protocol and allowed full-effort
+sprinting, cutting, and plyometric activities once the
+patient reached a quadriceps index of 85% and has success-
+fully completed the early postoperative, strengthening, and
+neuromuscular control phases. Heckmann et al31
+defined
+return-to-play criteria through the use of a subjective eva-
+luation, knee examination, and functional testing.
+The goal of these rehabilitation programs is ultimately to
+allow return to play without additional injury to the knee.
+There has been no consensus as to which functional tests
+should be utilized to make this determination or what
+values should be achieved at different time points post-
+operatively. The goal of this investigation was to perform
+a systematic review of all available studies to provide nor-
+mative data for functional tests utilized following primary
+ACL reconstruction to determine return to play. We also
+sought to detect any difference in the outcomes of func-
+tional testing between different graft types.
+METHODS
+The first author performed a systematic review of multiple
+medical databases, including Medline and Scopus, using
+PRISMA (PreferredReporting Items for Systematic Reviews
+and Meta-Analyses) guidelines.68
+PRISMA guides authors
+in the appropriate design, conduct, and reporting of a
+systematic review and/or meta-analysis via appropriate
+identification, screening, and inclusion of relevant studies
+for review. The search term we usedi
+sought to find ori-
+ginal research publications that investigated the results of
+functional testing following primary ACL reconstruction.
+Level 1, 2, 3, and 4 evidence clinical outcome studies were
+inclusive. Inclusion criteria were English-language studies
+that examined any lower extremity functional rehabilitation
+test from 6 months to 2 years following ACL reconstruction.
+This timeframe was chosen as the purpose of this investiga-
+tion was to provide normative data for functional tests to
+help clinicians determine return to play criteria. This time
+frame captured data for patients who had undergone rehabi-
+litation before returning to play at 6 months as well as those
+who had already returned to play and would presumably be
+maximally rehabilitated (2 years). Even if some patients had
+returned to play prior to the 6-month time point, their func-
+tional testing results would still provide adequate data from
+which to create normative data.
+Exclusion criteria included studies reporting outcomes
+outside of the 6-month to 2-year postoperative timeframe,
+revision ACL reconstruction, non–English language, surgi-
+cal technique, letters to the editor, systematic reviews,
+meta-analyses, duplicate subject populations, and multili-
+gament knee injuries. Patients with concomitant ACL
+reconstruction with nonoperative treatment of a medial
+collateral ligament (MCL) injury were included, however.
+Studies that reported raw data or did not report results for
+single-leg testing as normalized data, such as through the
+use of the Limb Symmetry Index (LSI), were excluded even
+if results were compared with a healthy control subject.
+Exceptions to this included testing that required both legs,
+such as the shuttle run, in which case results were sepa-
+rately reported for males and females. When results were
+separately reported for 2 different cohorts within the same
+study, most commonly through the use of separate rehabi-
+litation protocols, the results between groups for each time
+point were averaged.
+Both electronically and print published articles were
+accepted for inclusion, while meeting abstracts and pro-
+ceedings were excluded. All references from the studies
+returned using the search term were cross-referenced for
+potential inclusion if initially omitted from the search
+results. If 2 or more separate studies existed that reported
+on identical patient populations, they were both included as
+long as they reported functional testing results for different
+*Address correspondence to Geoffrey D. Abrams, MD, Department of Orthopaedic Surgery, Stanford University Veterans Affairs Hospital–Palo Alto, 3801
+Miranda Avenue, Mail Code 112, Palo Alto, CA 94304, USA (e-mail: gabrams@stanford.edu).
+†
+Department of Orthopedic Surgery, Stanford University, Stanford, California, USA.
+‡
+Veterans Administration Hospital–Palo Alto, Palo Alto, California, USA.
+§
+Houston Methodist Orthopedics and Sports Medicine, Houston, Texas, USA.
+||
+Florida Orthopedic Institute, Tampa, Florida, USA.
+{
+Orthopedic Institute, Holy Cross Hospital, Fort Lauderdale, Florida, USA.
+#
+Department of Orthopedic Surgery, Rush University, Chicago, Illinois, USA.
+One or more of the authors declared the following potential conflict of interest or source of funding: C.A.B. is an unpaid consultant for The Foundry and is
+on the editorial board of the American Journal of Sports Medicine. N.N.V. receives royalties from Smith & Nephew; is a paid speaker for Arthrosurface; is a
+consultant for Smith & Nephew and Arthrex; owns stock options in Omeros; receives research support from Arthrex, Smith & Nephew, Athletico, ConMed
+Linvatec, Miomed, Mitek, and Arthrosurface; receives royalties/publisher support from Vindico Medical-Orthopedics Hyperguide and Arthroscopy; and is a
+board member of the Journal of Knee Surgery, Arthroscopy, SLACK Inc, and the Arthroscopy Association Learning Center committee. B.J.C. is a board
+member of the Arthroscopy Association of North America; is a consultant for Genzyme, Arthrex, Zimmer, Carticept, Regentis, DJO, and Johnson & Johnson;
+receives research support from Major League Baseball, MTF, OREF, NIH/MIMAS, Arthrex, Zimmer, Arthrosurface, Medipost, and Johnson & Johnson; and
+receives royalties from Arthrex and DJO. B.R.B. receives research support from Arthrex, ConMed Linvatec, DJ Orthopaedics, Ossur, Smith & Nephew, and
+Tornier; receives publisher compensation from SLACK Inc; and is a board member of the American Orthopaedic Society for Sports Medicine and Ortho-
+paedics Today.
+2 Abrams et al The Orthopaedic Journal of Sports Medicine
+
+--- PAGE 3 ---
+time points between 6 months and 2 years. Figure 1 shows
+the search algorithm used to generate the final cohort of
+included investigations.
+Descriptive statistics were used, with results reported as
+means ± standard deviations. Categorical data were
+reported as frequencies with percentages. Where applica-
+ble, results were compared using the Student t test and lin-
+ear regression with an alpha value of .05 set as significant.
+RESULTS
+The search term returned a total of 890 potential studies,
+with 88 meeting inclusion and exclusion criteria (Figure
+1). A total of 4927 patients were included, of which 66%
+were male. The mean patient age was 26.5 ± 3.4 years. The
+predominant graft choices for reconstruction were BPTB
+autograft (59.8%) and hamstring autograft (37.9%). BPTB
+allograft was used in 1.6% of patients, hamstring allograft
+in 0.1%, and quadriceps autograft in 0.4%.
+The most commonly reported functional tests were the
+hop tests. These included the single-leg, cross-over, triple,
+6-m timed, and single-leg hop height tests (Table 1). In gen-
+eral, the results of thesefunctional tests, asreported inLSI,
+improved with increasing time, with nearly all results
+greater than 90% at 1 year after primary ACL reconstruc-
+tion. For example, single-leg hop LSI averaged 87%, 92%,
+and 94% at 6 months, 1 year, and 2 years, respectively.
+When examining the results of the 5 most common hop
+tests (single-leg hop, cross-over hop, triple hop, 6-m timed
+hop, and single-leg hop height), there were no significant
+differences at any time points in the results between those
+receiving BPTB and hamstring autograft (P > .265).
+Table2reportstheresultsofagilitytestingatvaryingtime
+points following primary ACL reconstruction. There was no
+significant difference between times in the co-contraction,
+shuttlerun,orcariocatestsoverthe6-monthto2-yeartime
+period (P > .240). The times for long shuttle, modified agi-
+lity, and pro shuttle tests were lower for men than women
+(Table 2).
+Results of functional performance tests utilizing a
+motion analysis with or without a force plate are presented
+in Table 3. One-leg hop contact time and jump time
+returned to an average of 98% and 84% LSI, respectively,
+at 1 year postoperatively. Ground reaction force (GRF) dur-
+ing landing and takeoff were 89% and 73%, respectively, at
+8 months. Proprioception was also assessed in a number of
+investigations (Table 3). In general, postural motion
+control, reproduction of passive motion of the knee, and
+overall joint position sense returned to values similar to the
+contralateral limb from 8 to 12 months following ACL
+reconstruction.
+Functional testing involving strength assessment follow-
+ing ACL reconstruction was also extensively reported in the
+literature and is summarized in Table 4. At 6 months post-
+operatively, a number of strength measures had failed to
+reach 80% LSI as compared with the uninvolved contralat-
+eral leg (Table 4). This was most common for isokinetic
+knee extension testing in both BPTB and hamstring auto-
+graft groups. In comparing all patients, there were signifi-
+cantly greater deficits in isokinetic knee extension values
+at various angular velocities and multiple time points post-
+operatively (Table 5). Significant differences were seen for
+isokinetic knee flexion showing less deficit (versus exten-
+sion) as compared with the contralateral limb. When com-
+paring the results of the groups by graft type, knee flexor
+strength deficit at 60 and 180 deg/s was significantly less
+in the BPTB autograft group (97% and 99%) as compared
+with those having hamstring autograft (87% and 91%) at
+1 year postoperatively (P ¼ .002 and .015). No significant
+Potenally relevant studies
+idenﬁed and screened
+N = 890
+Potenal studies for inclusion
+ﬁnal analysis
+N = 735
+Studies reporng compiled
+data or review arcles
+N = 155
+Potenal studies for inclusion
+ﬁnal analysis
+N = 609
+Biomechanical, anatomic, basic
+science, animal
+N = 108
+Potenal studies for inclusion
+ﬁnal analysis
+N = 501
+Non–primary ACL topic (pain
+medicaon use, social factors)
+N = 104
+Potenal studies for inclusion
+ﬁnal analysis
+N = 397
+Potenal studies for inclusion
+ﬁnal analysis
+N = 362
+Post-op complicaons or
+combined ACL injury paerns
+N = 42
+Potenal studies for inclusion
+ﬁnal analysis
+N = 320
+Insuﬃcient follow-up
+N = 78
+Potenal studies for inclusion
+ﬁnal analysis
+N = 242
+Leers to editor, case reports,
+commentaries, validaon study
+N = 35
+Clinical results without
+funconal tesng
+N = 126
+Technique and imaging studies
+N = 34
+Potenal studies for inclusion
+ﬁnal analysis
+N = 208
+Studies included for ﬁnal
+analysis
+N = 88
+Duplicate database studies,
+modalies, withdrawls, others
+N = 120
+Figure 1. Systematic review search algorithm within Medline
+database according to PRISMA (Preferred Reporting Items
+for Systematic Reviews and Meta-Analyses) guidelines.
+The Orthopaedic Journal of Sports Medicine Functional Testing After ACLR 3
+
+--- PAGE 4 ---
+differences were found in isokinetic extension strength
+between the 2 groups at any time point or at any angular
+velocity.
+DISCUSSION
+The goal of this investigation was to provide normative data
+to assist both patients and physicians in determining return
+to play following ACL reconstruction. A secondary goal
+was to assess any subtle differences in the performance
+results of patients with differing graft types. Even with the
+large amount of published investigations regarding all
+aspects of ACL reconstruction, as well as functional testing
+following ACL reconstruction, few clinicians utilize objective
+data in determining return to play, and there is no evidence-
+based consensus on when it is appropriate for patients to
+returntounrestrictedsportsparticipation.Arecentsystema-
+tic review by Barber-Westin and Noyes9
+examined 264 stud-
+ies within the past 10 years describing return to play
+TABLE 1
+Studies Reporting the Results of Functional Performance Tests Involving
+Hopping, Jumping, or Squatting at Varying Time Points After ACLRa
+Functional Test
+Follow-up, mo
+6 9 12 18 24
+Single-leg hopb
+87 ± 6 90 ± 2 92 ± 3 92 94 ± 4
+Cross-over hopc
+90 ± 4 91 ± 3 92 ± 3 96 93
+Triple hopd
+90 ± 4 92 95 ± 3 94 96 ± 2
+6-meter timed hope
+90 ± 7 96 94 ± 5 — 99 ± 1
+Single-leg hop height1,8,11,36,39,47,70,76,99
+80 ± 5 89 91 ± 2 — 95 ± 3
+Fatigue single-leg hop6
+— — 89 — —
+Side hops in 30 seconds1,99
+76 — 86 — 95 ± 4
+Stair hop1,39,84-86,99
+84 ± 6 — 91 ± 5 — 92 ± 0
+Stair hopple7,83
+87 — 88 90 95
+Vertical jump,72
+cm — 50/36f
+— — —
+Broad jump,72
+cm — 213/160f
+— — —
+10-step stair climb,8
+s — — — — 5g
+Step-hop,8
+s — — — — 11.9g
+Step up and over62
+— — 85 — —
+a
+Values are expressed as Limb Symmetry Index values (in percentages; mean ± standard deviation) unless otherwise indicated. Where no
+error measurement is presented, not enough data were present to calculate a standard deviation. A dash indicates no data were available.
+ACLR, anterior cruciate ligament reconstruction.
+b
+References 1, 4, 7, 8, 10, 11, 16, 19, 27, 30, 33, 36, 43-46, 52-56, 59, 60, 63, 72, 76, 79, 80, 84, 85, 89, 95, 98, 99, 107.
+c
+References 3, 8, 16, 27, 30, 39, 44, 51, 60, 72, 80, 83, 89.
+d
+References 8, 27, 30, 44, 46, 59, 60, 72, 76, 80, 83-86, 89, 95.
+e
+References 4, 11, 19, 27, 30, 36, 39, 59, 60, 72, 80, 89.
+f
+Values reported as No. of males/No. of females (both legs).
+g
+Values reported as No. of males.
+TABLE 2
+Studies Reporting the Results of Agility Testing
+at Varying Time Points After ACLRa
+Functional Test
+Follow-up, mo
+6 9 12 18 24
+Co-contraction,47,48,56
+s 14.9 — 15.8 16.0 15.8
+Shuttle run,46-48,56
+s 8.9 — 8.0 8.5 8.1
+Carioca test,8,46-48,56
+s 11.4 ± 2.9 — 9.5 11.0 9.4 ± 0.1
+Long shuttle—male/female,72
+s — 8.7/9.3 — — —
+Modified agility test—male/female,72
+s — 10.4/10.8 — — —
+Pro shuttle—male/female,72
+s — 5.2/5.7 — — —
+a
+Absolute values are reported for males unless otherwise indicated. Where no error measurement is presented, not enough data were pres-
+ent to calculate a standard deviation. A dash indicates no data were available. ACLR, anterior cruciate ligament reconstruction.
+4 Abrams et al The Orthopaedic Journal of Sports Medicine
+
+--- PAGE 5 ---
+following primary ACL reconstruction. Of these included
+investigations, only 13% described objective criteria for
+return to play. Forty percent gave no criteria, 32% used only
+time from surgery, and 15% utilized time from surgery along
+with subjective functional assessment scores.
+In this review, the most common functional tests
+reported in the literature following ACL reconstruction
+were the hop tests. The 4 standard hop tests (single-leg,
+cross-over, triple, and 6-m timed hop tests) all averaged
+greater than 90% LSI at 6 to 9 months postoperatively.
+Interestingly, when more demanding testing was carried
+out that required increased stamina in the operative leg,
+results declined. Although the number of studies reporting
+results of endurance hop tests is limited, the findings pre-
+sented in this investigation demonstrated that the results
+of the fatigue single-leg hop and side hop in 30 seconds
+showed lower LSI values as compared with the standard
+hop testing regimen. This may indicate increased fatig-
+ability in the operative extremity that is still present at
+the 6- to 12-month time period. These deficiencies, how-
+ever, appeared to normalize by the 24-month mark, with
+LSI values in the mid-90% range, comparable to the other
+hop testing results.
+While an important objective measure, the results of hop
+testing have not been correlated with return to play. They
+have, however, been correlated with knee function as mea-
+sured with self-reported questionnaires. Logerstedt et al60
+examined the correlation between hop testing and the
+International Knee Documentation Committee 2000 sub-
+jective knee form (IKDC 2000) at 6 and 12 months after
+primary ACL reconstruction. To define ‘‘normal’’ knee func-
+tion, they utilized published normative data for the top
+85th percentile of age- and sex-matched control knees.
+While preoperative hop testing was not predictive of knee
+function at any time following ACL reconstruction, post-
+operative testing was predictive of self-reported knee func-
+tion. Of the 4 common hop tests examined, the 6-m timed
+and cross-over hop tests were the best predictors of normal
+TABLE 3
+Results of Functional Performance Tests Utilizing a Force Plate and/or Motion Analysisa
+Functional Test
+Follow-up, mo
+6 8 9 12 24
+One-leg hop contact time77
+— — — 98 —
+One-leg hop jump time77
+— — — 84 —
+One-leg hop eccentric knee angular velocity77
+— — — 76 —
+One-leg hop concentric knee angular velocity77
+— — — 81 —
+One-leg hop vertical jump off force (% body weight)88
+— — — — 190
+Lift off index62
+— — — 85 —
+Lunge impact index62
+— — — 81 —
+Jump GRF70,74
+82 — 95 — —
+Center of pressure motion with single-leg stance—AP/ML directions67
+— 86/89 — — —
+Center of pressure velocity with single-leg stance—AP/ML directions67
+— 94/95 — — —
+Center of pressure mean velocity with single-leg stance67
+— 93 — — —
+Landing/take off peak vertical GRF67
+— 89/73 — — —
+Take off vertical GRF loading rate67
+— 90 — — —
+Reproduction of passive motion at 15
+/30
+/45
+of flexion,54,81
+deg 5.7 (full extension) — — 5.4/7.0/7.0 —
+Threshold to detection of passive motion at 15
+/30
+/45
+of flexion,54,81,85
+deg 1.4 ± 0.3 — — 1.7/2.0/1.8 —
+Squat jump GRF54
+— — — — 98
+Countermovement jump GRF54
+— — — — 98
+Drop jump GRF54
+— — — — 99
+Drop jump contact time,77
+ms — — — 90 —
+Drop jump jumping time,77
+ms — — — 86 —
+Drop jump eccentric/concentric knee angle speed,77
+deg/s — — — 90/79 —
+Rebound jump GRF54
+— — — 98 —
+Balance index85
+96 — — — —
+Stabilization angle when GRF equals body weight,88
+deg — — — — 21
+Angle of knee joint at landing,88
+deg — — — — 26
+Stance phase duration (% longer in operative leg)88
+— — — — 20
+Joint position sense difference in operative and nonoperative leg—flexion/extension
+weightbearing,38
+deg
+— — — 1.2/0.8 —
+Joint position sense difference in operative and nonoperative leg—flexion/extension
+nonweightbearing,20,21,41
+deg
+0.4 ± 0.2/0.8 ± 0.7 — — —/1.2 —
+Postural sway dispersion index—eyes open/eyes closed29
+— — — 100/92 —
+Coordination deficit—concentric/eccentric105
+79/64 — 81/76 — —
+a
+Data are expressed as Limb Symmetry Index values (in percentages) unless otherwise indicated. Where no error measurement is
+presented, not enough data were present to calculate a standard deviation. A dash indicates no data were available. GRF, ground reaction
+force; AP, anterior-posterior; ML, medial-lateral.
+The Orthopaedic Journal of Sports Medicine Functional Testing After ACLR 5
+
+--- PAGE 6 ---
+subjective knee function as measured by IKDC 2000. With
+a sensitivity of 88%, the cross-over hop test most accurately
+identified those with normal function. This is likely because
+of the fact that of all the tests, the cross-over hop is the most
+functionally demanding as it requires coordination and
+strength in the frontal, sagittal, and coronal planes. Near
+normal values in this test indicate improved neuromuscu-
+lar control of the leg.
+At 1 year, those with normal knee function had median
+LSI values of 93% for the single-leg, cross-over, and triple
+hop tests, while the median value was 96% for the 6-m
+timed hop. Reinke et al82
+performed a similar investigation
+with a smaller cohort of patients and found that the triple
+hop test best correlated with the IKDC score as well as
+certain subsets of the Knee Injury and Osteoarthritis
+Outcomes Score (KOOS).
+Another common functional test reported in the litera-
+ture is knee flexion and extension strength testing. In
+examining the results presented in Table 4, 6 months
+following ACL reconstruction, mean LSI values for
+isokinetic knee flexion were in the range of 80% to 90%,
+with correction to near normal values by 1 year. This trend
+was not seen in the results for isokinetic knee extension,
+TABLE 4
+Studies Reporting the Results of Functional Performance Tests
+Involving Strength Testing at Varying Time Points After ACLRa
+Follow-up, mo
+6 9 12 18 24
+Single-leg press1,99
+85 — 95 — 97 ± 1
+Single-leg press MVIC5,30,89
+93 ± 6 — 98 ± 0 — —
+Leg press rate of force development
+at 30%/50%/90% MVIC5
+80/79/72 — 97/92/90 — —
+Open chain knee flexion 93 ± 1 — 98 ± 2 — 95 ± 5
+Hamstring autograft29
+— — 99 — —
+Mixed graft1,50,99
+93 ± 1 — 96 — 98 ± 0
+Isokinetic knee flexion peak torque
+at 60/120/180/240 deg/s
+89 ± 8/97 ± 14/92 ± 7/92 ± 1 95 ± 4/—/95/— 92 ± 6/90 ± 14/96 ± 4/94 ± 3 95 ± 6/—/100/95 98 ± 3/100/96 ± 7/94 ± 5
+BPTB autograftb
+91 ± 6/87 ± 14/95 ± 7/92 ± 1 — 97 ± 2/80/99 ± 2/96 ± 0 95 ± 6/—/100/95 97 ± 3/—/100/98
+Hamstring autograftc
+84 ± 11/—/89 ± 8/— 90/—/—/— 87 ± 4/—/91 ± 1/— — 100/—/88/—
+Allograft12
+98/—/—/93 — — — —
+Mixed graft2,7,8,11,16,26,32,33
+91 ± 5/96/95/92 96/—/95/— 97 ± 4/100/99 ± 1/91 — 98 ± 3/100/100/91
+Isokinetic knee extension peak torque
+at 60/120/180/240 deg/s
+75 ± 9/74 ± 4/84 ± 6/79 ± 3 73 ± 3/—/79/— 86 ± 6/87 ± 8/88 ± 5/89 ± 2 89 ± 6/—/84/89 93 ± 5/100/96 ± 4/91 ± 2
+BPTB autograftd
+73 ± 6/74 ± 4/84 ± 6/79 ± 0 —/—/79/— 84 ± 3/81/86 ± 2/89 ± 3 86 ± 6/—/—/89 91 ± 3/—/93/89
+Hamstring autografte
+77 ± 14/—/86 ± 4/— — 87 ± 6/—/89 ± 4/— — —/—/96/—
+Allograft12
+65/—/—/73 — — — —
+Mixed graftf
+78 ± 13/—/75/84 73 ± 3/—/—/— 88 ± 7/93/91 ± 8/90 94/—/84/— 95 ± 6/100/100/92
+Isokinetic knee internal rotation
+at 30/60/90/120 deg/s2,90
+— — 90 ± 1/95/95/90 — 97/97/96
+Isokinetic knee external rotation
+at 30/60/90/120 deg/s2,90
+— — 98 ± 0/97/98/99 — 98/98/97
+Time to peak torque flexion
+at 60/240 deg/s (BPTB autograft)103
+100/100 — 95/94 95/100 —
+Time to peak torque extension
+at 60/240 deg/s (BPTB autograft)103
+91/90 — 98/100 100/100 —
+a
+All data are expressed as Limb Symmetry Index values (in percentages; mean ± standard deviation). Where no error measurement is pre-
+sented, not enough data were present to calculate a standard deviation. A dash indicates no data were available. ACLR, anterior cruciate liga-
+ment reconstruction. MVIC, maximal voluntary isometric contraction; BPTB, bone–patellar tendon–bone.
+b
+References 15, 28, 34, 36, 44, 46, 66, 84, 85, 87, 103.
+c
+References 14, 17, 18, 40, 41, 47, 90, 105-107.
+d
+References 15, 28, 34, 44, 46, 63, 65, 84, 85, 87, 91-93, 103.
+e
+References 14, 17, 18, 40, 41, 73, 90, 105-107.
+f
+References 2, 7, 8, 11, 16, 26, 37, 42, 55, 56.
+TABLE 5
+P Values Comparing Isokinetic Peak Knee Flexion
+and Extension Forces at Varying Time Points
+and Angular Velocitiesa
+Angular Velocity, deg/s
+Follow-up, mo
+6 9 12 18 24
+60 <.001 .008 .008 .372 .021
+120 .211 — .841 — —
+180 .018 — .002 — .944
+240 <.001 — .072 — .404
+a
+All significant values (P < .05, Student t test) represent
+increased strength in knee extension versus knee flexion. A dash
+indicates no data were available.
+6 Abrams et al The Orthopaedic Journal of Sports Medicine
+
+--- PAGE 7 ---
+with values commonly in the 70% range at 6 months and
+remaining below 90% in almost all categories at the
+1-year mark postoperatively. These observations are sup-
+ported by the data presented in Table 5, with significant
+knee extension deficits (compared with knee flexion LSI)
+at a number of time points postoperatively. These results
+compare with other investigations that have looked at iso-
+kinetic strength between BPTB and hamstring autograft
+reconstruction techniques. Wipfler et al102
+reported isoki-
+netic knee flexion to be 99% and 91% in the BPTB and ham-
+string autograft groups at 1-year follow-up, while extension
+was 87% and 92%, respectively. Aglietti et al2
+also reported
+significantly increased isokinetic extension strength defi-
+cits at 1 year follow-up for BPTB versus hamstring auto-
+graft patients without concomitant decreased flexion
+strength in the hamstring graft group.
+While the results of functional testing have not been
+shown to predict return to sport, Hewett et al35
+proposed
+that strength training with correction of faulty movement
+biomechanics and balance training are the most effective
+methods for preventing ACL injuries. Many of these factors
+can be tested using the motion analysis and force plate data
+described in Table 3. The effectiveness of these programs in
+the prevention of initial ACL injury as well as other lower
+extremity injuries has been demonstrated.49,61,94,101
+Mandelbaum et al61
+investigated whether the use of a neu-
+romuscular and proprioceptive performance program was
+effective at decreasing the incidence of ACL injury in an
+elite population of female soccer players. In their cohort
+study, they found that the program decreased the incidence
+of ACL injury by 88% and 74% in years 1 and 2, respec-
+tively, after initiation of the program.
+While normative values as well as values that correlate
+with perceived ‘‘normal’’ knee function can be provided for
+functional testing following ACL reconstruction, objective
+evidence is lacking for determining return to play criteria
+based on an exact result of a functional test. Many authors
+have advocated using multiple tests to determine full
+return to play status.60,82
+Barber-Westin and Noyes9
+report
+that their protocol includes a less than 10% deficit in
+strength of the quadriceps and hamstring on isokinetic
+testing at 180 deg/s; less than 15% deficit inlower limbsym-
+metry for single-hop, triple hop, cross-over hop, and timed
+hop; greater than 60% normalized knee separation distance
+on a video drop-jump test; as well as a normal physical
+examination. For even beginning a return-to-sport rehabi-
+litation regimen, Myer et al71
+recommend a minimum
+IKDC score of 70, no postsurgical history of giving way or
+a negative pivot shift, and a minimum baseline strength
+knee extension peak torque/body mass of 40% and 30% at
+300 deg/s and 60% and 50% at 180 deg/s for males and
+females, respectively. The last stage the athlete must pass
+before slow reintegration into full athletic activity includes
+drop vertical jump landing force within 15% LSI, modified
+agility test (MAT) time within 10%, single limb average
+peak power test for 10 seconds within 15%, and a perfect
+score on the tuck jump or improvement of 20 percentage
+points from the initial score.71
+Limitations of this investigation are based in the weak-
+nesses of the studies included. One potential is that the time
+frame for functional testing was slightly different than that
+reported. For example, testing of a patient at 5 or 7 months
+following surgery, versus at the 6-month time point, may
+slightly affect results because of the increased or decreased
+time that the patient has had for rehabilitation. It is possible
+that some studies reporting on functional testing following
+ACL reconstruction that met our inclusion and exclusion
+criteria were not captured. This is minimized, however, with
+the use of 3 separate databases and cross-referencing of ref-
+erence sections for investigations that the search algorithm
+may have missed.
+CONCLUSION
+This investigation provides data on all published functional
+testing following primary ACL reconstruction. The most
+commonly reported tests were the hop tests as well as isoki-
+netic knee flexion and extension strength. Knee extension
+strength lagged behind that of knee flexion strength in all
+graft types, underlining the importance of quadriceps reha-
+bilitation postoperatively. Those with hamstring autografts
+were found to have decreased isokinetic knee flexion
+strength versus BPTB autograft patients, while there were
+no differences in isokinetic knee extension strength
+between groups at any time point. The values summarized
+in this investigation should serve as guidance to aid in
+decision-making when deciding when to return the athlete
+to unrestricted play following ACL reconstruction.
+NOTE
+i. Online search term: (((((((((((((((((((((((anterior[Title/Abstract]) AND
+cruciate[Title/Abstract]) AND ligament[Title/Abstract])) OR acl[Title/
+Abstract])) AND reconstruction[Title/Abstract] AND (English[lang])))
+AND (((((functional[Title/Abstract]) AND test[Title/Abstract] AND (Eng-
+lish[lang]))) OR rehab[Title/Abstract]) OR rehabilitation[Title/Abstract]
+AND (English[lang])) AND (English[lang]))) NOT shoulder[Title/
+Abstract]) NOT elbow[Title/Abstract]) NOT wrist[Title/Abstract]) NOT
+hand[Title/Abstract]) NOT finger[Title/Abstract]) NOT pelvis[Title/
+Abstract]) NOT spine[Title/Abstract]) NOT hip[Title/Abstract]) NOT
+foot[Title/Abstract]) NOT ankle[Title/Abstract]) NOT cadaver[Title/
+Abstract]) NOT cadaveric[Title/Abstract]) NOT pcl[Title/Abstract]) NOT
+posterior[Title/Abstract] AND (English[lang])).
+REFERENCES
+1. Ageberg E, Thomee R, Neeter C, Silbernagel KG, Roos EM. Muscle
+strength and functional performance in patients with anterior cruciate
+ligament injury treated with training and surgical reconstruction or
+training only: a two- to five-year followup. Arthritis Rheum. 2008;59:
+1773-1779.
+2. Aglietti P, Giron F, Buzzi R, Biddau F, Sasso F. Anterior cruciate
+ligament reconstruction: bone-patellar tendon-bone compared with
+double semitendinosus and gracilis tendon grafts. A prospective, ran-
+domized clinical trial. J Bone Joint Surg Am. 2004;86-A:2143-2155.
+3. Ahlden M, Sernert N, Karlsson J, Kartus J. Outcome of anterior cruci-
+ate ligament reconstruction with emphasis on sex-related differences.
+Scand J Med Sci Sports. 2012;22:618-626.
+4. Allen AD, Sitler MR, Marchetto P, Kelly JD, Mattacola CG. Assess-
+ment of the endoscopic semitendinosus/gracilis autograft procedure
+with interference screw fixation for reconstruction of the anterior
+cruciate ligament. Orthopedics. 2001;24:347-353.
+The Orthopaedic Journal of Sports Medicine Functional Testing After ACLR 7
+
+--- PAGE 8 ---
+5. Angelozzi M, Madama M, Corsica C, et al. Rate of force development
+as an adjunctive outcome measure for return-to-sport decisions after
+anterior cruciate ligament reconstruction. J Orthop Sports Phys Ther.
+2012;42:772-780.
+6. Augustsson J, Thomee R, Karlsson J. Ability of a new hop test to
+determine functional deficits after anterior cruciate ligament recon-
+struction. Knee Surg Sports Traumatol Arthrosc. 2004;12:350-356.
+7. Aune AK, Holm I, Risberg MA, Jensen HK, Steen H. Four-strand ham-
+string tendon autograft compared with patellar tendon-bone autograft
+for anterior cruciate ligament reconstruction. A randomized study with
+two-year follow-up. Am J Sports Med. 2001;29:722-728.
+8. Baltaci G, Yilmaz G, Atay AO. The outcomes of anterior cruciate liga-
+ment reconstructed and rehabilitated knees versus healthy knees: a
+functional comparison. Acta Orthop Traumatol Turc. 2012;46:186-
+195.
+9. Barber-Westin SD, Noyes FR. Factors used to determine return to
+unrestricted sports activities after anterior cruciate ligament recon-
+struction. Arthroscopy. 2011;27:1697-1705.
+10. Birmingham TB, Bryant DM, Giffin JR, et al. A randomized controlled
+trial comparing the effectiveness of functional knee brace and
+neoprene sleeve use after anterior cruciate ligament reconstruction.
+Am J Sports Med. 2008;36:648-655.
+11. Brosky JA Jr, Nitz AJ, Malone TR, Caborn DN, Rayens MK. Intrarater
+reliability of selected clinical outcome measures following anterior
+cruciate ligament reconstruction. J Orthop Sports Phys Ther. 1999;
+29:39-48.
+12. Cameron SE, Wilson W, St Pierre P. A prospective, randomized com-
+parison of open vs arthroscopically assisted ACL reconstruction.
+Orthopedics. 1995;18:249-252.
+13. Cuellar JM, Scuderi GJ, Cuellar VG, Golish SR, Yeomans DC.
+Diagnostic utility of cytokine biomarkers in the evaluation of acute
+knee pain. J Bone Joint Surg Am. 2009;91:2313-2320.
+14. Czamara A, Tomaszewski W, Bober T, Lubarski B. The effect of
+physiotherapy on knee joint extensor and flexor muscle strength after
+anterior cruciate ligament reconstruction using hamstring tendon.
+Med Sci Monit. 2011;17:CR35-CR41.
+15. De Carlo MS, Sell KE. The effects of the number and frequency of
+physical therapy treatments on selected outcomes of treatment in
+patients with anterior cruciate ligament reconstruction. J Orthop
+Sports Phys Ther. 1997;26:332-339.
+16. de Jong SN, van Caspel DR, van Haeff MJ, Saris DB. Functional
+assessment and muscle strength before and after reconstruction of
+chronic anterior cruciate ligament lesions. Arthroscopy. 2007;23:21-
+28, 28.e21-28.e23.
+17. Fabbriciani C, Milano G, Mulas PD, Ziranu F, Severini G. Anterior
+cruciate ligament reconstruction with doubled semitendinosus and
+gracilis tendon graft in rugby players. Knee Surg Sports Traumatol
+Arthrosc. 2005;13:2-7.
+18. Fabis J. The impact of a isokinetic training program on the peak
+torque of the quadriceps and knee flexors after anterior cruciate liga-
+ment reconstruction with hamstrings. Ortop Traumatol Rehabil. 2007;
+9:527-531.
+19. Flanagan EP, Galvin L, Harrison AJ. Force production and reactive
+strength capabilities after anterior cruciate ligament reconstruction.
+J Athl Train. 2008;43:249-257.
+20. Fremerey R, Lobenhoffer P, Skutek M, Gerich T, Bosch U. Proprio-
+ception in anterior cruciate ligament reconstruction. Endoscopic
+versus open two-tunnel technique. A prospective study. Int J Sports
+Med. 2001;22:144-148.
+21. Fremerey RW, Lobenhoffer P, Zeichen J, Skutek M, Bosch U,
+Tscherne H. Proprioception after rehabilitation and reconstruction in
+knees with deficiency of the anterior cruciate ligament: a prospective,
+longitudinal study. J Bone Joint Surg Br. 2000;82:801-806.
+22. Fu FH, West R, Musahl V, Vyas D. Anatomic single- and double-
+bundle anterior cruciate ligament (ACL) reconstruction. http://www.
+orthonet.pitt.edu/content/DoubleBundle.htm. Accessed January 13,
+2013.
+23. Garrison JC, Shanley E, Thigpen C, Geary R, Osler M, Delgiorno J.
+The reliability of the vail sport test as a measure of physical
+performance following anterior cruciate ligament reconstruction. Int
+J Sports Phys Ther. 2012;7:20-30.
+24. Gerhard P, Bolt R, Duck K, Mayer R, Friederich NF, Hirschmann MT.
+Long-term results of arthroscopically assisted anatomical single-
+bundle anterior cruciate ligament reconstruction using patellar tendon
+autograft: are there any predictors for the development of osteo-
+arthritis? Knee Surg Sports Traumatol Arthrosc. 2013;21:957-964.
+25. Ghodadra NS, Mall NA, Grumet R, et al. Interval arthrometric compar-
+ison of anterior cruciate ligament reconstruction using bone-patellar
+tendon-bone autograft versus allograft: do grafts attenuate within the
+first year postoperatively? Am J Sports Med. 2012;40:1347-1354.
+26. Grant JA, Mohtadi NG. Two- to 4-year follow-up to a comparison of
+home versus physical therapy-supervised rehabilitation programs
+after anterior cruciate ligament reconstruction. Am J Sports Med.
+2010;38:1389-1394.
+27. Grindem H, Logerstedt D, Eitzen I, et al. Single-legged hop tests as
+predictors of self-reported knee function in nonoperatively treated
+individuals with anterior cruciate ligament injury. Am J Sports Med.
+2011;39:2347-2354.
+28. Harilainen A, Sandelin J, Vanhanen I, Kivinen A. Knee brace after
+bone-tendon-bone anterior cruciate ligament reconstruction. Rando-
+mized, prospective study with 2-year follow-up. Knee Surg Sports
+Traumatol Arthrosc. 1997;5:10-13.
+29. Harrison EL, Duenkel N, Dunlop R, Russell G. Evaluation of single-leg
+standing following anterior cruciate ligament surgery and rehabilita-
+tion. Phys Ther. 1994;74:245-252.
+30. Hartigan EH, Axe MJ, Snyder-Mackler L. Time line for noncopers to
+pass return-to-sports criteria after anterior cruciate ligament recon-
+struction. J Oorthop Sports Phys Ther. 2010;40:141-154.
+31. Heckmann TP, Noyes FR, Barber-Westin SD. Rehabilitation after ACL
+reconstruction. In: Noyes FR Barber-Westin SD, eds. ACL Injuries in
+the Female Athlete: Causes, Impacts, and Conditioning Programs.
+New York, NY: Springer; 2012:427-454.
+32. Heijne A, Werner S. Early versus late start of open kinetic chain quad-
+riceps exercises after ACL reconstruction with patellar tendon or
+hamstring grafts: a prospective randomized outcome study. Knee
+Surg Sports Traumatol Arthrosc. 2007;15:402-414.
+33. Heijne A, Werner S. A 2-year follow-up of rehabilitation after ACL
+reconstruction using patellar tendon or hamstring tendon grafts: a
+prospective randomised outcome study. Knee Surg Sports Traumatol
+Arthrosc. 2010;18:805-813.
+34. Henriksson M, Rockborn P, Good L. Range of motion training in brace
+vs. plaster immobilization after anterior cruciate ligament reconstruc-
+tion: a prospective randomized comparison with a 2-year follow-up.
+Scand J Med Sci Sports. 2002;12:73-80.
+35. Hewett TE, Ford KR, Myer GD. Anterior cruciate ligament injuries in
+female athletes: part 2, a meta-analysis of neuromuscular interven-
+tions aimed at injury prevention. Am J Sports Med. 2006;34:490-498.
+36. Hohmann E, Tetsworth K, Bryant A. Physiotherapy-guided versus
+home-based, unsupervised rehabilitation in isolated anterior cruciate
+injuries following surgical reconstruction. Knee Surg Sports Traumatol
+Arthrosc. 2011;19:1158-1167.
+37. Holm I, Hammer S, Larsen S, Nordsletten L, Steen H. Can a regular
+leg extension bench be used in testing deficits of the quadriceps mus-
+cle during rehabilitation? Scand J Med Sci Sports. 1995;5:29-35.
+38. Hopper DM, Creagh MJ, Formby PA, Goh SC, Boyle JJ, Strauss GR.
+Functional measurement of knee joint position sense after anterior
+cruciate ligament reconstruction. Arch Phys Med Rehabil. 2003;84:
+868-872.
+39. Hopper DM, Strauss GR, Boyle JJ, Bell J. Functional recovery after
+anterior cruciate ligament reconstruction: a longitudinal perspective.
+Arch Phys Med Rehabil. 2008;89:1535-1541.
+40. Iriuchishima T, Horaguchi T, Morimoto Y, et al. Intensity of physiother-
+apy after anterior cruciate ligament reconstruction: a comparison of
+two rehabilitation regimen. Arch Orthop Trauma Surg. 2010;130:
+1053-1058.
+41. Ito Y, Deie M, Adachi N, et al. A prospective study of 3-day versus 2-
+week immobilization period after anterior cruciate ligament recon-
+struction. Knee. 2007;14:34-38.
+8 Abrams et al The Orthopaedic Journal of Sports Medicine
+
+--- PAGE 9 ---
+42. Jansson KA, Linko E, Sandelin J, Harilainen A. A prospective rando-
+mized study of patellar versus hamstring tendon autografts for ante-
+rior cruciate ligament reconstruction. Am J Sports Med. 2003;31:
+12-18.
+43. Jonsson H, Riklund-Ahlstrom K, Lind J. Positive pivot shift after ACL
+reconstruction predicts later osteoarthrosis: 63 patients followed 5-9
+years after surgery. Acta Orthop Scand. 2004;75:594-599.
+44. Karasel S, Akpinar B, Gulbahar S, et al. Clinical and functional
+outcomes and proprioception after a modified accelerated rehabilita-
+tion program following anterior cruciate ligament reconstruction with
+patellar tendon autograft. Acta Orthop Traumatol Turc. 2010;44:220-
+228.
+45. Kartus J, Stener S, Kohler K, Sernert N, Eriksson BI, Karlsson J. Is
+bracing after anterior cruciate ligament reconstruction necessary? A
+2-year follow-up of 78 consecutive patients rehabilitated with or with-
+out a brace. Knee Surg Sports Traumatol Arthrosc. 1997;5:157-161.
+46. Keays SL, Bullock-Saxton J, Keays AC. Strength and function before
+and after anterior cruciate ligament reconstruction. Clin Orthop Relat
+Res. 2000;(373):174-183.
+47. Ko MS, Yang SJ, Ha JK, Choi JY, Kim JG. Correlation between ham-
+string flexor power restoration and functional performance test: 2-
+year follow-up after ACL reconstruction using hamstring autograft.
+Knee Surg Relat Res. 2012;24:113-119.
+48. Kong DH, Yang SJ, Ha JK, Jang SH, Seo JG, Kim JG. Validation of
+functional performance tests after anterior cruciate ligament recon-
+struction. Knee Surg Relat Res. 2012;24:40-45.
+49. LaBella CR, Huxford MR, Grissom J, Kim KY, Peng J, Christoffel KK.
+Effect of neuromuscular warm-up on injuries in female soccer and
+basketball athletes in urban public high schools: cluster randomized
+controlled trial. Arch Pediatr Adolesc Med. 2011;165:1033-1040.
+50. Landes S, Nyland J, Elmlinger B, Tillett E, Caborn D. Knee flexor
+strength after ACL reconstruction: comparison between hamstring
+autograft, tibialis anterior allograft, and non-injured controls. Knee
+Surg Sports Traumatol Arthrosc. 2010;18:317-324.
+51. Langford JL, Webster KE, Feller JA. A prospective longitudinal study
+to assess psychological changes following anterior cruciate ligament
+reconstruction surgery. Br J Sports Med. 2009;43:377-381.
+52. Laxdal G, Kartus J, Hansson L, Heidvall M, Ejerhed L, Karlsson J. A
+prospective randomized comparison of bone-patellar tendon-bone
+and hamstring grafts for anterior cruciate ligament reconstruction.
+Arthroscopy. 2005;21:34-42.
+53. Laxdal G, Sernert N, Ejerhed L, Karlsson J, Kartus JT. A prospective
+comparison of bone-patellar tendon-bone and hamstring tendon
+grafts for anterior cruciate ligament reconstruction in male patients.
+Knee Surg Sports Traumatol Arthrosc. 2007;15:115-125.
+54. Lee BI, Kwon SW, Kim JB, Choi HS, Min KD. Comparison of clinical
+results according to amount of preserved remnant in arthroscopic
+anterior cruciate ligament reconstruction using quadrupled hamstring
+graft. Arthroscopy. 2008;24:560-568.
+55. Lentz TA, Tillman SM, Indelicato PA, Moser MW, George SZ, Chmie-
+lewski TL. Factors associated withfunction after anterior cruciate liga-
+ment reconstruction. Sports Health. 2009;1:47-53.
+56. Lephart SM, Kocher MS, Harner CD, Fu FH. Quadriceps strength and
+functional capacity after anterior cruciate ligament reconstruction.
+Patellar tendon autograft versus allograft. Am J Sports Med. 1993;
+21:738-743.
+57. Lewek M, Rudolph K, Axe M, Snyder-Mackler L. The effect of insuffi-
+cient quadriceps strength on gait after anterior cruciate ligament
+reconstruction. Clin Biomech (Bristol, Avon). 2002;17:56-63.
+58. Liden M, Ejerhed L, Sernert N, Laxdal G, Kartus J. Patellar tendon or
+semitendinosus tendon autografts for anterior cruciate ligament
+reconstruction: a prospective, randomized study with a 7-year
+follow-up. Am J Sports Med. 2007;35:740-748.
+59. Lindstrom M, Strandberg S, Wredmark T, Fellander-Tsai L, Henriksson
+M.Functionaland musclemorphometric effectsofACLreconstruction.
+A prospective CT study with 1 year follow-up. Scand J Med Sci Sports.
+2013;23:431-442.
+60. Logerstedt D, Grindem H, Lynch A, et al. Single-legged hop tests as
+predictors of self-reported knee function after anterior cruciate
+ligament reconstruction: the Delaware-Oslo ACL cohort study. Am J
+Sports Med. 2012;40:2348-2356.
+61. Mandelbaum BR, Silvers HJ, Watanabe DS, et al. Effectiveness of a
+neuromuscular and proprioceptive training program in preventing
+anterior cruciate ligament injuries in female athletes: 2-year follow-
+up. Am J Sports Med. 2005;33:1003-1010.
+62. Mattacola CG,Jacobs CA,Rund MA, Johnson DL. Functional assess-
+ment using the step-up-and-over test and forward lunge following
+ACL reconstruction. Orthopedics. 2004;27:602-608.
+63. McDevitt ER, Taylor DC, Miller MD, et al. Functional bracing after
+anterior cruciate ligament reconstruction: a prospective, randomized,
+multicenter study. Am J Sports Med. 2004;32:1887-1892.
+64. Mihelic R, Jurdana H, Jotanovic Z, Madjarevic T, Tudor A. Long-term
+results of anterior cruciate ligament reconstruction: a comparison
+with non-operative treatment with a follow-up of 17-20 years. Int
+Orthop. 2011;35:1093-1097.
+65. Mikkelsen C, Werner S, Eriksson E. Closed kinetic chain alone
+compared to combined open and closed kinetic chain exercises for
+quadriceps strengthening after anterior cruciate ligament reconstruc-
+tion with respect to return to sports: a prospective matched follow-up
+study. Knee Surg Sports Traumatol Arthrosc. 2000;8:337-342.
+66. Mittlmeier T, Weiler A, Söhn T, et al. Novel Award Second Prize Paper.
+Functional monitoring during rehabilitation following anterior cruciate
+ligament reconstruction. Clin Biomech (Bristol, Avon). 1999;14:576-
+584.
+67. Mohammadi F, Salavati M, Akhbari B, Mazaheri M, Khorrami M,
+Negahban H. Static and dynamic postural control in competitive ath-
+letes after anterior cruciate ligament reconstruction and controls.
+Knee Surg Sports Traumatol Arthrosc. 2012;20:1603-1610.
+68. Moher D, Liberati A, Tetzlaff J, Altman DG. Preferred reporting items
+for systematic reviews and meta-analyses: the PRISMA statement.
+J Clin Epidemiol. 2009;62:1006-1012.
+69. Murray JR, Lindh AM, Hogan NA, et al. Does anterior cruciate liga-
+ment reconstruction lead to degenerative disease? Thirteen-year
+results after bone-patellar tendon-bone autograft. Am J Sports Med.
+2012;40:404-413.
+70. Myer GD, Martin L Jr, Ford KR, et al. No association of time from sur-
+gery with functional deficits in athletes after anterior cruciate ligament
+reconstruction: evidence for objective return-to-sport criteria. Am
+J Sports Med. 2012;40:2256-2263.
+71. Myer GD, Paterno MV, Ford KR, Quatman CE, Hewett TE. Rehabilita-
+tion after anterior cruciate ligament reconstruction: criteria-based
+progression through the return-to-sport phase. J Orthop Sports Phys
+Ther. 2006;36:385-402.
+72. Myer GD, Schmitt LC, Brent JL, et al. Utilization of modified NFL com-
+bine testing to identify functional deficits in athletes following ACL
+reconstruction. J Orthop Sports Phys Ther. 2011;41:377-387.
+73. Nakayama Y, Shirai Y, Narita T, Mori A, Kobayashi K. Knee functions
+and a returnto sports activity in competitive athletes following anterior
+cruciate ligament reconstruction. J Nippon Med Sch. 2000;67:172-
+176.
+74. Paterno MV, Schmitt LC, Ford KR, Rauh MJ, Myer GD, Hewett TE.
+Effects of sex on compensatory landing strategies upon return to
+sport after anterior cruciate ligament reconstruction. J Orthop Sports
+Phys Ther. 2011;41:553-559.
+75. Paterno MV, Schmitt LC, Ford KR, et al. Biomechanical measures
+during landing and postural stability predict second anterior cruciate
+ligament injury after anterior cruciate ligament reconstruction and
+return to sport. Am J Sports Med. 2010;38:1968-1978.
+76. Petschnig R, Baron R, Albrecht M. The relationship between isoki-
+netic quadriceps strength test and hop tests for distance and
+one-legged vertical jump test following anterior cruciate ligament
+reconstruction. J Orthop Sports Phys Ther. 1998;28:23-31.
+77. Pfeifer K, Banzer W. Motor performance in different dynamic tests in
+knee rehabilitation. Scand J Med Sci Sports. 1999;9:19-27.
+78. Prodromos CC, Han Y, Rogowski J, Joyce B, Shi K. A meta-analysis
+of the incidence of anterior cruciate ligament tears as a function of
+gender, sport, and a knee injury-reduction regimen. Arthroscopy.
+2007;23:1320-1325.e6.
+The Orthopaedic Journal of Sports Medicine Functional Testing After ACLR 9
+
+--- PAGE 10 ---
+79. Reat JF, Lintner DM. One- versus two-incision ACL reconstruction. A
+prospective, randomized study. Am J Knee Surg. 1997;10:198-208.
+80. Reid A, Birmingham TB, Stratford PW, Alcock GK, Giffin JR. Hop test-
+ing provides a reliable and valid outcome measure during rehabilitation
+after anterior cruciate ligament reconstruction. Phys Ther. 2007;87:
+337-349.
+81. Reider B, Arcand MA, Diehl LH, et al. Proprioception of the knee
+before and after anterior cruciate ligament reconstruction. Arthro-
+scopy. 2003;19:2-12.
+82. Reinke EK, Spindler KP, Lorring D, et al. Hop tests correlate with IKDC
+and KOOS at minimum of 2 years after primary ACL reconstruction.
+Knee Surg Sports Traumatol Arthrosc. 2011;19:1806-1816.
+83. Risberg MA, Ekeland A. Assessment of functional tests after anterior
+cruciate ligament surgery. J Orthop Sports Phys Ther. 1994;19:212-
+217.
+84. Risberg MA, Holm I. The long-term effect of 2 postoperative rehabili-
+tation programs after anterior cruciate ligament reconstruction: a
+randomized controlled clinical trial with 2 years of follow-up. Am J
+Sports Med. 2009;37:1958-1966.
+85. Risberg MA, Holm I, Myklebust G, Engebretsen L. Neuromuscular
+training versus strength training during first 6 months after anterior
+cruciate ligament reconstruction: a randomized clinical trial. Phys
+Ther. 2007;87:737-750.
+86. Risberg MA, Holm I, Steen H, Beynnon BD. Sensitivity to changes
+over time for the IKDC form, the Lysholm score, and the Cincinnati
+knee score. A prospective study of 120 ACL reconstructed patients
+with a 2-year follow-up. Knee Surg Sports Traumatol Arthrosc.
+1999;7:152-159.
+87. Rosenberg TD, Franklin JL, Baldwin GN, Nelson KA. Extensor
+mechanism function after patellar tendon graft harvest for anterior
+cruciate ligament reconstruction. Am J Sports Med. 1992;20:519-
+525.
+88. Rudroff T. Functional capability is enhanced with semitendinosus
+than patellar tendon ACL repair. Med Sci Sports Exerc. 2003;35:
+1486-1492.
+89. Schmitt LC, Paterno MV, Hewett TE. The impact of quadriceps
+femoris strength asymmetry on functional performance at return to
+sport following anterior cruciate ligament reconstruction. J Orthop
+Sports Phys Ther. 2012;42:750-759.
+90. Segawa H, Omori G, Koga Y, Kameo T, Iida S, Tanaka M. Rotational
+muscle strength of the limb after anterior cruciate ligament recon-
+struction using semitendinosus and gracilis tendon. Arthroscopy.
+2002;18:177-182.
+91. Shelbourne KD, Foulk DA. Timing of surgery in acute anterior cruciate
+ligament tears on the return of quadriceps muscle strength after
+reconstruction using an autogenous patellar tendon graft. Am J
+Sports Med. 1995;23:686-689.
+92. Shelbourne KD, Nitz P. Accelerated rehabilitation after anterior cruci-
+ate ligament reconstruction. J Orthop Sports Phys Ther. 1992;15:256-
+264.
+93. Shelbourne KD, Rubinstein RA Jr, VanMeter CD, McCarroll JR, Rettig
+AC. Correlation of remaining patellar tendon width with quadriceps
+strength after autogenous bone-patellar tendon-bone anterior cruci-
+ate ligament reconstruction. Am J Sports Med. 1994;22:774-777.
+94. Soligard T, Myklebust G, Steffen K, et al. Comprehensive warm-up
+programme to prevent injuries in young female footballers: cluster
+randomised controlled trial. BMJ. 2008;337:a2469.
+95. Souissi S, Wong DP, Dellal A, Croisier JL, Ellouze Z, Chamari K.
+Improving functional performance and muscle power 4-to-6 months
+after anterior cruciate ligament reconstruction. J Sports Sci Med.
+2011;10:655-664.
+96. Struewer J, Frangen TM, Ishaque B, et al. Knee function and
+prevalence of osteoarthritis after isolated anterior cruciate ligament
+reconstruction using bone-patellar tendon-bone graft: long-term
+follow-up. Int Orthop. 2012;36:171-177.
+97. Suomalainen P, Jarvela T, Paakkala A, Kannus P, Jarvinen M.
+Double-bundle versus single-bundle anterior cruciate ligament
+reconstruction: a prospective randomized study with 5-year results.
+Am J Sports Med. 2012;40:1511-1518.
+98. Svensson M, Sernert N, Ejerhed L, Karlsson J, Kartus JT. A prospec-
+tive comparison of bone-patellar tendon-bone and hamstring grafts
+for anterior cruciate ligament reconstruction in female patients. Knee
+Surg Sports Traumatol Arthrosc. 2006;14:278-286.
+99. Thomee R, Neeter C, Gustavsson A, et al. Variability in leg muscle
+power and hop performance after anterior cruciate ligament recon-
+struction. Knee Surg Sports Traumatol Arthrosc. 2012;20:1143-
+1151.
+100. Timoney JM, Inman WS, Quesada PM, et al. Return of normal gait
+patterns after anterior cruciate ligament reconstruction. Am J Sports
+Med. 1993;21:887-889.
+101. Walden M, Atroshi I, Magnusson H, Wagner P, Hagglund M. Preven-
+tion ofacute knee injuries in adolescent female football players: clus-
+ter randomised controlled trial. BMJ. 2012;344:e3042.
+102. Wipfler B, Donner S, Zechmann CM, Springer J, Siebold R, Paessler
+HH. Anterior cruciate ligament reconstruction using patellar tendon
+versus hamstring tendon: a prospective comparative study with
+9-year follow-up. Arthroscopy. 2011;27:653-665.
+103. Wojtys EM, Huston LJ. Longitudinal effects of anterior cruciate
+ligament injury and patellar tendon autograft reconstruction on
+neuromuscular performance. Am J Sports Med. 2000;28:336-344.
+104. Yabroudi MA, Irrgang JJ. Rehabilitation and return to play after ana-
+tomic anterior cruciate ligament reconstruction. Clin Sports Med.
+2013;32:165-175.
+105. Yosmaoglu HB, Baltaci G, Kaya D, Ozer H. Tracking ability, motor
+coordination, and functional determinants after anterior cruciate
+ligament reconstruction. J Sport Rehabil. 2011;20:207-218.
+106. Yosmaoglu HB, Baltaci G, Ozer H, Atay A. Effects of additional
+gracilis tendon harvest on muscle torque, motor coordination, and
+knee laxity in ACL reconstruction. Knee Surg Sports Traumatol
+Arthrosc. 2011;19:1287-1292.
+107. Yosmaoglua HB, Baltaci G, Kaya D, Ozer H, Atay A. Comparison of
+functional outcomes of two anterior cruciate ligament reconstruction
+methods with hamstring tendon graft. Acta Orthop Traumatol Turc.
+2011;45:240-247.
+This open-access article is published and distributed under the Creative Commons Attribution - NonCommercial - No Derivatives License (http://
+creativecommons.org/licenses/by-nc-nd/3.0/), which permits the noncommercial use, distribution, and reproduction of the article in any medium,
+provided the original author and source are credited. You may not alter, transform, or build upon this article without the permission of the Author(s).
+For reprints and permission queries, please visit SAGE’s Web site at http://www.sagepub.com/journalsPermissions.nav.
+10 Abrams et al The Orthopaedic Journal of Sports Medicine
+
+--- PAGE 11 ---

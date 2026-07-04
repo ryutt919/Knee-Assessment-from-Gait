@@ -1,0 +1,742 @@
+
+--- PAGE 1 ---
+IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 34, 2026 767
+Laboratory Environments Mask Gait Differences
+Between Healthy Participants and Patients With
+Anterior Cruciate Ligament Reconstruction
+Lauren R. Parola , Vu Phan , and Eni Halilaj
+Abstract—Previous work suggests that people with
+mobility impairments move differently in the traditional
+gait laboratory than in natural environments, but the
+extent to which this possible divergence may have limited
+understanding of gait following anterior cruciate ligament
+reconstruction (ACLR) remains unknown. We hypothesized
+that 1) patients following ACLR walk more asymmetri-
+cally in daily life than in the laboratory and 2) differences
+between patients following ACLR and individuals with no
+gait pathologies would be more pronounced in daily life
+than in the laboratory. Twelve participants (six post-ACLR,
+six healthy) completed gait assessments in the laboratory
+with optical motion capture and inertial measurement units
+(IMUs) and in daily life with IMUs. Patients walked similarly
+to healthy participants in the laboratory, but in daily life they
+walked with a longer gait-cycle time (1.22 ± 0.03 s vs.
+1.08 ± 0.06 s), longer double-support phase (21.8 ± 1.3
+% vs. 17.9 ± 2.7 % Gait Cycle Time), and greater
+single-support asymmetry (8.4 ± 0.9 % vs 4.1 ± 0.7
+%). While the reasons behind the observed differences
+were not studied, these results suggest that gait-analysis
+studies to date may have not realistically captured natural-
+environment behavior. Wearable sensors now offer a path
+toward deeper understanding of post-surgical gait and the
+specific patterns that may place certain patients at risk for
+post-traumatic osteoarthritis.
+Index Terms—Motion capture, gait, inertial measurement
+units, anterior cruciate ligament reconstruction.
+I. INTRODUCTION
+THE laboratory environment has been the primary setting
+used to study the link between gait abnormalities fol-
+lowing anterior cruciate ligament reconstruction (ACLR) and
+risk for post-traumatic osteoarthritis (PTOA), but this approach
+has notable limitations. Marker-based motion capture, which
+has been historically used to study gait, requires designated
+laboratory space, expensive equipment, and trained biomecha-
+nists, preventing scalability to clinics and large biomechanics
+research studies. Additionally, the presence of researchers may
+influence how patients move. The white coat syndrome is
+a well-described phenomenon in vascular research wherein
+Received 30 January 2025; revised 29 August 2025 and 15 October
+2025; accepted 26 November 2025. Date of publication 22 December
+2025; date of current version 5 February 2026. This work was supported
+by Highmark Health and NIH under Grant 5K12HD073945 and Grant
+1R01AR080310. (Corresponding author: Eni Halilaj.)
+The authors are with the Department of Mechanical Engineer-
+ing, Carnegie Mellon University, Pittsburgh, PA 15213 USA (e-mail:
+ehalilaj@andrew.cmu.edu).
+Digital Object Identifier 10.1109/TNSRE.2025.3645799
+an individual’s blood pressure rises in the presence of a
+physician [1]. Similarly, the Hawthorne effect—a phenomenon
+where study participants modify their behavior due to an
+awareness of being watched—has also been observed in other
+fields [2]. Recent work has identified a similar effect in gait
+analysis, where study participants increase their gait speed,
+cadence, and stride length when researchers are present in the
+laboratory [3], [4], [5]. Patients with a femoral prosthesis, as
+well as patients following stroke, were also found to walk
+more asymmetrically when they were not aware that they were
+being watched [6], [7]. In further support of this premise,
+older adults and patients with Parkinson’s disease and multiple
+sclerosis have been found to walk with greater variability,
+greater asymmetry, and lower pace in natural environments
+compared to the laboratory [8], [9], [10], [11], [12].
+Although wearable sensors, such as inertial measurement
+units (IMUs), are emerging as promising, cost-effective tech-
+nologies for gait assessment, studies deploying these tools
+for monitoring of orthopaedic patients during daily life are
+limited [13], [14], [15]. Remote monitoring requires patient
+compliance and produces large amounts of data. While prior
+epidemiology studies, such as the Osteoarthritis Initiative [16],
+have documented feasibility in thousands of patients, activity
+monitoring with a belt-worn or wrist-worn accelerometer,
+or even smartwatch [17], is limiting. Following orthopedic
+surgery, such as ACLR, lower-limb kinematics and kinetics
+are of interest [18], [19], [20], but these outcomes require
+data from sensors placed on multiple body segments, which
+is burdensome for patients. Widespread adoption of multi-
+sensor protocols needs to be preceded by compelling evidence
+that any potential burden on patients and researchers will
+be eclipsed by the insight we can gain. As rigid and bulky
+sensors are replaced with more flexible and compliant ones,
+such as band-aid and even tattoo-like sensors [21], the burden
+on patients will subside [22], but not disappear. As hardware
+becomes unobtrusive, evidence on the potential of wearables
+to transform understanding of gait pathologies is needed to
+support their uptake for remote patient monitoring.
+Existing knowledge of post-ACLR gait is largely based
+on laboratory assessments, with no study to date providing
+evidence of how daily-life monitoring may reshape these
+insights. We posit that under the watchful eye of researchers
+most participants move the way they “should” [3], but that
+in daily life patients after ACLR may be more inclined
+than healthy participants to adopt pain-avoidance strategies,
+© 2025 The Authors. This work is licensed under a Creative Commons Attribution 4.0 License.
+For more information, see https://creativecommons.org/licenses/by/4.0/
+
+--- PAGE 2 ---
+768 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 34, 2026
+Fig. 1. Experimental Setup. Six patients post-ACLR and six healthy participants were recruited for this study. Participants wore four IMUs, one on
+each thigh and shank, during remote monitoring (right), for at least five days. They were outfitted with optical motion capture markers and four IMUs
+for overground (middle) and treadmill (left) walking in the laboratory. Initial contact (IC) and terminal contact (TC) were identified in all IMU data and
+validated against lab-based marker outcomes. Hypothesis 1 studied how ACLR patient gait changed in each environment. Hypothesis 2 studied
+differences between healthy and ACLR patient groups in each environment. Additional sensitivity analyses exploring the influence of number of
+days of data and whether the data were collected on a weekday (WD) or weekend (WE) for each subject (S) on gait outcomes were completed.
+eliciting greater detectable differences between the two popu-
+lations. Accordingly, the aim of this study was to investigate
+whether laboratory environments cloud the conclusions we
+draw about post-surgical gait, providing initial support for
+the move toward natural-environment biomechanics. We
+hypothesized that patients after ACLR walk with a longer
+gait-cycle time, greater reliance on double support, and a
+more pronounced limp in daily life compared to the labora-
+tory. Additionally, we hypothesized that differences between
+patients after ACLR and healthy participants would be higher
+in daily life than in the laboratory.
+II. METHODS
+Six patients post-ACLR (3M, 3F; mean ± std age: 16.83 ±
+2.48 years; height: 1.74 ± 0.05 m; weight: 68.175 ± 7.82 kg)
+and six healthy participants (3M, 3F; mean ± std age: 22.83 ±
+2.78 years; 1.76 ± 0.078 m; 66.0 ± 9.2 kg) were recruited
+for this study, after receiving approval from Carnegie Mel-
+lon University’s Institutional Review Board and obtaining
+informed consent. Initially, eight patients and seven healthy
+participants were assessed for eligibility. Two patients failed
+to follow up and one healthy participant only completed
+three days of remote monitoring data. Therefore, these three
+participants were removed from the study before data analysis,
+yielding a final sample size of 12 participants. Six ACLR
+patients underwent a primary single-bundle reconstruction
+with an autologous quadriceps tendon on a single limb by the
+same surgeon. One of those patients had undergone an ACLR
+on their contralateral limb two years before their most recent
+surgery. To be eligible to participate, healthy participants had
+to have no prior history of knee injury or any other major
+musculoskeletal injury. ACLR patients had to be within 10
+weeks of injury at the time of surgery. We recorded their gait
+three months after the surgery.
+We evaluated walking in three conditions: laboratory tread-
+mill, laboratory overground, and daily life (Figure 1). In
+the laboratory, participants were tracked with marker-based
+motion capture and IMUs for two trials of treadmill walking
+(2 minutes per trial) and two trials of overground walking
+(30 seconds per trial). We measured each participant’s com-
+fortable walking pace during an overground trial. This pace
+was then used during the treadmill trial. Participants were
+outfitted with a 41-marker modified Rizzoli markerset [23].
+Marker-based motion capture data were collected at 100 Hz
+using a 20-camera motion capture system (OptiTrack, Natu-
+ralPoint Inc., Corvallis, OR). Simultaneously, IMU data were
+collected at 125 Hz with four flexible IMU sensors (MC10
+Biostamp, Boston, MA). Each IMU was placed laterally on the
+thigh and shank of each limb. These six-axis IMUs recorded
+linear acceleration and angular velocity data across three
+degrees of freedom. Participants completed a series of three
+hops before each trial to synchronize marker and inertial data.
+For the daily life monitoring component, participants were sent
+home with four IMU sensors and instructed to wear them for
+five consecutive days, with the sensors placed laterally on the
+thighs and shanks. Only the shank IMUs were used to derive
+the outcomes reported here.
+Temporal parameters of gait were extracted from marker-
+based motion capture collected in the laboratory and IMU data
+collected in each environment. Marker data were filtered with a
+fourth-order high-pass filter with a cut-off frequency of 15 Hz.
+To segment gait cycles, we used terminal contact, defined
+
+--- PAGE 3 ---
+PAROLA et al.: LABORATORY ENVIRONMENTS MASK GAIT DIFFERENCES BETWEEN HEALTHY PARTICIPANTS AND PATIENTS 769
+TABLE I
+SUMMARY OF TEMPORAL PARAMETERS
+as the moment the gradient of position surpasses 0.2 m/s
+following minimum toe-marker position, and initial contact,
+defined as the minimum heel-marker position after swing. IMU
+data were downsampled to 100 Hz to enable comparisons
+with the motion capture data. Angular velocities from the
+gyroscopes were filtered with a high-pass filter with a cutoff
+frequency of 0.25 Hz, followed by a low-pass filter with a
+cut-off frequency of 35 Hz. These filtering hyperparameters
+have been previously shown to minimize event identification
+delay and sensor drift [24], [25]. For the daily-life data,
+we identified walking segments using sagittal shank angular
+velocity thresholds of 2 to 10 rad/s for swing peaks and -2 to
+2 rad/s for stance peaks. These thresholds were determined
+using a sensitivity analysis. Only stance peaks that were
+immediately followed by a swing peak were kept for analysis
+and grouped into bouts of continuous gait cycles. Walking
+bouts with five or more gait cycles were selected for analysis.
+The first and last two cycles were removed from the laboratory
+overground and each daily-life walking bout to allow each
+participant to reach a steady-state when walking [26], [27],
+[28]. The first and last 30 cycles were removed from the
+treadmill trial to allow the participants to adapt to the treadmill
+speed [20]. To identify steps from the IMU data, we used
+angular velocities from the shank sensors, first identifying
+swing peaks in the sagittal plane and then identifying terminal
+contact and initial contact events [25]. Once steps were iden-
+tified, seven temporal parameters, computed using previously
+reported approaches [25], [29], were estimated (Table I).
+Repeated measures (RM) analyses of variance (ANOVA)
+were used to test our two leading hypotheses, with the environ-
+ment as our repeated measure. A one-way RM ANOVA was
+used to test the first hypothesis that patients post-ACLR walk
+differently in daily life compared to the two laboratory condi-
+tions. Post-hoc paired t-tests were used to determine individual
+differences between condition pairs (treadmill, overground,
+daily life). To test the second hypothesis that differences
+between ACLR patients and healthy participants are more pro-
+nounced in daily life than the laboratory, we used a two-way
+RM ANOVA with the two factors representing environment
+and health status (ACLR, healthy). A Shapiro-Wilk test,
+applied to the model residuals, was used to test the normality
+assumption. Post-hoc unpaired t-tests were used to determine
+individual differences between health status groups (ACLR,
+healthy) in each environment. For all the tests, significance
+was set at 0.017, after applying a Bonferroni correction for
+the three primary outcomes used to test the hypotheses.
+To place the reported effect sizes in context with measure-
+ment accuracy, we report the errors of IMU-derived parameters
+relative to marker-based ones. For any IMU-derived differ-
+ences between groups and across environments that were
+statistically significant, we note whether these differences are
+also greater than the accuracy of the IMU-derived parameters.
+When differences were not statistically significant (i.e. the null
+hypothesis could not be rejected), we carried out post-hoc
+power analyses to determine the sample sizes necessary to
+identify differences, should they exist.
+For the daily-life outcomes, we performed sensitivity anal-
+yses with three different linear mixed effects models to
+determine the effect of the day type (weekday vs. weekend),
+number of days participants are monitored, and walking-bout
+length on gait outcomes. We found this sensitivity analysis
+to be important given the compliance issues often encoun-
+tered in remote-monitoring studies. Random effects included
+the subject, while fixed effects included group (Healthy vs
+ACLR) and one additional study factor: day type, number of
+days monitored, or walking-bout length, taking the following
+general form: Outcome ∼ Group * Study Factor + (1|Subject).
+Independent models were fit for each outcome and study factor
+because these factors operate at different hierarchical levels
+and could not be simultaneously represented within a single
+mixed-effects model structure. First, a linear mixed effects
+model with fixed effects for group and number of days of
+monitoring was fit to explore the influence of the number
+of days included in analysis on outcomes. Two participants
+(1 ACLR and 1 Healthy) only completed four, instead of five,
+days of data collection due to sensor failure. Therefore, we
+tested a range of 1 – 5 days to ensure that findings are insen-
+sitive to variability in participant monitoring time. Second, a
+linear mixed effects model with fixed effects for group and day
+type was used to determine the influence of day type. Next,
+a linear mixed-effects model, with group and walking-bout
+length serving as fixed effects, was used to assess how these
+outcomes changed with walking-bout length. Walking bouts
+were grouped into clusters by bout length including 5-10,
+
+--- PAGE 4 ---
+770 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 34, 2026
+Fig. 2. Pairwise Post Hoc Comparisons. Patients post-ACLR walked with longer gait-cycle and double-support times and shorter single-support
+times in daily life compared to the laboratory. Patients walked similarly to healthy participants in laboratory conditions, but not during daily life. A
+dagger denotes statistical significance for post hoc pair wise comparisons related to hypothesis 1 (i.e., differences across environments for ACLR
+patients only). An asterisk denotes statistical significance for post hoc pair wise comparisons related to hypothesis 2 (i.e., differences between
+groups, across environments). All symbols to denote significance indicate p < 0.017. Plus sign markers denote outliers. The large bars represent
+the min-max range of the box plot (Q1 - 1.5* Interquartile range (IQR) to Q3 + 1.5*IQR). Circles within the box plots denote mean, while horizontal
+bars denote median. The top three plots focus on the three primary outcomes, while the bottom ones on related secondary outcomes.
+10-20, 20-40, 40-80, 80-150, and 150+ gait cycles. For
+all three models, we used a Box-Cox correction to over-
+come any non-normality in all the models. Where differences
+were observed in our mixed model, we completed pairwise
+comparisons with Bonferroni correction for multiple com-
+parisons. Last, we used a t-test to determine which group
+(ACLR, healthy) was more active, where activity was defined
+as the total cycles analyzed per day, and a two-way RM
+ANOVA to determine if walking-bout duration histograms
+for each group were significantly different, hypothesizing
+that ACLR patients are less active and walk in shorter
+bouts.
+All the summary statistics in the tables of the Results section
+and the abstract are reported as means and standard devia-
+tions since the data were normally distributed (Shapiro-Wilk’s
+p > 0.99).
+III. RESULTS
+Patients post-ACLR walked with greater gait-cycle and
+double-support times in daily life compared to the laboratory
+(p < 0.017; Figure 2; Table III). Limp also trended toward
+being greater in daily life compared to the laboratory (p <
+0.05), but after Bonferroni correction these differences were
+not significant (p > 0.017). Similarly, secondary outcomes
+trended toward differences across environments, except for
+single-support time, which is well correlated with double-
+support time, these differences were either not statistically
+or not practically significant. All the tests were sufficiently
+powered to detect differences if they existed, with post-hoc
+power analyses revealing that group sample sizes of 6 or fewer
+were sufficient (Table III). These statistically significant differ-
+ences were greater than the error of IMU-reported outcomes
+compared to ground-truth optical motion capture (Table II).
+Patients post-ACLR walked similarly to healthy participants
+in the laboratory, but not in daily life, where they walked
+with longer gait-cycle and double-support time and shorter
+single-support time (Figure 2). Single-support asymmetry was
+also higher in ACLR patients than in healthy participants
+during daily life. The statistically significant differences were
+larger than the error of IMU parameters compared to optical
+motion capture (Table II). No other significant differences
+were observed. While some of the tests were underpowered
+(Table IV), the observed effect sizes indicate that even if
+these tests were sufficiently powered, the differences would not
+be practically significant. For example, step-time asymmetry
+differences of 1% between the two populations are lower than
+the accuracy of the IMU-based estimation (Table II), and
+therefore powering the experiment with the required sample
+(Table IV) may not be sensible.
+
+--- PAGE 5 ---
+PAROLA et al.: LABORATORY ENVIRONMENTS MASK GAIT DIFFERENCES BETWEEN HEALTHY PARTICIPANTS AND PATIENTS 771
+TABLE II
+PRACTICAL SIGNIFICANCE OF DETECTED DIFFERENCES
+Fig. 3. Walking Bout Differences between Groups. A) Healthy participants completed more gait cycles per day than ACLR patients. The total gait
+cycle count only includes gait cycles belonging to walking bouts with 5 or more gait cycles. B) All participants walked predominantly with bouts of
+5 – 10 gait cycles. Healthy participants, however, walked with longer bouts more often than ACLR patients. C) Double-support and single-support
+time (as % of gait-cycle time) remained unchanged across walking bout length. Gait-cycle time and single-support asymmetry decreased with
+walking bout length. Differences between healthy participants and ACLR patients persisted regardless of walking-bout length for all parameters.
+Single-support asymmetry is reported as a percentage representing the ratio of short single-support time over long single-support time per gait
+cycle. Plus sign markers denote outliers. The large bars represent the min-max range of the box plot (Q1 - 1.5* Interquartile range (IQR) to Q3 +
+1.5* IQR). Circles within the box plots denote mean while horizontal bars denote median.
+ACLR patients were less active and walked in shorter bouts
+compared to healthy participants during daily life. Healthy
+participants completed 935 more gait cycles per day than
+ACLR patients (p = 0.016)(Figure 3A). Both participant
+groups walked in predominantly short walking bouts (Cohen’s
+f = 3.716, p <0.001), but healthy participants had a higher
+portion of long bouts compared to ACLR participants (Cohen’s
+f = 0.670, p = 0.004) (Figure 3B). Differences between
+ACLR and healthy participants persisted across walking-bout
+lengths for the following parameters: gait-cycle time (Cohen’s
+
+--- PAGE 6 ---
+772 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 34, 2026
+Fig. 4. Temporal Parameter Sensitivity to Day Type and Number. No significant differences were observed in any outcome when varying the
+number of days included in our analysis or selecting for weekday (WD) or weekend (WE) data. Asymmetry parameters are reported as a percentage
+representing the ratio of short parameter time to long parameter time per gait cycle. Plus sign markers denote outliers. The large bars represent
+the min-max range of the box plot (Q1 - 1.5* Interquartile range (IQR) to Q3 + 1.5* IQR). Circles within the box plots denote mean while horizontal
+bars denote median.
+f = 1.07, p = 0.003), double-support time (Cohen’s f =
+0.87, p = 0.004), single-support time (Cohen’s f = 1.07,
+p = 0.003), and single-support asymmetry (Cohen’s f =
+2.217, p < 0.001) (Figure 3C). Gait-cycle time (Cohen’s f
+= 0.707, p < 0.001) and single-support asymmetry (Cohen’s f
+= 2.23, p < 0.001) decreased with increasing walking bout
+length. Pairwise comparisons revealed that gait-cycle time
+only decreases with increasing walking bout length in healthy
+participants (Figure 3). The type of day (weekday or weekend)
+or number of days included in the analysis did not influence
+the outcomes(Figure 4).
+IV. DISCUSSION
+This study suggests that a gait laboratory may not be the
+ideal environment to study post-ACLR gait and the impact it
+may have on long-term patient outcomes, especially PTOA.
+We found that patients following ACLR walk with longer
+gait-cycle times and rely more on double support in daily
+life compared to the laboratory. Interestingly, we also found
+that these patients walk similarly to healthy participants in the
+laboratory, but not in daily life, where they walk with longer
+gait-cycle time, longer double-support time, shorter single-
+support time, and greater single-support asymmetry. While
+we did not study the factors that make the gait laboratory
+not an ideal environment to capture free-living behavior, on
+their own, these findings provide initial evidence that the
+laboratory environment masks gait differences between healthy
+participants and ACLR patients and suggests that the move
+to natural-environment biomechanics holds new promise in
+expanding our understanding of post-surgical gait.
+When interpreting these findings, it is important to consider
+the following characteristics of the study. First, healthy and
+ACLR groups were not age-matched. Gait matures by the
+age of seven [30], however, and prior work indicates that
+young adults and adolescents walk similarly in the context
+of temporal and asymmetry outcomes [31], [32]. Second,
+participants were tasked with applying the IMUs themselves
+each morning during the remote monitoring component of
+the study and no sensor-to-body calibration was implemented
+before extracting temporal parameters from the sagittal plane
+angular velocity data. While participants were provided visual
+aids through an app to optimize sensor alignment, human
+error is always a possibility. While validation of IMU-based
+daily-life outcomes is difficult to achieve, we report lab-based
+mean-absolute errors. Further, an independent analysis by our
+research group revealed that calibration of IMUs had no sig-
+nificant impact on temporal gait outcomes extracted with this
+approach when participants placed sensors by themselves. The
+effect of minor sensor misalignment seems to be significant on
+range of motion outcomes, but not on the temporal parameters
+reported here. A third limitation is the variable terrain in daily
+life compared to the laboratory. While we cannot conclude
+
+--- PAGE 7 ---
+PAROLA et al.: LABORATORY ENVIRONMENTS MASK GAIT DIFFERENCES BETWEEN HEALTHY PARTICIPANTS AND PATIENTS 773
+TABLE III
+HYPOTHESIS 1 TESTING AND POST-HOC POWER ANALYSES
+with certainty the reason behind the differences between the
+laboratory and daily life outcomes, it suffices to know that
+the laboratory is not a realistic representation of natural
+environment gait. Although we could not control terrain, dif-
+ferences between patients and healthy participants were more
+pronounced in daily life than in the laboratory. We currently
+have no reason to believe that ACLR patients are moving in
+more challenging terrains than healthy participants. Fourth, a
+post-hoc power analysis for the second hypothesis revealed
+that limp and step time asymmetry required a larger sample
+size to help in rejecting the null. Yet, the observed differences
+between these parameters are lower than the accuracy with
+which these parameters can be estimated using IMUs (i.e.,
+lower than the minimal detectable difference). It may therefore
+not be sensible to power a study for such small effect sizes
+that are competing with the accuracy of the measurement
+technology, at least until algorithmic advancements in IMU-
+based motion tracking match or surpass marker-based motion
+tracking. Last, previous work has demonstrated that recovery
+characteristics, such as quadriceps strength, may influence
+gait following ACLR. For example, it has been reported
+that patients with good quadriceps strength walk similarly
+to healthy adults, while those with weak quadriceps do not
+[33]. Clustering all ACLR recovery phenotypes into a single
+population is therefore not ideal, and modern data science tools
+such as cluster analysis and larger datasets will play a critical
+role in refining future analyses and insights.
+Although previously unreported, the finding that ACLR
+patients walk differently in daily life than in the laboratory
+builds on the general consensus that the gait laboratory is
+not the ideal environment to study gait. Longitudinal gait
+analysis studies have reported that abnormal gait following
+surgery resolves over time [19], [34]. Laboratory studies
+report that temporal asymmetries resolve as early as three
+months following ACLR and that temporal parameters of
+gait do not differ between healthy and ACLR participants
+[19], [35], [36]. Our research corroborates these laboratory
+findings, observing no difference in temporal parameters of
+gait between ACLR and healthy participants in the laboratory
+(Figure 2). The differences we observed in temporal parame-
+ters between groups in daily life, however, suggest that what
+is observed in the laboratory may not be representative of
+movement patterns in daily life. This effect is mirrored in
+previous work in older adults [8], [10], [11], patients with
+Parkinson’s disease [9] and multiple sclerosis [37]. Gait lab
+studies assess what is clinically known as a patient’s capacity,
+which improves over time, but likely not daily life performance
+in their usual environment [38]. Functionally, a patient may
+have recovered enough to be able to walk symmetrically
+when asked to do so in a laboratory study, but they may
+still be adopting pain-avoidance strategies in daily life. Our
+results, together with the growing body of evidence in other
+clinical populations, therefore, call into question our existing
+understanding of gait recovery timelines, which have largely
+been informed by laboratory-based assessment and highlight
+the need for remote assessments to address the gait lab
+effect.
+Additionally, the distraction-free laboratory environment
+may prompt patients to focus more on their perceived gait
+performance than in daily life. Typical laboratory data col-
+lection focuses on a single task, and the lab is devoid of
+any distractions, allowing participants to focus on walking
+alone. Gait in daily life, however, is rarely carried out in
+distraction-free environments. Previous work has demonstrated
+that patients following ACLR walk differently during dual-
+task compared to single-task walking [39]. Further, dual-task
+gait has been shown to be more correlated with daily life
+gait than single-task gait in older adults [6]. Gait features
+such as walking speed, knee joint underloading, and asym-
+metry have been shown to be indicative of long-term health
+outcomes and associated with poorer joint health following
+surgery [20], [40], [41], [42]. Distraction-free laboratory gait
+may inadvertently cause a participant to mask compensatory
+gait strategies in the laboratory. Therefore, remote monitoring
+could be the key to understanding the relationship between
+gait adaptation following ACLR surgery and long-term joint
+health.
+As we move the study of gait to daily life, work that estab-
+lishes direct correspondence between natural-environment and
+laboratory outcomes will be necessary to help place future
+findings in context with an extensive and valuable body
+of prior work. Here, we not only established how patients
+following ACLR move across different environments but
+examined these differences in relation to the precision
+that characterizes them (i.e., minimal detectable difference)
+
+--- PAGE 8 ---
+774 IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING, VOL. 34, 2026
+TABLE IV
+HYPOTHESIS 2 RM ANOVA RESULTS AND POST-HOC POWER ANALYSIS
+(Table II). While a few prior studies focusing on older adults
+[8], [10], [11] and patients with Parkinson’s disease [9]
+and multiple sclerosis [37] have started to report differences
+between laboratory and daily-life gait, these deviations are dif-
+ferent across populations and, most importantly, the accuracy
+with which a gait parameter can be captured with IMUs may
+also vary across populations.
+The variability of bout length during daily-life gait may
+provide important information about post-ACLR gait that can-
+not be identified through laboratory gait assessments. Patients
+following ACLR were more sedentary and completed fewer
+long walking bouts per day than healthy participants, aligning
+with previous findings in ACLR patients (Figure 3) [43].
+All participants in our study spent the majority of their
+day in shorter walking bouts, which is commonly seen in
+other populations [9], [37], [44], [45], [46]. Contradictory
+evidence has suggested that either long or short walking
+bouts are better suited for detecting differences between
+patients with Parkinson’s disease and older adults [9], [46].
+In our analysis, differences between groups persisted regard-
+less of walking bout length (Figure 3). While gait-cycle
+time and single-support asymmetry decreased with increasing
+walking bout length, paired analyses revealed this gait-cycle
+time reduction was only observed in healthy participants.
+Population-specific gait changes with bout length have been
+identified in Parkinson’s and OA gait, but detecting these
+compensatory adaptations requires datasets that capture the
+variability of bout length observed in daily life [9], [47]. While
+longer walking bouts may be more similar to typical laboratory
+gait trials, walking bouts of 30 seconds or less are reported to
+make up 60% of our daily activity [45]. These bouts bear
+clinical significance because they contribute to cumulative
+joint loading and excluding them would not be sensible in
+studies of orthopaedic populations.
+Altogether, this work provides initial support for the use of
+multi-sensor protocols in remote patient monitoring following
+ACLR surgery. Ubiquitous monitoring after surgery could
+close the loop between research and clinical practice by
+granting researchers access to larger and more realistic datasets
+than they have been able to access to date in traditional
+laboratories and by allowing clinicians to easily incorporate
+the new insights drawn from these data into clinical practice.
+Even if traditional laboratory studies identified the gait patterns
+leading to poor recovery and eventual osteoarthritis, the gap
+between research and clinical practice would remain wide
+because traditional gait analysis is too expensive and time-
+consuming for implementation in clinics. Wearables are one
+of the few tools in the history of biomechanics that both
+researchers and clinicians are embracing with similar enthusi-
+asm and hope for tangible impact.
+ACKNOWLEDGMENT
+The authors thank orthopaedic surgeon Sam Akhavan, MD
+for lending his clinical expertise and Eric Rapp, MS for
+pilot experiments and initial implementation of the IMU-
+based outcomes that informed this work. Additionally, they
+thank the MC10 team—acquired by Medidata Solutions, a
+Dassault Systèmes company—for their kind support with the
+BioStamp nPoint system and digital platform used for remote
+data collection.
+REFERENCES
+[1] T. G. Pickering, W. Gerin, and A. R. Schwartz, “What is the white-coat
+effect and how should it be measured?,” Blood Pressure Monitor., vol. 7,
+no. 6, pp. 293–300, Dec. 2002.
+[2] J. McCambridge, J. Witton, and D. R. Elbourne, “Systematic review
+of the Hawthorne effect: New concepts are needed to study research
+participation effects,” J. Clin. Epidemiol., vol. 67, no. 3, pp. 267–277,
+Mar. 2014, doi: 10.1016/j.jclinepi.2013.08.015.
+[3] K. B. Friesen, Z. Zhang, P. G. Monaghan, G. D. Oliver, and J. A. Roper,
+“All eyes on you: How researcher presence changes the way you walk,”
+Sci. Rep., vol. 10, no. 1, Oct. 2020, Art. no. 1, doi: 10.1038/s41598-
+020-73734-5.
+[4] J. Jeon et al., “Influence of the Hawthorne effect on spatiotemporal
+parameters, kinematics, ground reaction force, and the symme-
+try of the dominant and nondominant lower limbs during gait,”
+J. Biomechanics, vol. 152, May 2023, Art. no. 111555, doi: 10.1016/
+j.jbiomech.2023.111555.
+[5] L. A. Hutchinson, M. J. Brown, K. J. Deluzio, and A. R. De Asha, “Self-
+selected walking speed increases when individuals are aware of being
+recorded,” Gait Posture, vol. 68, pp. 78–80, Feb. 2019, doi: 10.1016/
+j.gaitpost.2018.11.016.
+[6] C. Malchow and G. Fiedler, “Effect of observation on lower
+limb prosthesis gait biomechanics: Preliminary results,” Prosthetics
+Orthotics Int., vol. 40, no. 6, pp. 739–743, Dec. 2016, doi: 10.1177/
+0309364615605374.
+[7] M. M. Ardestani and T. G. Hornby, “Effect of investigator observation on
+gait parameters in individuals with stroke,” J. Biomechanics, vol. 100,
+Feb. 2020, Art. no. 109602, doi: 10.1016/j.jbiomech.2020.109602.
+
+--- PAGE 9 ---
+PAROLA et al.: LABORATORY ENVIRONMENTS MASK GAIT DIFFERENCES BETWEEN HEALTHY PARTICIPANTS AND PATIENTS 775
+[8] M. A. Brodie et al., “Comparison between clinical gait and daily-
+life gait assessments of fall risk in older people,” Geriatrics Gerontol.
+Int., vol. 17, no. 11, pp. 2274–2282, Nov. 2017, doi: 10.1111/ggi.
+12979.
+[9] S. Del Din, A. Godfrey, B. Galna, S. Lord, and L. Rochester,
+“Free-living gait characteristics in ageing and Parkinson’s disease:
+Impact of environment and ambulatory bout length,” J. NeuroEng.
+Rehabil., vol. 13, no. 1, p. 46, May 2016, doi: 10.1186/s12984-016-
+0154-5.
+[10] I. Hillel et al., “Is every-day walking in older adults more analogous
+to dual-task walking or to usual walking? Elucidating the gaps between
+gait performance in the lab and during 24/7 monitoring,” Eur. Rev. Aging
+Phys. Activity, vol. 16, no. 1, p. 6, May 2019, doi: 10.1186/s11556-019-
+0214-5.
+[11] S. M. Rispens et al., “Fall-related gait characteristics on the treadmill
+and in daily life,” J. NeuroEng. Rehabil., vol. 13, no. 1, p. 12, Feb.
+2016, doi: 10.1186/s12984-016-0118-9.
+[12] E. Warmerdam et al., “Long-term unsupervised mobility assessment in
+movement disorders,” Lancet Neurol., vol. 19, no. 5, pp. 462–470, May
+2020, doi: 10.1016/s1474-4422(19)30397-7.
+[13] S. M. Bolam et al., “Remote patient monitoring with wearable sensors
+following knee arthroplasty,” Sensors, vol. 21, no. 15, p. 5143, Jul.
+2021, doi: 10.3390/s21155143.
+[14] R. D. Gurchiek et al., “Open-source remote gait analysis: A post-surgery
+patient monitoring application,” Sci. Rep., vol. 9, no. 1, Nov. 2019, Art.
+no. 1, doi: 10.1038/s41598-019-54399-1.
+[15] J. F. Hafer, J. A. Mihy, M. Wagatsuma, S. N. Miller, and S. M. Cain,
+“Variation in gait mechanics and knee osteoarthritis pain during daily
+life: A subject-specific analysis,” Osteoarthritis Cartilage, vol. 32,
+p. 173, Apr. 2024, doi: 10.1016/j.joca.2024.02.244.
+[16] J. Song et al., “Assessing physical activity in persons with knee
+osteoarthritis using accelerometers: Data from the osteoarthritis
+initiative,” Arthritis Care Res., vol. 62, no. 12, pp. 1724–1732, Dec.
+2010, doi: 10.1002/acr.20305.
+[17] K. A. Wu et al., “How do patient-reported outcomes correlate with
+real-time objective measures of function after total knee arthroplasty?
+A prospective study using daily gait metrics,” J. Arthroplasty, vol. 40,
+no. 7, pp. 1711–1718, Jul. 2025, doi: 10.1016/j.arth.2024.12.007.
+[18] T. P. Andriacchi, S. Koo, and S. F. Scanlan, “Gait mechanics influ-
+ence healthy cartilage morphology and osteoarthritis of the knee,”
+J. Bone Joint Surg., vol. 91, no. 1, pp. 95–101, Feb. 2009, doi: 10.2106/
+jbjs.h.01408.
+[19] Z. Knoll, L. Kocsis, and R. M. Kiss, “Gait patterns before and after ante-
+rior cruciate ligament reconstruction,” Knee Surgery, Sports Traumatol.,
+Arthroscopy, vol. 12, no. 1, pp. 7–14, Jan. 2004, doi: 10.1007/s00167-
+003-0440-1.
+[20] E. Wellsandt, E. S. Gardinier, K. Manal, M. J. Axe, T. S. Buchanan,
+and L. Snyder-Mackler, “Decreased knee joint loading associated with
+early knee osteoarthritis after anterior cruciate ligament injury,” Amer.
+J. Sports Med., vol. 44, no. 1, pp. 143–151, Jan. 2016, doi: 10.1177/
+0363546515608475.
+[21] S. Kabiri Ameri et al., “Graphene electronic tattoo sensors,” ACS
+Nano, vol. 11, no. 8, pp. 7634–7641, Aug. 2017, doi: 10.1021/
+acsnano.7b02182.
+[22] J. A. Rogers, “Electronics for the human body,” JAMA, vol. 313, no. 6,
+p. 561, Feb. 2015, doi: 10.1001/jama.2014.17915.
+[23] A. Leardini, Z. Sawacha, G. Paolini, S. Ingrosso, R. Nativo, and
+M. G. Benedetti, “A new anatomically based protocol for gait analysis
+in children,” Gait Posture, vol. 26, no. 4, pp. 560–571, Oct. 2007, doi:
+10.1016/j.gaitpost.2006.12.018.
+[24] P. Catalfamo, S. Ghoussayni, and D. Ewins, “Gait event detection on
+level ground and incline walking using a rate gyroscope,” Sensors,
+vol. 10, no. 6, pp. 5683–5702, Jun. 2010, doi: 10.3390/s100605683.
+[25] A. Salarian et al., “Gait assessment in Parkinson’s disease: Toward an
+ambulatory system for long-term monitoring,” IEEE Trans. Biomed.
+Eng., vol. 51, no. 8, pp. 1434–1443, Aug. 2004, doi: 10.1109/
+TBME.2004.827933.
+[26] G. Strutzenberger, L. Claußen, and H. Schwameder, “Analysis of sloped
+gait: How many steps are needed to reach steady-state walking speed
+after gait initiation?,” Gait Posture, vol. 83, pp. 167–173, Jan. 2021, doi:
+10.1016/j.gaitpost.2020.09.030.
+[27] R. A. Mann, J. L. Hagy, V. K. White, and D. Liddell, “The initiation of
+gait,” JBJS, vol. 61, no. 2, pp. 232–239, Mar. 1979.
+[28] C. A. Miller and M. C. Verstraete, “A mechanical energy analysis of
+gait initiation,” Gait Posture, vol. 9, no. 3, pp. 158–166, Jul. 1999, doi:
+10.1016/s0966-6362(99)00008-9.
+[29] M. Plotnik, R. P. Bartsch, A. Zeev, N. Giladi, and J. M. Hausdorff,
+“Effects of walking speed on asymmetry and bilateral coordination of
+gait,” Gait Posture, vol. 38, no. 4, pp. 864–869, Sep. 2013, doi: 10.1016/
+j.gaitpost.2013.04.011.
+[30] D. Sutherland, “The development of mature gait,” Gait Posture,
+vol. 6, no. 2, pp. 163–170, Oct. 1997, doi: 10.1016/s0966-6362(97)
+00029-5.
+[31] D. R. Howell, L. R. Osternig, and L.-S. Chou, “Consistency and cost
+of dual-task gait balance measure in healthy adolescents and young
+adults,” Gait Posture, vol. 49, pp. 176–180, Sep. 2016, doi: 10.1016/
+j.gaitpost.2016.07.008.
+[32] A. Casabona, M. S. Valle, G. R. A. Mangano, and M. Cioni, “Identifying
+the effects of age and speed on whole-body gait symmetry by using a
+single wearable sensor,” Sensors, vol. 22, no. 13, p. 5001, Jan. 2022,
+doi: 10.3390/s22135001.
+[33] M. Lewek, K. Rudolph, M. Axe, and L. Snyder-Mackler, “The effect of
+insufficient quadriceps strength on gait after anterior cruciate ligament
+reconstruction,” Clin. Biomechanics, vol. 17, no. 1, pp. 56–63, Jan.
+2002, doi: 10.1016/s0268-0033(01)00097-3.
+[34] B. D. Roewer, S. L. Di Stasi, and L. Snyder-Mackler, “Quadriceps
+strength and weight acceptance strategies continue to improve two
+years after anterior cruciate ligament reconstruction,” J. Biome-
+chanics, vol. 44, no. 10, pp. 1948–1953, Jul. 2011, doi: 10.1016/
+j.jbiomech.2011.04.037.
+[35] S. J. Minning, G. D. Myer, R. E. Mangine, M. Eifert-Mangine, and
+A. J. Colosimo, “Serial assessments to determine normalization of gait
+following anterior cruciate ligament reconstruction,” Scandin. J. Med.
+Sci. Sports, vol. 19, no. 4, pp. 569–575, Aug. 2009, doi: 10.1111/j.1600-
+0838.2008.00818.x.
+[36] G. Leporace et al., “Use of spatiotemporal gait parameters to deter-
+mine return to sports after acl reconstruction,” Acta Ortopédica
+Brasileira, vol. 24, no. 2, pp. 73–76, Apr. 2016, doi: 10.1590/1413-
+785220162402147450.
+[37] F. A. Storm, K. P. S. Nair, A. J. Clarke, J. M. Van der Meulen, and
+C. Mazzà, “Free-living and laboratory gait characteristics in patients
+with multiple sclerosis,” PLoS ONE, vol. 13, no. 5, May 2018, Art. no.
+e0196463, doi: 10.1371/journal.pone.0196463.
+[38] ICF Beginner’s Guide: Towards a Common Language for Functioning,
+Disability and Health. Accessed: Jun. 26, 2025. [Online]. Available:
+https://www.who.int/publications/m/item/icf-beginner-s-guide-towards-
+a-common-language-for-functioning-disability-and-health
+[39] H. Shi et al., “Effect of dual task on gait asymmetry in
+patients after anterior cruciate ligament reconstruction,” Sci. Rep.,
+vol. 8, no. 1, Aug. 2018, Art. no. 1, doi: 10.1038/s41598-018-
+30459-w.
+[40] B. Pietrosimone et al., “Walking gait asymmetries 6 months fol-
+lowing anterior cruciate ligament reconstruction predict 12-month
+patient-reported outcomes,” J. Orthopaedic Res., vol. 36, no. 11,
+pp. 2932–2940, Nov. 2018, doi: 10.1002/jor.24056.
+[41] B. Pietrosimone et al., “Walking speed as a potential indicator of car-
+tilage breakdown following anterior cruciate ligament reconstruction,”
+Arthritis Care Res., vol. 68, no. 6, pp. 793–800, Jun. 2016, doi: 10.1002/
+acr.22773.
+[42] J. J. Capin et al., “Slower walking speed is related to early
+femoral trochlear cartilage degradation after ACL reconstruction,”
+J. Orthopaedic Res., vol. 38, no. 3, pp. 645–652, Mar. 2020, doi:
+10.1002/jor.24503.
+[43] R. D. Gurchiek, N. Cheney, and R. S. McGinnis, “Estimating biome-
+chanical time-series with wearable sensors: A systematic review of
+machine learning techniques,” Sensors, vol. 19, no. 23, p. 5227, Nov.
+2019, doi: 10.3390/s19235227.
+[44] B. M. Meyer et al., “Open-source dataset reveals relationship
+between walking bout duration and fall risk classification perfor-
+mance in persons with multiple sclerosis,” PLOS Digit. Health,
+vol. 1, no. 10, Oct. 2022, Art. no. e0000120, doi: 10.1371/journal.pdig.
+0000120.
+[45] M. S. Orendurff, “How humans walk: Bout duration, steps per bout, and
+rest duration,” J. Rehabil. Res. Develop., vol. 45, no. 7, pp. 1077–1090,
+Dec. 2008, doi: 10.1682/jrrd.2007.11.0197.
+[46] V. V. Shah et al., “Laboratory versus daily life gait characteristics
+in patients with multiple sclerosis, Parkinson’s disease, and matched
+controls,” J. NeuroEng. Rehabil., vol. 17, no. 1, p. 159, Dec. 2020, doi:
+10.1186/s12984-020-00781-4.
+[47] V. V. Shah et al., “Effect of bout length on gait measures
+in people with and without Parkinson’s disease during daily
+life,” Sensors, vol. 20, no. 20, p. 5769, Oct. 2020, doi: 10.3390/
+s20205769.
+
+--- PAGE 10 ---

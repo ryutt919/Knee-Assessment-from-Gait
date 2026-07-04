@@ -1,0 +1,623 @@
+
+--- PAGE 1 ---
+Gait Patterns Differ Between ACL-Reconstructed Athletes Who
+Pass Return-to-Sport Criteria and Those Who Fail
+Stephanie L. Di Stasi, PT, PhD, OCS*,†, David Logerstedt, PT, PhD, MPT, SCS‡,§, Emily S.
+Gardinier, MS§,║, and Lynn Snyder-Mackler, PT, ScD, SCS, ATC, FAPTA‡,§,║
+†Sports Health & Performance Institute, The Ohio State University Sports Medicine, Columbus,
+Ohio.
+‡Department of Physical Therapy, College of Health Sciences, Newark, Delaware.
+§Delaware Rehabilitation Institute, Newark, Delaware.
+║Biomechanics and Movement Science Program, University of Delaware, Newark, Delaware.
+Abstract
+Background—The current standard of practice for an athlete to return to sport after anterior
+cruciate ligament (ACL) reconstruction is varied. Attempt to return to activity is typically advised
+6 months after surgery, but functional performance deficits and gait abnormalities are often still
+evident and may have important implications on future function.
+Hypothesis—When comparing the involved and uninvolved limbs, patients who failed return-
+to-sport (RTS) criteria would demonstrate (1) smaller peak knee angles, extensor moments, and
+peak power absorption at the knee of the involved limb and (2) larger peak hip angles, extensor
+moments, and peak power generation of the involved limb.
+Study Design—Controlled laboratory study.
+Methods—A total of 42 patients completed functional and biomechanical gait assessment 6
+months after ACL reconstruction. Functional testing involved an isometric quadriceps strength
+test, 4 single-legged hop tests, and 2 self-report questionnaires. Three-dimensional motion analysis
+was used to measure sagittal plane kinematics and kinetics of the hip and knee. A mixed-model
+analysis of variance and post hoc t tests were used to compare the limb symmetry of those who
+passed and those who did not pass RTS criteria. Minimal clinically important differences were
+calculated from healthy gait data and used to further define meaningful limb asymmetries.
+Results—Twenty of the 42 (48%) patients passed RTS criteria 6 months after ACL
+reconstruction. Patients who did not pass the criteria demonstrated statistically significant
+differences between limbs on all kinematic and kinetic variables at the knee (P ≤ .027). Clinically
+meaningful asymmetries at the hip were also identified in this group. Only kinetic asymmetries at
+the knee were identified in the patients who passed RTS criteria.
+Conclusion—Athletes who demonstrate superior functional performance 6 months after ACL
+reconstruction may have fewer abnormal and asymmetrical gait behaviors than their poorer
+performing counterparts. Patients who did not pass RTS criteria not only demonstrated larger
+kinematic and kinetic asymmetries between limbs but also appeared to use a gait strategy more
+closely aligned with athletes early after ACL rupture.
+© 2013 The Author(s)
+*
+Address correspondence to Stephanie L. Di Stasi, PT, PhD, OCS, The Ohio State University Sports Medicine, Sports Health &
+Performance Institute, 2050 Kenny Road, Suite 3100, Columbus, OH 43221 (sldistasi@gmail.com).
+Investigation performed at the Physical Therapy Clinic and Motion Analysis Laboratory, University of Delaware, Newark, Delaware
+NIH Public Access
+Author Manuscript
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+Published in final edited form as:
+Am J Sports Med. 2013 June ; 41(6): 1310–1318. doi:10.1177/0363546513482718.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 2 ---
+Clinical Relevance—Poor performance on a battery of functional performance measures may
+be related to the presence of movement asymmetries in athletes after ACL reconstruction.
+Objective RTS criteria have the potential to provide information to clinicians who determine when
+these athletes return to activity, and may aid in the prescription of targeted rehabilitation to
+address underlying movement asymmetry.
+Keywords
+ACL reconstruction; return to sport; function; gait mechanics; noncopers
+Anterior cruciate ligament (ACL) ruptures often result in significant disability, both in
+activities of daily living and in sports. Because of recurrent episodes of knee instability, the
+majority of athletes who tear their ACL have difficulty resuming high-level activity without
+surgery.8 These patients are classified as noncopers14 and demonstrate aberrant and
+ineffective gait behaviors acutely after injury.39,40 In an attempt to protect the injured knee
+against repeated instability during daily activities, noncopers often employ an active knee-
+stiffening strategy, evidenced by truncated knee motion, lower knee extensor moments, and
+lower knee power absorption.2,39–41 Consequently, noncopers alter the neuromuscular
+behavior at the hip by way of increased joint extensor moments and increased hip power
+absorption.39 These maladaptations are also known to persist in spite of ACL
+reconstruction.17,38
+With estimates of reinjury nearing 1 in 5 ACL-reconstructed athletes25,37,43 and the highest
+risk of reinjury within the first 7 months after surgery,25 there is legitimate concern over the
+criteria that define return-to-sport (RTS) “readiness.’” Often, medical clearance for return to
+activity occurs within 6 months after ACL reconstruction.24,29,49 Recent literature has
+challenged the emphasis for return to activity based on time alone,31 and many groups have
+advocated the use of objective criteria to inform clinical decision making.18,46 Adequate
+strength symmetry and performance on functional tests have been suggested as markers by
+which clearance for activity should be measured.12,13,24,32,33,42,46 Specifically, a battery of
+tests and measures, including quadriceps strength testing, 4 single-legged hop tests, and 2
+self-report questionnaires, have been utilized to aid the objective determination of RTS
+readiness after ACL injury14 and reconstruction.18 By these standards, fewer than half of
+athletes who are classified as noncopers before surgery pass these criteria 6 months after
+ACL reconstruction.18
+While the implications of poor clinical performance on RTS success after ACL
+reconstruction are clear, far less is known about the influence of abnormal movement
+patterns. Movement asymmetries in this population are nearly ubiquitous after ACL injury
+and reconstruction and have been reported to exist up to 2 years after ACL
+reconstruction.15–17,36–38 There is currently no evidence that establishes a link between
+movement asymmetries and poorer functional ability in ACL-reconstructed athletes;
+however, movement asymmetries are implicated in both the development of
+osteoarthritis3,47 and the predisposition for a second catastrophic injury.37 Specifically,
+abnormal joint motion has been suggested to be an instigating factor in the development of
+osteoarthritis in the ACL-injured knee.3,6
+The first several months after ACL reconstruction appear to be a time of great vulnerability
+for athletes attempting to return to their previous level of activity. Not only are functional
+performance deficits4,18 and movement asymmetries9,17,37,38 commonplace, but the risk of
+reinjury is also the highest during this time frame.25 Athletes with multiplanar
+biomechanical asymmetries at the hip and knee 1 year after ACL reconstruction are at least
+3 times more likely to suffer a second ACL injury than those without these asymmetries.37
+Di Stasi et al. Page 2
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 3 ---
+Establishing a link between performance on clinical tests and movement asymmetries
+identified in a motion analysis laboratory could reduce the need for expensive
+biomechanical analyses and provide clinicians a surrogate, multipurpose assessment tool to
+inform critical RTS decision making.
+To date, no studies have evaluated whether functional deficits and movement asymmetry
+coincide in ACL-reconstructed athletes. Therefore, the purpose of this study was to compare
+the gait characteristics of athletes who pass and athletes who do not pass RTS criteria 6
+months after ACL reconstruction. We hypothesized that only the noncopers who failed RTS
+criteria would demonstrate asymmetrical hip and knee mechanics. Specifically, we
+hypothesized that only the noncopers who failed RTS criteria would demonstrate (1) smaller
+peak knee angles, extensor moments, and peak absorption at the knee of the involved limb
+and (2) larger peak hip angles, extensor moments, and peak power generation of the
+involved limb.
+MATERIALS AND METHODS
+Forty-two athletes (30 male, 12 female; mean age, 29.3 ± 10.8 years) classified as
+noncopers, using a validated ACL-deficient screening examination (Table 1),13 completed a
+functional and biomechanical gait assessment 6 months after ACL reconstruction. All
+patients were between the ages of 14 and 50 years; had participated regularly (≥50 h/y) in
+cutting, jumping, and pivoting activities before their index injury; and had sustained a
+unilateral ACL rupture within 7 months of their initial clinical evaluation. An ACL rupture
+was confirmed by magnetic resonance imaging and clinical examination findings. Patients
+with symptomatic meniscal tears, large osteochondral defects (>1 cm2), or associated grade
+III ligament strains were excluded. Ligament reconstruction was performed using a soft
+tissue allograft or a semitendinosus/gracilis autograft by a single orthopaedic surgeon. Each
+patient underwent a supervised, progressive postoperative rehabilitation protocol that
+focused on the resolution of joint effusion, range of motion deficits, quadriceps strength
+impairments, and functional limitations.1
+Patients returned for functional testing and biomechanical gait analysis 6 months after
+surgery. Quadriceps strength index, performance on 4 single-legged hop tests, and scores
+from 2 self-report questionnaires, the Knee Outcome Survey–Activities of Daily Living
+Scale22 and the Global Rating Scale for Perceived Function,20 were used to determine
+whether athletes passed or failed RTS testing.18 Limb symmetry indexes were primarily
+calculated by dividing the performance of the involved limb by the performance of the
+uninvolved limb; in the case of the timed 6-m hop test, the performance of the uninvolved
+limb was divided by the performance of the involved limb. To pass RTS criteria, patients
+had to achieve at least 90% on each of the functional tests and measures (Table 1). Patients
+who demonstrated performance scores below the cutoff value on 1 or more of these tests did
+not pass RTS criteria.
+Motion analysis was performed using a passive 8-camera system (120 Hz) (VICON, Oxford
+Metrics Ltd, London, United Kingdom) and an embedded 6-component force plate (1080
+Hz) (Bertec Corp, Worthington, Ohio). Retroreflective markers were secured to the
+anatomic landmarks of the foot, ankle, shank, thighs, and pelvis of each patient to determine
+joint centers and segment pose; this marker set has been previously shown to have excellent
+intersession reliability.10 Rigid shell clusters were secured to the pelvis and distal-lateral
+aspect of the shanks and thighs to track segment motion during gait. Patients were instructed
+to walk at their self-selected speed through the capture volume over the embedded force
+place. Speed was monitored for consistency (±5%) using 2 infrared photocells placed 2.865
+Di Stasi et al. Page 3
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 4 ---
+m apart. Gait trials were accepted if the patient maintained a consistent speed, avoided
+visual targeting of the force plate, and made isolated foot contact.
+Data reduction was completed on 5 successful walking trials for each limb using custom
+LabVIEW (National Instruments, Austin, Texas) and Visual3D coding (C-Motion Inc,
+Germantown, Maryland). Kinematic and kinetic data were low pass filtered at 6 Hz and 40
+Hz, respectively. Initial contact and end of stance were identified using a 50-N force plate
+threshold, and all trials were normalized to 100% of the stance phase and then ensemble-
+averaged before kinematic and kinetic data calculations. Joint angles were calculated using
+rigid body analysis with Euler angles, and internal joint moments and joint powers were
+calculated using inverse dynamics. Hip and knee kinematics and kinetics in the sagittal
+plane were examined from initial contact to peak knee flexion during the stance phase.
+A mixed-model analysis of variance (ANOVA) was used to compare the limb symmetry of
+those who passed RTS criteria (“PASS”) and those who did not pass (“FAIL”). Where
+significant interactions were found, post hoc paired and independent t tests were used to
+evaluate the limb symmetry within each group and group differences, respectively. A priori
+significance level was set at .05. To identify whether clinically meaningful asymmetries or
+group differences coincided with statistically important differences, effect sizes (ES) were
+calculated when the limb asymmetries or limb differences between groups met or exceeded
+the minimal clinically important difference (MCID) values. Data collected from 10
+uninjured athletes were used to determine the MCID between limbs for joint angles (knee
+and hip: 3°) and moments (knee: 0.04 Nm/kgm; hip: 0.06 Nm/ kg.m).11 Effect sizes were
+interpreted as small (0.2), medium (0.5), or large (0.8).7 This study was approved by the
+university’s review board. All patients provided written informed consent before their
+participation.
+RESULTS
+Twenty of the 42 (48%) patients passed RTS criteria 6 months after ACL reconstruction.
+There was no difference between the percentage of female patients (30%) and male patients
+(53%) who passed RTS criteria (P = .315), and mean gait speed did not differ between
+groups (PASS: 1.52 ± 0.11 m/s; FAIL: 1.57 ± 0.12 m/s; P = .143). Patients who failed RTS
+criteria were older, had a longer time period from injury to surgery, demonstrated lower
+strength and hop symmetry indexes, and reported poorer daily function when compared with
+patients who passed RTS criteria (Table 2).
+Joint Angles at Initial Contact and Peak Knee Flexion
+There was no significant limb × group interaction for the knee flexion angle at initial contact
+(P = .057). Only the FAIL group demonstrated a larger flexion angle on the uninvolved limb
+compared with the involved limb (P = .027), although this difference was not clinically
+meaningful (Figure 1 and Table 3). No limb × group interaction was found for hip flexion
+angle at initial contact (P = .368).
+A significant limb × group interaction was found for knee flexion angle at peak knee flexion
+(P = .023). Both the PASS (P = .012) and FAIL groups (P < .001) had a smaller peak knee
+flexion angle on the involved limb when compared with the uninvolved limb, but only the
+FAIL group demonstrated limb asymmetry that was clinically meaningful (ES = 1.06)
+(Table 3). There was no significant limb × group interaction for hip flexion angle at peak
+knee flexion (P = .243). A main effect of limb was identified (P < .001); however, only the
+FAIL group demonstrated clinically meaningful asymmetry between limbs (ES = 0.48).
+Di Stasi et al. Page 4
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 5 ---
+Joint Moments at Peak Knee Flexion
+A significant limb × group interaction was found for internal knee extensor moment (P = .
+030). Both the PASS and FAIL groups demonstrated smaller knee extensor moments on the
+involved limb compared with the uninvolved limb (P < .001), but the magnitude of the limb
+asymmetry was greater in the patients who failed RTS criteria than in those who passed
+(Table 3). There were no statistically significant interactions or main effects found for
+internal hip extensor moment (P ≥ .587) (Table 4). Similarly, clinically meaningful limb
+differences in hip extensor moment were not found in either group.
+Peak Joint Powers During Weight Acceptance
+There was a main effect of limb for peak power absorption at the knee (P < .001), showing
+that the uninvolved knee of both groups absorbed more power during weight acceptance
+than did the involved limb (Figure 2). Peak power generation at the hip during weight
+acceptance was not different between the limbs of either group (P = .969). During the first
+5% of the stance phase, however, only patients who failed RTS criteria had opposing hip
+strategies, generating power with their involved hip and absorbing power with their
+uninvolved hip (Figure 2).
+DISCUSSION
+The purpose of this study was to compare the gait characteristics of athletes who passed
+RTS criteria and athletes who did not pass RTS criteria 6 months after ACL reconstruction.
+Our data supported our initial hypotheses that patients who did not pass RTS criteria would
+demonstrate smaller peak knee angles and lower extensor moments on the involved knee.
+Interestingly, the expected compensatory strategy of increased ipsilateral hip extensor
+moments and power absorption was not found; rather, the poorly functioning patients
+appeared to rely on an altered contralateral hip strategy while simultaneously limiting
+motion and attenuating forces about the injured knee. The functional examination used to
+determine RTS readiness in this study appears most useful in identifying athletes with
+significant gait abnormalities after ACL reconstruction.
+Patients who did not pass RTS criteria demonstrated statistically significant differences
+between limbs on all kinematic and kinetic variables at the knee. Specifically, lower peak
+knee flexion, knee extensor moment, and peak power absorption were characteristic of their
+reconstructed knee. Kinetic asymmetries at the knee were found in both groups of patients;
+however, the magnitude of knee extensor moment asymmetry in the patients who did not
+pass RTS criteria was more than twice that of the group who passed RTS criteria.
+Furthermore, knee joint motion asymmetries appeared to be characteristic of the group who
+did not pass RTS criteria. Early after injury, noncopers adopt a stiffened knee strategy by
+reducing the motion at the knee and co-contracting the supporting musculature in a likely
+attempt to avoid repeated episodes of joint instability.39 It is apparent from our data and
+from previous findings17,38 that this stiffened knee strategy can persist in athletes in spite of
+successful ligament reconstruction and may more accurately reflect the functional deficits of
+those who do not meet RTS criteria.
+The compensatory movement behaviors of ACL-injured athletes are not confined to the
+reconstructed knee. The contrasting hip strategy found between the limbs of the patients
+who did not pass RTS criteria reinforces the concept that a unilateral ACL injury can elicit a
+“bilateral kinetic response”16 by which the injured patient also adopts an altered
+neuromuscular strategy for the uninvolved limb. This contralateral hip compensation
+appears to persist even after surgery and supervised rehabilitation for some athletes. In
+addition to absorbing power in the uninvolved hip early during the stance phase, the patients
+Di Stasi et al. Page 5
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 6 ---
+who did not pass our RTS criteria appeared to “overflex” their uninvolved knee during
+weight acceptance. This specific adaptation has not previously been described in this group
+of ACL-reconstructed athletes but may be another manifestation of the aberrant contralateral
+limb–loading patterns adopted by some patients after surgery.36,37
+The hip strategy of the patients who failed RTS criteria partially supported our second
+hypothesis concerning asymmetries at the hip. While clinically meaningful limb differences
+in peak hip flexion angle and hip power were found, these asymmetries appeared to stem
+more from a compensatory strategy of the uninvolved hip rather than from an adaptation of
+the involved hip. Although not originally hypothesized, this adaptation was not totally
+unexpected. Roewer and colleagues38 also identified this strategy in noncopers 6 months
+after ACL reconstruction in which the uninvolved hip absorbed power and the involved hip
+generated power early in weight acceptance. Our findings indicate that this asymmetry may
+be specific to noncopers with poorer functional performance after ACL reconstruction and
+does not wholly define this cohort of athletes.
+The first several months after reconstruction represent a time of marked movement
+abnormalities5,9,17,37,38 often in spite of high-level sport performance.36,37 Ideally, a cluster
+of clinical tests and measures assessing the functional abilities of athletes would directly and
+robustly relate to the comparable measures of biomechanical impairments. Our data indicate
+that while performance on clinical tests and measures demonstrates some relationship with
+meaningful movement deficits and asymmetry, they may be only part of the ideal formula
+for informing RTS decision making. Neuromuscular asymmetries during dynamic
+movement may not only affect sport performance but also be highly predictive of the risk of
+a second knee injury. Paterno and colleagues37 prospectively followed 56 athletes for 1 year
+after their medical discharge to determine the biomechanical risk factors related to reinjury.
+Nearly one quarter of their patients experienced a second ACL injury. Increased knee
+abduction motion, asymmetry in internal hip rotation moment, asymmetry in knee extensor
+moments during a drop vertical jump, and deficits on single-legged postural assessment
+predicted the second injury with excellent sensitivity (92%) and specificity (88%). In a
+cohort of nearly 300 ACL-reconstructed athletes, Laboute and colleagues25 reported a nearly
+3-fold increase in an athlete’s risk of reinjury if the patient returned to activity within the
+first 7 months after surgery. Regardless of functional ability, returning to sport within 6
+months of surgery may place athletes at an increased risk for reinjury, particularly if
+movement asymmetries are also present. Concurrent assessments of functional ability and
+movement symmetry may be the ideal method of assessment for RTS readiness in a group of
+athletes at great risk for second knee injuries. Three-dimensional biomechanical analysis of
+human movement, however, is time intensive, highly technical, and expensive. Ultimately,
+identification of highly sensitive and specific clinical correlates to the biomechanical
+measures predictive of poor function and risk of a second injury will enhance RTS decision
+making for these athletes.
+Perhaps of equal importance is the purported relationship between abnormal movement
+patterns and the development of osteoarthritis after ACL injury. Anterior cruciate ligament
+reconstruction alone cannot prevent degenerative joint changes,23,27,44,45,48 as it is possible
+that the intra-articular cellular response that occurs early after injury already initiates this
+process.26,28,34 The initiation and progression of osteoarthritis may be a result of a cyclic
+pattern of pathomechanics in the wake of ACL injury.3,47 By this proposed framework, the
+continued disturbance in the biomechanics of the joint by way of altered limb motion
+provides an intracapsular environment conducive to the degenerative process.3 The
+abnormal movement strategies adopted in response to ACL injury are also not ubiquitously
+resolved with surgery.15–17,36–38 The persistence of these maladaptations during tasks as
+Di Stasi et al. Page 6
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 7 ---
+simple as walking may have serious consequences to the long-term health of the injured
+joint.
+Our study population was limited to noncopers, who represent the poorest performing group
+of ACL-deficient athletes. Although the majority of ACL-injured athletes are noncopers,21
+these findings may not translate to all ACL-deficient patients who undergo reconstruction.
+Similarly, these data do not indicate that all noncopers who go on to fail RTS testing after
+ACL reconstruction demonstrate gross movement asymmetries, nor are all noncopers who
+go on to pass our RTS criteria after ACL reconstruction completely free of movement
+dysfunction. While concomitant assessment of functional performance and gait symmetry
+may enhance RTS decision making, widespread application of motion capture techniques is
+not feasible. The development and validation of RTS criteria that accurately identify athletes
+with movement asymmetries are warranted.
+Noncopers are a notoriously variable group of ACL-injured athletes.18,30 Previous work has
+highlighted the difficulty with which these athletes resume normal function and adopt
+symmetrical movement strategies in the months after ACL reconstruction.10,17,19,38 In an
+attempt to more accurately characterize the movement patterns of these athletes after
+surgery, we stratified our cohort by functional performance on a validated clinical testing
+battery.13 By this method, the lower functioning patients (ie, those who did not pass RTS
+criteria) demonstrated more meaningful limb asymmetries during gait than did their higher
+functioning counterparts. Furthermore, patients who failed RTS criteria were older and had a
+longer time from injury to surgery. While these factors may also influence RTS success in
+this cohort, examination of this relationship was not the purpose of this study.
+To our knowledge, this work is the first to distinguish the movement patterns between
+higher and lower functioning athletes after ACL reconstruction. Importantly, athletes who
+have been classified as noncopers before surgery and then demonstrate poorer function after
+ACL reconstruction may be more likely to have clinically significant neuromuscular
+asymmetries compared with those who pass RTS testing. Movement asymmetries,
+specifically, are identifiable and modifiable risk factors for a second ACL rupture in athletes
+who have already returned to activity.37 Additional targeted therapy may be warranted to
+address flawed movement mechanics and maximize function in some noncopers after ACL
+reconstruction. Neuromuscular interventions targeting abnormal and asymmetrical
+movement behaviors in athletes preparing to return to sport may not only enhance functional
+performance but also mitigate the risk for secondary injury and reduce the likelihood of
+developing debilitating osteoar-thritis of the knee joint.
+CONCLUSION
+Our findings indicate that athletes who have been classified as noncopers before ACL
+reconstruction and who demonstrate poorer functional performance 6 months after ACL
+reconstruction present with more abnormal and asymmetrical gait behaviors than do their
+higher functioning counterparts. Validating functional RTS criteria with biomechanical
+measures of symmetry may provide clinicians with a testing battery that would accurately
+identify athletes with meaningful movement asymmetries after ACL reconstruction.
+Furthermore, this validation would allow widespread application of sensitive and specific
+clinical testing tools for assessing RTS readiness and may enhance the ability of sports
+medicine specialists to identify those athletes at increased risk for a secondary injury. Future
+work should evaluate whether the incidence of reinjury and the development of
+osteoarthritis are related to high levels of functional performance in the absence of
+movement symmetry.
+Di Stasi et al. Page 7
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 8 ---
+Acknowledgments
+Special thanks to Dr Erin Hartigan for her assistance with patient recruitment and clinical and biomechanical data
+collection as well as Greg Seymour for his help with biomechanical data collection and processing.
+One or more of the authors has declared the following potential conflict of interest or source of funding: This study
+was funded in part by the National Institutes of Health (R01AR048212 and S10RR022396) and the Foundation for
+Physical Therapy Promotion of Doctoral Studies Scholarship awarded to Drs Di Stasi and Logerstedt during their
+doctoral work at the University of Delaware.
+REFERENCES
+1. Adams D, Logerstedt DS, Hunter-Giordano A, Axe MJ, Snyder-Mackler L. Current concepts for
+anterior cruciate ligament reconstruction: a criterion-based rehabilitation progression. J Orthop
+Sports Phys Ther. 2012; 42(7):601–614. [PubMed: 22402434]
+2. Alkjaer T, Simonsen EB, Jorgensen U, Dyhre-Poulsen P. Evaluation of the walking pattern in two
+types of patients with anterior cruciate ligament deficiency: copers and non-copers. Eur J Appl
+Physiol. 2003; 89(3–4):301–308. [PubMed: 12736838]
+3. Andriacchi TP, Mundermann A, Smith RL, Alexander EJ, Dyrby CO, Koo S. A framework for the
+in vivo pathomechanics of osteoarthritis at the knee. Ann Biomed Eng. 2004; 32(3):447–457.
+[PubMed: 15095819]
+4. Ardern CL, Webster KE, Taylor NF, Feller JA. Return to the preinjury level of competitive sport
+after anterior cruciate ligament reconstruction surgery: two-thirds of patients have not returned by
+12 months after surgery. Am J Sports Med. 2011; 39(3):538–543. [PubMed: 21098818]
+5. Button K, van Deursen R, Price P. Recovery in functional non-copers following anterior cruciate
+ligament rupture as detected by gait kinematics. Phys Ther Sport. 2008; 9(2):97–104. [PubMed:
+19083709]
+6. Chaudhari AM, Briant PL, Bevill SL, Koo S, Andriacchi TP. Knee kinematics, cartilage
+morphology, and osteoarthritis after ACL injury. Med Sci Sports Exerc. 2008; 40(2):215–222.
+[PubMed: 18202582]
+7. Cohen J. A power primer. Psychol Bull. 1992; 112(1):155–159. [PubMed: 19565683]
+8. Daniel DM, Fithian DC. Indications for ACL surgery. Arthroscopy. 1994; 10(4):434–441. [PubMed:
+7945641]
+9. DeVita P, Hortobagyi T, Barrier J. Gait biomechanics are not normal after anterior cruciate ligament
+reconstruction and accelerated rehabilitation. Med Sci Sports Exerc. 1998; 30(10):1481–1488.
+[PubMed: 9789847]
+10. Di Stasi SL, Hartigan EH, Snyder-Mackler L. Unilateral stance strategies of athletes with ACL
+deficiency. J Appl Biomech. 2012; 28(4):374–386. [PubMed: 22983931]
+11. Di Stasi SL, Snyder-Mackler L. The effects of neuromuscular training on the gait patterns of ACL-
+deficient men and women. Clin Biomech. 2012; 27(4):360–365.
+12. Eastlack ME, Axe MJ, Snyder-Mackler L. Laxity, instability, and functional outcome after ACL
+injury: copers versus noncopers. Med Sci Sports Exerc. 1999; 31(2):210–215. [PubMed:
+10063808]
+13. Fitzgerald GK, Axe MJ, Snyder-Mackler L. A decision-making scheme for returning patients to
+high-level activity with nonoperative treatment after anterior cruciate ligament rupture. Knee Surg
+Sports Traumatol Arthrosc. 2000; 8(2):76–82. [PubMed: 10795668]
+14. Fitzgerald GK, Axe MJ, Snyder-Mackler L. Proposed practice guidelines for nonoperative anterior
+cruciate ligament rehabilitation of physically active individuals. J Orthop Sports Phys Ther. 2000;
+30(4):194–203. [PubMed: 10778796]
+15. Gao B, Zheng NN. Alterations in three-dimensional joint kinematics of anterior cruciate ligament-
+deficient and -reconstructed knees during walking. Clin Biomech. 2010; 25(3):222–229.
+16. Hart JM, Ko JW, Konold T, Pietrosimone B. Sagittal plane knee joint moments following anterior
+cruciate ligament injury and reconstruction: a systematic review. Clin Biomech. 2010; 25(4):277–
+283.
+Di Stasi et al. Page 8
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 9 ---
+17. Hartigan E, Axe MJ, Snyder-Mackler L. Perturbation training prior to ACL reconstruction
+improves gait asymmetries in non-copers. J Orthop Res. 2009; 27(6):724–729. [PubMed:
+19023893]
+18. Hartigan EH, Axe MJ, Snyder-Mackler L. Time line for noncopers to pass return-to-sports criteria
+after anterior cruciate ligament reconstruction. J Orthop Sports Phys Ther. 2010; 40(3):141–154.
+[PubMed: 20195019]
+19. Hartigan EH, Zeni J Jr, Di Stasi S, Axe MJ, Snyder-Mackler L. Pre-operative predictors for non-
+copers to pass return to sports criteria after ACL reconstruction. J Appl Biomech. 2012; 28:366–
+373. [PubMed: 22983930]
+20. Hopper DM, Goh SC, Wentworth LA, et al. Test-retest reliability of knee rating scales and
+functional hop tests one year following anterior cruciate ligament reconstruction. Phys Ther Sport.
+2002; 3:10–18.
+21. Hurd WJ, Axe MJ, Snyder-Mackler L. Influence of age, gender, and injury mechanism on the
+development of dynamic knee stability after acute ACL rupture. J Orthop Sports Phys Ther. 2008;
+38(2):36–41. [PubMed: 18560190]
+22. Irrgang JJ, Snyder-Mackler L, Wainner RS, Fu FH, Harner CD. Development of a patient-reported
+measure of function of the knee. J Bone Joint Surg Am. 1998; 80(8):1132–1145. [PubMed:
+9730122]
+23. Kessler MA, Behrend H, Henz S, Stutz G, Rukavina A, Kuster MS. Function, osteoarthritis and
+activity after ACL-rupture: 11 years follow-up results of conservative versus reconstructive
+treatment. Knee Surg Sports Traumatol Arthrosc. 2008; 16(5):442–448. [PubMed: 18292988]
+24. Kvist J. Rehabilitation following anterior cruciate ligament injury: current recommendations for
+sports participation. Sports Med. 2004; 34(4):269–280. [PubMed: 15049718]
+25. Laboute E, Savalli L, Puig P, et al. Analysis of return to competition and repeat rupture for 298
+anterior cruciate ligament reconstructions with patellar or hamstring tendon autograft in
+sportspeople. Ann Phys Rehabil Med. 2010; 53(10):598–614. [PubMed: 21112824]
+26. Lohmander LS, Ionescu M, Jugessur H, Poole AR. Changes in joint cartilage aggrecan after knee
+injury and in osteoarthritis. Arthritis Rheum. 1999; 42(3):534–544. [PubMed: 10088777]
+27. Lohmander LS, Ostenberg A, Englund M, Roos H. High prevalence of knee osteoarthritis, pain,
+and functional limitations in female soccer players twelve years after anterior cruciate ligament
+injury. Arthritis Rheum. 2004; 50(10):3145–3152. [PubMed: 15476248]
+28. Lohmander LS, Saxne T, Heinegard D. Increased concentrations of bone sialoprotein in joint fluid
+after knee injury. Ann Rheum Dis. 1996; 55(9):622–626. [PubMed: 8882132]
+29. McRae SM, Chahal J, Leiter JR, Marx RG, Macdonald PB. Survey study of members of the
+Canadian Orthopaedic Association on the natural history and treatment of anterior cruciate
+ligament injury. Clin J Sport Med. 2011; 21(3):249–258. [PubMed: 21519299]
+30. Moksnes H, Snyder-Mackler L, Risberg MA. Individuals with an anterior cruciate ligament-
+deficient knee classified as noncopers may be candidates for nonsurgical rehabilitation. J Orthop
+Sports Phys Ther. 2008; 38(10):586–595. [PubMed: 18979658]
+31. Myer GD, Martin L Jr, Ford KR, et al. No association of time from surgery with functional deficits
+in athletes after anterior cruciate ligament reconstruction: evidence for objective return-to-sport
+criteria. Am J Sports Med. 2012; 40:2256–2263. [PubMed: 22879403]
+32. Myer GD, Paterno MV, Ford KR, Quatman CE, Hewett TE. Rehabilitation after anterior cruciate
+ligament reconstruction: criteria-based progression through the return-to-sport phase. J Orthop
+Sports Phys Ther. 2006; 36(6):385–402. [PubMed: 16776488]
+33. Myer GD, Schmitt LC, Brent JL, et al. Utilization of modified NFL combine testing to identify
+functional deficits in athletes following ACL reconstruction. J Orthop Sports Phys Ther. 2011;
+41(6):377–387. [PubMed: 21289456]
+34. Nelson F, Billinghurst RC, Pidoux I, et al. Early post-traumatic osteo-arthritis-like changes in
+human articular cartilage following rupture of the anterior cruciate ligament. Osteoarthritis
+Cartilage. 2006; 14(2):114–119. [PubMed: 16242972]
+35. Noyes FR, Barber SD, Mangine RE. Abnormal lower limb symmetry determined by function hop
+tests after anterior cruciate ligament rupture. Am J Sports Med. 1991; 19(5):513–518. [PubMed:
+1962720]
+Di Stasi et al. Page 9
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 10 ---
+36. Paterno MV, Ford KR, Myer GD, Heyl R, Hewett TE. Limb asymmetries in landing and jumping 2
+years following anterior cruciate ligament reconstruction. Clin J Sport Med. 2007; 17(4):258–262.
+[PubMed: 17620778]
+37. Paterno MV, Schmitt LC, Ford KR, et al. Biomechanical measures during landing and postural
+stability predict second anterior cruciate ligament injury after anterior cruciate ligament
+reconstruction and return to sport. Am J Sports Med. 2010; 38(10):1968–1978. [PubMed:
+20702858]
+38. Roewer BD, Di Stasi SL, Snyder-Mackler L. Quadriceps strength and weight acceptance strategies
+continue to improve two years after anterior cruciate ligament reconstruction. J Biomech. 2011;
+44(10):1948–1953. [PubMed: 21592482]
+39. Rudolph KS, Axe MJ, Buchanan TS, Scholz JP, Snyder-Mackler L. Dynamic stability in the
+anterior cruciate ligament deficient knee. Knee Surg Sports Traumatol Arthrosc. 2001; 9(2):62–71.
+[PubMed: 11354855]
+40. Rudolph KS, Eastlack ME, Axe MJ, Snyder-Mackler L. 1998 Basmajian Student Award Paper.
+Movement patterns after anterior cruciate ligament injury: a comparison of patients who
+compensate well for the injury and those who require operative stabilization. J Electro-myogr
+Kinesiol. 1998; 8(6):349–362.
+41. Rudolph KS, Snyder-Mackler L. Effect of dynamic stability on a step task in ACL deficient
+individuals. J Electromyogr Kinesiol. 2004; 14(5):565–575. [PubMed: 15301775]
+42. Schmitt LC, Paterno MV, Hewett TE. The impact of quadriceps femoris strength asymmetry on
+functional performance at return to sport following anterior cruciate ligament reconstruction. J
+Orthop Sports Phys Ther. 2012; 42(9):750–759. [PubMed: 22813542]
+43. Shelbourne KD, Gray T, Haro M. Incidence of subsequent injury to either knee within 5 years after
+anterior cruciate ligament reconstruction with patellar tendon autograft. Am J Sports Med. 2009;
+37(2):246–251. [PubMed: 19109531]
+44. Streich NA, Zimmermann D, Bode G, Schmitt H. Reconstructive versus non-reconstructive
+treatment of anterior cruciate ligament insufficiency: a retrospective matched-pair long-term
+follow-up. Int Orthop. 2011; 35(4):607–613. [PubMed: 21127860]
+45. Struewer J, Frangen TM, Ishaque B, et al. Knee function and prevalence of osteoarthritis after
+isolated anterior cruciate ligament reconstruction using bone-patellar tendon-bone graft: long-term
+follow-up. Int Orthop. 2012; 36(1):171–177. [PubMed: 21898038]
+46. Thomee R, Kaplan Y, Kvist J, et al. Muscle strength and hop performance criteria prior to return to
+sports after ACL reconstruction. Knee Surg Sports Traumatol Arthrosc. 2011; 19(11):1798–1805.
+[PubMed: 21932078]
+47. Van de Velde SK, Bingham JT, Hosseini A, et al. Increased tibiofemoral cartilage contact
+deformation in patients with anterior cruciate ligament deficiency. Arthritis Rheum. 2009; 60(12):
+3693–3702. [PubMed: 19950260]
+48. von Porat A, Roos EM, Roos H. High prevalence of osteoarthritis 14 years after an anterior
+cruciate ligament tear in male soccer players: a study of radiographic and patient relevant
+outcomes. Ann Rheum Dis. 2004; 63(3):269–273. [PubMed: 14962961]
+49. Wells L, Dyke JA, Albaugh J, Ganley T. Adolescent anterior cruciate ligament reconstruction: a
+retrospective analysis of quadriceps strength recovery and return to full activity after surgery. J
+Pediatr Orthop. 2009; 29(5):486–489. [PubMed: 19568022]
+Di Stasi et al. Page 10
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 11 ---
+Figure 1.
+Knee (A–C) and hip (D–F) joint angles and moments during weight acceptance. Bars
+represent group means. Error bars represent 95% confidence interval. IC, initial contact;
+INV, involved limb; PKF, peak knee flexion; UNINV, uninvolved limb. *Denotes statistical
+significance (P ≤ .05).
+Di Stasi et al. Page 11
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 12 ---
+Figure 2.
+Knee (A) and hip (B) power curves during the stance phase of noncopers who passed return-
+to-sport (RTS) criteria and noncopers who failed RTS criteria (C, D). Positive power =
+power generation; negative power = power absorption. The x-axis represents the time-
+normalized stance (101 points); the y-axis represents joint powers.
+Di Stasi et al. Page 12
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+
+--- PAGE 13 ---
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+Di Stasi et al. Page 13
+TABLE 1
+Noncoper Classification and Return-to-Sport Criteria as Measured by the ACL-Deficient Functional
+Examination13,18
+Noncoper Classification Return-to-Sport Criteria
+Episodes of knee instability >1 ≤1
+4 single-legged hop tests35 <80% (6-m timed hop only) ≥90% (All hop tests)
+Knee Outcome Survey–Activities of Daily Living Scale <80% ≥90%
+Global Rating Scale for Perceived Function <60% ≥90%
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+
+--- PAGE 14 ---
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+Di Stasi et al. Page 14
+TABLE 2
+Functional Testing Performance Scores of Patients Who Passed and Failed Return-to-Sport Criteriaa
+Pass Fail P Value
+Age, y 25.4 ± 9.9 31.4 ± 12.2 .09
+Time from injury to surgery, wk 12.9 ± 7.1 21.5 ± 17.6 .04
+Quadriceps strength index 101.2 ± 8.1 91.5 ± 15.3 .023
+Single hop for distance 97.1 ± 4.6 86.6 ± 9.3 <.001
+Crossover hop for distance 96.1 ± 3.6 91.9 ± 6.4 .018
+Triple hop for distance 97.7 ± 7.6 91.3 ± 7.9 .014
+6-m timed hop 99.8 ± 4.8 95.4 ± 8.0 .043
+Knee Outcome Survey–Activities of Daily Living Scale 97.8 ± 1.7 95.3 ± 4.1 .016
+Global Rating Scale for Perceived Function 95.5 ± 3.8 88.6 ± 7.5 <.001
+a
+Values are expressed as mean ± standard deviation. Bolded values indicate statistical significance.
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+
+--- PAGE 15 ---
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+Di Stasi et al. Page 15
+TABLE 3
+Interlimb Symmetry of Knee Kinematics and Kinetics of Patients Who Passed and Failed Return-to-Sport
+Criteriaa
+Involved Uninvolved P Value Effect Sizeb
+KFAIC, deg
+Pass 7.6 (6.2–9.0) 7.2 (5.3–9.0) .659 —
+Fail 7.2 (5.8–8.5) 9.4 (7.6–11.2) .027 —
+KFAPKF, deg
+Pass 22.4 (19.5–25.3) 25.1 (22.2–28.0) .012 —
+Fail 22.6 (19.8–25.3) 29.1 (26.4–31.9) <.001 1.06
+KEMPKF, N·m/kg·m
+Pass 0.42 (0.35–0.48) 0.49 (0.43–0.55) <.001 0.58
+Fail 0.37 (0.30–0.43) 0.52 (0.46–0.57) <.001 0.97
+a
+Values are expressed as mean (95% confidence interval). Bolded values indicate statistical significance. KEMPKF, internal knee extensor
+moment at peak knee flexion; KFAIC, knee flexion angle at initial contact; KFAPKF, knee flexion angle at peak knee flexion.
+b
+Effect sizes calculated when differences between limb means exceeded the minimal clinically important difference value.
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+
+--- PAGE 16 ---
+NIH-PA Author Manuscript NIH-PA Author Manuscript NIH-PA Author Manuscript
+Di Stasi et al. Page 16
+TABLE 4
+Interlimb Symmetry of Hip Kinematics and Kinetics of atients Who Passed and Failed Return-to-Sport
+Criteriaa
+Involved Uninvolved Effect Sizeb
+HFAIC, deg
+Pass 30.6 (27.6–33.8) 31.1 (28.3–33.9) —
+Fail 30.5 (27.5–33.5) 32.1 (29.4–34.7) —
+HFAPKF, deg
+Pass 22.1 (18.5–25.7) 24.1 (20.8–27.4) —
+Fail 21.4 (18.0–24.8) 25.0 (21.8–28.1) 0.46
+HEMPKF, N·m/kg·m
+Pass 0.39 (0.30–0.49) 0.40 (0.30–0.49) —
+Fail 0.47 (0.38–0.56) 0.50 (0.40–0.60) —
+a
+Values are expressed as mean (95% confidence interval). HEMPKF, internal hip extensor moment at peak knee flexion; HFAIC, hip flexion angle
+at initial contact; HFAPKF, hip flexion angle at peak knee flexion.
+b
+Effect sizes were calculated when differences between means exceeded the minimal clinically important difference value.
+Am J Sports Med. Author manuscript; available in PMC 2013 August 03.
+
+--- PAGE 17 ---

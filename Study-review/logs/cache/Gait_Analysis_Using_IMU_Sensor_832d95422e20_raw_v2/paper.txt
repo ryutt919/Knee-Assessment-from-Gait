@@ -1,0 +1,484 @@
+
+--- PAGE 1 ---
+GAIT ANALYSIS USING IMU SENSOR
+Trupti Gujarathi
+Department of instrumentation and control
+College of Engineering,Pune
+Pune, India
+gujarathitp17.instru@coep.ac.in
+Kalyani Bhole
+Department of instrumentation and control
+College of Engineering,Pune
+Pune, India
+kab.instru@coep.ac.in
+Abstract—Inertial Measurement Unit (IMU) based systems
+that employ gyroscopes has a growing interest in gait analysis. We
+described the IMU-based gait analysis method that uses angles
+obtained from an accelerometer and gyroscope sensor within
+MPU6050 to identify phases of each gait cycle during walking.
+The gait analysis algorithm is composed of Heel strike and Toe
+off factors detection observed by means of detection of initial
+contact(IC) and terminal contact(TC) so that gait parameters
+are calculated from those gait details. Most of the present gait
+phase detection strategies use multiple sensor modules connected
+to every segment of lower body. We have used two MPU6050
+sensors placed on a shank of both legs to collect gait signals.
+For experimental purpose, each participant was asked to walk
+for a distance of 40 meters for the straight corridor at a normal
+speed. These gait signal data measured by using Arduino uno
+micro-controller is then transmitted to an android app ‘Blueterm’
+wirelessly via the HC-05 Bluetooth module. Collected data by
+the app is stored as a text file in a device containing app. This
+database is further processed to an algorithm that has been
+developed using MATLAB to extract a period of events that
+happened during walking such as stride time, stance time, step
+time, cadence, etc. The results are useful in identifying the bio-
+mechanical stability of patients post surgery. Basically, this paper
+presents a wearable IMU sensor-based system and its associated
+gait analysis algorithm to obtain quantitative measurements of
+the individual’s gait parameters to monitor patient progress in
+orthopedics and rehabilitation.
+Index Terms—Gait cycle analysis, Inertial Measurement
+Unit(IMU) sensor, Gyro-sensor MPU6050, Bluetooth module,
+Gait parameters.
+I. INTRODUCTION
+Gait analysis is the systemic study of locomotion of human
+being during walking [1]. Gait analysis plays an important
+role in detecting abnormality in the human walking pattern
+[2]. Changes in gait styles implies important information of a
+person’s fitness that would be used for assessing or analysis
+individuals with pathological situations that have an effect on
+their ability to walk and the complete biomechanic system
+[3]. Traditionally gait analysis carried by a human observer
+but this was further augmented with video recording, wherein
+the recording could be reviewed in slow movement to permit
+more accurate assessment of the gait cycle. This technique of
+qualitative analysis remains extensively used nowadays. How-
+ever, this method is labour intensive, requires a exceptionally
+skilled clinician and is not accurate as methods that quantify
+motion analysis.
+A more objective way of assessing gait is required. There
+are a variety of wearable sensors including accelerometer,
+gyroscope, magnetometer, foot pressure sensor, inclinometer,
+and goniometer that are generally used to measure vari-
+ous characteristics of human gait. IMU sensors have been
+used in different gait analysis techniques such as monitoring
+postoperative gait abnormalities, detection of falls, nature of
+Parkinson gait, auto detection of daily activities of older adults
+and human walking foot trajectory [4]. These sensors are
+directly worn or attached directly or indirectly to different
+body locations such as foot, wrist, chest, thigh, and shank,
+& are attached using belts, clips or other accessories [4]. Gait
+analysis system has many clinical applications which consists
+of external prosthesis adjustment for amputees, or outcome
+evaluation after knee and hip replacement. In elderly subjects,
+it can also be proposed as a diagnostic tool for abnormal gait
+analysis, as a predictor tool for fall risk estimation, or as a
+monitoring tool to assess progress through rehabilitation. In
+this paper, we’ve implemented and explored the functionality
+of a system which is totally based on an IMU sensor, includes
+use of two mpu6050 sensors. Those sensors are connected to
+the shank of both the leg to sense the motion of the leg. The
+raw data obtained from sensors is processed in microcontroller
+and then sent wirelessly via Bluetooth HC-05 module to an
+android app. Collected data is further processed for calculating
+gait parameters by using a developed gait phase detection
+algorithm in MATLAB. The gait phase detection algorithm
+consists of detection of Heel strike i.e. initial contact(IC)
+and toe-off i.e. terminal contact(TC) points to decompose a
+gait cycle into stance and swing phase and acquire several
+other spatiotemporal gait parameters. This paper is organized
+as follows: In section II- Brief discussion about gait cycle,
+various gait phases, gait parameters, gait analysis and it’s
+importance. Section III consists of system design in which we
+have described hardware and software required, experimental
+set-up, proposed gait phase detection algorithm on gait signals
+collected from IMU sensors mounted on the shank, section IV
+described results obtained from developed algorithm has been
+explained. Section V and VI consist of conclusion and future
+scope respectively.
+II. THEORY
+A. Normal Gait
+Definition- A Series of rhythmical, alternating movements
+of the lower extremities which results in the forward progres-
+IEEE - 45670
+10th ICCCNT 2019
+July 6-8, 2019 , IIT - Kanpur,
+Kanpur, India
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on March 31,2026 at 15:06:38 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 2 ---
+sion of the body.
+A gait cycle starts when heel strike i.e when heel contacts the
+ground and end at the next heel strike of the same leg. Single
+gait cycle is called as a stride.
+A gait cycle or stride consists of two main phase: stance phase
+& swing phase. In a single gait cycle stance phase comprises
+of approximately 62% of the gait cycle, which begins when a
+heel strike of one foot and ends with toe off of the same foot.
+The foot is in weight bearing phase during this phase. The
+average duration of the stance phase is approximately 0.59 to
+0.67 seconds. The remaining 38% is the second phase which
+is known as a swing phase. During this phase foot is in non-
+weight bearing, as it moves from one step to another [5]. This
+phase lasts, on average, 0.38 to 0.42 seconds. The reference
+foot is in contact with the ground during stance while the
+other foot is in swing, and swing is where the reference foot
+is swinging over the ground while the other foot is in contact
+with the ground as shown in Fig.1
+1) Stance phase is further divided into:
+• Heel contact:- ‘Initial contact’, the moment when heel of
+the reference leg touches the ground while other leg is in
+terminating stance phase.
+• Foot flat:- ‘Loading response ’, the period when the
+reference foot is in fully contact with the ground and
+other leg is in initiating swing phase i.e. pre-swing.
+• Midstance:- Body weight is completely falls on refernece
+leg during mid-stance while other leg is initial swing and
+mid-swing phases.
+• Heel-off:- ‘Terminal stance’, it begins as soon as the heel
+of the reference leg starts moving away from ground but
+toe is still in contact with the ground and the other leg
+follows the terminal swing.
+• Toe-off:-‘Pre-swing’, when the reference foot start mov-
+ing further keeping toe in contact with ground while the
+other leg having loading response [6].
+2) Swing phase:
+• Acceleration:- ‘Initial swing’During acceleration forward
+motion of the limb starts with knee flexion and foot looses
+the contact with ground.
+• Midswing:- Reference leg is in the air and thigh is at its
+maximum flexion for advancement of limb.
+• Deceleration:- ‘Terminal swing’, the shank is at the final
+advancement and the reference foot is positioned for
+initial foot contact to start the next gait cycle.
+Fig.1 shows the eight sub phases of the human gait cycle.
+B. Gait parameters
+i. Stride time:- It is the time duration between heel strike
+/toe-off to the next heel strike/toe-off of the same leg.
+(1.09±0.06 sec = 1.15 sec).
+ii. Stance time:- Time period during the foot is in contact
+with the ground, i.e. time taken from the heel strike point
+to the toe-off point within each gait cycle [9]. (0.8 ± 0.02
+sec)
+iii. Swing time:- While the foot completely off the ground,
+that duration is known as swing time. (0.4 ± 0.05sec)
+Fig. 1. Phases of gait cycle
+iv. Step time:- Time interval between successive foot contact
+with the floor of the opposite feet (0.8 sec)
+v. Stride length:- Distance covered during successive heel
+strike of the same foot. (Approximately = 130 cm ± 15
+cm)
+vi. Step length:- It is the linear distance in the plane of
+progression between two successive points of foot floor
+contact of the opposite feet. (Approximately = 60 cm ±
+10 cm)
+vii. Gait speed:- It is calculated by distance covered in a given
+time. The instantaneous speed varies from one instant to
+another during the walking cycle, but the average speed
+is the product of the cadence and the stride length.
+viii. Cadence:- The cadence is the number of steps taken per
+minute, there are two steps in a single gait cycle, and the
+cadence is a measure of half-cycles [7]. (100 ± 6 steps
+/min)
+Slow: 60-70 Steps / min
+Medium: 80-90 Steps / min
+Fast: 120 Steps / min
+C. Gait analysis and it’s importance
+Gait Analysis can be defined as the ‘study of the biome-
+chanics of human locomotion to quantify the factors which
+helps to check the functionality of the lower limb’. This is
+fundamental for the detection of gait disorders. Gait analysis
+can also be defined as the systemic study of human movements
+during walking or running(locomotion) [3]. In a broader sense,
+gait analysis includes assessment, planning and treating people
+with conditions affecting their gait. So gait analysis allows
+assessing the gait pattern of a person to identify different
+walking disorders. For assessment and treatment of individual
+having certain(pathological) conditions which affects their
+walking ability and entire muscular-skeletal system accurate
+gait analysis is most useful.
+Importance of gait analysis:
+• Gait cycle analysis is used in the study of human loco-
+motion
+• As reduced gait quality can lead to severe reductions in
+patient mobility and quality of life, it is important to
+quantify, detect and treat gait impairments as early as
+possible [2]
+IEEE - 45670
+10th ICCCNT 2019
+July 6-8, 2019 , IIT - Kanpur,
+Kanpur, India
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on March 31,2026 at 15:06:38 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 3 ---
+Fig. 2. Schematic diagram of designed system
+• to identify the loss of the person’s ability to walk also it
+can be helpful to implement and evaluate treatments to
+correct abnormalities within an individual.
+III. SYSTEM DESIGN
+In this section, we implement the proposed algorithm for
+human gait phase detection. The overall system design of the
+gait cycle analysis system can be categorized into two parts,
+the hardware and software requirements.
+A. Hardware Used
+The system we have developed for gait analysis is composed
+of two IMU sensor MPU6050, which consist of triaxial
+accelerometer & triaxial gyroscope, a microcontroller (Ar-
+duino uno), and a Bluetooth module HC-05. During walking
+motion acceleration signals are generated, and detected by
+the MPU6050 sensor. Then it will measure the angular rate
+of the shank motion with respect to ground. The angle is
+generated by combining gyroscope and accelerometer data
+related through complementary filter [8]. The sensors on the
+shank had a full scale range of accelerometer 2g with Sen-
+sitivity Scale Factor of 16,384LSB(Count)/g & Gyroscope
+full scale range of ±500/s with sensitivity scale factor of
+65.5LSB(Count)/°/s. Furthermore, the digital signals gen-
+erated by the MPU6050 sensor from both the shank through an
+I2C interface is collected by an Arduino Uno. Also, a HC-05
+Bluetooth module is connected to microcontroller for wireless
+communication. The output signals of the accelerometer and
+gyroscopes are all sampled at 400 kHz by a 12-bit analog
+to digital converter(ADC). Simultaneously these data is sent
+wirelessly to an android app ‘Blueterm’ via HC-05 Bluetooth
+module. Obtained data was stored as a text file in the android
+app. The power consumed by the wearable hardware device is
+30 mA at 5 V. The schematic diagram of the designed system
+is as shown in Fig.2.
+B. Software used
+Software that we used to implement the gait phase detection
+algorithm is MATLAB. It is a high-level language and interac-
+tive environment for numerical computation, visualization, and
+programming. Gait signal data is imported in MATLAB and
+by using all the required mathematical calculations, algorithm
+to extract gait parameters has developed.
+C. Experimental setup
+Data was collected from a group of six people was selected
+for gait analysis. They were asked to walk for 40 meters on
+a straight line at a normal speed. During the walking trials,
+two IMU sensors MPU6050 that measures the angular rate of
+the rotations were attached on the anterior side of the lower
+limbs: one on each shank. Velcro belts were used to fix the
+sensors such that the sensor does not slip or move during
+walking. The sensors were aligned to the mediolateral axis,
+hence, measuring rotation in the sagittal plane. The sensors
+on the shank had a full scale range of accelerometer ±2g
+with Sensitivity Scale Factor of 16,384LSB(Count)/g &
+Gyroscope full scale range of ±500/s with sensitivity scale
+factor of 65.5LSB(Count)/°/s. Data was recorded with a
+sampling rate of 400 khz. Simultaneously these data was sent
+to an android app ‘Blueterm’ via HC-05 Bluetooth module.
+Collected data was stored as a text file in the Blueterm
+app. This file is imported in MATLAB and using proposed
+algorithm gait parameters were extracted.
+D. Proposed algorithm
+The proposed gait phase detection algorithm is developed
+to acquire the gait parameters from the angular rate signal
+generated by the IMU sensors from walking motions of the
+person. The following steps describes the proposed algorithm
+in detail.
+1) Data collection: In natural walking the hips, knee and
+ankle are synchronized in a smooth bouncing vertical motion
+with each step. This vertical motion is in the same direction
+as gravitational force. Legs do majority of movement while
+walking because the joints produce greater levels of motion
+to transport the body ahead in horizontal direction [4]. This
+rhythmic, repetitive movement involves steps and strides
+known as the gait cycle. This movement produces angular
+deflection, which is investigated in this study. An MPU6050
+sensor consisting of an accelerometer and gyroscope is used
+to collect measurement of the angular rate about x, y and
+z-axes of the sensor frame due to horizontal movement. Data
+are analyzed using our proposed algorithm to find strides,
+stance and swing event information. The sample data from
+the individual is as shown in Fig.3
+2) Selection of sensitive axis: 3D data derived from the
+gyro-sensor demonstrate different characteristic according to
+the walking activities of the individual. Therefore it is of
+great importance to select the most sensitive axis in the sense
+that the corresponding data are closely correlated with the
+activity and it is advisable to select the axis whose data has
+the maximum magnitude. Y-axis(in sagittal plane direction)
+of the angular rate signals are used to detect the HS and TO
+points during walking movements for further calculating gait
+parameters [9].
+IEEE - 45670
+10th ICCCNT 2019
+July 6-8, 2019 , IIT - Kanpur,
+Kanpur, India
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on March 31,2026 at 15:06:38 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 4 ---
+3) Heel strike and Toe off points detection: Using signals
+from the shanks gait cycles and related events were detected
+and spatiotemporal parameter estimated. In this first step was
+to detect heel strike i.e. initial contact (IC) and Toe off i.e.
+terminal contact (TC) of the foot with respect to ground. By
+simultaneously recording the signals using the body attached
+IMU MPU6050 sensors, the intervals where these events
+occurred were determined based on the shank angle rate. The
+heel strike of a gait cycle is characterized by a negative angle
+reaching its highest values at stance phase initiation. After
+this, the TC is characterized by a maximum positive angle.
+With different populations of normal and pathologic, young
+and elderly subjects, the angular rate can be different. By using
+these precise instances of heel strike and Toe off, maximum
+and minimum peaks of the signal are detected from the data
+signal obtained by right and left shank.
+Fig. 3. Shank angles obtained by sensors from Saggital plane
+4) Calculation of Gait Parameters: Using the right foot
+as a reference to apply the spatiotemporal gait parameter
+measurement, we categorize the gait cycle into two phases,
+i.e. stance phase and swing phase [10]. Heel strike denotes
+the initiation of stance phase whereas the swing phase starts
+at the toe off of the same foot [6]. Once the toe off and heel
+strike points of each gait cycle are found, we can calculate the
+following gait parameters. The gait parameters are computed
+as follows [11]:
+(i) Stride duration (time between HS of stride i and HS of
+stride i+1)
+Stride(i) = HS(i + 1) − HS(i); (1)
+(ii) Stance duration (time between HS and TO during stride
+i)
+Stance(i) = TO(i) − HS(i); (2)
+(iii) Swing duration:- time between TO of stride i and HS of
+stride i+1
+Swing(i) = HS(i + 1) − TO(i); (3)
+(iv) Right step duration:- time between left HS (HSleft) of
+stride i and of right HS (HSright) stride i+1
+Rightstep(i) = HSright(i + 1) − HSleft(i); (4)
+(v) Left step duration (time between HSright and HSleft
+during stride i)
+Leftstep(i) = HSleft(i) − HSright(i); (5)
+TABLE I
+GAIT CYCLE PARAMETERS OBTAINED FROM SUBJECTS
+F M M F M M
+Age(years) 24 26 28 29 24 26
+Height(cm) 164 180 176 155 157 171
+Stride time(sec) 1.23 1.21 1.16 1.12 1.11 1.20
+Stance time(sec) 0.89 0.86 0.82 0.81 0.83 0.89
+Swing time(sec) 0.34 0.34 0.33 0.31 0.28 0.31
+Right step time(sec) 0.60 0.59 0.56 0.54 0.55 0.58
+stride length(m) 1.02 1.11 1.08 1.13 0.93 1.05
+step length(m) 0.51 0.55 0.54 0.56 0.46 0.52
+Gait speed(m/s) 0.80 0.88 0.90 0.94 0.81 0.85
+Cadence 98 101 105 109 107 102
+,
+(vi) Stride legth:- the distance covered from IC to IC of the
+same foot
+Average Stride length
+= Totaldistance/TotalNo.ofstride (6)
+(vii) Step length:- Distance covered during single step.
+(viii) Cadence:- Total number of strides per minute.
+IV. RESULTS AND DISCUSSIONS
+In this paper, we have exhibited the created system de-
+pendent on IMU sensor and related algorithm to perform
+gait analysis. Relevant gait events are calculated from the
+gait data of 6 healthy volunteers. Measured gait parameters
+values validated against the standard values of the same for
+healthy adults. Our result value has matched with the standard
+gait parameters values as mentioned in II-B. Fig.3 shows the
+gait data obtained in terms of the angular rotation of the
+IMU sensors attached on the shanks of the body. Using the
+algorithm we obtained two different series of samples HS and
+TO for data obtained from the attached sensor. From these
+points and using appropriate calculation we have obtained
+gait parameters like time duration of stride, stance, swing,
+right step also stride length and step length. We have obtained
+the total number of strides within a particular time, & from
+this information we calculated the cadence of the individual.
+Table I Shows the results obtained from the 6 healthy subjects
+participated.
+V. CONCLUSION
+The results of the experiment demonstrate that the chosen
+sensor is effective for the data acquisition & it improves
+the accuracy for gait analysis. The IMU accelerometer and
+gyroscope data had been analyzed using our developed system
+which is used to extract gait parameters: stance time, stride
+time, swing time, step time, stride length, step length, Cadence,
+and gait speed. The focus of the research was to develop
+low cost effective & simple technique by considering person
+IEEE - 45670
+10th ICCCNT 2019
+July 6-8, 2019 , IIT - Kanpur,
+Kanpur, India
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on March 31,2026 at 15:06:38 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 5 ---
+comfort to walk which can be used for gait analysis, and it is
+possible through use of mountable sensors like gyrosensor.
+At standard gait, there is a uniform repetitive flexion and
+extension of joints present compared to a person with certain
+deformity. The appropriate methodology of analysis can serve
+as an appropriate rehabilitation process for a patient with gait
+malfunction.
+VI. FUTURE SCOPE
+Our future work will aim to make wireless, fully automatic
+real-time gait feature extraction system which can be used for
+a long duration to continuous monitoring and to identify the
+abnormal gait patterns for the assessment of elderly fall risk,
+rehabilitation, athlete’s application. The next step would be to
+validate this method on subjects with atypical gait and see if
+there is enough sensitivity to detect gait abnormalities.
+REFERENCES
+[1] Whittle, M.W., 2007. Chap. 5 Application of gait analysis. In An
+introduction to gait analysis (p. 177). Butterworth-Heinemann.
+[2] Hannink, J., Kautz, T., Pasluosta, C.F., Gaßmann, K.G., Klucken, J. and
+Eskofier, B.M., 2017. Sensor-based gait parameter extraction with deep
+convolutional neural networks. IEEE journal of biomedical and health
+informatics, 21(1), pp.85-93.
+[3] Ahmadi, A., Destelle, F., Unzueta, L., Monaghan, D.S., Linaza, M.T.,
+Moran, K. and O’Connor, N.E., 2016. 3D human gait reconstruction and
+monitoring using body-worn inertial sensors and kinematic modeling.
+IEEE Sensors Journal, 16(24), pp.8823-8831.
+[4] Anwary, A.R., Yu, H. and Vassallo, M., 2018. Optimal foot location for
+placing wearable IMU sensors and automatic feature extraction for gait
+analysis. IEEE Sensors Journal, 18(6), pp.2555-2567.
+[5] Friis, E., 2017. Mechanical Testing of Orthopaedic Implants. Woodhead
+Publishing.
+[6] Abhayasinghe, N. and Murray, I., 2014, April. Human gait phase
+recognition based on thigh movement computed using IMUs. In 2014
+IEEE Ninth International Conference on Intelligent Sensors, Sensor
+Networks and Information Processing (ISSNIP) (pp. 1-4). IEEE.
+[7] Bhosale, T., Kudale, H., Kumthekar, V., Garude, S. and Dhumal, P.,
+2015, October. Gait analysis using wearable sensors. In 2015 Interna-
+tional Conference on Energy Systems and Applications (pp. 267-269).
+IEEE.
+[8] Mota, F.A.O., Biajo, V.H.M., Mota, H.O. and Vasconcelos, F.H., 2017,
+May. A wireless sensor network for the biomechanical analysis of
+the gait. In 2017 IEEE International Instrumentation and Measurement
+Technology Conference (I2MTC) (pp. 1-6). IEEE.
+[9] Chang, H.C., Hsu, Y.L., Yang, S.C., Lin, J.C. and Wu, Z.H., 2016. A
+wearable inertial measurement system with complementary filter for gait
+analysis of patients with stroke or Parkinson’s disease. IEEE Access, 4,
+pp.8442-8453.
+[10] Truong, P., Lee, J., Kwon, A.R. and Jeong, G.M., 2016. Stride counting
+in human walking and walking distance estimation using insole sensors.
+Sensors, 16(6), p.823.
+[11] Boutaayamou, M., Brüls, O., Denoël, V., Schwartz, C., Demonceau,
+M., Garraux, G. and Verly, J.G., 2015, December. Segmentation of
+gait cycles using foot-mounted 3D accelerometers. In 2015 International
+Conference on 3D Imaging (IC3D) (pp. 1-7). IEEE.
+[12] Hsu, Y.L., Chung, P.C., Wang, W.H., Pai, M.C., Wang, C.Y., Lin,
+C.W., Wu, H.L. and Wang, J.S., 2014. Gait and balance analysis
+for patients with Alzheimer’s disease using an inertial-sensor-based
+wearable instrument. IEEE journal of biomedical and health informatics,
+18(6), pp.1822-1830.
+[13] Minami, A., Horikawa, T., Ohkubo, T., Kobayashi, K., Watanabe, K. and
+Kurihara, Y., 2010, August. A study on gait analysis by measuring axis
+rotation based on 3D magnetic and acceleration sensors. In Proceedings
+of SICE Annual Conference 2010 (pp. 2518-2522). IEEE.
+[14] Pappas, I.P., Popovic, M.R., Keller, T., Dietz, V. and Morari, M., 2001.
+A reliable gait phase detection system. IEEE Transactions on neural
+systems and rehabilitation engineering, 9(2), pp.113-125.
+[15] Kharb, A., Saini, V., Jain, Y.K. and Dhiman, S., 2011. A review of gait
+cycle and its parameters. IJCEM International Journal of Computational
+Engineering & Management, 13, pp.78-83.
+IEEE - 45670
+10th ICCCNT 2019
+July 6-8, 2019 , IIT - Kanpur,
+Kanpur, India
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on March 31,2026 at 15:06:38 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 6 ---

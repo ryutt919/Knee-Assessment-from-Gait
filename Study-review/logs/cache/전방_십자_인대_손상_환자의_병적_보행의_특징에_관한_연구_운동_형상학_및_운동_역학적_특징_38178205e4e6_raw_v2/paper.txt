@@ -1,0 +1,1534 @@
+
+--- PAGE 1 ---
+저작자표시-비영리-변경금지 2.0 대한민국
+이용자는 아래의 조건을 따르는 경우에 한하여 자유롭게
+l 이 저작물을 복제, 배포, 전송, 전시, 공연 및 방송할 수 있습니다.
+다음과 같은 조건을 따라야 합니다:
+l 귀하는, 이 저작물의 재이용이나 배포의 경우, 이 저작물에 적용된 이용허락조건
+을 명확하게 나타내어야 합니다.
+l 저작권자로부터 별도의 허가를 받으면 이러한 조건들은 적용되지 않습니다.
+저작권법에 따른 이용자의 권리는 위의 내용에 의하여 영향을 받지 않습니다.
+이것은 이용허락규약(Legal Code)을 이해하기 쉽게 요약한 것입니다.
+Disclaimer
+저작자표시. 귀하는 원저작자를 표시하여야 합니다.
+비영리. 귀하는 이 저작물을 영리 목적으로 이용할 수 없습니다.
+변경금지. 귀하는 이 저작물을 개작, 변형 또는 가공할 수 없습니다.
+
+--- PAGE 2 ---
+박사학위논문
+전방 십자 인대 손상 환자의
+병적 보행의 특징에 관한 연구
+-운동 형상학 및 운동 역학적 특징
+(A study on the gait deviations in ACL deficient Knees
+-kinematic and kinetic characteristics during gait)
+정 세 현
+을지대학교 대학원
+2015 년 2 월
+
+--- PAGE 3 ---
+전방 십자 인대 손상 환자의
+병적 보행의 특징에 관한 연구
+-운동 형상학 및 운동 역학적 특징
+박사학위논문
+정세현
+의학과
+을지대학교 대학원
+2015 년 2 월
+이 논문을 의학 박사학위논문으로
+제출합니다.
+지도교수 김하용
+
+--- PAGE 4 ---
+이 논문을 정세현의 박사학위 논문으로
+인준함.
+2014 년 12 월
+심사위원장 이 광 원 (인)
+심사위원 최 원 식 (인)
+심사위원 김 하 용 (인)
+심사위원 김 환 정 (인)
+심사위원 유 문 집 (인)
+을지대학교 대학원
+
+--- PAGE 5 ---
+A study on the gait deviations in ACL deficient Knees
+-kinematic and kinetic characteristics during gait
+by
+Se Hyun Chung
+A Dissertation Submitted to the Faculty of
+The Graduate School of Eulji University
+DOCTOR OF PHILOSOPHY IN MEDICAL SCIENCE
+(Orthopaedic Surgery)
+Supervised by
+Professor Ha Yong Kim
+Department of Medicine
+The Graduate School of Eulji University
+February, 2015
+
+--- PAGE 6 ---
+- i -
+국문요지
+전방 십자 인대 손상 환자의
+병적 보행의 특징에 관한 연구
+-운동 형상학 및 운동 역학적 특징
+서론: 전방십자인대는 경골 전방 전위의 저항체로, 신전 시에는
+내회전의 이차적 저항체로 작용한다. 슬관절은 경골과 대퇴골이라는 긴
+레버암의 중간에 노출된 관절로써, 여러 스포츠 활동에서 손상 받기 쉽다.
+전방십자인대가 손상되면, 불안정성으로 인한 증상 외에, 슬관절 내측
+구획의 연골 손상 및 퇴행성 변화를 초래하여, 결국에는 외상성 관절염을
+일으킨다. 이런 이유로 전방십자인대 손상 후 환자가 실제 지면을
+보행하거나, 계단을 오르거나, 달리기 혹은 피보팅(pivoting)을 하면서,
+어떤 병적 보행을 하는지 많은 연구가 진행되었다. 하지만, 이런
+연구들은 다양한 보상 기전으로 인해 일치된 연구 결과를 보여주지
+못하고 있다.
+연구의 목적: 이에 본 연구는 전방십자인대 손상 환자의 3 차원 동작
+분석을 이용하여, 운동형상학적 그리고 운동역학적인 보행의 특징을
+
+--- PAGE 7 ---
+- ii -
+파악하고, 원위 대퇴골과 근위 경골간에 일어나는 병적 회전 운동과 병진
+운동을 측정하고자 하였다.
+재료 및 방법: 본 연 구는 전방십자인대 손상이 확진된 성인 환자 중
+3 차원 보행 분석 검사에 자원한 19 례 (남자 14 명, 여자 5 명)를
+대상으로 하였다. 전방십자인대 파열 외에 추가적인 인대 손상이 있거나,
+근 골격계에 변형이나 마비가 있는 경우에는 연구에서 제외하였다.
+환자군은 중간 입각기 동안 슬관절 굴곡의 정도가 정상 보다 신전된
+군(신전 군, Group I, 11 명, 평균 연령 22 세)과 굴곡된 군(굴곡군,
+Group II, 8 명, 평균 연령 28 세) 등 두 가지 군으로 나누었다.
+대조군(group III)으로는 근 골격계 병변이 없는 정상 젊은 성인 남녀
+11 명(평균 연령, 21 세)으로 하였다.
+본 연구는 환자군(Group I, II)과 대조군(Group III)에 대하여 3 차원
+보행 분석을 하여, 기본적인 선형 지수, 운동형상학(kinematics)과
+운동역학(kinetics)자료를 얻었다.
+수동적 반사 표식자를 기본적인 Helen-Hayes marker set 외에, 경골
+근위부의 내, 외측 과에 표식자를 추가로 부착하였다. SKB 프로그램으로
+이들 표식자를 이용하여 인체 내부에 가상 평면과 가상 표식자를
+생성하여, 원위 대퇴골과 근위 경골간에 일어나는 병적 회전 운동과 병진
+운동을 세 군에서 추가로 측정하였다.
+
+--- PAGE 8 ---
+- iii -
+결과: 운동 선형 지수 결과에서 II 군(굴곡군)은 다른 군(I, III)에
+비하여 보장과 보폭, 그리고 분속수의 감소로 보행 속도가 유의하게
+늦어졌고, 단하지 지지기가 감소하고, 양하지 지지기가 증가한, 감통 보행
+(antalgic gait)과 유사한 형태를 보였다.
+Orthotrack 으로 얻은 운동형상학 결과에서 관상면 상에서는
+족부진행각이 환자군(I, II)에서 정상군에 비하여 보행 전체 주시 동안
+외족지 보행 형태를 보였다. 시상면 상에서 I 군은 골반의 후방 경사,
+고관절 신전, 슬관절 신전, 족관절 족저 굴곡의 자세(posteriorly-tight
+posture) 를 보였고, II(굴곡형)군은 고관절 굴곡, 슬관절 굴곡, 족관절
+족배 굴곡의 형태(mild crouch posture)를 보였다. 횡단면 상에서는
+통계적으로 유의한 차이를 보이는 양상은 없었다. 운동 역학 자료에서는
+시상면상에서 I 군의 신전 모멘트가 다른 군에 비하여 의미 있게
+감소하였다.
+SKB 를 이용하여 측정한 대퇴골에 대한 경골의 회전 운동은
+Orthotrack 으로 측정한 운동형상학 결과와 유사하였다. 이 자료에서
+관상면에서는 세 군간에 유의한 차이가 없었으나, 시상면에서
+제 2 군(굴곡군)에서 하중 반응기 및 중간 입각기에 다른 군 보다 슬관절
+굴곡의 정도가 컸으며, 유각기 최대 굴곡값은 다른 군보다 작아서 전체
+보행 주기 동안의 슬관절 운동 범의가 다른 군 보다 유의하게 적었다.
+
+--- PAGE 9 ---
+- iv -
+횡단면 상에서는 I 군은 정상보다 외회전, II 군은 내회전된 양상을 보였다.
+SKB 를 이용하여 측정한 병진 운동의 정도는 세 군간에 차이가 없었다.
+결론: 본 연구에서 굴곡군은 재활 치료가 충분히 되지 못하고 증상이
+있는 군으로 사료되며, 반면에 신전군은 슬관절 굴곡근과 신전근의
+재활이 이루어진 비교적 증상이 경미한 군으로 사료된다. 굴곡군과
+신전군은 서로 개별적인 보상 기전으로 전방십자인대 손상에 적응하고
+있다고 사료되며, 이를 구분하는 것은 근육에 대한 재활 정도로 사료된다.
+본 연구로 전방 십자 인대 손상에 대한 그 적응 기전이 다양함을
+확인하였으며, 전방 십자 인대 손상의 병적 보행의 분석 및 진단이나
+치료방법의 개선, 치료 결과의 비교에 유용하리라 사료된다. 향후 연구는
+단순한 평지 보행 보다는 전방십자인대에 더 큰 부하를 줄 수 있는
+표준화된 기법을 개발하여, 보상 기전을 평가 할 필요가 있으리라
+사료된다.
+색인 단어: 병적 보행, 3 차원 동작 분석, 회전 운동, 병진 운동, 운동
+형상학, 운동학, 슬관절
+
+--- PAGE 10 ---
+- v -
+차 례
+국문요지 ---------------------------------- i
+차 례 ----------------------------------- v
+표차례 ----------------------------------- vi
+그림차례 ---------------------------------- viii
+Ⅰ. 서론 ----------------------------------- 1
+Ⅱ. 연구대상 -------------------------------- 10
+Ⅲ. 연구방법 -------------------------------- 13
+Ⅳ. 결과 ---------------------------------- 24
+Ⅴ. 고찰 ---------------------------------- 29
+Ⅵ. 결론 ---------------------------------- 38
+참고문헌 ---------------------------------- 41
+Table ------------------------------------ 47
+그림설명 ---------------------------------- 60
+그 림 ------------------------------------ 61
+Abstract ---------------------------------- 77
+
+--- PAGE 11 ---
+- vi -
+표차례
+Table 1. Patient profiles of the ACL-injured group ---------47
+Table 2. Study group and Control group ----------------48
+Table 3. Results of Linear parameters --------------49
+Table 4. Comparison of hip and ankle kinematics on the coronal plane
+between 3 Groups ----------------------50
+Table 5. Comparison of pelvis and hip kinematics on the sagittal plane
+between 3 Groups --------------------51
+Table 6. Comparison of knee kinematics on the sagittal plane between
+3 Groups ------------------------- 52
+Table 7. Comparison of ankle kinematics on the sagittal plane between
+3 Groups -------------------------53
+Table 8. Comparison of Knee moment and power between 3 Groups –
+---------------------------------54
+Table 9. Axis of rotational movement -----------------55
+Table 10. Comparison of rotational movements on the sagittal plane
+between 3 Groups---------------------56
+Table 11. Comparison of rotational movements on the transverse
+plane between 3 Groups ----------------57
+
+--- PAGE 12 ---
+- vii -
+Table 12. Comparison of rotational movements on the coronal plane
+between 3 Groups ------------------58
+
+--- PAGE 13 ---
+- viii -
+그림차례
+Fig.1 Gross photo of ACL ----------------------- 61
+Fig.2 Grouping of the study group according to the difference of Knee
+kinematics in sagittal plane -----------------------62
+Fig.3 Schematic diagram of 3-dimensional gait analysis. ------ 63
+Fig. 4 Attachment of Marker set -------------------- 64
+Fig. 5 Fluoroscopic images of marker sets for medial and lateral
+femoral epicondyles, medial tibial condyle and fibular head ----- 65
+Fig.6 Generation of virtual markers ------------------ 66
+Fig.7 Coronal planes of femur and tibia-----------------67
+Fig.8 Study design ---------------------------- 68
+Fig.9 Kinematic data of 3 groups-------------------- 69
+Fig. 10 Kinetic data of knee joint of 3 groups -------------70
+Fig. 11 Kinematic data of coronal plane of 3 groups --------- 71
+Fig. 12 Kinematic data of sagittal plane of 3 groups --------- 72
+Fig. 13 Kinematic data of transverse plane of 3 groups------- 73
+Fig. 14 Kinetic data of 3 groups ---------------------74
+Fig. 15 Kinematic data of knee joint rotational movement of 3 groups
+----------------------------------------75
+
+--- PAGE 14 ---
+- ix -
+Fig. 16 Kinematic data of knee joint translational movement of 3
+groups -----------------------------------76
+
+--- PAGE 15 ---
+- 1 -
+I. 서 론
+최근 스포츠 및 야외 활동의 증가로 슬관절의 손상 빈도는 매년
+증가하고 있다. 슬관절은 인체에서 가장 큰 관절이지만, 근육 깊숙이
+심부에 위치하는 것이 아니고 피하에 얕게 위치하고 있으며, 골격
+형태가 불안정한 구조를 이루고 있어서 외상에 취약하다. 일상
+생활이나, 여러 스포츠 활동, 그리고 교통 사고 등을 통해 다양한
+부하- 내, 외측 부하, 전, 후방 부하, 내, 외회전 부하 혹은 가속 및
+감속 등의 다양한 부하-가 슬관절에 가해진다. 이런 부하는 대퇴골과
+경골이라는 긴 지렛대를 통해 슬관절에 전달되며, 슬관절의 안정성에
+관여하는 여러 골성 혹은 연부 조직은 각자의 역할에 따라 부하에
+저항하며, 이에 실패한 경우에 해당 조직의 파괴가 일어난다.
+I-1 슬관절의 안정성
+슬관절의 골격 구조는 편평한 경골 근위부에 실린더 형태의 원위
+대퇴골이 옆으로 놓여 있는 형태이다. 골 구조 자체가 매우 안정적인
+Ball-and-socket 관절인 고관절과 달리, 슬관절의 골 구조는 관절의
+안정성에 거의 기여하는 바가 없으며, 골 구조 자체로는 불안정한
+구조를 갖고 있기 때문에 슬관절의 안정성에는 주위 인대성 구조물의
+역할이 매우 중요하다1)
+.
+
+--- PAGE 16 ---
+- 2 -
+슬관절의 안정성은 주로 네 개의 인대에 의한다. 내, 외측 측방에는
+각각의 측부 인대(medial and lateral collateral ligament)가 관절의
+측방 안정성을 제공한다. 내측 측부인대는 심부와 천부의 두 부분이
+넓적한 판처럼 구성된 인대이고, 외측 측부인대는 끈과 같은 구조의
+인대이다. 슬관절의 전면 중앙에 전방십자인대가 있으며, 이는 점프,
+감속 활동, 민첩성 활동 등에서 경골의 회전, 전방 전위를 막아주는
+역할을 한다. 전방십자 인대의 뒤에 후방십자인대(Posterior cruciate
+ligament)가 있다. 이는 후방 전위를 막아주는 역할을 한다.
+I-2 전방십자인대의 구조와 역할
+전방십자인대는 육안적으로 분명히 구별되지는 않지만, 기능이
+약간 상이한 두 종류의 다발(bundle)로 이루어져 있다. 경골극(tibial
+spine)에 대한 상대적인 위치로 전내측 다발(anteromedial bundle,
+AMB)과 후외측 다발(posterolateral bundle, PLB)로 불린다(그림 1).
+두 개의 다발은 외측 과간 융기 (lateral intercondylar ridge)의
+원위부에 부착하며, 이분 능(bifurcate ridge)에 의해 분리된다.
+AMB는 상대적으로 무릎이 굴곡되었을 때 팽팽해지고, PLB는 신전
+시에 팽팽해진다. 전방십자인대의 주요 기능은 축 이동(pivot-shift)에
+저항하여 손상을 막는 것이다.
+전방 십자 인대는 대퇴골에 대한 경골의 전방 전위에 저항하는
+
+--- PAGE 17 ---
+- 3 -
+일차적 정적 구조물로서, 많게는 전방 부하의 85%까지 담당하며, 신전
+시에는 내회전의 이차적 저항체로 작용한다. 전방 십자 인대는
+전내측과 후외측 다발은 신전 시 서로 평행하게 위치하나, 굴곡 시 두
+다발은 다소 꼬이고 교차하게 된다. 굴곡 시 두 다발의 부착 위치가
+상대적으로 회전함으로써, 전방 십자인대의 후외측 다발은 굴곡이
+증가할수록 느슨해지며 전내측 다발은 반대 현상이 나타나며 굴곡 시
+긴장된다. 그러므로 경골의 전방 전위 동안 후외측 다발은 45도 굴곡
+시까지 부하 전달의 주된 역할을 하고, 이 위치에서는 두 다발의
+부하는 동일하며 이 굴곡 각도 이후에는 전내측 다발이 부하 전달의
+주된 역할을 한다. 즉, 전내측 다발 손상 시에는 주로 경골의 전방
+전위가 증가하고, 후외측 다발 손상 시에는 경골의 외회전과 과신전이
+증가한다.
+또한 전방십자인대에는 표면에 고유 감각(proprioception)을
+감지하는 기계 수용체(mechanoreceptor)가 있으며, 이로 인해
+손상되지 않은 전방십자인대는 고유 감각과 균형을 유지하는데 중요한
+역할을 하며, 관절면에서 적절히 부하를 담당하도록 하는 기능을 하고
+있다.
+I-3 전방 신자 인대 손상의 기전
+전방십자인대 등 슬관절의 인대는 여러 스포츠 활동이나 일상
+
+--- PAGE 18 ---
+- 4 -
+생활에서 손상 받기 쉽다. 이는 슬관절이 경골과 대퇴골이라는 긴
+레버암의 중간에 잘 노출된 관절이기 때문이다. 스포츠 활동 중
+비접촉성, 트위스팅, 혹은 착지 동작에서 주로 부하가 걸리며, 부하가
+임계치를 넘으면 전방십자인대는 손상되어 끊어진다. 스포츠 비디오
+분석에서 발이 지면에 놓이고, 무릎이 상대적으로 외반되고, 고관절이
+굴곡된 위치에서 손상이 주로 발생하였고, 대체로 방향을 갑자기
+전환하려는 동작에서 파열되었다. 접촉성 파열(contact injury)은 주로
+외반력에 의한 손상(valgus collapse)으로 발생하였다.
+슬관절의 0-30도 굴곡 상태에서 대퇴 사두근이 수축하게 되면,
+경골을 전방으로 당기는 힘(anterior tibial shear force)이 발생한다.
+이런 상황은 주로 운동 선수가 하지를 착지하면서 빠르게 반대
+방향으로 몸을 틀 때이다. 전방 십자인대를 손상시키는 힘의
+방향으로는 감속(deceleration), 과신전(hyper-extension), 혹은
+대퇴골에 대한 경골의 내회전력(rotational force) 등이 알려져 있다.
+전방십자인대는 손상 시 슬관절의 병적 전방 전위, 회전 불안정성,
+근력 약화를 야기시키며 연골 손상2)
+및 퇴행, 반월상 연골의 파열을
+일으켜 슬관절의 기능 저하는 물론 슬관절 내측 구획의 외상성
+관절염을 일으킨다3-10)
+. 때문에 전방 십자 인대의 슬관절 안정성에
+미치는 영향은 매우 중요하며, 인공 혹은 생체내의 환경에서 많은
+연구들이 이루어져 왔다11-16)
+.
+
+--- PAGE 19 ---
+- 5 -
+I-4 전방 신자 인대 손상의 치료
+전방십자인대는 보행, 평지 달리기나 자전거 타기 등 일상
+생활에는 큰 역할을 하지는 않는다. 따라서 수술적 재건을 고려할 때는
+환자의 연령, 성별, 활동 정도 등을 고려하여야 한다. 40-50대의
+경우라도 관절염이 없고, 활동적인 생활을 하며, 이 것이 증상을
+일으키는 경우에는 수술적 재건을 고려할 수 있다. 반대의 경우라면
+보존적 치료를 우선 고려해 볼 수 있다.
+여러 연구에서 전방 십자인대 손상에 의한 불안정성은 관절염을
+유발한다고 알려져 있다. 하지만, 전방 십자인대 재건 수술을 받은
+환자도 관절염이 발생할 가능성이 크다고 보고되어, 십자인대 재건
+수술이 퇴행성 변화의 자연 경과에 영향을 주는지는 불분명하다.
+전방 십자 인대가 손상된 환자의 경우 우선 비수술적인 재활
+치료를 시행할 수 있다. 나이가 상대적으로 많고, 활동 정도가 낮은
+환자의 경우 또는 중등도의 잔여 불안정성에도 불구하고 일부에서
+비수술적인 치료로서 만족스런 임상결과를 보일 수 있다. 그러나
+활동적인 스포츠 인구에서의 비수술적인 방법은 그다지 만족스럽지
+못한 결과를 보이며 재활치료에 소요되는 시간을 기다릴 수 없거나
+불안정성으로 인한 추가적인 손상이 우려되기도 한다. 파열된 인대의
+봉합(repair)은 시간의 경과에 따라 불안정성이 발생하고 결과가 좋지
+
+--- PAGE 20 ---
+- 6 -
+않아 현재 사용하지 않으며, 봉합한 인대를 강화(augment)하는 술식
+또한 정상적인 해부학적 구조를 재현하지 못하고 기계적 특성이
+열등하여 역시 한계가 있다.
+전방십자인대 재건술의 이론적 배경은 내측 측부 인대와는 달리
+전방십자인대는 자연적 치유력이 떨어져서, 비수술적 치료로서 기능을
+회복하는 경우가 드물다는 것이다. 현재 많은 술자들은 인대 재건술을
+젊고, 높은 수준의 활동 및 스포츠를 하며 완전 파열이 확인된
+경우에서 시행하고 있다. 수술은 불안정성, 종창, 통증 외에도 생활
+방식과 활동의 수준을 감안하여 수술여부를 결정해야 한다. 최근에는
+덜 격렬한 운동을 하는 스포츠 인구, 청소년, 경도의 퇴행성 변화가
+이미 진행된 경우 등에도 수술의 적응증이 확대되고 있다.
+수술의 시기에 대해서는 명확한 표준은 없는 편이다. 대개 관절
+종창의 유무, 술전 관절 운동범위의 회복 등을 살펴 수술 시기를
+정하게 되며 수상 후 절대적인 시간은 비교적 중요하지 않다고 할 수
+있다. 반월상 연골의 파열로 인하여 봉합을 요할 때에는 대개 일찍
+수술을 시행한다. 현재 전방 십자 인대 재건술로는 자가 또는 동종
+이식물을 사용하여 단일 절개 및 경골 터널을 통한 관절경적 방법으로
+시행하는 것이 보편적이며 현재까지 좋은 결과와 적은 합병증을
+보이고 있다. 최근에는 전방십자인대를 재건 할 때, 두 가닥의
+이식물을 이용하여 해부학적으로 전내측 속과 후외측 속을 각각
+
+--- PAGE 21 ---
+- 7 -
+재건하고자 하는 노력이 시도되고 있다.
+I-5 전방십자인대 손상 환자의 병적 보행에 대한 기존 연구
+기존에 전방 십자인대 손상에 대한 많은 연구 들이 있어왔고, 이런
+연구들은 통증 정도나 기능적 평가 등에 초점을 두었고, 실제 보행
+등의 관절 운동학적 상태에서 근육의 수축이나 체중 부하 상태에서의
+슬관절의 불안정성을 직접 반영하는 데는 제한적이었다. 이런 정적인
+연구와는 달리, 환자가 실제 지면을 보행하거나, 계단을 오르거나,
+달리기 혹은 피보팅(pivoting)을 하면서, 손상 전 혹은 정상인에
+비하여 어떤 병적인 변화가 발생하는지에 대한 연구도 꾸준히
+진행되었다.
+동적 운동의 분석에 가장 좋은 방법은 3차원 동작 분석 방법이다.
+이 방법은 수동적 반사 표지자 (Passive reflective marker) 를
+해부학적 특정 부위에 부착하고 직선 보행로를 걷거나 런닝 머신에서
+뛰는 상태에서, 체중부하 상태의 동적인 슬관절 주위 분절의
+움직임(관절의 운동 형상학)이나 근육과 관절의 역학(운동 역학/
+근전도)을 측정-분석할 수 있다. 슬관절의 안정성에 관여하는 연부
+조직이 손상된 경우에는 보행 시 이상 움직임과 통증, 그리고 보상
+기전 등을 보이게 된다. 기존에 전방 십자 인대의 손상이 있는
+슬관절의 생체 운동 역학에 대한 많은 연구에서도 시상면에서 전방
+
+--- PAGE 22 ---
+- 8 -
+전위가 증가됨을 확인하였으며17,18)
+, Andriacchi는 최초로
+전방십자인대 손상환자의 보행을 “사두고근 회피 보행(Quadriceps-
+avoidance gait)”으로 정의하였다19)
+. 그 후로 Torry 등은 운동
+형상학 연구에서 중간 입각기에 슬관절 신전이 정상보다 증가되는
+신전 형태와 정상과 유사한 이상 형태의 특징적인 보행 양상이 있음을
+보고 하였다20)
+. Fuentes 등은 사두고근 회피 보행이 아니고,
+“축이동 회피 보행(Pivot shift avoidance gait)”을 한다고
+보고하였다13)
+. 이처럼 전방십자인대 손상 환자들은 보행하는 동안
+실제로 여러 보상 기전을 사용하기에, 저자마다 다양한 병적 보행
+형태에 대한 보고가 있어 왔다고 사료된다. 실제로 전방십자인대
+손상환자의 특징적인 보행을 규정하기도 어려울 정도이다.
+I-6 연구의 목적
+전방 십자 인대 손상이 있는 경우에 보행 시 슬관절을 비롯한 여러
+분절에 어떤 병적 보행을 보이는지 정성화 및 정량화 할 수 있으면,
+전방 십자 인대 손상 환자의 수술 적응증을 좀 더 구체화 할 수 있을
+것이며, 보존적 혹은 수술적 치료 후에 단순한 이학적 검사의 개선뿐
+아니라 실제 보행에서 병적인 보행 요소가 개선되는지, 혹은 어느
+정도만큼 개선 되는지 평가 할 수 있을 것이다.
+이에 저자들은 전방 십자 인대 손상이 확진된 환자의 3차원 동작
+
+--- PAGE 23 ---
+- 9 -
+분석을 이용하여, 병적 보행의 특징을 파악하고 그 정도를 다음과 같이
+측정-평가하고자 하였다.
+1) 3차원 보행 분석 검사를 시행하여, 전방 십자 인대 손상이 있는
+슬관절(ACL-deficient Knee: ACL-d knee) 환자가 보행 하는 도중
+어떠한 운동 형상학적, 그리고 운동역학적 특징을 보이는지 평가하고자
+하였다.
+2) 전방 십자 인대 손상 환자군이 보행 시 정상인에 비하여 원위
+대퇴골과 근위 경골간에 어떠한 병적 회전 운동(Rotational
+movement)을 보이는지 평가하고자 하였다.
+3) 전방 십자 인대 손상 환자군이 보행 시 정상인에 비하여 원위
+대퇴골과 근위 경골간에 어떠한 병적 병진 운동(translational
+movement)이 있는지 평가하고자 하였다.
+
+--- PAGE 24 ---
+- 10 -
+II. 연구 대상
+II-1 대상군(Study group)
+전방 십자 인대 손상으로 정형외과 외래를 찾은 성인 환자 중
+3 차원 보행 분석 검사에 자원한 환자 19 례를 본 연구의 대상으로
+하였다. 남자가 14 명, 여자가 5 명이었다. 대상 환자들은 모두 슬관절
+불안정성에 해당하는 증상으로 정형외과 외래를 방문하였고, 이학적
+검사로 전방 십자인대 손상이 의심되어 MRI 검사 후 전방십자인대
+손상이 확진 되었다. 각 대상들은 과거력 상 선천성 질환이나 성장
+발육에 영향을 줄 수 있는 근골격계 질환의 병력은 없었다. 신체
+검사상 근육의 근력은 모두 정상이었고, 시상면, 관상면, 횡단면 상
+골격이나 관절에 변형이 없었다. 시상면과 관상면의 변형은 하지
+scanogram 을 촬영하여 이상 유무를 확인하였고, 횡단면의 변형은
+복와위에서 대전자부 촉지 방법에 의한 대퇴골 전염전 값과 대퇴-
+족부간 각도(thigh-foot angle)를 측정하였으며, 족부는 검사자의
+시진으로 확인하였다.
+환자들은 연구를 진행하는 동안 보행의 운동형상학 결과에서 상이한
+두 가지 형태를 보여, 환자군(patient group)을 두 군으로 세분하였다.
+즉, 중간 입각기 동안 슬관절 굴곡의 정도가 정상 보다 신전된 군(신전
+
+--- PAGE 25 ---
+- 11 -
+군, Extended group: Group I)과 굴곡된 군(굴곡군, flexed group:
+Group II) 등 두 가지 군으로 나누었다(그림 2). Group I 은 총
+11 명으로 남자 8 명, 여자 3 명이었고 평균 연령 22 세(16 세-
+43 세)이고, Group II 는 총 8 명으로 남자 6 명, 여자 2 명이며 평균
+연령 28 세(16 세-47 세)였다 (표 2)
+II-2 제외 기준(exclusion criteria)
+기본적으로 슬관절의 전방 십자 인대 손상 외에 다른 부위의 근
+골격계 손상이나 변형이 있는 경우는 연구에서 제외하였다. 예외로,
+슬관절의 전방 십자 인대 손상과 더불어 반월상 연골판 손상이 있는
+경우는 연구에 포함하였고, 후방 십자 인대 손상이 동반된 경우는
+연구에서 제외하였다(표 1). 과거력 상 선천성 근골격계 질환이나
+성장 발육에 영향을 줄 수 있는 감염성, 혹은 신경-근육성 질환의
+병력이 있는 경우는 연구에서 제외하였다. 골절 등의 후천성 병력의
+경우는 치료 후 변형이나 관절 강직 등의 후유증이 남은 경우는
+연구에서 제외하였다.
+보행 분석 검사 전에 신체 검사를 하여, 근력 이상, 시상면,
+관상면, 횡단면 상 골격이나 관절의 변형이 있는 경우는 연구에서
+제외하였다. 시상면과 관상면의 변형은 하지 scanogram 을 촬영하여
+이상 유무를 확인하였고, 횡단면의 변형은 Staheli 의 회전
+
+--- PAGE 26 ---
+- 12 -
+프로필(rotational profile)을 측정하였으며, 족부는 검사자의 시진으로
+확인하였다.
+II-3 대조군(Control group)
+대조군은 환측이 아닌 건측을 대조군으로 이용할 수도 있겠지만,
+반대측 하지가 비정상인 경우에 건측에 보상성 이상 움직임이 생길 수
+있으리라 판단되어, 본 연구에서는 근 골격계 병변이 없는 정상 젊은
+성인을 대조군(group III)으로 하였다. 본 연구의 대조군은 연구에
+자발적으로 참여한 정상 성인 남녀 11 명(남자 9 명, 여자 2 명)으로
+하였다. 평균 연령은 21 세(20 세~23 세)였다. 각 대상들은 선천성
+질환이나 과거력 상 성장 발육에 영향을 줄 수 있는 질환의 병력은
+없었다. 이학적 검사상 근육의 근력은 모두 정상이었고 시상면, 관상면,
+횡단면 골격의 변형이 없었다.
+
+--- PAGE 27 ---
+- 13 -
+III. 연구 방법 : 3 차원 보행분석검사
+본 연구는 환자군(Group I, II)과 대조군(Group III)의 각 지원자를
+3 차원 보행 분석(3 dimensional gait analysis)하였다. 3 차원 보행
+분석 검사는 3 차원 광학 추적 장비(optical tracking system)를
+이용하여 피검자가 보행하는 동안 인체의 움직임을 실시간으로 추적
+분석하여 운동형상학(Kinematics)과 운동역학(Kinetics) 자료를
+구하는 검사이다.
+III-1 보행분석검사의 장비-하드웨어
+본 연구의 보행분석검사는 Eagle 디지털 시스템(Eagle digital
+system, MotionAnalysis® CA, USA)과 AMTI 힘판(Advanced
+mechanical technology Inc. force plate, Watertown, MA, USA)을
+사용하였다. Eagle 시스템은 6 대의 광각 렌즈가 장착된 SLR 디지털
+카메라로 적색-싱크로나이즈 링 스트로브(red-synchronized ring
+strobe)가 달려있다. 검사하는 동안 링 스트로브에서 적색광을
+발광하고, 피검자의 특정 해부학적 부위에 부착된 수동 반사
+표식자(Passive reflective markers)가 적색광을 반사한다. 카메라는
+이 반사된 적색광을 캡쳐(포착, capture)하여 컴퓨터 시스템(Eagle
+
+--- PAGE 28 ---
+- 14 -
+Hub)에 보내게 된다. 본 연구는 동작 포착(motion capture)의 횟수를
+초당 120 회 포착(120Hz)으로 하였고, 동작 포착을 위한 포착
+공간(capture volume)의 보행로(walkway)는 7m 로 설정하였다.
+힘판(force plate)은 AMTI 힘판 두 개를 보행로 중앙에
+설치하였다(Fig. 3).
+III-2 보행분석검사의 장비- 소프트웨어
+카메라를 통해 얻은 캡쳐 자료는 Eva Real Time(EvaRT, Ver 4.2,
+Motion Analysis® CA, USA)과 Orthotrak(Motion Analysis®, Santa
+Rosa, CA, USA), 그리고 Skeleton builder (SKB, Motion Analysis®,
+Santa Rosa, CA, USA), Software for Interactive Musculoskeletal
+Modeling(SIMM, Motion Analysis®, Santa Rosa, CA, USA)
+소프트웨어 등을 이용하여 후-처리하였다.
+EvaRT 와 Orthotrak 은 MotionAnalysis® 사의 기본 보행분석검사
+편집 프로그램이다. EvaRT 는 기본 캡쳐 프로그램으로 카메라에서
+얻어진 데이터를 직접 캡쳐-편집하는 프로그램이다. Orthotrak 은
+자동화된 3 차원 임상 보행 분석용 계측-평가-자료 매니지먼트
+시스템으로, 운동 형상학-운동역학 자료를 EMG 와 힘판 자료 등과
+
+--- PAGE 29 ---
+- 15 -
+함께 간편하게 통합시켜, 간단 명료한 차트와 그래프를 만들어 준다.
+또한 임상용으로 환자의 이학적 검사 자료를 보행 분석 자료와 동시에
+기록하거나, 판독에 익숙한 표나 그래프로 쉽게 편집하여 준다.
+SKB 는 EvaRT 로 편집된 각 분절 간의 움직임을 계산하는
+프로그램이다. 본 연구는 SKB 를 이용한 프로그램으로 두 개의 가상
+표식자(virtual marker)와 가상 면(virtual plane)를 형성하고, 이 가상
+표식자와 면 간의 상대적인 움직임을 계산하도록 하였다.
+III-3 보행 분석 검사의 준비 및 표식자 부착
+1) Modified Helen-Hayes marker set
+피검자가 보행하는 동안 3 차원 운동 형상학 자료를 구하기 위해
+직경 6mm 크기의 수동적 반사 표식자(passive reflective marker)를
+피검자의 특정 해부학적 위치에 부착하였다. 일반적인 보행 분석
+검사에서 하지의 분절(segments)은 골반-대퇴-하퇴-족부(Pelvis-
+thigh-shank-foot) 등 4 개로 구성되며, 각 분절은 물성 상
+강체(solid bar)로 가정된다. 표식자의 부착은 modified Helen-Hayes
+방법으로 하였고, 이 방법은 각 분절 별로 세 개의 표식자를 부착하여,
+이들을 EvaRT 에 등록시켜 하나의 분절을 인식하도록 하는 방식이다.
+이는 보행 분석 검사에서 가장 널리 이용되는 표식자 부착 방법이다.
+
+--- PAGE 30 ---
+- 16 -
+본 연구를 위해 표식자를 양측 전상부 장골극(ASIS), 양측 후상부
+장골극(PSIS) 높이의 천골 중앙부, 대퇴부, 내외측 대퇴골과, 종아리,
+족관절 내외측 과, 발뒤꿈치, 전족부에 12mm 직경의 일반 표식자를
+부착하였다. 연구의 종류나 연구실에 따라 대퇴부와 종아리에 일반
+표식자가 아닌 막대 표식자(wand)를 부착하기도 한다.
+2) SKB 프로그램으로 가상 표식자를 생성하기 위한 추가적인 표식자
+부착
+본 연구에서는 이상의 Modified Helen-Hayes 방법에 사용되는
+marker set 외에 추가적으로 내, 외측 측부 인대가 부착하는 경골
+근위부의 내, 외측 과에 각각 표식자를 추가로 부착하였다(Fig. 4, 5).
+슬관절 주위의 4 개의 표식자(① 원위 대퇴골의 내측과 ② 원위
+대퇴골의 외측과, ③근위 경골의 내측과 ④근위 경골의 외측과)는 본
+연구의 핵심이 되는 표식자로, 부착하는 과정에 생기는 오차를
+최소화하기 위하여 C-형 영상 증폭기를 이용하여 부착하였다. 근위
+경골부에서 외측은 비골 두의 직 상부에 부착하였고 경골의 내측은
+C-형 영상 증폭기의 슬관절 측면 사진에서 서로 경골 외측부에
+부착한 표식자와 일치하는 경골 내과 부위에 부착하였다(Fig. 5).
+C-형 영상 증폭기를 이용하여 대퇴골 및 경골에 부착한 표식자는
+연부 조직이 풍부하지 않아 표식자와 피부 간의 움직임이 적으리라
+
+--- PAGE 31 ---
+- 17 -
+예상하였고, 또한 피부에서도 쉽게 촉지할 수 있는 해부학적
+구조물이어서 비교적 일정하게 부착할 수 있었다. 이들 표식자는
+대체로 지면과 평행하게 위치하고 같은 관상면에 위치하였다.
+일반적으로 보행 중 운동 형상학 측정을 할 때는, 정적
+표식자(static marker set) 중 내측 대퇴골 과와 경골 과에 부착한
+표식자를 떼어내고, 나머지 동적 표식자(dynamic marker set)를
+사용한다. 본 연구에서는 동적 표식자를 사용하였을 때와 정적
+표식자를 그대로 사용하였을 때를 비교하여 본 바, 두 방법간에 큰
+차이가 없었다. 또한, Skeletal builder(SKB) 프로그램의 데이터
+처리는 원위 대퇴골과 근위 경골부의 내측 표식자를 제거하면 데이터
+산출이 되지 않으므로 내측의 표식자를 그대로 부착한 채 보행 분석을
+하였다. 이점이 본 연구의 제한점으로 사료되나, 두 방법간에 큰
+차이는 없어 이론적으로 좀 더 정확할 것으로 사료되는 정적 표식자를
+그대로 사용하였다.
+III-4 보행 분석의 진행
+운동 형상학(kinematics)적 연구 방법으로는 표식자를 부착하고
+피검자는 동작 분석실의 중앙에서 정적 자료를 수집한 후, 동적 자료를
+위해 포착 공간(Capture volume)을 5 회 이상 반복하여 보행하도록
+하였고, 이 중 3 회의 보행 자료를 취합하여 평균값을 구하였다. 보행
+
+--- PAGE 32 ---
+- 18 -
+속도에 관하여는 피검자에게 빨리 걷거나 천천히 걸으라고 요구하지
+않았으며, 본인에게 편안한 속도로 걷게 하였다.
+Orthotrak 프로그램을 이용하여 보행 선형 지수인 보행
+속도(walking velocity), 분속수(cadence), 보장(step length),
+활보장(stride length), 단하지 지지기(single support), 양하지
+지지기(double support), 발 들림시기(time of toe off)를 측정하였다.
+각 분절 간의 움직임인 운동 형상학 자료(kinematic data) 즉, 보행 시
+골반, 고관절, 슬관절, 족부에서 실시간(real time)으로 변화하는
+회전각도 및 병진 길이를 시상면(sagittal plane), 관상면(coronal
+plane), 횡단면(transverse plane)에서 3 차원적으로 측정하였다.
+운동 역학 자료를 얻기 위한 힘판은 보행로의 중앙부에 두 개
+설치하였고, 여기서 얻어진 자료는 역동 역학(inverse dynamics)
+방법으로 소프트웨어 처리를 하였다. 그리하여, 보행 시 고관절,
+슬관절, 족부에서 실시간(real time)으로 발생되는 모멘트와
+일률(power)을 시상면, 관상면, 횡단면에서 3 차원적으로 측정하였다.
+III-5 가상 표식자의 생성
+각각의 표식자는 인체의 특정한 해부학적 부위에 부착하여,
+OrthoTrack 프로그램에 등록(registration)하게 된다. 따라서
+표식자는 인체의 심부(體內)가 아닌 표면에 부착되고 인식되어 된다.
+
+--- PAGE 33 ---
+- 19 -
+하지만 본 연구에서는 인체의 내부에 가상의 표식자(virtual
+marker)와 가상의 면(virtual plane)을 생성하기 위하여, Skeleton
+builder (SKB, Motion Analysis®, Santa Rosa, CA, USA)
+소프트웨어를 이용하였다. SKB 를 이용하면, 몸에 부착한 실제
+표식자들의 조합으로 새로운 가상 표식자나 평면을 생성할 수 있다.
+특히 인체 내부 등 직접 표식자를 부착할 수 없는 곳에 까지 가상
+표식자(virtual marker)를 생성 할 수 있다.
+1) 가상 표식자의 생성
+본 연구에서는 전방 십자 인대 손상이 있는 슬관절은 보행 시에
+관절의 불안정성으로 병적 병진(pathologic translational movement)
+운동이 있을 것으로 추정하였고, 보행 시 발생하는 병진 운동의 정도를
+측정하고자 하였다. 이를 위해 2개의 가상 표식자를 슬관절 내의
+대퇴골과 경골에 각각 설정 하였고, 동대학원 박건영 박사학위논문
+(정상 보행 시 경골-대퇴골간 관절의 병진 운동: 3차원적 계측
+(Translational Movement of the Tibiofemoral Joint in Normal Gait:
+3-Dimensional Measurement) 박사학위논문 2007 을지대학교
+대학원) 의 프로그램을 그대로 사용하였다.
+이 방법에서는 ① 대퇴 가상 표식자(α)를 대퇴 과간 절흔
+
+--- PAGE 34 ---
+- 20 -
+(intercondylar notch)의 중심에 생성하고 ② 경골 가상 표식자(β)를
+근위 경골 극(tibial spine)에 그림6과 같이 생성 하였다.
+먼저 기립위(standing posture)에서 전체 표식자를 포착하여
+좌표를 잡고, 이 좌표를 EvaRT 프로그램을 통해 각 분절(segment)에
+입력(registration of static marker set)한다. 그 후 가상 표식자를
+SKB프로그램으로 생성하는데, 먼저 대퇴 가상 표식자(α)는 실제
+표식자 a(원위 대퇴골 외측 상과)와 b(원위 대퇴골 내측 상과)를
+연결한 선의 이등분 점((a+b)/2)에 생성하였다. 경골
+가상표식자(β)를 생성하기 위해 먼저 내·외측 경골 과(표식자 c,
+d)를 이은 선의 이등분 점(e)을 설정한다(e=(c+d)/2). 이
+이등분점(e)에서 대퇴골 과간 절흔의 중심에 설정된 α와 연결한 후,
+점 e와 α의 중간점에 경골 가상표식자(β)를 생성하였다.
+이러한 가상 표식자 설정은 슬관절 MRI를 촬영한 본 연구와
+비슷한 연령 대의 남·녀 각각 10명의 슬관절 MRI의 관상면 이미지를
+계측하여 단순화한 것이다. 본 연구에서는 이렇게 두 개의 가상
+표식자를 생성하고, 피검자가 보행하는 동안 두 가상 표식자의
+상대적인 움직임(α 대한 의 β 움직임)을 측정하였다. 이 움직임의
+관상면, 시상면, 횡단면 상의 변화를 실시간으로 6개의 자유도(6
+DOF(Degree of freedom))로 측정하였다.
+
+--- PAGE 35 ---
+- 21 -
+2) 가상 평면의 생성
+전방 십자 인대 손상이 있는 슬관절은 보행 시에 관절의
+불안정성으로 병적 병진(pathologic translational movement) 운동
+이외에 병적 회전 운동(pathologic rotational movement)을 보일
+것이다. 이를 계측하기 위하여 가상 평면을 생성하였다. 본 연구를
+위하여 생성한 가상 평면(假像 平面, virtual plane)은 technical
+coordination system 에서 처리된 일종의 새로 형성된 해부학적
+좌표계(anatomic coordination system)이며, 동대학원 김갑중 (정상
+보행 시 경골-대퇴골간 관절에서 발생하는 회전 운동의 3 차원적 분석
+(3-D Analysis of Rotational movement at Tibiofemoral Joint in
+Normal Gait) 박사학위논문 2006)의 프로그램을 그대로 사용하였다.
+회전 운동을 측정한 가상 평면은 SKB 프로그램으로 대퇴 가상 평면과
+경골 가상 평면을 생성하였다.
+1) 대퇴 가상 관상면(virtual coronal plane of femur, Pf)
+대퇴 분절에 부착한 세 개의 실제 표식자 (그림 5 에서 ① A
+(대퇴부 표식자) ② B(대퇴 내측과) ③ C (대퇴 외측과))가 이루는
+평면을 SKB 프로그램으로 생성하여 대퇴 가상 관상면(virtual coronal
+plane of femur, Pf)으로 정의하였다. 대퇴부 표식자(A)는 대퇴부 원위
+1/3 되는 지점의 전면에 부착하였다. 슬관절은 일종의 실린더 형태의
+
+--- PAGE 36 ---
+- 22 -
+관절이므로, 원위부의 표식자 B, C 가 연결되는 선은 대퇴골이 만드는
+관절 축과 거의 일치한다.
+2) 경골 가상 관상면(virtual coronal plane of tibia, Pt)
+경골 가상 평면(virtual plane of tibia, Pt)은 하퇴 표식자(L)와
+근위 경골 내, 외측과에 부착한 표식자(M, N) 등 세 개의 표식자가
+이루는 평면으로 정의하였다(Fig. 7). 이중 하퇴 표식자는 하퇴부 근위
+1/3 되는 지점의 전면에 부착하였다. 근위 표식자 M, N 을 연결하는
+선은 근위 경골 관절면의 굴신 운동의 축과 거의 일치한다.
+본 연구에서는 피검자가 보행하는 동안 가상 평면 Pf(대퇴
+관상면)에 대한 가상 평면 Pt(경골 관상면)의 상대적인 움직임을
+측정하였다. 이상적이라면, 시상면 상의 움직임은 슬관절 시상면 운동
+형상학 그래프와 일치하고, 관상면 상의 움직임은 슬관절의 내-외반을
+보는 관상면 그래프와 동일 할 것이다. 횡단면 상의 움직임은
+슬관절에서 대퇴골에 대한 경골의 회전을 직접 계측하는 수치가
+제공될 것이다.
+III-6 연구를 위한 자료 수집 및 통계 처리
+이상의 검사(그림 8)를 통해 전방 십자인대 손상이 보행에 미치는
+영향을 분석하기 위하여 각 군의 평균적인 운동형상학 자료,
+
+--- PAGE 37 ---
+- 23 -
+슬관절에서의 3 차원적 병진 운동과 회전 운동 자료를 얻었다. 각
+검사에서 얻어진 자료는 Orthotrak 프로그램을 이용하여 그래프로
+표시하였고, 보행주기를 100 등분하여 각 시기의 수치를 Excel spread
+sheet 로 보내어 각 군 간의 평균값, 표준 편차 및 최대-최소값 등을
+구하였다.
+통계는 SPSS for window(Version 14.0, SPSS Inc., Chicago, IL,
+USA)를 이용하였으며 AVOVA 를시행하였고 유의성은 p 검정치
+0.05 를 기준으로 판단하였다.
+
+--- PAGE 38 ---
+- 24 -
+IV. 결과
+IV-1 이학적 검사 및 보행 선형 지수
+총 대상자의 평균 신장은 I, II, III 군 각각 164.8cm, 172.3cm,
+159.5cm 였으며, 평균 체중은 각각 70.7kg, 71.1kg, 56.9kg 이었다.
+각 대상군의 보행속도(walking velocity), 분속수(cadence),
+보장(step length), 활보장(stride length), 단하지 지지기(single
+support), 양하지 지지기(double support), 발 들림시기(time of toe
+off)는 (Table 4)에 제시하였다. 상기 보행 선형 지수 중 Group II 의
+보행속도(walking velocity), 분속수(cadence), 보장(step length),
+활보장(stride length), 단하지 지지기(single support), 양하지
+지지기(double support time)가 Group I, III 의 보행 선형 지수보다
+낮았으며, 통계적으로도 의미 있는 차이를 보였다(Table 3.).
+IV-2. 운동 형상학과 운동학
+세 Group 의 피검자가 보행하는 동안 골반, 고관절, 슬관절,
+족관절의 관상면, 시상면, 횡단면상 운동 형상학(그림 9)과 슬관절의
+운동역학(그림 10) 그래프를 얻었다.
+IV-3. 관상면상에서의 운동형상학
+
+--- PAGE 39 ---
+- 25 -
+관상면에서의 골반, 고관절, 슬관절 운동은 입각기 및 유각기에
+유의한 통계적 차이는 없었으며 족관절 운동은 Table 4.와 같았다
+(Fig. 11.). Group II 가 Group III 보다 입각기에 외족지 보행함을
+관찰하였고, 통계적으로도 유의한 차이를 보였다(p>0.05).
+IV-4. 시상면상에서의 운동형상학
+시상면에서 운동형상학 그래프는 다음과 같았다(Fig. 12.).
+(1) 골반과 고관절
+시상면에서 골반은 입각기에 Group I 이 Group II, III 와 비교하여
+후방 경사를 보였고 통계적으로도 유의하였다(Table 4.)(p<0.05).
+고관절은 Group I 에서 전체 보행주기 동안 정상보다 신전된 양상이
+관찰되었고 통계적으로도 유의하였다(Table 5.)(p<0.05).
+(2) 슬관절
+슬관절은 시상면에서 다소 복잡한 형태를 보였다. 전체적으로
+입각기에 Group I 은 정상군에 비하여 신전상태였고, Group II 는
+정상군에 비하여 굴곡된 상태를 보였다. 유각기 동안 최대 슬관절
+굴곡(peak knee flexion) 시기의 굴곡의 정도는 Group II 에서 가장
+적었으며, 보행 주기 동안 슬관절 운동 범위도 좁았다(Table
+6.)(p<0.05).
+
+--- PAGE 40 ---
+- 26 -
+(3) 족관절
+족관절 역시 슬관절과 유사하게 전체 입각기 동안 신전군은
+정상군에 비하여 족저 굴곡된 상태였고, 굴곡군은 반대로 정상군에
+비하여 족배 굴곡 상태를 보였다(Table 7.)(p<0.05).
+IV-5. 횡단면상에서의 운동형상학
+횡단면에서 각 관절의 운동은 다음과 같이 측정되었다(Fig. 13.).
+모든 하지 관절에서 입각기와 유각기에 통계적으로 유의한 차이는
+관찰되지 않았다(p>0.05).
+IV-6. 슬관절의 운동 역학
+운동역학 결과에서 슬관절의 모멘트는 다음과 같이 측정되었다(Fig.
+14.)(Table 8).
+관상면에서 슬관절 최대 모멘트는 Group II 에서 Group I, III 보다
+낮게 측정되었고 통계적으로 유의하였다(p<0.05).
+IV-7. SKB 프로그램으로 측정한 회전 운동 (Pf 에 대한 Pt 의 상대적인
+회전)
+SKB 프로그램으로 가상 대퇴 관상면(Pf)과 가상 경골
+관상면(Pt)을 만들어, 가상 대퇴 관상면(Pf)에 대한 가상 경골
+
+--- PAGE 41 ---
+- 27 -
+관상면(Pt)의 회전 정도를 3 차원적으로 측정하였다. 슬관절의
+운동형상학과 유사한 결과를 보일 것으로 기대되며, 이 보다 더 정확한
+값을 제공하리라 기대 되었다. 보행 시 대퇴골(Pf)에 대한 경골(Pt)의
+회전 운동은 시상면(Y 축)에서 굴곡/신전 (+/-)이 일어나고,
+관상면(X 축)에서 외반/내반(-/+)이, 횡단면(Z 축)에서
+내회전/외회전(+/-) 이 일어나며, 그래프 상의 음, 양 부호는 괄호와
+같다(Table 9.)
+세 Group 의 슬관절 회전 운동은 관상면에서 내반과 외반,
+시상면에서 굴곡과 신전, 횡단면 상에서 내회전과 외회전을
+비교하였다(Fig. 15.). 슬관절 회전 운동의 평균값은 세 방향
+모두에서의 통계적으로 유의한 차이가 있었다.
+(1)시상면
+시상면에서의 회전 운동은 Group II 에서 유각기 동안 적게 굴곡하고
+최대 굴곡 정도도 작았으며 통계적으로도 유의하였다(p<0.05) (Table
+10.)
+(2)횡단면
+횡단면에서 입각기 회전운동은 Group I 에서 Group III 보다 외회전
+보행이, Group II 는 Group III 보다 내회전 보행이 관찰되었고,
+통계적으로도 유의하였다 (p<0.05) (Table 11.).
+
+--- PAGE 42 ---
+- 28 -
+(3)관상면
+관상면에서 중간 입각기 회전운동은 Group I 이 Group III 보다
+내반되고, 말기 입각기와 유각기 회전운동은 Group II 가 Group
+III 보다 내반되고, 통계적으로도 유의하였다 (p<0.05) (Table 12.).
+IV-8. SKB 프로그램으로 측정한 병진 운동(α에 대한 β의 상대적인
+전위)
+(1) Coordination
+SKB 프로그램으로 보행 시 대퇴골의 가상의 한 점(α)에 대한
+경골의 가상의 한 점(β)의 상대적인 전위(병진 운동)를 측정하였다.
+시상면(Y 축)에서 전방/후방(+/-) 전위의 정도를, 관상면(X 축)에서
+내측/외측 (+/-)전위의 정도를, 횡단면(Z 축)에서 신연/압박(+/-
+)전위의 정도를 측정하였다(Table 13.).
+(2) 결과
+세 Group 의 슬관절 병진 운동은 입각기와 유각기에 시상면에서
+전방 견인과 후방 견인 길이를, 관상면에서 내측 전위와 외측 전위
+길이를, 횡단면에서 신연과 압박 길이를 비교하였다(Fig. 16.). 하지만
+통계적 유의한 차이를 보이지는 않았다(p>0.05).
+
+--- PAGE 43 ---
+- 29 -
+V. 고 찰
+전방십자인대는 전체 스포츠 관련 슬관절 손상의 약 20%를
+차지한다고 알려져 있다. 전방십자인대가 손상되면 슬관절은 불안정
+해지고, 기능적인 제한이 발생한다. 구체적으로는 전후방 불안정성과
+전외측 회전 불안정성(anterolateral rotatory instability)이 생기며,
+임상적으로는 Lachman 검사로 전후방 불안정성을, 축이동
+검사(Pivot-shift test)로는 전외측 회전 불안정성을 평가할 수 있다.
+보행분석검사는 전방십자인대 손상으로 방생하는 기능적 제한을
+평가하는데 아주 중요한 도구이다. 경골-대퇴골 관절의 3차원적 운동
+형상학적 분석은 모두 6개의 자유 각도 운동으로 인식될 수 있다. 즉,
+3개의 회전 운동(내회전/외회전, 내전/외전, 굴곡/신전)과 3개의 병진
+운동(전방/후방 견인, 내측/외측 전이, 신연/압박)이 있다21)
+. 보행 시
+경골-대퇴골 관절에서 일어나는 이런 움직임에 대한 연구에 여러
+방법들이 시도되어 왔으며, 특히 전방 십자 인대 파열과 그로 인한
+슬관절의 운동 역학에 미치는 영향은 광범위하게 연구되어 왔으며,
+특히 전방십자인대 손상 환자에서 보행에 대한 연구들은 잘 일치되지
+않는 다양한 연구들이 보고 되고 있다.
+
+--- PAGE 44 ---
+- 30 -
+V-1 사두고근 회피 보행?
+Grood 등22)
+은 전방 십자 인대 손상 후에 경골의 전방 전위가
+증가된다고 발표하였다. 전방 십자 인대 손상 환자의 경우 경골의 전방
+전위를 최소화 하기 위하여 사두근의 수축력을 감소시킨다고
+하였다19,23,24)
+. Berchuck 등12)
+은 전방십자인대 손상 환자는 슬관절
+굴곡 모멘트를 감소시킨 형태로 보행하는 양상을 보였으며, 이는
+환자가 사두근의 수축력을 줄여서 경골이 대퇴골에 대하여 전방으로
+전위되는 것을 줄이기 위한 것으로 ‘사두고근 회피 보행(quadriceps
+avoidance gait)’이라고 발표하였다.
+Wexler 등25)
+은 전방 십자 인대 손상 환자의 경우 말기
+유각기에서 슬관절 신전 각을 증가시켜 사두근의 역할을 감소시키려는
+보행을 관찰하였으며, Patel 등26,27)
+은 전방 십자 인대 손상 환자에서
+중간 유각기에서 슬관절 굴곡 각을 줄여서 사두근의 역할을 줄이는
+사두고근 회피 보행을 확인하였다.
+하지만 Torry 등20)
+은 16명의 전방 십자 인대 손상 환자에 대한
+운동 형상학 연구를 하였지만, 사두고근 회피 보행 형태를 발견하지
+못하였다고 보고하였다. 이들 환자 중 9명은 정상 보행 형태와 같은
+이상 형태(biphasic pattern)의 보행 양상을 보였고, 7명은 슬관절
+신전 형태의 보행 양상을 보임을 확인하여, 전방십자인대 손상 환자의
+적응 기전이 다양함을 발표하였다. 그리고 이후의 많은 연구들에서
+
+--- PAGE 45 ---
+- 31 -
+다양한 보상 기전에 대한 보고들이 있었고, 연구자들간 관찰이
+일치하지 않는 경우도 있었다.
+V-2 굴곡군과 신전군
+전방십자인대 손상 후 불안정성은 슬관절이 약간 굴곡된 상태에서
+잘 발생하며, 많은 연구에서 슬관절이 10-20도 정도 굴곡된
+하중반응기 (loading response)와 중간입각기 (midstance)에 손상된
+전방십자인대에 대한 여러 생역학적 보상 기전들이 일어난다고
+보고하고 있다. 본 연구는 이 시기의 운동형상학적 특징에 따라
+전방십자인대 손상 환자를 두 군으로 분류하였다. 이 시기에 정상
+대조군보다 슬관절 굴곡의 정도가 더 큰 경우를 굴곡군(Flexed
+group)으로 하였고, 대조군보다 신전된 환자군을 신전군(Extended
+group)으로 하였다. 대부분의 환자들에게서 이 구간이 뚜렷하게
+대별되기 때문에 환자들을 두 군으로 구분하는 데는 큰 이견은 없었다.
+저자들 전체 19명의 전방 십자 인대 손상 환자군 중에서
+11명에서 슬관절 신전 형태의 보행 양상(신전군)을, 8명에서 굴곡
+형태의 보행 양상(굴곡군)을 관찰하였다. 신전군은 고관절과 슬관절을
+신전, 족관절을 족저 굴곡 상태로 보행하였고, 굴곡형은 반대로
+고관절과 슬관절을 굴곡, 족관절을 족배 굴곡하여 보행(Mild Crouch
+gait pattern) 하였다. 본 연구에서도 전방십자인대 손상 환자들은
+
+--- PAGE 46 ---
+- 32 -
+하나의 보상 기전만을 보행 시에 채택하지 않고, 다양한 형태의 병적
+보행을 보인다는 것을 확인 할 수 있었다.
+하지만 두 군의 보행 선형 지수가 큰 대조를 보여서, 굴곡형은
+보장과 보폭, 그리고 분속수의 감소로 보행 속도가 유의하게 늦어졌다.
+반면, 신전형은 보장, 보폭 그리고 분속수의 유지로 정상과 유사한
+보행 선형지수를 보였다. 이 것을 감안한다면, 굴곡군은 재활 치료가
+충분히 되지 못하고 증상이 있는 군으로 사료되며, 신전군은 슬관절
+굴곡근과 신전근의 재활이 이루어진 비교적 증상이 경미한 군으로
+사료된다. 실제로 굴곡군은 단하지 지지기(single support period)가
+감소하고, 반대로 양하지 지지기(double support period)가
+증가하였는데, 이 역시 감통 보행 (antalgic gait)처럼 통증이 있거나
+근 위축이 있는 경우의 보행 형태임을 시사하는 소견이라 할 수 있다.
+또한 굴곡군의 mild crouch gait 형태로 인하여 보폭 및 보장이 줄어
+들었고 보행 속도에 유의한 차이를 보인 것으로 사료된다.
+V-3 운동형상학적 특징
+1) 관상면
+굴곡군 관상면 상에서 정상군에 비하여 족부가 입각기에 외족지
+보행을 보였다. 이는 Fuentes등이 이야기한 pivot-shift avoidance
+gait (환자군은 전후방 회전 불안정성을 보상하기 위하여 슬관절을
+
+--- PAGE 47 ---
+- 33 -
+굴곡하고, 슬관절 내회전 모멘트를 감소하는 보행)과 관련이 있다고
+사료된다.
+2) 횡단면
+Karrholm 등28)
+은 건강한 사람에서 슬관절의 능동적 신전 운동 시
+경골의 회전운동은 9.9° 내회전에서 1.6° 외회전의 범위를 가진다고
+보고하였다. Georgoulis 등21)
+은 3차원 보행 분석을 이용하여 전방
+십자 인대 결핍 환자와 전방 십자 인대 재건술을 시행한 환자의
+슬관절 운동 역학 분석을 시행하였는데, 전방 십자 인대 결핍 환자에서
+경골의 최대 회전 각은 9.6°±8.66° 내회전 값을 가지며 전방 십자
+인대 재건술을 시행한 환자에서는 0.3°±9.9° 외회전 값을 가진다고
+언급하였다. 그리고 모든 환자에서 보행 주기 중 초기 유각기에 경골
+내회전 각이 최대를 나타낸다고 하였다. Andriacchi 등29)
+역시
+전방십자인대 손상 시 유각기에 내회전이 증가한다고 보고하였다. 반면,
+Brandsson 등30)
+은 오히려 외회전 양상을 보인다고 보고하였다.
+Fuentes등은 전방십장인대 손상 환자군은 전후방 회전 불안정성을
+보상하기 위하여 슬관절을 굴곡하고, 슬관절 내회전 모멘트를 감소하는
+보행, 소위 pivot-shift avoidance gait을 한다고 보고였다.
+Takeda등도 전방십장인대 손상 환자들은 pivot-shift avoidance
+gait를 하며, 운동형상학적으로 외반과 경골 내회전을 줄이는
+
+--- PAGE 48 ---
+- 34 -
+보행(less valgus and tibial internal rotation gait)을 한다고
+보고하였다.
+Fuentes 연구의 대상 환자들이 보인 시상면 상의 운동형상학은
+본 연구의 굴곡군(flexed group)에 해당하였다. 본 연구에서는 슬관절
+굴곡군은 대퇴골에 대하여 경골이 내회전 하였고 신전군은 대퇴골에
+대하여 경골이 외회전 하였다. 또한 두 군 모두에서 내반된 보행
+양상을 보였다. 굴곡군의 보행 양상은 내회전 보행 양상을 보고하는
+연구들29,31)
+과 유사하여, 관절 내측 구획의 퇴행성 변화 촉진이라는
+결과를 야기한다.
+Andriacchi 등29)
+은 전방십자인대 손상 시 내회전은 증가하고 이로
+인한 스트레스가 특히 내측 구획에 가해져 연골의 손상을 촉진한다고
+하였고, Seon 등31)
+은 전방 십자 인대 결핍 환자의 슬관절이 연골의
+퇴행성 변화 및 퇴행성 관절염의 발생에 취약하다고 하였다. 본
+연구에서처럼, 내반 보행에 의해 내측 구획에 종 방향의 힘이 가해지고
+더불어 외회전으로 전단형의 힘이 가해지면, 역시 내측 구획 연골의
+손상을 가속화 시키게 된다.
+저자들의 연구에서는 신전군(Group I)의 환자들과 굴곡근(Group
+II)의 환자들이 다른 방향의 회전 운동의 증가가 관찰되었다. 다양한
+연구들은 같은 전방십자인대 손상이라도 다른 양상의 회전불안정성을
+보일 수 있다고 보고하였고 본 연구에서도 이를 확인하였다. 이것은
+
+--- PAGE 49 ---
+- 35 -
+슬관절 주위의 근육내지 인대 구조물의 강도나 보상 정도가 사람마다
+다르기 때문에 나타나는 현상으로 사료된다.
+3) 시상면
+굴곡군은 최초 접지기(IC, initial contact)에 10도 정도의 슬관절
+굴곡을 보이고, 반면에 유각기의 슬관절 최대 굴곡(peak knee
+flexion) 시기에는 그 정도가 50도 정도로 신전군이나 정상 대조군에
+비하여 감소되었다. 이는 보행 도중 전체적인 슬관절 운동의 범위가
+감소된 상태를 의미하며, 이는 통증이나 근력 약화 같은 증상이 있는
+경우에 하지의 관절 움직임을 줄여 증상을 경감시키려는 보상
+기전이라고 사료된다. Patel 등26)
+은 사두근 회피 보행을 하는 군에서
+정상군 보다 중간 유각기에서 슬관절 굴곡 각이 감소되며, 고관절 굴곡
+모멘트가 증가됨을 보고하였다.
+이 외에도 굴곡군의 슬관절 인접 관절을 보면, 족관절은 약간의
+족배굴곡, 고관절은 약간의 굴곡과 골반의 전방 경사를 보여, 경한
+형태의 crouch position 을 취하여 보행을 하고 있다. 특히 최초
+접지기에서 하중 반응기까지 약간의 굴곡 상태를 유지 하는 것은,
+슬관절이 불안정한 하지를 지면에 착지할 때, 지면 반발력이 경골을
+전방으로 전위시키려는 힘이 걸리고, 이 때 손상된 전방십자인대로 이
+힘을 저항하지 못하므로, 유각기 말기에 슬관절 굴곡근의 편심성
+
+--- PAGE 50 ---
+- 36 -
+수축력을 남겨 놓아, 경골을 후방으로 끌고 오는 힘을 남겨 놓는 보상
+기전이라고 사료된다. Solomonow 등32)
+도 전방 십자 인대 손상 환자의
+경우 슬와근의 수축력을 증가시켜 경골을 후방으로 끌어당긴다고
+지적하였다.
+반면 신전군은, 족관절과 연계하여 하중반응기와 중간입각기에
+슬관절이 신전된 형태를 보면, plantar flexion-knee extension
+couple이 항진된 상태처럼 보인다. 골반은 보행 주기 전체에 걸쳐
+약간 후방으로 경사져있고, 고관절은 정상군보다 과신전되어 있다.
+전체적으로 하지 후방의 근육들이 수축해 있을 것으로 사료되지만, 본
+연구에서는 근전도 검사를 시행하지 않아서 단정지을 수는 없다.
+V-4 운동역학적 특징
+신전군에서 굴곡군 보다 고관절 신전이 증가되고, 고관절 및 슬관절
+신전 모멘트가 증가되어 있었다(Fig. 7). 반면에 굴곡군의 경우 전체
+보행 주기 동안 슬관절의 모멘트와 일률이 거의 0에 가깝게 측정되어,
+대퇴 사두고근의 수축을 적극적으로 억제하려는 경향을 보였다.
+V-5 SKB 운동형상학적 특징 –회전 및 운동
+1) 회전운동
+본 연구에서 SKB로 측정한 회전 운동 값은 통상적인 운동 형상학
+
+--- PAGE 51 ---
+- 37 -
+자료와 유사한 결과를 보였다. 횡단면 상에서 SKB로 측정한 회전
+운동은 신전군은 정상군에 비하여 외회전, 굴곡군은 내회전을 보이는
+것으로 나타났다. 전방십자인대 손상 후 생기는 불안정성이 보행
+시에는 병적인 전방 전위보다는 병적인 회전 운동으로 나타난다고
+사료된다.
+2) 병진 운동
+측정된 병진운동 데이터는 특징적으로 신전형과 대조군은 3차원에서
+유사한 병진 값을 보였고, 굴곡형은 다른 군에 비하여 병진의 정도가
+적었다. Grood 등22)
+은 전방 십자 인대 손상 후에 경골의 전방 전위가
+증가된다고 발표하였으나, 저자들의 연구 결과에서는 전방 십자 인대
+손상 군에서 정상인 군과 비교하여 전방전위의 정도가 감소하였다.
+전방 십자 인대 손상 환자의 경우 경골의 전방 전위를 최소화 하기
+위하여 사두근의 수축력을 감소시킨다고 하였다19,23,24)
+. 슬관절 굴곡
+형태의 보행에서는 사두근의 수축력 감소와 슬괵근의 수축 증가로
+전방 전위를 감소시키는 것으로 보이나 슬관절 신전 형태에서는
+사두근의 수축력 증가로 신전형태를 유지하면서 사두근의 수축력보다
+큰 슬괵근의 수축력으로 전방 전위를 감소 시킨 것으로 사료된다.
+
+--- PAGE 52 ---
+- 38 -
+VI. 결 론
+본 연구에서 전방십자인대 손상 환자군을 중간 입각기의 운동
+형상학에 따라 신전군과 굴곡군으로 구분하였다. 굴곡군은 각 하지
+관절의 굴곡 증가와 함께 슬관절의 모멘트가 거의 측정되지 않았으며,
+신전군에 비하여 증상이 있고, 보상이 불완전한 군으로 사료되었다.
+굴곡군은 보행 형태가 경한 crouch gait및 stiff knee joint 양상과
+비슷한데, 이는 Torry 등20)
+의 연구처럼 관절액의 증가로 통증을
+감소시키기 위해 슬관절 굴곡 자세를 유지하는 것으로 보이며, 이와
+함께 대퇴 사두근의 근 수축을 감소시켜 경골의 전방 전위를 막고,
+슬관절 불안정성을 야기하는 모멘트를 최소화하는 것으로 보인다.
+반면에 신전군은 각 하지 관절의 신전을 증가시키는 차이점을
+보였고, 이런 양상이 관찰되는 것은 두 군간에 시상면상 위치하는
+근육들의 활동력에 차이가 있는 것으로 사료된다. 굴곡군은 경골을
+전방으로 전위시킬 수 있는 비복근과 대퇴 사두근의 근수축은 약화된
+반면, 슬괵근의 근수축력이 증가되어 슬관절의 전방 전위를 감소시키는
+보상 기전을 보이며, 신전군은 대퇴 사두근과 비복근의 근 수축 증가로
+슬관절의 신전과 족관절의 족저 굴곡 형태를 보이지만, 이보다 더 강한
+슬괵근의 수축으로 경골의 전방 전위를 막는 양상의 보행을 보이는
+
+--- PAGE 53 ---
+- 39 -
+것으로 사료된다.
+각 환자들의 동반 손상이나 관절 내 부종 등의 임상 증상 유, 무와
+더불어, 시상면상 작용하는 근육들의 활동력의 차이가 이러한 보행
+양상을 결정하는 것으로 보이며 전방 십자 인대 손상 환자에서 다양한
+양상의 보행이 관찰되는 것 또한 이런 근육의 보상 정도에 따라 다를
+수 있을 것으로 사료된다.
+이상의 결과로, 전방십자인대 손상 환자의 치료 방침을 결정하거나,
+수술 후 혹은 비수술적 치료로써의 운동 치료나 보조기를 처방하는
+경우, 그리고 치료 효과를 판정하려는 경우에, 개별 환자 들의 근력
+평가와 보행 분석 검사는 decision-making에 중요한 검사가 될 수
+있으리라 사료된다.
+다만, 본 연구는 전방십자인대 손상 군의 환자수가 많지 않고,
+순수한 전방십자인대 손상 환자가 아니며, 전방십자인대 재건술 후
+치료 결과와 비교 분석하지 못했다는 한계점이 있다.
+또한 전방십자인대는 단순한 평지 보행에는 큰 부하가 걸리는
+구조물이 아니어서, 연구들마다 다양한 보행의 보상 양상이 보고 되며,
+마찬가지로 본 연구에서도 환자마다 근육의 상태나 동반 손상 유무
+등에 따라 다른 보상 기전이 작용한 것으로 사료된다. 평지
+보행분석에서 이런 다양한 보상 기전이 작동하는 경우에는 불안정성
+정도나 재활의 정도를 측정-평가하는 것에는 제약이 발생한다.
+
+--- PAGE 54 ---
+- 40 -
+따라서 향후에는 단순한 평지 보행 보다는 좀 더 전방십자인대에
+부하를 줄 수 있는 표준화된 검사 형태를 만드는 것이 반드시
+필요하리라고 사료된다. 이런 검사로는 계단이나, 경사로 보행, 혹은
+pivot-shifting 동작 등이 해당될 것이다.
+본 연구로 전방 십자 인대 손상에 대한 그 적응 기전이 다양함을
+확인하였으며, 전방 십자 인대 손상의 병적 보행의 분석 및 진단이나
+치료방법의 개선, 치료 결과의 비교에 유용하리라 사료된다.
+
+--- PAGE 55 ---
+- 41 -
+REFERENCES
+1) Markolf KL, Mensch JS, Amstutz HC. Stiffness and laxity of the
+knee-the contributions of the supporting structures. J Bone
+Joint Surg Am. 1976, 58(5):583-594.
+2) Mankin HJ. The response of articular cartilage to mechanical
+injury. J Bone Joint Surg Am. 1982, 64(3):460-466.
+3) Finsterbush A, Frankl U, Matan Y, Mann G. Secondary damage
+to the knee after isolated injury of anterior cruciate ligament.
+Am J Sports Med. 1990, 18:475-479.
+4) McDaniel WJ, Dameron TJ. The untreated anterior cruciate
+ligament rupture. Clin Orthop. 1983, 172:158-163.
+5) Noyes FR, Matthews DS, Mooar PA, Grood ES. The
+symptomatic anterior cruciate-deficient knee. Part II: the
+rsults of rehabilitation, activity modification, and counseling on
+functional disability. J Bone Joint Surg Am. 1983, 65:163-174.
+6) Noyes FR, Mooar PA, Matthews DS, Butler DL. The
+symptomatic anterior cruciate-deficient knee. Part I: the
+
+--- PAGE 56 ---
+- 42 -
+long-term functional disability in athletically active individuals.
+J Bone Joint Surg Am. 1983, 65:154-162.
+7) Papadonikolakis A, Cooper L, Stergiou N, Georgoulis AD,
+Soucacos PN. Compensatory Mechanisms in anterior cruciate
+ligament deficiency. Knee Surg Sports Traumatol Arthrosc.
+2003, 11:235-243.
+8) Stergiou N, Moraiti C, Giakas G, Ristanis S, Georgoulis AD. The
+effect of walking speed on the stability of the anterior cruciate
+ligament deficient knee. Clin Biomech. 2004, 19:957-963.
+9) Tsepis E, Giakas G, Vagenas G, Georgoulis A. Frequency
+content asymmetry of the isokinetic curve between ACL
+deficient and healthy knee. J biomech. 2004, 37:857-864.
+10) Tsepis E, Giakas G, Vagenas G, Georgoulis A. Hamstrings
+weakness as an indicator of poor knee function in ACL
+deficient patients. Knee Surg Sports Traumatol Arthrosc. 2004,
+12:22-29.
+11) Andriacchi TP, Dyrby CO. Interactions between kinematics
+and loading during walking for the normal and ACL deficient
+knee. J Biomech. 2005, 38(2):293–298.
+
+--- PAGE 57 ---
+- 43 -
+12) Berchuck M, Andriacchi TP, Bach BR, Reider B. Gait
+adaptations by patients who have a deficient anterior cruciate
+ligament. J Bone Joint Surg Am. 1990, 72(6):871–877.
+13) Fuentes A, Hagemeister N, Ranger P, Heron T, Guise JA. Gait
+adaptation in chronic anterior cruciate ligament-deficient
+patients: pivot-shift avoidance gait. Clin Biomech (Bristol
+Avon). 2011, 26(2):181–187.
+14) Li G, Zayontz S, DeFrate LE, Most E, Suggs JF, et al.
+Kinematics of the knee at high flexion angles: an in vitro
+investigation. J Orthop Res. 2004, 22:90–95.
+15) Limbird TJ, Shiavi R, Frazer M, Borra H. EMG profiles of knee
+joint musculature during walking: changes induced by anterior
+cruciate ligament deficiency. J Orthop Res. 1988, 6:630–638.
+16) Moglo KE, Shirazi-Adl A. Biomechanics of passive knee joint
+in drawer: load transmission in intact and ACL-deficient joints.
+Knee. 2003, 10(3):265–276.
+17) Czerniecki JM, Lippert F, Olerud JE. A biomechanical
+evaluation of tibiofemoral rotation in anterior cruciate deficient
+knee during walking and running. Am J Sports Med. 1988,
+16(4):327-331.
+
+--- PAGE 58 ---
+- 44 -
+18) Georgoulis AD, Papadonikolakis A, Papageorgiou CD, Mitsou A,
+Stergiou N. Three-dimensional tibiofemoral kinematics of the
+anterior cruciate ligament-deficient and reconstructed knee
+during walking. Am J Sports Med. 2003, 31(1):75-79.
+19) Andriacchi TP. Dynamics of pathological motion: applied to the
+anterior cruciate deficient knee. J Biomech. 1990, 23(Suppl
+1): 99-105.
+20) Torry MR, Decker MJ, Ellis HB, Sterett WI, Steadman JR.
+Mechanism of compensating for anterior cruciate ligament
+deficiency during gait. Medicine & Science in Sports &
+Exercise. 2004, 36(8): 1403-1412.
+21) Georgoulis AD, Ristanis S, Moraiti C, Mitsou A, Bernard M, et
+al. Three-dimensional kinematics of tibiofemoral joint in
+ACL-deficient and reconstructed patients shows increased
+tibial rotation. Oper Tech Orthop. 2005, 15:49-56.
+22) Grood ES, Suntay WJ, Noyes FR, Butler DL. Biomechanics of
+the knee-extension exercise. Effect of cutting the anterior
+cruciate ligament. J Bone Joint Surg Am. 1984, 66(5): 725-
+734.
+
+--- PAGE 59 ---
+- 45 -
+23) Andriacchi TP, Birac D. Functional testing in the anterior
+cruciate ligament-deficient knee. Clin Orthop. 1993, 288:40-
+47.
+24) Berchuck M, Andriacchi TP, Bach BR, Reider B. Gait
+adaptations by patients who have a deficient anterior cruciate
+ligament. J Bone Joint Surg Am. 1990, 72(6):871-877.
+25) Wexler G, Hurwitz DE, Bush CA, Andriacchi TP, Bach BR Jr.
+Functional gait adaptation s in patients with anterior cruciate
+ligament deficiency over time. Clin Orthop. 1998, 348:166-
+175.
+26) Patel RR, Hurwitz DE, Andriacchi TP, Bach BR Jr. Mechanisms
+by which patients with anterior cruciate ligament deficiency
+generate the quadriceps avoidance gait. Proceedings of the
+21st Annual Meeting of the Americal society of Biomechanics,
+1996, 210-211.
+27) Patel RR, Hurwitz DE, Andriacchi TP, Bush-Joseph CA, Bach
+BR Jr. Mechanisms for the “Quadriceps Avoidance Gait” seen
+in ACL deficient patients. Gait posture. 1996, 5:147.
+
+--- PAGE 60 ---
+- 46 -
+28) Karrholm J, Brandsson S, Freeman MA: Tibiofemoral
+movement 4: changes of axial tibial rotation caused by forced
+rotation at the weight-bearing knee studied by RSA. J Bone
+Joint Surg Br. 2000, 82(8):1201-1203.
+29) Andriacchi TP, Briant PL, Bevill SL, Koo S. Rotational changes
+at the knee after ACL injury cause cartilage thinning. Clin
+Orthop Relat R. 2006, 442:39–44.
+30) Brandsson S, Karlsson J, Sward L, Kartus J, Eriksson BI, et al.
+Kinematics and laxity of the knee joint after anterior cruciate
+ligament reconstruction: pre-and postoprative
+radiostereometric studies. Am J Sports Med. 2002, 30(3):
+361-367.
+31) Seon JK, Song EK, Park SJ. Osteoarthritis after anterior
+cruciate ligament reconstruction using a patellar tendon
+autograft. Int Orthop. 2006, 30:94–98.
+32) Solomonow M, Baratta R, Zhou BH, Shoji H, Bose W, et al:
+The synergistic action of the anterior cruciate ligament and
+thigh muscles in maintaining joint stability. Am J Sports Med.
+1987, 15:207-213.
+
+--- PAGE 61 ---
+- 47 -
+Table 1. Patient profiles of the ACL-injured group
+Case Age Sex Associated injury Rt/Lt Height
+(cm)
+Weight
+(kg)
+Group
+1 43 F - Rt 181.3 86 I
+2 21 M Medial meniscus tear Rt 171.7 72 I
+3 17 M Lateral meniscus
+tear
+Lt 170.3 68 I
+4 22 M - Lt 167.1 65 I
+5 15 F - Rt 178.7 78 I
+6 34 M - Lt 177.7 77 I
+7 24 M - Rt 160.9 52 I
+8 16 F Medial meniscus tear Rt 159.8 51 I
+9 23 M Lateral & medial
+meniscus tear
+Rt 157.8 112 I
+10 38 M Medial meniscus tear Rt 177.9 82 I
+11 16 M Medial meniscus tear Rt 164.8 65 I
+12 30 M - Lt 186.7 97 II
+13 16 M - Lt 181 80 II
+14 17 F - Lt 173.7 72 II
+15 47 M Medial meniscus tear Lt 170.9 68 II
+16 38 M - Lt 170 68 II
+17 24 M - Lt 167.9 65 II
+18 40 M Lateral meniscus
+tear
+Lt 160.7 63 II
+19 16 F - Rt 163.7 56 II
+
+--- PAGE 62 ---
+- 48 -
+Table 2. Study group and Control group
+Study group(ACL Injury) Control
+Group
+Extended
+group
+Flexed group Normal ACL
+Group I Group II Group III
+N 11 8 11
+M:F 8:3 6:2 9:2
+Age 22(16-43) 29(16-47) 21(20-23)
+Right/Left 8:3 1:7 11:11
+
+--- PAGE 63 ---
+- 49 -
+Table 3. Results of Linear parameters (*: p<0.05)
+Parameter Group I Group II Group III
+Velocity(cm/s) 121.6±19.6 85.9±25.5*
+113.4±10.
+6
+Cadence(steps/min) 111.4±7.4 101±13.5* 114.1±7.4
+Step length(cm) 64.7±7.4 50.7±8.0* 59.7±4.6
+Stride length(cm) 131.0±15.8 100.5±18.1* 119.7±9.0
+Single support(% cycle) 39.1±3.5 32.9±4.2* 40.1±3.3
+Initial Double support
+(% cycle)
+10.2±2.9 15.1±3.7* 9.9±3.0
+Total support time(%) 60.8±2.4 62.2±2.4 59.9±3.3
+Swing phase(% cycle) 39.2±2.4 37.8±3.1 40.1±3.3
+
+--- PAGE 64 ---
+- 50 -
+Table 4. Comparison of hip and ankle kinematics on the coronal
+plane between 3 Groups
+Group I Group II Group III
+AA av. on stance -4.52±6.84 -11.82±11.8 -1.88±9.03
+AA av. on swing -3.25±4.30 -7.69±9.87 1.63±8.19
+AA : ankle angle, + : in-toeing, - : out-toeing, av. : average
+
+--- PAGE 65 ---
+- 51 -
+Table 5. Comparison of pelvis and hip kinematics on the sagittal
+plane between 3 Groups
+Group I Group II Group III
+PA av. on stance 6.75±3.74 11.89±2.41 10.69±3.90
+HA av. on stance 7.87±3.98 13.64±2.96 11.73±3.62
+HA av. on swing 2.85±4.78 12.18±2.73 9.79±4.83
+PA : pelvic angle, + : anterior tilt, - : posterior tilt
+HA : hip angle, + : flexion, - : extension, av. : average
+
+--- PAGE 66 ---
+- 52 -
+Table 6. . Comparison of knee kinematics on the sagittal plane
+between 3 Groups
+Group I Group II Group III
+KA av. on
+stance
+9.55±4.40 17.01±3.77 13.22±2.93
+KA on initial
+contact
+-0.47±4.58 9.65±5.71 4.92±3.92
+Peak knee
+flexion
+58.41±2.49 50.54±13.31 60.49±5.39
+Knee ROM
+range
+62.01±4.06 43.12±15.51 58.51±5.74
+KA : hip angle, + : flexion, - : extension, av. : average
+
+--- PAGE 67 ---
+- 53 -
+Table 7. Comparison of ankle kinematics on the sagittal plane
+between 3 Groups
+Group I Group II Group III
+AA av. on stance 3.34±1.55 8.37±1.82 5.86±1.50
+AA av. on swing -7.06±3.72 2.24±3.85 -4.61±4.05
+AA : ankle angle, + : dorsiflexion, - : plantar flexion, av. : average
+
+--- PAGE 68 ---
+- 54 -
+Table 8. Comparison of Knee moment and power between 3 Groups
+Group I Group II Group III
+KM x av. 0.14±0.04 0.13±0.10 0.13±0.07
+KM y av. 0.05±0.06 -0.04±0.04 0.03±0.09
+KM y max. * 0.59±0.23 0.10±0.12 0.49±0.24
+KM z av. -0.14±0.05 -0.13±0.10 -0.13±0.07
+KP av.* -0.17±0.05 -0.05±0.03 -0.23±0.09
+KM : knee moment, KP : knee power, av : average, max :
+maximum (*: p<0.05)
+x : coronal, y : sagittal, z : transverse
+
+--- PAGE 69 ---
+- 55 -
+Table 9. Axis of rotational movement
+Axis Body Plane (+) (-)
+(X) Coronal Varus Valgus
+(Y) Sagittal Flexion Extension
+(Z) Transverse
+Internal
+rotation
+External
+rotation
+
+--- PAGE 70 ---
+- 56 -
+Table 10. Comparison of rotational movements on the sagittal plane
+between 3 Groups
+Group I Group II Group III
+KF av. on swing 38.16±5.88 27.30±10.35 36.50±5.04
+Peak knee flexion 60.81±7.01 43.32±16.32 58.09±6.97
+KF : knee flexion, + : flexion, - : extension, av. : average
+
+--- PAGE 71 ---
+- 57 -
+Table 11. Comparison of rotational movements on the transverse
+plane between 3 Groups
+Group I Group II Group III
+KR. av. on stance -1.51±3.70 2.3±2.48 0.18±2.79
+KR : knee rotation, av. : average, + : internal rotation, - : external
+rotation
+
+--- PAGE 72 ---
+- 58 -
+Table 12. Comparison of rotational movements on the coronal plane
+between 3 Groups
+Axis Body Plane (+) (-)
+(X) Coronal Medial translation
+Lateral
+translation
+(Y) Sagittal
+Anterior
+translation
+Posterior
+translation
+(Z) Transverse
+Vertical
+Compression
+Distraction
+
+--- PAGE 73 ---
+- 59 -
+Figure Legends
+Fig.1 Gross photo of ACL
+Fig.2 Grouping of the study group according to the difference of Knee
+kinematics in sagittal plane
+Fig.3 Schematic diagram of 3-dimensional gait analysis.
+Fig. 4 Attachment of Marker set.
+Fig. 5 Fluoroscopic images of marker sets for medial and lateral
+femoral epicondyles, medial tibial condyle and fibular head
+Fig.6 Generation of virtual markers
+Fig.7 Coronal planes of femur and tibia
+Fig.8 Study design
+Fig.9 Kinematic data of 3 groups
+Fig. 10 Kinetic data of knee joint of 3 groups
+Fig. 11 Kinematic data of coronal plane of 3 groups
+
+--- PAGE 74 ---
+- 60 -
+Fig. 12 Kinematic data of sagittal plane of 3 groups ------- 62
+Fig. 13 Kinematic data of transverse plane of 3 groups
+Fig. 14 Kinetic data of 3 groups
+Fig. 15 Kinematic data of knee joint rotational movement of 3 groups
+Fig. 16 Kinematic data of knee joint translational movement of 3
+groups
+
+--- PAGE 75 ---
+- 61 -
+Fig.1 Gross photo of ACL:
+AMB, anteromedial bundle, AMB
+PLB, posterolateral bundle, PLB
+
+--- PAGE 76 ---
+- 62 -
+Fig. 2. Grouping of the study group according to the difference of
+Knee kinematics in sagittal plane.
+
+--- PAGE 77 ---
+- 63 -
+Fig. 3. Schematic diagram of 3-dimensional gait analysis.
+
+--- PAGE 78 ---
+- 64 -
+Fig. 4 Attachment of Marker set.
+(A) (B) (C)
+(A) Coronal plane. (B) Sagittal plane. (C) Photographs of marker
+sets
+
+--- PAGE 79 ---
+- 65 -
+Fig. 5. Fluoroscopic images of marker sets for medial and lateral
+femoral epicondyles, medial tibial condyle and fibular head. (A)
+Anteroposterior view. (B) Lateral view.
+(A) (B) (C)*
+(C)*: (A) Distal thigh. (B) Medial femoral epicondyle. (C) Lateral
+femoral epicondyle. (L) Shank. (M) Medial tibial condyle. (N)
+Fibular head
+
+--- PAGE 80 ---
+- 66 -
+Fig. 6 Generation of virtual markers (α and β)
+
+--- PAGE 81 ---
+- 67 -
+Fig. 7. Coronal planes of femur(Pf – A, B, C) and tibia(Pt – X, Y, Z)
+
+--- PAGE 82 ---
+- 68 -
+Fig. 8. Study design
+
+--- PAGE 83 ---
+- 69 -
+Fig. 9. Kinematic data of 3 groups
+
+--- PAGE 84 ---
+- 70 -
+Fig. 10. Kinetic data of knee joint of 3 groups
+
+--- PAGE 85 ---
+- 71 -
+Fig. 11. Kinematic data of coronal plane of 3 groups
+
+--- PAGE 86 ---
+- 72 -
+Fig. 12. Kinematic data of sagittal plane of 3 groups
+
+--- PAGE 87 ---
+- 73 -
+Fig. 13. Kinematic data of transverse plane of 3 groups
+
+--- PAGE 88 ---
+- 74 -
+Fig. 14. Kinetic data of 3 groups
+
+--- PAGE 89 ---
+- 75 -
+Fig. 15. Kinematic data of knee joint rotational movement of 3
+groups
+
+--- PAGE 90 ---
+- 76 -
+Fig. 16. Kinematic data of knee joint translational movement of 3
+groups
+
+--- PAGE 91 ---
+- 77 -
+ABSTRACT
+A study on the gait deviations in ACL deficient Knees
+-kinematic and kinetic characteristics during gait
+Se Hyun Chung
+Department of Medicine, Graduate School, Eulji University
+(Supervised by Professor Ha Yong Kim, M.D., Ph. D.)
+Purpose : This study was designed to analyze kinetics of abnormal
+knee joint with instability by use of 3-D movement analysis at
+tibiofemoral joint in normal gait and ACL injured knee during gait
+and comparison of rotational movement and translational
+movement at knee joint composed of distal femur and proximal
+tibia. Also we designed to study the difference of the moment
+during rotational, translational and special movement by allocation
+patients to one group, extended gait pattern and the other group,
+biphasic gait pattern.
+Materials and Methods : Men were seven and women were three in
+ACL injured Group and they were allocated to Group I (extended
+
+--- PAGE 92 ---
+- 78 -
+gait pattern) and Group II (biphasic gait pattern). Group III(Normal
+gait) comprised fifteen men and fifteen women who had no
+previous history such as congenital disease or disease which could
+influence on the growth and development. In this study, we used
+Eagle camera system and AMTI force plate (Advanced mechanical
+technology inc. force plate, Watertorn, MA, USA). We attached
+passive reflective markers to patients by Modified Helen-Hayes
+method to get data about kinematics.
+Results : There was no statistically significant difference between
+ACL injured group and normal group (P>0.05) in gait linear
+parameters. And, in translational movement, there was statistically
+significant difference between ACL injured group and normal
+group in transverse and coronal plane. The knee joint in Group I
+(extension angle=-0.7°) was more extended than that in Group
+II (extension angle=10.2°) and this result was statistically
+significant difference between them (P<0.05). Also, there was
+significant difference between Group I (0.59) and Group II (0.23)
+in extension moment of knee joint. In terminal swing phase, hip
+extension angle in Group I (-15.8°) was larger than that in Group
+II (-5.0°) and this was significant result (P<0.05).
+
+--- PAGE 93 ---
+- 79 -
+Conclusion : We identified variable adaptation mechanisms about
+ACL injuries and we suggest that the mechanism will be useful in
+analysis of abnormal gait, development of diagnosis and treatment,
+and comparison of treatment results.
+Key Words : Abnormal gait, 3-D movement analysis, rotational
+movement, translational movement, kinematics, kinetics, knee joint
+
+--- PAGE 94 ---

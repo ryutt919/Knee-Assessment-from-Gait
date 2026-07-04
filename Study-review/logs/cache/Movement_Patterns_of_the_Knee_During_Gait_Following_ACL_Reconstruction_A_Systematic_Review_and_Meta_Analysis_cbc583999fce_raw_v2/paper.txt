@@ -1,0 +1,2209 @@
+
+--- PAGE 1 ---
+SYSTEMATIC REVIEW
+Movement Patterns of the Knee During Gait Following ACL
+Reconstruction: A Systematic Review and Meta-Analysis
+Mandeep Kaur1 • Daniel Cury Ribeiro1 • Jean-Claude Theis2 • Kate E. Webster3 •
+Gisela Sole1
+Published online: 2 March 2016
+Ó Springer International Publishing Switzerland 2016
+Abstract
+Background Altered gait patterns following anterior
+cruciate ligament reconstruction (ACLR) may be associ-
+ated with long-term impairments and post-traumatic
+osteoarthritis.
+Objective This systematic review and meta-analysis
+compared lower limb kinematics and kinetics of the ACL
+reconstructed knee with (1) the contralateral limb and (2)
+healthy age-matched participants during walking, stair
+climbing, and running. The secondary aim was to describe
+the differences over time following ACLR for these
+biomechanical variables.
+Method Database searches were conducted from incep-
+tion to July 2014 and updated in August 2015 for studies
+exploring peak knee angles and moments following ACLR
+during walking, stair negotiation, and running. Risk of bias
+was assessed with a modified Downs and Black quality
+index for all included studies, and meta-analyses were
+performed. Forest plots were explored qualitatively for
+recovery of gait variables over time after surgery.
+Results A total of 40 studies were included in the review;
+26 of these were rated as low risk and 14 as high risk of
+bias. The meta-analysis included 27 studies. Strong to
+moderate evidence indicated no significant difference in
+peak flexion angles between ACLR and control groups
+during walking and stair ascent. Strong evidence was found
+for lower peak flexion moments in participants with ACLR
+compared with control groups and contralateral limb dur-
+ing walking and stair activities. Strong to moderate evi-
+dence was found for lower peak adduction moment in
+ACLR participants for the injured compared with the
+contralateral limbs during walking and stair descent. The
+qualitative assessment for recovery over time indicated a
+pattern towards restoration of peak knee flexion angle with
+increasing time from post-surgery. Peak knee adduction
+moments were lower within the first year following surgery
+and higher than controls during later phases (5 years).
+Conclusion Joint kinematics are restored, on average,
+6 years following reconstruction, while knee external
+flexion moments remain lower than controls. Knee
+adduction moments are lower during early phases follow-
+ing reconstruction, but are higher than controls, on average,
+5 years post-surgery. Findings indicate that knee function
+is not fully restored following reconstruction, and long-
+term maintenance programs may be needed.
+Electronic supplementary material The online version of this
+article (doi:10.1007/s40279-016-0510-4) contains supplementary
+material, which is available to authorized users.
+& Gisela Sole
+Gisela.sole@otago.ac.nz
+1
+Centre for Health, Activity and Rehabilitation Research,
+School of Physiotherapy, University of Otago, Box 56,
+Dunedin 9054, New Zealand
+2
+Department of Surgical Sciences, Medical School, University
+of Otago, Dunedin, New Zealand
+3
+School of Allied Health, La Trobe University, Melbourne,
+VIC, Australia
+123
+Sports Med (2016) 46:1869–1895
+DOI 10.1007/s40279-016-0510-4
+
+--- PAGE 2 ---
+Key Points
+This systematic review and meta-analysis compared
+lower limb kinematics and kinetics of the anterior
+cruciate ligament reconstructed (ACLR) knee with
+(1) the contralateral limb and (2) healthy age-
+matched participants during walking, stair climbing,
+and running.
+Knee kinematics are likely to be similar in ACLR
+participants at 6 years following surgery compared
+with healthy controls. Knee peak adduction moments
+are lower in ACLR participants 3.5 years following
+reconstruction compared with controls. After
+4–5 years post-reconstruction, adduction moments
+are higher than for uninjured controls. Peak knee
+flexion moments are still lower after 5 years of
+surgery in ACLR participants than in uninjured
+controls.
+The differences for knee moments indicate that the
+knee function is not fully restored following
+reconstruction, and long-term maintenance programs
+may be needed.
+1 Introduction
+Ruptures of the anterior cruciate ligament (ACL) of the
+knee are considered to be one of the most serious sport- and
+exercise-related injuries in terms of the patients’ experi-
+ences [1] and health costs [2]. The injury is most common
+in sports such as netball, football, basketball, and handball,
+and is often associated with non-contact mechanisms such
+as jump landing and pivoting or twisting movements [3].
+ACL injuries are treated surgically with reconstructions
+plus rehabilitation or non-surgically with rehabilitation
+alone [4]. The overall incidence of ACL reconstruction
+(ACLR) has been reported as 23 % within 3 years of injury
+[5]. A recent systematic review found that, following
+ACLR, 81 % of patients return to some form of sport, but
+only 55 % return to competitive sport [6]. In the long term,
+50–70 % of patients with ACL rupture develop symptoms
+associated with post-traumatic osteoarthritis (PTOA) after
+10 years, adding further towards the personal and health
+costs of these injuries [7]. Patients who undergo ACLR
+appear to have a slightly higher risk of developing symp-
+toms associated with knee osteoarthritis (OA) than those
+managed non-surgically [8]. However, this evidence is
+limited, and the prevalence of OA between individuals
+treated with surgical reconstructions compared with non-
+surgical management is still unclear [8–10].
+Altered gait biomechanics, as indicated by joint angles
+and moments, may indicate unresolved impairments fol-
+lowing injury and surgery, and may also be a mechanical
+contributing factor towards the development of PTOA [11,
+12]. Differences for these biomechanical variables appear
+to be important when comparing the injured side with the
+contralateral uninjured side in patients with ACLR and also
+with control groups. Individuals with ACLR have been
+shown to walk with greater peak knee flexion angles than
+controls in the early phases (\6 months), but with less
+flexion (more extended) after 1 year post-surgery [13]. In
+terms of joint loading in the frontal plane, external knee
+adduction moments are often used as the measure of load
+distribution in the frontal plane [14]. Increased peak
+adduction moments during walking have been associated
+with progression [12, 15] and severity of medial tibio-
+femoral compartment OA [16]. Studies have reported
+conflicting results for peak adduction moments in partici-
+pants with ACLR, varying from low to high magnitude [17,
+18]. In the sagittal plane, lower external flexion moments
+were found following ACLR at mid-stance of walking at
+2–12 months post-operatively compared with controls [19],
+while no significant differences were reported on average
+17 months post-surgery [20]. Decreased flexion moments
+while walking and during stair navigation have also been
+found in patients with knee OA. Furthermore, a recent
+systematic review found increased flexion moments during
+walking in patients with knee OA following joint
+replacements, compared with pre-operative measures [21].
+Flexion moments require an internal quadriceps moment to
+counteract the forces of body weight [22]. Decreased
+flexion moments are likely to indicate unloading of the
+knee joint or a compensatory strategy, possibly due to
+decreased neuromuscular control, lingering symptoms, and
+hesitancy for weight-bearing on that side [23].
+While several studies have explored gait biomechanics
+following ACLR, various methodologies and tasks have
+been used. Summarizing these gait biomechanics will
+increase the understanding of possible impairments and
+guide rehabilitation interventions to improve outcome and
+decrease long-term disability. Previous reviews on recov-
+ery of gait biomechanics following ACLR have either not
+included meta-analysis [24] or analyzed only sagittal plane
+moments [25]. Hart et al. [13] recently reviewed gait
+analysis only during walking activity, finding deficits in
+sagittal plane moments but not in the frontal plane. The
+current review includes other activities of daily living,
+namely stair ascent, descent, and running, in addition to
+walking. It is possible that long-term impairments and
+asymmetries following ACLR may be more evident during
+those cyclical and repetitive activities that are associated
+with higher joint loading than walking [26]. Thus, the
+primary aim of this systematic review and meta-analysis
+1870 M. Kaur et al.
+123
+
+--- PAGE 3 ---
+was to compare knee kinematics and kinetics in individuals
+with ACLR with the contralateral limb and with healthy
+age-matched controls during three different tasks (walking,
+stair ascent/descent, and running). The secondary aim was
+to describe the progression over time of those biome-
+chanical variables following ACLR.
+2 Methods
+2.1 Search Strategy and Study Selection
+Preferred Reporting Items for Systematic Reviews and
+Meta-Analyses (PRISMA) guidelines were followed as
+appropriate for observational studies [27]. Embase, MED-
+LINE, Web of Science, and Scopus databases were sear-
+ched from their original available dates to 1 July 2014, with
+an update on 10 August 2015. Keywords used and the
+search strategy are presented in Table 1.
+The following inclusion criteria were applied: (1)
+observational study designs (prospective cohort studies,
+case-control studies, and cross-sectional studies) or ran-
+domized clinical trials (RCTs) with the comparison with
+control group or comparison with the contralateral unin-
+jured side at baseline; (2) men and women, with isolated
+ACL ruptures or in addition to menisci and other liga-
+mentous injury of the knee, managed with reconstructions
+with any type of graft; (3) studies estimating kinematic and
+kinetic data (discrete variables: peak angles in the three
+planes of movement, peak external knee flexion, and
+adduction moments) of the ACLR knee and the asymp-
+tomatic controls during walking, stair negotiation, or run-
+ning. Studies focusing on other lower limb injuries, or
+other tasks, such as jumping or pivoting, were excluded.
+No language restrictions were applied. Two reviewers (MK
+and GS) screened all relevant titles and abstracts and were
+blinded to authors and journals. Full-text articles were
+screened according to the pre-set inclusion and exclusion
+criteria by the two reviewers. Any discrepancies were
+resolved through consensus, and a third reviewer was
+available if needed (DR). A manual search of the reference
+lists of the included articles was also conducted.
+2.2 Risk of Bias Within Included Studies
+A modified version of the Downs and Black Quality Index
+[28]wasusedtoassesstheriskofbiaswithinincludedstudies.
+The modified checklist included 16 questions from the fol-
+lowing sub-groups: reporting (items 1, 2, 3, 5, 6, 7, and 10),
+externalvalidity(items11and12),internalvaliditybias(item
+15, 16, 18, and 20), internal validity confounding (selection
+bias) (items 21 and 25), and power (item 27) (Electronic
+Supplementary Material [ESM] Table S1). Item 25 relates to
+confounding factors: walking or running speed were consid-
+eredasthemostrelevantconfounders,asthesevariableshave
+beenshowntobecorrelatedwithexternalkneeadductionand
+flexion moments [29]. Thus, a score of ‘‘1’’ was applied if
+speed of ambulation was not significantly different between
+participant groups, or if appropriate statistical analyses were
+performed, including speed as a covariate. Item 27 was
+reworded as ‘‘Were appropriate power calculations repor-
+ted?’’andthescorewaschangedfrom0–5toascaleof0or1.
+Thestudy wasassigneda score of‘‘1’’ ifprior power analysis
+was performed, with no scores being assigned in the absence
+ofpoweranalysis.Theriskofbiasassessmentwas performed
+independently by two reviewers (MK and GS), with discrep-
+ancies resolved during consensus meetings. Kappa’s corre-
+lation coefficient was calculated to determine the agreement
+of the scores of the individual questions for each study
+between the two reviewers. The modified Downs and Black
+Quality Index was scored out of 17. Studies with scores of 11
+and above (65 %) were considered to have a low risk of bias,
+and studies with scores below 11 were considered to have a
+high risk of bias [30].
+2.3 Data Extraction and Meta-Analysis
+Data extracted from each study included sample size,
+participants’ demographics, type of functional activities,
+and discrete variables for knee kinematics and kinetics
+(i.e., peak angles and moments during the stance phase of
+gait). For external adduction moments, the first of the two
+peaks was extracted. Peak knee tibial rotations were
+reported during the stance phase of gait. We contacted the
+corresponding authors when relevant data were not pre-
+sented or were published as graphs.
+Table 1 Keywords used for the data search
+Anterior cruciate
+ligament
+Reconstruction Gait Kinetics
+ACL Injury Walking Kinematics
+Knee joint Tear Jogging
+Graft Running
+Surgery Locomotion
+Deficiency Ambulation
+Stair
+climbing
+Stair ascent
+Stair descent
+Stair
+negotiation
+Gait analysis
+The search terms within each group were combined with the ‘OR’
+operator; the ‘AND’ operator was used to combine the results from all
+four groups to obtain final yield
+ACL anterior cruciate ligament
+Movement Patterns of the Knee after ACL Reconstruction 1871
+123
+
+--- PAGE 4 ---
+We used Review Manager v5.3 (RevMan) (Copen-
+hagen: The Nordic Cochrane Centre, The Cochrane Col-
+laboration, 2014) to perform the meta-analysis when more
+than one study investigated the same dependent variable
+during a given task using three-dimensional movement
+analysis. The main aim of the forest plot was to determine
+(standardized) mean differences and confidence intervals.
+Effect sizes (ESs) and 95 % confidence intervals (CIs)
+were calculated for between-group (ACLR groups vs.
+uninjured control groups) and within-group (injured sides
+vs. contralateral uninjured sides of the ACLR groups)
+comparisons of kinematic data and kinetic data. Calculated
+individual or pooled ESs were categorised as small (\0.5),
+medium (C0.5 and\0.8), or large (C0.8) [31]. The level of
+statistical heterogeneity for pooled data was established
+using c2
+and I2
+statistics (heterogeneity defined as
+p\0.05). For peak joint angles, we also calculated mean
+differences (MDs) (net difference in peak angle among any
+two groups) in degrees for findings of individual studies or
+pooled data from two or more studies, as these may be
+more easily translated to clinical practice than ESs.
+To conduct between- and within-group comparisons of
+the biomechanical variables over time, the included studies
+were ordered in the forest plots according to ‘‘time since
+surgery’’ (in weeks or months). The shortest time since
+surgery was presented at the top, and the longest average
+time since surgery was presented at the bottom of the forest
+plot. This approach allowed a qualitative analysis of dif-
+ferences in biomechanical variables between and within
+groups over time.
+2.4 Level of Evidence
+ThelevelofevidencewasdefinedforeachvariableasperVan
+Tulder et al. [32] as follows. (1) Strong evidence provided by
+pooledresults derivedfromthree ormore studies,includinga
+minimum of two studies with a low risk of bias, that are
+homogenous(p[0.05);theanalysismaybeassociatedwitha
+statistically significant or non-significant pooled results. (2)
+Moderateevidenceprovidedbystatisticallysignificantpooled
+results derived from multiple studies, including at least one
+studywithlowriskofbias,thatarestatisticallyheterogeneous
+(p\0.05), or from multiple studies with a high risk of bias
+that are statistically homogenous (p[0.05). (3) Limited
+evidenceprovidedbyresultsfrommultiplestudieswithahigh
+risk of bias that are statistically heterogeneous (p\0.05), or
+from one study with a low risk of bias. (4) Very limited evi-
+dence provided by results from one study with a high risk of
+bias. (5) Conflicting evidence provided by pooled results that
+are insignificant and derived from multiple studies regardless
+of quality that are statistically heterogeneous (p\0.05, i.e.,
+inconsistent).
+3 Results
+3.1 Search Results
+The first search yielded 1550 articles (Fig. 1); 65 remained
+after excluding duplicates and irrelevant titles and screen-
+ing abstracts. A further 25 studies were excluded based on
+the inclusion and exclusion criteria, giving a final yield of
+40 studies that were included in the qualitative analysis. Of
+the studies, 37 were in English, two in German [33, 34],
+and one in Chinese [35]. Data from 27 studies could be
+included in meta-analyses.
+3.2 Risk of Bias
+Kappa’s correlation coefficient was 0.93 for the agreement
+between the two reviewers for risk of bias assessment. Of
+the 40 studies, 26 were rated as low risk and 14 as high risk
+(Table 2). Seven corresponding authors were contacted to
+request data for dependent variables [36–42]; one provided
+the details [38]. Variables were calculated from the fig-
+ures when corresponding authors did not respond [43–45].
+3.3 Overview of Included Studies
+A total of 31 studies included comparisons with asymp-
+tomatic age-matched subjects, and nine with the con-
+tralateral knee of this ACLR participant group (Table 3).
+Kinematic and kinetic variables were studied during
+walking in 37 studies at self-selected comfortable speed,
+during stair ascent and descent in eight studies [42, 43, 46–
+51], and during running in five studies [41, 43, 52–54]. The
+number of included participants ranged from eight with
+ACLR and ten controls [41, 52] to 45 in both groups [51],
+and time since surgery ranged from 2 weeks [48] to
+18 years [47].
+An RCT conducted by Hooper et al. [48] was included
+and, for the purpose of this review, the baseline compar-
+isons for the injured versus the contralateral uninjured
+knees were considered for the meta-analysis. A longitudi-
+nal cross-sectional study by Webster et al. [55] was
+included, with the results being reported at 1 year and
+3.3 years. Data from both of these time periods were
+included for meta-analysis.
+Grand means and standard deviations (SDs) were cal-
+culated [56] where studies presented results for different
+groups with ACLR. In one study [48], baseline results of
+participants undergoing either closed or open kinetic
+training were combined. Where studies compared out-
+comes of different surgical procedures, specifically,
+between hamstring and patella tendon grafts [57, 58], sin-
+gle- and double-bundle grafts [59], and use of different
+1872 M. Kaur et al.
+123
+
+--- PAGE 5 ---
+portal techniques [60], the results of the ACLR groups
+were combined and compared with those of the controls.
+Lewek et al. [52] included two groups of participants based
+on quadriceps strength: (1) ‘‘strong ACLR’’ group and (2)
+‘‘weak ACLR’’ group. The data of these two groups were
+combined into a grand mean and SD. Furthermore, vari-
+ables for participants with ACLR for the dominant and
+non-dominant limbs were combined and compared with the
+control group in a study by Wang et al. [39]. Results of two
+groups reported by Di Stasi et al. [61], participants who
+passed ‘return to sports’ criteria and those who did not
+pass, were also combined into grand means and SDs, cal-
+culated from the published 95 % CIs. In another study by
+Di Stasi et al. [45], means and CIs were estimated from the
+given figure and grand mean and SDs for injured and
+uninjured sides were calculated, combining the results for
+men and women. Roewer et al. [44] conducted a longitu-
+dinal study, reporting data at 6 months and at 2 years post-
+reconstruction. CIs were estimated from the figure, and
+SDs were calculated. Data reported at both time periods
+were included in the forest plots [44].
+3.4 Meta-Analyses
+Meta-analyses were conducted for peak angles and
+moments (peak knee flexion and adduction moments)
+during the stance phase of gait (Figs. 2, 3, 4, 5, 6, 7).
+Tables 4 and 5 provide the ESs and CIs for the meta-
+analyses and for variables that were explored in one study
+only. Mean differences for joint angles are provided in
+Table S2 in the ESM.
+3.4.1 Joint Angles
+Peak knee flexion angles during walking were reported in
+11 studies [44, 47, 48, 50, 52, 54, 55, 57, 61–63]. The meta-
+analysis indicated strong evidence for no difference com-
+pared with controls [47, 52, 54, 57, 62, 63] and moderate
+evidence for less flexion for the ACLR compared with the
+contralateral limb (ES -0.06; 95 % CI -0.8 to -0.4; MD
+4.3°) [44, 47, 48, 55, 61]. A sensitivity test was performed
+by excluding a study by Hooper et al. [48], as this study
+compared ACLR participants at 2 weeks post-
+Records idenﬁed through data
+base searching N = 1,550
+Records aer duplicate
+removal N = 1,210
+Records aer tle
+screening N = 348
+Full text arcles assessed
+for eligibility N = 65
+Studies included in qualitave
+synthesis N = 40
+Studies included in
+quantave synthesis N =
+27
+Duplicates removed N = 340
+Excluded studies from tle
+screening N = 862
+Excluded studies from
+abstract screening N= 283
+Full text arcles excluded with reasons N= 25
+• No control group= 3
+• Mulligament reconstrucon= 1
+• Diﬀerent variables measured= 2
+• Diﬀerent method of data collecon= 2
+• Due to diﬀerent task = 5
+• Examining bial rotaon during pivong = 8
+• Parcipants and dependent variables not clearly
+deﬁned = 2
+• Only ground reacon force being studied = 1
+• No means and standard deviaon available due to
+principal component analysis = 1
+I denﬁcaon Inclusion Screening Selecon
+Arcle from other source N = 1
+Fig. 1 Flow diagram for study-
+selection process
+Movement Patterns of the Knee after ACL Reconstruction 1873
+123
+
+--- PAGE 6 ---
+Table 2 Methodological quality assessment
+Study Categories and questions
+Reporting External validity Internal validity Power Total % Risk of bias
+Original numbering 1 2 3 5 6 7 10 11 12 15 16 18 20 21 25 27
+New numbering 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+Bulgheroni et al. [20] 1 1 1 0 1 0 0 U U U 1 0 1 1 1 0 8 47 HR
+Butler et al. [40] 1 1 1 2 1 1 0 0 0 U 1 1 1 1 1 1 13 76 LR
+Bush-Joseph et al. [43] 1 1 1 1 1 1 1 0 0 U 1 1 0 1 1 0 11 65 LR
+Button et al. [86] 1 1 1 2 1 1 1 0 0 U 1 1 0 1 1 0 12 71 LR
+Czamara et al. [59] 1 1 1 2 1 1 1 0 0 0 1 1 1 1 0 0 12 71 LR
+DeVita et al. [91] 1 1 1 1 1 1 0 0 0 U 1 1 0 1 0 0 9 53 HR
+Di Stasi et al. [61] 1 1 1 1 1 1 1 0 0 U 1 1 1 NA 1 0 11 69 LR
+Di Stasi et al. [45] 1 1 1 1 1 1 1 0 0 0 1 1 1 NA 1 0 11 69 LR
+Ferber et al. [62] 1 1 1 1 1 1 0 0 0 U 1 1 0 0 0 0 9 53 HR
+Ferber et al. [92] 1 1 1 1 1 1 0 0 0 U 1 1 0 1 1 1 11 65 LR
+Gao and Zheng [37] 1 1 1 1 1 1 0 U U U 1 1 1 1 1 0 11 65 LR
+Gao et al. [50] 1 1 1 2 1 1 0 0 0 1 1 1 1 1 0 0 12 71 LR
+Georgoulis et al. [63] 1 1 1 1 1 1 0 0 0 U 1 1 1 1 1 0 11 65 LR
+Hall et al. [47] 1 1 1 2 1 1 1 0 0 U 1 1 1 1 1 0 13 76 LR
+Hooper et al. [48] 1 1 1 1 1 1 0 0 0 U 1 1 0 NA 0 0 8 50 HR
+Hooper et al. [49] 1 1 1 1 1 1 1 0 0 U 1 1 0 NA 0 0 9 56 HR
+Karimi et al. [65] 1 1 1 1 1 1 1 U U U 1 1 0 1 1 0 11 65 LR
+Knoll et al. [82] 1 1 1 1 1 1 0 0 0 U 1 1 0 0 1 0 9 53 HR
+Kowalk et al. [46] 1 1 1 1 1 1 1 0 0 U 1 1 1 1 0 0 11 65 LR
+Kuenze et al. [41] 1 1 1 2 1 1 1 0 0 0 1 1 1 1 1 1 14 82 LR
+Lewek et al. [52] 1 1 1 1 1 1 1 0 0 U 1 1 0 0 1 0 10 59 HR
+Noehren et al. [54] 1 1 1 2 1 1 1 0 0 U 1 1 0 1 1 0 12 71 LR
+Patterson et al. [18] 1 1 1 2 1 1 1 0 0 U 1 1 1 1 0 0 12 71 LR
+Roewer et al. [44] 1 1 1 1 1 1 1 0 0 U 1 1 1 NA 1 0 10 69 LR
+Sato et al. [53] 1 1 1 2 1 1 0 0 0 1 1 1 1 1 0 0 12 69 LR
+Scanlan et al. [36] 1 1 1 1 1 1 0 0 0 0 1 1 1 1 0 0 10 56 HR
+Schmalz et al. [33] 1 1 1 1 0 0 0 0 0 0 1 1 0 1 0 0 7 41 HR
+Schmalz et al. [34] 1 1 1 1 0 0 0 0 0 0 1 1 0 1 1 0 8 47 HR
+Schroeder et al. [42] 1 1 1 1 1 1 1 0 0 0 1 1 0 1 0 0 10 59 HR
+Tellini et al. [93] 1 1 1 2 1 1 1 0 0 U 1 1 0 1 0 0 10 59 HR
+Timoney et al. [19] 1 1 1 1 1 1 0 0 0 U 1 1 0 1 1 0 10 59 HR
+Varma et al. [38] 1 1 1 2 1 1 1 0 0 U 1 1 0 1 1 0 12 71 LR
+Wang et al. [35] 1 1 1 1 1 0 0 0 0 U 1 1 0 1 1 0 10 63 HR
+Wang et al. [39] 1 1 1 1 1 1 1 0 0 U 1 1 1 1 0 0 11 65 LR
+Wang et al. [60] 1 1 1 1 1 1 0 0 0 U 1 1 1 1 1 1 12 71 LR
+Webster and Feller [57] 1 1 1 2 1 1 1 0 0 U 1 1 1 1 1 0 13 76 LR
+Webster and Feller [58] 1 1 1 2 1 1 1 U U U 1 1 1 1 1 0 13 76 LR
+Webster et al. [55] 1 1 1 1 1 1 1 0 0 U 1 1 1 1 0 0 11 65 LR
+Webster and Feller [17] 1 1 1 2 1 1 0 0 0 U 1 1 1 1 1 0 12 71 LR
+Zabala et al. [51] 1 1 1 1 1 1 1 0 0 U 1 1 1 1 0 0 11 65 LR
+HR high risk of bias, LR low risk of bias, NA not applicable, U unable to determine, 1 clear aim/hypothesis, 2 outcome measures clearly
+described, 3 patient characteristics clearly described, 4 confounding variables described, 5 main findings clearly described, 6 measures of random
+variability provided, 7 actual probability values reported, 8 participants asked to participate representative of entire population, 9 participants
+prepared to participate representative of entire population, 10 blinding of outcome measurer, 11 analysis completed was planned, 12 appropriate
+statistics, 13 valid and reliable outcome measures, 14 appropriate case control matching, 15 adjustment made for confounding variables, 16
+power
+1874 M. Kaur et al.
+123
+
+--- PAGE 7 ---
+Table 3 Study characteristics and variables measures at knee in included studies
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Bulgheroni et al. [20] Participants: 15 (M)
+Age: 25 (3)
+Time between injury and surgery: NR
+Surgical procedure: BPTB
+Time since surgery: 17 (5) mo
+Participants: 5 (M)
+Age: 28 (3)
+4 Cameras, 100 Hz
+Kistler force plate,
+500 Hz
+Walking: natural cadence (112 ± 5.1 steps/min); footwear
+condition NR. Average linear envelopes only.
+Kinematics: flexion/extension; adduction/abduction;
+internal/external rotation
+Kinetics: external moments; flexion/extension; adduction/
+abduction; internal/external rotation
+Ground reaction forces: Fz, Fx, Fy
+Butler et al. [40] Participants: 17 (4 M, 13 F)
+Age: 23.6 (5.8)
+Weight: 24.0 (3.2)
+Time between injury and surgery: NR
+Surgical procedure: NR
+Time since surgery: 5.3 (4.4) yr
+Participants: No. NR
+Age: 23.4 (5.7)
+Weight: 23.3 (2.4)
+8-Camera motion
+analysis system,
+80 Hz
+Force plate, 1050 Hz
+Walking: ‘‘Intentional’’ walking speed, monitored by
+average velocity of L5/S1 marker; neutral laboratory
+shoes
+Kinematics: peak adduction during stance; total adduction/
+abduction excursion (range)
+Kinetics: internal moments peak abduction moment
+Bush-Joseph et al. [43] Participants: 22 (13 M, 9 F)
+Age: 27 (11)
+Same weight in both groups
+Time between injury and surgery: 8 months
+Surgical procedure: BPTB
+Time since surgery: 22 (12) mo
+Participants: 22 (13 M, 9 F)
+Age: 29 (8)
+Weight: same in both groups
+Multi-camera
+optoelectronic
+Marker
+Force plate
+Walking: speed 1.18 (0.018) m/s in ACLR and 1.16 (0.016)
+m/s in control group; foot wear condition NR
+Kinetics: external moment; flexion and extension
+Stair climbing
+Kinetics: peak external flexion moment
+Running speed 2.70 (0.39) m/s in ACLR and 2.58 (0.042)
+m/s in control group
+Kinetics: external flexion moment
+Button et al. [86] Participants: 21 (16 M, 5 F)
+Age: 29.1 (9)
+Weight: 80.1 (9.5)
+Time since surgery: 13.5 (9) mo
+Surgical procedure: single bundle gracilis-ST graft
+Participants: 21 (12 M, 5 F)
+Age: 26.8 (7.7)
+Weight: 77.6 (19.6)
+8-Camera Vicon
+motion analysis
+system, 250 Hz
+Kistler force plate,
+1000 Hz
+Walking: ‘‘Normal’’ walking speed; footwear condition NR
+Kinematics: knee flexion/extension
+Kinetics: peak internal extension moment; peak external
+adduction moment
+Gait velocity; knee ‘‘fluency’’
+Czamara et al. [59] SB ACLR b
+Participants: 10 (M)
+Age: 26 (10.22)
+Weight: 82.20 (9.19)
+Time between injury and surgery: 4 (2) mo
+Time since surgery: 13.60 (3.27) mo
+Surgical procedure: single bundle HT graft
+DB ACLR b
+Participants: 13 (M)
+Age: 28 (8.14)
+Weight: 76.31 (11.26)
+Time between injury and surgery: 4 (2) mo
+Time since surgery: 14.08 (5.42) mo
+Surgical procedure: double bundle HT graft
+Participants: 15 M
+Age: 23.40 (2.41)
+Weight: 76.27 (7.09)
+6-Infrared camcorders,
+BTS SMART system,
+120 Hz
+2 Kistler force plates,
+960 Hz
+Walking: ‘‘Normal’’ walking speed; footwear condition NR
+Kinematics: range of rotation during different stance and
+swing phase of gait cycle
+Movement Patterns of the Knee after ACL Reconstruction 1875
+123
+
+--- PAGE 8 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Devita et al. [91] Participants: 8 (5 M, 3 F)
+Age: 20.3
+Weight: 74.2
+Time between injury and surgery: NR
+Time since surgery: 3 weeks, 6 months
+Surgical procedure: BPTB
+Participants: 22 (14 M, 8F)
+Age: 21.7
+Weight: 73.7
+One video camera,
+60 Hz
+Force plate, 1000 Hz
+Walking: instructions and footwear condition NR
+Kinematics: ROM in swing; average position in stance;
+extensor angular impulse
+Kinetics: extension/flexion joint torque; extension/flexion
+joint power
+Di Stasi et al. [61] Participants: 42 (30 M, 12 F)
+Age: 29.3 (10.8)
+Time between injury and surgery: 17.2 weeks
+Time since surgery: 6 months
+Surgical procedure: HT/gracilis allograft
+Contralateral limb as controls 8-Camera system,
+120 Hz
+Force plate, 1080 Hz
+Walking: self-selected comfortable speed controlled via
+infrared photocells; footwear condition NR
+Kinematics: flexion/extension angles. from initial contact to
+peak flexion
+Kinetics: internal joint moments and joint power
+Di Stasi et al. [45] Participants: 39 (27 M, 12 F)
+Age: M 28 (10), F 32 (12)
+Time between injury and surgery: NR
+Time since surgery: 6 months
+Surgical procedure: HT
+allograft
+Contralateral limb as controls 8-Camera system,
+120 Hz
+Force plate, 1080 Hz
+Walking: self-selected comfortable speed controlled via
+infrared photocells; footwear condition NR
+Kinematics: joint excursions during mid-stance
+Kinetics: internal joint extension moment
+Ferber et al. [62] Participants: 10 (5 M, 5 F)
+Age: 27.7 (9.1)
+Weight: 79.1 (13.8)
+Time between injury and surgery: NR
+Time since surgery: 3 months
+Surgical procedure: BPTB
+Participants: 10 (5 M, 5 F)
+Age: 24.4 (3.1)
+Weight: 67.2 (10.7)
+4 Cameras, 120 Hz
+Force plate
+Walking: self-selected comfortable speed controlled via
+metronome; footwear condition NR
+Kinematics: flexion/extension angles
+Kinetics: flexor/extensor joint moments; power
+Ground reaction forces: Fz, Fx, Fy
+Ferber et al. [92] Participants: 10 (5 M, 5 F)
+Age: 27.7 (9.1)
+Weight: 79.1 (13.8)
+Time between injury and surgery: NR
+Time since surgery: 3 months
+Surgical procedure: BPTB
+Participants: 10 (5 M, 5 F)
+Age: 24.4 (3.1)
+Weight: 67.2 (10.7)
+4 Cameras, 120 Hz
+Force plate, 1200 Hz
+Walking: self-selected comfortable speed controlled via
+metronome; footwear condition NR
+Kinematics: average flexion/extension angles
+Kinetics: extensor moments/ extensor angular impulse;
+work and power
+Gao and Zheng [37] Participants: 14 (12 M, 2 F)
+Age: 25.1 (5.9)
+Weight: 82.5 (15.0)
+Time between injury and surgery: NR
+Time since surgery: 3 (12) mo
+Surgical procedure: 7 HT, 5 BPTB, 2 Achilles tendon
+Participants: 15 (12 M, 3 F)
+Age: 22.8 (2.6)
+Weight: 76.8 (16.4)
+11-Camera stereo
+photogrammetric
+system, 60 Hz
+2 force plate
+Walking: self-selected comfortable speed; barefooted
+Kinematics: flexion, tibial internal rotation, varus angles
+during static standing posture; mean curves for knee
+flexion/extension; varus/valgus, axial rotation, and for
+translation in the three planes
+Spatiotemporal variables: step and stride length; step and
+stride speed; 1st and 2nd single and double-support phase
+1876 M. Kaur et al.
+123
+
+--- PAGE 9 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Gao et al. [50] Participants: 12 (10 M, 2 F)
+Age: 24.8 (6.1)
+Weight: 83.2 (16.0)
+Time between injury and surgery: NR
+Time since surgery: 3 (12) mo
+Surgical procedure: 6 HT, 4 BPTB, 2 Achilles tendon
+Participants: 12 (10 M, 2 F)
+Age: 23.3 (2.5)
+Weight: 78.8 (15.8)
+11 Eagle camera
+motion capture
+system, 60 Hz
+Force plate
+Stair ascent/descent: self-selected comfortable speed;
+barefooted
+Kinematics: flexion, internal rotation, varus; peak and total
+flexion/extension; varus/valgus IE rotation peak for
+ascent and for descent; Mean curves for flexion/
+extension, varus/valgus, axial rotation for ascent and for
+descent
+Spatiotemporal variables: stance/swing time; total time; 1st
+and 2nd single and double support; CTO/CFS/ TO
+Georgoulis et al. [63] Participants: 21 (19 M, 2 F)
+Age: 25 (4)
+Weight: 69.11 (7.89)
+Time between injury and surgery: NR
+Time since surgery: 30 (16.9) wk
+Surgical procedure: BPTB
+Participants: 10 (8 M, 2 F)
+Age: 24.7 (3.7)
+Weight: 62.1 (12.38)
+6 Cameras, 50 Hz Walking: self-selected pace; footwear condition NR
+Kinematics: flexion at TO and HS; max flexion during
+swing and loading response; max tibial abduction/
+adduction; max tibial IE rotation
+Spatiotemporal: cadence; average gait velocity
+Hall et al. [47] Participants: 15 (7 M, 8 F)
+Age: 26 (6)
+Weight: 75 (15)
+Time between injury and surgery: NR
+Time since surgery: 6 (2 –18) yr
+Surgical procedure: 41 % HT, 41 % patellar tendon,
+12 % cadaver ? hamstring, 6 % HT
+Participants: 17 (7 M, 10 F)
+Age: 26 (4)
+Weight: 65 (12)
+8-Camera 3D motion
+analysis system,
+160 Hz
+Force plate, 1600 Hz
+Walking: self-selected pace, with preferred shoes
+Kinematics: initial flexion angle
+Kinetics: peak internal extension moment; peak external
+varus moment
+Stair ascent/descent:
+Kinematics: initial flexion angle
+Kinetics: peak extension moment; peak varus moment
+Hooper et al. [48] CKC group b
+Participants: 18 (13 M, 5 F)
+Age: NR
+Weight: 75.1 (12.3)
+Time between injury and surgery: 50.3 (61.8) mo
+Time since surgery: 2 weeks
+Surgical procedure: BPTB
+OKC group b
+Participants: 19 (16 M, 3 F)
+Age: NR
+Weight: 77.4 (15.3)
+Time between injury and surgery: 34.1 (30.4) mo
+Time since surgery: 2 weeks
+Surgical procedure: BPTB
+Contralateral limb as controls 3 Cameras, 50 Hz
+Force plate, 200 Hz
+Walking: gait speed and footwear NR
+Kinematics: flexion at HS, TO, MS excursion
+Kinetics: concentric /eccentric energy; flexor/extensor
+impulse; flexion/extension moment
+Stair ascent:
+Kinematics: flexion at HS
+Kinetics: peak extensor moment; extensor impulse; peak
+concentric power; concentric energy
+Stair descent:
+Kinematics: flexion at HS
+Kinetics: peak extensor moment; extensor impulse; peak
+eccentric power; eccentric energy
+Movement Patterns of the Knee after ACL Reconstruction 1877
+123
+
+--- PAGE 10 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Hooper et al. [49] ACL-6 group
+Participants: 8 (5 M, 3 F)
+Age: 33.4 (11.0)
+Weight: 77.4 (14.7)
+Time between injury and surgery: NR
+Time since surgery: 6.4 (0.5) mo
+Surgical procedure: 6 BTB, 2 BTB with LAD
+ACL-12 group c
+Participants: 9 (4 M, 5 F)
+Age: 34.2 (10.4)
+Weight: 71.1 (15.7)
+Time between injury and surgery: NR
+Time since surgery: 11.9 (0.6) mo
+Surgical procedure: 5 BTB, BTB with LAD
+Contralateral limb as controls 3 Infrared cameras,
+50 Hz
+Force plate, 200 Hz
+Walking: gait speed and footwear condition NR
+Kinematics: flexion at HS, TO; MS excursion
+Kinetics: peak external flexion/extension/varus moment;
+peak concentric power during MS
+Stair ascent:
+Kinematics: flexion at toe contact and TO
+Kinetics: peak external flexion/varus moment; peak
+concentric power
+Stair descent:
+Kinematics: flexion at toe contact and TO
+Kinetics: peak external flexion/varus moment; peak
+eccentric power
+Karimi et al. [65] Participants: 15 (sex NR)
+Age: 33 (2.6)
+Time between injury and surgery: NR
+Time since surgery: 6 months
+Surgical procedure: combined HT and peroneus longus
+tendon
+Participants: 15 (sex NR)
+Age: 32 (3), weight and sex
+matched control group
+7 Cameras
+Force plate
+Walking: self-selected normal walking speed; foot wear
+NR
+Kinematics: hip, knee, ankle and pelvis range of motion in
+three planes
+Kinetics: knee flexion/ extension moment, adduction
+moment, internal and external rotation moment
+Spatiotemporal gait. Stride length, speed and cadence
+Ground reaction force
+Knoll et al. [82] Participants: 16 (9 M, 7 F)
+Age: M 39.71 (2.10), F 30.31 (10.48)
+Weight: M 88.10 (20.2), F 62.11 (8.38)
+Time between injury and surgery: 12 days and
+28.2 months
+Time since surgery: 12 months
+Surgical procedure: BPTB
+Participants: 51 (31 M, 20 F)
+Age: M 28.17 (7.69), F 25.09 (4.21)
+Weight: M 77.89 (11.88), F 59.86
+(6.38)
+Ultrasound based
+zebris,100 Hz
+Force plate
+Walking (on treadmill): 0.83 m/s; barefoot
+Kinematics: peak flexion/extension
+Spatiotemporal: step length; walking base
+Kowalk et al. [46] Participants: 7 (5 M, 2 F)
+Age: 18–38
+Time between injury and surgery: NR
+Time since surgery: 6 (3.2–11.3) mo
+Surgical procedure: BPTB
+Participants: 10 (6 M, 4 F)
+Age: 20–49
+4 Cameras, 60 Hz
+Kistler force plate,
+60 Hz
+Stair ascent: freely selected speed, barefoot
+Kinematics: maximum joint excursion
+Kinetics: internal moments, power; work
+1878 M. Kaur et al.
+123
+
+--- PAGE 11 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Kuenze et al. [41] Participants: 20 (11 M, 9 F)
+Age: 22.7 (5.2)
+Weight: 72.7 (13.7)
+Time between injury and surgery: NR
+Time since surgery: 33.9 (23.4) mo
+Surgical procedure: 11HT, 9 BPTB
+Participants: 23 (12 M, 11 F)
+Age: 21.9 (3.6)
+Weight: 69.6 (13.8)
+12 Cameras, 250 Hz
+Force plate imbedded
+in treadmill, 1000 Hz
+Running: 2.68 m/s, footwear condition NR
+Kinematics: external hip, knee and ankle kinematics during
+stance and swing phase of the gait in sagittal and frontal
+plane
+Kinetics: external hip, knee and ankle flexion moments
+during stance and swing phase of the gait in sagittal and
+frontal plane
+Lewek et al. [52] Strong ACLR b
+Participants: 8 (5 M, 3 F)
+Age: 21.4 (6.0)
+Time between injury and surgery: NR
+Time since surgery:14.3 (2.4) wk
+Surgical procedure: ST-gracilis graft
+Weak ACLR b
+Participants: 10 (4 M, 6 F)
+Age: 25 (7.8)
+Time between injury and surgery: NR
+Time since surgery: 20.8 (9.4) weeks
+Surgical procedure: ST-gracilis graft
+Participants: 10 (8 M, 2 F)
+Age: 32.2 (6.6)
+6 Cameras, 120 Hz
+Force plate, 960 Hz
+Isokinetic
+dynamometer
+Walking: free speed, velocity monitored with photoelectric
+beam; footwear condition NR
+Kinematics: initial contact; peak flexion
+Kinetics: peak internal flexion moments
+Running: free speed, velocity monitored with photoelectric
+beam
+Kinematics: initial contact; peak flexion
+Kinetics: peak internal flexion moments
+Noehren et al. [54] Participants: 20 F
+Age: 25 (6.2)
+Weight: 64 (8.2)
+Time between injury and surgery: NR
+Time since injury: 5.2 (3.2) yr
+Surgical procedure: 8 HT
+7 BPTB, 5 autograft
+Participants: 20 F
+Age: 26 (5.1)
+Weight: 61 (5.1)
+15-Camera motion
+analysis system,
+200 Hz
+Force plate, 1200 Hz
+Walking: 1.5 m/s
+Kinematics: flexion
+Kinetics: impact force,
+Average loading rate, extensor moment, ground reaction
+forces: Fz, Fx, Fy
+Run: 2.9 m/s
+Kinematics: flexion
+Kinetics: impact force
+Average loading rate, extensor moment, ground reaction
+forces: Fz, Fx, Fy
+Patterson et al. [18] Participants: 17 (3 M, 14 F)
+Age: 23.7 (3.12)
+Weight: 64.9 (9.02)
+Time between injury and surgery: NR
+Time since injury: 3.50 (3.25) yr
+Surgical procedure: 8 HT, 9 BPTB
+Participants: 17 F
+Age: 20.8 (1.17)
+Weight: 64.7 (7.06)
+3 Cameras, 200 Hz
+2 force plate, 1000 Hz
+CODA motion analysis
+system
+Walking: self-selected ‘‘normal’’ walking speed; barefoot
+Kinematics: transverse, sagittal and frontal angles
+throughout entire stride
+Kinetics: external peak adduction moment
+Roewer et al. [44] Participants: 26 (18 M, 8 F)
+Age: 29.6 (10.7)
+Time between injury and surgery: NR
+Time since surgery: 24 months
+Surgical procedure: ST-gracilis graft, allograft
+Contralateral limb as controls 8 Cameras, 120 Hz
+Force plate, 1080 Hz
+Walking: self-selected ‘normal’ walking speed controlled
+via infrared photo cells
+Kinematics: peak flexion angle, excursion angle
+Kinetics: internal knee extensor moment, power
+Movement Patterns of the Knee after ACL Reconstruction 1879
+123
+
+--- PAGE 12 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Sato et al. [53] Participants: 7 (3 M, 4 F)
+Age: 21.3 (4.9)
+Weight: 59.0 (4.7)
+Time between injury and surgery: NR
+Time since surgery: 14.3 (1.8) mo
+Surgical procedure: HT
+Contralateral limb as controls 9 Cameras, 200 Hz
+Force plate
+KT-1000 arthrometer
+Walking: gait speed NR; barefoot
+Kinematics: maximum internal rotation angle
+Running: gait speed NR; barefoot
+Kinematics: maximum internal rotation angle
+Scalan et al. [36] Participants: 26 (11 M, 15 F)
+Age: 31
+Weight: 68
+Time between injury and surgery: NR
+Time since surgery: 24 months (7–65) mo
+Surgical procedure: 12 allograft (9 Achilles, 1 BPTB, 2
+soft tissue allograft), 12 autograft (10 BPTB, 4 HT)
+Contralateral limb as control Optoelectronic motion
+capture system,
+120 Hz
+Force plate
+Walking: self-selected normal walking speed; foot wear
+NR
+Kinematics: IE rotation; VV rotation; flexion
+Schmalz et al. [33] Participants: 26 (sex NR)
+Age: 29 (6)
+Weight: 76 (10)
+Time between injury and surgery: NR
+Time since surgery: 8–52 weeks
+Surgical procedure: BPTB
+Participants: 30 (sex NR)
+Age: 28 (5)
+Weight: 71 (9)
+Optoelectronic motion
+capture system, 4
+cameras, 100 Hz
+2 Kistler force plates,
+400 Hz
+Walking: fast pace, footwear condition NR
+Kinematics: flexion/extension
+Kinetics: flexion/extension
+Schmalz et al. [34] Participants: 35 (sex NR)
+Age: 27 (7)
+Weight: 76 (12)
+Time between injury and surgery: NR
+Time since surgery: 8–52 weeks
+Surgical procedure: BPTB
+Participants: 30 (sex NR)
+Age: 28 (5)
+Weight: 71 (9)
+Optoelectronic motion
+capture system, 4
+cameras, 100 Hz
+2 Kistler force plates,
+400 Hz
+Walking: fast pace, footwear condition NR
+Kinematics: flexion/extension
+Kinetics: flexion/extension
+1880 M. Kaur et al.
+123
+
+--- PAGE 13 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Schroeder et al. [42] ACLR (HT) group b
+Participants: 10 (sex NR)
+Age: 32.6 (8)
+Weight: 74.6 (7.4)
+Time between injury and surgery: NR
+Time since surgery: 9.4 (3.7) mo
+Surgical procedure: HT
+ACLR (PT) group b
+Participants: 6
+Age: 30.8 (5.5)
+Weight: 74.8 (18)
+Time between injury and surgery: NR
+Time since surgery: 9.7 (4.3) mo
+Surgical procedure: PT
+Participants: 9 age matched (sex
+NR)
+Age: 27.2 (3.7)
+Weight: 67.1 (13.4)
+Passive motion capture
+system, 8 cameras,
+120 Hz
+3 force plates
+Walking: speed and footwear condition NR
+Kinematics: flexion/extension, abduction/adduction and
+rotation
+Kinetics: peak flexion/extension, adduction/abduction and
+rotation moment
+Stair descent (step to floor):
+Kinematics: speed and footwear condition NR
+Kinetics: peak flexion/extension, adduction/abduction and
+rotation moment
+Stair descent (step to descent)
+Kinematics: speed and footwear condition NR
+Kinetics: peak flexion/extension, adduction/abduction and
+rotation moment
+Tellini et al. [93] Participants: 8 (5 M, 3 F)
+Age: 25.5 (7.1)
+Weight: 61.3 (27.1)
+Time between injury and surgery: NR
+Time since surgery: 32 (6) days
+Participants: 8, age and sex
+matched
+Video camera, 60 Hz Walking: self-selected comfortable speed; footwear NR;
+walking on floor and on a foam mat
+Kinematics: knee angular displacement
+Spatiotemporal: stride length
+Timoney et al. [19] Participants: 10 (M)
+Age: 20–30
+Time between injury and surgery: 30 (1–66) mo
+Time since surgery: 10 (9–12) mo
+Surgical procedure: BPTB
+Participants: 10
+Similar controls
+Vicon motion analysis
+system, 200 Hz
+Force plate
+Walking: free walking speed; barefoot
+Kinetics: ground reaction loading rate; maximally
+vertically directed loading rate; tibially directed loading
+rate; heel strike external knee moment; midstance
+external flexion moment
+Spatiotemporal: pre heel strike foot velocities; average
+walking velocity
+Varma et al. [38] Participants: 12 (9 M, 3 F)
+Age: 30.5 (8.68)
+Weight: 75 (11.13)
+Time between injury and surgery: NR
+Time since surgery: 4.5 (3.5)
+Surgical procedure: BPTB
+Participants: 12 (9 M, 3 F)
+Age: 24.8 (8.81)
+Weight: 71.6 (11.2)
+3-DGA, 10 cameras,
+100 Hz
+Force plate, 1000 Hz
+Walking: self-selected speed, barefoot
+Kinetics: peak adduction, flexion and extension moment
+Walking: uphill/downhill: Self-selected speed, barefoot
+Kinetics: peak adduction, flexion and extension moment
+Wang et al. [35] Participants: 29 (18 M, 11 F)
+Age: M 32.7 (4.6), F 30.2 (9.4)
+Weight: M 75.3 (9.1), F 55.0 (7.1)
+Time between injury and surgery: 2.6 months (2
+weeks–16 months)
+Time since surgery: NR
+Surgical procedure: HT
+Participants: 58 (36 M, 22 F)
+Age: 31.2 (5.2)
+Weight: 70.1 (24.2)
+8-Camera motion
+analysis system,
+60 Hz
+Measured before
+surgery, 3, 6, 9,
+12 months after
+surgery
+Walking: walking speed of 0.52 m/s; Footwear condition
+NR
+Kinematics: knee joint movement angle; knee joint angular
+acceleration; ACL relative motion parameters
+Spatiotemporal variables: step length; step width
+Movement Patterns of the Knee after ACL Reconstruction 1881
+123
+
+--- PAGE 14 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Wang et al., 2012 [39] Group d b
+Participants: 19 (12 M, 7 F)
+Age: 32.4 (8.6)
+Weight: 83.9 (18.8)
+Time between injury and surgery: NR
+Time since surgery: 14.1 (4.4) mo
+Surgical procedure: HT (16), BTB (3)
+Group n b
+Participants: 22 (12, M, 10 F)
+Age: 31.1 (8.0)
+Weight: 81.4 (16.4)
+Time between injury and surgery: NR
+Time since surgery: 13.9 (5.5) mo
+Surgical procedure: HT (19), BTB (3)
+Participants: 20 (13 M, 7 F)
+Age: 23.4 (3.0)
+Weight: 70.8 (13.2)
+10 Cameras, 60 Hz
+Force plate
+Walking: self-selected speed; footwear condition NR
+Kinematics: rotations/translations
+Kinetics: external adduction moment
+Wang et al. [60] TT b
+Participants: 12 (7 M, 5 F)
+Age: 32.75 (7.2)
+Weight: 83.0 (16.7)
+Time between injury and surgery: NR
+Time since surgery: 17.1 (10.6) mo
+Surgical procedure: HT
+AMP b
+Participants: 12 (7 M, 5 F)
+Age: 29.6 (7.2)
+Weight: 85.6 (16.5)
+Time between injury and surgery: NR
+Time since surgery: 8.8 (4.3) mo
+Surgical procedure: HT
+Participants: 20 (15 M, 5 F)
+Age: 26.3 (7.7)
+Weight: 81.6 (15.5)
+10 Cameras, 60 Hz
+2 force plate, 1200 Hz
+Walking: self-selected walking speed 1.10–1.37 m/s for
+control group, 0.92–1.45 m/s for ACLR group. Footwear
+condition NR
+Kinematics: at neutral stance: flexion/varus; femoral
+external rotation
+During walking: AP/ML/Superior-inferior ROM; peak
+valgus and external rotation
+Spatiotemporal: step and stride length; step and stride speed
+1882 M. Kaur et al.
+123
+
+--- PAGE 15 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Webster and Feller [57] HT
+Participants: 17 (16 M, 1 F)
+Age: 26.8 (8)
+Weight: 79.6
+Time between injury and surgery: 10.6 (8.3) wk
+Time since surgery: 9.3 (2.2) mo
+Surgical procedure: HT
+PT
+Participants: 17 (16 M, 1 F)
+Age: 23.8 (5)
+Weight: 78.9(6)
+Time between injury and surgery: 12.8 (11.7) wk
+Time since surgery: 11.0 (1.9) mo
+Surgical procedure: PT
+Participants: 17 (16 M, 1 F)
+Age: 24.7 (5)
+Weight: 74.8 (12)
+6-Camera Vicon
+motion analysis
+system, 50 Hz
+Force plate, 400 Hz
+Walking: self-selected comfortable speed; barefoot.
+Kinematics: maximum flexion/extension; flexion at HS
+Kinetics: peak torque; max flexion/extension moment;
+extension moment at FS
+Webster and Feller [58] HT b
+Participants: 18 (16 M, 2 F)
+Age: 26.6 (6)
+Weight: 79.3 (7.2)
+Time between injury and surgery: 11 (8.2) wk
+Time since surgery: 9.0 (2.4) mo
+Surgical procedure: HT
+PT b
+Participants: 18 (17 M, 1F)
+Age: 23.8 (6)
+Time between injury and surgery: 12.7 (11.6) wk
+Time since surgery: 10.9 (2) mo
+Surgical procedure: PT
+Participants: 18 (16 M, 2 F)
+Age: 24.7 (5)
+Weight: 74.5 (12.7)
+6-Camera Vicon
+motion analysis
+system, 50 Hz
+Markers (Plug in gait)
+Force plate
+Walking: self-selected comfortable speed; footwear
+condition NR
+Kinematics: varus/valgus rotation; internal/external
+rotation
+Webster et al. [55] Participants: 16 (13 M, 3 F)
+Age: 26 (6)
+Weight: 82 (11)
+Time between injury and surgery: NR
+Time since surgery: 3.3 (0.4) yr
+Surgical procedure: 2 PT, 14 HT
+Contralateral limb as controls Vicon motion analysis
+system, 50 Hz
+Kistler force plate
+Walking: self-selected speed; footwear condition NR
+Kinematics: flexion; varus; internal rotation
+Kinetics: external moments
+flexion; extension; adduction
+Movement Patterns of the Knee after ACL Reconstruction 1883
+123
+
+--- PAGE 16 ---
+Table 3 continued
+Study ACLR group characteristics a
+Control group characteristics a
+Methodology of data
+collection
+Task and measurable variable
+Webster and Feller [17] HT group b
+Participants: 16 M
+Age: 27.5 (6)
+Weight: 79.5 (7)
+Time between injury and surgery: 10.7 (9) wk
+Time since surgery: 9.4 (3) mo
+Surgical procedure: HT
+PT group b
+Participants: 16 M
+Age: 23.8 (6)
+Weight: 79.2 (6)
+Time between injury and surgery: 11.9 (11) wk
+Time since surgery: 11.2 (2) mo
+Surgical procedure: PT
+Participants: 16 M
+Age: 25.0 (5)
+Weight: 75.9 (12)
+Vicon motion analysis
+system
+Kistler force plate
+Walking: self-selected speed; barefoot
+Kinematics: peak adduction angle
+Kinetics: external peak adduction moment; vertical ground
+reaction force
+Zabala et al. [51] Participants: 45 (26 M, 19 F)
+Age: 29.5 (6.1)
+Weight: 74.4 (12.4)
+Time between injury and surgery: 2.2 (0.4–8.0) mo
+Time since surgery: 26 months (22–36)
+Surgical procedure: Achilles tendon
+Participants: 45 (26 M, 19 F)
+Age: 30.2 (4.68)
+Weight: 74.2 (12.3)
+Optoelectronic motion
+capture system,
+120 Hz
+Force plate
+Walking: self-selected speed, footwear condition NR
+Kinetics: (1st and 2nd peak) adduction external moments;
+abduction/adduction; flexion/extension; external/internal
+rotation moments
+Stair ascent/descent
+Kinetics: (1st and 2nd peak) adduction external moments;
+abduction /adduction; flexion/extension; external/internal
+rotation moment
+ACL anterior cruciate ligament, ACLR anterior cruciate ligament reconstruction, AP anterior posterior, AMP anteromedial portal, BPTB bone patellar tendon bone, BTB bone patellar tendon bone, CKC close kinetic
+chain, CTO contralateral toe off, CFS contralateral foot strike, DB double bundle, DGA dimensional gait analysis, Fz vertical forces, Fx horizontal antero-posterior forces, Fy medio-lateral forces, F female, FS foot
+strike, HS heel strike, HT hamstring tendon, IE internal-external, LAD ligament augmentation device, L5 lumbar 5 vertebral level, M male, ML medio-lateral, MS mid-stance, Max maximum, NR not reported, OKC open
+kinetic chain, PT patellar tendon, ROM range of motion, S1 sacrum 1 vertebral level, SB single bundle, SD standard deviation, ST semitendinosus, TO toe off, TT trans-tibial, VV varus-valgus, yr year(s)
+a
+Age is presented in years as mean (SD); weight is presented in kg
+b
+Groups combined for meta-analysis
+c
+Both groups considered separately for meta-analysis
+1884 M. Kaur et al.
+123
+
+--- PAGE 17 ---
+reconstruction with the contralateral limbs. With the
+exclusion of that study, a significant difference was still
+evident for peak knee flexion angle between injured and
+uninjured contralateral limb (ES -0.4; 95 % CI -0.60 to
+-0.12). No significant differences were found for peak
+knee flexion during stair ascent compared with controls
+Fig. 2 Forest plot for peak knee flexion angle during stance phase of gait during different activities. ACLR anterior cruciate ligament
+reconstruction, CI confidence interval, IV inverse variance, SD standard deviation
+Fig. 3 Forest plot for peak knee adduction angle during stance phase of gait during walking compared with control group. ACLR anterior
+cruciate ligament reconstruction, CI confidence interval, IV inverse variance, SD standard deviation
+Movement Patterns of the Knee after ACL Reconstruction 1885
+123
+
+--- PAGE 18 ---
+(Fig. 2 [2.1.3]) and the contralateral limbs [47]. However,
+there was moderate evidence that peak flexion was
+decreased for ACLR knees compared with controls during
+stair descent (Fig. 2 [2.1.5]). During running, no significant
+differences were found for the knee flexion angle compared
+with controls (Fig. 2 [2.1.6]).
+Only three studies reported peak knee adduction angles
+(Fig. 3), with a range from 7.5 months to 5.3 years post-
+reconstruction [17, 40, 63]. The meta-analysis indicated
+moderate evidence for no significant difference between
+the ACLR knee and controls.
+In terms of rotation at the knee, studies either reported
+maximal external or internal tibial rotation during the
+loading phase [53, 58–60, 63]. Strong evidence indicated
+no significant difference for external tibial rotation for
+ACLR knees compared with controls during walking
+(maximum 17 months post-surgery, Fig. 4). While peak
+external rotation angles were considered for analysis,
+Czamara et al. [59] reported external rotation at initial
+foot contact. Their results were included into the meta-
+analysis, as peak external rotation is most likely to occur
+at heel strike phase during the stance phase of the
+walking gait [64]. One study [50] found less external
+rotation for the ACLR knees at 3 months post-surgery
+during stair descent (ES -1.1; 95 % CI -2 to -0.2; MD
+-5.8°; 95 % CI -1.8 to -9.9). Strong evidence was
+found for less tibial internal rotation (ES -0.7; 95 % CI
+-1.1 to -0.4) (Fig. 5) for ACLR knees compared with
+the contralateral limbs during walking [53, 55, 58].
+However, results of one study [41] indicated no signifi-
+cant difference between the ACLR and the contralateral
+limbs while running, with limited evidence (ES -1.1;
+95 % CI -2.3 to 0).
+3.4.2 Joint Moments
+Overall, participants with ACLR presented with signifi-
+cantly lower peak flexion moments during walking than
+controls and the contralateral limbs (strong evidence)
+(Fig. 6 [6.2.1, 6.2.2]). Strong evidence was found for peak
+flexion moments being lower for the injured side than for
+the contralateral uninjured sides during walking, stair
+ascent, and descent after ACLR (Fig. 6 [6.2.3–6.2.6]).
+Moderate evidence indicated no significant differences
+during running in ACLR participants compared with con-
+trols (Fig. 6 [6.2.7]).
+The meta-analysis showed moderate to strong evidence
+for significantly lower first peak adduction moments during
+walking for the ACLR knees when compared with controls
+and with the contralateral limbs, respectively (Fig. 7 [7.1.1,
+7.1.2]). Strong and moderate evidence indicated no sig-
+nificant differences were present for the peak adduction
+moments during stair ascent and descent, respectively, for
+the ACLR knees compared with the control group (Fig. 7
+Fig. 4 Forest plot for peak tibial external rotation angle during stance phase of gait during walking compared with control group. ACLR anterior
+cruciate ligament reconstruction, CI confidence interval, IV inverse variance, SD standard deviation
+Fig. 5 Forest plot for peak tibial internal rotation angle during stance phase of gait compared with control group. ACLR anterior cruciate
+ligament reconstruction, CI confidence interval, IV inverse variance, SD standard deviation
+1886 M. Kaur et al.
+123
+
+--- PAGE 19 ---
+Fig. 6 Forest plot for knee flexion moment during stance phase of gait in different activities. ACLR anterior cruciate ligament reconstruction, CI
+confidence interval, IV inverse variance, SD standard deviation
+Movement Patterns of the Knee after ACL Reconstruction 1887
+123
+
+--- PAGE 20 ---
+[7.1.3, 7.1.5]). In contrast, lower peak adduction moments
+were found for ACLR during stair ascent (moderate evi-
+dence) and descent (strong evidence) compared with the
+contralateral limbs (Fig. 7 [7.1.4, 7.1.6]). No studies eval-
+uating adduction moments during running were identified
+and included in the review.
+ES for differences for the flexion and adduction
+moments were low (\0.59) for all comparisons, except for
+the comparison of flexion moments during stair ascent (ES
+0.7, 95 % CI 0.1 to 0.4) and descent (ES 0.5, 95 % CI 0.1
+to 0.8) when comparing ACLR knees with the contralateral
+limbs.
+3.5 Time Course of Recovery
+The qualitative assessment of the forest plots suggests
+patients tend to restore peak knee flexion angle over time
+after surgery for studies that included participants up to
+6 years, and present peak knee flexion angle that is similar
+to the contralateral limb (Fig. 2). However, such an
+Fig. 7 Forest plot for first peak of knee adduction moment during stance phase of gait in different activities. ACLR anterior cruciate ligament
+reconstruction, CI confidence interval, IV inverse variance, SD standard deviation
+1888 M. Kaur et al.
+123
+
+--- PAGE 21 ---
+improvement over time was not evident for peak flexion
+moments during walking. When ascending and descending
+stairs, patients tended to present improved flexion moments
+over time when compared with the contralateral sides, but
+not when compared with controls (Fig. 6).
+During walking, peak adduction moments appeared to
+be significantly lower in participants with ACLR than in
+controls within the first year following surgery (average
+9.4 months) [70]. However, while not significant (95 % CI
+-0.02 to 1.4), these adduction moments showed a tendency
+to be slightly higher than in controls at a later phase
+(5.3 years) [40] (Fig. 7). Interestingly, Karimi et al. [65]
+found higher peak adduction moments at 6 months post-
+reconstruction than for controls. Functional braces were
+worn by their participants for 3 months post-surgery; none
+of the other studies reported these being worn. A sensitivity
+test was performed by excluding the adduction moments
+for this study [65], and the results indicate that, overall,
+peak adduction moments were significantly lower in the
+ACLR group than in the control group (ES -0.32, 95 % CI
+-0.55 to -0.08). When excluding their results, there
+appears to be a response in time, from lower to equivalent
+adduction moments for the ACLR group compared with
+controls while walking.
+4 Discussion
+The primary aim of this review was to investigate knee
+joint angles and moments in participants with ACLR
+compared with the contralateral limbs and with age-
+matched controls during walking, stair climbing, and
+running. In terms of joint angles, moderate to strong
+evidence was found for no differences for peak flexion
+during walking, stair ascent, and jogging when compar-
+ing the ACLR knees with controls. However, when
+compared with the uninjured contralateral sides, less
+flexion and less internal rotation was found for the ACLR
+knees during walking. During stair descent, peak flexion
+was decreased for ACLR knees compared with controls.
+There was moderate evidence for no differences for peak
+adduction angles between the ACLR knee and controls.
+Moderate to strong evidence was found for lower peak
+flexion moments in participants with ACLR during
+walking and stair ascent compared with controls and with
+the contralateral limbs. Moderate to strong evidence also
+indicated lower peak adduction moment for the ACLR
+knees during walking and stair ascent and descent than
+for the contralateral limbs, and during walking compared
+with the controls.
+Table 4 Effect sizes for joint angles between participants with anterior cruciate ligament reconstruction for between- and within-group
+comparisons
+Variable Task Comparison Level of evidence Studies ES (95 % CI)
+Flexion angle Walking Controls Strong Four LR [47, 54, 57, 63], two
+HR [52, 62] studies;
+I2
+= 48 %, p = 0.08
+-0.2 (-0.5 to 0.1)
+Contralateral limbs Moderate Four LR [44, 47, 55, 61], one
+HR [48] studies; I2
+= 83 %,
+p\0.00001
+-0.6 (-0.8 to -0.4)
+Stair ascent Controls Moderate Two LR [47, 50] studies;
+I2
+= 8 %, p = 0.30
+-0.0 (-0.6 to 0.5)
+Contralateral limbs Limited One LR [47] study -0.2 (-0.98 to 0.5)
+Stair descent Controls Moderate Two LR [47, 50] studies;
+I2
+= 81 %, p = 0.02
+-0.5 (-1.0 to 0.0)
+Running Controls Moderate One LR [54], one HR [52]
+studies; I2
+= 11 %, p = 0.29
+-0.5 (-0.9 to 0.0)
+Adduction angle Walking Controls Moderate Three LR [17, 40, 63] studies;
+I2
+= 73 %, p = 0.03
+-0.5 (-1.7 to 0.7)
+Tibial external rotation angle Walking Controls Strong Three LR [59, 60, 63] studies;
+I2
+= 68 %, p = 0.04
+0.2 (-0.2 to 0.6)
+Stair ascent Controls Limited One LR [50] study -0.7 (-1.5 to 0.2)
+Stair descent Controls Limited One LR [50] study -1.1 (-2 to –0.2)
+Tibial internal rotation angle Walking Contralateral limbs Strong Three LR [53, 55, 58] studies;
+I2
+= 0 %, p = 0.63
+-0.7 (-1.1 to -0.4)
+Stair ascent Controls Limited One LR [50] study 0.6 (-0.3 to 1.4)
+Stair descent Controls Limited One LR [50] study 0.7 (-0.2 to 1.5)
+Running Contralateral limbs Limited One LR [53] study -1.1 (-2.3 to 0)
+CI confidence interval, ES effect size, HR high risk of bias, LR low risk of bias
+Movement Patterns of the Knee after ACL Reconstruction 1889
+123
+
+--- PAGE 22 ---
+4.1 Peak Joint Angles
+Results of the meta-analysis suggest that participants with
+ACLR regain similar peak knee flexion angles compared
+with the control group during walking by 6 years following
+surgery (Fig. 2). However, pooled peak flexion angles were
+lower in the ACLR knee than in the contralateral sides (ES
+0.6;95 %CI-0.4to-0.8).TheMDof4.3°washigherthan
+theminimalclinicallyimportantdifferenceof3°reportedfor
+knee flexion during the stance phase of walking [66]. This
+difference was influenced in part by the findings by Hooper
+et al. [48] at 2 weeks post-surgery: the MD was 8.5°, which
+may be due to pain or swelling at early stages after surgery.
+Consideringtheindividualstudies,limbasymmetryforpeak
+flexion angles was evident until 6 months post-reconstruc-
+tion [44, 61], while no significant bilateral differences were
+found, on average, 10 months to 6 years following surgery.
+Similarly, our meta-analysis indicated no significant
+between-group differences for knee adduction and external
+rotation angles during walking. However, peak external
+rotation was decreased during stair descent based on one
+study [50]. Internal rotation was decreased during walking
+for the ACLR knee compared with the contralateral limb.
+Rotational shifts varied from 1 to 5.8°. A biomechanical
+model of degeneration showed that a 5° rotational shift
+may be enough to cause accelerated degeneration of the
+cartilage [67] due to alterations in the stresses applied to
+joint surfaces [68]. Whether these small differences in
+kinematics for participants with ACLR compared with
+controls and contralateral limbs indicate an increased risk
+for PTOA still needs confirmation.
+4.2 Joint Moments
+Strong evidence was found that peak flexion moments were
+significantly lower in participants with ACLR during
+walking and stair ascent and descent activities compared
+with controls and contralateral limbs. However, the ESs
+Table 5 Effect sizes for moments between participants with anterior cruciate ligament reconstruction for between- and within-group
+comparisons
+Variable Task Comparison Level of evidence Studies ES (95 % CI)
+Flexion moments Walking Controls Strong Seven LR [43, 47, 51, 54, 57, 65,
+86], three HR [19, 52, 62]
+studies, I2
+= 56 %, p = 0.02
+-0.4 (-0.6 to -0.2)
+Contralateral limbs Strong Six LR [44, 45, 47, 51, 55, 61, 65],
+three HR [19, 48, 49] studies;
+I2
+= 32 %, p = 0.13
+-0.4 (-0.5 to 0.2)
+Stair ascent Controls Strong Three LR [43, 47, 51] studies,
+I2
+= 0 %, p = 0.89
+-0.4 (-0.7 to -0.1)
+Contralateral limbs Strong Two LR [47, 51], one HR [49]
+studies, I2
+= 26 %, p = 0.26
+-0.7 (-1.0 to -0.4)
+Stair descent Controls Strong Three LR [43, 47, 51] studies,
+I2
+= 37 %, p = 0.20
+-0.3 (-0.7 to 0)
+Contralateral limbs Strong Two LR,
+[47, 51]; one HR [49]
+studies, I2
+= 43 %, p = 0.15
+-0.5 (-0.8 to -0.1)
+Running Controls Limited One LR [54], one HR [52] studies,
+I2
+= 70 %, p = 0.07
+-0.5 (-0.9 to 0.2)
+Adduction moments Walking Controls Strong Eight LR [18, 38, 40, 47, 51, 65,
+86, 94] studies, I2
+= 81 %,
+p\0.0001
+-0.2 (-0.5 to 0)
+Contralateral limbs Strong Five LR [39, 47, 51, 55, 60, 65],
+one HR [49] studies; I2
+= 0 %,
+p = 0.47
+-0.3 (-0.6 to -0.1)
+Stair ascent Controls Moderate Two LR [47, 51], one HR [49]
+studies; I2
+= 0 %, p = 0.99
+-0.1 (-0.4 to 0.3)
+Contralateral limbs Strong Two LR [47, 51] studies;
+I2
+= 64 %, p = 0.10
+-0.4 (-0.7 to 0)
+Stair descent Controls Strong Two LR [47, 51] studies;
+I2
+= 0 %, p = 0.71
+-0.1 (-0.5 to 0.2)
+Contralateral limbs Moderate Two LR [47, 51], one HR [49]
+studies; I2
+= 45 %, p = 0.14
+-0.4 (-0.7 to -0.1)
+CI confidence interval, ES effect size, HR high risk of bias, LR low risk of bias
+1890 M. Kaur et al.
+123
+
+--- PAGE 23 ---
+were small during walking and when compared with the
+controls during stair ascent and descent, while moderate
+ESs were found for decreased flexion moments when
+compared with the contralateral sides during stair ascent
+and descent. It is thus possible that an asymmetry may be
+more evident during stair ascent and descent than during
+walking. Peak external flexion moments are considered to
+reflect net quadriceps function [69], and reduced moments
+may be associated with lower quadriceps strength [22].
+Neurophysiological changes following ACL injury and
+reconstruction have been shown to include decreased lower
+limb muscle activation, as determined by electromyogra-
+phy in ACLR knees [70] and lower cortical activation in
+injured limbs compared with an uninjured and healthy
+population, contributing towards reduced net quadriceps
+function [71]. The presence of pain, reported even at
+2–5 years after surgery [72], or reflex inhibition [73], could
+further influence the movement patterns, as apparent with
+reduced flexion moments. Furthermore, compensatory
+movements at the hip and trunk may also decrease knee
+joint loading [74]. It is thus likely that multiple mecha-
+nisms contribute towards long-term decreased flexion
+moments in the ACLR knees.
+Similar to external knee flexion moments, the adduction
+moments for the ACLR knees were significantly smaller
+during walking than for controls, albeit with low ESs. No
+significant differences were found for either the flexion
+moments or the adduction moments during stair descent for
+the ACLR knees compared with the controls, while they
+were lower for the ACLR knees than for the contralateral
+side. This indicates a bilateral asymmetry during this task
+and could infer that, during stair descent, the contralateral
+side has higher flexion and adduction moments than con-
+trols. While this is speculative, compensatory patterns may
+be evident for the contralateral side [25], which are likely
+due to central nervous system changes following the injury
+and surgery. Such changes have been documented in
+patients with ACL-deficient knees [74].
+The meta-analysis along with sensitivity test for one
+study [65] showed peak adduction moments were lower in
+ACLR participants than in controls in the short and med-
+ium term (up to 3.5 years) and higher as time following
+reconstruction progresses. Our findings contrast thus with
+those by Hart et al. [13], who recently found that the frontal
+plane moments may not be affected by ACLR. Thus, our
+findings suggest that frontal plane moments cannot yet be
+disregarded as outcomes and long-term consequences of
+ACLR. The finding of lower adduction moments in the
+ACLR knees contrast with increased adduction moments
+often reported in patients with knee OA [83]. Risk of
+progression of OA in patients with that disorder increases
+6.46 times with a 1 % increase in adduction moments [15],
+hence the magnitude of adduction moments is correlated
+with OA severity [12, 16]. While decreased adduction
+moments in the early phase following ACLR may reflect
+decreased weight-bearing and compensatory strategies of
+the trunk, hip, and ankle [83–85], a combination of
+changing flexion and adduction moments and joint rota-
+tions may contribute towards loading at unconditioned
+areas of the cartilage, potentially leading to development of
+OA [75]. Studies included in the present review did not
+report radiographic OA changes for their participants;
+therefore, whether those with higher adduction moments
+present with radiographic signs of OA is unknown [15].
+Whether changes for external adduction moments during
+functional tasks predict onset of OA following ACLR still
+needs to be substantiated. While the development of OA is
+multi-factorial, these biomechanical factors should be
+explored longitudinally in all planes.
+4.3 Clinical Implications
+Overall, reduced flexion and adduction moments indicate
+altered joint loading in the long term following ACLR.
+These changes are likely associated with quadriceps
+weakness [76] and various neurophysiological mechanisms
+[77–79], and are potentially associated with risk of early-
+onset joint degeneration [80, 81] due to suboptimal joint
+loading during functional tasks such as walking, running,
+and stair navigation [82]. Altered kinematics, along with
+reduced flexion moments, may significantly change the
+stress distribution within the cartilage and initiate a
+degenerative process [83]. Di Stasi et al. [61] showed that
+athletes with superior functional performance at 6 months
+following ACLR appear to demonstrate less asymmetrical
+gait patterns than those that did not pass functional ‘return
+to play’ criteria. Therefore, it appears to be important to
+include assessment of potential gait asymmetries following
+ACLR in decision making for readiness for rehabilitation
+progression and return to sports [61, 84]. While small
+differences in walking may not be detectable on clinical
+examination, these may be more evident during high knee-
+loading activities, such as stair ascent/descent, running
+[84], and jumping [85]. The finding of movement and
+loading asymmetries in the current review indicate that it
+may be important for people with ACRL to continue with
+exercise programs focusing on strength, neuromuscular
+control, and proprioception even after the rehabilitation
+period is completed.
+4.4 Methodological Considerations and Directions
+for Future Research
+The risk-of-bias assessment identified methodological
+limitations for the included studies: the absence of outcome
+measurer blinding, reporting reliability of methodology,
+Movement Patterns of the Knee after ACL Reconstruction 1891
+123
+
+--- PAGE 24 ---
+lack of confounding factors such as control of gait speed,
+and a priori power calculation for sample size. While
+blinding of the researcher is difficult during data collection
+due to visible scarring at the operated knee, blinding for the
+participant group (control vs. ACLR) can be maintained
+while processing kinematic and kinetic data.
+A total of 16 studies included in the meta-analysis
+controlled the speed of the tasks [17, 19, 38, 40, 41, 43–45,
+52, 54, 57, 60–63, 86]. A compensatory strategy to main-
+tain or decrease joint loading is to walk slower [87]. Thus,
+in those studies where speed was not reported, it is possible
+that participants with ACLR may have walked slower,
+thereby maintaining or controlling the joint loading effec-
+tively. This could lead to no significant differences between
+groups, as seen for stair descent for flexion and adduction
+moments. Furthermore, other compensatory strategies that
+develop over time post-reconstruction, such as transferring
+the load to the hip and ankle [88] and compensation with
+trunk lean, can also be used to decrease joint moments, as
+shown in patients with knee OA [89, 90]. These factors
+should be addressed in future research.
+Only cross-sectional studies or baseline measures of
+RCTs were considered for the purpose of time course of
+recovery analysis in this review. However, longitudinal
+studies following patients at different time points following
+ACLR are needed to fully investigate how gait biome-
+chanics change over time, and how these changes may
+influence the development of OA or re-injury. Furthermore,
+the aim of this review was to explore differences for peak
+knee joint angles and moments when comparing people
+with ACLR versus controls, and not between different
+surgical or rehabilitative programs. Findings of groups of
+participants with ACLR undergoing different procedures
+within individual studies were thus combined into grand
+means for the meta-analyses, which masks differences
+between these groups. Findings of this review are thus
+limited to comparisons with controls and when comparing
+the ACLR knees to the contralateral uninjured sides, irre-
+spective of surgical methods. Finally, this review was
+limited to the discrete variables of peak angles and
+moments, and did not explore biomechanical variables in
+other phases of the gait cycle.
+5 Conclusion
+Joint kinematics of ACLR knees were found to be similar
+to control groups during walking and stair navigation
+within a few months after surgery. However, differences in
+knee external moments persist over a longer period. The
+meta-analysis indicated lower pooled external flexion
+moments for people with ACLR than for controls during
+walking and stair ascent. The meta-analysis also indicated
+decreased peak adduction moments during walking and
+stair navigation for ACLR knees, specifically when com-
+pared with contralateral limbs. Based on individual studies
+included in the review, such moments may be lower than
+for controls in the early phase following ACLR
+(10 months), but higher at a later phase (5 years) after
+surgery. While this review did not explore compensatory
+mechanisms, it is likely that multiple mechanisms influ-
+ence altered gait patterns, including changes in muscle
+function and neuromuscular control at the trunk, hip, knee,
+and ankle. Gait patterns at the knee are not fully restored
+after more than 5 years following surgery. This finding
+indicates that long-term rehabilitative or maintenance
+programs may need to be considered for patients under-
+going ACLR.
+Author contributions All authors contributed significantly to the
+review. Gisela Sole was responsible for the conception of this review;
+Mandeep Kaur conducted the entire review, with Gisela Sole and
+Daniel Cury Ribeiro as second and third reviewers; Jean-Claude Theis
+and Kate Webster provided advice throughout the review. All authors
+were involved with the final manuscript.
+Compliance with Ethical Standards
+Funding No sources of funding were used to assist in the prepa-
+ration of this article.
+Conflict of interest Mandeep Kaur, Daniel Cury Ribeiro, Jean-
+Claude Theis, Kate Webster, and Gisela Sole declare that they have
+no conflicts of interest relevant to the content of this review.
+References
+1. Thing LF. ‘‘Voices of the broken body’’. The resumption of non-
+professional female players’ sports careers after anterior cruciate
+ligament injury. The female player’s dilemma: is she willing to
+run the risk? Scand J Med Sci Sports. 2006;16(5):364–75.
+2. Gianotti SM, Marshall SW, Hume PA, et al. Incidence of anterior
+cruciate ligament injury and other knee ligament injuries: a
+national population-based study. J Sci Med Sport.
+2009;12(6):622–7.
+3. Bjordal JM, Arnøy F, Hannestad B, et al. Epidemiology of
+anterior cruciate ligament injuries in soccer. Am J Sports Med.
+1997;25(3):341–5.
+4. Beynnon BD, Johnson RJ, Abate JA, et al. Treatment of anterior
+cruciate ligament injuries, part I. Am J Sports Med.
+2005;33(10):1579–602.
+5. Collins JE, Katz JN, Donnell-Fink LA, et al. Cumulative inci-
+dence of ACL reconstruction after ACL injury in adults: role of
+age, sex, and race. Am J Sports Med. 2013;41(3):544–9.
+6. Ardern CL, Taylor NF, Feller JA, et al. Fifty-five per cent return
+to competitive sport following anterior cruciate ligament recon-
+struction surgery: an updated systematic review and meta-anal-
+ysis including aspects of physical functioning and contextual
+factors. Br J Sports Med. 2014;48(21):1543–52.
+7. Lohmander LS, Englund PM, Dahl LL, et al. The long-term
+consequence of anterior cruciate ligament and meniscus injuries:
+osteoarthritis. Am J Sports Med. 2007;35(10):1756–69.
+1892 M. Kaur et al.
+123
+
+--- PAGE 25 ---
+8. Smith T, Postle K, Penny F, et al. Is reconstruction the best
+management strategy for anterior cruciate ligament rupture? A
+systematic review and meta-analysis comparing anterior cruciate
+ligament reconstruction versus non-operative treatment. Knee.
+2014;21(2):462–70.
+9. Oiestad BE, Holm I, Aune AK, et al. Knee function and preva-
+lence of knee osteoarthritis after anterior cruciate ligament
+reconstruction: a prospective study with 10 to 15 years of follow-
+up. Am J Sports Med. 2010;38(11):2201–10.
+10. Keays SL, Newcombe PA, Bullock-Saxton JE, et al. Factors
+involved in the development of osteoarthritis after anterior cru-
+ciate ligament surgery. Am J Sports Med. 2010;38(3):455–63.
+11. Nigg BM, MacIntosh BR, Mester J, et al. Biomechanics and
+biology of movement. 1st ed. Champaign: Human Kinetics; 2000.
+12. Foroughi N, Smith R, Vanwanseele B, et al. The association of
+external knee adduction moment with biomechanical variables in
+osteoarthritis: a systematic review. Knee. 2009;16(5):303–9.
+13. Hart HF, Culvenor AG, Collins NJ, et al. Knee kinematics and
+joint moments during gait following anterior cruciate ligament
+reconstruction: a systematic review and meta-analysis. Br J
+Sports Med. 2015. doi:10.1136/bjsports-2015-094797.
+14. Schipplein O, Andriacchi T. Interaction between active and
+passive knee stabilizers during level walking. J Orthop Res.
+1991;9(1):113–9.
+15. Miyazaki T, Wada M, Kawahara H, et al. Dynamic load at
+baseline can predict radiographic disease progression in medial
+compartment knee osteoarthritis. Ann Rheum Dis.
+2002;61(7):617–22.
+16. Sharma L, Hurwitz DE, Eugene JAT, et al. Knee adduction
+moment, serum hyaluronan level, and disease severity in medial
+tibiofemoral osteoarthritis. Arthritis Rheumatol.
+1998;6(9):1233–40.
+17. Webster KE, Feller JA. The knee adduction moment in hamstring
+and patellar tendon anterior cruciate ligament reconstructed knees.
+Knee Surg Sports Traumatol Arthrosc. 2012;20(11):2214–9.
+18. Patterson MR, Delahunt E, Caulfield B, et al. Peak knee adduc-
+tion moment during gait in anterior cruciate ligament recon-
+structed females. Clin Biomech. 2014;29(2):138–42.
+19. Timoney JM, Inman WS, Quesada PM, et al. Return of normal
+gait patterns after anterior cruciate ligament reconstruction. Am J
+Sports Med. 1993;21(6):887–9.
+20. Bulgheroni P, Bulgheroni MV, Andrini L, et al. Gait patterns
+after anterior cruciate ligament reconstruction. Knee Surg Sports
+Traumatol Arthrosc. 1997;5(1):14–21.
+21. Sosdian L, Dobson F, Wrigley T, et al. Longitudinal changes in
+knee kinematics and moments following knee arthroplasty: a
+systematic review. Knee. 2014;21(6):994–1008.
+22. Schmitt LC, Paterno MV, Ford KR, et al. Strength asymmetry
+and landing mechanics at return to sport after anterior cruciate
+ligament reconstruction. Med Sci Sports Exerc.
+2015;47(7):1426–34.
+23. Andriacchi TP. Dynamics of pathological motion: applied to the
+anterior cruciate deficient knee. J Biomech. 1990;23(1):99–105.
+24. Gokeler A, Benjaminse A, Van Eck CF, et al. Return of normal
+gait as an outcome measurement in ACL reconstructed patients.
+A systematic review. Int J Sports Phys Ther. 2013;8(4):441–51.
+25. Hart JM, Ko WK, Konold T, et al. Sagittal plane knee joint
+moments following anterior cruciate ligament injury and recon-
+struction: a systematic review. Clin Biomech.
+2010;25(4):277–83.
+26. Kutzner I, Heinlein B, Graichen F, et al. Loading of the knee joint
+during activities of daily living measured in vivo in five subjects.
+J Biomech. 2010;43(11):2164–73.
+27. Moher D, Liberati A, Tetzlaff J, et al. Preferred reporting items
+for systematic reviews and meta-analyses: the PRISMA state-
+ment. Ann Intern Med. 2009;151(4):264–9.
+28. Downs SH, Black N. The feasibility of creating a checklist for the
+assessment of the methodological quality both of randomised and
+non-randomised studies of health care interventions. J Epidemiol
+Community Health. 1998;52(6):377–84.
+29. Mündermann A, Dyrby CO, Hurwitz DE, et al. Potential strate-
+gies to reduce medial compartment loading in patients with knee
+osteoarthritis of varying severity: reduced walking speed.
+Arthritis Rheum. 2004;50(4):1172–8.
+30. Barton CJ, Lack S, Malliaras P, et al. Gluteal muscle activity and
+patellofemoral pain syndrome: a systematic review. Br J Sports
+Med. 2013;47(4):207–14.
+31. Cohen J. Statistical power analysis for behavioural sciences.
+Hillsdale: Lawrence Eribaum Associates. Inc.:[sn]; 1988.
+32. Van Tulder M, Furlan A, Bombardier B, et al. Updated method
+guidelines for systematic reviews in the Cochrane Collaboration
+Back Review Group. Spine. 2003;28(12):1290–9.
+33. Schmalz T, Blumentritt S, Wagner R, et al. Gait analysis of
+patients within one year after ACL reconstruction. Phys Med
+Rehab Kuror. 1998;8(1):1–8.
+34. Schmalz T, Blumentritt S, Wagner R, et al. Evaluation with
+biomechanical gait analysis of various treatment methods after
+rupture of the anterior cruciate ligament. Sportverletzung Sports.
+1998;12(4):131–7 (German).
+35. Wang WM, Zhao DW, Cui DP, et al. Gait analysis associated
+with anterior cruciate ligament reconstruction. Zhonghua yi Xue
+Za Zhi. 2009;89(29):2025–9 (Chinese).
+36. Scanlan SF, Chaudhari AM, Dyrby CO, et al. Differences in tibial
+rotation during walking in ACL reconstructed and healthy con-
+tralateral knees. J Biomech. 2010;43(9):1817–22.
+37. Gao B, Zheng NN. Alterations in three-dimensional joint kine-
+matics of anterior cruciate ligament-deficient and -reconstructed
+knees during walking. Clin Biomech. 2010;25(3):222–9.
+38. VarmaRK,DuffellLD,NathwaniD,etal.Kneemomentsofanterior
+cruciateligamentreconstructedandcontrolparticipantsduringnormal
+and inclined walking. BMJ Open. 2014;4(6):004753.
+39. Wang H, Fleischli JE, NigelZheng N. Effect of lower limb
+dominance on knee joint kinematics after anterior cruciate liga-
+ment reconstruction. Clin Biomech. 2012;27(2):170–5.
+40. Butler RJ, Minick KI, Ferber R, et al. Gait mechanics after ACL
+reconstruction: implications for the early onset of knee
+osteoarthritis. Br J Sports Med. 2009;43(5):366–70.
+41. Kuenze C, Hertel J, Weltman A, et al. Jogging biomechanics after
+exercise in individuals with ACL-reconstructed knees. Med Sci
+Sports Exerc. 2014;46(6):1067–76.
+42. Schroeder MJ, Krishnan C, Dhaher YY, et al. The influence of
+task complexity on knee joint kinetics following ACL recon-
+struction. Clin Biomech. 2015;30(8):852–9.
+43. Bush-Joseph CA, Hurwitz DE, Patel RR, et al. Dynamic function
+after anterior cruciate ligament reconstruction with autologous
+patellar tendon. Am J Sports Med. 2001;29(1):36–41.
+44. Roewer BD, Di Stasi SL, Snyder-Mackler L, et al. Quadriceps
+strength and weight acceptance strategies continue to improve
+two years after anterior cruciate ligament reconstruction.
+J Biomech. 2011;44(10):1948–53.
+45. Di Stasi S, Hartigan EH, Snyder-Mackler L, et al. Sex-specific
+gait adaptations prior to and up to 6 months after anterior cruciate
+ligament reconstruction. J Orthop Sports Phys Ther.
+2015;45(3):207–14.
+46. Kowalk DL, Duncan JA, McCue FC, et al. Anterior cruciate
+ligament reconstruction and joint dynamics during stair climbing.
+Med Sci Sports Exerc. 1997;29(11):1406–13.
+47. Hall M, Stevermer CA, Gillette JC. Gait analysis post anterior
+cruciate ligament reconstruction: knee osteoarthritis perspective.
+Gait Posture. 2012;36(1):56–60.
+48. Hooper DM, Morrissey MC, Drechsler W, et al. Open and closed
+kinetic chain exercises in the early period after anterior cruciate
+Movement Patterns of the Knee after ACL Reconstruction 1893
+123
+
+--- PAGE 26 ---
+ligament reconstruction: improvements in level walking, stair
+ascent, and stair descent. Am J Sports Med. 2001;29(2):167–74.
+49. Hooper DM, Morrissey MC, Drechsler WI, et al. Gait analysis 6
+and 12 months after anterior cruciate ligament reconstruction
+surgery. Clin Orthop Relat Res. 2002;403:168–78.
+50. Gao B, Cordova ML, Zheng N, et al. Three-dimensional joint
+kinematics of ACL-deficient and ACL-reconstructed knees dur-
+ing stair ascent and descent. Hum Mov Sci. 2012;31(1):222–35.
+51. Zabala MA, Favre J, Scanlan SF, et al. Three-dimensional knee
+moments of ACL reconstructed and control subjects during gait,
+stair ascent, and stair descent. J Biomech. 2013;46(3):515–20.
+52. Lewek M, Rudolph K, Axe M, et al. The effect of insufficient
+quadriceps strength on gait after anterior cruciate ligament
+reconstruction. Clin Biomech (Bristol, Avon). 2002;17(1):56–63.
+53. Sato K, Maeda A, Takano Y, et al. Relationship between static
+anterior laxity using the KT-1000 and dynamic tibial rotation
+during motion in patients with anatomical anterior cruciate liga-
+ment reconstruction. Kurume Med J. 2013;60(1):1–6.
+54. Noehren B, Wilson H, Miller C, et al. Long-term gait deviations
+in anterior cruciate ligament-reconstructed females. Med Sci
+Sports Exerc. 2013;45(7):1340–7.
+55. Webster KE, Feller FA, Wittwer JE, et al. Longitudinal changes
+in knee joint biomechanics during level walking following
+anterior cruciate ligament reconstruction surgery. Gait Posture.
+2012;36(2):167–71.
+56. EMathZone, CV.Reference for grand mean: EMathZone, Combined
+variance.Availablefrom:http://www.emathzone.com/tutorials/basic-
+statistics/combined-variance.html. Accessed 7 Oct 2014.
+57. Webster KE, Wittwer JE, O’Brien J, et al. Gait patterns after
+anterior cruciate ligament reconstruction are related to graft type.
+Am J Sports Med. 2005;33(2):247–54.
+58. Webster KE, Feller JA. Alterations in joint kinematics during
+walking following hamstring and patellar tendon anterior cruciate
+ligament reconstruction surgery. Clin Biomech (Bristol, Avon).
+2011;26(2):175–80.
+59. Czamara A, Markowska I, Królikowska A, et al. Kinematics of
+rotation in joints of the lower limbs and pelvis during gait: early
+results—SB ACLR approach versus DB ACLR approach.
+Biomed Res Int. 2015. doi:10.1155/2015/707168.
+60. Wang HS, Fleischli JE, Zheng NQ, et al. Transtibial versus
+anteromedial portal technique in single-bundle anterior cruciate
+ligament reconstruction outcomes of knee joint kinematics during
+walking. Am J Sports Med. 2013;41(8):1847–56.
+61. Di Stasi SL, Logerstedt D, Gardinier ES, et al. Gait patterns differ
+between ACL-reconstructed athletes who pass return-to-sport
+criteria and those who fail. Am J Sports Med. 2013;41(6):1310–8.
+62. Ferber R, Osternig LR, Woollacott MH, et al. Gait mechanics in
+chronic ACL deficiency and subsequent repair. Clin Biomech.
+2002;17(4):274–85.
+63. Georgoulis AD, Papadonikolakis CD, Papageorgiou, et al. Three-
+dimensional tibiofemoral kinematics of the anterior cruciate
+ligament-deficient and reconstructed knee during walking. Am J
+Sports Med. 2003;31(1):75–9.
+64. Lafortune M, Cavanagh P, Sommer H, et al. Three-dimensional
+kinematics of the human knee during walking. J Biomech.
+1992;25(4):347–57.
+65. Karimi M, Fatoye F, Mirbod SM, et al. Gait analysis of anterior
+cruciate ligament reconstructed subjects with a combined tendon
+obtained from hamstring and peroneus longus. Knee.
+2013;20(6):526–31.
+66. Di Stasi SL, Snyder-Mackler L. The effects of neuromuscular
+training on the gait patterns of ACL-deficient men and women.
+Clin Biomech. 2012;27(4):360–5.
+67. Andriacchi TP, Mündermann A. The role of ambulatory
+mechanics in the initiation and progression of knee osteoarthritis.
+Curr Opin Rheumatol. 2006;18(5):514–8.
+68. Tashman S, Collon D, Anderson K, et al. Abnormal rotational
+knee motion during running after anterior cruciate ligament
+reconstruction. Am J Sports Med. 2004;32(4):975–83.
+69. Andriacchi TP, Dyrby CO. Interactions between kinematics and
+loading during walking for the normal and ACL deficient knee.
+J Biomech. 2005;38(2):293–8.
+70. Nyland J, Klein S, Caborn DN, et al. Lower extremity compen-
+satory neuromuscular and biomechanical adaptations 2 to
+11 years after anterior cruciate ligament reconstruction. Arthro-
+scopy. 2010;26(9):1212–25.
+71. Kuenze CM, Hertel J, Weltman A, et al. Persistent neuromuscular
+and corticomotor quadriceps asymmetry after anterior cruciate
+ligament reconstruction. J Athl Train. 2015;50(3):303–12.
+72. Kartus J, Magnusson L, Stener S, et al. Complications following
+arthroscopic anterior cruciate ligament reconstruction: a 2- to
+5-year follow-up of 604 patients with special emphasis on ante-
+rior knee pain. Knee Surg Sports Traumatol Arthrosc.
+1999;7(1):2–8.
+73. Hodges PW, Tucker K. Moving differently in pain: a new theory
+to explain the adaptation to pain. Pain. 2011;152(3):S90–8.
+74. Courtney CA, Rine RM. Central somatosensory changes associ-
+ated with improved dynamic balance in subjects with anterior
+cruciate ligament deficiency. Gait Posture. 2006;24(2):190–5.
+75. Andriacchi TP, Briant PL, Bevill SL, et al. Rotational changes at
+the knee after ACL injury cause cartilage thinning. Clin Orthop
+Relat Res. 2006;442:39–44. doi:10.1097/01.blo.0000197079.
+26600.09.
+76. Shelburne KB, Torry MR, Pandy MG. Contributions of muscles,
+ligaments, and the ground-reaction force to tibiofemoral joint
+loading during normal gait. J Orthop Res. 2006;24(10):1983–90.
+77. Urbach D, Nebelung W, Röpke M, et al. Bilateral dysfunction of
+the quadriceps muscle after unilateral cruciate ligament rupture
+with concomitant injury central activation deficit. Unfallchirurg.
+2000;103(11):949–55.
+78. Urbach D, Nebelung W, Becker R, et al. Effects of reconstruction
+of the anterior cruciate ligament on voluntary activation of
+quadriceps femoris a prospective twitch interpolation study.
+J Bone Joint Surg Br. 2001;83(8):1104–10.
+79. Barret DS. Proprioception and function after anterior cruciate
+reconstruction. J Bone Joint Surg Br. 1999;73(5):833–7.
+80. RoosH,AdalberthT,DahlbergL,etal.Osteoarthritisofthekneeafter
+injury to the anterior cruciate ligament or meniscus: the influence of
+time and age. Osteoarthritis Cartilage. 1995;3(4):261–7.
+81. Roos PJ, Neu CP, Hull ML, et al. A new tibial coordinate system
+improves the precision of anterior-posterior knee laxity mea-
+surements: a cadaveric study using Roentgen stereophotogram-
+metric analysis. J Orthop Res. 2005;23(2):327–33.
+82. Knoll Z, Kiss RM, Kocsis L, et al. Gait adaptation in ACL
+deficient patients before and after anterior cruciate ligament
+reconstruction surgery. J Electromyogr Kinesiol.
+2004;14(3):287–94.
+83. Setton LA, Elliott DM, Mow VC. Altered mechanics of cartilage
+with osteoarthritis: human osteoarthritis and an experimental model
+of joint degeneration. Osteoarthritis Cartilage. 1999;7(1):2–14.
+84. Myer GD, Chu DA, Brent JL, et al. Trunk and hip control neu-
+romuscular training for the prevention of knee joint injury. Clin
+Sports Med. 2008;27(3):425–48.
+85. Paterno MV, Ford KR, Myer GD, et al. Limb asymmetries in
+landing and jumping 2 years following anterior cruciate ligament
+reconstruction. Clin J Sport Med. 2007;17(4):258–62.
+86. Button K, Roos PE, Van Deursen RW. Activity progression for
+anterior cruciate ligament injured individuals. Clin Biomech
+(Bristol, Avon). 2014;29(2):206–12.
+87. Robbins SM, Maly MR. The effect of gait speed on the knee
+adduction moment depends on waveform summary measures.
+Gait Posture. 2009;30(4):543–6.
+1894 M. Kaur et al.
+123
+
+--- PAGE 27 ---
+88. Orishimo KF, Kremenic IJ, Mullaney MJ, et al. Adaptations in
+single-leg hop biomechanics following anterior cruciate ligament
+reconstruction. Knee Surg Sports Traumatol Arthrosc.
+2010;18(11):1587–93.
+89. Mündermann A, Dyrby CO, Andriacchi TP. Secondary gait
+changes in patients with medial compartment knee osteoarthritis:
+increased load at the ankle, knee, and hip during walking.
+Arthritis Rheum. 2005;52(9):2835–44.
+90. Simic M, Hinman RS, Wrigley TV, et al. Gait modification
+strategies for altering medial knee joint load: a systematic review.
+Arthritis Care Res. 2011;63(3):405–26.
+91. DeVita P, Hortobagyi T, Barrier J. Gait biomechanics are not
+normal after anterior cruciate ligament reconstruction and
+accelerated rehabilitation. Med Sci Sports Exerc.
+1998;30(10):1481–8.
+92. Ferber R, Osternig LR, Woollacott MH, et al. Bilateral accom-
+modations to anterior cruciate ligament deficiency and surgery.
+Clin Biomech. 2004;19(2):136–44.
+93. Tellini TL, Lima KO, Alouche SR, et al. Compliant surface after
+ACL reconstruction and its effects on gait. Acta Sci Health Sci.
+2013;35(2):237–42.
+94. Webster KE, Feller JA. Tibial rotation in anterior cruciate liga-
+ment reconstructed knees during single limb hop and drop
+landings. Clin Biomech. 2012;27(5):475–9.
+Movement Patterns of the Knee after ACL Reconstruction 1895
+123
+
+--- PAGE 28 ---

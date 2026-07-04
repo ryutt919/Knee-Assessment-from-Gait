@@ -1,0 +1,1213 @@
+
+--- PAGE 1 ---
+Journal of Athletic Training 2017;52(9):847–860
+doi: 10.4085/1062-6050-52.6.06
+Ó by the National Athletic Trainers’ Association, Inc
+www.natajournals.org
+original research
+Progressive Changes in Walking Kinematics and
+Kinetics After Anterior Cruciate Ligament Injury and
+Reconstruction: A Review and Meta-Analysis
+Lindsay V. Slater, PhD*; Joseph M. Hart, PhD, ATC, FNATA, FACSM*;
+Adam R. Kelly, MS†; Christopher M. Kuenze, PhD, ATC†
+*Department of Kinesiology, The University of Virginia, Charlottesville; †Department of Kinesiology, Michigan State
+University, East Lansing
+Context: Anterior cruciate ligament (ACL) injury and ACL
+reconstruction (ACLR) result in persistent alterations in lower
+extremity movement patterns. The progression of lower extrem-
+ity biomechanics from the time of injury has not been described.
+Objective: To compare the 3-dimensional (3D) lower
+extremity kinematics and kinetics of walking among individuals
+with ACL deficiency (ACLD), individuals with ACLR, and healthy
+control participants from 3 to 64 months after ACLR.
+Data Sources: We searched PubMed and Web of Science
+from 1970 through 2013.
+Study Selection and Data Extraction: We selected only
+articles that provided peak kinematic and kinetic values during
+walking in individuals with ACLD or ACLR and comparison with
+a healthy control group or the contralateral uninjured limb.
+Data Synthesis: A total of 27 of 511 identified studies were
+included. Weighted means, pooled standard deviations, and
+95% confidence intervals were calculated for the healthy control,
+ACLD, and ACLR groups at each reported time since surgery.
+The magnitude of between-groups (ACLR versus ACLD, control,
+or contralateral limb) differences at each time point was
+evaluated using Cohen d effect sizes and associated 95%
+confidence intervals. Peak knee-flexion angle (Cohen d¼0.41)
+and external knee-extensor moment (Cohen d ¼ 0.68) were
+smaller in the ACLD than in the healthy control group. Peak
+knee-flexion angle (Cohen d range ¼ 0.78 to 1.23) and
+external knee-extensor moment (Cohen d range ¼ 1.39 to
+2.16) were smaller in the ACLR group from 10 to 40 months
+after ACLR. Reductions in external knee-adduction moment
+(Cohen d range ¼ 0.50 to 1.23) were present from 9 to 42
+months after ACLR.
+Conclusions: Reductions in peak knee-flexion angle, ex-
+ternal knee-flexion moment, and external knee-adduction
+moment were present in the ACLD and ACLR groups. This
+movement profile during the loading phase of gait has been
+linked to knee-cartilage degeneration and may contribute to the
+development of osteoarthritis after ACLR.
+Key Words: gait biomechanics, knee osteoarthritis, anterior
+cruciate ligament deficiency, movement dysfunction
+Key Points
+ Alterations in frontal- and sagittal-plane walking kinematics and kinetics persisted for 12 to 36 months after anterior
+cruciate ligament reconstruction.
+ These gait patterns did not appear to normalize over time despite the individual’s return to physical activity after
+anterior cruciate ligament reconstruction, indicating that those with dysfunctional movement patterns are not
+adequately identiﬁed using current approaches to rehabilitation and assessment before return to activity.
+A
+fter anterior cruciate ligament (ACL) injury,
+patients and clinicians must determine the optimal
+treatment approach to ensure joint stability and
+promote a return to normal lower extremity function.
+Anterior cruciate ligament reconstruction (ACLR) is a
+common treatment after initial injury to restore joint
+stability and return patients to preinjury levels of physical
+activity. An estimated 250000 ACL injuries and 130000
+ACLR procedures occur annually in the United States.1
+Many patients delay or forego surgery, opting for a course
+of rehabilitation with the hope of returning to activity with
+ACL deﬁciency (ACLD).2
+Regardless of the treatment plan,
+many physically active individuals with ACLD or ACLR
+experience persistent reductions in knee function,3
+physical
+performance,4
+and physical activity.2,5
+Many individuals experience persistent deﬁcits in lower
+extremity neuromuscular function57
+and alterations in
+lower extremity movement patterns after ACLR, which
+may substantially affect global lower extremity perfor-
+mance during activities of daily living and recreational
+physical activity.811
+More troubling, this cohort of patients
+has a 15 times increased risk of subsequent ACL injury12
+and a 3 to 4 times increased risk of posttraumatic knee-joint
+osteoarthritis compared with uninjured individuals.13
+Sev-
+eral authors have hypothesized that cartilage-loading
+patterns or surrogate measures of knee-joint health, such
+as substantial alterations in 3-dimensional (3D) lower
+extremity joint angles or peak joint moments, may provide
+key information about the source of poor short- and long-
+term outcomes after ACLR.14,15
+Assessing and comparing
+Journal of Athletic Training 847
+
+--- PAGE 2 ---
+characteristics of lower extremity movement in those with
+ACLR may provide a more quantitative approach to
+identifying patients at elevated risk for reinjury and poor
+long-term joint health.14,16
+Researchers14,16,17
+have hypothesized about which gait
+characteristics are important for identifying patients at
+increased risk of injury or developing knee-joint osteoar-
+thritis after ACLR. Reductions in peak knee-ﬂexion angle
+and external knee-ﬂexion moment during the loading phase
+of walking gait have been consistently reported at 6 to 60
+months after ACLR.9,18,19
+However, it is unclear if these
+alterations coincide with increases or decreases in peak
+external knee-adduction moment or peak internal-rotation
+angle, both of which have been directly and consistently
+related to patterns of knee-joint cartilage loading and
+degeneration, over this period.14,16,2022
+A clearer under-
+standing of the progression of 3D lower-extremity biome-
+chanics from the time of injury through long-term follow-
+up may help clinicians and researchers better target
+evaluation and intervention to improve short- and long-
+term outcomes after ACLR. Therefore, the purpose of our
+review was to present the best current evidence about 3D
+walking kinematics and kinetics of the hip and knee joints
+in individuals with ACLD, individuals with a history of
+ACLR, and those serving as healthy control participants. In
+addition, we organized and consolidated the available
+evidence based on the time since ACLR to compare
+variables at both short- and long-term follow-up points after
+ACLR.
+METHODS
+Study Selection and Data Extraction
+We performed a Web-based search using PubMed and
+Web of Science from 1970 through 2013 with the
+following search queries to ﬁnd potential articles: (ACL
+reconstruction OR anterior cruciate ligament reconstruc-
+tion OR ACL injury OR ACL deﬁciency OR ACL
+insufﬁciency) AND (gait OR walking). The titles of all
+returned records were reviewed for relevance, and those
+deemed potentially relevant were retained for further
+review. In addition, the reference sections of all poten-
+tially relevant articles were reviewed to identify other
+potential articles. Two authors (L.V.S., A.R.K.) evaluated
+the articles for inclusion, and 1 author (C.M.K.) arbitrated
+in case of disagreement. Included articles were limited to
+those presenting means and standard deviations (SDs) for
+the peak kinematic and kinetic variables of interest during
+walking, as well as time since injury or surgery in those
+with ACLD or a history of ACLR. In addition, articles had
+to include a comparison with a healthy control group or
+the contralateral uninjured limb. If means and SDs were
+not available, we contacted the corresponding author for
+the given article to procure the relevant data. If the data
+were not available or the author did not respond, the
+article was excluded from this review. We evaluated the
+quality of the included studies using the Physiotherapy
+Evidence Database (PEDro) scale and the Downs and
+Black23
+checklist score. The PEDro scale is widely used
+and appropriate for clinical trials, whereas the Downs and
+Black23
+checklist score was designed for use in non-
+interventional research. Given that both are widely used
+and have consistently been shown to be effective
+evaluation tools for methodologic quality, all included
+articles were scored using both.24,25
+Data Analysis
+Studies reporting the peak joint angles or moments for
+the knee and hip joints during the stance phase of walking
+gait were retained for analysis.9,17,19,2648
+Given the
+variation in units of measure and presentation of data, only
+studies reporting external kinetics during early stance and
+normalized to body weight and height (Nm / %BW 3 Ht)
+were included. Data were organized by group (ACLR,
+ACLD, or healthy control) and limb (involved or
+contralateral). For the ACLR involved limb, we subse-
+quently grouped data based on the average time since
+surgery as presented in the article. We calculated weighted
+averages based on the sample size of each study and used
+these averages to calculate a point estimate for each group
+(healthy control, ACLR contralateral limb, ACLD, or
+ACLD contralateral limb) and each time point after ACLR.
+Applying the sample size of each study, we calculated the
+weighted variance for each time point or comparison group
+and used this value to calculate the SD estimate and 95%
+conﬁdence interval (CI) for each mean estimate. Whereas
+gait speed was a potential confounder, we did not control
+for this variable, as individual participant data were not
+available for normalization of kinematic and kinetic
+variables within each included study.
+The magnitude of difference between the ACLR involved
+limb at each time point since surgery and both the ACLR
+contralateral limb and the healthy control group was
+estimated using Cohen d effect sizes via the following
+formula:
+Cohen d ¼
+Meaninjured  Meancontrol
+SDpooled
+:
+Control represents either the contralateral limb or the
+healthy control group. Cohen d effect sizes were interpreted
+as weak (,0.21), small (0.210.39), medium (0.40.7), or
+large (.0.7). In addition, the 95% CI was calculated for
+each effect size to establish between-groups or between-
+limbs differences. In all cases, if the 95% CI did not cross
+zero, the effect size was considered different. We analyzed
+the data using Excel (version 14.7.3; Microsoft Corp,
+Redmond, WA).
+RESULTS
+Included Studies and Methodologic Quality
+Assessment
+Our initial searches identiﬁed 511 studies, of which 47
+were eligible for inclusion (Figure 1). We excluded 20
+studies because they included nonwalking tasks, did not
+include means and SDs for group comparisons, or used
+different normalization methods for kinetic data. The 27
+included studies had an average PEDro scale score of 4.74
+and an average modiﬁed Downs and Black23
+checklist score
+of 18.26 (Table 1). The average walking speed for
+individuals with ACL injuries and ACLR was 1.38 6
+0.25 m/s (range ¼ 0.83–2.00 m/s).
+848 Volume 52  Number 9  September 2017
+
+--- PAGE 3 ---
+Outcomes of ACLD
+The ACLD group displayed a large reduction in peak
+external knee-ﬂexion moment (Cohen d¼0.97; 95% CI¼
+1.39,0.54; Figure 2) and hip-adduction angle (Cohen d¼
+0.82; 95% CI ¼ 1.44, 0.20), along with moderate
+reductions in peak knee-ﬂexion angle (Cohen d ¼ 0.60;
+95% CI ¼ 0.85, 0.36; Figure 3) and external knee-
+adduction moment (Cohen d ¼ 0.69; 95% CI ¼ 1.23,
+0.15; Figure 4) compared with the healthy control group
+(Tables 2 and 3).
+Outcomes of ACLR
+Kinematics. Peak knee-ﬂexion angle was smaller in the
+ACLR group than in the healthy control group and the
+contralateral limb at all time points after reconstruction
+except at 24 months (Figure 3). Peak hip-ﬂexion angle was
+greater in the ACLR group than in the healthy control
+group and the contralateral limb during the 9- to 11-month
+time frame (Figure 3).
+Peak knee-adduction angle was greater in the ACLR
+group than in the healthy control group and the contralat-
+eral limb at 11 and 20 months after ACLR but was smaller
+than in the healthy control group and the contralateral limb
+at 48 and 64 months after ACLR (Figure 4). Peak hip-
+adduction angle was also greater in the ACLR group at 64
+months after surgery than in the healthy control group
+(Cohen d¼0.64; 95% CI¼0.02, 1.26) and the contralateral
+limb (Cohen d¼1.68; 95% CI¼0.91, 2.46; Table 3). Peak
+knee internal-rotation angle was smaller in the ACLR group
+than in the healthy control group and the contralateral limb
+at 14, 17, and 48 months after ACLR (Figure 5).
+Kinetics. Peak external knee-ﬂexion moment was
+smaller in the ACLR group than in the healthy control
+group at 10, 11, and 26 months after ACLR and the
+contralateral limb at 11 and 26 months (Figure 2). Peak
+external knee-extension moment in the ACLR group was
+also smaller than in the healthy control group and the
+contralateral limb at 9, 11, and 26 months after ACLR
+(Figure 2). Peak external hip-extension moment (Cohen d¼
+0.91; 95% CI ¼ 1.62, 0.21) and peak external hip-
+ﬂexion moment (Cohen d¼0.85; 95% CI¼1.56,0.15)
+were smaller in the ACLR than in the healthy control group
+at 11 months after reconstruction (Table 2).
+Peak external knee-adduction moment was smaller in the
+ACLR group than in the healthy control group at 9, 26, and
+34 months after ACLR and the contralateral limb at 34
+months after reconstruction (Figure 4). Peak external knee-
+external rotation moment was also smaller in the ACLR
+group than in the healthy control group at 26 (Cohen d ¼
+0.64; 95% CI ¼1.06, 0.21) and 34 (Cohen d ¼1.06;
+95% CI ¼ 1.59, 0.54) months after ACLR and in the
+contralateral limb at 34 (Cohen d¼0.50; 95% CI¼0.97,
+0.03; Table 2) months after ACLR.
+DISCUSSION
+The biomechanical effects of ACL injury and ACLR are
+commonly studied in isolation; however, very few
+researchers32,46
+have followed individuals through the full
+scope of treatment and rehabilitation. To our knowledge,
+our review is the ﬁrst attempt to establish a timeline for the
+progression of lower extremity kinematics and kinetics
+from the time of initial injury through surgical reconstruc-
+tion, rehabilitation, and return to physical activity. Based on
+our ﬁndings, it appears that, compared with healthy
+individuals, those with ACLD experience substantial
+reductions in peak knee-ﬂexion angle, peak knee-adduction
+angle, peak external knee-ﬂexion moment, and peak
+external knee-adduction moment. These adaptations have
+been linked to muscle weakness,33
+speciﬁcally of the
+quadriceps in the sagittal plane and the lateral hip
+musculature in the frontal plane,49,50
+which is consistent
+with common clinical ﬁndings after ACL injury.51,52
+Interestingly, in most studies included in this review, these
+adaptations persisted through the ﬁrst year after ACLR
+despite the surgical restoration of knee-joint stability. In
+addition, peak hip-ﬂexion angle and peak external knee-
+extension moment differed from those values in healthy
+individuals. Despite the improvements in objective and
+patient-reported measures of function that have been
+consistently reported53
+over this 12-month period, frontal-
+and sagittal-plane patterns of ambulation remained altered
+in ways that may indicate underlying neuromuscular or
+Figure 1. Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) ﬂow chart depicting the search strategy and
+process of study retention, which was completed July 1, 2015.
+Journal of Athletic Training 849
+
+--- PAGE 4 ---
+Table 1. Description of Included Studies and Assessment of Methodologic Quality Extended on Next Page
+Authors (Year)
+Injured Group
+Group Included, N
+Age, y
+(Mean 6 SD
+or Range) Time Since Surgery Time Since Injury
+Gait Speed, m/s
+(Mean 6 SD
+or Set Speed)
+Butler et al27
+(2009) ACLR ¼ 17 23.6 6 5.8 63.6 6 52.8 mo NA 1.4 6 0.1
+Chen et al26
+(2012) ACLD ¼ 10 35.5 6 8.5 NA NA Not reported
+Di Stasi and Snyder-
+Mackler28
+(2012)
+ACLD ¼ 21 Men ¼ 25.0 6 8.7 NA Men ¼ 13.1 6 9.3 wk Not reported
+Women ¼ 33.7 6 12.6 Women ¼ 7.4 6 5.7
+wk
+Di Stasi et al9
+(2013) ACLR ¼ 42 Pass return to play ¼ 25.4
+6 9.9
+6.0 mo NA Pass ¼ 1.5 6 0.1
+Fail return to play ¼ 31.4
+6 12.2
+Fail ¼ 1.6 6 0.1
+Ferber et al29
+(2002) ACLR ¼ 10 27.7 6 9.1 3.0 mo 5.7 6 5.1 y Not reported
+ACLD ¼ 10
+Georgoulis et al30
+(2003)
+ACLR ¼ 21 ACLR ¼ 25.0 6 4.0 30.0 6 16.9 wk 7.6 6 4.3 wk Not reported
+ACLD ¼ 13 ACLD ¼ 26.0 6 5.0
+Houck et al31
+(2007) ACLD ¼ 16 24.1 6 9.1 NA 8.7 6 14.5 mo 2.0
+Knoll et al32
+(2004) ACLD ¼ 21 29.9 6 6.5 6 wk and 4, 8, and 12
+mo
+NA 0.8
+ACLR ¼ 21
+Knoll et al46
+(2004) ACLR ¼ 21 29.9 6 6.5 6 wk and 4, 8, and 12
+mo
+NA 0.8
+ACLD ¼ 21
+Lewek et al33
+(2002) ACLR ¼ 10 ACLR ¼ 25.0 6 7.8 20.8 6 9.4 wk ,6.0 mo 2.0
+ACLD ¼ 10 ACLD ¼ 28.1 6 8.8
+Lindstrom et al34
+(2010)
+ACLD ¼ 16 1752 NA 35 mo Not reported
+Noehren et al47
+(2013) ACLR ¼ 20 25.0 6 6.2 5.2 6 3.2 yrs NA 1.5
+Noyes et al35
+(1992) ACLD ¼ 32 27.0 (15.041.0) NA NA 1.1 6 0.1
+Patterson et al36
+(2014)
+ACLR ¼ 17 23.7 6 3.1 NA 3.5 6 3.2 y 1.4 6 0.1
+Roberts et al37
+(1999) ACLD ¼ 18 35.0 NA 47.2 6 47.2 mo Not reported
+Roewer et al38
+(2011) ACLR ¼ 26 29.6 6 10.7 6.0 mo and 24.0 mo NA 1.6 6 0.1
+ACLD ¼ 26
+Sato et al44
+(2013) ACLR ¼ 7 21.3 6 4.9 14.3 6 1.8 mo NA NA
+Shin et al19
+(2009) ACLR ¼ 24 33.6 6 9.2 34.0 6 34.0 mo 43.0 6 38.0 mo 1.4
+Timoney et al18
+(1993) ACLR ¼ 10 NA 10.0 mo (range ¼ 9.0
+12.0 mo)
+30.0 mo (range ¼ 1.0
+66.0 mo)
+1.2
+Torry et al39
+(2004) ACLD ¼ 16 28.1 6 12.7 N/A .2.0 y Not reported
+Wang et al45
+(2013) ACLR ¼ 24 (transtibial
+technique ¼ 12,
+anteromedial portal ¼
+12)
+Transtibial technique ¼
+32.8 6 7.2
+Transtibial technique ¼
+17.1 6 10.6 mo
+NA Transtibial technique ¼
+1.2 6 0.2
+Anteromedial portal ¼
+29.6 6 7.2
+Anteromedial portal ¼
+8.8 6 4.3 mo
+Anteromedial portal ¼ 1.1
+6 0.1
+Webster et al40
+(2005) ACLR ¼ 34 (hamstrings
+autograft ¼ 17, bone-
+patellar tendon-bone
+autograft ¼ 17)
+Hamstrings autograft ¼
+26.8 6 8.0
+Hamstrings autograft ¼
+9.3 6 2.2 mo
+NA Hamstrings autograft ¼
+1.4 6 0.2
+Bone-patellar tendon-bone
+autograft ¼ 23.8 6 5.0
+Bone-patellar tendon-
+bone autograft ¼ 11.0
+6 1.9 mo
+Bone-patellar tendon-bone
+autograft ¼ 1.4 6 0.2
+Webster and Feller42
+(2011)
+ACLR ¼ 36 (hamstrings
+autograft ¼ 18, bone-
+patellar tendon-bone
+autograft ¼ 18)
+Hamstrings autograft ¼
+26.6 6 6.0
+Hamstrings autograft ¼
+9.0 6 2.4 mo
+NA Hamstrings autograft ¼
+1.4 6 0.2
+Bone-patellar tendon-bone
+autograft ¼ 23.8 6 6.0
+Bone-patellar tendon-
+bone autograft ¼ 10.9
+6 2.0 mo
+Bone-patellar tendon-bone
+autograft ¼ 1.4 6 0.2
+Webster et al17
+(2012) ACLR ¼ 36 Males ¼ 27.4 6 6.6 Males ¼ 20.3 6 11.4
+mo
+NA Males ¼ 1.4 6 0.2
+Females ¼ 27.7 6 6.8 Females ¼ 19.8 6 11.6
+mo
+Females ¼ 1.4 6 0.1
+Webster and Feller41
+(2012)
+ACLR ¼ 32
+(semitendinosus ¼ 16,
+bone-patellar tendon-
+bone ¼ 16)
+Semitendinosus ¼ 27.5 6
+6.0
+Semitendinosus ¼ 9.4 6
+3.0 mo
+Semitendinosus ¼
+10.7 6 9.0 wk
+Semitendinosus ¼ 1.4 6
+0.2
+Bone-patellar tendon-bone
+¼ 23.8 6 6.0
+Bone-patellar tendon-
+bone ¼ 11.2 6 2.0
+mo
+Bone-patellar tendon-
+bone ¼ 11.9 6 11.0
+wk
+Bone-patellar tendon-bone
+¼ 1.4 6 0.2 wk
+Webster et al48
+(2012) ACLR ¼ 16 26.0 6 6.0 Time 1 ¼ 10.0 6 2.0 mo NA Time 1 ¼ 1.4 6 0.2
+Time 2 ¼ 39.6 6 4.8 mo Time 2 ¼ 1.4 6 0.2
+Zabala et al43
+(2013) ACLR ¼ 45 29.5 6 6.1 26.0 mo (range ¼ 22.0
+36.0 mo)
+NA 1.4 6 0.1
+Abbreviations: ACLD, anterior cruciate ligament deficient; ACLR, anterior cruciate ligament reconstructed; NA, not applicable; PEDro,
+Physiotherapy Evidence Database.
+a
+Score range ¼ 0–10.
+b
+Score range ¼ 0–32.
+850 Volume 52  Number 9  September 2017
+
+--- PAGE 5 ---
+proprioceptive deﬁcits that were not addressed during the
+rehabilitation process.
+It is unlikely that an individual will tear the ACL graft or
+contralateral ACL while walking. However, this pattern of
+gait alterations that persists beyond the average time of
+return to physical activity may indicate high-risk biome-
+chanics that worsen due to increased task complexity
+during higher-level tasks, such as jumping and cutting, that
+are commonly associated with physical activity. The
+average individual who was previously physically active
+returns to physical activity about 9 months after ACLR,2
+and nearly 67% return to preinjury levels of activity by 2
+Table 1. Extended From Previous Page
+Comparison Group
+Downs and Black23
+Checklist Scoreb
+Group Included, N
+Age, y
+(Mean 6 SD
+or Range)
+Gait Speed, m/s
+(Mean 6 SD
+or Set Speed)
+PEDro Scale
+Scorea
+Healthy ¼ 17 23.4 6 5.7 1.5 6 0.1 5 22
+Contralateral limb ¼ 10 35.5 6 8.5 Not reported 5 17
+Healthy ¼ 10 20.6 6 1.8 Not reported 5 21
+Contralateral limb ¼ 42 Pass return to play ¼ 25.4 6 9.9 Pass ¼ 1.5 6 0.1 4 21
+Healthy ¼ 10 24.4 6 3.1 Not reported 5 17
+Healthy ¼ 10 24.7 6 3.7 Not reported 5 18
+Healthy ¼ 20 23.4 6 6.0 2.0 5 18
+Healthy ¼ 51 31.7 6 4.1 0.8 4 16
+Healthy ¼ 51 31.7 6 4.1 0.8 4 18
+Healthy ¼ 10 32.2 6 6.6 2.2 4 18
+Healthy ¼ 15 2033 Not reported 4 18
+Healthy ¼ 20 26.0 6 5.1 1.5 5 18
+Healthy ¼ 16 26.0 (19.0 45.0) 1.1 6 0.1 5 17
+Healthy ¼ 17 20.8 6 1.2 1.4 6 0.1 5 21
+Healthy ¼ 10 26.0 Not reported 4 18
+Contralateral limb ¼ 26 29.6 6 10.7 1.6 6 0.1 6 19
+Contralateral limb ¼ 7 21.3 6 4.9 N/A 4 18
+Contralateral limb ¼ 24 33.6 6 9.2 1.4 5 18
+Healthy ¼ 10 NA 1.2 5 18
+Healthy ¼ 8 28.2 6 4.3 Not reported 5 17
+Healthy ¼ 20 26.3 6 7.7 1.2 6 0.1 5 17
+Healthy ¼ 17 24.7 6 5.0 1.5 6 0.2 5 18
+Healthy ¼ 18 24.7 6 5.0 1.5 6 0.1 5 18
+Contralateral limb ¼ 36 Males ¼ 27.4 6 6.6 Males ¼ 1.4 6 0.2 5 18
+Control ¼ 16 25.0 6 5.0 1.5 6 0.2 5 18
+Contralateral limb ¼ 16 26.0 6 6.0 Time 1 ¼ 1.4 6 0.2 4 18
+Healthy ¼ 45 Healthy ¼ 30.2 6 4.7 1.4 6 0.2 5 18
+Contralateral limb ¼ 45 Contralateral limb ¼ 29.5 6 6.1
+Journal of Athletic Training 851
+
+--- PAGE 6 ---
+years after surgery.54,55
+This trend toward improved
+physical activity has been reported by multiple researchers;
+however, many measures of muscle function,6
+propriocep-
+tion,56
+and functional performance57,58
+do not appear to
+follow the same trajectory over this period. Based on our
+ﬁndings, many of the gait adaptations in those with ACLD
+and in the short-term follow-up period after ACLR persist
+through the midterm (,36 months). Conventional clinical
+wisdom has been that, as patients reintegrate into physical
+activity and in some cases competitive sport, indicators of
+global lower extremity function and coordination, such as
+gait, should continue to improve. Yet this does not appear
+to be the case. Reductions in peak knee-ﬂexion angle, peak
+external knee-ﬂexion moment, peak external knee-exten-
+sion moment, and peak external knee-adduction moment
+persisted from short-term follow-up through this midterm
+period. As the time since surgery increased, the frontal- and
+sagittal-plane alterations became problematic, not only as
+potential indicators of underlying traumatic injury risk but
+also as mechanisms through which knee-joint cartilage
+degeneration may be accelerated.41,5961
+This hypothesis is
+strengthened by the increased peak knee-external rotation
+angle and reduced external knee-external rotation moment
+that were evident at 17 and 34 months, respectively.
+Alterations in transverse-plane motion have been directly
+linked to increased cartilage loading and thinning, which
+Figure 2. A, Peak external knee-ﬂexion moment and, B, knee-extension moment point estimates with 95% conﬁdence intervals for the
+healthy control group, anterior cruciate ligament reconstruction (ACLR) contralateral limb group, anterior cruciate ligament deﬁciency
+(ACLD) group, and each reported time point after ACLR during stance phase of walking gait. All moments are normalized to percentage of
+body weight and height. The 95% conﬁdence interval for the healthy control group is represented using a shaded bar for comparison to all
+groups and time points.
+852 Volume 52  Number 9  September 2017
+
+--- PAGE 7 ---
+are potential signs of degeneration over time.16,27,62
+Continued triplanar alterations in walking gait for a 3-year
+period after ACLR, which can account for as many as 4
+million steps for the average American,63
+may have a
+substantial effect on joint health at long-term follow-up.
+Data on long-term lower extremity gait biomechanics are
+limited in the population with ACLR.64
+In our review, the
+authors of only 2 investigations provided data on patients
+with a follow-up greater than 36 months after ACLR.27,47
+Based on these limited ﬁndings, those with ACLR may
+continue to exhibit substantial reductions in peak knee-
+ﬂexion angle and peak knee-adduction angle as late as 64
+months after ACLR; however, insufﬁcient data are
+available to describe any kinetic differences from healthy
+individuals. The best currently available evidence continues
+to point toward substantial and persistent multiplanar
+alterations in knee-joint kinematics. Given limitations in
+obtaining prospective data for gait patterns and the
+progression of knee-joint health, it may be difﬁcult to
+directly relate these ﬁndings, but reductions in peak knee-
+ﬂexion angle and peak knee-adduction angle have been
+common ﬁndings among individuals with knee-joint
+Figure 3. A, Peak knee-ﬂexion angle point estimates with 95% conﬁdence intervals for the healthy control group, anterior cruciate
+ligament reconstruction (ACLR) contralateral limb group, anterior cruciate ligament deﬁcient (ACLD) contralateral limb group, ACLD
+group, and each reported time point after ACLR during the stance phase of walking gait. B, Peak hip-ﬂexion angle point estimates with 95%
+conﬁdence intervals for the healthy control group, ACLR contralateral limb group, ACLD group, and each reported time point after ACLR
+during the stance phase of walking gait. The 95% conﬁdence interval for the healthy control group is represented using a shaded bar for
+comparison to all groups and time points.
+Journal of Athletic Training 853
+
+--- PAGE 8 ---
+osteoarthritis in several reviews.61,65
+Despite increased knee
+adduction, those with ACLD or ACLR demonstrated
+decreased external knee-adduction moments, suggesting
+that they may have walked more slowly to mitigate loading
+at the knee joint or adopted movement strategies resulting
+in reduced ground reaction forces in the involved limb
+compared with the healthy individuals. We described these
+potential explanations for our ﬁndings, but a prospective,
+systematic investigation into the interaction of knee-joint
+biomechanics, walking speed, and vertical ground reaction
+forces after ACLR may provide key insights into the source
+and expression of altered gait patterns in this population.
+Increased knee-adduction moment has been hypothesized
+to be a critical factor leading to knee-joint osteoarthri-
+tis,61,66
+but our results suggest that knee-adduction moment
+decreases after ACL injury and subsequent reconstruction
+(Figure 4). We included a timeline up to 42 months after
+reconstruction, and more research is needed on long-term
+alterations in peak knee-adduction moment after recon-
+struction.
+Figure 4. A, Peak knee-adduction angle point estimates with 95% conﬁdence intervals for the healthy control group, anterior cruciate
+ligament reconstruction (ACLR) contralateral limb group, anterior cruciate ligament deﬁcient (ACLD) contralateral limb group, ACLD
+group, and each reported time point after ACLR during the stance phase of walking gait. B, Peak external knee-adduction moment point
+estimates with 95% conﬁdence intervals for the healthy control group, ACLR contralateral limb group, ACLD group, and each reported time
+point after ACLR during the stance phase of walking gait. All moments are normalized to percentage of body weight and height. The 95%
+conﬁdence interval for the healthy control group is represented using a shaded bar for comparison to all groups and time points.
+854 Volume 52  Number 9  September 2017
+
+--- PAGE 9 ---
+Symmetry is an increasingly common indicator of
+optimal or, in some cases, acceptable muscle function6
+and movement patterns57,67
+after ACL injury and ACLR.
+When the data were collapsed across time since surgery, we
+noted several cases in which the data for the ACLR limb at
+a speciﬁc time point differed from the composite mean for
+the contralateral limb collapsed across studies; however,
+comparisons within individual time points showed that
+Table 2. Peak External Sagittal-, Frontal-, and Transverse-Plane Knee and Hip Kinetics After Anterior Cruciate Ligament Injury and
+Subsequent Anterior Cruciate Ligament Reconstruction
+Variable Group
+Sample
+Size Mean 6 SD
+Effect Size
+(95% Confidence Interval)
+Compared With the
+Healthy Control Group
+Effect Size
+(95% Confidence Interval)
+Compared With the Anterior
+Cruciate Ligament Reconstruction
+Contralateral Limb Group
+Knee-flexion
+moment, Nm /
+%BW 3 Ht
+Healthy control 88 2.73 6 1.05 NA 0.01 (0.31, 0.29)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 79 2.74 6 1.11 0.01 (0.29, 0.31) NA
+Anterior cruciate
+ligament deficient 32 1.75 6 0.90 0.97 (1.39, 0.54) 0.94 (1.37, 0.51)
+9 mo 17 2.70 6 1.30 0.03 (0.55, 0.49) 0.03 (0.56, 0.49)
+10 mo 10 2.02 6 1.14 0.67 (1.33, 0.01) 0.65 (1.31, 0.02)
+11 mo 17 1.70 6 0.70 1.03 (1.56, 0.49) 0.99 (1.53, 0.45)
+26 mo 45 2.23 6 1.29 0.44 (0.08, 0.08) 0.43 (0.80, 0.06)
+34 mo 24 2.86 6 0.81 0.13 (0.32, 0.58) 0.11 (0.34, 0.57)
+Hip-flexion moment,
+Nm / %BW 3 Ht
+Healthy control 17 6.50 6 1.50 NA NA
+9 mo 17 5.70 6 1.50 0.53 (1.22, 0.15) NA
+11 mo 17 5.30 6 1.30 0.85 (1.56, 0.15) NA
+Knee-extension
+moment, Nm /
+%BW 3 Ht
+Healthy control 129 4.22 6 0.94 NA 0.93 (0.58, 1.28)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 45 3.36 6 0.88 0.93 (1.28, 0.58) NA
+Anterior cruciate
+ligament deficient 59 3.87 6 1.61 0.29 (0.60, 0.02) 0.38 (0.01, 0.77)
+9 mo 17 2.00 6 0.70 2.42 (3.00, 1.85) 1.63 (2.25, 1.00)
+11 mo 17 2.50 6 0.80 1.86 (2.41, 1.31) 1.00 (1.59, 0.42)
+26 mo 45 2.81 6 0.96 1.49 (1.87, 1.12) 0.60 (1.02, 0.17)
+Hip-extension
+moment, Nm /
+%BW 3 Ht
+Healthy control 17 5.00 6 1.10 NA NA
+9 mo 17 4.40 6 1.60 0.44 (1.12, 0.24) NA
+11 mo 17 3.80 6 1.50 0.91 (1.62, 0.21) NA
+Knee-adduction
+moment, Nm /
+%BW 3 Ht
+Healthy control 94 3.28 6 0.80 NA 0.55 (0.26, 0.84)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 101 2.87 6 0.69 0.55 (0.84, 0.26) NA
+Anterior cruciate
+ligament deficient 16 2.75 6 0.55 0.69 (1.23, 0.15) 0.18 (0.71, 0.35)
+9 mo 16 2.80 6 0.80 0.60 (1.14, 0.06) 0.10 (0.63, 0.43)
+11 mo 16 2.90 6 0.60 0.49 (1.02, 0.04) 0.04 (0.48, 0.57)
+26 mo 45 2.67 6 0.64 0.81 (1.18, 0.44) 0.30 (0.65, 0.06)
+34 mo 24 2.31 6 0.75 1.23 (1.70, 0.75) 0.80 (1.25, 0.34)
+42 mo 17 2.86 6 1.01 0.50 (1.02, 0.02) 0.01 (0.53, 0.50)
+Knee-external
+rotation moment,
+Nm / %BW 3 Ht
+Healthy control 45 0.24 6 0.11 NA 0.41 (0.03, 0.79)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 69 0.19 6 0.13 0.41 (0.79, 0.03) NA
+26 mo 45 0.17 6 0.11 0.64 (1.06, 0.21) 0.16 (0.54, 0.21)
+34 mo 24 0.13 6 0.09 1.06 (1.59, 0.54) 0.50 (0.97, 0.03)
+Knee-internal
+rotation moment,
+Nm / %BW 3 Ht
+Healthy control 45 1.01 6 0.24 NA 0.12 (0.50, 0.25)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 69 1.04 6 0.25 0.12 (0.25, 0.50) NA
+26 mo 45 0.97 6 0.24 0.17 (0.58, 0.25) 0.28 (0.66, 0.09)
+34 mo 24 0.98 6 0.29 0.12 (0.61, 0.38) 0.23 (0.70, 0.24)
+Abbreviation: NA, no data available for group comparison.
+Journal of Athletic Training 855
+
+--- PAGE 10 ---
+Table 3. Peak Sagittal-, Frontal-, and Transverse-Plane Knee and Hip Kinematics After Anterior Cruciate Ligament Injury and Subsequent
+Anterior Cruciate Ligament Reconstruction Continued on Next Page
+Group
+Sample
+Size Mean 6 SD
+Effect Size
+(95% Confidence Interval)
+Compared With the
+Healthy Control Group
+Effect Size
+(95% Confidence Interval)
+Compared With the Anterior
+Cruciate Ligament Reconstruction
+Contralateral Limb Group
+Knee-flexion angle, 8 Healthy control 119 23.85 6 5.07 NA 0.03 (0.21, 0.28)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 136 23.65 6 6.23 0.03 (0.28, 0.21) NA
+Anterior cruciate
+ligament deficient 156 20.62 6 5.59 0.60 (0.85, 0.36) 0.51 (0.75, 0.28)
+3 mo 10 19.77 6 5.35 0.80 (1.45, 0.15) 0.63 (1.27, 0.02)
+4 mo 16 22.37 6 5.33 0.29 (0.81, 0.23) 0.21 (0.73, 0.31)
+6 mo 65 22.7 6 6.40 0.21 (0.51, 0.10) 0.15 (0.45, 0.14)
+7 mo 21 13.41 6 9.97 1.93 (2.73, 1.13) 1.59 (2.37, 0.81)
+9 mo 17 21.0 6 4.90 0.56 (1.08, 0.05) 0.43 (0.94, 0.07)
+10 mo 16 19.8 6 5.10 0.80 (1.33, 0.27) 0.63 (1.15, 0.11)
+11 mo 17 17.2 6 3.60 1.35 (1.89, 0.82) 1.07 (1.59, 0.56)
+20 mo 34 17.55 6 5.19 1.24 (1.64, 0.83) 1.01 (1.40, 0.62)
+24 mo 26 24.4 6 7.00 0.10 (0.32, 0.53) 0.12 (0.30, 0.54)
+40 mo 16 20.2 6 5.40 0.71 (1.24, 0.19) 0.56 (1.08, 0.04)
+60 mo 20 18.50 6 5.00 1.06 (1.55, 0.57) 0.85 (1.32, 0.37)
+Hip-flexion angle, 8 Healthy control 54 25.84 6 6.26 NA 0.19 (0.22, 0.60)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 40 24.57 6 7.16 0.19 (0.60, 0.22) NA
+Anterior cruciate
+ligament deficient 16 25.43 6 6.1 0.07 (0.62, 0.49) 0.12 (0.46, 0.71)
+3 mo 10 24.34 6 3.59 0.25 (0.93, 0.42) 0.03 (0.73, 0.66)
+6 mo 40 21.73 6 7.76 0.59 (1.01, 0.18) 0.38 (0.82, 0.06)
+9 mo 17 37.6 6 4.90 1.97 (1.34, 2.60) 1.98 (1.31, 2.65)
+11 mo 17 33.4 6 5.10 1.26 (0.67, 1.84) 1.33 (0.71, 1.95)
+Hip-extension angle, 8 Healthy control 27 9.55 6 8.18 NA NA
+Anterior cruciate
+ligament deficient 18 6.30 6 6.10 0.44 (1.04, 0.17) NA
+9 mo 17 8.50 6 6.10 0.14 (0.75, 0.47) NA
+11 mo 17 10.90 6 7.10 0.17 (0.44, 0.78) NA
+Knee-adduction angle, 8 Healthy control 88 3.32 6 2.89 NA 0.38 (0.72, 0.03)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 52 4.60 6 4.15 0.38 (0.03, 0.72) NA
+Anterior cruciate
+ligament deficient 31 2.22 6 5.16 0.31 (0.72, 0.11) 0.52 (0.97, 0.07)
+9 mo 34 3.79 6 3.70 0.15 (0.25, 0.55) 0.20 (0.64, 0.23)
+10 mo 16 4.30 6 4.10 0.32 (0.22, 0.85) 0.07 (0.63, 0.49)
+11 mo 34 6.45 6 3.40 1.03 (0.61, 1.45) 0.48 (0.04, 0.92)
+20 mo 36 5.10 6 2.80 0.62 (0.23, 1.02) 0.14 (0.29, 0.56)
+48 mo 17 0.50 6 1.00 1.05 (1.59, 0.51) 1.12 (1.70, 0.54)
+64 mo 17 1.90 6 2.90 0.49 (1.02, 0.03) 0.69 (1.25, 0.13)
+Hip-adduction angle, 8 Healthy control 27 7.24 6 2.39 NA 1.39 (0.73, 2.06)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 18 2.30 6 4.80 1.40 (2.06, 0.73) NA
+Anterior cruciate
+ligament deficient 18 4.50 6 4.40 0.82 (1.44, 0.20) 0.48 (0.18, 1.14)
+64 mo 17 8.80 6 2.50 0.64 (0.02, 1.26) 1.68 (0.91, 2.46)
+Knee-external rotation angle, 8 Healthy control 30 3.33 6 4.70 NA NA
+7 mo 21 0.30 6 9.90 0.42 (0.98, 0.15) NA
+9 mo 12 4.90 6 2.70 0.37 (0.30, 1.04) NA
+17 mo 12 5.70 6 2.60 0.56 (0.12, 1.24) NA
+856 Volume 52  Number 9  September 2017
+
+--- PAGE 11 ---
+between-limbs symmetry was largely maintained (Figures 2
+through 5). Except for peak knee-ﬂexion angle at 6 months
+after ACLR and peak knee-ﬂexion moment at 34 months
+after ACLR, we found no examples of within-time-point
+limb asymmetries that were different. This appears to be
+advantageous, but based on the previously described
+differences between individuals with ACLR and healthy
+individuals, this lack of asymmetry may indicate a negative
+effect of ACL injury on the contralateral limb rather than an
+advantageous adaptation in the involved limb.
+The risk of ACL graft failure and contralateral ACL
+injury is greatest during the ﬁrst 24 months after ACLR.12,68
+The increased injury risk has been linked to several factors,
+including poor muscle function, lack of neuromuscular
+control, and alterations in lower extremity movement
+patterns, among others.12,68
+Although limited to walking
+gait, our ﬁndings indicate that both frontal- and sagittal-
+plane kinematics and kinetics are altered after initial ACL
+injury and in the ﬁrst 36 months after ACLR. Unfortunate-
+ly, based on a lack of available long-term outcome data, it
+Figure 5. Peak knee-internal rotation angle point estimates with 95% conﬁdence intervals for the healthy control group, anterior cruciate
+ligament reconstruction (ACLR) contralateral limb group, anterior cruciate ligament deﬁcient (ACLD) group, and each reported time point
+after ACLR during the stance phase of walking gait. The 95% conﬁdence interval for the healthy control group is represented using a
+shaded bar for comparison to all groups and time points.
+Table 3. Continued From Previous Page
+Group
+Sample
+Size Mean 6 SD
+Effect Size
+(95% Confidence Interval)
+Compared With the
+Healthy Control Group
+Effect Size
+(95% Confidence Interval)
+Compared With the Anterior
+Cruciate Ligament Reconstruction
+Contralateral Limb Group
+Knee-internal rotation angle, 8 Healthy control 55 8.32 6 4.06 NA 0.85 (1.28, 0.42)
+Anterior cruciate
+ligament
+reconstruction
+contralateral limb 39 12.01 6 4.72 0.85 (0.42, 1.23) NA
+Anterior cruciate
+ligament deficient 13 9.60 6 8.66 0.25 (0.36, 0.85) 0.41 (1.04, 0.22)
+9 mo 30 7.10 6 4.05 0.30 (0.75, 0.15) 1.11 (1.62, 0.59)
+10 mo 16 9.50 6 5.70 0.26 (0.29, 0.82) 0.50 (1.09, 0.09)
+11 mo 18 8.90 6 6.00 0.13 (0.41, 0.66) 0.60 (1.17, 0.03)
+14 mo 7 3.30 6 4.40 1.23 (2.04, 0.41) 1.86 (2.75, 0.97)
+17 mo 12 4.80 6 1.00 0.95 (1.59, 0.30) 1.72 (2.45, 1.00)
+40 mo 16 10.40 6 4.50 0.50 (0.06, 1.06) 0.35 (0.93, 0.24)
+48 mo 17 6.00 6 1.20 0.64 (1.20, 0.09) 1.50 (2.13, 0.86)
+Abbreviation: NA, no data available for group comparison.
+Journal of Athletic Training 857
+
+--- PAGE 12 ---
+remains difﬁcult to determine whether these alterations
+persist after this initial high-risk period or whether the
+hypothesized alterations in lower extremity kinematics and
+kinetics lead to long-term knee-joint cartilage degeneration.
+Given the currently available evidence, drawing conclu-
+sions about gait patterns at long-term follow-up in the
+population with ACLR remains difﬁcult.14,16,69
+Several key limitations in the literature we reviewed and
+the methods we used should be considered. Most important-
+ly, the studies were largely case control or cohort, with very
+few providing a prospective approach to tracking biome-
+chanical outcomes after ACL injury or ACLR.18,19,32,46
+Compared with other outcomes of interest, such as patient-
+reported knee function or lower extremity muscle function,
+for which a broad complement of evidence provides
+prospective and long-term outcomes for these pop-
+ulations,5,7072
+the data available for gait biomechanics
+remain limited. In addition, whereas the average time
+since ACLR was presented, several researchers reported
+substantial variability around the mean estimate of this
+variable. We presented speciﬁc time points throughout the
+Results section, but not all participants from the included
+studies were tested at the speciﬁc time-points presented.
+We chose this approach to more clearly aggregate data in
+the weighted-mean and effect-size calculations while
+enabling the reader to better understand the progression
+of biomechanical variables over time. This included
+single-point estimates for ACLD rather than a timeline
+for gait mechanics. Time from injury may alter gait
+mechanics, but our purpose was to compare knee and hip
+mechanics during walking gait in individuals after ACLR
+with healthy individuals, the contralateral limb, and
+individuals with ACLD. In future reviews, investigators
+should also consider time from injury in both the ACLR
+and ACLD groups to more comprehensively describe the
+natural history of lower extremity gait patterns from
+preinjury through long-term outcomes after ACLR. We
+did not consider ground reaction forces; however, changes
+to ground reaction forces would directly affect altered
+joint kinetics. In future reviews, researchers should
+consider altered ground reaction forces during walking
+gait. Substantial variability was present in the methods
+that each laboratory used to calibrate, collect, and analyze
+the motion-capture data presented in this review. Further-
+more, each laboratory used different walking speeds, with
+most allowing individuals to self-select their walking
+speed. This may have substantially affected the quality of
+the data from each study, but the large number of included
+studies and relative consistency of ﬁndings within each
+variable of interest should have counteracted this potential
+confounding factor.
+CONCLUSIONS
+Alterations in frontal- and sagittal-plane walking kine-
+matics and kinetics observed early (,12 months) after
+ACLR persisted into the midterm (1236 months) follow-
+up period. Despite clearance to return to physical activity
+after ACLR, these gait patterns do not appear to normalize
+over time, which may indicate that the current approach to
+rehabilitation and assessment before return to activity is not
+adequately identifying individuals with dysfunctional
+movement patterns.
+REFERENCES
+1. Mall NA, Chalmers PN, Moric M, et al. Incidence and trends of
+anterior cruciate ligament reconstruction in the United States. Am J
+Sports Med. 2014;42(10):2363–2370.
+2. Ardern CL, Webster KE, Taylor NF, Feller JA. Return to sport
+following anterior cruciate ligament reconstruction surgery: a
+systematic review and meta-analysis of the state of play. Br J Sports
+Med. 2011;45(7):596–606.
+3. Oiestad BE, Holm I, Engebretsen L, Risberg MA. The association
+between radiographic knee osteoarthritis and knee symptoms,
+function and quality of life 1015 years after anterior cruciate
+ligament reconstruction. Br J Sports Med. 2011;45(7):583–588.
+4. Ardern CL, Webster KE, Taylor NF, Feller JA. Return to the
+preinjury level of competitive sport after anterior cruciate ligament
+reconstruction surgery: two-thirds of patients have not returned by 12
+months after surgery. Am J Sports Med. 2011;39(3):538–543.
+5. Otzel DM, Chow JW, Tillman MD. Long-term deﬁcits in quadriceps
+strength and activation following anterior cruciate ligament recon-
+struction. Phys Ther Sport. 2015;16(1):22–28.
+6. Kuenze CM, Hertel J, Weltman A, Diduch D, Saliba SA, Hart JM.
+Persistent neuromuscular and corticomotor quadriceps asymmetry
+after anterior cruciate ligament reconstruction. J Athl Train. 2015;
+50(3):303–312.
+7. Gardinier ES, Manal K, Buchanan TS, Snyder-Mackler L. Gait and
+neuromuscular asymmetries after acute anterior cruciate ligament
+rupture. Med Sci Sports Exerc. 2012;44(8):1490–1496.
+8. Kuenze C, Hertel J, Hart JM. Effects of exercise on lower extremity
+muscle function after anterior cruciate ligament reconstruction. J
+Sport Rehabil. 2013;22(1):33–40.
+9. Di Stasi SL, Logerstedt D, Gardinier ES, Snyder-Mackler L. Gait
+patterns differ between ACL-reconstructed athletes who pass return-
+to-sport criteria and those who fail. Am J Sports Med. 2013;41(6):
+1310–1318.
+10. Yamazaki J, Muneta T, Ju YJ, Sekiya I. Differences in kinematics of
+single leg squatting between anterior cruciate ligament-injured
+patients and healthy controls. Knee Surg Sports Traumatol Arthrosc.
+2010;18(1):56–63.
+11. Herrington L, Hatcher J, Hatcher A, McNicholas M. A comparison of
+Star Excursion Balance Test reach distances between ACL deﬁcient
+patients and asymptomatic controls. Knee. 2009;16(2):149–152.
+12. Paterno MV, Rauh MJ, Schmitt LC, Ford KR, Hewett TE. Incidence
+of second ACL injuries 2 years after primary ACL reconstruction and
+return to sport. Am J Sports Med. 2014;42(7):1567–1573.
+13. Barenius B, Ponzer S, Shalabi A, Bujak R, Norlen L, Eriksson K.
+Increased risk of osteoarthritis after anterior cruciate ligament
+reconstruction: a 14-year follow-up study of a randomized controlled
+trial. Am J Sports Med. 2014;42(5):1049–1057.
+14. Andriacchi TP, Mundermann A. The role of ambulatory mechanics
+in the initiation and progression of knee osteoarthritis. Curr Opin
+Rheumatol. 2006;18(5):514–518.
+15. Fu RZ, Lin DD. Surgical and biomechanical perspectives on
+osteoarthritis and the ACL deﬁcient knee: a critical review of the
+literature. Open Orthop J. 2013;7:292–300.
+16. Andriacchi TP, Koo S, Scanlan SF. Gait mechanics inﬂuence healthy
+cartilage morphology and osteoarthritis of the knee. J Bone Joint
+Surg Am. 2009;91(suppl 1):95–101.
+17. Webster KE, McClelland JA, Palazzolo SE, Santamaria LJ, Feller
+JA. Gender differences in the knee adduction moment after anterior
+cruciate ligament reconstruction surgery. Br J Sports Med. 2012;
+46(5):355–359.
+18. Timoney JM, Inman WS, Quesada PM, et al. Return of normal gait
+patterns after anterior cruciate ligament reconstruction. Am J Sports
+Med. 1993;21(6):887–889.
+19. Shin CS, Chaudhari AM, Dyrby CO, Andriacchi TP. Inﬂuence of
+patellar ligament insertion angle on quadriceps usage during walking
+858 Volume 52  Number 9  September 2017
+
+--- PAGE 13 ---
+in anterior cruciate ligament reconstructed subjects. J Orthop Res.
+2009;27(6):730–735.
+20. Andriacchi TP. Valgus alignment and lateral compartment knee
+osteoarthritis: a biomechanical paradox or new insight into knee
+osteoarthritis? Arthritis Rheum. 2013;65(2):310–313.
+21. Hurwitz DE, Ryals AR, Block JA, Sharma L, Schnitzer TJ,
+Andriacchi TP. Knee pain and joint loading in subjects with
+osteoarthritis of the knee. J Orthop Res. 2000;18(4):572–579.
+22. Sharma L, Hurwitz DE, Thonar EJ, et al. Knee adduction moment,
+serum hyaluronan level, and disease severity in medial tibiofemoral
+osteoarthritis. Arthritis Rheum. 1998;41(7):1233–1240.
+23. Downs SH, Black N. The feasibility of creating a checklist for the
+assessment of the methodological quality both of randomised and
+non-randomised studies of health care interventions. J Epidemiol
+Community Health. 1998;52(6):377–384.
+24. de Morton NA. The PEDro scale is a valid measure of the
+methodological quality of clinical trials: a demographic study. Aust
+J Physiother. 2009;55(2):129–133.
+25. Lohr KN. Rating the strength of scientiﬁc evidence: relevance for
+quality improvement programs. Int J Qual Health Care. 2004;16(1):
+9–18.
+26. Chen CH, Li JS, Hosseini A, Gadikota HR, Gill TJ, Li G.
+Anteroposterior stability of the knee during the stance phase of gait
+after anterior cruciate ligament deﬁciency. Gait Posture. 2012;35(3):
+467–471.
+27. Butler RJ, Minick KI, Ferber R, Underwood F. Gait mechanics after
+ACL reconstruction: implications for the early onset of knee
+osteoarthritis. Br J Sports Med. 2009;43(5):366–370.
+28. Di Stasi SL, Snyder-Mackler L. The effects of neuromuscular
+training on the gait patterns of ACL-deﬁcient men and women. Clin
+Biomech (Bristol, Avon). 2012;27(4):360–365.
+29. Ferber R, Osternig LR, Woollacott MH, Wasielewski NJ, Lee JH.
+Gait mechanics in chronic ACL deﬁciency and subsequent repair.
+Clin Biomech (Bristol, Avon). 2002;17(4):274–285.
+30. Georgoulis AD, Papadonikolakis A, Papageorgiou CD, Mitsou A,
+Stergiou N. Three-dimensional tibiofemoral kinematics of the
+anterior cruciate ligament-deﬁcient and reconstructed knee during
+walking. Am J Sports Med. 2003;31(1):75–79.
+31. Houck JR, De Haven KE, Maloney M. Inﬂuence of anticipation on
+movement patterns in subjects with ACL deﬁciency classiﬁed as
+noncopers. J Orthop Sports Phys Ther. 2007;37(2):56–64.
+32. Knoll Z, Kocsis L, Kiss RM. Gait patterns before and after anterior
+cruciate ligament reconstruction. Knee Surg Sports Traumatol
+Arthrosc. 2004;12(1):7–14.
+33. Lewek M, Rudolph K, Axe M, Snyder-Mackler L. The effect of
+insufﬁcient quadriceps strength on gait after anterior cruciate ligament
+reconstruction. Clin Biomech (Bristol, Avon). 2002;17(1):56–63.
+34. Lindstrom M, Fellander-Tsai L, Wredmark T, Henriksson M.
+Adaptations of gait and muscle activation in chronic ACL deﬁciency.
+Knee Surg Sports Traumatol Arthrosc. 2010;18(1):106–114.
+35. Noyes FR, Schipplein OD, Andriacchi TP, Saddemi SR, Weise M.
+The anterior cruciate ligament-deﬁcient knee with varus alignment:
+an analysis of gait adaptations and dynamic joint loadings. Am J
+Sports Med. 1992;20(6):707–716.
+36. Patterson MR, Delahunt E, Caulﬁeld B. Peak knee adduction moment
+during gait in anterior cruciate ligament reconstructed females. Clin
+Biomech (Bristol, Avon). 2014;29(2):138–142.
+37. Roberts CS, Rash GS, Honaker JT, Wachowiak MP, Shaw JC. A
+deﬁcient anterior cruciate ligament does not lead to quadriceps
+avoidance gait. Gait Posture. 1999;10(3):189–199.
+38. Roewer BD, Di Stasi SL, Snyder-Mackler L. Quadriceps strength and
+weight acceptance strategies continue to improve two years after
+anterior cruciate ligament reconstruction. J Biomech. 2011;44(10):
+1948–1953.
+39. Torry MR, Decker MJ, Ellis HB, Shelburne KB, Sterett WI,
+Steadman JR. Mechanisms of compensating for anterior cruciate
+ligament deﬁciency during gait. Med Sci Sports Exerc. 2004;36(8):
+1403–1412.
+40. Webster KE, Wittwer JE, O’Brien J, Feller JA. Gait patterns after
+anterior cruciate ligament reconstruction are related to graft type. Am
+J Sports Med. 2005;33(2):247–254.
+41. Webster KE, Feller JA. The knee adduction moment in hamstring
+and patellar tendon anterior cruciate ligament reconstructed knees.
+Knee Surg Sports Traumatol Arthrosc. 2012;20(11):2214–2219.
+42. Webster KE, Feller JA. Alterations in joint kinematics during
+walking following hamstring and patellar tendon anterior cruciate
+ligament reconstruction surgery. Clin Biomech (Bristol, Avon). 2011;
+26(2):175–180.
+43. Zabala ME, Favre J, Scanlan SF, Donahue J, Andriacchi TP. Three-
+dimensional knee moments of ACL reconstructed and control
+subjects during gait, stair ascent, and stair descent. J Biomech.
+2013;46(3):515–520.
+44. Sato K, Maeda A, Takano Y, Matsuse H, Ida H, Shiba N.
+Relationship between static anterior laxity using the KT-1000 and
+dynamic tibial rotation during motion in patients with anatomical
+anterior cruciate ligament reconstruction. Kurume Med J. 2013;
+60(1):1–6.
+45. Wang H, Fleischli JE, Zheng NN. Transtibial versus anteromedial
+portal technique in single-bundle anterior cruciate ligament recon-
+struction: outcomes of knee joint kinematics during walking. Am J
+Sports Med. 2013;41(8):1847–1856.
+46. Knoll Z, Kiss RM, Kocsis L. Gait adaptation in ACL deﬁcient
+patients before and after anterior cruciate ligament reconstruction
+surgery. J Electromyogr Kinesiol. 2004;14(3):287–294.
+47. Noehren B, Wilson H, Miller C, Lattermann C. Long-term gait
+deviations in anterior cruciate ligament-reconstructed females. Med
+Sci Sports Exerc. 2013;45(7):1340–1347.
+48. Webster KE, Feller JA, Wittwer JE. Longitudinal changes in knee
+joint biomechanics during level walking following anterior cruciate
+ligament reconstruction surgery. Gait Posture. 2012;36(2):167–171.
+49. Lee SK. The effect of a vertical load on gluteus medius activity and
+gait characteristics during walking. J Phys Ther Sci. 2013;25(11):
+1397–1399.
+50. Lee SK, Jung JM, Lee SY. Gluteus medius muscle activation on
+stance phase according to various vertical load. J Back Musculoskelet
+Rehabil. 2013;26(2):159–161.
+51. Thomas AC, Villwock M, Wojtys EM, Palmieri-Smith RM. Lower
+extremity muscle strength after anterior cruciate ligament injury and
+reconstruction. J Athl Train. 2013;48(5):610–620.
+52. Dalton EC, Pﬁle KR, Weniger GR, Ingersoll CD, Herman D, Hart
+JM. Neuromuscular changes after aerobic exercise in people with
+anterior cruciate ligament reconstructed knees. J Athl Train. 2011;
+46(5):476–483.
+53. Lepley LK. Deﬁcits in quadriceps strength and patient-oriented
+outcomes at return to activity after ACL reconstruction: a review of
+the current literature. Sports Health. 2015;7(3):231–238.
+54. Ardern CL, Taylor NF, Feller JA, Webster KE. Fifty-ﬁve per cent
+return to competitive sport following anterior cruciate ligament
+reconstruction surgery: an updated systematic review and meta-
+analysis including aspects of physical functioning and contextual
+factors. Br J Sports Med. 2014;48(21):1543–1552.
+55. Brophy RH, Schmitz L, Wright RW, et al. Return to play and future
+ACL injury risk after ACL reconstruction in soccer athletes from the
+Multicenter Orthopaedic Outcomes Network (MOON) group. Am J
+Sports Med. 2012;40(11):2517–2522.
+56. Goetschius J, Kuenze CM, Saliba S, Hart JM. Reposition acuity and
+postural control after exercise in anterior cruciate ligament
+reconstructed knees. Med Sci Sports Exerc. 2013;45(12):2314–
+2321.
+57. Augustsson J, Thomee R, Karlsson J. Ability of a new hop test to
+determine functional deﬁcits after anterior cruciate ligament
+Journal of Athletic Training 859
+
+--- PAGE 14 ---
+reconstruction. Knee Surg Sports Traumatol Arthrosc. 2004;12(5):
+350–356.
+58. Castanharo R, da Luz BS, Bitar AC, D’Elia CO, Castropil W, Duarte
+M. Males still have limb asymmetries in multijoint movement tasks
+more than 2 years following anterior cruciate ligament reconstruc-
+tion. J Orthop Sci. 2011;16(5):531–535.
+59. Hart JM, Ko JW, Konold T, Pietrosimone B. Sagittal plane knee joint
+moments following anterior cruciate ligament injury and reconstruc-
+tion: a systematic review. Clin Biomech (Bristol, Avon). 2010;25(4):
+277–283.
+60. Alnahdi AH, Zeni JA, Snyder-Mackler L. Gait after unilateral total
+knee arthroplasty: frontal plane analysis. J Orthop Res. 2011;29(5):
+647–652.
+61. Foroughi N, Smith R, Vanwanseele B. The association of external
+knee adduction moment with biomechanical variables in osteoar-
+thritis: a systematic review. Knee. 2009;16(5):303–309.
+62. Oiestad BE, Engebretsen L, Storheine K, Risberg MA. Knee
+osteoarthritis after anterior cruciate injury: a systematic review. Am
+J Sports Med. 2009;37(7):1434–1443.
+63. Bassett DR Jr, Wyatt HR, Thompson H, Peters JC, Hill JO.
+Pedometer-measured physical activity and health behaviors in U.S.
+adults. Med Sci Sports Exerc. 2010;42(10):1819–1825.
+64. Zwolski C, Schmitt LC, Quatman-Yates C, Thomas S, Hewett TE,
+Paterno MV. The inﬂuence of quadriceps strength asymmetry on
+patient-reported function at time of return to sport after anterior
+cruciate ligament reconstruction. Am J Sports Med. 2015;43(9):
+2242–2249.
+65. Mills K, Hunt MA, Ferber R. Biomechanical deviations during level
+walking associated with knee osteoarthritis: a systematic review and
+meta-analysis. Arthritis Care Res (Hoboken). 2013;65(10):1643–
+1665.
+66. Chang A, Hayes K, Dunlop D, et al. Thrust during ambulation and
+the progression of knee osteoarthritis. Arthritis Rheum. 2004;50(12):
+3897–3903.
+67. Ericsson YB, Roos EM, Frobell RB. Lower extremity performance
+following ACL rehabilitation in the KANON-trial: impact of
+reconstruction and predictive value at 2 and 5 years. Br J Sports
+Med. 2013;47(15):980–985.
+68. Paterno MV, Rauh MJ, Schmitt LC, Ford KR, Hewett TE. Incidence
+of contralateral and ipsilateral anterior cruciate ligament (ACL)
+injury after primary ACL reconstruction and return to sport. Clin J
+Sport Med. 2012;22(2):116–121.
+69. Andriacchi TP, Briant PL, Bevill SL, Koo S. Rotational changes at
+the knee after ACL injury cause cartilage thinning. Clin Orthop Relat
+Res. 2006;442:39–44.
+70. Dunn WR, Spindler KP, MOON Consortium. Predictors of activity
+level 2 years after anterior cruciate ligament reconstruction (ACLR):
+a Multicenter Orthopaedic Outcomes Network (MOON) ACLR
+cohort study. Am J Sports Med. 2010;38(10):2040–2050.
+71. Spindler KP, Huston LJ, Wright RW, et al. The prognosis and
+predictors of sports function and activity at minimum 6 years after
+anterior cruciate ligament reconstruction: a population cohort study.
+Am J Sports Med. 2011;39(2):348–359.
+72. Wright RW, Dunn WR, Amendola A, et al. Risk of tearing the
+intact anterior cruciate ligament in the contralateral knee and
+rupturing the anterior cruciate ligament graft during the ﬁrst 2
+years after anterior cruciate ligament reconstruction: a prospec-
+tive MOON cohort study. Am J Sports Med. 2007;35(7):1131–
+1134.
+Address correspondence to Lindsay V. Slater, PhD, Department of Kinesiology, The University of Virginia, 210 South Emmet Street,
+Suite 203, PO Box 400407, Charlottesville, VA 22904-4407. Address e-mail to ls4zj@virginia.edu.
+860 Volume 52  Number 9  September 2017
+
+--- PAGE 15 ---

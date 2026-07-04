@@ -1,0 +1,1049 @@
+
+--- PAGE 1 ---
+863
+한국사회체육학회지, 제45호. pp. 863~876
+Journal of Sport and Leisure Studies
+2011. Vol. 45. pp. 863~876
+전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이
+여성 축구선수의 슬관절 기능 회복에 미치는 영향
+장 지 웅(상일정형외과 운동치료실)·김 성 수(광주보건대학교)·*김 태 수(고려대학교)
+* lion9902@korea.ac.kr
+Ⅰ.서 론
+1. 연구의 필요성 및 목적
+세계에서 가장 대중적인 스포츠는 축구라고 이야기
+할수있다(Junge&Dvorak,2004).2006년에는2억6
+천5백만명으로추정되는축구선수들(Alentorn-Geli
+etal.,2009b)중에서남성이90%,여성이10%로2천6
+백만명의여성이축구에참여하는것으로나타났다(Fé-
+dérationInternationaledeFootballAssociation,2008).
+축구는달리기,급격한방향전환,점프및착지등의
+동작을포함하고있어내재적으로스포츠손상의위험
+을내포하고있다.축구의종주국이라고할수있는영국
+의경우,모든운동손상의73%가하지손상이며그중
+29%가무릎손상으로나타났으며스포츠종목중에서
+축구로인한운동손상이전체운동손상의10%를차지
+한다(Murray,Murray,MacKenzie,&Coleman2005).그
+중에서도축구는다른스포츠에비하여,전방십자인대
+(anteriorcruciateligament;ACL)에대한높은손상위험
+을내재하고있다(Alentorn-Gelietal.,2009b).ACL은슬
+관절에서경골의전위,슬관절의과신전과과회전을방
+지하여슬관절의전·후안정성과정상운동에관여하
+는중요한해부학적구조물이다.ACL손상에있어서,축
+구는남성들에게는상대적으로안정한스포츠인반면에
+여성에게는6배높은상해위험요소를유지하고있다
+(Alentorn-Gelietal.,2009a;Arendt&Dick,1995).
+남성에비하여높은여성의ACL손상이보고되는이
+유는여러선행연구에서다양하게보고되고있다.요인
+별로분석을한다면내재적,외재적요인으로(Griffinet
+al.,2006)환경적,해부학적,호르몬,신경근,역학적인
+요인으로분류되고있다(Murphy,Connolly,&Beyn-
+non,2003).또한십자인대자체의구조적인차이로,남
+성에비하여여성의ACL은길이,교차-부분의영역,용
+적,질량이작은것으로나타났다(Chandrashekar,Slaut-
+erbeck,&Hashemi,2005).ACL손상은2차적으로슬관
+절의불안정성과신경근조절(Trulsson,Roos,Ageberg,
+&Garwicz,2010),관절운동범위와근력의제한및관
+절의섬유화(Wilk,Reinold,&Hooks,2003),신체적인
+손상과장애(Papandreou,Billis,Antonogiannakis,&Pa-
+paioannou,2009)와같은문제를야기할수있다.
+위와 같은 원인과 손상의 정도에 따라 침습적인 방
+
+--- PAGE 2 ---
+864 장 지 웅·김 성 수·김 태 수
+법으로 전방십자인대 재건술(anterior cruciate liga-
+mentreconstruction;ACLR)을시행한다.ACLR은자기
+건(autogenousgraft)과동종건(allogenous)이식을통
+한수술방법을의미한다.현재ACLR은ACL손상후의
+슬관절의기능회복에관한최상의모델로여겨지고있
+다(Dye,Wojtys,Fu,Fithian,&Gillquist,1998;Tanakaet
+al.,2010).
+ACLR 후에 행해지는 재활 운동 프로그램은 지난 수
+십년간발전해왔으며특히1980년대를기점으로급속
+하게변화하였다(Wilketal.,2003).ACLR후의운동재
+활의방법으로신경근운동(Risberg,Holm,Myklebust,
+&Engebretsen,2007),가속운동프로그램(Isbergetal.,
+2006)교차운동(Papandreouetal.,2009)등이보고되
+었다.그러나선행연구들에서는스포츠선수보다는일
+반인들을,여성보다는남성을,또한스포츠종목이내재
+하고있는특성을고려하지않고연구대상자를선별하
+는경우가많았다.또한기능적인운동방법의적용보다
+는단일운동방법에주안점을두거나전반적인근기능
+의변화에대한결과만있을뿐세부적인근기능,전반적
+인기능의변화에대한연구결과들이없었다.마지막으
+로12주까지의변화에중점을두고연구되었으며경쟁
+적인스포츠활동으로의복귀시점이될수있는12주에
+서16주까지의연구는부족한실정이다.따라서본연구
+에서는ACLR을시술받은10명의여성축구선수를대상
+으로16주간의기능적인재활운동프로그램의적합성
+판정및스포츠현장으로의복귀전재활과정의결과를
+판단할수있는평가방법의연관성을제시하는데있다.
+Ⅱ.연구방법
+1. 연구대상
+본연구의대상은스포츠활동중사고로인하여이학
+적검사및자기공명영상(MRI)검사상슬관절ACL의완
+전파열을진단받아관절경적전방십자인대재건술(ar-
+throscopicanteriorcruciateligamentreconstruction)중
+에동종건이식을실시한여성축구선수10명을대상으
+로선정하였다.신체적특징은다음과같다<표1>.
+2. 측정도구 및 방법
+1) 슬관절의 등속성 근기능 검사
+등속성슬관절의근기능검사는Perrin(1993)의방법
+에따라슬관절우측과좌측의신근·굴근을등속성근
+력검사기(BiodexSystem3pro,biodexmedicalsystem
+Inc,NY,USA)로측정하였다.세부사항은다음과같다.
+측정시의 무릎관절의 운동범위는 무릎신전 0°에서부
+터무릎굴곡90°까지로결정하였다.연구대상자의몸통
+과허리,대퇴부위와발목은가죽벨트(straps)를이용하
+여고정하였다.검사프로토콜은근력(musclestrength)
+의 지표인 각속도 60°/sec에서 4회 1세트를 실시하였
+다.60초휴식후근파워의지표각속도180°/sec에서7
+회1세트로실시하였다(조종현,박원하,1999).Gravity
+effecttorque를측정하여다리의무게가근력에미치는
+영향을배제하였다.실제측정시검사자는모든실험참
+가자들이최대능력을발휘할수있도록큰목소리로oral
+encouragement를유도하였고각세트시마다30초의
+휴식을취하도록하였다.
+2) 슬관절 기능점수 평가
+Lysholmscore는통증과기능동작을평가하기위한
+설문지로임상에서무릎관련통증점수로사용하고있
+다(Lysholm&Gillquist,1982).설문지를구성하는항목
+은절기(limp),지지하기(support),계단오르기(stair-
+표 1. 연구대상자의 신체적 특성
+연구대상자 나이(yr) 신장(cm) 체중(kg)
+Women'ssoccer
+player(N=10)
+19.9±4.1 164.1±4.4 55.9±7.6
+Mean±SD
+
+--- PAGE 3 ---
+865 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+climbing),쪼그려앉기(squating),걷기/달리기/점프동
+작시불안정성(instability),통증(pain),부종(swelling),
+대퇴부위축(atrophy)으로구성되어있으며100점만점
+으로수치화한것이다.
+3) Balance Error Scoring System(BESS)
+뇌진탕후에균형감을평가하기위한방법으로시작
+(Broglio,Monk,Sopiarz,&Cooper,2009)된BESS는운
+동선수들의균형감각을평가하기위해사용되고있다
+(Valovich,Perrin,&Gansneder,2003).따라서BESS는
+ACLR후운동선수들의정적균형감각을평가하는데좋
+은기준이될수있을것이다.
+BESS는6개의평가항목으로나뉘는데①두발(dou-
+ble-leg)로평평한바닥에서기,②한발(single-leg)로
+평평한바닥에서기,③평평한바닥에세로로일렬서기
+(tandem),④두발로불안정한바닥에서기,⑤한발로
+불안정한바닥에서기,⑥불안정한바닥에세로로일렬
+서기로이루어진다.각각의평가항목의자세를살펴보
+면다음과같다.두발서기는실험참가자가두발을붙
+인상태에서선다.한발서기자세는환측으로무릎을
+펴고선자세를취하고건측의다리는고관절(hipjoint)
+은30도,슬관절(kneejoint)은90굴곡(flexion)자세를
+취하게된다.또한일렬로세로서기는환측을건측의뒤
+로하여환측의엄지발가락(greattoe)이건측의뒤꿈치
+(heel)에접촉하여자세를취하게된다.모든평가항목
+은장골능(iliaccrest)에두손을얹고두눈을모두감고
+실시한다.이렇게6개의평가항목은각각20초동안평
+가가이루어진다.20초동안이루어지는평가시간동안
+에실험참가자가1)장골능에서손을때거나2)눈을뜨거
+나3)지지하고있는발의위치가변하거나넘어지는경
+우(stepping,stumbling,orfalling)4)엉덩이를30도이
+상굴곡(flexion)시키거나,외전(abduction)시키는경우
+5)앞발(forefoot)이나뒤꿈치(heel)를드는경우에1점
+씩의벌점이주어지며,6)평가자세에서벗어나5초안
+에평가자세를회복못하는경우에는10점의벌점이주
+어져각각의항목당얻어진벌점을합산하여점수화하
+게된다.따라서BESS에서점수가높다는것은균형감
+각이나쁘다는것을나타낸다.본연구에서는두발서기
+는신뢰도가떨어진다는선행연구(Tamerah.,Michael,
+Robert,&Ted,2009)의연구결과를바탕으로하여두
+발로서는자세는배제하고나머지4동작을가지고평가
+항목으로삼았으며각각의동작을1회실시하였다.
+4)Single-legged hop test
+Single-leggedHoptest는특히ACLR후슬관절의동
+적기능상태의변화를평가하기위해서흔히사용되는
+평가방법이며(Fitzgerald,Lephard,Hwang,&Wain-
+ner,2001;Decarlo,&Sell,1997),건측과환측의비율
+이85%이상일때정상으로간주한다(Noyes,Barber,&
+Magine,1991).이러한Single-leggedHoptest는한발
+로한번뛰기(Singlehopfordistance),한발로세번뛰
+기(Triplehopfordistance),한발로6m빨리가기(6-m
+timedhop),교차하여뛰기(Cross-overhop)로구성된
+다.본연구에서는한발로한번뛰기,한발로세번뛰
+기를각각2회씩실시하여그중에멀리뛴거리를기록
+하였다.테스트전에실험참가자는각각의테스트동작
+에대해서건측다리로교육을실시하였으며,피로도를
+최소로하기위하여1회의테스트실시후에2분간의쉬
+는시간을가졌다.실험참가자는모든테스트를엄지발
+가락이시작선뒤에위치를하게하였으며뛴거리의측
+정또한엄지발가락이위치한거리를기록하였다.테스
+트도중에손의위치와시선의방향은제한을두지않았
+으며,신발은실험참가자가편한신발을신게하였다.또
+한착지후에2초이상머물러있어야성공으로간주하
+였으며,착지시에반대발이지면에닿을경우,상체가
+지면에닿을경우,균형을잃고넘어질경우는실패로간
+주하여실험참가자에게다시한번규칙설명후에다시
+시도하게하였다.
+
+--- PAGE 4 ---
+866 장 지 웅·김 성 수·김 태 수
+3. 기능적 재활운동 프로그램
+본연구에서의기능적재활운동프로그램은여러선
+행논문들의연구결과를바탕으로총4단계로나누어
+진행하였다.재활운동프로그램은물리치료와병행되
+지않았으며수술후2주후부터주5회,1회당3-4시간
+으로하여실시하였다.각단계별로의진행조건은환자
+의슬관절가동범위(ROM)의변화,통증및붓기정도,
+기간 등을 고려하였으며, 운동 수행능력, 근력의 건·
+환측과동측근기능비(Hamstrings/QuadricepsRatio,
+HQR)등을고려하였다.각재활운동단계로의이동은
+아래의각단계의목표가충족될때이루어졌다.운동프
+로그램에대한세부사항은<표2>와같다.
+1) 1단계(Phase 1)
+1단계의목표는수술후합병증(complication)을예
+방하기위하여통증(pain),붓기(swelling),그리고염증
+(inflammation)의조절,관절가동범위의회복(recovery
+of ROM), 신경근 조절(neuromuscular control)이다
+(Cascio,Culp,&Cosgarea,2005;Shelbourne&Patel,
+표. 2 재활 운동 프로그램
+기간 빈도 운동내용 시간
+~2wks
+5 times a
+wks
+PhaseⅠ:Immediatepost-operativephase
+Scartissuemassage/Manualtherapy(Patellamobilization)
+Gentlehamstringstretch(Multi-direction)30sechold*5rep/Supinewallslides10min
+Gaittraining10meter*5set/Anklepumps10rep*3set/Quadricepssets(multiangle)20rep*3setineachangle
+Terminalkneeextension20rep*3set/Straightlegraisewithsupport4way*20rep*3set
+Minisquats20rep*3set/Standingandseatedhamstringcurl20rep*3set/Heel&Toeraise20rep*3set
+Kneehangs30sechold*5set/Initiatelegpress20rep*3set
+Balance/Proprioceptiontraining(Doublelegprogresstosingleleg,staticprogressingtodynamicactivities)
+CardioVascularconditioning/Corestabilityexercise
+3-6wks
+PhaseⅡ:Moderateprotectivephase
+warm-up
+20min
+mainexercise
+120~150
+minCool-down
+20min
+Enhancingaboveexercises
+Bicycling10mininmoderateintensity/Partiallungesatfrontandlateral10rep*3setineachdirection
+Cablecolumnexercise4way*10rep*3set/Stepups&downs(progressiveheight)10rep*3set
+Chair&wallsquats(tibiaperpendiculartoﬂoor)20rep*3set/Multiangleisometric(co-contraction)
+Gymball/Slingexercise/Treadmillwalking(forward,back)10minineachdirection
+Isokineticdeviceproprioceptionprotocol
+7-12wks
+PhaseⅢ:Advanceactivityphase
+Enhancingaboveexercises
+Fulllunges-straightanddiagonal10rep*3setineachdirection/Plyometricexercise(gradually)
+Straightaheadrunning(gradually)/Fitter/Lateralmovement(stepping,shufﬂing,hopping,carioca)
+Isokineticexercise/Initiateeccentricquadexercisewithmanualresistance
+Startwithlightweightandhighrepetitionandgraduallyprogresstoheavierweightwithdecreasedrepetition
+13-16wks
+PhaseIV:Advancedstrengtheningandreturntoactivityphase
+Enhancingaboveexercises
+Agilityexercise(gradually)
+Sidesteps/Crossovers/Figure8running/Shuttlerunning/Cutting
+Acceleration/deceleration/spring
+Ladder/dotandsquaredrills
+Sportsspecifictraining(gradually)
+
+--- PAGE 5 ---
+867 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+1999). 적극적인 통증, 붓기 그리고 염증의 의 조절은
+슬관절의 완전 신전(full extension) 그리고 체중부하
+(weightbearing)를가능하게한다(Cascioet.al,2005).
+ACLR후조기의관절가동범위회복운동은통증감소,
+슬개대퇴관절(patellofemoraljoint)합병증의예방,대
+퇴사두근(Quadriceps)의위축(artrophy)과관절섬유
+화(arthrofibrosis)의예방,보행형태(gaitpattern)의개
+선에효과적이다.다방향의슬개골유동성(multidirec-
+tionalpatellamobilization)운동은관절가동범위회복,
+근위축 방지에 효과적이므로 반드시 포함되어야 한다
+(Beynnon,Johnson,Abate,Flemming,&Nichols,2005;
+Gale & Richmond, 2006). 또한 완전한 체중부하(full
+weightbearing)는대퇴사두근의기능향상,슬개대퇴관
+절(patellofemoraljoint)의통증예방그리고무엇보다
+도슬관절의불안정성에영향을미치지않으므로조기
+에실시하는것이좋다(Ross,Denegar,&Winzenried,
+2001;Shaw,Williams,&Chipchase,2005).초기의신경
+근운동은이식한ACL에악영향을미치지않는범위에
+서의등척성운동(isometricexercise),0-60도까지의닫
+힌사슬운동(closedkineticchainexercise),90-40도까
+지의열린사슬운동(openkineticchainexercise)운동
+이혼합된형태로진행이되어야하며수술후슬관절에
+이점이많은닫힌사슬운동이주가되어야한다(Gale
+&Richmond,2006;Palmitieretal.,1991).따라서본논
+문에서의세부적인운동프로그램은대퇴사두근힘주기
+(QuadSet),무릎펴고다리들기(StraightLegRaise),관
+절가동범위운동인뒤꿈치끌기(HeelSlide),벽에대고
+다리내리기(Wallslide),다리펴기(KneeHangs),제한
+된각도에서의무릎구부리기(0-30°MiniSquat),제한
+된각도에서의열린사슬다리들기운동(90-40°Open
+Kinetic Chain exercise), 체중이동운동(body weight
+shifting), 경골의 전방전위에 길항작용을 하는 뒤꿈치
+들기운동(Heelraiseexercise),단독슬근운동(isolated
+hamstrings)등이포함되었다(Fleming,Oksendahl,&
+Beynnon,2005).
+2) 2단계(Phase 2)
+2단계운동의목표는지속적으로통증및관절의붓기
+조절,관절가동범위회복,보행형태(gaitpattern)의회
+복,고유수용성(proprioceptive)능력의강화,하지근력
+의강화이다.무엇보다중요한목표는지속적인관절가
+동범위의회복,보행형태의회복,일상생활능력의향
+상이다.따라서2단계의운동은1단계에서제한되었던
+운동범위의점진적인증가및일상생활에서이루어지
+는형태의동작들이포함되어야한다.기본적으로만족
+할만한수준의관절가동범위회복이이루어져야되는
+데,가동범위의회복이더딜경우보행패턴의변형이초
+래될수있기때문이다.따라서2단계의운동프로그램
+은 1주 단위로 제한되었던 운동범위를 10도씩 증가시
+켜주며,관절가동범위의기능적인향상을위하여자전
+거타기,보행패턴회복운동(평평한바닥이나트레드밀
+걷기),계단오르내리기운동(Stairstepperexercise),균
+형및고유수용능력향상운동이포함되었다.초기에수
+행되는균형및고유수용성운동은근력의향상및고유
+수용성능력을향상시키며,이식건의이완에영향을미
+치지않는다(Cooper,Taylor,&Feller,2005).또한능동
+적가동범위의회복,이식된십자인대의기능회복및2
+차손상예방에효과적이다.이러한신경근운동은가능
+한빠르게목발없는상태에서의보행부터시작하여정
+적에서동적으로의균형운동,그리고민첩성운동(agility
+exercise)등을포함한플라이오메트릭운동(plyometric
+exercise)으로점차적으로진행시켜나간다(Beynnonet
+al.,2005;Liu-Ambrose,Taunton,MacIntyre,McConkey,
+&Khan,2003;Risberget.al.,2001).
+3) 3단계(Phase 3)
+3단계운동의목표는완전한가동범위의회복,근력
+및근지구력향상,슬개대퇴동통(Patellofemoralpain)의
+최소화,고유수용성및균형능력의향상,직선달리기의
+가능,그리고기능훈련(functionaltraining)의준비이다.
+이시기에는이식한십자인대의장력이강화가되기때
+
+--- PAGE 6 ---
+868 장 지 웅·김 성 수·김 태 수
+문에닫힌사슬운동과열린사슬운동을강화하여실시하
+였으며,통증및붓기정도를근지구성(endurance)운동
+에서근력(strength)운동으로의진행기준으로삼았다
+(Potter,2006;Rossetal.,2001).전체적인운동프로그램
+은2단계에서의근력강화운동을점진적으로강화시켰
+으며,트레드밀(treadmill)달리기프로그램을추가하였
+다.또한균형및고유수용성운동을강화시켰으며,운동
+사슬간의상호협력이기능적움직임의향상을도모한
+다는선행연구의결과(Wilketal.,2003)를바탕으로추
+후에실시하게되는기능적운동들의향상을도모하기
+위하여하지운동사슬(체간,고관절,슬관절,족관절강
+화운동)의연결을강화시켜주는운동등도포함시켜실
+시하였다.
+4) 4단계(Phase 4)
+마지막으로4단계는스포츠현장으로의복귀전의재
+활과정으로,등속성(isokinetic)근기능테스트결과를바
+탕으로3단계의운동을강화하여실시하였다.또한축구
+현장으로의복귀를위하여민첩성운동(agilityexercise),
+점프운동(plyometricexercise)및축구와관련된기능
+적동작들을실시하였다.
+4. 통계처리
+본연구에서측정된자료는SPSS-PC(ver18.0SPSS
+ICC, Chicago, USA)을 이용하여 평균(M)과 표준편차
+(SD)로나타내었다.집단간건측과환측의결과를비교
+하기위하여independentsamplest-test와집단내시
+점에따른결과를비교하기위하여dependentsamples
+t-test를이용하여검증하였다.근기능결손률,슬관절기
+능검사와BESS은집단내시점에따른결과를비교하기
+위하여dependentsamplest-test를이용하여검증하였
+다.모든통계적유의수준은p<.05로설정하였다.
+Ⅲ.결 과
+본연구를통하여16주간의기능적인재활운동프로
+그램이ACLR후여성축구선수의슬관절운동기능회복
+에미치는영향은다음과같다.
+1.  등속성 각속도에 따른 신전근의 환측과 건측
+변화
+<표3>에서제시한바와같이저속부하인60deg/sec
+에서시점에따른집단간비교에서는체중당일량변인
+에서12주에집단간유의한차이가있는것으로나타났
+다.그러나건측의집단내비교에서는유의한차이가없
+었고환측의집단내비교에서는모든변인에서유의한
+차이가있는것으로나타났다.
+<표3>에서제시한바와같이고속부하인180deg/
+sec에서시점에따른집단간비교에서는12주시점에서
+체중당최대회전력과체중당일량,평균파워에서집단
+간의유의한차이가있는것으로나타났다.또한환측에
+서의집단내비교에서는체중당최대회전력,체중당일
+량,평균파워에서유의하게증가하는것으로나타났다.
+2.  등속성 각속도에 따른 굴곡근의 환측과 건측
+변화
+<표 4>에서 제시한 바와 같이 저속부하인 60deg/
+sec에서시점에따른집단간비교에서는집단간유의
+한차이가없는것으로나타났다.그러나건측의집단내
+비교에서는체중당일량과평균파워가유의하게증가
+하는것으로나타났다.또한환측에서는동측근기능비
+가유의하게감소하는것으로나타났다.
+<표4>에서제시한바와같이고속부하인180deg/
+sec에서측정시점에따른집단간비교와집단내결과
+에서유의한차이가없는것으로나타났다.
+
+--- PAGE 7 ---
+869 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+3. Single-legged Hop test
+<표 5>에서 제시한 바와 같이 Single hop for dis-
+tance에서는12주에서집단간유의한차이와집단내
+건측과환측모두유의하게증가하는것으로나타났다.
+또한Triplehopfordistance에서는12주에서집단간유
+표 3. 60°/sec와 180°/sec에서 신전근에서의 환측과 건측의 변화
+Factor Time Uninvolved Involved t p
+60
+deg
+/sec
+체중당
+최대회전
+력(%peak
+torque/BW)
+12wks 284.15±38.59 257.36±40.64 -1.51 .148
+16wks 304.39±51.34 294.86±51.56 -.414 .684
+t -2 -3.99
+p .077 .003
+체중당
+일량(%
+work/BW)
+12wks 299.59±31.64 267.06±33.4 -2.24 .038
+16wks 323.76±56.19 302.25±48.14 -.92 .370
+t -1.91 -3.75
+p .089 .005
+평균파
+(avgpower)
+12wks 97.6±21.33 86.7±16.79 -1.27 .220
+16wks 104.02±22.72 96.69±18.63 -.79 .440
+t -1.35 -3.08
+p .211 .013
+동측근
+기능비
+(%
+(Hamstrings
+/Quadri-
+cepsRatio)
+12wks 57.8±6.74 64.77±10.14 1.81 .087
+16wks 58.9±8.43 59.6±11.54 .16 .879
+t -.42 2.42
+p .687 .039
+180
+deg
+/sec
+체중당
+최대회전력
+(%peak
+torque/BW)
+12wks 197.51±22.49 169.21±30.01 -2.39 .028
+16wks 199.25±25.7 184.16±23.88 -1.36 .191
+t -.32 -2.32
+p .756 .045
+체중당
+일량(%
+work/BW)
+12wks 206.39±20.4 173.45±23.67 -3.33 .004
+16wks 212.22±33.30 189.35±22.91 -1.79 .09
+t -.69 -2.49
+p .506 .034
+평균파
+(avgpower)
+12wks 169.39±31.76 141.16±23.42 -2.26 .036
+16wks 172.04±35.19 159.66±30.49 -.84 .415
+t -.32 -2.61
+p .753 .029
+동측근
+기능비
+(%
+(Hamstrings
+/Quadri-
+cepsRatio)
+12wks 65.28±10.65 73.73±18.84 1.24 .233
+16wks 65.1±6.78 70.01±10.82 1.22 .24
+t .09 .92
+p .934 .38
+Mean±SD
+표 4.  60°/sec와 180°/sec에서 굴곡근에서의 환측과 건측의 변화
+Factor Time Uninvolved Involved t p
+60deg/
+sec
+체중당
+최대회전
+력(%peak
+torque/BW)
+12wks 164.02±27.4
+165.5±
+25.11
+.13 .901
+16wks 174.61±21.1
+172.11±
+24.75 -.24 .81
+t -1.57 -1.08
+p .152 .308
+체중당
+일량(%
+work/BW)
+12wks
+186.95±
+43.09
+192.91±
+33.52
+.35 .734
+16wks
+207.29±
+36.27
+203.44±
+35.98 -.24 .82
+t -3.56 -1.4
+p .006 .195
+평균파워
+(avg
+power)
+12wks 57.78±14.93
+59.64±
+15.15
+.277 .785
+16wks 64.11±14.48 62.7±13.22 -.23 .821
+t -3.43 -1.12
+p .008 .294
+동측근
+기능비
+(%(Ham-
+strings/
+Quadriceps
+Ratio)
+12wks 57.8±6.74
+64.77±
+10.15
+1.81 .087
+16wks 58.9±8.43 59.6±11.54 .16 .879
+t -.42 2.42
+p .687 .039
+180deg/
+sec
+체중당
+최대회전
+력(%peak
+torque/BW)
+12wks
+127.99±
+18.73
+121.16±
+18.99 -.81 .429
+16wks
+128.91±
+14.11
+127.4±
+15.12 -.24 .82
+t -.16 -.78
+p .88 .455
+체중당일
+량(%work/
+BW)
+12wks
+140.24±
+30.18
+133.41±
+28.05 -.52 .607
+16wks
+142.51±
+26.23
+139.66±
+21.85 -.26 .795
+t -.32 -.68
+p .757 .517
+평균파워
+(avg
+power)
+12wks
+101.08±
+28.22
+99.04±
+23.25 -.176 .862
+16wks
+111.35±
+26.64
+110.22±
+22.48 -.09 .928
+t -1.72 -1.18
+p .119 .27
+동측근
+기능비
+(%(Ham-
+strings/
+Quadriceps
+Ratio)
+12wks 65.28±10.66
+73.73±
+18.84
+1.24 .233
+16wks 65.1±6.78
+70.01±
+10.81
+1.22 .240
+t .09 .92
+p .934 .38
+Mean±SD
+
+--- PAGE 8 ---
+870 장 지 웅·김 성 수·김 태 수
+의한차이와환측과건측에서모두유의하게증가하는
+것으로나타났다.
+3. 결손률, 슬관절 기능점수 및 BESS의 변화
+<표 6>에서 제시한 바와 같이 측정시점에 따른 집
+단내변화에서는60°신근결손률,180°신근결손률,및
+BESS에서유의하게감소한반면에슬관절기능검사에서
+는유의하게증가하는것으로나타났다.
+Ⅳ.논 의
+본연구에서는ACLR후여성축구선수를대상으로하
+여16주간의기능적인재활운동프로그램을통하여슬
+관절기능회복을알아보고자하였다.
+재활훈련을통한성과를객관적으로검증하기위해
+일선현장에서주로사용하고있는방법으로등속성근
+기능검사가이용되고있다(이인식등,2005;장지웅,정
+석률, 이성기,2008).또한근력검사는일반적으로 전
+방십자재건술후회복과그이후의트레이닝을평가하
+는데사용된다(AgebergRoos,Silbernagel,Thomee ·,&
+Roos,2009).Gerberetal.(2009)의연구에서는ACLR
+후슬관절의등속성근력이건측에비하여환측에서감
+소하는것으로나타났다.본연구에서는수술로인한등
+속성각근력의기능상저하가12주차에서나타나고있
+다.그러나16주간의기능적인재활운동프로그램이슬
+관절신전시저속부하60deg/sec과고속부하180deg/
+sec에서환측변인의대다수가유의하게증가하는것으
+로나타났다.일반적으로60°/sec는근력을,180°/sec
+는 근파워를 나타낸다(김태수, 장지웅, 최주혁, 2010;
+Simo ~es,Dias,Marinho,Pinto,&Britto,2010).본연구
+에서는재활운동프로그램적용후환측의슬관절근력
+과근파워의전반적인영역에서증가하는것으로나타
+났다.선행연구에의하면전방십자손상운동선수에
+게닫힌사슬운동프로그램적용후신전근등속성운동
+에서유의하게증가하는것으로나타났다(Konishi,Oda,
+Tsukazaki,Kinugasa,&Fukubayashi,2011).또한가속
+재활운동프로그램적용후신전근60°/sec에서유의한
+차이가보고되었다(Karaseletal.,2010).또한국내의이
+은애와변재척(2006),진행미와정현(2006),장지웅등
+(2008)의연구에서도적용기간의차이는있지만가속
+재활운동프로그램을적용하여신전근에서대다수의변
+인들이유의하게증가하는것으로나타났다.
+이와는다른양상으로굴곡근에서운동의효과는거
+의나타나지않았다.선행연구에서도가속재활운동프
+로그램적용후굴곡근운동에서는모든각도에서유의
+한차이가발견되지않았다(Karaseletal.,2010).또한장
+지웅등(2008)의연구에서도신전근에서의유의한증
+가와굴곡근에서의유의한차이가없는것으로보고하
+였다.
+이들변인에서나타난연구의주요점중의하나는신
+전근에서근력과근파워감소가많이나타난반면에굴
+곡근에서의위의감소는나타나지않았다는점이다.이
+표 5. Single leg hop test의 변화
+Factor Time Uninvolved Involved t p
+Singlehop
+fordistance
+12wks 182.6±15.17 153.6±22.06 -3.43 .003
+16wks 195.1±15.69 180.3±22.33 -1.72 .104
+t -4.82 -9.55
+p .001 .000
+Triplehop
+fordistance
+12wks 533±68.18 460.5±66.55 -2.41 .027
+16wks 563.6±58.91 524.6±61.78 -1.45 .166
+t -6.51 -6.86
+p .000 .000
+Mean±SD
+표 6. 결손률, 슬관절 기능검사 및 BESS의 변화
+Factor 12wks 16wks t p
+60°신근결손률 9±10.66 3.01±7.11 2.83 .02
+60°굴근결손률 -1.6±12.93 1.48±6.65 -.72 .488
+180°신근결손률 14.73±12.61 7.41±8.12 2.51 .033
+180°굴근결손률 5.52±7.91 0.61±11.79 1.29 .23
+슬관절기능검사 85.1±10.87 96±4.57 -3.64 .005
+BESS 10.4±6.64 4.8±3.85 3.79 .004
+Mean±SD
+
+--- PAGE 9 ---
+871 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+는ACL가대퇴골에대한경골의전방전위를억제하는
+정적안정화구조물이라면신전근은경골의전방전위
+를일으키는동적안정화구조물로,굴곡근은경골의후
+방전위를일으키는동적안정화구조물이기때문에서
+로상호보상작용한다.따라서스포츠상해후부터손상
+이지속된십자인대의보호를위해서굴곡근보다신전
+근에서의근위축이증가된결과로볼수있기때문이다.
+선행연구에서도ACL손상환자는슬관절의신전근인대
+퇴직근의지속적인약화를경험한다고하였다(Rice&
+McNair,2009).또한Konishietal.(2011)의연구에의하
+면환측의ACL손상은환측과건측모두의수의적인능
+력을감소시킨다고하였다.
+많은기능적인검사들이재활과치료과정에서평가
+의목적으로사용되어지고있다.국내의연구에서는사
+용도가높지는않지만Single과Triplehopfordistance
+는검사도구로서높은타당도와신뢰도를내재하고있
+다(Reid,Birmingham,Stratford,Alcock,＆Giffin,2007).
+Single과Triplehopfordistance와같은기능적인검사
+는환자의지각된슬관절의기능의평가(Almqvist,Wil-
+laert,DeBrabandere,Criel,&Verdonk,2009)와수술적
+이며치료적인결과와제한적인활동으로복귀여부에
+대한평가를돕는다(Clark,2001).본연구에서는환측
+과건측모두에서Singlehopfordistancesingle,Triple
+hopfordistance가증가하는것으로나타났다.이에대
+한선행연구들은장기간의수정된가속재활운동프로
+그램후에Single,Triplehopfordistance가증가하는것
+으로보고되었다(Karaseletal.,2010).직접적인운동에
+의한효과는아니지만Almqvistetal.(2009)의연구에서
+는10년간의추적조사에서도Singlehopfordistance가
+증가하는것으로나타났다.이는일상신체활동이슬관
+절에적절한부하를주어기능상에서긍정적인효과를
+가지고온것으로생각된다.또한건측과환측모두에서
+Single,Triplehopfordistance변인의유의한증가는재
+활운동시환측의기능향상에만주안점을둔것이아니
+라동시에건측의근력유지를위하여근력운동을병행
+하여실시한결과로볼수있다.Hoptest는신경근의기
+능,근력,근파워,조정력,협응성등의동적인슬관절의
+안정성을측정·평가할수있는방법이다.또한Hoptest
+는스피드,가속과감속,리바운드와같이스포츠에서일
+어날수있는동작으로구성되어다른검사보다도스포
+츠현장에서의유용성이높으리라생각된다.
+근기능결손률은건측대비환측비율을나타내는것
+으로이는스포츠현장으로의복귀기준의하나로사용
+되어지고있다(Zeevi,1995).Zeevi(1995)에의하면결
+손율차이가±10%이내를정상범위로,±20%이내일
+경우경기장으로복귀가가능하다고보고하였다.본연
+구에서는신전근에서의근력을표지하는60°/sec과근
+파워를표지하는180°/sec에대한결손률이감소하는
+것으로나타났다.신전근에서의변인의감소폭이커서
+유의차를나타내고있지만굴곡근에서도결손률에대한
+결과는경기장으로복귀가가능한것으로나타나고있
+다.신전근에비하여굴곡근위축의정도가경미해서굴
+곡근의결손율은통계적인의미를갖지못한것으로생
+각된다.
+ACL손상후발생되는장애는일상생활,레저활동,스
+포츠활동의수행력과관계가있으며기능적인검사로
+는전통적으로Lysholm,Cincinnati슬관절점수,기능적
+슬관절검사와같이타당도가입증된설문지방법을통
+하여측정되어진다(Papandreouetal.,2009).Hoptest
+와는다른기능적인측정방법이지만본연구에서는임
+상에서 광범위하게 사용되고 있는 슬관절 기능검사인
+Lysholmtest도측정하였다.본연구에서는환측에서기
+능적인운동후에16주차에서Lysholm점수가유의하게
+향상되는것을알수있었다.선행연구에서도운동방
+법에차이는있지만교차운동(Papandreouetal.,2009)
+과4개월간의닫힌사슬운동(Tagesson,Oberg,Good,
+&Kvist,2008)에서도Lysholm기능점수가증가하는것
+으로나타났다.신전근의등속성근력과근파워의증가,
+결손률의 감소가 전체적인 슬관절의 안정성의 향상에
+기여한것으로생각된다.
+
+--- PAGE 10 ---
+872 장 지 웅·김 성 수·김 태 수
+운동선수들의 균형을 평가하기 위해 사용되는 여
+러 방법들 중에는 BESS(Wilkins, McLeod, Perin, &
+Gansneder,2004),StarExcursionBalanceTest(Gribble,
+Hertel, Denegar, & Buckley, 2004), Romberg
+Test(Guskiewicz&Perin,1996)등의여러측정방법
+들이있다.그중에서BESS는신뢰성과타당성이높아
+운동선수들의균형감각을평가하기위해서많이사용
+되는방법이다(Fox,Mihalik,Blackburn,Battaglini,&
+Guskiewicz,2008;Valovichetal.,2003).본연구에서
+는 16주에서 점수가 유의하게 낮아지는 것을 볼 수 있
+다.BESS의점수체계에있어서벌점제가합산되어제시
+되기때문에점수가낮아지는것은결과적으로균형감
+각이향상되는것을의미한다.Olsen,Myklebust,Enge-
+bretsen,andBahr(2004)의연구에의하면핸드볼과축
+구등과같이ACL손상이높은종목에서는ACL손상을
+방지하지위하여균형감각,서있는동안의슬관절의조
+절,달리기,점프,착지등의트레이닝이필요하다고보
+고하였다.
+ACL치료에대한성공지표는고강도스포츠활동으
+로의복귀여부에달려있다(Kvist,2004).이는결과적으
+로축구선수에게있어서재활의과정중에제일중요하
+게생각하는문제는현장으로의복귀시점과이에대한
+기준일것이라생각된다.일반적으로복귀시점을이야
+기할때건환측결손률차이가10%이내,Singlelegged
+hoptest는건환측차이가85%이상,Lysholmscore는
+90점이상의기준에일치하여야한다.또한선행연구에
+따르면스포츠현장으로의복귀기준은완전한가동범
+위의회복,건측대비대퇴사두근및슬근의비율이85%
+이상일 경우, 또한 통증이나 부종의 증가 없이 점진적
+으로스포츠활동이가능할때이다(Cascioet.al.,2005;
+Gale&Richmond,2006;Risberget.al.,2001;Shaw,
+Chipchase,&Williams,2004).
+본 연구에서 사용된 기능적인 재활운동 프로그램은
+위의기준에충족된다고생각된다.따라서본연구결과
+는ACLR후여성축구선수들에게적합한재활운동프
+로그램을제시할수있으리라생각된다.또한청소년을
+비롯한성인여성들이스포츠활동시에경험할수있는
+ACL손상을예방할수있는프로그램으로도활용될수
+있으리라생각된다.
+Ⅴ.결론및제언
+본연구는16주간의기능적인재활운동프로그램이
+ACLR후여성축구선수의슬관절기능회복에어떠한영
+향을미치는지규명하고자수행하였다.연구대상은여
+성축구선수10명을대상으로하였다.재활운동은일일
+3-4시간,주5일,16주간프로그램으로구성되었다.결
+론은다음과같다.
+첫째,16주간의재활운동을통하여근력을표지하는
+60°/sec과근파워를표지하는180°/sec의대다수의변
+인에서유의한증가를가져왔다.
+둘째,16주간의재활운동을통하여환측과건측모두
+에서Singlehopfordistancesingle,triplehopfordis-
+tance가증가하는것으로나타났다.
+셋째,16주간의재활운동을통하여60°신근결손률,
+180°신근결손률,및BESS에서유의하게감소한반면에
+슬관절기능검사에서는유의하게증가하였다.
+이상의결과들을종합하여볼때,본연구에서수행된
+16주간의기능적인재활운동프로그램은ACLR후여성
+축구선수들의기능적인회복에긍정적인효과가있는
+것으로밝혀졌다.따라서ACLR후여성축구선수들의
+슬관절기능회복을위한매우적합한운동재활프로그
+램으로생각된다.
+● 참 고 문 헌 ●
+김태수,장지웅,최주혁.(2010).8주간재활운동이슬개대퇴동
+통증후군이있는여성축구선수의슬관절등성성기능및기
+능점수에미치는영향.한국사회체육학회지,42,1117-1126.
+
+--- PAGE 11 ---
+873 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+이인식,임재영,김유수,정선근,한태륜,김태균.(2005).ACL재
+건술 후 가속 재활 효과의 평가를 위한 새로운 등속성 지표.
+대한스포츠의학회지,23(2),251-256.
+이은애,변재척.(2006).ACL재건술후가속화재활운동프로
+그램의효과.발육발달,14(1),61-69.
+장지웅,정석률,이성기.(2008).ACL재건술후16주간의가속
+재활운동프로그램이엘리트선수들의슬관절근기능및기능
+점수에미치는영향.사회체육학회지,34,925-934.
+조종현, 박원하. (1999). ACL 재건술 후 슬관절 등속성 변인의
+특성,대한스포츠의학회지,17(1),176-187.
+진행미,정현.(2006).ACL재건술후초기재활운동프로그램이슬
+관절근기능에미치는영향.한국여성체육학회,20(2),55-66.
+Ageberg,E.,Roos,H.P.,Silbernagel,K.G.,Thomee,R.,&Roos,
+E.M.(2009).Kneeextensionandflexionmusclepowerafter
+anteriorcruciateligamentreconstructionwithpatellartendon
+graftorhamstringtendonsgraft:across-sectionalcomparison
+3yearspostsurgery.Knee Surg Sports TraumatolArthrosc.,
+17(2),162-169.
+Alentorn-Geli,E.,Myer,G.D.,Silvers,H.J.,Samitier,G.,Rome-
+ro.D,,Lázaro-Haro,C.,&Cugat,R.(2009a).Preventionof
+non-contactanteriorcruciateligamentinjuriesinsoccerplay-
+ers.Part1:Mechanismsofinjuryandunderlyingriskfactors.
+Knee Surg Sports TraumatolArthrosc., 17(7),705-729.
+Alentorn-Geli,E.,Myer,G.D.,Silvers,H.J.,Samitier,G.,Rome-
+ro.D,,Lázaro-Haro,C.,&Cugat,R.(2009b).Preventionof
+non-contactanteriorcruciateligamentinjuriesinsoccerplay-
+ers.Part2:areviewofpreventionprogramsaimedtomodify
+risk factors and to reduce injury rates. Knee Surg Sports
+TraumatolArthrosc., 17(8),859-879.
+Almqvist, K. F.,Willaert, P., De Brabandere, S., Criel, K., &
+Verdonk,R.(2009).Along-termstudyofanteriorcruciateliga-
+mentallograftreconstruction.Knee Surg Sports Traumatol
+Arthrosc., 17(7),818-822.
+ArendtE.,&Dick,R.(1995).Kneeinjurypatternsamongmen
+andwomenincollegiatebasketballandsoccer.NCAAdata
+andreviewofliterature.Am J Sports Med., 23,694–701.
+Beynnon,B.,Johnson,R.,Abate,J.,Flemming,B.&Nichols,
+C.(2005).Treatmentofanteriorcruciateligamentinjuries,Part
+2.Am J Sports Med., 33,1751-1767.
+Broglio,S.P.,Monk,A.,Sopiarz,K.,&Cooper,E.R.(2009).
+Theinfluenceofanklesupportonposturalcontrol.J Sci Med
+Sport., 12(3),388-392..
+Cascio,B.,Culp,L.&Cosgarea,A.(2005).Returntoplayafter
+anteriorcruciateligamentreconstruction.Clim Sports Med.,
+23,395-408.
+Chandrashekar,N.,Slauterbeck,J.,&Hashemi,J.(2005).Sex-
+baseddifferencesintheanthropometriccharacteristicsofthe
+anterior cruciate ligament and its relation to intercondylar
+notchgeometry.Am J Sports Med., 33,1492–1498.
+Clark,N.C.(2001).Functionalperformancetestingfollowing
+kneeligamentinjury.Phys Ther Sport., 2,91-105.
+Cooper,R.L.,Taylor,N.F.,&Feller,J.A.(2005).Arandomised
+controlledtrialofproprioceptiveandbalancetrainingaftersur-
+gicalreconstructionoftheanteriorcruciateligament.Research
+in Sports Medicine., 13,217-230.
+DeCarlo,M.S.,&Sell,K.E.(1997).Theeffectsofthenumber
+andfrequencyofphysicaltherapytreatmentonselectedout-
+comesoftreatmentinpatientswithanteriorcruciateligament
+reconstruction.J Orthop Sports Phys Ther., 26,332-339.
+Dye,S.F.,Wojtys,E.M.,Fu,F.H.,Fithian,D.C.,&Gillquist,I.
+(1998).Factorscontributingtofunctionofthekneejointafter
+injury or reconstruction of the anterior cruciate ligament.J
+Bone Joint Surg [Am]., 80A,1380-1393.
+Fe´de´ration Internationale de FootballAssociation(FIFA)
+(2008). Web page:http://www.fifa.com/mm/document/fif
+afacts/bcoffsurv/bigcount.statspackage_7024.pdf.
+Fitzgerald,G.K.,Lephard,S.M.,HwangJ.H.&WainnerM.
+R.(2001).Hoptestsaspredictorsofdynamickneestability.J
+Orthop Sports Phys Ther., 31(10),588-597.
+Fleming,B.C.,Oksendahl,H.,&Beynnon,B.D.(2005).Open-
+orclosed-kineticchainexercisesafteranteriorcruciateliga-
+mentreconstruction?Exerc Sport Sci Rev., 33(3),134-140.
+Fox, Z. G., Mihalik, J. P., Blackburn, J. T., Battaglini, C. L.,
+& Guskiewicz, K. M. (2008). Return of postural control to
+baselineafteranaerobicandaerobicexerciseprotocol.J Athl
+Training., 43(5),456-463.
+Gale,T.,&Richmond,J.(2006).Bonepatellartendonboneanterior
+cruciateligamentreconstruction.Tech Knee Surg., 5,72-79.
+Gerber,J.P.,Marcus,R.L.,Dibble,L.E.,Greis,P.E.,Burks,R.
+T.,&LaStayo,P.C.(2009).Effectsofearlyprogressiveeccen-
+tricexerciseonmusclesizeandfunctionafteranteriorcruciate
+ligamentreconstruction:a1-yearfollow-upstudyofarandom-
+izedclinicaltrial.Hys Ther., 89(1),51-59.
+Gribble,P.A.,Hertel,J.,Denegar,C.R.,&Buckley,W.E.(2004).
+Theeffectsoffatigueandchronicankleinstabilityondynamic
+posturalcontrol.JAthl Training., 39(4),321-329.
+Griffin,L.Y.,Albohm,M.J.,Arendt,E.A.,Bahr,R.,Beynnon,B.
+D.,DeMaio,M.,Dick,R.W.,Engebretsen,L.,Garrett,W.E.,
+
+--- PAGE 12 ---
+874 장 지 웅·김 성 수·김 태 수
+Hannafin,J.A.,Hewett,T.E.,&Huston,L.J.(2006).Under-
+standingandpreventingnoncontactanteriorcruciateligament
+injuries.AreviewoftheHuntValleyIIMeeting,Am J Sports
+Med., 34,1512–1532.
+Guskiewicz,K.M.,&Perrin,D.H.(1996).Researchandclinical
+applicationsofassessingbalance.JSportRehabil.,5,45-63.
+Isberg,J.,Faxén,E.,Brandsson,S.,Eriksson,B.I.,Kärrholm,J.,
+&Karlsson,J.(2006).Earlyactiveextensionafteranteriorcru-
+ciateligamentreconstructiondoesnotresultinincreasedlaxity
+oftheknee.KneeSurgSportsTraumatolArthrosc.,14(11),
+1108-1115.
+Junge,A,.&Dvorak,J.(2004).Soccerinjuries:areviewoninci-
+denceandprevention.SportsMed.,34(13),929-938.
+Karasel,S.,Akpinar,B.,Gulbahar,S.,Baydar,M.,El,O.,Pinar,
+H.,Tatari,H.,Karaolan,O.,&Akalin,E.(2010).Clinicaland
+functionaloutcomesandproprioceptionafteramodifiedac-
+celeratedrehabilitationprogramfollowinganteriorcruciate
+ligamentreconstructionwithpatellartendonautograft.Acta
+OrthopTraumatolTurc.,44(3),220-228.
+Konishi,Y.,Oda,T.,Tsukazaki,S.,Kinugasa,R.,&Fukubayashi,
+T.(2011).Relationshipbetweenquadricepsfemorismuscle
+volumeandmuscletorqueatleast18monthsafteranteriorcru-
+ciateligamentreconstruction.ScandJMedSciSports.
+Kvist,J.(2004).Rehabilitationfollowinganteriorcruciateliga-
+mentinjury:currentrecommendationsforsportsparticipation.
+SportsMed.,34(4),269-280.
+Liu-Ambrose,T.,Taunton,J.,MacIntyre,D.,McConkey,P.,&
+Khan, K. (2003).The effects of proprioception or strength
+trainingontheneuromuscularfunctionoftheACLreconstruct-
+edknee,arandomizedclinicaltrial.ScandJMedSciSports.,
+13,115-123.
+Lysholm,J.,&Gillquist,J.(1982).Evaluationofkneeligament
+surgeryresultswithspecialemphasisonuseofascoringscale,
+AmJSportMed.,10,150-154.
+Murphy,D.F.,Connolly,D.A.,&Beynnon,B.D.(2003)Risk
+factorsforlowerextremityinjury:areviewoftheliterature.Br
+JSportsMed.,37,13–29.
+Murray, I. R., Murray, S.A., MacKenzie, K., & Coleman, S.
+(2005).Howevidencebasedisthemanagementoftwocom-
+monsportsinjuriesinasportsinjuryclinic?,BrJSportsMed.,
+39.912-916.
+Noyes,F.R.,Barber,S.D.,&Magine,R.E.(1991).Abnormal
+lowerlimbsymmetrydeterminedbyfunctionhoptestsafter
+anterior cruciate ligament rupture. Am J Sport Med., 19(5),
+513-518.
+Olsen,O.E.,Myklebust,G.,Engebretsen,L.,&Bahr,R.(2004).
+Injurymechanismsforanteriorcruciateligamentinjuriesin
+teamhandball:asystematicvideoanalysis.AmJSportsMed.,
+32(4),1002-1012.
+Papandreou,M.G.,Billis,E.V.,Antonogiannakis,E.M.,&Pa-
+paioannou,N.A.(2009).Effectofcrossexerciseonquadriceps
+acceleration reaction time and subjective scores (Lysholm
+questionnaire)followinganteriorcruciateligamentreconstruc-
+tion.JOrthopSurgRes.,4,2-11.
+Perrin,D.H.(1993).Isokineticexerciseandassessment.Cham-
+paign.IL:NY:HumanKineticPublisher.
+Potter,N.(2006).Complicationsandtreatmentduringrehabilita-
+tionafteranteriorcruciateligamentreconstruction.OperTech
+sportsMed.,14,50-58.
+Reid,A.,Birmingham,T.B.,Stratford,P.W.,Alcock.G.K.,&
+Giffin,J.R.(2007).Hoptestingprovidesareliableandvalid
+outcomemeasureduringrehabilitationafteranteriorcruciate
+ligamentreconstruction.PhysTher.,87(3),337-349.
+Rice,D.A.,&McNair,P.J.(2009).Quadricepsarthrogenicmus-
+cleinhibition:neuralmechanismsandtreatmentperspectives.
+SeminArthritisRheum.,40,250–266.
+Risberg, M.A., Holm, I., Myklebust, G., & Engebretsen, L.
+(2007).Neuromusculartrainingversusstrengthtrainingduring
+first6monthsafteranteriorcruciateligamentreconstruction:a
+randomizedclinicaltrial.PhysTher.,87(6),737-750.
+Risberg,M.,Mork,M.,Jenssen,H.,&Holm,I.(2001).Design
+and implementation of a neuromuscular training program
+followinganteriorcruciateligamentreconstruction.JOrthop
+sportsPhysTher.,31,620-631.
+Ross,M.,Denegar,C.,&Winzenried,J.(2001).Implementation
+of open and closed kinetic chain quadriceps strengthening
+exercises after anterior cruciate ligament reconstruction. J
+StrengthCondRes.,15,466-473.
+Shaw,T.,Chipchase,L.,&Williams,L.(2004).Ausersguideto
+outcomemeasurementfollowingreconstruction.PhysTher
+Sport.,5,57-67.
+Shaw,T.,Williams,M.,&Chipchase,L.(2005).Doearlyquad-
+ricepsexercisesaffecttheoutcomeofACLreconstruction?A
+randomisedcontrolledtrial.AustJPhysiother.,51,9-17.
+Shelbourne, K., & Patel, D. (1999).Treatment of limited mo-
+tionafteranteriorcruciateligamentreconstruction.KneeSurg
+SportsTraumatolArthosc.,51,9-17.
+Simões,L.A.,Dias,J.M.,Marinho,K.C.,Pinto,C.L.,&Britto,
+
+--- PAGE 13 ---
+875 전방십자인대 재건술 후 16 주간의 기능적인 재활운동 프로그램이 여성 축구선수의 슬관절 기능 회복에 미치는 영향
+R. R. (2010). Relationship between functional capacity as-
+sessedbywalkingtestandrespiratoryandlowerlimbmuscle
+functionincommunity-dwellingelders. RevBrasFisioter.,
+14(1),24-30.
+Tagesson,S.,Oberg,B.,Good,L.,&Kvist,J.(2008).Acompre-
+hensiverehabilitationprogramwithquadricepsstrengthening
+inclosedversusopenkineticchainexerciseinpatientswith
+anteriorcruciateligamentdeficiency:arandomizedclinical
+trialevaluatingdynamictibialtranslationandmusclefunction.
+AmJSportsMed.,36(2),298-307.
+Tamerah,N.H.,Michael,S.F.,Robert,A.B.,&Ted,A.B.(2009).
+Thereliabilityofthemodifiedbalanceerrorscoringsystem.
+ClinJSportMed.,19(6),471-475.
+Tanaka,Y.,Yonetani,Y., Shiozaki,Y., Kitaguchi,T., Sato, N.,
+Takeshita,S.,&Horibe,S.(2010).Retearofanteriorcruci-
+ateligamentgraftsinfemalebasketballplayers:acaseseries.
+SportsMedArthroscRehabilTherTechnol.,9,2-7.
+Trulsson,A.,Roos,E.M.,Ageberg,E.,&Garwicz,M.(2010).
+Relationshipsbetweenposturalorientationandselfreported
+function,hopperformanceandmusclepowerinsubjectswith
+anteriorcruciateligamentinjury.BMCMusculoskeletDisord.,
+11,143-152.
+Valovich,T.C.,Perrin,D.H.,&Gansneder,B.M.(2003).Repeat
+administrationelicitsapracticeeffectwiththebalanceerror
+scoringsystembutnotwiththestandardizedassessmentof
+concussioninhighschoolathletes.JAthlTraining.,38,51-56.
+Wilk,K.E.,Reinold,M.M.,&Hooks,T.R.(2003).Recentad-
+vancesintherehabilitationofisolatedandcombinedanterior
+cruciateligamentinjuries.OrthopClinNorthAm.,34,107-137.
+Wilkins,J.C.,McLeodT.C.V.,Perin,D.H.,&Gansneder,B.
+M.(2004).Performanceonthebalanceerrorscoringsystem
+decreasesafterfatigue.JAthlTraining,39(2),165-161.
+Zeevi,D.(1995).Isokinetics;MuscleTesting,Interpretationand
+ClinicalApplications.PHL:ChurchillLivingstone.
+
+--- PAGE 14 ---
+876 장 지 웅·김 성 수·김 태 수
+ABSTRACT
+Effect of 16 Weeks Functional Rehabilitation Exercise on Knee Function Recovery
+in Women’s Soccer Player after Anterior Cruciate Ligament Reconstruction
+Jang, Ji-Woong·Kim, Sung-Soo·Kim, Tae-Soo
+Anterior cruciate ligament reconstruction(ACLR) is a common sports injury, especially in active young fe-
+males as well as women’s soccer player and purpose of ACLR functional rehabilitation exercise program was
+to recovery a function on knee joint. The purpose of this study was to examine functional capacity of patient
+who have had a ACLR and to investigate effect of a 16 wks functional rehabilitation exercise program on knee
+function recovery. Ten university women’s soccer player after ACLR(n=10) were recruited for this study. 16
+wks rehabilitation exercise program consisted of 3-4 hrs, 5 times a week. For data analysis, the mean and
+standard deviation were estimated; independent-samples t-test and depependent-sample t-test carried out.
+Theresultsofthepresentstudywereasfollows:
+First, in 60°/sec and 180°/sec, there was significant change isokinetic related factors of the involved knee
+extensoronuniversitywomen’ssoccerplayerafterACLRon16wkstimepoint.
+Second, Single and triple hop for distance after functional rehabilitation exercise increased significantly on
+involvedlegat16wkstimepoint.
+Third, Deficit ratio at extensor at 60°, 180° and BESS decreased significantly whereas Lysholm score in-
+creasedsignificantlyoninvolvedlegat16wkstimepoint.
+It would be concluded that 16 wks functional rehabilitation exercise program elicited many positive changes
+in the women’s soccer player after ACLR such as improvement of knee function. and It was concluded that an
+rehabilitationexerciseprogramnecessaryforthepatientsafterACLRespeciallyyoungwomen’ssoccerplayer.
+KeyWords：anteriorcruciateligamentreconstruction,functionalrehabilitationexerciseprogram,knee
+functionrecovery
+접 수 일 : 2011.5.31
+게재확정일 : 2011.8.8
+
+--- PAGE 15 ---

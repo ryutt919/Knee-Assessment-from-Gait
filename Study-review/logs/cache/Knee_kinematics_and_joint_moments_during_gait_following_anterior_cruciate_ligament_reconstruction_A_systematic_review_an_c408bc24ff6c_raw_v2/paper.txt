@@ -1,0 +1,1779 @@
+
+--- PAGE 1 ---
+Knee kinematics and joint moments during gait
+following anterior cruciate ligament reconstruction:
+a systematic review and meta-analysis
+Harvi F Hart,1,2
+Adam G Culvenor,3
+Natalie J Collins,1,3
+David C Ackland,1
+Sallie M Cowan,2,4
+Zuzana Machotka,5
+Kay M Crossley3,6
+▸ Additional material is
+published online only. To view
+please visit the journal online
+(http://dx.doi.org/10.1136/
+bjsports-2015-094797).
+1
+Melbourne School of
+Engineering, The University of
+Melbourne, Parkville, Victoria,
+Australia
+2
+Melbourne School of
+Physiotherapy, The University
+of Melbourne, Parkville,
+Victoria, Australia
+3
+School of Health &
+Rehabilitation Sciences,
+The University of Queensland,
+Brisbane, Queensland,
+Australia
+4
+Physiotherapy Department,
+St Vincent’s Hospital,
+Melbourne, Victoria, Australia
+5
+International Centre for Allied
+Health Evidence, University of
+South Australia, Adelaide,
+Australia
+6
+School of Allied Health,
+La Trobe University,
+Melbourne, Victoria, Australia
+Correspondence to
+Professor Kay M Crossley,
+School of Allied Health,
+La Trobe University, Victoria
+3086 Australia;
+k.crossley@latrobe.edu.au
+Accepted 21 July 2015
+To cite: Hart HF,
+Culvenor AG, Collins NJ,
+et al. Br J Sports Med
+Published Online First:
+[please include Day Month
+Year] doi:10.1136/bjsports-
+2015-094797
+ABSTRACT
+Background Abnormal gait after anterior cruciate
+ligament reconstruction (ACLR) may contribute to
+development and/or progression of knee osteoarthritis.
+Objective To conduct a systematic review and meta-
+analysis of knee kinematics and joint moments during
+walking after ACLR.
+Methods We searched seven electronic databases and
+reference lists of relevant papers, for cross-sectional,
+human-based observational studies comparing knee joint
+kinematics and moments during level walking in
+individuals with ACLR, with the uninjured contralateral
+knee or healthy individuals as a control. Two
+independent reviewers appraised methodological quality
+(modiﬁed Downs and Black scale). Where possible, data
+were pooled by time post-ACLR (RevMan), otherwise
+narrative synthesis was undertaken.
+Results Thirty-four studies were included. Meta-
+analysis revealed signiﬁcant sagittal plane deﬁcits in
+ACLR knees. We found greater knee ﬂexion angles
+(standardised mean difference: 1.06; 95% CI 0.39 to
+1.74) and joint moments (1.61; 0.87 to 2.35)
+<6 months post-ACLR, compared to healthy controls.
+However, lower peak knee ﬂexion angles were identiﬁed
+1–3 years (−2.21; −3.16 to −1.26) and ≥3 years post-
+ACLR (−1.38, −2.14 to −0.62), and lower knee ﬂexion
+moment 6–12 months post-ACLR (−0.76; −1.40 to
+−0.12). Pooled data provided strong evidence of no
+difference in peak knee adduction moment >3 years
+after ACLR (vs healthy controls) (0.09; −0.63 to 0.81).
+No transverse plane conclusions could be drawn.
+Conclusions Sagittal plane biomechanics, rather than
+the knee adduction moment, appear to be more relevant
+post-ACLR. Better understanding of sagittal plane
+biomechanics is necessary for optimal post-operative
+recovery, and to potentially prevent early onset and
+progression of knee OA after ACLR.
+Trial registration number PROSPERO systematic
+review protocol registration number CRD4201400882 2.
+INTRODUCTION
+Post-traumatic knee osteoarthritis (OA) has been
+reported in over 50% of individuals within 10–20
+years after anterior cruciate ligament reconstruction
+(ACLR).1
+Multiple factors contribute to initiation
+of post-traumatic knee OA, including intra-articular
+pathogenic processes initiated at the time of injury,
+as well as mechanical factors. It is thought that
+abnormal knee kinematics after ACLR contribute
+to the initiation of degenerative processes, due to
+changes in cartilage loading.2–4
+Since not all indivi-
+duals develop knee OA after ACLR; it is important
+to understand whether variations in mechanical
+factors may be a risk factor in those individuals
+who develop knee OA after ACLR.
+To date, studies investigating gait characteristics
+following ACLR provide inconsistent results regard-
+ing knee kinematics and joint moments. This may
+reﬂect between-study variability in patient popula-
+tion characteristics (eg, graft type, sex, time
+post-ACLR), comparator (healthy controls vs
+contralateral knees), data acquisition and process-
+ing, variables of interest (eg, mean or peak values,
+range of motion) and data presentation (eg, normal-
+isation). Thus, the need to synthesise comparable
+knee kinematics and joint moment data is evident.
+Identifying potentially modiﬁable gait character-
+istics in ACLR knees may facilitate the development
+of speciﬁc interventions to prevent early onset and
+progression of post-traumatic knee OA.
+Three systematic reviews have explored gait pat-
+terns in individuals who had undergone ACLR.5–7
+Shi et al,5
+conducted meta-analyses on knee sagittal
+plane kinematics and moments and transverse
+plane kinematics during level walking, while, Hart
+et al,6
+and Gokeler et al,7
+qualitatively reported
+knee kinematics and moments without conducting
+meta-analyses. Collectively, these reviews reported
+the presence of gait alterations in the sagittal,
+frontal and transverse planes after ACLR. However,
+since two of these reviews did not conduct
+meta-analyses,6 7
+and additional studies have been
+published since the last meta-analysis was published
+in 2010,5
+an updated systematic review with
+meta-analysis on knee kinematics and joint
+moments associated with ACLR is warranted.
+Altered biomechanics are often reported in indivi-
+duals with ACLR knees during high-demand activ-
+ities such as hopping and vertical jump.8 9
+However,
+these activities are often limited to individuals return-
+ing to sport. Level walking is a task that all indivi-
+duals participate in, and is frequently investigated in
+non-traumatic knee OA populations. Therefore, it is
+important to identify knee kinematics and moments
+during level walking after ACLR to understand its
+potential implications for post-traumatic knee OA.
+The aim of this systematic review and meta-analysis
+was to determine knee kinematics and joint moments
+in the sagittal, frontal and transverse planes during
+walking in ACLR knees, compared to healthy con-
+trols and unaffected contralateral knees.
+METHODS
+The study protocol was developed in consultation
+with guidelines provided by the PRISMA (Preferred
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 1
+Review
+BJSM Online First, published on August 11, 2015 as 10.1136/bjsports-2015-094797
+Copyright Article author (or their employer) 2015. Produced by BMJ Publishing Group Ltd under licence.
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 2 ---
+Reporting Items for Systematic Reviews and Meta-Analyses)
+statement.10
+The protocol was prospectively registered on the
+PROSPERO International register for systematic reviews (http://
+www.crd.york.ac.uk/PROSPERO) (CRD4201400882 2).
+Literature search strategy
+Using guidelines provided by the Cochrane Collaboration, a com-
+prehensive search strategy was devised from the following elec-
+tronic databases with no date restrictions: (i) MEDLINE via
+OVID; (ii) EMBASE via OVID; (iii) CINAHL via EBSCO; (iv)
+Scopus; (v) Web of Science; and (vi) SPORTDiscus. The
+MEDLINE search strategy was adapted for the other databases
+(see online supplementary material A). Keywords included
+‘anterior cruciate ligament’, ‘ACL’, ‘ACL (surg* or reconstruct*),
+‘biomechanic’, ‘moment’, ‘angle*’, ‘torque’, ‘rotation’, ‘kinetic*’,
+‘kinematic*’, ‘joint load’. The search was limited to English lan-
+guage and full-text articles. Two teams of two investigators (total
+of 4: HFH and DCA; AGC and SMC) reviewed all titles returned
+by the database searches, and retrieved suitable abstracts. Where
+abstracts suggested that papers were potentially suitable, the full-
+text versions were retrieved and included in the review if they
+were found to fulﬁl the selection criteria. Reference lists of all
+publications considered for inclusion were hand-searched recur-
+sively until no additional eligible publications were identiﬁed.
+Selection criteria
+Selection criteria were as follows: cross-sectional (ie, compares
+different population groups at deﬁned point), human observa-
+tional studies comparing level walking knee joint biomechanics
+of individuals with ACLR, with either the uninjured contralat-
+eral knee or healthy controls as a comparator. No restriction
+was placed on type of graft, sex, age, time since surgery or
+recruitment method. For studies investigating effects of inter-
+ventions such as knee bracing on knee joint biomechanics, base-
+line data were included. Studies permitting participants to walk
+with walking aids were excluded.
+Assessment of methodological quality and risk of bias
+The methodological quality of included studies was rated
+using a modiﬁed version of the Downs and Black checklist.11
+The modiﬁed version had a maximum score of 15 (see online
+supplementary material B), where a total score of ≥12 indicates
+high methodological quality, a score of 10 or 11 indicates mod-
+erate quality, and a score ≤9 indicates low quality.12
+Two inde-
+pendent reviewers (AGC and ZM), who remained blind to
+authors, afﬁliations, and the publishing journal, rated each study
+on the 15 item criteria. Any inter-rater disagreement was dis-
+cussed in a consensus meeting, and unresolved items were taken
+to a third reviewer (NJC) for consensus.
+Data management and statistical analysis
+Data pertaining to study characteristics (eg, graft type, time
+since surgery), knee kinematics and joint moments (described as
+external moments) were independently extracted and entered
+into an Excel spreadsheet. If sufﬁcient data were not reported
+in the published article or supplementary material provided,
+the corresponding author was contacted to request further data.
+Data were analysed based on time post-ACLR: (1) less than
+6 months (6 months); (2) 6 months to less than 12 months
+(6–12 months); (3) 12 months to less 3 years (1–3 years); and
+(4) 3 years and over (≥3 years). Methodological heterogeneity
+was evaluated for all outcome measures (eg, peak knee ﬂexion
+angle, peak knee ﬂexion moment, peak knee adduction angle,
+peak knee adduction moment, peak knee internal rotation
+angle, peak knee internal rotation moment) and data were
+pooled for meta-analysis (Review Manager V .5.3) where pos-
+sible. Moment data are expressed as external, unless otherwise
+stated. Standardised mean differences (SMD) with 95% CI
+were calculated for variables of interest and random effects
+models were used for each meta-analysis. The magnitude of the
+pooled SMD was interpreted based on Cohen’s criteria, where
+SMD ≥0.8 indicated larger effect, moderate if >0.5 and <0.8,
+and weak if 0.2–0.5.13
+Where possible, sensitivity analyses were
+Figure 1 Flow chart of the study selection process.
+2 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 3 ---
+Table 1 Details of included studies
+Author, year ACLR cohort Graft type*
+Time
+post-ACLR Comparator cohort
+Bacchini et al,
+200957
+n=8, male/female 8/0, age 28 (21–33) Y n=8 bone patellar tendon bone autograft 6 (5–7) M Contralateral knee
+Bulgheroni et al,
+199758
+n=15, male/female 15/0, age 25±3 Y n=15 bone patellar tendon bone autograft 17±5 M n=5, male/female 5/0, age 28
+±3 Y
+Bush-Joseph
+et al, 200133
+n=22, male/female 13/9, age 27±11 Y n=22 patellar tendon graft 22±12 M n=22, male/female 13/9, age
+29±8 Y
+Butler et al,
+200939
+n=17, male/female 4/13, age 24±6 Y, BMI 24±3 kg/
+m−2
+– 5±4 Y n=17, male/female 4/13, age
+23±6 Y, BMI 23±2 kg/m−2
+Decker et al,
+200421
+Group 1 (ACLR): n=8, age 26±7 Y, height 1.8
+±0.1 m, weight 75±8 kg
+Group 2 (ACLR): n=8, age 30±7 Y, height 1.7
+±0.1 m, weight 76±15 kg
+n=8 patellar tendon graft 6 W n=8, age 28±4 Y, height 1.70
+±0.10 m, weight 72±11 kg
+Devita et al,
+199722
+n=9, male/female 6/3, age 22 Y n=9 patellar tendon graft 3 W, 5 W n=10, male/female 5/5, age 21
+Y
+Devita et al,
+199859
+n=8, male/female 5/3, age 21 Y, weight 74 kg n=8 patellar tendon graft 3 W, 6 M n=22, male/female 14/8, age
+22 Y, weight 74 kg
+Di Stasi et al,
+201324
+Group 1 (RTS-Fail): n=22, male/female 14/8, age 31
+±12 Y
+Group 2 (RTS-Pass): n=20, male/female 16/4, age
+25±10 Y
+n=44 soft tissue allograft or semitendinosus/
+gracilis autograft
+6 M Contralateral knee
+Ferber et al,
+200215
+n=10, male/female 5/5, age 28±9 Y, height 1.7
+±0.2 m, weight 79±14 kg
+n=10 patellar tendon graft 3 M n=10, male/female 5/5, age 24
+±3 Y, height 1.7±0.1 m,
+weight 67±11 kg
+Ferber et al
+200316
+n=10, male/female 5/5, age 28±9 Y, height 1.7
+±0.2 m, weight 79±14 kg
+n=10 patellar tendon graft 3 M n=10, male/female 5/5, age 25
+±3 Y, height 1.7±0.1 m,
+weight 77±11 kg
+Ferber et al,
+200429
+n=10, male/female 5/5, age 28±9 Y, height 1.7
+±0.2 m, weight 79±14 kg
+n=10 patellar tendon graft 6±5 Y n=10, male/female 5/5, age 24
+±3 Y, height 1.7±0.1 m,
+weight 67±11 kg
+Gao et al, and
+Zheng 201019
+n=14, male/female 12/2, age 25±6 Y, height 1.8
+±0.1 m, weight 83±15 kg
+n=7 hamstring tendon graft, 5 patellar
+tendon graft, 2 Achilles tendon graft
+12 M n=15, male/female 12/3, age
+23±3 Y, height 1.8±0.1 m,
+weight 77±16 kg
+Georgoulis et al,
+200317
+n=21, male/female 19/2, age 25±4 Y, height 1.7
+±0.1 m, weight 69±8 kg
+n=21 patellar tendon graft 30±17 W n=10, male/female 8/2, age 25
+±4 Y, height 1.7±0.1 m,
+weight 62±12 kg
+Hall et al,
+201234
+n=15, male/female 7/8, age 26±4 Y, height 1.7
+±0.1 m, weight 75±15 kg
+n=6 hamstring tendon graft, 6 patellar
+tendon graft, 2 combined cadaver and
+hamstring tendon graft, 1 cadaver graft
+6 (2–18) Y n=17, male/female 7/10, age
+26±4 Y, height 1.7±0.1 m,
+weight 68±12 kg
+Hooper et al,
+200235
+Group 1 (6 M post-ACLR): n=8, male/female 5/3,
+age 33±11 Y, height 1.7±0.1 m, weight 77±15 kg
+Group 2 (12 M post-ACLR): n=9, male/female 4/5,
+age 34±11 Y, height 1.7±0.1 m, weight 77±16 kg
+Group 1: n=8 patellar tendon graftGroup 2:
+n=9 patellar tendon graft
+Group 1: 6±1
+M
+Group 2: 12±1
+M
+Contralateral knee
+Hunt et al,
+201060
+n=12, male/female 5/7, age 21±5 Y, height 1.7
+±0.1 m, weight 70±15 kg
+n=12 hamstring tendon autograft 31±12 D Contralateral knee
+Karimi et al,
+201330
+n=15, age 33±3 Y, height 1.8±0.1 m n=15 hamstring or peroneus longus tendon
+graft
+6 M n=15, age 32±3 Y, height 1.7
+±0.1 m
+Noehren et al,
+201323
+n=20, male/female 0/20, age 25±6 Y, height 1.6
+±0.1 m, weight 64±8 kg
+n=8 hamstring tendon graft, 7 patellar
+tendon graft, 5 autograft
+5±3 Y n=20, male/female 0/20, age
+26±5 Y, height 1.6±0.1 m,
+weight 61±5 kg
+Patterson et al,
+2014a40
+n=14 (17 limbs), male/female 0/14, age 24±3 Y,
+height 1.6±0.1 m, weight 65±9 kg, BMI
+24±2 kg/m−2
+n=8 hamstring tendon graft, 9 patellar
+tendon graft
+4±3 Y n=17, male/female 0/17, age
+21±1 Y, height 1.7±0.1 m,
+weight 65±7 kg, BMI
+24±1 kg/m−2
+Patterson et al,
+201420
+n=14 (17 limbs), male/female 0/14, age 24±3 Y,
+height 1.6±0.1 m, weight 65±9 kg
+n=8 hamstring tendon graft, 9 patellar
+tendon graft
+4±3 Y n=17, M/F 0/17, age 21±1 Y,
+height 1.7±0.1 m, weight 65
+±7 kg
+Roewer et al,
+201126
+n=26, male/female 18/8, age 30±11 Y, height 1.8
+±0.1 m, weight 90±18 kg
+n=26 semitendinosus-gracilis autograft or
+soft-tissue allograft
+6 M, 2 Y Contralateral knee
+Sanford et al,
+201241
+n=10, male/female 4/6, age 28±7 Y, height 1.7
+±0.1 m, weight 78±20 kg
+n=1 hamstring tendon graft, 9 patellar
+tendon graft
+7±6 Y n=12, male/female 6/6, age 25
+±4 Y, height 1.7±0.1 m,
+weight 69±14 kg
+Sato et al,
+201343
+n=7, male/female 3/4, age 21±5 Y n=7 hamstring tendon graft 14±2 M Contralateral knee
+Scanlan et al,
+201028
+n=26, male/female 11/15, age 31 Y, height 1.7 m,
+weight 68 kg
+n=12 Achilles tendon, patellar tendon,
+soft-tissue allograft, 14 hamstring tendon or
+patellar autograft
+24 (7–65) M Contralateral knee
+Continued
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 3
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 4 ---
+conducted based on patellar and hamstring tendon autograft
+types.
+Based on the methodological quality ratings, a level of evi-
+dence was assigned to each variable of interest as follows as
+per van Tulder et al,14
+: (1) strong evidence provided by pooled
+results derived from three or more studies, including a
+minimum of two high-quality studies that were statistically
+homogenous (I2
+not signiﬁcant at 0.05); may be associated
+with a statistically signiﬁcant or non-signiﬁcant pooled result;
+(2) moderate evidence provided by statistically signiﬁcant
+pooled results derived from multiple studies that were statistic-
+ally heterogeneous, including at least one high-quality study; or
+from multiple moderate-quality or low-quality studies which
+were statistically homogenous; (3) limited evidence provided by
+results from one high-quality study or multiple moderate-
+quality or low-quality studies that are statistically heteroge-
+neous; (4) very limited evidence provided by results from one
+moderate-quality or low-quality study; and (5) no evidence
+provided by pooled results that are insigniﬁcant and derived
+from multiple statistically heterogeneous studies (regardless of
+quality).
+RESULTS
+Search strategy, methodological quality and risk of bias
+The comprehensive search strategy identiﬁed 14 613 titles, with
+the last search conducted on 19 February 2014 (ﬁgure 1).
+Following removal of duplicate publications and conference pro-
+ceedings, titles of 5114 publications were evaluated and 2959
+publications were evaluated beyond title (ie, Abstract). The full
+texts of 52 articles were retrieved, with 34 articles meeting the
+selection criteria. Table 1 presents characteristics of the included
+studies. The methodological quality scores ranged from 3 to 13
+(of 15), with an average score of 10 (see online supplementary
+table C). There were 6 studies of high quality, 18 were moderate
+quality and 10 were low quality. All 34 studies scored positively
+on item 5 (comparison group) and negatively on item 13
+(adjustment for confounders). Only two studies reported sample
+size calculations.
+Findings
+Sagittal plane kinematics: comparison to healthy controls
+In individuals 6 months post-ACLR, pooled data from two low-
+quality studies showed moderate evidence of greater peak knee
+Table 1 Continued
+Author, year ACLR cohort Graft type*
+Time
+post-ACLR Comparator cohort
+Scanlan et al,
+201361
+n=29, male/female 15/14, age 29±6 Y, height 1.7
+±0.1 m, weight 73±12 kg
+n=29 Achilles tendon graft 27±4 M Contralateral knee
+Timoney et al,
+199331
+n=10, male/female 10/0 n=10 patellar tendon graft 10 (8–12) Y n=10, male/female 10/0
+Wang et al,
+201242
+Group 1 (Dominant limb ACLR∝): n=19, male/
+female 12/7, age 32±9 Y, height 1.8±0.1 m, weight
+84±19 kg
+Group 2 (Non-dominant limb ACLR∝): n=22, male/
+female 12/10, age31±8 Y, height 1.7±0.1 m, weight
+81±16 kg
+Group 1: n=12 hamstring tendon graft, 7
+patellar tendon graft
+Group 2: n=19 hamstring tendon graft, 3
+patellar tendon graft
+Group 1: 14±4
+M
+Group 2: 14±6
+M
+n=20, male/female 13/7, age
+23±3 Y height 1.8±0.1 m,
+weight 71±13 kg
+Wang et al,
+201338
+Group 1 (ACLR technique AMP): n=12, male/female
+7/5, age 30±7 Y, height 1.7±0.1 m, weight 86±17 kg
+Group 2 (ACLR technique TT): n=12, male/female 7/5,
+age 33±7 Y, height 1.8±0.1 m, weight 83±17 kg
+Group 1: n=12 hamstring tendon graft;
+Group 2: n=12 hamstring tendon graft
+Group 1: 9±4
+M
+Group 2: 17±11
+M
+n=20, male/female 15/5, age
+26±8 Y, height 1.8±0.1 m,
+weight 82±16 kg
+Webster et al,
+200518
+Group 1 (Hamstring tendon graft): n=17, male/
+female 16/1, age 27±8 Y, height 1.8±0.1 m, weight
+80±7 kg
+Group 2 (Patellar tendon graft): n=17, male/female
+16/1, age 24±5 Y, height 1.8±0.1 m, weight 79
+±6 kg
+Group 1: n=17 hamstring tendon graft
+Group 2: n=17 patellar tendon graft
+Group 1: 9±2
+MGroup 2: 11
+±2 M
+n=17, male/female 16/1, age
+25±5 Y, height 1.8±0.1 m,
+weight 75±12 kg
+Webster et al,
+201136
+Group 1 (Hamstring tendon graft): n=18, male/
+female 16/2, age 27±6 Y, height 1.8±0.1 m, weight
+79±7 kgGroup 2 (Patellar tendon graft): n=18,
+male/female 17/1, age 24±6 Y, height 1.8±0.1 m,
+weight 79±7 kg
+Group 1: n=18 hamstring tendon graft
+Group 2: n=18 patellar tendon graft
+Group1: 9±2 M
+Group 2: 11±2
+M
+n=18, male/female 16/2, age
+25±5 Y, height 1.8±0.12 m,
+weight 75±13 kg
+Webster et al,
+2012a37
+Group 1 (Hamstring tendon graft): n=16, male/
+female 16/0, age 28±6 Y, height 1.8±0.1 m, weight
+80±7 kgGroup 2 Patellar tendon graft): n=16, male/
+female 16/0, age 24±6 Y, height 1.8±0.1 m, weight
+79±6 kg
+Group 1: n=16 hamstring tendon graft
+Group 2: n=16 patellar tendon graft
+Group1: 9±3 M
+Group 2: 11±2
+M
+n=16, male/female 16/0, age
+25±5 Y, height 1.8±0.1 m,
+weight 76±12 kg
+Webster et al,
+201227
+Group 1 (Female): n=18, male/female 0/18, age 28
+±7 Y, height 1.7±0.1 m, weight 71±8 kg
+Group 2 (Male): n=18, male/female 18/0, age 27±7
+Y, height 1.8±0.1 m, weight 81±13 kg
+Group 1: n=18 hamstring tendon graft
+Group 2: n=18 hamstring tendon graft
+Group1: 20±12
+M
+Group 2: 20±12
+M
+Contralateral knee
+Webster et al,
+201225
+n=16, male/female 13/3, age 26±6 Y, height 1.8
+±0.1 m, weight 82±11 kg
+n=8 hamstring tendon graft, 8 patellar
+tendon graft
+10±2 M, 3±1 Y Contralateral knee
+Zabala et al,
+201332
+n=45, male/female 26/19, age 30±6 Y, height 1.7
+±0.1 m, weight 74±12 kg
+n=45 Achilles tendon autograft 26 (22–36) M n=45, male/female 26/19, age
+30±5 Y, height 1.7±0.1 m,
+weight 74±12 kg
+Values are presented as mean±SD, or median (IQR). Male and female values are presented as numbers.
+*Description of graft type taken directly from each study as described in text.
+∝ Lower limb dominance defined by ball kicking; ACLR, anterior cruciate ligament reconstruction; AMP, anteromedial portal technique; BMI, body mass index; D, days; kg, kilograms;
+m, metres; M, months; n, number; RTS, return to sport; TT, transtibial technique; W, weeks; Y, years.
+4 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 5 ---
+ﬂexion angle compared to healthy controls (SMD: 1.06, 95%
+CI 0.39 to 1.74; I2
+=0%, p=0.54)15 16
+(table 2 and ﬁgure 2). At
+6–12 months post-ACLR, pooled data from one moderate-
+quality study and one high-quality study showed moderate evi-
+dence of no difference in peak knee ﬂexion angle between
+ACLR and control participants (−0.35, −0.82 to 0.11; I2
+=0%,
+p=0.44).17 18
+Very limited evidence of smaller peak knee
+ﬂexion angles in individuals with ACLR was provided by one
+moderate-quality study at 1–3 years postsurgery (−2.21, −3.16
+to −1.26),19
+and one low-quality study at ≥3 years postsurgery,
+(−1.38, −2.14 to −0.62).20
+Two studies reported mean knee
+ﬂexion angle in individuals who were 6 months post-ACLR,21 22
+and a single study reported peak angle at initial impact in indivi-
+duals ≥3 years post-ACLR.23
+These studies were not included in
+meta-analyses.
+Sagittal plane kinematics: comparison to contralateral knee
+At 6–12 months after ACLR, pooled data from three studies of
+moderate and low quality provided limited evidence of smaller
+peak knee ﬂexion angle in the ACLR knee compared to the
+contralateral knee (−1.74, −3.19 to −0.29; I2
+=93%,
+p<0.0001)24–26
+(ﬁgure 3). At 1–3 years post-ACLR, there was
+moderate evidence from three studies (one high-quality, two
+low-quality) of no difference in peak knee ﬂexion angle
+between the ACLR and contralateral limbs (−0.14, −0.44 to
+0.15; I2
+=0%, p=0.80).26–28
+At ≥3 years post-ACLR, a single
+moderate-quality study provided very limited evidence of no
+between-limb difference in peak knee ﬂexion angle (0.02, −0.68
+to 0.71)25
+(table 2). A single study reported mean knee ﬂexion
+angles in individuals ≥3 years post-ACLR,29
+and thus it was not
+included.
+Sagittal plane moments: comparison to healthy controls
+Six months after ACLR, pooled data from two low-quality
+studies showed limited evidence of greater peak knee ﬂexion
+moment (1.61, 0.87 to 2.35; I2
+=0%, p=0.43), and lower knee
+extension moment (−3.55, −4.63 to −2.48; I2
+=0%, p=0.33)
+than healthy controls15 16
+(table 3 and ﬁgure 2). In individuals
+who were 6–12 months post-ACLR, there was moderate evi-
+dence from pooled data from three studies (two low- and one
+high-quality) for smaller peak knee ﬂexion moment than con-
+trols (−0.76, −1.40 to −0.12; I2
+=52%, p=0.12),18 30 31
+and
+Table 2 Sagittal plane knee kinematics
+Author, year ACLR cohort Time post-ACLR Comparator Standardised mean difference (95% CI)
+ACLR vs healthy controls
+Peak knee flexion angle
+<6M Ferber et al, 200215
+19.8±5.4° 3 M 16.1±2.1° 0.86 (−0.06 to 1.79)
+Ferber et al, 200316
+16.8±2.2° 3 M 13.7±2.4° 1.29 (0.31 to 2.27)
+Devita et al, 199859
+24° 3 W 22.2° ACLR limb walked with more flexed knee (p value not
+reported)
+6 to <12M Georgoulis et al, 200317
+13.4±10.0° 30±17 W 14.5±5.8° −0.12 (−0.87 to 0.63)
+Webster et al, 200518
+Hamstring-tendon graft: 21±4.9° 9±2 M 21.5±5.6° −0.09 (−0.77 to 0.58)
+Patellar-tendon graft: 17.2±3.6° 11±2 M 21.5±5.6° −0.89 (−1.60 to −0.18)
+Devita et al, et al, 199859
+20.5° 6 M 22.2° No significant differences reported (p value not
+reported)
+Wang et al, 201338
+AMP technique: 20° 9±4 M 16° No significant differences reported (p value not
+reported)
+1 to <3Y Gao and Zheng 201019
+16±2° 12 M 20±1.5° −2.21 (−3.16 to −1.26)
+Bulgheroni et al, 199758
+16° 14° Sagittal plane kinematics were maintained (p value
+not reported)
+Wang et al, 201338
+TT technique: 18° 17±11 M 16° No differences reported
+≥3Y Patterson et al, 201440
+16.5°±2 4±3 Y 19°±1.5 −1.38 (−2.14 to −0.62)
+ACLR vs contralateral Knee
+Peak knee flexion angle
+<6M Hunt et al, 201060
+12.7° 31±12 D 9.1° No reported
+6 to <12M Di Stasi et al, 201324
+RTS-Fail: 22.6±1.4° 6 M 29.1±1.4° −4.56 (−5.72 to −3.40)
+RTS-Pass: 22.4±1.5° 6 M 25.1±1.5° −1.76 (−2.51 to −1.02)
+Webster et al, 201225
+19.8±5.1° 10±2 M 20.8±5° −0.19 (−0.89 to 0.50)
+Roewer et al, 201126
+23.2±6.6° 6±1 M 28.1±6.7° −0.73 (−1.29, −0.16)
+Bacchini et al, 200957
+4.61° 6 (5–7) M 6.15° No differences reported
+Hooper et al, 200235
+14.2° 6±1 M 19.2° No differences reported
+1 to <3Y Webster et al, 201227
+Males: 19.1±4.5° 20±12 M 19.6±5.4° −0.10 (−0.75 to 0.56)
+Females: 16.8±5.8° 20±12 M 16.2±6.5° 0.10 (−0.56 to 0.75)
+Roewer et al, 201126
+24.4±7° 2 Y 25.4±6.9° −0.14 (−0.69 to 0.40)
+Scanlan et al, 201028
+16.8±1.63° 24(7–65) M 17.4±1.86° −0.34 (−0.89 to 0.21)
+Hooper et al, 200235
+14.6° 12±1 M 19.6° No differences reported
+Wang et al, 201242
+∝Dominant limb ACLR: 14.3° 14±4 M 14.1° No differences reported
+∝Non-dominant limb ACLR: 14.3° 14±6 M 14.1° No differences reported
+≥3Y Webster et al, 201225
+20.2±5.4° 3±1 Y 20.1±5.6° 0.02 (−0.68 to 0.71)
+Data are presented as mean±SD.
+∝, Lower limb dominance defined by ball kicking; ACLR, anterior cruciate ligament reconstruction; AMP, anteromedial portal; M, month; RTS, return to sport; TT, transtibial; W, week;
+Y, year.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 5
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 6 ---
+limited evidence from two studies (one low- and one high-
+quality) for no difference in peak knee extension moment
+(−2.25, −7.00 to 2.50; I2
+=98%, p<0.0001).18 30
+In individuals
+1–3 years after ACLR, pooled data from two moderate-quality
+studies provided moderate evidence of no difference in peak
+knee ﬂexion moment (−0.24, −0.58 to 0.10; I2
+=0%,
+p=0.52),32 33
+while very limited evidence of no difference in
+peak knee extension moment (−0.40, −0.82 to 0.02) was pro-
+vided by one moderate-quality study.32
+In those who were
+≥3 years post-ACLR, a single high-quality study provided
+limited evidence of no difference in peak knee extension
+moment.34
+A single study in individuals who were ≥3 years
+post-ACLR reported sagittal plane moments at initial impact
+and this study was not included in the meta-analysis.
+Sagittal plane moments: comparison to contralateral knee
+In individuals who were 6–12 months after ACLR, we found
+limited evidence from pooled data of smaller knee ﬂexion
+moments (−1.29, −2.45 to −0.12; I2
+=93%, p<0.0001) from
+ﬁve studies (three moderate- and two low- quality),24–26 30 35
+and moderate evidence of smaller knee extension moments
+(−0.48, −0.93 to −0.03; I2
+=0%, p=0.93) from three studies
+(two moderate- and one low-quality)25 30 35
+(ﬁgure 3). In indivi-
+duals 1–3 years post-ACLR, moderate evidence of lower peak
+knee ﬂexion moment (−0.27, −0.53 to −0.01; I2
+=0%, p=0.98)
+was evident from pooling data from one high-quality, two
+moderate-quality, and one low-quality study,26 27 32 35
+and
+lower peak knee extension moment (−0.55, −0.93 to −0.16;
+I2
+=0%, p=0.54) from pooling data from two moderate-quality
+studies.32 35
+In those who were ≥3 years post-ACLR, pooled
+data from two studies (one high- and one moderate-quality)
+provided moderate evidence of no difference in peak knee
+extension moment between ACLR and contralateral limbs
+(−0.11, 95% CI −0.59 to 0.36; I2
+=0%, p=0.42),25 34
+while a
+single moderate-quality study provided very limited evidence of
+no between-limb difference in peak knee ﬂexion moment
+(−0.20, −0.90 to 0.49)25
+(ﬁgure 3 and table 3).
+Frontal plane kinematics: comparison to healthy controls
+In those who were 6–12 months after ACLR, pooled data from
+four studies (two moderate- and two high-quality) provided
+moderate evidence of no difference in peak knee adduction
+(varus) angle in individuals with ACLR compared to controls
+(−0.43, −0.91 to 0.05; I2
+=51%, p=0.10)17 36–38
+(table 4 and
+ﬁgure 4). In those who were 1–3 years post-ACLR, a single high-
+quality study provided limited evidence of lower peak knee
+adduction angle compared to controls (−1.10, −1.88 to
+−0.33).38
+In individuals who were ≥3 years post-ACLR, pooled
+data from one moderate- and one low-quality study provided
+limited evidence of no difference in peak adduction angle when
+compared to controls (1.08, −0.41 to 2.56; I2
+=87%,
+p=0.005)20 39
+(ﬁgure 4).
+Frontal plane kinematics: comparison to contralateral knee
+Very limited evidence of no difference in peak knee adduction
+angle between individuals following ACLR and contralateral
+Figure 2 Standardised mean difference (SMD) for peak sagittal plane knee joint kinematics and moments. SMD >0: peak knee joint kinematics/
+moments larger in anterior cruciate ligament reconstruction (ACLR) participants compared to healthy controls. SMD <0: peak knee joint kinematics/
+moments smaller in ACLR participants compared to healthy controls.
+6 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 7 ---
+knees (0.22, −0.47 to 0.92) was provided from a single study of
+moderate-quality in those who were 6–12 months after ACLR,25
+and limited evidence of no difference in those who were
+1–3 years post-ACLR, from a single high-quality study
+(0.02, −0.44 to 0.48)27
+(ﬁgure 5 and table 4). In individuals
+who were ≥3 years post-ACLR, a moderate-quality study pro-
+vided very limited evidence of no difference in peak knee
+adduction angle between ACLR and contralateral knees (0.02,
+−0.67 to 0.72)25
+(ﬁgure 5).
+Frontal plane moments: comparison to healthy controls
+In people who were 6–12 months after ACLR, pooled data
+from two studies (one low-quality, one high-quality) provided
+moderate evidence of no difference in peak knee adduction
+moment (−0.61, −2.71 to 1.49; I2
+=94%, p<0.0001)30 37
+(table 5 and ﬁgure 4). One to 3 years post-ACLR, data from a
+single moderate-quality study provided very limited evidence of
+no difference in peak knee adduction moment (−0.39, 95%
+−0.81 to 0.03).32
+In those who were ≥3 years post-ACLR,
+pooled data from four studies (two high-, one moderate- and
+one low-quality) provided strong evidence of no difference in
+peak knee adduction moment when compared to control parti-
+cipants (0.09, −0.63 to 0.81; I2
+=75%, p=0.008)34 39–41
+(ﬁgure 4).
+Frontal plane moments: comparison to contralateral knee
+From meta-analyses, we found moderate evidence of no differ-
+ence in peak knee adduction moment between ACLR and
+contralateral knees at multiple time points after ACLR (ﬁgure 5
+and table 5). Pooled data from four studies (one low-, two
+moderate- and one high-quality) found no between-limb differ-
+ence in those who were 6–12 months after ACLR (−0.27, −0.60
+to 0.06; I2
+=0%, p=0.74);25 30 35 37
+four studies (three
+moderate- and one high- quality) in people 1–3 years post-ACLR
+(−0.18, −0.53 to 0.16; I2
+=21%, p=0.29);27 32 35 42
+and three
+studies (one low-, one moderate- and one high-quality) ≥3 years
+post-ACLR (−0.09, −0.51 to 0.32; I2
+=0%, p=0.55)25 34 41
+(ﬁgure 5).
+Transverse plane kinematics: comparison to healthy controls
+Due to the large heterogeneity in reporting of transverse plane
+kinematics data, meta-analyses could not be performed (table 6
+Figure 3 Standardised mean difference (SMD) for peak sagittal plane knee joint kinematics and moments. SMD >0: peak knee joint kinematics/
+moments larger in anterior cruciate ligament reconstruction (ACLR) knees compared to contralateral knees. SMD <0: peak knee joint kinematics/
+moments smaller in ACLR knees compared to contralateral knees.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 7
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 8 ---
+Table 3 Sagittal plane knee moments
+Author, year ACLR cohort
+Time
+post-ACLR Comparator Standardised mean difference (95% CI
+ACLR vs healthy controls
+Peak knee flexion moment
+<6M Devita et al, 199722
+25.8 Nm 3 W 45.2 Nm Lower flexion moment in ACLR knee throughout
+stance
+29.0 Nm 5 W 45.2 Nm Not reported
+Devita et al, 199859
+25.3 Nm 3 W 63.1 Nm Not reported
+Ferber et al, 200215
+0.35±0.06 Nm/kg 3 M 0.17±0.11 Nm/kg 1.95 (0.84 to 3.05)
+Ferber et al, 200316
+0.38±0.06 Nm/kg 3 M 0.22±0.15 Nm/kg 1.34 (0.35 to 2.33)
+6 to <12M Devita et al, 199859
+37.9 Nm 6 M 63.1 Nm Smaller flexion moment in ACLR knee
+Karimi et al, 201330
+0.45±0.35 Nm/kg 6 M 0.61±0.5 Nm/kg −0.36 (−1.08 to 0.36)
+Webster et al, 200518
+Hamstring graft: 2.7±1.3 Nm/
+(%kg m)
+9±2 M 2.8±1.0 Nm/(%kg m) −0.08 (−0.76 to 0.59)
+Patellar graft: 1.7±0.7 Nm/
+(%kg m)
+11±2 M 2.8±1.0 Nm/(%kg m) −1.24 (−1.99 to −0.50)
+Timoney et al, 199331
+2.02±1.14 Nm/(%kg m) 10 (8–13) M 3.74±0.82 Nm/(%
+kg m)
+−1.66 (−2.71 to −0.61)
+1 to <3Y Zabala et al, 201332
+2.2±1.3 Nm/(%kg m) 26 (22–36) M 2.6±1.2 Nm/(%kg m) −0.32 (−0.73 to 0.10)
+Bush-Joseph et al,
+200133
+2.4±1.0 Nm/(%kg m) 22±12 M 2.5±1.5 Nm/(%kg m) −0.08 (−0.67 to 0.51)
+Bulgheroni et al,
+199758
+0.55 Nm/(%kg m) 17±5 M 0.42 Nm/(%kg m) No difference during the stance; however
+increased moment upon landing in ACLR knee
+≥3Y Noehren et al, 201323
+0.12 Nm/kg 5±3 Y 0.32 Nm/kg Not reported. Flexion moment at initial landing
+significantly lower in ACLR knee
+Ferber et al, 200429
+0.35 Nm/kg 6±5 Y 0.19 Nm/kg Not reported
+ACLR vs healthy controls
+Peak extension moment
+<6M Devita et al, 199722
+−2.5 Nm 3 W 25 Nm Not reported
+0 Nm 5 W 25 Nm Not reported
+Devita et al, 199859
+−5 Nm 3 W 17.5 Nm Not reported
+Ferber 200215
+0.11±0.08 Nm/kg 3 M 0.44±0.07 Nm/kg −4.20 (−5.90 to −2.51)
+Ferber et al, 200316
+−0.03±0.01 Nm/kg 3 M 0.27±0.13 Nm/kg −3.12 (−4.51 to −1.73)
+6 to <12M Devita et al, 199859
+17.5 Nm 6 M 17.5 Nm Not reported
+Karimi et al, 201330
+0.55±0.44 Nm/kg 6 M 0.50±0.10 Nm/kg 0.15 (−0.56 to 0.87)
+Webster et al, 200518
+Hamstring graft: 2.0±0.07 Nm/
+(%kg m)
+9±2 M 2.6±0.07 Nm/
+(%kg m)
+−8.37 (−10.59 to −6.15)
+Patellar graft: 2.5±0.08 Nm/
+(%kg m)
+11±2 M 2.6±0.07 Nm/
+(%kg m)
+−1.30 (−2.05 to −0.55)
+1 to <3Y Zabala et al, 201332
+2.8±0.96 Nm/(%kg m) 26 (22–36) M 3.17±0.88 Nm/
+(%kg m)
+−0.40 (−0.82 to 0.02)
+≥3Y Hall et al, 201234
+0.42±0.21 Nm/kg 6 (2–18) Y 0.45±0.14 Nm/kg −0.16 (−0.82 to 0.49)
+Ferber et al, 200429
+0.13 Nm/kg 6±5 Y 0.45 Nm/kg No reported
+Noehren 201323
+0.40 Nm/kg m 5±3 Y 0.22 Nm/kg No reported
+ACLR vs healthy controls
+Peak flexion moment
+6 to <12M Bacchini et al, 200957
+32.2 Nm 6 (5–7) M 23.3 Nm Described higher flexion in ACLR knee (p value
+not reported)
+Karimi et al, 201330
+0.45±0.35 Nm/kg 6 M 0.46±0.46 Nm/kg −0.02 (−0.74 to 0.69)
+Webster et al, 201237
+0.39±0.24 Nm/kg 10±2 M 0.43±0.26 Nm/kg −0.16 (−0.85 to 0.54)
+Hooper et al, 200235
+0.30±0.13 Nm/kg m 6±1 M 0.35±0.12 Nm/kg m −0.38 (−1.37 to 0.61)
+Di Stasi et al, 201324
+RTS-Fail ACLR: 0.37±0.03 Nm/
+kg m
+6 M 0.52±0.03 Nm/kg m −4.91 (−6.14 to −3.68)
+Di Stasi et al, 201324
+RTS-Pass ACLR: 0.42±0.03 Nm/
+kg m
+6 M 0.49±0.03 Nm/kg m −2.29 (−3.10 to −1.47)
+Roewer et al, 201126
+0.40±0.12 Nm/BMI 6 M 0.49±0.32 Nm/BMI −0.37 (−0.92 to 0.18)
+1 to <3Y Hooper et al, 200235
+0.31±0.16 Nm/kg m 12±1 M 0.38±0.12 Nm/kg m −0.47 (−1.41 to 0.47)
+Webster et al, 201227
+Males: 0.27±0.12 Nm/kg m 20±12 M 0.29±0.13 Nm/kg m −0.16 (−0.81 to 0.50)
+Females: 0.26±0.11 Nm/kg m 20±12 M 0.28±0.12 Nm/kg m −0.17 (−0.82 to 0.48)
+Zabala et al, 201332
+2.23±1.29 Nm/(%kg m) 26 (22–36) M 2.59±1.17 Nm/(%
+kg m)
+−0.31 (−0.73 to 0.10)
+Roewer 201126
+0.48±0.18 Nm/BMI 2 Y 0.53±0.16 Nm/BMI −0.29 (−0.84 to 0.26)
+Continued
+8 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 9 ---
+and ﬁgure 6). In those who were 6–12 months post-ACLR, one
+moderate-quality study provided very limited evidence of lower
+peak internal rotation angle at midstance (27–67% of stance)
+compared to controls (−1.01, −1.61 to −0.41).36
+One high-
+quality study provided limited evidence of higher peak knee
+internal rotation angle before the toe-off phase of stance in the
+ACLR group (1.14, 0.36 to 1.91).38
+Two studies provide evi-
+dence of no difference in peak knee external rotation angle
+towards the end of stance phase between ACLR and control par-
+ticipants. One high-quality study provides limited evidence of
+no difference before toe-off (−0.37, −1.09 to 0.35),38
+while a
+moderate-quality study provides very limited evidence of no
+difference during toe-off (−0.36, −1.12 to 0.40).17
+In those
+who were 1–3 years after ACLR, one high-quality study
+provided limited evidence of increased peak knee internal
+rotation angle before toe off (1.18, 0.40 to 1.96) and no differ-
+ence in peak knee external rotation angle before toe-off, com-
+pared to controls (−0.73, −1.47 to 0.01).38
+In participants
+≥3 years post-ACLR, a single study of low-quality provided very
+limited evidence of smaller peak knee internal rotation angle
+Table 3 Continued
+Author, year ACLR cohort
+Time
+post-ACLR Comparator Standardised mean difference (95% CI
+≥3Y Webster et al, 201225
+0.41±0.23 Nm/kg 3±1 Y 0.46±0.25 Nm/kg −0.20 (−0.90 to 0.49)
+Ferber et al, 200429
+0.35 Nm/kg 6±5 Y 0.60 Nm/kg Not reported
+Peak extension moment
+6 to <12M Bacchini et al, 200957
+3.2 Nm 6 (5–7) M 1.72 Nm Described higher extension moment in ACLR knee
+(p vale not reported)
+Karimi et al, 201330
+0.55±0.44 Nm/kg 6 M 0.88±0.70 Nm/kg −0.55 (−1.28 to 0.18)
+Webster et al, 201225
+0.40±0.13 Nm/kg 10±2 M 0.47±0.14 Nm/kg −0.51 (−1.21 to 0.20)
+Hooper et al, 200235
+0.09±0.14 Nm/kg m 6±1 M 0.14±0.16 Nm/kg m −0.31 (−1.30 to 0.67)
+1 to <3Y Hooper et al, 200235
+0.16±0.11 Nm/kg m 12±1 M 0.19±0.09 Nm/kg m −0.28 (−1.21 to 0.65)
+Zabala 201332
+2.8±0.96 Nm/(%kg m) 26 (22–36) M 3.36±0.88 Nm/
+(%kg m)
+−0.60 (−1.03 to −0.18)
+≥3Y Hall et al, 201234
+0.42±0.21 Nm/kg 6 (2–18) Y 0.50±0.31 Nm/kg −0.30 (−0.96 to 0.36)
+Webster et al, 201225
+0.51±0.11 Nm/kg 3±1 Y 0.50±0.10 Nm/kg 0.09 (−0.60 to 0.79)
+Ferber et al, 200429
+0.13 Nm/kg 6±5 Y 0.25 Nm/kg Not reported
+Data are presented as mean±SD.
+ACLR, anterior cruciate ligament reconstruction; AMP, anteromedial portal; kg, kilograms; m, metres; M, month; Nm, Newton metres; RTS, return to sport; TT, transtibial; W, week; Y,
+year.
+Table 4 Frontal plane knee kinematics
+Author, year ACLR cohort Time post-ACLR Comparator
+Standardised mean
+difference (95% CI)
+ACLR vs healthy controls
+Peak knee adduction angle
+6 to <12M Georgoulis et al, 200317
+1.7±4.1° 30±17 W 1.0±3.1° 0.18 (−0.58 to 0.93)
+Wang et al, 201338
+AMP technique: −2.5±2° 9±4 M −2.3±1.5° −0.11 (−0.83 to 0.60)
+Webster et al, 201136
+Hamstring graft: 3.7±3.3° 9±2 M 7.7±2.8° −1.28 (−2.00 to −0.55)
+Patellar graft: 6.5±3.0° 11±2 M 7.7±2.8° −0.40 (−1.07 to 0.26)
+Webster et al, 201237
+Hamstring graft: 3.9±3.7° 9±2 M 7.7±2.8° −1.13 (−1.88 to −0.38)
+Patellar graft: 6.6±2.8° 11±2 M 7.7±2.8° −0.38 (−1.08 to 0.32)
+1 to <3Y Wang et al, 201338
+AMP technique: −4±1.5° 9±4 M −2.3±1.5° −1.10 (−1.88 to −0.33)
+Bulgheroni et al, 199758
+5° 17±5 M 3.8° No differences reported
+Gao and Zheng 201019
+1.0° 12 M −3.5° No differences reported
+≥3Y Butler et al, 200939
+1.9±2.9° 5±3 Y 0.9±2.9° 0.34 (−0.34 to 1.01)
+Patterson et al, 201420
+0.5±1° 4±3 Y −1.0±0.5° 1.85 (1.03 to 2.67)
+ACLR vs contralateral knee
+Peak knee adduction angle
+6 to <12M Webster et al, 201225
+7.2±4.9° 10±2 M 6.1±4.7° 0.22 (−0.47 to 0.92)
+1 to <3Y Webster et al, 201227
+Males: 5.4±2.9° 20±12 M 5.0±4.9° 0.10 (−0.56 to 0.75)
+Females: 4.8±3.1° 20±12 M 5.0±3.5° −0.06 (−0.71 to 0.59)
+Wang et al, 201242
+∝Dominant limb ACLR: −1.5° 14±4 M 1.0° No differences reported
+∝Non-dominant limb ACLR : −2.0° 14±6 M −3.5° No differences reported
+≥3Y Webster et al, 201225
+8.2±4.1° 3±1 Y 8.1±4.3° 0.02 (−0.67 to 0.72)
+Data are presented as mean±SD.
+∝, Lower limb dominance defined by ball kicking, ACLR, anterior cruciate ligament reconstruction; AMP, anteromedial portal; M, month; RTS, return to sport; TT, transtibial; W, week;
+Y, year.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 9
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 10 ---
+before toe-off compared to controls (−1.66, −2.45 to −0.86)20
+(ﬁgure 6).
+Transverse plane kinematics: comparison to contralateral knee
+Very limited evidence was found for transverse plane kine-
+matics in the ACLR knee compared to the contralateral knee
+(ﬁgure 7 and table 6). In people 6–12 months post-ACLR, a
+single study of moderate-quality reported no signiﬁcant
+between-limb difference in peak knee internal rotation angle
+at midstance (−0.68, −1.40 to 0.03).25
+No difference in
+peak knee internal rotation angle between ACLR and contra-
+lateral knees was reported by a moderate-quality study in
+people who were 1–3 years after ACLR (−1.03, −2.16 to
+0.11),43
+and ≥3 years post-ACLR (−0.46, −1.16 to 0.24)25
+(ﬁgure 7).
+Transverse plane moments: comparison to healthy controls
+In individuals who were 6–12 months post-ACLR, data from a
+single study of low-quality provided very limited evidence of no
+differences in peak knee external rotation moment (20% of
+stance) (0.00, −0.72 to 0.72) and peak knee internal rotation
+moment (80% of stance) (0.39, −0.33 to 1.12) between ACLR
+and control participants30
+(table 7 and ﬁgure 6). In those who
+were 1–3 years after ACLR, a single moderate-quality study pro-
+vided very limited evidence of signiﬁcantly lower peak knee
+external rotation moment at 25% of stance (−0.66, −1.09 to
+−0.24), but no difference in peak knee internal rotation
+moment at 75% of stance phase (−0.17, −0.58 to 0.25)32
+(ﬁgure 6).
+Transverse plane moments: comparison to contralateral knee
+In individuals who were 6–12 months after ACLR, a single low-
+quality study provided very limited evidence of signiﬁcantly
+greater peak knee internal rotation moment in ACLR knees than
+contralateral knees (1.06, 0.29 to 1.83), but no difference in
+peak knee external rotation moment (20% of stance) (−0.07,
+−0.17 to 0.03)30
+(table 7 and ﬁgure 7). In those who were
+1–3 years post-ACLR, we found very limited evidence from a
+single moderate-quality study of no difference in peak knee
+internal rotation moment at 75% of stance (−0.31, −0.72 to
+0.11) or peak knee external rotation moment at 25% of stance
+(−0.26, −0.67 to 0.16) between ACLR and contralateral
+knees32
+(ﬁgure 7).
+Figure 4 Standardised mean difference (SMD) for peak frontal plane knee joint kinematics and moments. SMD >0: peak knee joint kinematics/
+moments larger in anterior cruciate ligament reconstruction (ACLR) participants compared to healthy controls. SMD <0: peak knee joint kinematics/
+moments smaller in ACLR participants compared to healthy controls.
+10 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 11 ---
+Sensitivity analysis based on graft type
+We observed some differences in outcomes when sensitivity
+analyses based on hamstring- and patellar-tendon graft types
+were conducted in those 6–12 months after ACLR compared
+to healthy controls. The difference in peak knee ﬂexion
+moment remained signiﬁcant when patellar-tendon graft data
+were evaluated separately (−1.38, −1.99 to −0.78).18 31
+In
+contrast, the difference in peak knee ﬂexion moment between
+ACLR and control participants was not signiﬁcant when
+hamstring-tendon graft data were evaluated separately (−0.08,
+−0.76 to 0.59).18
+Compared to the combined pooled data,
+peak knee extension moment was signiﬁcantly lower in ACLR
+participants with patellar-tendon grafts (−1.30, −2.05 to
+−0.55) and hamstring-tendon grafts (−8.37, −10.59 to −6.15)
+than control participants.18
+We also observed a smaller peak
+adduction angle in ACLR participants with hamstring-tendon
+grafts compared to controls (−1.07, −1.50 to −0.64);36–38
+however, no differences were observed when comparing ACLR
+participants with patellar-tendon grafts to control participants
+(−0.23, −2.05 to −0.55).17 36 37
+There was no effect of graft
+type on observed comparisons between ACLR and contralat-
+eral limbs at 6–12 months postsurgery. Sensitivity analyses
+revealed no effects of graft type on outcomes at 1–3 years or
+≥3 years after ACLR, for comparisons between ACLR and
+control participants or between ACLR and uninjured contralat-
+eral limbs.
+DISCUSSION
+Knee kinematics and moments associated with ACLR were eval-
+uated systematically, and the 34 studies included for data synthe-
+sis revealed that ACLR does not restore normal knee joint gait
+biomechanics. The results of this systematic review indicate that
+biomechanical deﬁcits are evident, mostly in the sagittal plane
+from 6 months post-ACLR surgery.
+The most consistent ﬁnding from this systematic review was
+of altered sagittal plane kinematics and moments. Gait
+characteristics observed during the early post-ACLR period
+(<6 months) do not appear to match those seen in individuals
+who are at least 6 months postsurgery. We speculate that greater
+knee ﬂexion angles and, in turn, higher ﬂexion moment
+observed throughout the gait cycle in individuals <6 months
+post-ACLR may reﬂect adapted walking pattern as a result of
+joint swelling, pain or muscle inhibition due to knee pain.
+Patellofemoral joint force is primarily inﬂuenced by ﬂexion
+angles and moments.44
+Thus, increased knee ﬂexion angles and
+moments during the early post-ACLR period is of clinical
+concern, since this may initiate degenerative processes in the
+joint. Our recent research identiﬁes early PFJ OA changes at
+Figure 5 Standardised mean difference (SMD) for peak frontal plane knee joint kinematics and moments. SMD >0: peak knee joint kinematics/
+moments larger in anterior cruciate ligament reconstruction (ACLR) knees compared to contralateral knees. SMD <0: peak knee joint kinematics/
+moments smaller in ACLR knees compared to contralateral knees.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 11
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 12 ---
+1 year after ACLR,45 46
+which may be partly attributable to
+increased knee ﬂexion moments in the ﬁrst year following
+ACLR. Thus, targeting altered sagittal plane knee joint angles
+and moments during early rehabilitation may slow the develop-
+ment and progression of post-traumatic knee OA. However, lon-
+gitudinal data are required in this patient population before
+clinical implications can be conclusively determined.
+Following the early post-operative period (more than
+6 months post-ACLR), individuals may walk with lower knee
+ﬂexion angles and moments compared to healthy controls and
+contralateral knees. This ﬁnding is consistent with previous sys-
+tematic reviews5 6
+that reported lower peak knee ﬂexion angles
+and moments in individuals after ACLR compared to healthy
+controls. An external knee ﬂexion moment causes the knee to
+ﬂex and, in response, knee extensor muscles activate to produce
+an internal moment to resist the external ﬂexion moment. It is
+plausible that lower knee ﬂexion angles and moments evident in
+individuals >6 months post-ACLR may be related to altered
+quadriceps and/or hamstring muscle activation pattern in this
+patient population. However, this is speculative, since this sys-
+tematic review did not investigate muscle activation patterns.
+In the current systematic review, the most consistent ﬁndings
+were observed in individuals who were 6–12 months
+post-ACLR. However, this may also reﬂect the time point
+chosen for most studies. Very limited evidence (ie, single
+studies) indicates that lower peak knee ﬂexion angles and
+moments may also be present in individuals 12 months or more
+post-ACLR. Sagittal plane gait characteristics may have import-
+ant longer-term implications in this patient population.
+However, due to a paucity of studies beyond 12 months
+post-ACLR, we cannot draw any concrete conclusions.
+Longitudinal data from pre-injury to longer-term post-ACLR
+(∼10 years) will assist in determining potentially modiﬁable risk
+factors associated with ACLR, which could be targeted during
+rehabilitation.
+The knee adduction moment is an important risk factor for
+progression of non-traumatic knee OA,47–49
+and is targeted in
+many OA interventions.50 51
+However, this systematic review
+provides moderate evidence in individuals less than 3 years
+post-ACLR,30 37 32
+and strong evidence in those 3 years or
+longer post-ACLR,34 39–41
+that people who have undergone
+ACLR maintain similar knee adduction moments to healthy
+controls. Similarly, this systematic review also provided moder-
+ate evidence of no differences in peak knee adduction
+moments between ACLR and contralateral knees. Therefore, it
+is plausible that the knee adduction moment is less important
+in the development of knee OA associated with ACLR. This
+ﬁnding may reﬂect the compartment-speciﬁc prevalence of
+post-traumatic knee OA, with higher prevalence of lateral knee
+OA noted in post-traumatic knee OA than in non-traumatic
+Table 5 Frontal plane knee moments
+Author, year ACLR cohort Time post-ACLR Comparator
+Standardised mean
+difference (95%CI)
+ACLR vs healthy controls
+Peak adduction moment
+6 to <12M Karimi et al, 201330
+0.42±0.16 Nm/kg 6 M 0.35±0.13 Nm/kg 0.47 (−0.26 to 1.19)
+Webster et al, 201237
+Hamstring graft 0.27±0.08 Nm/kg m 9±2 M 0.40±0.08 Nm/kg m −1.59 (−2.35 to −0.83)
+Patellar graft 0.28±0.06 Nm/kg m 11±2 M 0.40±0.08 Nm/kg m −1.66 (−2.43 to −0.89)
+1 to <3Y Zabala et al, 201332
+2.67±0.64 Nm/(%kg m) 26(22–36) M 2.94±0.73 Nm/(%kg m) −0.39 (−0.81 to 0.03)
+Bulgheroni et al, 199758
+0.58 Nm/(%kg m) 17±5 M 0.55 Nm/(%kg m) No differences (p value
+not reported)
+≥3Y Hall et al, 201234
+0.5±0.13 Nm/kg 6(2–18) Y 0.46±0.09 Nm/kg 0.35 (−0.31 to 1.01)
+Butler et al, 200939
+0.36±0.08 Nm/kg m 5±3 Y 0.30±0.09 Nm/kg m 0.69 (−0.01 to 1.38)
+Patterson et al, 201440
+0.31±0.08 Nm/kg m 4±3 Y 0.41±0.12 Nm/kg m −0.96 (−1.67 to −0.24)
+Sanford et al, 201241
+0.24±0.09 Nm/kg m 7±6 Y 0.22±0.05 Nm/kg m 0.27 (−0.57 to 1.12)
+ACLR vs contralateral knee
+Peak adduction moment
+6 to <12M Bacchini et al, 200957
+24.6 Nm 6 (5–7) M 18.4 Nm Higher knee adduction moment
+in ACLR knee (p value not reported)
+Karimi et al, 201330
+0.42±0.16 Nm/kg 6 M 0.51±0.27 Nm/kg −0.39 (−1.12 to 0.33)
+Webster et al, 201225
+0.52±0.12 Nm/kg 10±2 M 0.58±0.14 Nm/kg −0.45 (−1.15 to 0.25)
+Webster et al, 201237
+Hamstring graft 0.27±0.08 Nm/kg m 9±2 M 0.31±0.1 Nm/kg m −0.43 (−1.09 to 0.23)
+Patellar graft 0.28±0.06 Nm/kg m 11±2 M 0.28±0.06 Nm/kg m 0.00 (−0.65 to 0.65)
+Hooper et al, 200235
+0.16±0.04 Nm/kg m 6±1 M 0.15±0.05 Nm/kg m 0.21 (−0.77 to 1.19)
+1 to <3Y Wang et al, 201242
+∝Dominant limb ACLR 0.35 Nm/kg±0.16 14±4 M 0.46 Nm/kg±0.15 −0.70 (−1.34 to −0.05)
+∝Non-dominant limb ACLR 0.33 Nm/kg 14±6 M 0.45 Nm/kg
+Webster et al, 201227
+Males 0.31±0.07 Nm/kg m 20±12 M 0.33±0.08 Nm/kg m −0.26 (−0.92 to 0.40)
+Females 0.38±0.08 Nm/kg m 20±12 M 0.36±0.10 Nm/kg m 0.22 (−0.44 to 0.87)
+Hooper et al, 200235
+0.19±0.04 Nm/kg m 12±1 M 0.18±0.05 Nm/kg m 0.21 (−0.72 to 1.14)
+Zabala et al, 201332
+2.67±0.64 Nm/(%kg m) 26 (22–36) M 2.95±0.57 Nm/(%kg m) −0.46 (−0.88 to −0.04)
+≥3Y Hall et al, 201234
+0.5±0.13 Nm/kg 6 (2–18) Y 0.48±0.2 Nm/kg 0.12 (−0.54 to 0.77)
+Webster et al, 201225
+0.56±0.15 Nm/kg 3±1 Y 0.63±0.19 Nm/kg −0.40 (−1.10 to 0.30)
+Sanford et al, 201241
+0.24±0.09 Nm/kg m 7±6 Y 0.24±0.06 Nm/kg m 0.00 (−0.84 to 0.84)
+Data are presented as mean±SD.
+∝, Limb dominance defined by ball kicking; ACLR, anterior cruciate ligament reconstruction; M, month; Nm, Newton metres; Y, year.
+12 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 13 ---
+knee OA populations.52–54
+However, sensitivity analyses
+revealed strong evidence of lower peak knee adduction angles
+(ie, less knee varus) in individuals 6–12 months post-ACLR
+with hamstring-tendon graft compared to healthy controls, but
+no evidence in those with a patellar-tendon graft. Greater knee
+abduction angle (equivalent to lower knee adduction) increases
+the risk of non-traumatic lateral knee OA progression,55
+and
+thus, if such ﬁndings (lower knee adduction angles) persist
+beyond 6 months, hamstring-tendon ACLR may increase the
+risk of lateral post-traumatic knee OA. However, this ﬁnding
+should be interpreted with caution, since it unknown whether
+the cohorts who underwent hamstring-tendon graft ACLR, and
+were included in this systematic review, had valgus malalign-
+ment pre-surgery.
+Transverse plane biomechanics data were not well presented
+in the available literature. Out of the 34 studies included in this
+systematic review, only nine studies presented transverse plane
+kinematics data. For four of those nine studies, peak values were
+estimated from graphs and SDs/ranges were not available. In
+addition, no available studies presented transverse plane bio-
+mechanics data in those who were within 6 months after
+surgery. Better standardisation of transverse plane biomechanics
+data in future longitudinal studies will allow enhanced under-
+standing of transverse plane biomechanical features necessary
+for optimal recovery after surgery, as well as the inﬂuence of
+these biomechanical features on development and progression
+of post-traumatic knee OA.
+It has been theorised that abnormal transverse plane motions
+following ACL injury alters cartilage load distribution patterns,
+which may contribute to initiation of early degenerative changes
+in the joint.3
+Unfortunately, due to the large variability in the
+reporting of transverse plane kinematics and moments,
+meta-analysis could not be performed. In those who were 6–12
+months postsurgery, there is conﬂicting evidence provided by
+single studies as to whether peak knee internal rotation angles
+are increased or decreased in the ﬁrst half of stance in indivi-
+duals following ACLR relative to healthy controls.36
+Shi et al,5
+also reported altered transverse plane kinematics in individuals
+after ACLR. Shi et al,5
+reported greater maximum external rota-
+tion angle in individuals after ACLR compared to healthy con-
+trols, based on pooled data from two studies. While it appears
+that abnormal transverse plane biomechanics are evident after
+ACLR, the importance and relevance of such biomechanical
+alterations are unknown, and should be investigated further.
+This systematic review provides evidence that individuals
+following ACLR have altered gait mechanics, mostly in the sagit-
+tal plane, which have the potential to contribute to the develop-
+ment of post-traumatic knee OA. Interventions such as gait
+retraining or foot orthoses may assist in correcting gait
+characteristics in individuals following ACLR. However, future
+Table 6 Transverse plane knee kinematics
+Author, year ACLR cohort Time post-ACLR Comparator Standardised mean difference (95%CI)
+ACLR vs healthy controls
+Peak internal rotation angle
+6 to <12M Webster et al, 201136
+Hamstring graft: 7.0±5.0° 9±2 M 13.5±6.5° −1.10 (−1.80 to −0.39)
+Patellar graft: 8.0±6.0° 11±2 M 13.5±6.5° −0.86 (−1.55 to −0.17)
+Wang et al, 201338
+AMP technique: 4.7±0.9° 9±4 M 3±1.7° 1.14 (0.36 to 1.91)
+1 to <3Y Wang et al, 201338
+TT technique: 4.8±1.0° 17±11 M 3±1.7° 1.18 (0.40 to 1.96)
+Gao and Zheng 201019
+4.9° 12 M 2.5° Described greater internal rotation in ACLR knee
+(p value not reported)
+≥3Y Patterson et al, 201420
+6.0±1.2° 4±3 Y 9.0±1.5 −1.66 (−2.45 to −0.86)
+Peak external rotation angle
+6 to <12M Georgoulis et al17
+0.3±9.9° 30±17 W 3.6±6.2° −0.36 (−1.12 to 0.40)
+Wang et al, 201338
+AMP technique: 5.0±2.3° 9±4 M 5.8±2° −0.37 (−1.09 to 0.35)
+1 to <3Y Wang et al, 201338
+TT technique: 4.3±2.0° 17±11 M 5.8±2° −0.73 (−1.47 to 0.01)
+Bulgheroni 199758
+6.7° 17±5 M 4.2° No differences reported
+Gao and Zheng 201019
+6.0° 12 M 8.5° No differences reported
+ACLR vs contralateral knee
+Peak internal rotation angle
+6 to <12M Webster et al, 201225
+9.5±5.7° 10±2 M 13.1±4.5° −0.68 (−1.40 to 0.03)
+1 to <3Y Sato 201343
+3.3±4.4° 14±2 M 8.4±4.9° −1.03 (−2.16 to 0.11)
+Scanlan et al, 201028
+3.5° 24 (7–65) M 5.5° Described lower internal rotation in ACLR knee (p
+value not reported)
+Wang et al, 201242
+∝Dominant limb ACLR: 4.4° 14±4 M 6.6° Described significantly lower internal rotation in
+ACLR knee (p value not reported)
+Wang et al, 201242
+∝Non-dominant limb ACLR: 5.2° 14±6 M 6.2° No differences reported
+≥3Y Webster et al, 201225
+10.4±4.5° 3±1 Y 12.5±4.4° −0.46 (−1.16 to 0.24)
+Peak external rotation angle
+1 to <3Y Scanlan et al, 201028
+3.6° 24 (7–65) M 1.2° Reported greater external rotation in ACLR knee
+(p<0.01)
+Wang et al, 201242
+∝Dominant limb ACLR: 5.0° 14±4 M 4.6° Described greater external rotation in ACLR knee
+(p value not reported)
+∝Non-dominant limb ACLR : 4.0° 14±6 M 3.0° No differences reported
+Data are presented as mean±SD.
+∝, Lower limb dominance defined by ball kicking; ACLR, anterior cruciate ligament reconstruction; AMP, anteromedial portal; M, month; RTS, return to sport; TT, transtibial; W, week;
+Y, year.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 13
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 14 ---
+research should consider the timing of measurement since
+ACLR when investigating potential interventions for this patient
+population, as biomechanical features noted within 6 months do
+not appear to match those noted at 12 months postsurgery and
+beyond. Potential interventions targeted at this patient popula-
+tion may aid in improving knee OA prognosis following ACLR.
+Meta-analysis conducted in this systematic review revealed
+smaller knee ﬂexion angles (after 12 months following surgery)
+and no differences in knee abduction moment (KAM) in indivi-
+duals after ACLR compared to healthy controls. Smaller knee
+ﬂexion angles and larger KAM (ie, smaller KAM) are risk
+factors of non-contact ACL injury.56
+Considering that not all
+individuals develop post-traumatic knee OA after ACLR, it is
+plausible that altered gait mechanics may be evident in ACLR
+knees before injury or surgery. Thus, longitudinal data (prein-
+jury to postsurgery) will assist in establishing biomechanical risk
+factors, which may be targeted to ensure optimal recovery after
+ACLR.
+There are number of limitations that should be acknowledged.
+First, all relevant studies, regardless of methodological quality,
+were included in this systematic review. Therefore, it is possible
+that this systematic review is subject to bias through the inclu-
+sion of poor quality studies. However, the levels of evidence
+provide a synthesis of the quality, quantity and homogeneity of
+study results. Second, due to limited translation resources, we
+restricted our search to studies published in English. Thus, con-
+sideration of data from non-English language studies may alter
+the outcomes presented in this paper. Third, this systematic
+review evaluated knee kinematics and moments in individuals
+following autograft ACLR. Therefore, the results of this system-
+atic review may not be generalised to individuals after allograft
+ACLR. Finally, a small number of studies contributed to each
+meta-analysis, and thus results of this systematic review should
+be interpreted with caution. However, the systematic review and
+meta-analysis did reveal a paucity of longitudinal data in this
+patient-population.
+In summary, there is moderate evidence indicating that sagittal
+plane knee angles and moments during walking are altered after
+ACLR. Notably, there was strong evidence of no difference in
+knee adduction moment between ACLR and control partici-
+pants. Sensitivity analyses indicate that hamstring-tendon grafts
+may be associated with increased knee adduction angle during
+gait, whereas patellar-tendon grafts are not. Owing to very
+limited evidence, no conclusions can be drawn regarding trans-
+verse plane kinematics. Longitudinal studies are required to
+identify biomechanical features at the knee and secondary joints
+that are associated with the development and/or progression of
+post-traumatic knee OA after ACLR.
+Figure 6 Standardised mean difference (SMD) for peak transverse plane knee joint kinematics and moments. SMD >0: peak knee joint kinematics/
+moments larger in anterior cruciate ligament reconstruction (ACLR) participants compared to healthy controls. SMD <0: peak knee joint kinematics/
+moments smaller in ACLR participants compared to healthy controls.
+14 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 15 ---
+Figure 7 Standardised mean difference (SMD) for peak transverse plane knee joint kinematics and moments. SMD >0: peak knee joint kinematics/
+moments larger in anterior cruciate ligament reconstruction (ACLR) knees compared to contralateral knees. SMD <0: peak knee joint kinematics/
+moments smaller in ACLR knees compared to contralateral knees.
+Table 7 Transverse plane knee moments
+Author, year ACLR cohort Time post-ACLR Comparator
+Standardised mean
+difference (95%CI)
+ACLR vs healthy controls
+Peak internal rotation moment
+6 to <12M Karimi et al, 201330
+0.23±0.19 Nm/kg 6 M 0.17±0.09 Nm/kg 0.39 (−0.33 to 1.12)
+1 to <3Y Zabala et al, 201332
+0.97±0.24 Nm/(%kg m) 26 (22–36) M 1.01±0.24 Nm/(%kg m) −0.17 (−0.58 to 0.25)
+Peak external rotation moment
+6 to <12M Karimi et al, 201330
+0.13±0.06 Nm/kg 6 M 0.13±0.06 Nm/kg 0.00 (−0.72 to 0.72)
+1 to <3Y Zabala et al, 201332
+0.17±0.11 Nm/(%kg m) 26 (22–36) M 0.24±0.10 Nm/(%kg m) −0.66 (−1.09 to −0.24)
+Bulgheroni et al, 199758
+16.1 Nm/(%kg m) 17±5 M 6.7 Nm/(%kg m) Not reported
+ACLR vs contralateral knee
+Peak internal rotation moment
+6 to <12M Karimi et al, 201330
+0.23±0.19 Nm/kg 6 M 0.08±0.04 Nm/kg 1.06 (0.29 to 1.83)
+1 to <3Y Zabala et al, 201332
+0.97±0.24 Nm/(%kg m) 26 (22–36) M 1.04±0.21 Nm/(%kg m) −0.31 (−0.72 to 0.11)
+Peak external rotation moment
+6 to <12M Karimi et al, 201330
+0.13±0.06 Nm/kg 6 M 0.20±0.19 Nm/kg −0.07 (−0.17 to 0.03)
+1 to <3Y Zabala et al, 201332
+0.17±0.11 Nm/(%kg m) 26 (22–36) M 0.20±0.12 Nm/(%kg m) −0.26 (−0.67 to −0.16)
+Data are presented as mean±SD.
+ACLR, anterior cruciate ligament reconstruction; kg, kilogram; m, metre; M, month; NM, Newton metre.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 15
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 16 ---
+What are the new ﬁndings?
+▸ Individuals post-anterior cruciate ligament reconstruction
+(ACLR) have altered sagittal plane kinematics and moments
+compared to healthy controls and uninjured contralateral
+knees.
+▸ Knee adduction moments are maintained in individuals
+post-ACLR compared to healthy controls and contralateral
+knees.
+▸ Hamstring tendon graft may inﬂuence knee adduction
+angles in individuals post-ACLR.
+Twitter Follow Zuzana Machotka at @drzuzi
+Contributors HFH and KMC were involved in the conception and design. HFH and
+KMC were involved in the search strategy. HFH, AGC, DCA and SMC were involved
+in the screening of the articles. HFH and NJC were involved in data extraction. ZM,
+AGC and NJC were involved in the methodological quality ratings. HFH, NJC and
+KMC were involved in the data analysis.
+Funding HFH is supported by a National Health and Medical Research Council
+(Australia) Postgraduate Scholarship (#813021), AGC was supported by an
+Australian Postgraduate Award Scholarship, and NJC was supported by a NHMRC
+(Australia) Research Training (Post-Doctoral) Fellowship (#628918).
+Competing interests None declared.
+Provenance and peer review Not commissioned; externally peer reviewed.
+REFERENCES
+1 Lohmander LS, Englund PM, Dahl LL, et al. The long-term consequence of anterior
+cruciate ligament and meniscus injuries: osteoarthritis. Am J Sports Med
+2007;35:1756–69.
+2 Andriacchi TP, Briant PL, Bevill SL, et al. Rotational changes at the knee after ACL
+injury cause cartilage thinning. Clin Orthop Relat Res 2006;442:39–44.
+3 Chaudhari AMW, Briant PL, Bevill SL, et al. Knee kinematics, cartilage morphology,
+and osteoarthritis after ACL injury. Med Sci Sports Exerc 2008;40:215–22.
+4 Andriacchi TP, Koo S, Scanlan SF. Gait mechanics inﬂuence healthy cartilage
+morphology and osteoarthritis of the knee. J Bone Joint Surg Am 2009;91:95–101.
+5 Shi DL, Wang YB, Ai ZS. Effect of anterior cruciate ligament reconstruction on
+biomechanical features of knee in level walking: A meta-analysis. Chinese Med J
+2010;123:3137–42.
+6 Hart JM, Ko JWK, Konold T, et al. Sagittal plane knee joint moments following
+anterior cruciate ligament injury and reconstruction: a systematic review. Clin
+Biomech (Bristol, Avon) 2010;25:277–83.
+7 Gokeler A, Benjaminse A, van Eck CF, et al. Return of normal gait as an outcome
+measurement in acl reconstructed patients. A systematic review. Int J Sports Phys
+Ther 2013;8:441–51.
+8 Roos PE, Button K, Sparkes V, et al. Altered biomechanical strategies and
+medio-lateral control of the knee represent incomplete recovery of individuals with
+injury during single leg hop. J Biomech 2014;47:675–80.
+9 Paterno MV, Schmitt LC, Ford KR, et al. Biomechanical measures during landing
+and postural stability predict second anterior cruciate ligament injury after anterior
+cruciate ligament reconstruction and return to sport. Am J Sports Med
+2010;38:1968–78.
+10 Moher D, Liberati A, Tetzlaff J, et al. Preferred reporting items for systematic reviews
+and meta-analyses: the PRISMA statement. Ann Intern Med 2009;151:264–9.
+11 Downs SH, Black N. The feasibility of creating a checklist for the assessment of the
+methodological quality both of randomised and non-randomised studies of health
+care interventions. J Epidemiol Community Health 1998;52:377–84.
+12 Munn J, Sullivan SJ, Schneiders AG. Evidence of sensorimotor deﬁcits in functional
+ankle instability: a systematic review with meta-analysis. J Sci Med Sport
+2010;13:2–12.
+13 Cohen J. Statistical power analysis for the behavioral sciences (rev. ed.). Hillsdale,
+NJ, England: Lawrence Erlbaum Associates, Inc., 1988.
+14 van Tulder M, Furlan A, Bombardier C, et al., Editorial Board of the Cochrane
+Collaboration Back Review Group. Updated method guidelines for systematic
+reviews in the cochrane collaboration back review group. Spine (Phila Pa 1976)
+2003;28:1290–9.
+15 Ferber R, Osternig LR, Woollacott MH, et al. Gait mechanics in chronic ACL
+deﬁciency and subsequent repair. Clin Biomech (Bristol, Avon) 2002;17:274–85.
+16 Ferber R, Osternig LR, Woollacott MH, et al. Gait perturbation response in chronic
+anterior cruciate ligament deﬁciency and repair. Clin Biomech (Bristol, Avon)
+2003;18:132–41.
+17 Georgoulis AD, Papadonikolakis A, Papageorgiou CD, et al. Three-dimensional
+tibiofemoral kinematics of the anterior cruciate ligament-deﬁcient and reconstructed
+knee during walking. Am J Sports Med 2003;31:75–9.
+18 Webster KE, Wittwer JE, O’Brien J, et al. Gait patterns after anterior cruciate
+ligament reconstruction are related to graft type. Am J Sports Med 2005;33:247–54.
+19 Gao B, Zheng NN. Alterations in three-dimensional joint kinematics of anterior
+cruciate ligament-deﬁcient and -reconstructed knees during walking. Clin Biomech
+(Bristol, Avon) 2010;25:222–9.
+20 Patterson MR, Delahunt E, Sweeney KT, et al. An ambulatory method of identifying
+anterior cruciate ligament reconstructed gait patterns. Sensors 2014;14:887–99.
+21 Decker MJ, Torry MR, Noonan TJ, et al. Gait retraining after anterior cruciate
+ligament reconstruction. Arch Phys Med Rehabil 2004;85:848–56.
+22 Devita P, Hortobagyi T, Barrier J, et al. Gait adaptations before and after anterior
+cruciate ligament reconstruction surgery. Med Sci Sports Exer 1997;29:853–9.
+23 Noehren B, Wilson H, Miller C, et al. Long-term gait deviations in anterior cruciate
+ligament-reconstructed females. Med Sci Sports Exer 2013;45:1340–7.
+24 Di Stasi SL, Logerstedt D, Gardinier ES, et al. Gait patterns differ between
+ACL-reconstructed athletes who pass return-to-sport criteria and those who fail. Am
+J Sports Med 2013;41:1310–18.
+25 Webster KE, Feller JA, Wittwer JE. Longitudinal changes in knee joint biomechanics
+during level walking following anterior cruciate ligament reconstruction surgery. Gait
+Posture 2012;36:167–71.
+26 Roewer BD, Di Stasi SL, Snyder-Mackler L. Quadriceps strength and weight
+acceptance strategies continue to improve two years after anterior cruciate ligament
+reconstruction. J Biomech 2011;44:1948–53.
+27 Webster KE, McClelland JA, Palazzolo SE, et al. Gender differences in the knee
+adduction moment after anterior cruciate ligament reconstruction surgery. Brit J
+Sport Med 2012;46:355–9.
+28 Scanlan SF, Chaudhari AM, Dyrby CO, et al. Differences in tibial rotation during
+walking in ACL reconstructed and healthy contralateral knees. J Biomech
+2010;43:1817–22.
+29 Ferber R, Osternig LR, Woollacott MH, et al. Bilateral accommodations to anterior
+cruciate ligament deﬁciency and surgery. Clin Biomech (Bristol, Avon)
+2004;19:136–44.
+30 Karimi M, Fatoye F, Mirbod SM, et al. Gait analysis of anterior cruciate ligament
+reconstructed subjects with a combined tendon obtained from hamstring and
+peroneus longus. Knee 2013;20:526–31.
+31 Timoney JM, Inman WS, Quesada PM, et al. Return of normal gait patterns after
+anterior cruciate ligament reconstruction. Am J Sports Med 1993;21:887–9.
+32 Zabala ME, Favre J, Scanlan SF, et al. Three-dimensional knee moments of ACL
+reconstructed and control subjects during gait, stair ascent, and stair descent.
+J Biomech 2013;46:515–20.
+33 Bush-Joseph CA, Hurwitz DE, Patel RR, et al. Dynamic function after anterior
+cruciate ligament reconstruction with autologous patellar tendon. Am J Sports Med
+2001;29:36–41.
+34 Hall M, Stevermer CA, Gillette JC. Gait analysis post anterior cruciate ligament
+reconstruction: Knee osteoarthritis perspective. Gait Posture 2012;36:56–60.
+35 Hooper DM, Morrissey MC, Crookenden R, et al. Gait adaptations in patients with
+chronic posterior instability of the knee. Clin Biomech (Bristol, Avon)
+2002;17:227–33.
+36 Webster KE, Feller JA. Alterations in joint kinematics during walking following
+hamstring and patellar tendon anterior cruciate ligament reconstruction surgery.
+Clin Biomech (Bristol, Avon) 2011;26:175–80.
+37 Webster KE, Feller JA. The knee adduction moment in hamstring and patellar
+tendon anterior cruciate ligament reconstructed knees. Knee Surg Sport Tra A
+2012;20:2214–19.
+38 Wang HS, Fleischli JE, Zheng NQ. Transtibial versus anteromedial portal technique
+in single-bundle anterior cruciate ligament reconstruction outcomes of knee joint
+kinematics during walking. Am J Sports Med 2013;41:1847–56.
+39 Butler RJ, Minick KI, Ferber R, et al. Gait mechanics after ACL reconstruction:
+implications for the early onset of knee osteoarthritis. Brit J Sport Med 2009;43:366–70.
+40 Patterson MR, Delahunt E, Caulﬁeld B. Peak knee adduction moment during gait in
+anterior cruciate ligament reconstructed females. Clin Biomech (Bristol, Avon)
+2014;29:138–42.
+41 Sanford BA, Zucker-Levin AR, Williams JL, et al. Principal component analysis of
+knee kinematics and kinetics after anterior cruciate ligament reconstruction. Gait
+Posture 2012;36:609–13.
+42 Wang H, Fleischli JE, Nigel Zheng N. Effect of lower limb dominance on knee joint
+kinematics after anterior cruciate ligament reconstruction. Clin Biomech (Bristol,
+Avon) 2012;27:170–5.
+43 Sato K, Maeda A, Takano Y, et al. Relationship between static anterior laxity using
+the KT-1000 and dynamic tibial rotation during motion in patients with anatomical
+anterior cruciate ligament reconstruction. Kurume Med J 2013;60:1–6.
+44 Buff HU, Jones LC, Hungerford DS. Experimental determination of forces transmitted
+through the patello-femoral joint. J Biomech 1988;21:17–23.
+16 Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 17 ---
+45 Culvenor AG, Collins NJ, Guermazi A, et al. Early knee osteoarthritis is evident one
+year following anterior cruciate ligament reconstruction: a magnetic resonance
+imaging evaluation. Arthritis Rheum 2015;67:946–55.
+46 Frobell RB. Change in cartilage thickness, posttraumatic bone marrow lesions, and
+joint ﬂuid volumes after acute ACL disruption: a two-year prospective MRI study of
+sixty-one subjects. J Bone Joint Surg Am 2011;93:1096–103.
+47 Miyazaki T, Wada M, Kawahara H, et al. Dynamic load at baseline can predict
+radiographic disease progression in medial compartment knee osteoarthritis. Ann
+Rheum Dis 2002;61:617–22.
+48 Sharma L, Hurwitz DE, Thonar EJ, et al. Knee adduction moment, serum hyaluronan
+level, and disease severity in medial tibiofemoral osteoarthritis. Arthritis Rheum
+1998;41:1233–40.
+49 Bennell KL, Bowles KA, Wang Y, et al. Higher dynamic medial knee load predicts
+greater cartilage loss over 12 months in medial knee osteoarthritis. Ann Rheum Dis
+2011;70:1770–4.
+50 Hinman RS, Bowles KA, Metcalf BB, et al. Lateral wedge insoles for medial knee
+osteoarthritis: effects on lower limb frontal plane biomechanics. Clin Biomech
+(Bristol, Avon) 2012;27:27–33.
+51 Shull PB, Silder A, Shultz R, et al. Six-week gait retraining program reduces knee
+adduction moment, reduces pain, and improves function for individuals with medial
+compartment knee osteoarthritis. J Orthop Res 2013;31:1020–5.
+52 Ahn JH, Kim JG, Wang JH, et al. Long-term results of anterior cruciate ligament
+reconstruction using bone-patellar tendon-bone: an analysis of the factors affecting
+the development of osteoarthritis. Arthroscopy 2012;28:1114–23.
+53 Sward P, Kostogiannis I, Neuman P, et al. Differences in the radiological
+characteristics between post-traumatic and non-traumatic knee osteoarthritis. Scand
+J Med Sci Sports 2010;20:731–9.
+54 Bourke HE, Gordon DJ, Salmon LJ, et al. The outcome at 15 years of endoscopic
+anterior cruciate ligament reconstruction using hamstring tendon autograft for
+‘isolated’ anterior cruciate ligament rupture. J Bone Joint Surg Br 2012;94:
+630–7.
+55 Felson DT, Niu J, Gross KD, et al. Valgus malalignment is a risk factor for lateral
+knee osteoarthritis incidence and progression: ﬁndings from the Multicenter
+Osteoarthritis Study and the Osteoarthritis Initiative. Arthritis Rheum
+2013;65:355–62.
+56 Lin CF, Liu H, Gros MT, et al. Biomechanical risk factors of non-contact ACL
+injuries: a stochastic biomechanical modeling study. J Sport Health Sci 2012;1:
+36–42.
+57 Bacchini M, Cademartiri C, Soncini G. Gait analysis in patients undergoing ACL
+reconstruction according to Kenneth Jones’ technique. Acta Biomed
+2009;80:140–9.
+58 Bulgheroni P, Bulgheroni MV, Andrini L, et al. Gait patterns after anterior cruciate
+ligament reconstruction. Knee Surg Sport Tra A 1997;5:14–21.
+59 Devita P, Hortobagyi T, Barrier J. Gait biomechanics are not normal after anterior
+cruciate ligament reconstruction and accelerated rehabilitation. Med Sci Sports Exer
+1998;30:1481–8.
+60 Hunt MA, Di Ciacca SR, Jones IC, et al. Effect of Anterior Tibiofemoral Glides
+on Knee Extension during Gait in Patients with Decreased Range of Motion
+after Anterior Cruciate Ligament Reconstruction. Physiother Can 2010;62:
+235–41.
+61 Scanlan SF, Favre J, Andriacchi TP. The relationship between peak knee
+extension at heel-strike of walking and the location of thickest femoral
+cartilage in ACL reconstructed and healthy contralateral knees. J Biomech
+2013;46:849–54.
+Hart HF, et al. Br J Sports Med 2015;0:1–17. doi:10.1136/bjsports-2015-094797 17
+Review
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 18 ---
+meta-analysis
+reconstruction: a systematic review and
+gait following anterior cruciate ligament
+Knee kinematics and joint moments during
+M Cowan, Zuzana Machotka and Kay M Crossley
+Harvi F Hart, Adam G Culvenor, Natalie J Collins, David C Ackland, Sallie
+published online August 11, 2015 Br J Sports Med
+http://bjsm.bmj.com/content/early/2015/08/11/bjsports-2015-094797
+Updated information and services can be found at:
+These include:
+Material
+Supplementary
+DC1.html
+http://bjsm.bmj.com/content/suppl/2015/08/11/bjsports-2015-094797.
+Supplementary material can be found at:
+References
+#BIBL
+http://bjsm.bmj.com/content/early/2015/08/11/bjsports-2015-094797
+This article cites 60 articles, 15 of which you can access for free at:
+service
+Email alerting
+box at the top right corner of the online article.
+Receive free email alerts when new articles cite this article. Sign up in the
+Collections
+Topic Articles on similar topics can be found in the following collections
+(99) Osteoarthritis
+(392) Musculoskeletal syndromes
+(212) Degenerative joint disease
+(46) Procedures
+(108) BJSM Reviews with MCQs
+Notes
+http://group.bmj.com/group/rights-licensing/permissions
+To request permissions go to:
+http://journals.bmj.com/cgi/reprintform
+To order reprints go to:
+http://group.bmj.com/subscribe/
+To subscribe to BMJ go to:
+group.bmj.com on August 16, 2015 - Published by http://bjsm.bmj.com/ Downloaded from
+
+--- PAGE 19 ---

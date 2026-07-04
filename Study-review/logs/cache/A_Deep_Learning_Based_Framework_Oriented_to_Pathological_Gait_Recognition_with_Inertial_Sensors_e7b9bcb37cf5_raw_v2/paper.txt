@@ -1,0 +1,985 @@
+
+--- PAGE 1 ---
+Academic Editors: Tao Liu, Eros
+Pasero and Vincenzo Randazzo
+Received: 24 September 2024
+Revised: 21 December 2024
+Accepted: 2 January 2025
+Published: 5 January 2025
+Citation: Palazzo, L.; Suglia, V.;
+Grieco, S.; Buongiorno, D.; Brunetti,
+A.; Carnimeo, L.; Amitrano, F.; Coccia,
+A.; Pagano, G.; D’Addio, G.; et al. A
+Deep Learning-Based Framework
+Oriented to Pathological Gait
+Recognition with Inertial Sensors.
+Sensors 2025, 25, 260. https://
+doi.org/10.3390/s25010260
+Copyright: © 2025 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+Article
+A Deep Learning-Based Framework Oriented to Pathological
+Gait Recognition with Inertial Sensors
+Lucia Palazzo 1,2,† , Vladimiro Suglia 2,† , Sabrina Grieco 2 , Domenico Buongiorno 2 , Antonio Brunetti 2 ,
+Leonarda Carnimeo 2 , Federica Amitrano 3 , Armando Coccia 3 , Gaetano Pagano 1,* , Giovanni D’Addio 1,3
+and Vitoantonio Bevilacqua 2
+1 Bioengineering Unit of Bari, Istituti Clinici Scientifici Maugeri IRCCS, Via Generale Bellomo, 73/75,
+70124 Bari, Italy; lucia.palazzo@icsmaugeri.it (L.P.); gianni.daddio@icsmaugeri.it (G.D.)
+2 Department of Electrical and Information Engineering (DEI), Polytechnic University of Bari,
+Via E. Orabona, 4, 70125 Bari, Italy; vladimiro.suglia@poliba.it (V.S.); s.grieco1@studenti.poliba.it (S.G.);
+domenico.buongiorno@poliba.it (D.B.); antonio.brunetti@poliba.it (A.B.); leonarda.carnimeo@poliba.it (L.C.);
+vitoantonio.bevilacqua@poliba.it (V.B.)
+3 Bioengineering Unit of Telese Terme, Istituti Clinici Scientifici Maugeri IRCCS, Via Bagni Vecchi, 1,
+82037 Telese Terme, Italy; federica.amitrano@icsmaugeri.it (F.A.); armando.coccia@icsmaugeri.it (A.C.)
+* Correspondence: gaetano.pagano@icsmaugeri.it
+† These authors contributed equally to this work.
+Abstract: Abnormal locomotor patterns may occur in case of either motor damages or
+neurological conditions, thus potentially jeopardizing an individual’s safety. Pathological
+gait recognition (PGR) is a research field that aims to discriminate among different walking
+patterns. A PGR-oriented system may benefit from the simulation of gait disorders by
+healthy subjects, since the acquisition of actual pathological gaits would require either
+a higher experimental time or a larger sample size. Only a few works have exploited
+abnormal walking patterns, emulated by unimpaired individuals, to perform PGR with
+Deep Learning-based models. In this article, the authors present a workflow based on
+convolutional neural networks to recognize normal and pathological locomotor behaviors
+by means of inertial data related to nineteen healthy subjects. Although this is a preliminary
+feasibility study, its promising performance in terms of accuracy and computational time
+pave the way for a more realistic validation on actual pathological data. In light of this,
+classification outcomes could support clinicians in the early detection of gait disorders and
+the tracking of rehabilitation advances in real time.
+Keywords: gait recognition; gait disorders; inertial measurement units; deep learning;
+convolutional neural network; rehabilitation; bioengineering
+1. Introduction
+Human locomotion is a symmetric motor action [1] that requires the involvement of
+the central and peripheral nervous systems actuating mechanisms to control limb move-
+ments, posture, and muscle tone. When this neuromotor process is compromised by either
+physiological decline due to aging or such pathological conditions as Parkinson’s disease
+(PD), abnormal walking patterns may be exhibited [2]. Therefore, monitoring locomotor
+behaviors is needed to evaluate whether and how an individuals’ motor state deviates from
+a healthy gait [3], and such difference may be an indicator of a gait disorder [4,5].
+In the context of healthcare, the employment of systems for monitoring and recogniz-
+ing gait allows one to record motor execution, identify a possible gait disorder, and provide
+feedback for the patients’ assistance [6–10]. In light of this, walking pattern recognition
+Sensors 2025, 25, 260 https://doi.org/10.3390/s25010260
+
+--- PAGE 2 ---
+Sensors 2025, 25, 260 2 of 17
+even has the potential to support clinicians for both rehabilitative and remote-monitoring
+purposes [11], aiming at the treatment of neuromotor pathologies, such as PD [12–16],
+cerebellar ataxia [17], stroke [18,19], and cerebral palsy [20].
+Gait recognition (GR) is a human activity recognition problem that is directed to
+differentiate locomotion from other motor actions [3], whilst pathological gait recognition
+(PGR) may be regarded as a subfield of GR that is used to discriminate motor patterns
+between healthy and pathological ones in case of binary classification [4] or among different
+gait disorders [2,6,11,21–24]. Despite a binary classification being easier to accomplish due
+to the high deviation of pathological motor patterns with respect to normal gait [13,15,18],
+a PGR including different gait disorders allows one to discriminate even similar walking
+patterns [5], such as those of foot drop and hemiplegia.
+The recognition of pathological gaits needs a large amount of data related to patients
+to be accurate, which implies that one needs to make the experimental subjects execute mul-
+tiple repetitions of several motor actions [1,3]. However, this may be a highly demanding
+motor task in the case of actually impaired subjects due to their condition; for this reason,
+such individuals could perform the target motor pattern only a limited number of times
+or with longer breaks [9]. As a consequence, a dataset imbalance between healthy and
+pathological individuals would arise, thus introducing a bias in the classification; since this
+worsens the performance of automatic recognition, a higher number of patients needs to be
+involved [25]. Moreover, the specific disease severity influences the number of recruitable
+patients, which could be seriously restricted in the case of non-autonomous locomotion,
+and a constant supervision of clinicians is still required for the patients’ safety. Hence, the
+simulation of abnormal walking patterns by healthy individuals may provide a benefit to
+the performance of a PGR framework, considering their possibility to perform different
+trials of various walking actions. In so doing, the effectiveness of a classification pipeline
+can be evaluated prior to any investigations on actual pathological individuals [2]; this
+is similar to the concept of cross-subject domain adaptation [26], meaning that the model
+is pre-trained on abnormal walking patterns simulated by healthy controls before being
+finally tested on actual pathological data. Additionally, the PGR system could then carry
+out an early detection of abnormal walking patterns [5,27].
+A pathological motor pattern may be replicated in different ways, such as fixing lower
+limb joints [4] or making the subject wear a shoe unilaterally [8]; however, such method-
+ology could result in the individual’s discomfort during the execution, thus potentially
+leading to involuntary compensations that alter the simulation, and would require a com-
+plex setup to mimic various gait disorders. Therefore, experimental protocols addressing
+PGR are typically based on the simulation of such impaired motor behaviors without any
+physical constraint on the lower limbs [2,7,21].
+A few studies trained artificial intelligence (AI) models, notably Deep Learning (DL)
+architectures, with inertial data regarding emulated gait disorder. Hence, a paucity in the
+literature has been found about the frameworks exploiting the simulation of abnormal
+walking patterns to train DL-based models for the final aim of recognizing actual patholog-
+ical gaits. The objective of this work is to present the evaluation of CNN-based algorithms
+that aim to discriminate normal gait from abnormal human walking patterns, which are
+emulated by healthy subjects, by means of inertial data. Both the execution of normal gait
+and the simulation of multiple pathological behaviors are included in the experimental
+protocol. In addition, various sensor configurations (number and placement of IMUs)
+have been evaluated to estimate their impact on the model performance; their comparison
+has been analyzed to determine the proper tradeoff between the informativeness and the
+usability of the sensor placement for the sake of continuous usage oriented to clinical
+purposes entailing both remote monitoring and rehabilitation [3,7].
+
+--- PAGE 3 ---
+Sensors 2025, 25, 260 3 of 17
+The remainder of this article is as follows. After reporting the state-of-the-art in
+Section 2, materials (i.e., the system and protocol for data collection) and methods (i.e.,
+preprocessing operations, CNN-based architectures, and statistical analysis) are discussed
+in Section 3. Then, the results are shown and discussed in Section 4. Ultimately, in
+Section 5 conclusions about the conducted study are drawn and suggestions for future
+works are reported.
+2. Related Works
+Walking patterns for PGR can be recorded by means of such fixed sensors as opti-
+cal motion capture systems [6], which provide experimenters with high-fidelity data on
+movement patterns during the gait cycle [28]. Among these devices, RGBD cameras have
+obtained comparable performance with respect to Vicon systems [6], which have a limited
+application due to their expensiveness [4]. RGBD cameras recognized activities of daily
+living (ADLs) with performances that were similar to or even higher than inertial wearable
+devices [29]. However, these devices are influenced by illumination and occlusions and
+are characterized by a limited coverage area [30]; in addition, their need for extensive
+preprocessing to prepare data for the actual classification pipeline [6] could be in contrast
+with real-time requirements of remote-monitoring applications [3]. Hence, such wearable
+sensors as inertial measurement units (IMUs) could be preferred for their portability, which
+allows for their usage in both outdoor and indoor environments [3,11].
+Subsequently, motor behaviors can be recognized by Machine Learning (ML) models,
+which were trained on data related to either actual pathological individuals or locomotor
+disorders simulated by healthy subjects. For instance, Dolatabadi et al. [25] fed such
+ML models as a k-nearest neighbor (kNN) with the data coming from Kinect sensors to
+automatically discriminate the walking patterns of healthy subjects and individuals affected
+by either stroke or acquired brain injury. Ghobadi [7] trained a support vector machine
+(SVM) with IMU data to recognize a simulated foot drop behavior.
+Notwithstanding, these pipelines needed a complex and time-demanding feature
+engineering stage prior to the actual classification [3,8]. On the other hand, Deep Learn-
+ing (DL) architectures, such as convolutional neural networks (CNNs) [6,9,31], can be
+trained directly on raw data, thus avoiding manual feature extraction [3,21]. For instance,
+Oh et al. [9] exploited a 1D-CNN to recognize the activities of daily living performed by
+hemiparetic stroke patients and healthy controls, who wore IMUs on the wrist, forearm,
+upper arm, trunk, and ankle. However, such ADLs did not entail locomotor patterns, since
+they were conceived for investigating the asymmetry of upper limb motions of individuals
+after a stroke.
+There exist a few studies that simulate pathological walking patterns to train PGR-
+oriented AI algorithms, whether ML or DL models, by acquiring inertial data. For instance,
+Robles et al. [2] utilized Artificial Neural Networks (ANNs) to classify simulated gait
+disorders (those of Parkinsonian, ataxic, and hemiplegic origins)by analyzing accelerations
+of the center of mass of healthy subjects. Ghobadi et al. [7] discriminated normal gait
+from mimicked foot drop (FD) by training a support vector machine (SVM) with the data
+coming from a single IMU placed on the subject’s right leg. Yin et al. [23] exploited two
+accelerometers to feed DL architectures, such as a CNN, with the aim of automatically
+classifying pathological gaits (e.g., hemiplegic, diplegic, and Parkinsonian gaits), which
+were emulated by healthy participants.
+
+--- PAGE 4 ---
+Sensors 2025, 25, 260 4 of 17
+3. Materials and Methods
+The proposed framework for pathological gait recognition is reported in Figure 1.
+Herein, inertial data are first collected from five sensors placed on the human body during
+the execution of walking patterns, and then used to feed each of three DL-based classifiers,
+which differ in terms of architecture.
+Figure 1. The presented framework is based on the acquisition of inertial data by means of five IMU
+sensors, whose components are given as input to each of three DL-based models, which return the
+label associated with the walking pattern.
+3.1. Data Collection
+Thissectionreportstheindividualsrecruitedintheexperiments, thewalkingbehaviors
+that were simulated, the IMU sensors used to acquire kinematic data, and the experimental
+protocol that was followed.
+3.1.1. Participants
+Nineteen healthy subjects were recruited among the physiatrists and physiotherapists
+of IRCCS Maugeri (Bari, Italy) to guarantee a plausible simulation of pathological gaits.
+Proper balancing among males and females was guaranteed (i.e., 9 males and 10 females)
+to prevent the model from being biased by sex [31]. These participants have no motor or
+cognitive disorders, and differ in age (37.6 ±13.0 years old), weight (72.9 ±12.7 kg), height
+(170.7±6.8cm), andanthropometriccharacteristicsforthesakeofhigherdataheterogeneity.
+Prior to the beginning of the experimental session, participants were informed about the
+execution of the motor tasks.
+3.1.2. Walking Actions
+The activities to be performed were chosen among the motor disorders that had been
+treated the most in the IRCCS Maugeri in Bari, Italy. In light of this, in addition to normal
+walking, four pathological gaits were considered and they are ataxic, equine (foot drop),
+hemiplegic, and Parkinsonian gaits [32]. The description of these walking patterns is
+provided in the following.
+
+--- PAGE 5 ---
+Sensors 2025, 25, 260 5 of 17
+- Normal gait mainly requires alternating flexion–extension movements of the lower
+limb joints (i.e., hip, knee, and ankle), possibly supported by arm swinging to
+increase balance.
+- Hemiplegic gait is the result of poor control of the flexor muscles during the swing
+phase, as well as spasticity of the extensor muscles involved in the extension of the
+paretic leg [2]. The knee does not flex normally during swinging, thus causing the leg
+circumduction [28]. On the paretic side, the hemiplegic patient is prone to raise the
+shoulder and to keep the arm close to the trunk, flexed, adducted, and with the wrist
+internally rotated.
+- Equine gait (foot drop) can be induced by abnormal activity of the plantar muscles
+in the swing phase, thus resulting in weakness in foot dorsiflexion and an abnormal
+ankle position for which knee flexion or hyperextension during the stance phase of
+locomotion are used as compensation [33].
+- Ataxic-cerebellar gait is characterized by a wide base of support and a low cadence of
+steps that leads to impaired balance and generates instability [2].
+- Parkinsonian gait determines the presence of bradykinesia (delayed movement) with
+short and slow steps, as well as issues in detaching the forefoot [2,34]. Parkinsonian
+patients even have a forward flexed trunk because of muscle rigidity in this body part
+and tremors in the hands [31].
+3.1.3. IMU Sensors
+Wearable IMU sensors (OPALTM, APDM Inc., Portland, OR, USA) were utilized to
+acquire data from each subject. These devices are automatically calibrated by the Motion
+Studio system by APDM and are worn by means of elastic bands as Velcro straps to avoid
+direct contact with the skin and consequent motion artifacts due to friction. Five sensors
+were selected (see Figure 1) and worn by each participant on both sides of the human
+pelvis (RP and LP), on the right and left wrists (RW and LW), and on the sternum (S). This
+distributed placement has been preferred with respect to the tendency by many PGR studies
+to promote the subject’s comfort in daily life by exploiting the potentiality of e-textiles [35]:
+more specifically, the sensor on the sternum can be embedded into a smart T-shirt, those on
+the wrists can be part of a smart bracelet, and those on the pelvis might be inserted in a
+smart belt. In addition, placing sensors on different body parts is useful to detect a wider
+myriad of motor actions that involve the upper and lower limbs, whether separately or
+simultaneously [3,36].
+The sensor configuration is almost the same as in a previous work about human
+activity recognition [3], with the only difference being an additional IMU on the left
+wrist. Furthermore, this placement enables the detection of pathological behaviors: in
+fact, the IMUs on the pelvis may reveal the lower limb movements compensating for
+either hemiplegia or foot drop; on the other hand, the sensor on the sternum allows one
+to detect Parkinsonian trunk flexion; sensors on the wrists are essential to record the
+presence/absence of arm movements corresponding to the dominant and/or pathological
+side (hemiplegia), or the presence of Parkinson tremor. This sensor placement can capture
+the characteristics of a normal gait too, as already mentioned in a previous work [3].
+The experimental data were recorded with a sampling rate of 128 Hz from a 3-axis
+14-bit accelerometer to measure linear acceleration, a 3-axis 16-bit gyroscope to acquire
+angular velocity, and a 3-axis 16-bit magnetometer for magnetic field intensity [37].
+3.1.4. Experimental Protocol
+The protocol took place at the Laboratory of Movement Analysis of IRCCS Maugeri in
+Bari, Italy; it encompassed the execution of multiple repetitions of both normal locomotion
+
+--- PAGE 6 ---
+Sensors 2025, 25, 260 6 of 17
+and the simulation of pathological gaits, meaning that each subject was asked to perform
+four repetitions for each task. The mimicking quality was qualitatively ensured by a
+prior familiarization stage, whose duration was not excessively high since physiatrists
+and physiotherapists executed the tasks. In addition, verisimilitude was further allowed
+by an expert in the realm of neurorehabilitation, who gave instructions in a video that
+was taken as a further reference together with the Standford Medicine guidelines [38]. A
+total of 28 repetitions were recorded for each subject, since hemiplegic and equine gaits
+were mimicked on each side of the human body to increase the model’s generalizability in
+recognizing the pathology. In fact, in these cases the asymmetry of motor patterns can be
+relevant not only for activity classification, but also for effective rehabilitation [9].
+Each repetition began with a standing phase of 15 s, proceeded with overground
+walking on a linear traced path of 7 m, and ended with another standing stage of 5 s, as
+shown in Figure 1. Note that this path was followed in different directions for the sake of
+greater data variability. Each subject was told to wait a reasonable time between contiguous
+repetitions to prevent fatigue [3]. In view of this, the protocol required a total of almost
+45 min for each individual.
+3.2. Classification Pipeline
+The pipeline for classifying walking patterns is made up of two parts, which are a
+preliminary set of preprocessing operations and the implementation of different models
+for PGR.
+3.2.1. Preprocessing
+Data from the inertial sensors were initially acquired for each subject and repetition as
+a matrix of size Ns × (5 ·9), where Ns is the number of samples in a single repetition, 5 is
+the total number of IMU sensors, and 9 is the total number of IMU components (3 for the
+accelerometer, 3 for the gyroscope, and 3 for the magnetometer). Afterwards, they were
+processed first with segmentation by visual inspection to exclude both the static period
+(initial and final standing phases) and the transitional movements (stand-to-walk, walking,
+and walk-to-stand), isolating the walking patterns of interest.
+Accelerometer, gyroscope, and magnetometer values were then normalized for each
+walking pattern in the range [−1,1] to obtain a uniform representation of the data [3].
+Subsequently, a windowing procedure was applied to enlarge the dataset dimensionality
+by dividing the signal into windows of 128 samples (1 s) with 50% overlap (0.5 s); this
+window width was chosen so as to capture enough motor patterns without excessively
+increasing the computational cost [39].
+IMU data were resampled both to achieve a uniform sample size and to exploit the
+whole informative content of the signal [3]. Additionally, the authors examined different
+combinations of sensors to verify the influence of sensor configurations on the classification
+performance [3].
+3.2.2. Classification Models
+In this work, the pipeline for classifying normal and abnormal walking patterns
+includes three DL-based models:
+1. mCNN-1D: a multi-branch one-dimensional convolutional neural network that was
+already exploited for continuous HAR in a previous work [3];
+2. smCNN-1D: a simplified multi-branch one-dimensional convolutional neural network;
+3. sCNN-1D: a sequential one-dimensional convolutional neural network.
+The authors chose CNN-based architectures in view of their successful application in
+related works about PGR [22–24], together with their efficacy in HAR [3,40].
+
+--- PAGE 7 ---
+Sensors 2025, 25, 260 7 of 17
+The mCNN-1D model (Figure 2a) is characterized by the same architecture and hyper
+parameters as the one used in the previous work [3], with the only difference that the
+early-stop criterion herein monitors the recall on the validation set to avoid overfitting.
+The smCNN-1D model (Figure 2b) differs from mCNN-1D model from the architec-
+tural point of view, since it adopts only one 1D convolutional layer, which uses 128 filters
+with a kernel size of 5, and one fully connected layer with 128 neurons; moreover, the hyper
+parameters are the same, except for the batch size of 256.
+The sCNN-1D architecture (Figure 2c) is inspired by that of the smCNN-1D model.
+Since it is a sequential CNN, it is not made up of parallel branches, but only of a unique
+set of layers. Therefore, input data are not split into the different IMU channels (i.e.,
+accelerometer, gyroscope, and magnetometer); on the other hand, such IMU components
+can be given as input to the model either combined or separately.
+Conv1D
+Max Pooling
+Flatten
+Dense
+Softmax
+Input Layer
+Output
+128
+2
+Concatenate
+128
+3
+64
+5
+2
+64
+3
+WH WF WA WN
+2
+128
+3
+2
+64
+3
+128
+5
+2
+128
+3
+2
+64
+3
+0 .2
+128 128
+Dropout
+Acc Gyr Mag
+128
+5
+128
+5
+64
+5
+64
+5
+WP
+2 2
+128
+2
+0 .2
+128
+Acc Gyr Mag
+128
+128
+WP
+5 5 5
+2
+0 .2
+128
+Input
+128
+5
+WH
+WF
+WA
+WN
+WP
+WH
+WF
+WA
+WN
+a)
+b) c)
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+N
+c h
+N
+c h
+N
+c h
+N
+c h
+N
+c h
+N
+c h
+Nw
+N
+c h
+Nw
+Nw
+Nw
+Nw
+Nw
+Nw
+Figure 2. The classification models addressing PGR: (a) a multi-branch one-dimensional convolu-
+tional neural network; (b) a simplified multi-branch one-dimensional convolutional neural network;
+(c) a sequential one-dimensional convolutional neural network. Note that Nw is the number of win-
+dows in the input dataset, which differs with both subjects and trials; Wl is the window length, which
+is fixed; and Nch is the number of sensor channels.
+For all architectures, to aggregate the data from multiple sensors into one single input,
+the input layer is fed by a multidimensional array whose shape is (Nw,Wl, Nch), where
+Nw is the number of windows in the input dataset, which may change across subjects and
+
+--- PAGE 8 ---
+Sensors 2025, 25, 260 8 of 17
+trials; Wl is the window length, which is fixed; and Nch is the number of sensor channels,
+which is equal to the quantity Nc · Ns, given Ns the number of sensors in the combination
+to be evaluated and Nc the number of IMU components to be examined. Note that Nc can
+be one for the sCNN-1D when only a single IMU component is used as input to the model;
+otherwise, it is three.
+The classification was designed to recognize five walking patterns, since both hemi-
+plegic and equine walks have not been distinguished based on the affected side.
+The data splitting method is the same across all models: the dataset is randomly split
+across subjects [41,42] such that the data from 60% of them (11 subjects) are assigned to the
+training set, the data from 20% of them (4 different subjects) to the validation set, and the
+data from the other 20% (a different 4 subjects) to the testing set. This splitting strategy has
+already been employed in other studies that are oriented to fall detection [43] and human
+activity recognition [44], as well as conceived for diagnostic purposes in either the medical
+field [45,46] or the energetic context [47]. To ensure a fair and unbiased evaluation of each
+model, the above-mentioned partition is applied ten times and the dataset is split ten times,
+in each of which different subjects are randomly extracted to constitute the three sets [3,48].
+All investigations of the models were conducted on the Google Colab-Pro framework
+such that each model was trained on a Tesla T4. All the architectures were trained and
+made inferences by means of Tensorflow, Sklearn, Pandas, and Numpy libraries.
+3.3. Metrics and Statistics
+Different metrics were used to evaluate the model performance for each sensor combi-
+nation reported in Figure 3. At first, the test dataset was evaluated in terms of accuracy
+and recall, whose formulas are reported as follows.
+Accuracy =
+TP + TN
+TP + TN + FP + FN
+(1)
+Recall =
+TP
+TP + FN
+(2)
+where TP, TN, FP, and FN represent true positives, true negatives, false positives, and
+false negatives, respectively.
+S
+LP
+RP
+LW
+RW
+1 sensor 2 sensors 3 sensors 4 sensors 5 sensors
+S + LP
+S + RP
+S + LW
+S + RW
+LP + RP
+LP + LW
+LP + RW
+RP + LW
+RP + RW
+LW + RW
+S + LP + RP
+S + LP + LW
+S + LP + RW
+S + RP + LW
+S + RP + RW
+S + LW + RW
+LP + RP + LW
+LP + RP + RW
+LP + LW + RW
+RP + LW + RW
+S + LP + RP + LW
+S + LP + RP + RW
+S + LP + LW + RW
+S + RP + LW + RW
+LP + RP + LW + RW
+S + LP + RP + LW + RW
+Figure 3. Sensor combinations grouped by the number of sensors, which can be placed at the sternum
+(S), the left pelvis (LP), the right pelvis (RP), the left wrist (LW), and the right wrist (RW).
+
+--- PAGE 9 ---
+Sensors 2025, 25, 260 9 of 17
+On the other hand, the feasibility of the framework in real-time clinical application
+was investigated by computing the inference time, which is the instant when the data are
+given as input to the model in which the result classification label is obtained [49].
+The normality distribution of these indexes was checked by means of a Shapiro–
+Wilk test with a significance level of p = 0.05. Consequently, for pair-wise comparisons,
+their values were statistically compared through a non-parametric Wilcoxon signed-rank
+test for non-normally distributed sets and with a paired t-test (p < 0.05) for normally
+distributed ones.
+These analyses were conducted using the Matlab 2022b platform.
+4. Results and Discussion
+In this work, the authors present a framework based on Deep Learning, aiming to
+perform pathological gait recognition (PGR)—i.e., recognizing healthy and simulated
+pathological gaits. For this purpose, various architectures based on convolutional neural
+networks (CNNs) have been implemented, and they are a multi-branch one-dimensional
+CNN (mCNN-1D), a simplified multi-branch one-dimensional CNN (smCNN-1D), and a
+sequential one-dimensional CNN (sCNN-1D). Such models have been trained and tested
+with the data coming from inertial measurement units (IMUs) placed at five body parts,
+which are the left pelvis (LP), the right pelvis (RP), the left wrist (LW), the right wrist
+(RW), and the sternum (S). The experimental protocol followed by the subjects entails
+both the execution of normal gait (WN) and the simulation of four abnormal walking
+patterns, which are hemiplegic (WH), equine (WF), ataxic (WA), and Parkinsonian (WP)
+gaits. Three indexes have been employed to evaluate the performance of the proposed
+workflow: accuracy and recall aim to ascertain the capability to perform PGR, whilst
+inference time serves to assess its feasibility in a real-time clinical scenario. Note that the
+classification speed is needed to ensure prompt assistance to any patients; for instance,
+when they are assisted by a robotic device, the supporting torque provided by the controller
+should be properly tailored to their disorder [50–56], which is the one recognized by the
+classifier. Furthermore, since the self-detection of gait patterns may be difficult, a real-time
+classification allows for correcting abnormal behaviors [34] or adapting to the patient
+improvements [36] that would occur during a rehabilitation program. The model is tested
+for different sensor combinations to establish the optimal configuration in light of the
+given metrics.
+The radar plots reported in Figure 4 compare the results of the mCNN-1D and smCNN-
+1D architectures, each of which is fed with all three components of the IMU sensors
+(accelerometer, gyroscope, and magnetometer).
+The median of accuracy and recall for the two models is 100% in almost all sensor
+configurations, despite the dataset imbalance. This could be due to the fact that applying
+segmentation before normalization allows for the exclusion of all possible motion artifacts
+that would worsen the classification performance. However, as for the mCNN-1D model,
+such satisfying results in terms of accuracy are not accompanied by an equally acceptable
+inference time, since its value approaches 600 ± 100 ms for some combinations, which can
+be excessive for a real-time application, since it is close to 30% of the execution time of
+overground walking by impaired subjects [57].
+Consequently, the model architecture has been simplified, thus reaching with the
+smCNN-1D model a test inference time that is significantly lower than the one of the
+mCNN-1D model in almost all combinations; in addition, the maximum time decreases
+from approximately 700 ms to about 400 ms for the LP+LW and S+LP+RW sensor pairs.
+This computational time is even lower than 300 ms for some combinations with either a
+single IMU or sensor pairs for the simplified multi-branch CNN.
+
+--- PAGE 10 ---
+Sensors 2025, 25, 260 10 of 17
+Figure 4. Radar plot comparing metrics computed on the test set for the multi-branch CNN and its
+simplified version, with *, ** and *** representing statistically significant comparisons with p < 0.05,
+p < 0.01, and p < 0.001, respectively.
+In light of this, the simplified architecture was adopted for the sequential CNN
+(Figure 2c) as well. The performance achieved with the smCNN-1D and sCNN-1D models,
+whose input data are the three channels of the IMU sensors, are pictorially depicted in
+Figure 5.
+Figure 5. Radar plot comparing metrics computed on the test set for the simplified multi-branch
+and the sequential CNNs, with *, **, and *** representing statistically significant comparisons with
+p < 0.05, p < 0.01, and p < 0.001, respectively.
+For parity of accuracy and recall, the inference time does not seem to improve when
+passing from the smCNN-1D to the sCNN-1D model, except for the sensor on the sternum,
+in which case the test inference time is about 100 ms. This is presumably due to the use
+of unnecessary input data; therefore, the sCNN-1D model has been tested for all sensor
+combinations by separately giving as input each IMU component to the model, with the
+aim of evaluating which channel (i.e., accelerometer, gyroscope, and magnetometer) leads
+to the best model performance. The consequent results in terms of accuracy, recall, and
+inference time are pictorially shown with the radar plots reported in Figure 6.
+The outcomes show better performance in both accuracy and recall for the accelerome-
+ter and gyroscope, whereas the outcome worsens when passing the magnetometer entry as
+input to the model, since the recall is about 80% only in three combinations (i.e., S+LW+RW,
+S+LP+LW+RW, S+RP+LW+RW). Moreover, the lowest values of accuracy are achieved for
+the combinations with one sensor placed at either the sternum or the right pelvis; instead,
+the accuracy for the LW+RW pair is higher than the one related to the LP+RP pair. Hence, it
+can be argued that the information carried by the magnetometer placed on the wrist raises
+
+--- PAGE 11 ---
+Sensors 2025, 25, 260 11 of 17
+the performance with respect to the magnetometers of the IMU located at the sternum
+and pelvis, which are not equally discriminative. In fact, the motor behavior of human
+wrists is different for each type of walking action: it is stationary on the affected side in the
+hemiplegic gait close to the sternum, and it follows hand tremors in the Parkinsonian gait
+and arm sway in normal walking.
+Figure 6. Radar plot of the accuracy, recall, and inference time computed on the test set by feeding
+the sequential CNN with each IMU component separately.
+The outcome of the above-mentioned model in terms of inference time lies in the
+range of [100,200] ms for almost all the three components, except for some combinations
+in which it slightly exceeds 200 ms in the case of the accelerometer and gyroscope. This
+outcome is more compliant to real-time requirements, since it at most equals 10% of the
+execution time of pathological walking [57]. Therefore, the sequential CNN model using
+either the accelerometer or the gyroscope seems to provide the best compromise among all
+the above-mentioned metrics.
+Figure 7 and Table 1 report the average accuracy in distinguishing normal and simu-
+lated pathological gaits to compare the proposed framework with similar studies in the
+literature: all walking patterns have been classified with an average accuracy of 100%, thus
+outperforming related works.
+For instance, Robles et al. [2] utilized Artificial Neural Networks (ANNs) to classify
+simulated gait disorders (Parkinsonian, ataxic, and hemiplegic gaits) by analyzing accelera-
+tions of the center of mass of ten healthy subjects. An average accuracy of 99.8%, 90.3%,
+97.3%, and 98.1% was obtained for the classification of normal, hemiplegic, ataxic, and
+Parkinsonian gaits, respectively. Ghobadi et al. [7] discriminated normal gait from foot
+drop (FD) patterns, which were mimicked by ten healthy subjects, with an average accuracy
+of 99.6% and 98.7% (respectively) by training an SVM with Mahalanobis distance-based
+features extracted from the IMU signals of the subject’s right leg. Esfahani et al. [11]
+employed various ML-based algorithms (e.g., ANNs, SVM, and kNN), which were fed
+with the data of eleven healthy subjects coming from a smart textile system, thus being able
+to differentiate between normal and hemiplegic gaits with an average accuracy of 99.6%
+and 99.4%, respectively.
+However, such studies performed the actual classification after a time-consuming
+feature engineering procedure. On the other hand, other related works relied upon DL
+architectures to automatically extract features instead of handcrafting them [58]. For
+example, Guo et al. [6] exploited not only SVM, but also Bidirectional Long Short-Term
+Memory (BiLSTM) networks to classify normal and mimicked foot drop walking patterns
+based on the images acquired with a single RGB-D camera; in so doing, average accuracies
+of 81.24% and 92.9% were, respectively, achieved for the normal and the pathological
+
+--- PAGE 12 ---
+Sensors 2025, 25, 260 12 of 17
+gaits, which were simulated by sixteen healthy subjects. Albuquerque et al. [24] recruited
+twenty-one healthy subjects and developed a remote pathological gait classification system
+for discriminating normal, hemiplegic, foot drop, and Parkinsonian gaits, thus achieving
+average accuracies of 99%, 89%, 97%, and 95%, respectively. The performance of these
+two works is almost comparable with our study except for the recognition of one class
+(i.e., normal and hemiplegic gait, respectively), which is mainly confused with similar
+walking patterns that are not fit within the focus of our study. Verlekar et al. [22] trained
+CNN-based models with gait energy images, which were determined from a dataset of five
+healthy subjects; in so doing, it was possible to distinguish normal from hemiplegic, foot
+drop, and Parkinsonian gait sequences with an average accuracy of 94%, 87%, 94%, and
+98%, respectively. In spite of these outcomes, in their mind the extracted features do not
+perfectly suit the field of gait classification, which may explain misclassifications between
+similar walking patterns (e.g., foot drop and hemiplegia).
+2019 2022 2024
+85
+90
+95
+100
+Guo et al. Verlekar et al. Esfahani et al. Yin et al. Proposed pipeline
+% Accuracy
+Year
+Albuquerque et al.
+2021
+80
+2017
+Ghobadi et al. Robles et al.
+Sample size
+5
+10
+21
+1
+Recognition System
+Deep Learning Machine Learning
+Walking patterns
+Normal Hemiplegia Ataxia Foot drop Parkinsonian
+Acquisition System
+Optical devices Inertial sensors
+Figure 7. Related works simulating abnormal walking patterns [2,6,7,11,22–24].
+Table 1. Relevant features from related works, reported for comparisons among workflows.
+Ghobadi et al.
+[7]
+Verlekar et al.
+[22]
+Eshefani et al.
+[11]
+Guo et al.
+[6]
+Yin et al.
+[23]
+Albuquerque et al.
+[24]
+Robles et al.
+[2]
+Proposed
+Framework
+Subjects 10 5 11 16 15 21 10 19
+Input
+data
+IMU
+signals
+Data
+from
+images
+Data from
+smart
+textiles
+Data
+from
+images
+IMU
+signals
+Data
+from
+images
+Data
+from
+accelerometer
+IMU
+signals
+Classifier
+type
+ML DL ML
+ML
+DL
+DL DL ML DL
+Classifier SVM CNN
+kNN,
+LDA,
+SVM,
+ANN
+SVM
+BiLSTM
+ANN,
+LSTM,
+CNN
+CNN ANN CNN
+Normal 99.6% 94.0% 99.6% 81.24% 89.0% 99.0% 99.8% 100%
+Hemiplegia ND 87% 99.4% ND 91.3% 89.0% 90.3% 100%
+Ataxia ND ND ND ND ND ND 97.0% 100%
+Foot
+drop
+98.7% 94.0% ND 92.9% ND 97.0% ND 100%
+Parkinsonian ND 98.0% ND ND 78.6% 95.0% 98.1% 100%
+
+--- PAGE 13 ---
+Sensors 2025, 25, 260 13 of 17
+Moreover, these latter studies addressed PGR with data coming from optical trackers,
+which may be limited in real-world scenarios. To the best of our knowledge, only one
+work has employed IMU data to recognize simulated pathological gaits by means of DL
+architectures. Yin et al. [23] utilized two accelerometers mounted on the lower limbs
+to classify normal and simulated pathological gaits through both ML (i.e., ANN) and
+DL models (LSTM and CNN); in so doing, normal, hemiplegic, and Parkinsonian motor
+patterns were discriminated with average accuracies of 89%, 91.3%, and 78.6%, respectively.
+Despite the promising performances, they are yet lessened by the proposed workflow,
+arguably due to the order of preprocessing operations (i.e., normalizing signals before
+segmenting), which may introduce motion artifacts worsening classification performance;
+in addition, that investigation was conducted on a lower sample size (i.e., number of
+participants) with the same sensor type (i.e., inertial measurement units) and did not
+consider the same walking patterns as the authors’ work.
+5. Conclusions
+This work presents a Deep Learning-based framework aimed at the classification
+of normal and abnormal walking patterns by means of multiple convolutional neural
+networks, which are fed with the data coming from inertial sensors worn at different
+locations of the human body.
+Given the promising performance of the models used in terms of accuracy and infer-
+ence time, the authors claim the effectiveness of the proposed workflow in discriminating
+motor patterns. The instructions of an expert clinician for a realistic gait disorder simulation
+contributed to the quality of classification results. However, the framework has been tested
+only on data related to locomotor actions, both normal and abnormal, performed by healthy
+subjects, since this work was conceived as a feasibility study before application on actual
+pathological gaits. Therefore, the proposed workflow should be evaluated by studying data
+coming from people actually affected by gait disorders to test its usefulness in a clinical
+scenario. In so doing, even the severity rating of such neuromotor disorders as Parkinson’s
+disease [12–16] and ataxia [17] can be explored. Furthermore, since the motor actions have
+been performed by people with advanced clinical knowledge, a successive experimental
+campaign could include subjects with no expertise in gait disorders for the sake of even
+higher data variability [59].
+Secondly, only five walking patterns have been considered, since the samples of
+the hemiplegic and equine gaits have not been distinguished according to the emulated
+affected side; hence, a seven-class classification may be pursued to investigate whether the
+framework effectively performs PGR even in cases of unilateral gait disorders, which may
+be useful for the corresponding rehabilitation [9].
+The type of abnormal walking patterns considered in this work, though in line with
+most of the related works, is restricted to evident motor behaviors. Therefore, for the sake of
+even greater usefulness in a clinical scenario, less obvious motor patterns such as walking
+tremors [60] should be considered in the future. Another example is given by Parkinsonian
+tremors, which could be further addressed in view of its previous successful simulation
+by healthy subjects with slight amplitude differences with respect to actual pathological
+subjects [61]. This may be carried out by conceiving some indexes to measure the deviation
+of an individual’s gait pattern from the range typical of a healthy subject, thus tracking the
+patients’ rehabilitative progress and the effectiveness of therapies [28,31,62,63].
+Future research could also aim to develop an integrated explainable framework that
+combines the strengths of attention mechanisms [41,64] and Layer-wise Relevance Propa-
+gation [65]. These methods help in understanding which parts of the input data (i.e., IMU
+component) contribute the most to the model predictions.
+
+--- PAGE 14 ---
+Sensors 2025, 25, 260 14 of 17
+With this in mind, the proposed gait recognition system can be enhanced to pursue
+its seamless integration into either the clinical realm or a home application [36]. This may
+be achieved by embedding the inertial sensors within e-textiles to increase the subject’s
+comfort either in a rehabilitative path or in a remote-monitoring application.
+Author Contributions: Conceptualization, G.P., G.D. and V.B.; methodology, L.P., V.S., S.G., D.B., A.B.,
+L.C., F.A., A.C., G.P., G.D. and V.B.; software, L.P., V.S. and S.G.; validation, L.P., V.S., S.G., G.P., G.D.
+and V.B.; formal analysis, L.P., V.S., S.G., D.B., A.B., F.A., A.C., G.P., G.D. and V.B.; investigation, L.P.,
+V.S., S.G., G.P., G.D. and V.B.; data curation, L.P., S.G. and G.P.; writing—original draft preparation,
+L.P., V.S. and S.G.; writing—review and editing, L.P., V.S., S.G., D.B., A.B., L.C., F.A., A.C., G.P., G.D.
+and V.B.; visualization, L.P., V.S., S.G., D.B., A.B., F.A., A.C. and G.P.; supervision, D.B., A.B., G.P.,
+G.D. and V.B. All authors have read and agreed to the published version of the manuscript.
+Funding: This study was partially funded by the project ‘BRIEF—Biorobotics Research and In-
+novation Engineering Facilities’ (Mission 4, ‘Istruzione e Ricerca’—Component 2, ‘Dalla ricerca
+all’impresa’—Investment 3.1, ‘Fondo per la realizzazione di un sistema integrato di infrastrutture di
+ricerca e innovazione’, funded by the European Union—NextGenerationEU, CUP: J13C22000400007)
+and by the research project “PNRR-POC-2022-12375705—Diagnostic system for assessing haptic
+communication abilities and impairments during interactive locomotion”, Mission 6: “Salute”, Com-
+ponent 2: “Innovazione, ricerca e digitalizzazione del Servizio Sanitario”, CUP: D93C22001330007,
+funded by the European Union—NextGenerationEU.
+Institutional Review Board Statement: The study was approved by the Local Ethics Committee
+IRCCS Istituto Oncologico “Gabriella Serio” (prot. n. 312 del 09/05/2024) and was conducted in
+accordancewiththeDeclarationofHelsinki, aspartoftheprojectSAALUS—SmartAmbientAssisted
+Living Ubiquitous System project, approved by the Italian Ministry of Economic Development
+(F/180018/01-05/X43 D.M. 0001812 6 June 2022).
+Informed Consent Statement: Informed consent was obtained from all subjects involved in
+the study.
+Data Availability Statement: The data presented in this study are available on request from the
+corresponding author. Moreover, some reference videos of the simulated gait disorders can be
+provided upon request.
+Acknowledgments: The authors thank all the subjects for their voluntary study participation. The
+authorsarealsothankfultoVitoProsciafortherecruitmentofparticipantsamongthephysiotherapists
+and physiatrists of the IRCCS Maugeri of Bari (Italy).
+Conflicts of Interest: The authors declare no conflicts of interest.
+References
+1. Mekruksavanich, S.; Jitpattanakul, A. Deep Residual Network with a CBAM Mechanism for the Recognition of Symmetric and
+Asymmetric Human Activity Using Wearable Sensors. Symmetry 2024, 16, 554. [CrossRef]
+2. Robles, D.; Benchekroun, M.; Lira, A.; Taramasco, C.; Zalc, V.; Irazzoky, I.; Istrate, D. Real-time Gait Pattern Classification Using
+Artificial Neural Networks. In Proceedings of the 2022 IEEE International Workshop on Metrology for Living Environment,
+MetroLivEn 2022, Cosenza, Italy, 25–27 May 2022; pp. 76–80. [CrossRef]
+3. Suglia, V.; Palazzo, L.; Bevilacqua, V.; Passantino, A.; Pagano, G.; D’Addio, G. A Novel Framework Based on Deep Learning
+Architecture for Continuous Human Activity Recognition with Inertial Sensors. Sensors 2024, 24, 2199. [CrossRef] [PubMed]
+4. Gao, J.; Gu, P.; Ren, Q.; Zhang, J.; Song, X. Abnormal Gait Recognition Algorithm Based on LSTM-CNN Fusion Network. IEEE
+Access 2019, 7, 163180–163190. [CrossRef]
+5. Kim, W.; Kim, Y. Abnormal Gait Recognition based on Integrated Gait Features in Machine Learning. In Proceedings of
+the 2021 IEEE 45th Annual Computers, Software, and Applications Conference (COMPSAC), Madrid, Spain, 12–16 July 2021;
+pp. 1683–1688. [CrossRef]
+6. Guo, Y.; Deligianni, F.; Gu, X.; Yang, G.Z. 3D Canonical Pose Estimation and Abnormal Gait Recognition with a Single RGB-D
+Camera. IEEE Robot. Autom. Lett. 2019, 4, 3617–3624. [CrossRef]
+
+--- PAGE 15 ---
+Sensors 2025, 25, 260 15 of 17
+7. Ghobadi, M.; Tarkesh Esfahani, E. A Robust Automatic Gait Monitoring Approach Using A Single Imu for Home-Based
+Applications. J. Mech. Med. Biol. 2017, 17, 1750077. [CrossRef]
+8. Han, Y.C.; Wong, K.; Murray, I. Comparison of Machine Learning Methods for the Construction of a Standalone Gait Diagnosis
+Device. IET Signal Process. 2020, 14, 243–250. [CrossRef]
+9. Oh, Y.; Choi, S.A.; Shin, Y.; Jeong, Y.; Lim, J.; Kim, S. Investigating Activity Recognition for Hemiparetic Stroke Patients Using
+Wearable Sensors: A Deep Learning Approach with Data Augmentation. Sensors 2024, 24, 210. [CrossRef]
+10. Jinnovart, T.; Cai, X.; Thonglek, K. Abnormal Gait Recognition in Real-Time using Recurrent Neural Networks. In Proceedings
+of the 2020 59th IEEE Conference on Decision and Control (CDC), Jeju, Republic of Korea, 14–18 December 2020; pp. 972–977.
+[CrossRef]
+11. Mokhlespour Esfahani, M.I.; Nussbaum, M. Using Smart Garments to Differentiate among Normal and Simulated Abnormal
+Gaits. J. Biomech. 2019, 93, 70–76. [CrossRef]
+12. Amboni, M.; Ricciardi, C.; Adamo, S.; Nicolai, E.; Volzone, A.; Erro, R.; Cuoco, S.; Cesarelli, G.; Basso, L.; D’Addio, G.; et al.
+Machine learning can predict mild cognitive impairment in Parkinson’s disease. Front. Neurol. 2022, 13, 1010147. [CrossRef]
+13. Loconsole, C.; Cascarano, G.D.; Lattarulo, A.; Brunetti, A.; Trotta, G.F.; Buongiorno, D.; Bortone, I.; De Feudis, I.; Losavio, G.;
+Bevilacqua, V.; et al. A comparison between ANN and SVM classifiers for Parkinson’s disease by using a model-free computer-
+assisted handwriting analysis based on biometric signals. In Proceedings of the 2018 International Joint Conference on Neural
+Networks (IJCNN), Rio de Janeiro, Brazil, 8–13 July 2018; pp. 1–8. [CrossRef]
+14. Cascarano, G.D.; Brunetti, A.; Buongiorno, D.; Trotta, G.F.; Loconsole, C.; Bortone, I.; Bevilacqua, V., A Multi-modal Tool
+Suite for Parkinson’s Disease Evaluation and Grading. In Neural Approaches to Dynamics of Signal Exchanges; Esposito, A.,
+Faundez-Zanuy, M., Morabito, F.C., Pasero, E., Eds.; Springer: Singapore, 2020; pp. 257–268. [CrossRef]
+15. Buongiorno, D.; Bortone, I.; Cascarano, G.D.; Trotta, G.F.; Brunetti, A.; Bevilacqua, V. A low-cost vision system based on the
+analysis of motor features for recognition and severity rating of Parkinson’s Disease. BMC Med. Inform. Decis. Mak. 2019, 19, 243.
+[CrossRef]
+16. Buongiorno, D.; Trotta, G.F.; Bortone, I.; Di Gioia, N.; Avitto, F.; Losavio, G.; Bevilacqua, V. Assessment and Rating of Movement
+Impairment in Parkinson’s Disease Using a Low-Cost Vision-Based System. In Intelligent Computing Methodologies, Proceedings
+of the 14th International Conference, Wuhan, China, 15–18 August 2018; Huang, D.S., Gromiha, M.M., Han, K., Hussain, A., Eds.;
+Springer: Cham, Switzerland, 2018; pp. 777–788.
+17. Cesarelli, G.; Donisi, L.; Coccia, A.; Amitrano, F.; Biancardi, A.; Lanzillo, B.; D’Addio, G. Ataxia and Parkinson’s disease patients
+classification using tree-based machine learning algorithms fed by spatiotemporal features: A pilot study. In Proceedings of
+the 2022 IEEE International Symposium on Medical Measurements and Applications, Messina, Italy, 22–24 June 2022; pp. 1–6.
+[CrossRef]
+18. Lee, H.S.; Ryu, H.; Lee, S.U.; Cho, J.s.; You, S.; Park, J.H.; Jang, S.H. Analysis of Gait Characteristics Using Hip-Knee Cyclograms
+in Patients with Hemiplegic Stroke. Sensors 2021, 21, 7685. [CrossRef] [PubMed]
+19. Sung, J.; Han, S.; Park, H.; Hwang, S.; Lee, S.J.; Park, J.W.; Youn, I. Classification of Stroke Severity Using Clinically Relevant
+Symmetric Gait Features Based on Recursive Feature Elimination With Cross-Validation. IEEE Access 2022, 10, 119437–119447.
+[CrossRef]
+20. Slijepcevic, D.; Zeppelzauer, M.; Gorgas, A.M.; Schwab, C.; Schüller, M.; Baca, A.; Breiteneder, C.; Horsak, B. Automatic
+Classification of Functional Gait Disorders. IEEE J. Biomed. Health Inform. 2018, 22, 1653–1661. [CrossRef] [PubMed]
+21. Potluri, S.; Ravuri, S.; Diedrich, C.; Schega, L. Deep Learning based Gait Abnormality Detection using Wearable Sensor System. In
+Proceedings of the 2019 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC),
+Berlin, Germany, 23–27 July 2019; pp. 3613–3619. [CrossRef]
+22. Verlekar, T.T.; Albuquerque, P.; Ducla Soares, L.; Correia, P.L. Using Transfer Learning for Classification of Gait Pathologies. In
+Proceedings of the IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Madrid, Spain, 3–6 December 2018.
+23. Yin, S.; Chen, C.; Zhu, H.; Wang, X.; Chen, W. Neural Networks for Pathological Gait Classification Using Wearable Motion
+Sensors. In Proceedings of the 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 17–19 October
+2019; pp. 1–4.
+24. Albuquerque, P.; Machado, J.; Verlekar, T.T.; Soares, L.D.; Correia, P.L. Remote Pathological Gait Classification System. IEEE J.
+Biomed. Health Inform. 2021, 11, 1824.
+25. Dolatabadi, E.; Taati, B.; Mihailidis, A. An Automated Classification of Pathological Gait Using Unobtrusive Sensing Technology.
+IEEE Trans. Neural Syst. Rehabil. Eng. 2017, 25, 2336–2346. [CrossRef]
+26. Chakma, A.; Faridee, A.Z.M.; Ghosh, I.; Roy, N. Domain Adaptation for Inertial Measurement Unit-based Human Activity
+Recognition: A Survey. arXiv 2023, arXiv:2304.06489.
+27. Bianchi, V.; Bassoli, M.; Lombardo, G.; Fornacciari, P.; Mordonini, M.; De Munari, I. IoT Wearable Sensor and Deep Learning: An
+Integrated Approach for Personalized Human Activity Recognition in a Smart Home Environment. IEEE Internet Things J. 2019,
+6, 8553–8562. [CrossRef]
+
+--- PAGE 16 ---
+Sensors 2025, 25, 260 16 of 17
+28. Ma, H.; Liao, W.H. Human Gait Modeling and Analysis Using a Semi-Markov Process With Ground Reaction Forces. IEEE Trans.
+Neural Syst. Rehabil. Eng. 2017, 25, 597–607. [CrossRef]
+29. Yadav, S.K.; Tiwari, K.; Pandey, H.M.; Akbar, S.A. A review of multimodal human activity recognition with special emphasis on
+classification, applications, challenges and future directions. Knowl.-Based Syst. 2021, 223, 106970. [CrossRef]
+30. Bortone, I.; Buongiorno, D.; Lelli, G.; Di Candia, A.; Cascarano, G.D.; Trotta, G.F.; Fiore, P.; Bevilacqua, V. Gait Analysis and
+Parkinson’s Disease: Recent Trends on Main Applications in Healthcare. In Converging Clinical and Engineering Research on
+Neurorehabilitation III, Proceedings of the 4th International Conference on NeuroRehabilitation (ICNR2018), Pisa, Italy, 16–20 October
+2018; Masia, L., Micera, S., Akay, M., Pons, J.L., Eds.; Springer: Cham, Switzerland, 2019; pp. 1121–1125.
+31. Mohammadian Rad, N.; Van Laarhoven, T.; Furlanello, C.; Marchiori, E. Novelty Detection using Deep Normative Modeling for
+IMU-Based Abnormal Movement Monitoring in Parkinson’s Disease and Autism Spectrum Disorders. Sensors 2018, 18, 3533.
+[CrossRef]
+32. Iyer, K.M. Clinical Examination in Orthopedics; Springer Science & Business Media: London, UK, 2011.
+33. Thomas, S.S.; Moore, C.; Kelp-Lenane, C.; Norris, C. Simulated gait patterns: The resulting effects on gait parameters, dynamic
+electromyography, joint moments, and physiological cost index. Gait Posture 1996, 4, 100–107. [CrossRef]
+34. Jun, K.; Lee, K.; Lee, S.; Lee, H.; Kim, M.S. Hybrid Deep Neural Network Framework Combining Skeleton and Gait Features for
+Pathological Gait Recognition. Bioengineering 2023, 10, 1133. [CrossRef] [PubMed]
+35. D’Addio, G.; Evangelista, S.; Donisi, L.; Biancardi, A.; Andreozzi, E.; Pagano, G.; Arpaia, P.; Cesarelli, M. Development of a
+Prototype E-Textile Sock. In Proceedings of the 2019 41st Annual International Conference of the IEEE Engineering in Medicine
+and Biology Society (EMBC), Berlin, Germany, 23–27 July 2019; pp. 17498–1752. [CrossRef]
+36. Diraco, G.; Rescio, G.; Siciliano, P.; Leone, A. Review on Human Action Recognition in Smart Living: Sensing Technology,
+Multimodality, Real-Time Processing, Interoperability, and Resource-Constrained Processing. Sensors 2023, 23, 5281. [CrossRef]
+[PubMed]
+37. Pagano, G.; Donisi, L.; Marsico, V.; Losavio, E.; Cesarelli, M.; D’Addio, G. Reliability of kinematic parameters related to the
+Timed Up and Go Test in patients with gait impairments. In Proceedings of the 2021 IEEE International Symposium on Medical
+Measurements and Applications (MeMeA), Neuchâtel, Switzerland, 23–25 June 2021; pp. 1–5. [CrossRef]
+38. Stanford Medicine 25 Gaits. Available online: https://stanfordmedicine25.stanford.edu/the25.html (accessed on 1 December 2024).
+39. Jaén-Vargas, M.; Leiva, K.M.R.; Fernandes, F.; Goncalves, S.B.; Silva, M.T.; Lopes, D.S.; Olmedo, J.J.S. Effects of sliding window
+variation in the performance of acceleration-based human activity recognition using deep learning models. PeerJ Comput. Sci.
+2022, 8, e1052. [CrossRef]
+40. Diraco, G.; Rescio, G.; Caroppo, A.; Manni, A.; Leone, A. Human Action Recognition in Smart Living Services and Applications:
+Context Awareness, Data Availability, Personalization, and Privacy. Sensors 2023, 23, 6040. [CrossRef]
+41. Sibilano, E.; Buongiorno, D.; Lassi, M.; Grippo, A.; Bessi, V.; Sorbi, S.; Mazzoni, A.; Bevilacqua, V.; Brunetti, A. Understanding the
+Role of Self-Attention in a Transformer Model for the Discrimination of SCD From MCI Using Resting-State EEG. IEEE J. Biomed.
+Health Inform. 2024, 28, 3422–3433. [CrossRef]
+42. Brunetti, A.; Buongiorno, D.; Altini, N.; Bevilacqua, V. Enabling Technologies for Optimized Diagnosis, Therapy and Rehabili-
+tation: Obtained Results and Future Works. In Ambient Assisted Living; Bochicchio, M., Siciliano, P., Monteriù, A., Bettelli, A.,
+De Fano, D., Eds.; Springer: Cham, Switzerland, 2024; pp. 206–223.
+43. Casilari, E.; Álvarez Marco, M.; García-Lagos, F. A Study of the Use of Gyroscope Measurements in Wearable Fall Detection
+Systems. Symmetry 2020, 12, 649. [CrossRef]
+44. Popescu, A.C.; Mocanu, I.; Cramariuc, B. Fusion Mechanisms for Human Activity Recognition Using Automated Machine
+Learning. IEEE Access 2020, 8, 143996–144014. [CrossRef]
+45. Sawant, S.; Singh, A. Malaria Cell Detection Using Deep Neural Networks. arXiv 2024, arXiv:2406.20005.
+46. Vo, H.Q.; Cicalese, P.A.; Seshan, S.; Rizvi, S.A.; Vathul, A.; Bueno, G.; Dorado, A.P.; Grabe, N.; Stolle, K.; Pesce, F.; et al.
+Segmentation of diagnostic tissue compartments on whole slide images with renal thrombotic microangiopathies (TMAs). arXiv
+2023, arXiv:2311.14971.
+47. Qureshi, U.R.; Rashid, A.; Altini, N.; Bevilacqua, V.; La Scala, M. Radiometric Infrared Thermography of Solar Photovoltaic
+Systems: An Explainable Predictive Maintenance Approach for Remote Aerial Diagnostic Monitoring. Smart Cities 2024,
+7, 1261–1288. [CrossRef]
+48. Buongiorno, D.; Prunella, M.; Grossi, S.; Hussain, S.M.; Rennola, A.; Longo, N.; Di Stefano, G.; Bevilacqua, V.; Brunetti, A. Inline
+Defective Laser Weld Identification by Processing Thermal Image Sequences with Machine and Deep Learning Techniques. Appl.
+Sci. 2022, 12, 6455. [CrossRef]
+49. Jaramillo, I.E.; Jeong, J.G.; Lopez, P.R.; Lee, C.H.; Kang, D.Y.; Ha, T.J.; Oh, J.H.; Jung, H.; Lee, J.H.; Lee, W.H.; et al. Real-Time
+Human Activity Recognition with IMU and Encoder Sensors in Wearable Exoskeleton Robot via Deep Learning Networks.
+Sensors 2022, 22, 9690. [CrossRef] [PubMed]
+
+--- PAGE 17 ---
+Sensors 2025, 25, 260 17 of 17
+50. Camardella, C.; Porcini, F.; Filippeschi, A.; Marcheschi, S.; Solazzi, M.; Frisoli, A. Gait Phases Blended Control for Enhancing
+Transparency on Lower-Limb Exoskeletons. IEEE Robot. Autom. Lett. 2021, 6, 5453–5460. [CrossRef]
+51. Lippi, V.; Filippeschi, A.; Camardella, C.; Porcini, F.; Maurer, C.; Lencioni, L. EXOSMOOTH: Test of Innovative EXOskeleton
+Control for SMOOTH Assistance, with and Without Ankle Actuation. In Proceedings of the 2022 17th ACM/IEEE International
+Conference on Human-Robot Interaction (HRI), Sapporo, Japan, 7–10 March 2022; pp. 890–894. [CrossRef]
+52. Lippi, V.; Camardella, C.; Filippeschi, A.; Porcini, F. Identification of gait phases with neural networks for smooth transparent
+control of a lower limb exoskeleton. In Proceedings of the 18th International Conference on Informatics in Control, Automation
+and Robotics, ICINCO 2021, Online, 6–8 July 2021; pp. 171–178. [CrossRef]
+53. Camardella, C.; Lippi, V.; Porcini, F.; Bassani, G.; Lencioni, L.; Mauer, C.; Haverkamp, C.; Avizzano, C.A.; Frisoli, A.; Filippeschi, A.
+User-centered evaluation of the Wearable Walker lower limb exoskeleton, preliminary assessment based on the Experience
+protocol Sensors 2024, 24, 5358. [CrossRef]
+54. Chiaradia, D.; Rinaldi, G.; Solazzi, M.; Vertechy, R.; Frisoli, A. Design and Control of the Rehab-Exos, a Joint Torque-Controlled
+Upper Limb Exoskeleton. Robotics 2024, 13, 32. [CrossRef]
+55. Rinaldi, G.; Tiseni, L.; Xiloyannis, M.; Masia, L.; Frisoli, A.; Chiaradia, D. Flexos: A Portable, SEA-Based Shoulder Exoskeleton
+with Hyper-redundant Kinematics for Weight Lifting Assistance. In Proceedings of the 2023 IEEE World Haptics Conference
+(WHC), Delft, The Netherlands, 10–13 July 2023; pp. 252–258. [CrossRef]
+56. Lotti, N.; Xiloyannis, M.; Missiroli, F.; Chiaradia, D.; Frisoli, A.; Sanguineti, V.; Masia, L. Intention-detection strategies for
+upper limb exosuits: Model-based myoelectric vs dynamic-based control. In Proceedings of the 2020 8th IEEE RAS/EMBS
+International Conference for Biomedical Robotics and Biomechatronics (BioRob), New York, NY, USA, 29 November–1 December
+2020; pp. 410–415. [CrossRef]
+57. Nguyen, H.; Lebel, K.; Boissy, P.; Bogard, S.; Goubault, E.; Duval, C. Auto detection and segmentation of daily living activities
+during a Timed Up and Go task in people with Parkinson’s disease using multiple inertial sensors. J. Neuroeng. Rehabil. 2017,
+14, 26. [CrossRef]
+58. Prunella, M.; Scardigno, R.M.; Buongiorno, D.; Brunetti, A.; Longo, N.; Carli, R.; Dotoli, M.; Bevilacqua, V. Deep Learning for
+Automatic Vision-Based Recognition of Industrial Surface Defects: A Survey. IEEE Access 2023, 11, 43370–43423. [CrossRef]
+59. Diraco, G.; Manni, A.; Leone, A. Integrating Abnormal Gait Detection with Activities of Daily Living Monitoring in Ambient
+Assisted Living: A 3D Vision Approach. Sensors 2024, 24, 82. [CrossRef]
+60. Stein, R.B.; Oĝuztöreli, M.N. Tremor and other oscillations in neuromuscular systems. Biol. Cybern. 1976, 22, 147–157. [CrossRef]
+61. Burkhard, P.R.; Langston, J.; Tetrud, J.W. Voluntarily simulated tremor in normal subjects. Neurophysiol. Clin./Clin. Neurophysiol.
+2002, 32, 119–126. : 10.1016/S0987-7053(02)00296-4 [CrossRef] [PubMed]
+62. Wang, L.; Sun, Y.; Li, Q.; Liu, T.; Yi, J. IMU-Based Gait Normalcy Index Calculation for Clinical Evaluation of Impaired Gait. IEEE
+J. Biomed. Health Inform. 2021, 25, 3–12. [CrossRef] [PubMed]
+63. Suglia, V.; Brunetti, A.; Pasquini, G.; Caputo, M.; Marvulli, T.M.; Sibilano, E.; Della Bella, S.; Carrozza, P.; Beni, C.; Naso, D.; et al.
+A Serious Game for the Assessment of Visuomotor Adaptation Capabilities during Locomotion Tasks Employing an Embodied
+Avatar in Virtual Reality. Sensors 2023, 23, 5017. [CrossRef] [PubMed]
+64. Kim, J.; Seo, H.; Naseem, M.T.; Lee, C.S. Pathological-Gait Recognition Using Spatiotemporal Graph Convolutional Networks
+and Attention Model. Sensors 2022, 22, 4863. [CrossRef]
+65. Horst, F.; Lapuschkin, S.; Samek, W.; Müller, K.R.; Schöllhorn, W.I. What is Unique in Individual Gait Patterns? Understanding
+and Interpreting Deep Learning in Gait Analysis. arXiv 2018, arXiv:1808.04308.
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+
+--- PAGE 18 ---

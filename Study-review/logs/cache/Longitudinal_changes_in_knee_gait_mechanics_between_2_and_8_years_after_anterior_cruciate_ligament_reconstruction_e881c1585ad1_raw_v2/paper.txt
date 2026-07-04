@@ -1,0 +1,679 @@
+
+--- PAGE 1 ---
+Longitudinal changes in knee gait mechanics between 2 and 8
+years after anterior cruciate ligament reconstruction
+Jennifer C. Erhart-Hledik, Ph.D.a, Constance R. Chu, M.D.a,c, Jessica L. Asay, M.S.b,c, and
+Thomas P. Andriacchi, Ph.D.a,b,c
+aDepartment of Orthopaedic Surgery, Stanford University Medical Center, Stanford, CA
+bDepartment of Mechanical Engineering, Stanford University, Stanford, CA
+cVeterans Affairs Palo Alto Health Care System, Palo Alto, CA
+Abstract
+The purpose of this study was to longitudinally investigate changes in knee joint kinematics and
+kinetics from 2 to 8 years post-ACLR. Seventeen subjects with primary unilateral transtibial
+ACLR performed bilateral gait analysis approximately 2 years and 8 years post-ACLR. Seventeen
+matched healthy control subjects were also analyzed. Kinematic and kinetic comparisons between
+the ACLR and contralateral limbs over time were completed using a 2x2 (time, limb) repeated-
+measures ANOVA. Unpaired Student’s t-tests were used to compare the ACLR and contralateral
+kinematics and kinetics to the control group. The ACLR and contralateral limbs had similar gait
+changes over time. Kinetic changes over time included a reduction in first (p=0.048) and second
+(p<0.001) peak extension moments, internal rotation moment (p<0.001), adduction moment (first
+peak: p=0.002, second peak: p=0.009, impulse: p=0.004) and an increase in peak knee flexion
+moment (p=0.002). Kinematic changes over time included increases in peak knee flexion angle in
+the first half of stance (p=0.026), minimum knee flexion angle in the second half of stance
+(p<0.001), and average external rotation angle during stance (p=0.007), and a reduction in average
+anterior femoral displacement during stance (p=0.006). Comparison to healthy controls
+demonstrated improvement in some gait metrics over time. The results demonstrated longitudinal
+changes from 2 to 8 years after ACLR in knee joint kinetics and kinematics that have been related
+to clinical outcome after ACLR and the progression of knee OA, and support future larger and
+comprehensive investigations into long-term changes in joint mechanics in the ACLR population.
+Keywords
+ACL; Reconstruction; Gait Analysis; Knee; Kinematics; Kinetics
+Correspondence To: Dr. Jennifer Erhart-Hledik, Department of Orthopaedic Surgery, Stanford University, Stanford, CA 94305-4308,
+Tel.: +1 650-723-5793, Fax: +1 650-725-1587, jerhart@stanford.edu.
+Author Contributions Statement: Dr. Erhart-Hledik participated in conceptualization of the research study, acquisition, analysis, and
+interpretation of the data, and drafting of the manuscript. Drs. Andriacchi and Chu each participated in conceptualization of the
+research study, interpretation of the data, and drafting of the manuscript. Ms. Asay participated in acquisition and analysis of the data
+and drafting of the manuscript. Dr. Erhart-Hledik takes responsibility for content of the manuscript. All authors have read and
+approved the final submitted manuscript.
+HHS Public Access
+Author manuscript
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Published in final edited form as:
+J Orthop Res. 2018 May ; 36(5): 1478–1486. doi:10.1002/jor.23770.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 2 ---
+INTRODUCTION
+Anterior cruciate ligament (ACL) injury is most often treated with surgical reconstruction,
+aiming to restore knee anatomy, joint stability, and re-establish normal knee function.
+Despite the success of ACL reconstruction (ACLR) in returning the majority of patients to
+normal knee function1, ACLR does not reduce the risk of development of premature knee
+osteoarthritis (OA) after ACL injury. Studies report between 39% and 56% of young
+individuals 30 years of age or younger at the time of trauma develop radiographic knee OA
+approximately 8–12 years after ACLR surgery2–4. Further, nearly 70% show cartilage
+degeneration on MRI less than 3 years after ACLR5. A proposed mechanism for increased
+risk of development of knee OA after ACL injury and reconstruction is the evidence of
+abnormal knee biomechanics beginning early after ACLR as summarized in several recent
+systematic reviews6; 7. Data demonstrates that cartilage becomes conditioned to a typical
+loading environment8. Therefore, changes in knee kinematics and kinetics during repetitive
+tasks such as walking have the potential to change the loading conditions within the cartilage
+and lead to poorer clinical outcomes, cartilage degeneration, and development of knee OA
+after ACLR9–14.
+While kinematic7; 15; 16 and kinetic6; 7; 17 changes to the ACLR knee have been described in
+all three planes of motion, the majority of studies have investigated joint biomechanics at a
+single time point following ACLR. Measurements at a single time point may not capture
+longer-term outcome of ACLR surgery, including changes that could occur in joint loading
+over time. For example, conflicting reports regarding changes in the knee adduction moment
+(KAM) after ACLR have been reported, with studies finding increases18, no change19, and
+decreases17; 20; 21 in KAM as compared to the contralateral limb and healthy controls. Such
+conflicting reports may be due, in part, to changes in joint biomechanics with time after
+ACLR.
+Despite the potential importance of gait changes after ACLR, few studies have prospectively
+looked at changes in gait over time after reconstruction surgery22–27, with the majority of
+studies investigating changes at a relatively early time point after surgery. To date, the
+longest prospective analyses have been conducted up to 3 years23; 25, 4 years22, and 5 years
+post-ACLR24, and have reported conflicting results. Webster et al.23 investigated three-
+dimensional kinematic and kinetic changes during walking over a period of 10 months to 3
+years after ACLR, and found changes in several gait variables including knee flexion at
+terminal stance, KAM, and knee extension moment over time. Titchenal et al.22 investigated
+changes in knee kinematics over a period of 2 to 4 years after ACLR and found changes in
+the knee center of rotation. Tagesson et al.24 found no changes in dynamic tibial translation
+during gait over a 5 year time period after ACLR, while Lin et al.25 investigated kinematic
+changes over a period of 6 months to 3 years post-ACLR during a step-up motion and found
+longitudinal changes in tibiofemoral contact locations. Given the relative lack of longer-term
+data on longitudinal three-dimensional kinematic and kinetic changes after ACLR during
+level walking, a common task that all individuals participate in, and given that the time scale
+between ACL injury and the development of radiographic knee OA is often greater than 10
+years2, there is a need for longer term follow-up to understand changes in three-dimensional
+gait mechanics during walking after ACLR.
+Erhart-Hledik et al. Page 2
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 3 ---
+Thus, the purpose of this study was to prospectively investigate changes in knee gait
+mechanics during walking between two and eight years after ACLR. As prior work
+demonstrates bilateral neuromuscular alterations after ACL injury28–31, longitudinal changes
+in both the ACLR and contralateral limbs were investigated. Specifically, we hypothesized
+that there would be longitudinal changes in specific kinematic (knee flexion, adduction,
+rotation, and femoral translation) and kinetic (adduction, flexion, extension, and rotation
+moments) features in the ACLR and contralateral limbs during level walking from 2 to 8
+years post-ACLR. Data from an age-, sex-, and BMI-matched healthy control group were
+analyzed for comparison to the ACL cohort.
+METHODS
+Study Design and Level of Evidence
+Prognostic Study, Level II
+Participants
+This study was approved by the Stanford University Institutional Review Board, and all
+patients provided written informed consent prior to participation. Seventeen subjects 8 years
+after unilateral primary transtibial ACLR (7.7±0.7 years) were recruited from a cohort of 42
+subjects who performed bilateral gait analysis approximately 2 years post-ACLR (2.2±0.3
+years) and agreed to future contact17. Because the 42 subjects from the cross-sectional study
+were not informed or consented for the follow-up test, new IRB approval was sought to re-
+contact these subjects for additional testing. As such, the study population represents an
+opportunity sample32 consisting of subjects without additional knee injuries or surgeries that
+were available to return for the 8-year follow-up. Of the subjects who did not return for
+follow-up gait testing, 9 did not respond, 5 were unable to participate due to time
+constraints, 3 had moved away from the area, 3 had additional arthroscopic surgery on their
+affected limb, 2 had re-torn their ACL, 2 were not interested, and 1 had injured their
+contralateral limb.
+Inclusion criteria for the 2-year study17 included: 1) successful single-bundle unilateral
+ACLR based on clinical exam (KT-1000 side-to-side difference < 5 mm), 2) no other history
+of serious lower limb injury, 3) self-reported history of knee stability, and 4) knee MRI to
+confirm intact graft. Exclusion criteria included: 1) removal of more than 25% of the
+meniscus, 2) a history of other serious ligamentous injury to either lower limb, 3) clinical
+instability of the reconstructed knee, 4) BMI > 30 kg/m2, 5) significant observable chondral
+defects by MRI or 6) a history of surgical procedures performed on either lower limb or
+revision operation of the ACL. The additional inclusion and exclusion criteria for
+participation in the 8-year follow-up study were willingness to attend an in-person follow-up
+test and no additional serious injuries or surgical procedures to either lower limb. The ACLR
+procedures were performed by 7 surgeons, and no participant underwent any further surgery
+following the reconstruction.
+Data from a cohort of 17 healthy control subjects with no history of serious injury to either
+limb that were age-, sex-, and BMI-matched to the 8-year follow-up cohort were also
+Erhart-Hledik et al. Page 3
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 4 ---
+analyzed, with one knee randomly selected per control subject. The control cohort was age-
+matched to the age of the study cohort at 8-year follow-up, as data shows gait is stable
+before the age of 45 years.33 The healthy participants provided IRB-approved consent prior
+to participation.
+Gait Analysis
+All subjects performed three successful trials of level walking at a self-selected normal
+speed separately for each limb along a 10-m walkway in their own walking shoes in the
+same laboratory at the 2 and 8 year time points. Subjects were instructed to walk at their
+normal walking pace, and variations in walking speed between the three trials were limited
+by ensuring that the subjects started walking at the same location for the three trials and
+made the same number of footsteps until they hit the force plate. The order of testing of the
+limbs was randomly selected. A trial was considered successful if the foot of the leg being
+tested fully struck the force plate. Kinematic and kinetic data were collected with an
+optoelectronic motion capture system (Qualisys Medical, Gothenburg, SE) and a
+multicomponent force plate embedded in the walkway (Bertec Corporation, Columbus, OH),
+which were synchronized and recorded data at 120 Hz. Lower limb kinematics and kinetics
+were analyzed with the software application BioMove (Stanford University, CA) using the
+point cluster technique34 and previously described methods34–36. Briefly, the anatomical
+frames of the foot, shank, and thigh segments were determined during a standing reference
+pose collected before the walking trials36. The position and orientation of the foot, shank,
+and thigh segments were calculated using clusters of reflective markers fixed to the
+participant. The knee flexion angle, varus rotation angle, and external rotation of the tibia
+relative to the femur were calculated according to the joint coordinate system37. Anterior
+displacement of the femur relative to the tibia was defined as the position of the center of the
+femoral trans-epicondylar axis along the anterior-posterior axis of the tibial anatomical
+frame. Knee joint moments in all three planes were calculated using inverse dynamics38; 39
+and were expressed as external moments relative to the tibial anatomical frame based upon
+the position of palpable anatomical landmarks36. A vertical ground reaction force threshold
+of 10N was used to detect the beginning and the end of the stance phase (heel-strike and toe-
+off), and the stance phase for knee kinematics and kinetics were normalized to 101 time
+points (0% to 100%) during this phase and averaged over the 3 walking trials. Moments
+were normalized to body weight and height (%Bw*Ht) for comparison between subjects.
+Kinematic and kinetic variables for analysis were chosen to provide a comprehensive three-
+dimensional analysis of changes in gait biomechanics over time, and were based on
+literature regarding changes in kinematics and kinetics after ACLR7; 16; 17; 27; 40; 41, as well
+as the importance to clinical outcomes (patient-reported outcomes)11; 42; 43 and progression
+of knee OA44–47. For kinetic analyses, our outcome variables included the peak knee flexion
+moment (KFM), knee adduction moment first peak (KAM1), second peak (KAM2), and
+impulse (KAM Impulse), first and second peak extension moments (KEM1 and KEM2), and
+peak internal (KIRM) and external (KERM) rotation moments. For kinematic analyses, our
+outcome variables included the peak knee flexion angle during the first half of stance phase,
+minimum knee flexion angle in the second half of stance phase, peak varus angle in the first
+half of stance phase, peak valgus angle in the second half of stance phase, average external
+Erhart-Hledik et al. Page 4
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 5 ---
+rotation angle during stance (heel-strike to toe-off), and average anterior femoral
+displacement during stance (heel-strike to toe-off). Spatiotemporal variables included
+walking speed and step length.
+Statistical Analysis
+Comparisons between the ACLR and contralateral limbs over time were completed using a 2
+(limb: ACLR and contralateral) x 2 (time: 2 years post-ACLR and 8 years post-ACLR)
+repeated-measures analysis of variance (ANOVA) with time and limb as within-subject
+factors. Upon a significant result of the ANOVA, post hoc paired Student’s t-tests were used
+for analyses. Unpaired Student’s t-tests were used to compare the ACLR and contralateral
+data at baseline and follow-up to the control group. An α=0.05 was used for all analyses
+with the Holm–Bonferroni method to account for multiple comparisons. Adjusted p-values
+from Holm-Bonferroni analyses are presented throughout the results. All statistical analyses
+were performed using SPSS version 23.0 (SPSS Inc., Chicago, IL).
+RESULTS
+Participants
+The ACLR study participants included 12 females and 5 males (Table 1). The
+reconstructions were performed on 9 right knees and 8 left knees. The average (± standard
+deviation) time between injury and reconstruction was 2.0 ± 1.8 months. All ACLR subjects
+had a single-bundle ACLR performed with a transtibial technique, with 15 performed with
+an Achilles allograft, one performed with a bone-patellar tendon-bone allograft, and one
+performed with a bone-patellar tendon-bone autograft. There were no significant changes in
+patient-reported outcome measures (Lysholm: p=0.48; IKDC (International Knee
+Documentation Committee): p=0.55; or KOOS (Knee Injury and Osteoarthritis Outcome
+Score) Pain: p=0.71, Symptoms: p=0.93, ADL: p=0.14, Sports/Rec: p=0.38, QOL: p=0.35)
+between baseline and follow-up as assessed by paired Student’s t-tests (Table 1). The control
+cohort consisted of 12 females and 5 males, with an average (± standard deviation) age of
+35.4 ± 7.4 years and BMI of 24.5 ± 3.0 kg/m2.
+Kinetics
+There was a significant main effect of time on joint kinetics (Table 2). Over the follow-up
+period, there was a reduction in the magnitude of KEM1 (p=0.048) and KEM2 (p<0.001),
+while an increase in peak KFM (p=0.002) was seen (Figure 1). KAM1 (p<0.001), KAM2
+(p=0.009), KAM Impulse (p=0.004), and KIRM (p<0.001) decreased over follow-up (Figure
+1). For all moments, the ACLR and contralateral limb changed similarly over time (no
+significant interaction effects were observed). No significant effect of limb was seen after
+controlling for multiple comparisons (Table 2).
+Comparison to the healthy control population at baseline demonstrated that the KEM1 was
+significantly higher in the ACLR (p=0.012) and contralateral (p=0.047) limbs versus control.
+Further, at baseline the KERM was significantly reduced in the ACLR (p=0.041) limb versus
+control and the peak KFM was significantly reduced in both the ACLR (p=0.006) and
+Erhart-Hledik et al. Page 5
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 6 ---
+contralateral (p=0.048) limbs versus control. At follow-up, KEM2 was significantly reduced
+in the ACLR (p=0.011) limb versus control.
+Kinematics
+There was a significant main effect of time on joint kinematics (Table 3). For all variables
+the ACLR and contralateral limb changed similarly over time (no significant interaction
+effects were observed). Over the follow-up period, there was a significant increase in peak
+knee flexion angle in the first half of stance phase (p=0.026) and in the minimum knee
+flexion angle in the second half of stance phase (p<0.001) (Figure 2). The average external
+rotation angle increased from 2 to 8 years post-ACLR (p=0.007), while a reduction in
+average anterior femoral displacement (increase in average anterior tibial displacement) was
+observed (p=0.006) (Figure 2). Only one significant effect of limb was seen after controlling
+for multiple comparisons, with a more flexed ACLR limb versus contralateral limb at the
+time of minimum knee flexion angle in the second half of stance (p=0.045), with a trend
+toward a more externally rotated tibia over stance on the ACLR limb versus the contralateral
+limb (p=0.16). Comparison to the healthy control population demonstrated only one
+significant difference, with a more flexed ACLR limb at 8-year follow-up versus control at
+the time of the minimum knee flexion angle in the second half of stance phase (p=0.021).
+There were no differences in walking speed or step length between either assessments or
+legs in the ACLR cohort (Table 3). There was only one significant difference in
+spatiotemporal variables as compared to the healthy control population, with smaller step
+length in the contralateral limb at baseline as compared to healthy control (p=0.04).
+DISCUSSION
+The results of this study demonstrate that there are longitudinal changes from 2 to 8 years
+post-ACLR in knee joint kinetic and kinematic features that have been related to clinical
+patient-reported outcomes after ACLR11; 42; 43 and the progression44–47 of knee OA. The
+ACLR and contralateral limbs changed similarly over the follow-up period, suggesting a
+bilateral adaptation to injury of a single limb. While it is well-documented that there are
+alterations in gait mechanics following ACLR, there exists some conflicting evidence on the
+direction and magnitude of such changes6; 7. These discrepancies may partially be due to the
+time at which the studies were conducted after reconstruction. Given the long term
+perspective2 in the development of OA in the ACL population, this work is a further step in
+understanding changes that continue to occur in gait mechanics with time after ACLR.
+The results of this study demonstrated an increase in peak KFM from 2 to 8 years post-
+ACLR. This change could be considered an improvement, as no difference was observed at
+8-year follow-up in peak KFM as compared to the healthy control population, while a
+reduction in peak KFM was observed in both the ACLR and contralateral limbs at baseline
+versus control. Previous work has shown that ACLR subjects display reduced peak KFM6,
+an indication of diminished quadriceps function48, possibly due to reduced quadriceps
+strength, impaired neuromuscular control, compensatory movements, or lingering
+symptoms. Thus, the increase in KFM over time may indicate long-term continued recovery
+of quadriceps function. Further, the reduction in KEM1 and KERM over the follow-up
+Erhart-Hledik et al. Page 6
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 7 ---
+period may also indicate improvements in joint loading over time, as significant differences
+were noted at baseline in KEM1 in both the ACLR and contralateral limbs as compared to
+healthy control and in the KERM in the ACLR limb as compared to healthy control, while
+no differences were observed at the 8-year follow-up. However, it is unknown if reductions
+would continue to occur with increasing time post-ACLR (greater than 8-years post-ACLR),
+and if such changes could be associated with degenerative changes as growing evidence
+suggests both joint unloading and overloading may be associated with degenerative cartilage
+changes13; 49. Further, research from early knee OA populations demonstrates reduced joint
+moments50, and a recent study by Wellsandt et al.10 demonstrated patients developing
+radiographic knee OA after ACLR had lower KAMs early after reconstruction than patients
+who did not develop OA. Thus, while no significant differences were observed in KAM1,
+KAM2, KAM Impulse, or KIRM between ACLR subjects and healthy controls, the
+reductions in these metrics over time may be indicative of neuromuscular adaptations in
+loading that precede development of clinical symptoms10; 50. The significant reduction in
+KEM2 in the ACLR limb over the follow-up period resulted in joint loading that was
+significantly different from healthy control at follow-up. Prior work has shown a significant
+reduction in KEM2 in the ACLR limb as compared to the contralateral limb17, though the
+significance of this change with regard to development of knee OA is unclear.
+No significant differences were noted between the ACLR and contralateral limbs in joint
+kinetics after controlling for multiple comparisons. Interestingly, the kinetic changes over
+time in the contralateral limb tended to mimic the pattern of the ACLR limb, with no
+differences observed in changes over time between the reconstructed and contralateral limbs.
+The symmetric adaptation over time suggests, consistent with previous work reporting
+bilateral neuromuscular alterations after ACL injury28–31, that the ACLR patients adapted
+their gait symmetrically.
+Similarly, kinematic changes over time were observed in both the ACLR and contralateral
+limbs. Analyses demonstrated significant changes (knee flexion-extension, external rotation,
+and femoral displacement) over time in both the ACLR and contralateral limbs in variables
+associated with clinical outcomes as assessed by patient-reported outcomes after
+ACLR11; 42; 43 and increased risk of progression45 of knee OA. The increase in peak knee
+flexion over time is consistent with the observed increase in KFM over time, and may
+suggest an improvement in gait mechanics, as prior work demonstrates that ACLR subjects
+display reduced midstance peak knee flexion angles during gait7. The increase in minimum
+knee flexion angle in the second half of stance resulted in a significant difference between
+the ACLR limb and healthy controls at 8-year follow-up, and thus may be indicative of
+worsening of this kinematic variable. Prior work by Shelbourne and Gray14 demonstrated
+that loss of knee extension adversely affected subjective and objective results at a mean of
+14 years after surgery, though the clinical significance of this change to the development of
+knee OA in this population is unclear. The external rotation of the tibia increased over time
+in both limbs, with a trend towards a more externally rotated tibia in the ACLR limb as
+compared to the contralateral limb. Prior work in the ACLR population at single time points
+also shows an increase in external tibial rotation41. A reduction in anterior femoral
+displacement was also found, which is consistent with prior work showing an increase in
+anterior tibial translation (i.e. reduction in anterior femoral displacement) in the ACLR limb
+Erhart-Hledik et al. Page 7
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 8 ---
+at a single time point16; 40. While no significant differences were observed in tibial rotation
+or femoral displacement as compared to the healthy control population, the significant
+changes over time in these variables may suggest worsening of these gait features over the
+follow-up period, as there is growing evidence that such kinematic changes causing even a
+small change in load-bearing position can alter loading in the cartilage and lead to
+degenerative changes in local regions of cartilage not adapted to withstand the new
+mechanical loading environment8; 13; 49.
+It is important to note that while this study demonstrates similar longitudinal kinematic and
+kinetic changes in the contralateral limb and affected limb after ACLR, the occurrence of
+premature knee OA in the contralateral knee is much less than in the affected limb51. This
+observation suggests that other factors such as altered biology52; 53, in addition to altered
+biomechanics, play a significant role in development of premature knee OA in the ACLR
+limb. It is also of interest to note that patient-reported outcome measures (Table 1) showed
+minimal changes from 2 to 8 years prospectively while gait demonstrated significant
+changes. This finding suggests that gait may be a more sensitive metric than patient-reported
+outcomes in patients with well-functioning ACLRs.
+The difference in time frames between our study (from 2 to 8 years post-ACLR) and that of
+other prospective studies of ACLR patients such as Webster et al.23 and Tagesson et al.24
+may explain the different results observed. While we found a reduction in extension in
+terminal stance and a reduction in extension and adduction moments, Webster et al.23 found
+an increase in terminal extension and extension moment in the ACLR limb and an increase
+in KAM in both limbs from 10 months to 3 years post-ACLR. Further, our work in the
+current study demonstrated a reduction in anterior femoral displacement over time, while
+Tagesson et al.24 found no change in maximal anterior tibial translation from 5 weeks to 5
+years post-ACLR. The prospective study by Lin et al.25 investigated tibiofemoral cartilage
+contact locations during a dynamic step-up motion, and found the contact locations were
+located more anteriorly at 3 years post-ACLR as compared to 6 months post-ACLR,
+consistent with our finding of a reduction in anterior femoral displacement (an increase in
+anterior tibial translation) over time. Further work is needed to understand if there is a time
+at which kinematics and kinetics stabilize after injury and reconstruction and to understand
+if such changes are related to the development of knee OA. The finding of continued
+prospective changes in joint mechanics over a long-term period after ACLR suggests that
+perhaps longer-term rehabilitation or interventional programs may be needed after the 6–12
+month period following ACLR during which standard rehabilitation occurs.
+There are limitations to the present study which should be acknowledged. The follow-up
+testing at 8 years was not part of the original study protocol and the number of subjects
+available at the 8 year follow-up was relatively small. As such the results could be exposed
+to bias common to opportunity samples32. However, capturing a longer term follow-up in
+this population shows key mid-term findings of significant longitudinal changes in both
+kinematic and kinetic measures from 2 to 8 years post-reconstruction that have been related
+to clinical patient-reported outcomes11; 42; 43 after ACLR and knee OA progression44–47.
+Further, comparison of baseline demographics between subjects who returned for 8 year
+follow-up and those who did not showed no differences between groups. Because clinical
+Erhart-Hledik et al. Page 8
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 9 ---
+changes related to knee OA often are not apparent for 10 years or more, these gait changes
+may show potential in providing earlier warning of deteriorating knee function and
+opportunities for early intervention. Future work is needed to confirm the results of this
+study in a larger prospective cohort. While data was collected in the same laboratory with
+the same set-up at the 2 and 8 year time points, and researchers collecting data at the 2 and 8
+year time points were trained by the same single individual with regard to gait analysis
+techniques, including placement of body markers, there is potential for error associated with
+gait analysis techniques. Literature54 in young healthy adults reported that interrater-
+intersession standard error of measurement (SEM) values for knee kinematics are typically
+below 2° with minimally detectable change (MDC) values of approximately 5°. Thus, the
+significant changes found in the kinematics in present study were above measurement error
+but generally not large enough to exceed the previously-reported MDC. For knee kinetics,
+previously-reported SEM values were typically below 0.05 Nm/kg, with MDC values of
+approximately 0.1 Nm/kg.54 The significant results of joint kinetics in the current study were
+above the measurement error for all variables, and above the MDC for KFM, KEM2, and
+KIRM. While this work contributes important new information towards understanding
+longer-term longitudinal changes in knee joint biomechanics after ACLR, future work
+incorporating imaging to determine knee joint degeneration is needed to understand if these
+biomechanical gait features are associated with the development of premature knee OA.
+In conclusion, this work demonstrates longitudinal changes in both knee joint kinetics and
+kinematics from 2 to 8 years after ACLR surgery. The fact that similar changes were found
+on the contralateral knee, together with the lower rate of OA in the contralateral limb,
+suggests that the biomechanical changes are likely acting together with altered structural and
+biological factors in the ACLR knee. Given that approximately 50% of the ACLR population
+develop premature radiographic knee OA within 10–15 years of injury2, the results of this
+study supports future larger and comprehensive investigations into long-term changes in
+joint mechanics in the ACLR population, including investigation of the clinical effect of
+these gait changes. Such work will help to identify specific features that place some patients
+at greatest risk of developing knee OA after ACLR.
+Acknowledgments
+The authors thank Sean Scanlan, PhD and Michael Zabala, PhD, for their assistance in data collection at baseline.
+This study was funded by the National Institute of Health grants AR039421 and AR052784. The funding sources
+had no role in the study design, collection or analysis of data, or manuscript preparation or submission.
+References
+1. Ardern CL, Webster KE, Taylor NF, et al. Return to sport following anterior cruciate ligament
+reconstruction surgery: a systematic review and meta-analysis of the state of play. British journal of
+sports medicine. 2011; 45:596–606. [PubMed: 21398310]
+2. Lohmander LS, Ostenberg A, Englund M, et al. High prevalence of knee osteoarthritis, pain, and
+functional limitations in female soccer players twelve years after anterior cruciate ligament injury.
+Arthritis and rheumatism. 2004; 50:3145–3152. [PubMed: 15476248]
+3. Li RT, Lorenz S, Xu Y, et al. Predictors of radiographic knee osteoarthritis after anterior cruciate
+ligament reconstruction. The American journal of sports medicine. 2011; 39:2595–2603. [PubMed:
+22021585]
+Erhart-Hledik et al. Page 9
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 10 ---
+4. Kessler MA, Behrend H, Henz S, et al. Function, osteoarthritis and activity after ACL-rupture: 11
+years follow-up results of conservative versus reconstructive treatment. Knee surgery, sports
+traumatology, arthroscopy : official journal of the ESSKA. 2008; 16:442–448.
+5. Weninger P, Zifko B, Liska M, et al. Anterior cruciate ligament reconstruction using autografts and
+double biodegradable femoral cross-pin fixation: functional, radiographic and MRI outcome after 2-
+year minimum follow-up. Knee surgery, sports traumatology, arthroscopy : official journal of the
+ESSKA. 2008; 16:988–995.
+6. Kaur M, Ribeiro DC, Theis JC, et al. Movement Patterns of the Knee During Gait Following ACL
+Reconstruction: A Systematic Review and Meta-Analysis. Sports medicine. 2016; 46:1869–1895.
+[PubMed: 26936269]
+7. Hart HF, Culvenor AG, Collins NJ, et al. Knee kinematics and joint moments during gait following
+anterior cruciate ligament reconstruction: a systematic review and meta-analysis. British journal of
+sports medicine. 2016; 50:597–612. [PubMed: 26265562]
+8. Bullough PG, Yawitz PS, Tafra L, et al. Topographical variations in the morphology and
+biochemistry of adult canine tibial plateau articular cartilage. Journal of orthopaedic research :
+official publication of the Orthopaedic Research Society. 1985; 3:1–16. [PubMed: 3981289]
+9. Zaid M, Lansdown D, Su F, et al. Abnormal tibial position is correlated to early degenerative
+changes one year following ACL reconstruction. Journal of orthopaedic research : official
+publication of the Orthopaedic Research Society. 2015; 33:1079–1086. [PubMed: 25721417]
+10. Wellsandt E, Gardinier ES, Manal K, et al. Decreased Knee Joint Loading Associated With Early
+Knee Osteoarthritis After Anterior Cruciate Ligament Injury. The American journal of sports
+medicine. 2016; 44:143–151. [PubMed: 26493337]
+11. Erhart-Hledik JC, Chu CR, Asay JL, et al. Gait mechanics 2 years after anterior cruciate ligament
+reconstruction are associated with longer-term changes in patient-reported outcomes. Journal of
+orthopaedic research : official publication of the Orthopaedic Research Society. 2017; 35:634–640.
+[PubMed: 27238273]
+12. Andriacchi TP, Mundermann A. The role of ambulatory mechanics in the initiation and progression
+of knee osteoarthritis. Current opinion in rheumatology. 2006; 18:514–518. [PubMed: 16896293]
+13. Andriacchi TP, Koo S, Scanlan SF. Gait mechanics influence healthy cartilage morphology and
+osteoarthritis of the knee. The Journal of bone and joint surgery American volume. 2009; 91(Suppl
+1):95–101.
+14. Shelbourne KD, Gray T. Minimum 10-year results after anterior cruciate ligament reconstruction:
+how the loss of normal knee motion compounds other factors related to the development of
+osteoarthritis after surgery. The American journal of sports medicine. 2009; 37:471–480.
+[PubMed: 19059893]
+15. Tashman S, Kolowich P, Collon D, et al. Dynamic function of the ACL-reconstructed knee during
+running. Clinical orthopaedics and related research. 2007; 454:66–73. [PubMed: 17091011]
+16. Papannagari R, Gill TJ, Defrate LE, et al. In vivo kinematics of the knee after anterior cruciate
+ligament reconstruction: a clinical and functional evaluation. The American journal of sports
+medicine. 2006; 34:2006–2012. [PubMed: 16885514]
+17. Zabala ME, Favre J, Scanlan SF, et al. Three-dimensional knee moments of ACL reconstructed and
+control subjects during gait, stair ascent, and stair descent. Journal of biomechanics. 2013; 46:515–
+520. [PubMed: 23141637]
+18. Butler RJ, Minick KI, Ferber R, et al. Gait mechanics after ACL reconstruction: implications for
+the early onset of knee osteoarthritis. British journal of sports medicine. 2009; 43:366–370.
+[PubMed: 19042923]
+19. Varma RK, Duffell LD, Nathwani D, et al. Knee moments of anterior cruciate ligament
+reconstructed and control participants during normal and inclined walking. BMJ open. 2014;
+4:e004753.
+20. Webster KE, Feller JA. The knee adduction moment in hamstring and patellar tendon anterior
+cruciate ligament reconstructed knees. Knee surgery, sports traumatology, arthroscopy : official
+journal of the ESSKA. 2012; 20:2214–2219.
+Erhart-Hledik et al. Page 10
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 11 ---
+21. Patterson MR, Delahunt E, Caulfield B. Peak knee adduction moment during gait in anterior
+cruciate ligament reconstructed females. Clinical biomechanics. 2014; 29:138–142. [PubMed:
+24359628]
+22. Titchenal MR, Chu CR, Erhart-Hledik JC, et al. Early Changes in Knee Center of Rotation During
+Walking After Anterior Cruciate Ligament Reconstruction Correlate With Later Changes in
+Patient-Reported Outcomes. The American journal of sports medicine. 2017; 45:915–921.
+[PubMed: 27881382]
+23. Webster KE, Feller JA, Wittwer JE. Longitudinal changes in knee joint biomechanics during level
+walking following anterior cruciate ligament reconstruction surgery. Gait & posture. 2012;
+36:167–171. [PubMed: 22469773]
+24. Tagesson S, Oberg B, Kvist J. Static and dynamic tibial translation before, 5 weeks after, and 5
+years after anterior cruciate ligament reconstruction. Knee surgery, sports traumatology,
+arthroscopy : official journal of the ESSKA. 2015; 23:3691–3697.
+25. Lin L, Li JS, Kernkamp WA, et al. Postoperative time dependent tibiofemoral articular cartilage
+contact kinematics during step-up after ACL reconstruction. Journal of biomechanics. 2016;
+49:3509–3515. [PubMed: 27720228]
+26. Knoll Z, Kocsis L, Kiss RM. Gait patterns before and after anterior cruciate ligament
+reconstruction. Knee surgery, sports traumatology, arthroscopy : official journal of the ESSKA.
+2004; 12:7–14.
+27. DeVita P, Hortobagyi T, Barrier J. Gait biomechanics are not normal after anterior cruciate
+ligament reconstruction and accelerated rehabilitation. Medicine and science in sports and
+exercise. 1998; 30:1481–1488. [PubMed: 9789847]
+28. Wojtys EM, Huston LJ. Longitudinal effects of anterior cruciate ligament injury and patellar
+tendon autograft reconstruction on neuromuscular performance. The American journal of sports
+medicine. 2000; 28:336–344. [PubMed: 10843124]
+29. Urbach D, Nebelung W, Weiler HT, et al. Bilateral deficit of voluntary quadriceps muscle
+activation after unilateral ACL tear. Medicine and science in sports and exercise. 1999; 31:1691–
+1696. [PubMed: 10613416]
+30. Negahban H, Mazaheri M, Kingma I, et al. A systematic review of postural control during single-
+leg stance in patients with untreated anterior cruciate ligament injury. Knee surgery, sports
+traumatology, arthroscopy : official journal of the ESSKA. 2014; 22:1491–1504.
+31. Lepley AS, Gribble PA, Thomas AC, et al. Quadriceps neural alterations in anterior cruciate
+ligament reconstructed patients: A 6-month longitudinal investigation. Scandinavian journal of
+medicine & science in sports. 2015; 25:828–839. [PubMed: 25693627]
+32. McLeod S. Sampling Methods. 2014
+33. Terrier P, Reynard F. Effect of age on the variability and stability of gait: a cross-sectional treadmill
+study in healthy individuals between 20 and 69 years of age. Gait & posture. 2015; 41:170–174.
+[PubMed: 25455699]
+34. Andriacchi TP, Alexander EJ, Toney MK, et al. A point cluster method for in vivo motion analysis:
+applied to a study of knee kinematics. Journal of biomechanical engineering. 1998; 120:743–749.
+[PubMed: 10412458]
+35. Favre J, Erhart-Hledik JC, Andriacchi TP. Age-related differences in sagittal-plane knee function at
+heel-strike of walking are increased in osteoarthritic patients. Osteoarthritis and cartilage. 2014;
+22:464–471. [PubMed: 24445065]
+36. Dyrby CO, Andriacchi TP. Secondary motions of the knee during weight bearing and non-weight
+bearing activities. Journal of orthopaedic research : official publication of the Orthopaedic
+Research Society. 2004; 22:794–800. [PubMed: 15183436]
+37. Grood ES, Suntay WJ. A joint coordinate system for the clinical description of three-dimensional
+motions: application to the knee. Journal of biomechanical engineering. 1983; 105:136–144.
+[PubMed: 6865355]
+38. Andriacchi, TPJT., Hurwitz, DE., Nataraja, RN. Musculoskeletal dynamics, locomotion, and
+clinical applications. In: Mow, VCHR., editor. Basic Orthopaedic Biomechanics and Mechano-
+Biology. 3. Philadelphia, PA: Lippincott Williams & Wilkins; 2005. p. 91-122.
+Erhart-Hledik et al. Page 11
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 12 ---
+39. Winter, DA. Biomechanics and motor control of human movement. 2. New York: Wiley-
+Interscience Publications; 1990.
+40. Shi DL, Wang YB, Ai ZS. Effect of anterior cruciate ligament reconstruction on biomechanical
+features of knee in level walking: a meta-analysis. Chinese medical journal. 2010; 123:3137–3142.
+[PubMed: 21162970]
+41. Scanlan SF, Chaudhari AM, Dyrby CO, et al. Differences in tibial rotation during walking in ACL
+reconstructed and healthy contralateral knees. Journal of biomechanics. 2010; 43:1817–1822.
+[PubMed: 20181339]
+42. Zampeli F, Pappas E, Giotis D, et al. Kinematic predictors of subjective outcome after anterior
+cruciate ligament reconstruction: an in vivo motion analysis study. Knee surgery, sports
+traumatology, arthroscopy : official journal of the ESSKA. 2012; 20:785–792.
+43. Kalawadia J, Thorhauer E, Arilla FV, et al. Knee Kinematics Are Related to Patient-Reported
+Outcomes 6 Months After Anatomic ACL Reconstruction. Orthopaedic Journal of Sports
+Medicine. 2015; 3:2325967115. S2325900031.
+44. Henriksen M, Hinman RS, Creaby MW, et al. Rotational knee load predicts cartilage loss over 12
+months in knee osteoarthritis. Osteoarthritis and Cartilage. 2012; 20:S17–S18.
+45. Favre J, Erhart-Hledik JC, Chehab EF, et al. Baseline ambulatory knee kinematics are associated
+with changes in cartilage thickness in osteoarthritic patients over 5 years. Journal of biomechanics.
+2016; 49:1859–1864. [PubMed: 27178021]
+46. Chehab EF, Favre J, Erhart-Hledik JC, et al. Baseline knee adduction and flexion moments during
+walking are both associated with 5 year cartilage changes in patients with medial knee
+osteoarthritis. Osteoarthritis and cartilage. 2014; 22:1833–1839. [PubMed: 25211281]
+47. Chang AH, Moisio KC, Chmiel JS, et al. External knee adduction and flexion moments during gait
+and medial tibiofemoral disease progression in knee osteoarthritis. Osteoarthritis and cartilage.
+2015; 23:1099–1106. [PubMed: 25677110]
+48. Lewek M, Rudolph K, Axe M, et al. The effect of insufficient quadriceps strength on gait after
+anterior cruciate ligament reconstruction. Clinical biomechanics. 2002; 17:56–63. [PubMed:
+11779647]
+49. Andriacchi TP, Mundermann A, Smith RL, et al. A framework for the in vivo pathomechanics of
+osteoarthritis at the knee. Annals of biomedical engineering. 2004; 32:447–457. [PubMed:
+15095819]
+50. Henriksen M, Graven-Nielsen T, Aaboe J, et al. Gait changes in patients with knee osteoarthritis
+are replicated by experimental knee pain. Arthritis care & research. 2010; 62:501–509. [PubMed:
+20391505]
+51. Barenius B, Ponzer S, Shalabi A, et al. Increased risk of osteoarthritis after anterior cruciate
+ligament reconstruction: a 14-year follow-up study of a randomized controlled trial. The American
+journal of sports medicine. 2014; 42:1049–1057. [PubMed: 24644301]
+52. Harkey MS, Luc BA, Golightly YM, et al. Osteoarthritis-related biomarkers following anterior
+cruciate ligament injury and reconstruction: a systematic review. Osteoarthritis and cartilage. 2015;
+23:1–12. [PubMed: 25219671]
+53. Chu CR, Andriacchi TP. Dance between biology, mechanics, and structure: A systems-based
+approach to developing osteoarthritis prevention strategies. Journal of orthopaedic research :
+official publication of the Orthopaedic Research Society. 2015; 33:939–947. [PubMed: 25639920]
+54. Wilken JM, Rodriguez KM, Brawner M, et al. Reliability and Minimal Detectible Change values
+for gait kinematics and kinetics in healthy adults. Gait & posture. 2012; 35:301–307. [PubMed:
+22041096]
+Erhart-Hledik et al. Page 12
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 13 ---
+Figure 1.
+The arrows indicate significant changes (Table 2) in the average flexion, adduction, and
+rotation moment curves (%Bw*Ht) of the ACLR (red) and contralateral (blue) limbs
+between 2 years (solid) and 8 years (dashed) post ACLR. The healthy control subjects are
+shown as a solid black line.
+Erhart-Hledik et al. Page 13
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 14 ---
+Figure 2.
+The arrows indicate significant changes (Table 3) in average knee flexion, varus rotation,
+and internal rotation angles (°), and anterior femoral displacement (mm) of the ACLR (red)
+and contralateral (blue) limbs between 2 years (solid) and 8 years (dashed) post ACLR. The
+healthy control subjects are shown as a solid black line.
+Erhart-Hledik et al. Page 14
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 15 ---
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+Erhart-Hledik et al. Page 15
+Table 1
+Demographics of the ACLR study participants at baseline (2.2±0.3 years post-ACLR) and follow-up (7.7±0.7
+years post-ACLR). KOOS, IKDC, and Lysholm scores have a maximum value of 100, indicating best
+outcomes. Tegner scores range from 0 and 10, where 0 is ‘on sick leave/disability’ and 10 is ‘participation in
+competitive sports such as soccer at a national elite level’.
+Baseline Follow-up
+Age (yrs) 29.6 ± 7.3 35.1 ± 7.3
+Weight (kg) 68.3 ± 10.2 72.4 ± 8.5
+Height (m) 1.7 ± 0.1 1.7 ± 0.1
+BMI (kg/m2) 23.5 ± 2.7 25.0 ± 2.2
+Lysholm score 94.0 ± 5.6 92.6 ± 9.2
+Tegner score --- 5.3 ± 1.2
+IKDC score 92.3 ± 8.2 91.1 ± 9.5
+KOOS Pain score 95.5 ± 6.5 94.8 ± 5.8
+KOOS Symptoms score 89.7 ± 13.9 88.8 ± 11.1
+KOOS ADL score 99.5 ± 1.27 98.6 ± 3.2
+KOOS Sports/Rec score 88.8 ± 18.4 92.2 ± 10.3
+KOOS QOL score 79.8 ± 21.7 81.3 ± 16.9
+KT-1000 side-to-side difference 30 lb manual force (mm) 0.6 ± 1.8 1.3 ± 2.3
+All data given as mean ± standard deviation.
+IKDC: International Knee Documentation Committee
+KOOS: Knee Injury and Osteoarthritis Outcome Score
+ADL: Activities of daily living; QOL: Quality of life
+Tegner activity scale was not collected at baseline.
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+
+--- PAGE 16 ---
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+Erhart-Hledik et al. Page 16
+Table 2
+Means (standard deviation) of knee joint moments in the ACLR and contralateral limbs in the ACL cohort at 2 and 8 years post-ACLR and in the healthy
+control knees. P-values shown are for results of repeated measures ANOVA and are adjusted for multiple comparisons with Holm-Bonferroni method.
+Bold indicates significance.
+2 years post-ACLR 8 years post-ACLR
+Healthy Control
+ANOVA Main Effect P-value ANOVA Interaction P-value
+ACLR Contralateral ACLR Contralateral Time Limb Time x Limb
+KEM1 −3.09 (0.56) −3.01 (0.59) −2.72 (0.53) −2.73 (0.42) −2.46 (0.51) 0.048 0.787 1.000
+KFM 1.51 (1.22) 1.88 (1.16) 2.38 (1.01) 2.65 (0.90) 3.10 (0.51) 0.002 1.000 1.000
+KEM2 −2.81 (0.95) −3.15 (0.83) −1.96 (0.91) −2.25 (0.81) −3.06 (0.93) <0.001 0.252 1.000
+KAM1 2.76 (0.37) 2.96 (0.39) 2.31 (0.39) 2.46 (0.52) 2.59 (1.02) <0.001 0.208 1.000
+KAM2 1.54 (0.70) 1.59 (0.55) 1.28 (0.54) 1.30 (0.55) 1.33 (0.64) 0.009 1.000 1.000
+KIRM −0.98 (0.22) −1.09 (0.23) −0.80 (0.22) −0.87 (0.24) −0.91 (0.24) <0.001 0.208 1.000
+KERM 0.17 (0.09) 0.20 (0.10) 0.19 (0.08) 0.18 (0.08) 0.26 (0.08) 0.821 1.000 1.000
+KAM Impulse 0.76 (0.28) 0.79 (0.23) 0.60 (0.22) 0.63 (0.26 ) 0.63 (0.30) 0.004 1.000 0.856
+Units for joint moments are %Bw*Ht and for KAM Impulse are %Bw*Ht*s
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+
+--- PAGE 17 ---
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+Erhart-Hledik et al. Page 17
+Table 3
+Means (standard deviation) of knee joint kinematics and spatiotemporal variables in the ACLR and contralateral limbs in the ACL cohort at 2 and 8 years
+post-ACLR and in the healthy control knees. P-values shown are for results of repeated measures ANOVA and are adjusted for multiple comparisons with
+Holm-Bonferroni method. Bold indicates significance.
+2 years post-ACLR 8 years post-ACLR
+Healthy Control
+ANOVA Main Effect P-value ANOVA Interaction P-value
+ACLR Contralateral ACLR Contralateral Time Limb Time x Limb
+Peak flexion angle (°) 14.8 (5.4) 15.2 (6.6) 16.8 (4.6) 17.8 (3.9) 18.5 (6.1) 0.026 1.000 1.000
+Minimum flexion angle (°) 3.8 (5.3) 1.6 (4.1) 7.2 (4.1) 5.4 (3.8) 2.7 (4.2) <0.001 0.045 1.000
+Peak varus angle (°) −1.7 (2.1) −2.0 (1.9) −1.2 (3.1) −1.3 (2.8) 1.8 (4.4) 0.680 0.773 1.000
+Peak valgus angle (°) −4.4 (1.9) −4.9 (2.4) −4.9 (2.9) −4.9 (2.8) −6.5 (3.4) 0.530 1.000 1.000
+Average external rotation angle (°) 0.4 (3.3) −1.5 (3.2) 3.8 (5.5) 1.7 (2.7) 1.3 (4.5) 0.007 0.160 1.000
+Average anterior femoral displacement (mm) 1.8 (4.6) 3.6 (5.9) −3.6 (7.0) −2.2 (4.3) −1.3 (6.6) 0.006 0.98 0.889
+Speed (m/s) 1.4 (0.1) 1.3 (0.1) 1.3 (0.1) 1.3 (0.2) 1.4 (0.2) 1.000 0.354 0.496
+Step Length (m) 1.4 (0.1) 1.4 (0.1) 1.4 (0.1) 1.4 (0.1) 1.5 (0.1) 0.846 0.192 0.109
+J Orthop Res. Author manuscript; available in PMC 2019 May 01.
+
+--- PAGE 18 ---

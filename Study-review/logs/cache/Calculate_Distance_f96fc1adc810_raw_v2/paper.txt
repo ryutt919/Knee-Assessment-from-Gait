@@ -1,0 +1,2765 @@
+
+--- PAGE 1 ---
+Master’s Thesis
+Wearable IMU sensor-based motion
+tracking for post-stroke motor impairment
+assessment during activities of daily living
+Author:
+Tanguy Lewko
+Supervisor(s):
+Dr. Prabhat Pathak, Ph.D.
+James Arnold, Ph.D. Candidate
+Advisor(s):
+Prof. Conor Walsh, Ph.D.
+Prof. Auke Ijspeert, Ph.D.
+Harvard Biodesign Lab
+March 7, 2024
+Private and Confidential - Harvard University - Not for public disclosure
+
+--- PAGE 2 ---
+Abstract
+Post-stroke individuals face challenges incorporating their affected arm into activities of daily living
+(ADLs) due to impairments in motor function. Although task-oriented occupational therapy is a proven
+solution for enhancing functional skills, stroke survivors often struggle with motivation and lack feed-
+back when attempting to increase the use of their affected arm during everyday activities. Continuous
+monitoring of ADLs is a viable solution to provide feedback on the quantity and quality of impaired arm
+functional movements and to promote adherence to home rehabilitation programs. Recent advances
+in machine learning and wearable inertial measurement units (IMUs) offer promising opportunities for
+remote monitoring of rehabilitation training. While the prior art has focused primarily on quantifying
+the usage of the affected arm, a comprehensive assessment of rehabilitation progress requires evaluating
+movement quality during functional tasks. The objective of this research is thus to develop a wear-
+able IMU sensor platform to segment and evaluate stroke survivors’ upper extremity motions during
+ADLs.
+We leveraged two open-source IMU datasets to develop initial algorithms for assessing movement qual-
+ity during ADLs. The first dataset contained healthy participants performing six unimanual upper
+extremity self-care ADLs and was used to develop a deep learning algorithm for precise time segmen-
+tation of ADLs. We developed a hybrid architecture combining convolutional and bidirectional long
+short-term memory layers to extract spatial and temporal information from the input IMU data. Our
+algorithm employs dense labeling for time-step resolution segmentation at a frequency of 33 hertz, while
+integrating past and future knowledge into current predictions through a context-aware framework. We
+achieved F1 scores of 0.83 and 0.87 in across-subjects and within-subjects evaluations, respectively. Ad-
+ditionally, we determined that segmentation accuracy was highest when using only the accelerometer
+and gyroscope data from two IMU sensors attached to the forearms. We also proposed a methodology
+for collecting an annotated naturalistic IMU-based ADL dataset in a controlled environment, using
+video ground truth to reliably label ADLs. To demonstrate the feasibility of our activity segmentation
+algorithm, we collected a dataset of 5 healthy participants and 5 post-stroke participants. We tested our
+algorithm on two mildly impaired post-stroke participants, highlighting the potential need for tailored
+models for post-stroke individuals due to the high variability of impairments within the population. The
+second open-source dataset was used to extract samples of healthy and post-stroke participants wearing
+IMUs on their upper body while drinking and brushing their teeth. We identified robust kinematic
+metrics that can be computed directly from accelerometer and gyroscope data and that differentiate
+between healthy and stroke participants. Finally, we developed a novel data-driven movement quality
+rating scale, the motion healthiness score (MHS), to incorporate identified metrics into a framework
+for naturalistic motion quality assessment. The MHS utilizes the Mahalanobis distance to measure
+the disparity between the movement of a stroke survivor and the same movement executed by healthy
+subjects. It showed desirable properties such as high consistency when rating sample motions from
+the same subject and good separability (>80% accuracy) between healthy and post-stroke individuals.
+The MHS offers an opportunity to assess impairment in a functional setting without evaluation by a
+therapist.
+I
+
+--- PAGE 3 ---
+Contents
+1 Introduction 1
+2 Prior art on wearable sensors for post-stroke upper extremity rehabilitation at home 3
+3 IMU-based segmentation of upper-extremity ADLs 6
+3.1 Dataset and literature review . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.1.1 Datasets in upper body ADL segmentation . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.1.2 Algorithmic approaches for wearable IMU activity segmentation . . . . . . . . . . . . . . 8
+3.2 Data preparation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.3 Architectures and model selection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.3.1 Validation strategies . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.3.2 Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3.3.3 Feature selection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+3.3.4 Data augmentations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.4 Conclusion on upper-extremity ADL segmentation . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+4 Collecting an annotated naturalistic dataset of post-stroke ADLs in a controlled environ-
+ment 24
+4.1 Protocol for unstructured ADL data collection . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+4.2 Labeling methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+4.3 Intermediary dataset characterization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5 Proof-of-concept on post-stroke participants 28
+5.1 Two-stage activity segmentation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+5.2 Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+6 Kinematic disparities between healthy and post-stroke ADLs with IMU sensors 33
+6.1 Task segmentation methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+6.2 Metrics for motion analysis of ADLs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+6.3 Brushing teeth post-stroke motion analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+6.4 Drinking post-stroke motion analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+6.4.1 Decomposition of the drinking ADL . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+6.4.2 Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+6.5 Conclusion on post-stroke upper-extremity motion analysis within ADLs . . . . . . . . . . . . . . 42
+7 The motion healthiness score: A data-driven framework for naturalistic motion quality
+assessment 44
+7.1 Methods and results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+7.1.1 PCA dimensionality reduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+7.1.2 Mahalanobis distance to healthy data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+7.2 Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+8 Conclusion 54
+A Evaluation metrics for activity segmentation 1
+B IMU-based metrics comparisons 3
+II
+
+--- PAGE 4 ---
+Symbol table
+Latex Symbol Description
+C Confusion matrix [−]
+SNR Signal-to-noise ratio [dB]
+SOR Signal-to-offset ratio [dB]
+P Power (unit of the base signal)
+αs Scaling factor [−]
+αz Zoom factor [−]
+R Rotation matrix
+K Homogeneous rotation matrix
+θ Rotation angle [rad]
+Fc Compression factor [−]
+M Downsampling factor [−]
+λS SPARC [−]
+v Angular velocity [rad/s]
+wc Cutoff frequency [hz]
+F(.) Fourier transform operator
+F F statistic [-]
+η2
+Effect size [-]
+p p-value [-]
+t t-statistic [-]
+Σ Covariance matrix [-]
+λ Eigenvalue [-]
+W PCA projection matrix [-]
+DM Mahalanobis distance [-]
+DB Bhattacharyya distance [-]
+MHS Motion healthiness score [-]
+III
+
+--- PAGE 5 ---
+List of Figures
+3.1 Sliding window labeling vs. dense labeling. . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.2 Window parameters: length, stride, overlap . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.3 Context-aware prediction framework. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.4 Classes distribution before oversampling. . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.5 Classes distribution after oversampling. . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.6 Leave-One-Subject-Out (LOSO) cross-validation process. . . . . . . . . . . . . . . . . . . 15
+3.7 Hybrid architecture: Convolutional and BiLSTM layers . . . . . . . . . . . . . . . . . . 16
+3.8 Intra-validation activity recall confusion matrix. . . . . . . . . . . . . . . . . . . . . . . . 18
+3.9 Intra-validation hand recall confusion matrix. . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.10 LOSO validation activity recall confusion matrix. . . . . . . . . . . . . . . . . . . . . . . 19
+3.11 LOSO validation hand recall confusion matrix. . . . . . . . . . . . . . . . . . . . . . . . 19
+3.12 Example of close to average segmentation performance. . . . . . . . . . . . . . . . . . . 19
+3.13 Example of close to best-case segmentation performance. . . . . . . . . . . . . . . . . . . 20
+3.14 Data augmentations applied on an acceleration signal. . . . . . . . . . . . . . . . . . . . 22
+4.1 IMU placement on the upper body . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+4.2 11-ADL circuit set up. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+4.3 Examples of ADLs (CIMT glove on). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+4.4 Labeling GUI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5.1 Two-stage activity segmentation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+5.2 Individualized model GG98 ADL segmentation confusion matrix. . . . . . . . . . . . . . 30
+5.3 Individualized model GG98 meal segmentation confusion matrix. . . . . . . . . . . . . . 30
+5.4 Individualized model GG102 ADL segmentation confusion matrix. . . . . . . . . . . . . 31
+5.5 Individualized model GG102 meal segmentation confusion matrix. . . . . . . . . . . . . 31
+6.1 Simplified kinematic model of the arms. . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+6.2 Brushing teeth median upper arm acceleration analysis. . . . . . . . . . . . . . . . . . . 36
+6.3 Brushing teeth median forearm acceleration analysis. . . . . . . . . . . . . . . . . . . . . 36
+6.4 Brushing teeth median upper arm acceleration analysis. . . . . . . . . . . . . . . . . . . 37
+6.5 Brushing teeth median forearm acceleration analysis. . . . . . . . . . . . . . . . . . . . . 37
+6.6 Brushing teeth median shoulder abduction analysis. . . . . . . . . . . . . . . . . . . . . 38
+6.7 Brushing teeth median shoulder flexion analysis. . . . . . . . . . . . . . . . . . . . . . . 38
+6.8 Paretic/non-paretic brushing motion asymmetry. . . . . . . . . . . . . . . . . . . . . . . 39
+6.9 Decomposition of the drinking task. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+6.10 Drinking transport forearm angular velocity based SPARC analysis. . . . . . . . . . . . 41
+6.11 Drinking recovery forearm angular velocity based SPARC analysis. . . . . . . . . . . . . 41
+6.12 Drinking transport movement time analysis . . . . . . . . . . . . . . . . . . . . . . . . . 42
+6.13 Drinking recovery movement time analysis . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+7.1 Motion healthiness score (MHS) framework . . . . . . . . . . . . . . . . . . . . . . . . . 45
+7.2 Scree plots for brushing teeth, drinking transport and recovery PCA . . . . . . . . . . . 46
+IV
+
+--- PAGE 6 ---
+Master’s Thesis
+7.3 Brushing teeth PCA projection (3D) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+7.4 Drinking transport PCA projection (3D) . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+7.5 Drinking recovery PCA projection (3D) . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+7.6 Brushing teeth Mahalanobis distance to healthy ellipsoid distribution. . . . . . . . . . . 49
+7.7 Drinking transport Mahalanobis distance to healthy ellipsoid distribution. . . . . . . . . 49
+7.8 Drinking recovery Mahalanobis distance to healthy ellipsoid distribution. . . . . . . . . . 49
+7.9 Brushing teeth mean MHS per subject. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51
+7.10 Drinking transport mean MHS per subject. . . . . . . . . . . . . . . . . . . . . . . . . . 51
+7.11 Drinking recovery mean MHS per subject. . . . . . . . . . . . . . . . . . . . . . . . . . . 51
+7.12 Confusion matrices for MHS threshold-based classification of stroke vs. healthy. . . . . . 52
+V Tanguy Lewko , 7.3.2024
+
+--- PAGE 7 ---
+List of Tables
+3.1 Activities featured in the Multi-Sensory dataset . . . . . . . . . . . . . . . . . . . . . . . 7
+3.2 Performance comparison of LSTM, BiLSTM, and CNN-BiLSTM architectures . . . . . . 16
+3.3 Performance comparison with different sets of features/sensors. . . . . . . . . . . . . . . 17
+3.4 LOSO cross-validation performance for each subject. . . . . . . . . . . . . . . . . . . . . 18
+3.5 Data augmentation parameters and probabilities. . . . . . . . . . . . . . . . . . . . . . . 22
+3.6 Performance comparison with different data augmentations. . . . . . . . . . . . . . . . . 23
+4.1 Definitions of activity labels . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+4.2 Participant data collection summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5.1 Performance comparison of different models tested on GG98 and GG102. . . . . . . . . 29
+7.1 Bhattacharyya distance: healthy vs. mild vs. moderate impairments . . . . . . . . . . . 50
+7.2 Mean Mahalanobis distance to healthy data and MHS for each subject and activity . . . 53
+B.1 Drinking transport metrics and statistical tests. . . . . . . . . . . . . . . . . . . . . . . . 4
+B.2 Drinking recovery metrics and statistical tests. . . . . . . . . . . . . . . . . . . . . . . . 5
+B.3 Brushing teeth metrics and statistical tests. . . . . . . . . . . . . . . . . . . . . . . . . . 6
+VI
+
+--- PAGE 8 ---
+Chapter 1
+Introduction
+Stroke is a significant cause of long-term disability worldwide. According to the World Health Orga-
+nization (WHO), 15 million people worldwide suffer from a stroke every year, with 5 million resulting
+in death and another 5 million causing permanent disability, placing a burden on individuals, families,
+and the healthcare system. Over 143 million years of healthy life are lost each year due to stroke-related
+death and disability. The lifetime risk of stroke has increased over the last 20 years by 50% and is now
+one in four people [1]. There are two main types of stroke: ischemic and hemorrhagic. Ischemic strokes
+are caused by an obstruction of blood flow to the brain. Due to the lack of blood flow, the brain cannot
+get enough oxygen and nutrients, and brain cells begin to die within minutes. Hemorrhagic strokes are
+caused by sudden bleeding in the brain. Leaked blood puts pressure on brain cells, damaging them.
+Both types can lead to neurological impairments that affect motor function, sensation, and cognition.
+Stroke survivors often suffer from physical disabilities like paralysis or weakness on one side of the body,
+reduced fine motor skills, and limited range of motion due to muscle stiffness [2]. After six months from
+a stroke, about 65% of patients are unable to use their affected hand for their usual activities [3].
+Stroke rehabilitation aims to increase patients’ functional independence at home and in the commu-
+nity [4]. The central nervous system has some plasticity and can re-organize its connections to recover
+degraded cognitive and motor functions. These changes can be favored by learning and practice [5].
+Post-stroke progressive, skilled motor practice is critical for continued skill gains, as shown by neu-
+roimaging studies [6, 7]. Task-oriented occupational therapy is thus a reliable and safe way to improve
+functional skills and quality of life in patients [8, 9]. Occupational therapists (OTs) work to facilitate
+and improve motor control in people who have had a stroke by making them practice activities of daily
+living (ADLs). These tasks include self-care tasks such as showering, dressing, toileting, and laundry
+as well as self-feeding tasks such as meal preparation, eating, and drinking.
+From a functional perspective, there are three main consequences of stroke in the upper extremity
+(UE) [10]: learned nonuse, learned bad use, and forgetting. Initially, nonuse results from stroke-related
+impairments, but as time goes by, it can become a learned behavior. Learned nonuse refers to the
+acquired behavior of avoiding the use of the paretic arm during ADLs, even if it could be used, due to the
+development of a habit of not using it at all. Learned bad use describes the reinforcement of an abnormal
+motion strategy because it helps to perform tasks despite impairments. Finally, forgetting explains the
+fact that strokes can lead to transient retention of new skills despite extensive practice, causing even
+small practice breaks to lead to terrible rehabilitation results. A good functional rehabilitation program
+should aim to train the patient regularly while ensuring that they do not learn abnormal motion.
+Although traditional home exercise programs developed by therapists can improve compliance, they
+often lack long-term monitoring and feedback, reducing motivation over time [11]. Recent advances
+in machine learning and wearable inertial measurement units (IMUs) provide opportunities for remote
+monitoring of home-based rehabilitation training, which can be a viable solution to provide feedback on
+impaired arm functional movement quantity and quality and foster adherence to home rehabilitation
+1
+
+--- PAGE 9 ---
+Master’s Thesis
+programs. While prior work on wearable sensor-enabled interventions has focused mainly on quantifying
+the use of the affected arm [12, 13], a comprehensive assessment of rehabilitation progress requires
+evaluating movement quality during functional tasks. The objective of this research is thus to develop
+a wearable IMU sensor platform to segment and evaluate stroke survivors’ upper extremity motions
+during daily activities. We decompose this objective into three research questions (RQ).
+RQ1 How can we reliably segment in time a subset of upper extremity ADLs using IMU sensor
+data?
+RQ2 Can we identify robust IMU-based kinematic metrics that differentiate between healthy and
+stroke participants during upper-extremity ADLs?
+RQ3 How can we incorporate identified metrics into a framework for naturalistic motion quality
+assessment?
+In Chapter 2, we review the prior art that uses wearable IMU sensors to monitor arm movements
+after stroke. Then, in Chapter 3, we explain how we developed an upper-extremity ADL segmentation
+algorithm that utilizes IMU sensor data, using an open-source dataset of ten healthy subjects performing
+ADLs. Chapter 4 presents our protocol and methods for collecting a dataset of healthy and post-stroke
+participants performing ADLs. The participants perform naturalistic activities of daily living in a
+controlled environment. In Chapter 5, we demonstrate the proof-of-concept of our activity segmentation
+algorithm in two mildly impaired post-stroke participants. In Chapter 6, we leverage a second open-
+source dataset to determine a set of robust task-specific metrics that differentiate healthy and post-
+stroke motions during three component movements within common ADLs: brushing teeth, drinking
+transport, and drinking recovery. In Chapter 7, we establish a framework for computing the quality of
+motion of stroke patients during various activities of daily living. This framework calculates the motion
+healthiness score and measures the Mahalanobis distance to healthy motions.
+2 Tanguy Lewko , 7.3.2024
+
+--- PAGE 10 ---
+Chapter 2
+Prior art on wearable sensors for
+post-stroke upper extremity
+rehabilitation at home
+Individuals post-stroke often experience motor impairments, and kinematic assessment is an objective
+method of quantifying and understanding these impairments. It helps occupational therapists estab-
+lish customized rehabilitation programs, monitor progress, and develop new solutions due to a better
+understanding of post-stroke motion deficits. Healthcare professionals use standardized impairment
+measures to evaluate patients’ functional ability and determine the most appropriate treatment plan.
+These include the Functional Independence Measure (FIM), the Modified Barthel Index (MBI), the
+Upper-Extremity Fugl-Meyer Assessment (UEFMA), the action research arm test (ARAT), the Wolf
+Motor Function Test (WMFT), and others. Among these, the UEFMA is one of the most commonly
+used assessments. It evaluates various aspects of motor function, including range of motion, coordi-
+nation, and strength. Motion capture systems can provide precise kinematic assessments. In contrast
+to visual evaluation by a therapist, they enable objective numeric evaluations of movements and can
+complement traditional kinematic assessments.
+Optoelectronic motion capture systems are widely regarded as the most accurate and reliable method
+for capturing human movement data. They use multiple cameras to localize reflective markers placed
+on the body, providing accurate 3D motion data for joints. These systems are reliable in very controlled
+environments, but they are high-cost and necessitate large space requirements and extended training and
+setup, so they cannot be used easily outside of the lab. Inertial measurement units (IMUs) are wearable
+sensors that combine measurements from accelerometers, gyroscopes, and sometimes magnetometers,
+allowing the measurement of accelerations, angular velocities, and sensor orientation. While kinematic
+joint angles and/or positions can be estimated from sensor fusion of the sensors within an IMU, there
+are complications such as drift that make IMUs less accurate than optical motion capture systems. A
+great advantage of IMUs compared to motion capture systems is that they are easy to set up and use
+outside the lab. All data are collected on the device and can be synced after hours of wearing the
+IMUs.
+Kim et al. (2021) conducted a review on the use of wearable sensors for assessing and treating upper-
+extremity after stroke [14]. They emphasize that wearable sensors can broaden the scope of assessing
+UE movements beyond clinical settings. This could enable assessments to be carried out in home set-
+tings. Wearable sensors have created numerous possibilities for continuously obtaining measurements
+related to rehabilitation, rather than just at specific intervals with in-clinic assessments. Wang et
+al.[15] conducted a systematic review of wearable-sensing devices designed for upper-body rehabilita-
+tion. Accelerometers and IMUs were the predominant sensing technologies used, comprising 84% of the
+3
+
+--- PAGE 11 ---
+Master’s Thesis
+articles reviewed. Common attachment points were the trunk, upper arm, forearm, wrist, and fingers.
+Despite the proliferation of wearable systems, the paper also highlights the scarcity of clinical evalua-
+tions performed. This points to the importance of more thorough research to provide evidence on the
+effectiveness of these technologies in real-world clinical settings.
+Immediately following a stroke, patients tend not to use their affected upper limb in daily living, which
+can lead to learned non-use [10]. Initial nonuse occurs because of hemiparesis or sensory loss. When
+nonuse becomes habitual, even for activities the affected arm can do, nonuse can become a learned
+behavior. This phenomenon is detrimental to rehabilitation because it limits progress and could lead
+to forgetting already relearned abilities. Tracking and providing feedback on arm use quantity with
+wearable sensors can help reduce learned nonuse and has been the focus of numerous works. Most
+studies differentiate between functional and non-functional use of the arm. Functional use includes
+goal-directed motion, while non-functional use includes balancing the arms while walking or conver-
+sational gestures. David et al. (2021) [13] used two wrist-worn IMUs to compute a gross movement
+score to quantify arm use. They were able to detect functional activities with 50-60% accuracy and
+eliminate non-function activities with 90% accuracy. They showed that the arm use of the five stroke
+patients was biased towards the nonimpaired arm and that stroke participants had reduced total arm
+use compared to healthy controls. Bailey et al. (2014) used wrist-worn accelerometers to assess bilateral
+UE activity during ADLs and used two variables, the bilateral magnitude and the magnitude ratio, to
+distinguish between unilateral and bilateral UE tasks [16]. The general arm use computed from the
+accelerometer was found to have good psychometric properties and high correlation with FMA scores
+[17, 18, 19]. Zambrana et al. (2019) proposed a hierarchical approach using inertial sensors to first
+distinguish between arm movement and non-movements using a threshold-based algorithm and then
+between functional movements and non-functional movements using machine learning, in five ADLs and
+walking [20]. They achieved accuracies of 0.91 and 0.9 in intra and inter-subject testing. Lum et al.
+(2020) also showed the superiority of machine learning models compared to standard threshold-based
+algorithms because they are better at distinguishing functional and non-functional arm use [21].
+In addition to using wearable sensors to assess paretic arm use, other studies have also explored the
+effects of newly developed algorithms coupled with regular feedback on arm usage given to stroke
+survivors wearing wearable sensors. The acceptability of such systems has also been investigated in
+a small population of post-stroke individuals. Rubio Ballester et al. (2015) [12] developed a low-cost
+wearable bracelet to motivate stroke participants to use the paretic arm more by providing feedback
+on the activity of the paretic arm. Giving feedback led to increased paretic arm activity, and post-test
+activity without feedback was higher than pre-test activity. Their study confirmed that monitoring
+the amount of arm use may increase the value of using the paretic limb and that repetitive exposure
+to reinforcement-based feedback may modify an individual’s goal and self-representation. Chae et al.
+(2020)developed a home rehabilitation system to record the type and frequency of exercises performed
+by the user using a smartwatch and ML algorithms [22]. They found that their system was able
+to facilitate participation in in-home training and improved the functional scores measured with the
+Wolf Motor Function Test and the Upper Extremity Fugl-Meyer Assessment in 17 post-stroke subjects.
+Da Silva et al. (2018) conducted a study to analyze the activity responses of seven stroke patients
+who had recently suffered a stroke, within 28 days [23]. Patients were given a vibrating alert from a
+triaxial accelerometer wristband to prompt movement of the impaired arm if their hourly activity level
+decreased. The therapists and patients reviewed the movement activity data twice a week to determine
+a personalized prompt threshold. The mean activity increase following a prompt ranged from 11% to
+29%. The authors also conducted a pilot randomized controlled trial [24]. In another study by Whitford
+et al. (2020), feedback only affected the perceived quantity of arm use and not actual arm use in eight
+post-stroke participants [25]. Although this is a less positive outcome, the authors state that perception
+of arm use can serve as a necessary first step in building awareness of paretic limb use and promoting
+the necessary behavioral changes to reduce nonuse. Lee et al. (2018) [26] developed an approach to
+detect both goal-directed movements during ADL and to determine appropriate feedback during two
+structured in-home rehabilitation exercises using two wearable sensors. They tested their algorithm
+on 20 stroke participants and proposed a feedback method to promote high-dose motor practice by
+4 Tanguy Lewko , 7.3.2024
+
+--- PAGE 12 ---
+Master’s Thesis
+providing a reminder to try to use the affected arm at the time of a movement performed with the
+unaffected arm and based on relative arm usage throughout the day. In a survey, 91.7% of occupational
+therapists expressed willingness to use the system in their practice. Furthermore, 88.2% of stroke
+survivors indicated that they would use the system if recommended by their therapist. These results
+demonstrate the demand for such systems.
+Parnandi et al. (2021) have developed a detailed way to quantify post-stroke UE rehabilitation training
+[27]. They use a deep learning algorithm, taking as input data IMU sensor data and counting the
+primitives of motion. Primitives of motion are the building blocks of functional upper extremity motions
+that have been developed by Schambra et al. (2019) [28]. Five primitives of motion were identified:
+reach, reposition, transport, stabilize, and idle.
+Most of the literature on wearable IMU sensors used for home UE rehabilitation of post-stroke survivors
+focuses on measuring the extent to which the paretic arm is being used throughout the day, thereby
+focusing on nonuse. However, little research has been done on analyzing movement quality during
+ADLs, which is essential for a comprehensive assessment of rehabilitation training, also targeting bad
+use. This is a challenging task given the important role of contextual information on the activity being
+performed for giving a person relevant feedback [13]. In Chapter 3, we develop an algorithm to segment
+UE ADLs from IMU sensor data to enable such analysis.
+5 Tanguy Lewko , 7.3.2024
+
+--- PAGE 13 ---
+Chapter 3
+IMU-based segmentation of
+upper-extremity ADLs
+During therapy, occupational therapists watch patients accomplish ADLs and assess their performance
+compared to what the motions would look like like if they were to be done by a healthy person, using
+this analysis to suggest exercises targeting weaknesses. The knowledge of the task being done is essential
+for feedback and identifying abnormal behaviors. In this chapter, we develop an algorithm to segment
+UE ADLs using wearable IMU sensors in healthy participants.
+Segmenting activities can offer numerous advantages to a motion monitoring system, encouraging stroke
+patients to train their paretic arm. First, it allows for targeted immediate feedback for recognized
+activities that can replace generic suggestions. For example, once we identify that patients are using
+their unaffected arm for an activity, we could encourage them to use their paretic arm. Moreover,
+it facilitates the computation of contextual, task-specific metrics, providing insights from qualitative
+and quantitative data. Once we know what activity is being performed, we can compute metrics and
+compare them against normative healthy data to characterize motor impairments. Detecting activities
+can enable consistent tracking of repeated activities throughout the days, offering valuable progression
+metrics for rehabilitation.
+Activity recognition through wearable sensors for the upper body remains an underexplored paradigm.
+The complexity arises from the high variability in upper body motions, where individuals may perform
+the same activities differently. Most lower-body activities such as standing, sitting, walking, or running
+repetitive and cyclical which enables clear definitions, but upper-body activities are harder to define.
+For example, people often reach from different initial positions to different final positions which affects
+how many different "reach" motions look. The beginning and end of a reaching motion can be difficult
+to identify as people may move their arms continuously. Additionally, data labeling for upper body
+motions is much more expensive as UE ADLs tend to be short. Finally, non-functional motions such
+as conversational and non-task-oriented gestures have a significant variance, making it more likely to
+misclassify motions.
+We start by giving an overview of datasets and algorithms for IMU-based segmentation of upper-
+extremity ADLs in Section3.1.
+3.1 Dataset and literature review
+3.1.1 Datasets in upper body ADL segmentation
+There is a shortage of datasets whose data could be used to train models for recognizing upper body
+activities of daily living. The challenge arises from the need for standardized activity definitions, with
+6
+
+--- PAGE 14 ---
+Master’s Thesis
+the same activities often described in multiple ways, and from the variability of selected activities.
+Additionally, labeling data has a high cost since people perform many different short-duration motions
+consecutively. The number of IMU sensors, placement, sampling rate, and other parameters also vary
+greatly between datasets.
+Boukhenoufa et al. (2022) provided an overview of the latest advances in the use of wearable devices to
+collect data and machine learning algorithms to evaluate exercises [29]. This article provides valuable
+information on the main challenges faced by researchers in this field. The primary challenge is the
+limited quantity and quality of data, as the number of patients available for study is often restricted,
+and data collection can be a burden for them.
+Finding open-source datasets well-suited for activity segmentation, especially tailored for stroke pa-
+tients, poses an even more significant challenge. This is why, despite the ultimate goal being activity
+segmentation for stroke patients, the initial focus is on datasets involving healthy individuals. Addi-
+tionally, there is a need to identify and categorize activities from the non-paretic arm of stroke patients,
+making it also worth detecting motions from an arm without impairment.
+We now review existing open-source datasets for upper body activity segmentation and highlight their
+strengths and weaknesses.
+Multi-Sensory Dataset [30]
+Ruzzon et Al. (2020) introduced a multi-sensory dataset related to activities of daily living [30]. The
+dataset acquisition involved ten healthy volunteers, right-handed and aged between 22 and 28, who
+performed 180 ADL instances while wearing six 9-axis IMUs (two for each arm, one on the back, and
+one on the right thigh). The activities were labeled from videos recorded by an RGB camera, and the
+labels include both the activity name and the arm performing the featured uni-manual activities.
+The featured activities are gathered in Table 3.1, as well as the event defining the start and the end of
+the activity:
+Task Start End
+Walk First leg movement Both legs stop
+Sit Down Adjust vertical position to sit Sitting posture is relaxed
+Stand Up Shift body weight from chair to feet Standing at normal height
+Open Door Hand touches the handle Door is fully open
+Close Door Hand contact Door is closed
+Pour Water Touching the bottle Hand releases the bottle
+Drink Glass Hand contact on the glass No contact with the glass
+Brush Teeth Toothbrush touches the teeth Toothbrush leaves the mouth
+Clean Table Hand-table contact Contact with the table ceases
+Table 3.1: Activities featured in the Multi-Sensory dataset
+Due to its detailed activity labels and the variety of activities being performed, this dataset holds
+excellent value for activity recognition. However, this dataset has weaknesses. It features a limited
+demographic representation with only ten young adult right-handed participants. This might limit the
+generalizability of the dataset to a broader population as the execution of daily activities may vary
+across age groups and handedness. It does not feature bi-manual tasks. The data is collected in a
+controlled environment, i.e., all participants perform activities in the same room setting, which might
+limit home-based activity representation.
+StrokeRehab Dataset [31]
+The StrokeRehab dataset [31] features 22 males and 28 females who have undergone stroke. 22 are
+right-side paretic, and 28 are left-side paretic. The age distribution of the patients has a mean of 58.4
+7 Tanguy Lewko , 7.3.2024
+
+--- PAGE 15 ---
+Master’s Thesis
+(SD=13.0), and the mean time since the participants had a stroke is 5.4 years (SD=6.1). Participants
+took the Fugl-Meyer upper extremity assessment with a mean score of 42.8 (SD = 15.8). Six of them
+have a severe impairment level (FMA 0-25), 25 moderate (FMA 26-52), and 19 mild (FMA 53-65) [32].
+The participants performed five times the following set of ADLs: brushing teeth, putting on deodorant,
+combing hair, drinking, and vertical and horizontal transports. Each ADL is performed with all its
+preparatory actions. For example, the drinking ADL consists of opening the bottle, pouring water into
+a glass, taking a sip, and closing the bottle. Twenty controls also performed the same tasks as the
+stroke participants. All participants wore a set of nine IMUs attached to the cervical vertebra C7,
+the thoracic vertebra T12, the pelvis, and both arms, forearms, and hands. The data also includes
+processed joint angles estimated from the IMUs. While this dataset is extremely valuable as it features
+stroke participants, its usability is diminished because of the absence of video or motion capture ground
+truth. Except for some very salient motions, isolating motions within an activity is challenging, which
+prevents us from using this dataset for activity recognition but makes it suitable for some qualitative
+analysis of stroke patient motion.
+OPPORTUNITY Dataset [33]
+The OPPORTUNITY dataset was devised to benchmark human activity recognition algorithms. Data
+is collected from daily living activities using a combination of body-worn sensors, object sensors, and
+ambient sensors in a smart-home environment.
+Four participants perform 16 activities: opening and closing doors, the fridge, drawers, and the dish-
+washer, cleaning the table, drinking from a cup, and toggling a switch. While this dataset is used to
+benchmark many activity recognition algorithms, the featured actions make it less interesting than the
+Multi-Sensory Dataset as the greater part of the actions are similar, and the number of subjects is
+smaller.
+PAMAP2 [34]
+The PAMAP2 Physical Activity Monitoring dataset contains data on 18 activities performed by nine
+subjects wearing three inertial measurement units: one on the wrist of the dominant arm, one on the
+chest, and one on the dominant side’s ankle. This dataset is also often used to benchmark activity
+recognition algorithms from IMU sensors. However, it mainly features lower extremity activities like
+walking, running, and cycling, and only a few manual activities (e.g., ironing, vacuum cleaning, and
+folding laundry). It has only one sensor for detecting arm motions.
+Conclusion on datasets for upper body ADL segmentation.
+Datasets suited for upper-extremity ADL segmentation from wearable sensors are not common and all
+substantially different, featuring different activities and sensor placements. Our review of the available
+datasets revealed that the most interesting dataset we can use to develop our algorithm is the Multi-
+Sensory Dataset, as it comprises a pertinent set of self-grooming and self-feeding activities performed
+with both hands, with 5 IMU sensors on the upper body (two per arm and one on the back) and
+adequate labeling of the ADLs being performed.
+3.1.2 Algorithmic approaches for wearable IMU activity segmentation
+Evaluating state-of-the-art approaches to upper body activity segmentation from wearable sensors
+presents a challenge due to the absence of a reference benchmark dataset encompassing a diverse range
+of upper extremity activities. Across various works, datasets vary in the number of sensors employed
+and their placement on different body parts. Furthermore, these studies assess different activities, and
+even when activities overlap between two datasets, their definitions may differ. For example, an ac-
+tivity labeled as eating could involve using a spoon, chopsticks, or hands. Additionally, some papers
+include a null category that contains every other activity that is not among the activities of interest.
+8 Tanguy Lewko , 7.3.2024
+
+--- PAGE 16 ---
+Master’s Thesis
+In contrast, others focus on differentiating within classes of interest, leading to much higher reported
+accuracy.
+This review goes beyond focusing solely on upper body activities, encompassing more work utilizing
+wearable IMU sensors for activity recognition. We separate this review into two categories of algorithms:
+deep learning algorithms and other algorithms, which typically rely on various machine learning algo-
+rithms and pattern recognition algorithms.
+Non deep-learning algorithms
+The following discusses non-deep learning approaches to recognizing human activities using wearable
+sensors, including methods such as pattern recognition and machine learning algorithms.
+Lemmens et al. (2015) [35] used multi-array signal feature extraction and pattern recognition algorithms
+with 2D convolution to recognize upper extremity activities such as drinking, eating, and brushing hair
+from the 3D accelerometers, gyroscopes, and magnetometers attached on the dominant hand, wrist,
+upper arm, and chest of 30 healthy participants and one stroke patient. Their algorithms showed perfect
+accuracy for the stroke patient under standardized conditions. Still, they were much less effective under
+daily life conditions due to the high variation in how actions were performed, showing the limitations
+of such pattern recognition algorithms. Huynh et al. (2007) [36] investigated the use of different
+machine learning models, namely K-means, nearest neighbor, support vectors machine (SVM), and
+hidden Markov models (HMM), to detect both three high-level activities (preparing for work, going
+shopping, doing housework) and 16 low-level activities that are part of the high-level activities (e.g.
+drive car, eat, iron, brush teeth) from three accelerometers placed on the right wrist, the righthand side
+of the hip and the right thigh. They tested the different algorithms on a 10-hour naturalistic dataset,
+with slightly better accuracy than 80% for low-level activities and 92% for high-level activities.
+Bao and Intille (2004) [37] collected user-annotated data from 20 subjects wearing five biaxial accelerom-
+eters. Several classifiers were tried using handcrafted features, such as mean energy, frequency-domain
+entropy, and correlation of acceleration data. The mean recognition accuracy was greater than 80% in
+20 daily activities (both related to the upper body and the lower body). A study by Chen et al. (2021)
+[38] tested different machine learning algorithms (Decision Tree, SVM, XGBoost) to detect 19 different
+upper extremity ADLs. XGBoost gave the best results, giving a 90% accuracy on the seven ’easiest’
+tasks to detect and with no null class. Yang et al.(2008) [39] proposed a distributed recognition method
+to classify actions using a low-bandwidth wearable motion sensor network. Their main contribution
+was showing that the distribution of multiple action classes satisfies a mixture subspace model, with
+one subspace for each. Reyes-Ortiz (2013) [40] collected a dataset of static and dynamic lower-body
+ADLs carried with a waist-mounted smartphone with embedded inertial sensors. They used multiclass
+SVM, showing an accuracy of 96% over six lower-body ADLs.
+Deep-learning algorithms
+Although the first deep learning algorithm was first developed in the 1960s by Ivakhnenko and Lapa[41],
+the field has gained popularity only in the last decade, due to the increase of available computational
+resources through the development of Graphics Processing Units (GPUs) and Tensor Processing Units
+(TPUs), coupled with the development of techniques to train deep neural networks more effectively, like
+backpropagation [42]. Since the breakthrough made by AlexNet [43], deep learning has been proven
+effective in various fields, including computer vision, natural language processing, speech recognition,
+and time series forecasting. Of particular interest to us is its application in human activity recogni-
+tion.
+Achieving high performance in deep learning is a challenging and iterative process. It involves consider-
+ing many combinations of parameters, while an exhaustive grid search across parameters is impractical
+due to limited computer resources. The design choices range from data input methodologies, such as
+window length, stride, context inclusion, and preprocessing, to broader architectural decisions involving
+9 Tanguy Lewko , 7.3.2024
+
+--- PAGE 17 ---
+Master’s Thesis
+layer types, count, and width, as well as choices related to optimizers, learning rates, and the incorpo-
+ration of data augmentation. These parameters are usually chosen by integrating knowledge specific
+to the field in the design choices and doing empirical validations on the dataset. The initial step to-
+wards developing accurate models is to synthesize existing knowledge. We therefore review the different
+methods used to segment upper body activities from wearable sensor data.
+Various architectural choices are commonly used for Human Activity Recognition using wearable sen-
+sors. Among these, Convolutional Neural Networks (CNNs) are frequently employed. CNNs have
+demonstrated exceptional performance in various applications, including image classification, speech
+recognition, and natural language processing [44]. Recurrent neural networks have also shown encour-
+aging results in various domains. These networks are specifically designed to consider the temporal
+dependencies of the data. They are commonly utilized in tasks like analyzing time series data for
+speech recognition and natural language processing. Hybrid models that leverage both CNN and RNN
+layers to integrate the strengths of each type have also demonstrated significant potential.
+Hammerla et al. (2016) [45] extensively reviewed deep, convolutional, and recurrent models across
+three wearable sensor datasets. They point out that while convolutional neural networks work well
+with long and repetitive activities such as walking or running, recurrent neural networks should be
+favored for short-duration activities with a natural ordering as they benefit from contextualizing ob-
+servation across long periods. Yin et al. (2022) [46] developed a 1-D convolutional neural network
+(CNN)-based bidirectional long-short-term memory (bi-LSTM) parallel model with attention mecha-
+nism, which outperformed CNN and RNN models in classification accuracy and computational time
+complexity on UCI (lower body activities: standing, sitting, laying, walking, downstairs, upstairs) and
+WISDM HAR (lower body activities: walking, upstairs, downstairs, sitting, standing, jogging) datasets.
+Baloch et al. (2022), introduced two sensor fusion strategies, early and late sensor fusion utilizing a
+CNN and a CNN-LSTM [47]. Their findings indicate that a late sensor fusion model based on CNN-
+LSTM enhances the recognition accuracy in similar activities. Panwar et al. (2019) [48] used a CNN
+architecture to classify three upper limb movements of the human arm, extension, flexion, and fore-
+arm rotation, to measure rehabilitation progress. The input data was the triaxial acceleration of the
+wrist. Their approach outperformed the classical ML algorithm on this task. In a recent study, Gomez-
+Arrunategui et al. (2022) used a single wrist-worn IMU to identify reaching movements in two datasets:
+a functional assessment dataset that involved functional assessment tasks, and an Activities-of-Daily-
+Living (ADL) dataset that included tasks like pizza-making and walking [49]. The study involved 12
+stroke patients, and the researchers used a CNN to classify the different activities. The trained clas-
+sifiers performed better when trained and evaluated using standardized functional assessment tasks.
+Additionally, the researchers noted that algorithms developed using data collected in clinical settings
+may not be as effective when applied to data collected in home environments. Kyritsis et al. (2020)
+[50] used a convolutional recurrent neural network to detect bites and used the bites distributions to
+determine the start and end of meals. David et al. (2023) [51] used an LSTM-RNN neural network
+to recognize six upper-extremity activities in stroke-affected participants by computing 20 handcrafted
+features. Kaku et al. (2022) [52] implemented a sequence-to-sequence model to predict the sequence of
+motion primitives from wearable sensor data. Zhu et al. (2018) [53] research aimed to detect high-level
+ADLs using temporal semantics and used a Sequence-to-Sequence model, too. High-level ADLs are
+complex activities consisting of temporal-dependent gestures, such as making coffee. Abdel-Salam et
+al. (2021) [54] reviewed top-performing techniques in human activity recognition based on wearable
+sensors. They concluded that hybrid approaches relying on both CNN and LSTM layers lead to the
+best performance.
+Self-supervised learning has also shown promising results in Human Activity recognition due to its re-
+duced dependence on labeled data. Zhang et al. (2023) reviewed the different self-supervised learning
+frameworks for time series analysis: generative-based, contrastive-based, and adversarial-based frame-
+works [55]. Taghanaki et al. (2021) [56] trained a neural network on raw accelerometer data to predict
+the value in the z-dimension using past value of this dimension as well as past and present motion
+in x and y dimensions. They then froze the model and transferred it to a supervised human activ-
+ity recognition network. Their algorithm outperformed state-of-the-art in multiple datasets. Overall,
+10 Tanguy Lewko , 7.3.2024
+
+--- PAGE 18 ---
+Master’s Thesis
+self-supervised learning is worth investigating when we have access to a large quantity of unlabeled
+data.
+While most existing work focuses on classifying a pre-segmented window as part of an activity, little
+work has investigated the precise time segmentation of continuous, non-pre-segmented data. In the first
+case, the algorithm is expected to give a label to a whole window that contains only one activity; in
+the latter, the window might have multiple activities, and the algorithm is expected to determine the
+starting and ending points of the activities precisely.
+This task has been studied slightly more in video data, in which it is referred to as Temporal Action
+Segmentation (TAS) [57].
+3.2 Data preparation
+To begin with, we synchronized the Multi-Sensory dataset by combining the data from each IMU sensor
+and aligning it with the labels. We have identified six UE ADLs that we want to segment as classes.
+These include Open Door, Close Door, Pour Water, Drink Glass, Brush Teeth, and Clean Table. Any
+other motion, such as Standing Up, Sitting Down, or Walking, is considered part of the negative class
+and we do not train the algorithm to detect those activities. Our algorithm uses the raw acceleration
+and gyroscope data as input, which was recorded at an IMU sampling frequency of 33 Hz.
+Time series windowing for activity segmentation
+The initial step in the activity recognition process is to segment the input signal. Human Activity
+Recognition (HAR) algorithms generally take a set of fixed-length segments, known as windows of
+signal, as input, and then associate one or more predicted labels with each window. These algorithms
+process each window separately in a sliding window framework. In this context, we explain the different
+informed choices that we make for our time series windowing framework.
+The conventional method for labeling time series data for machine learning models and neural networks
+typically involves assigning a single label to each window. This approach is called sliding window
+labeling. The label is often determined by either the majority of timesteps within the window (see
+Figure 3.1), or the label of the last timestep. While adequate for specific tasks, such as continuous
+activities like walking or running, or scenarios where only the occurrence of a particular event matters,
+this approach proves less suitable for tasks involving the segmentation of fine motions. In such cases,
+the compromise on time resolution becomes a limitation.
+To overcome this limitation, we have adopted a dense labeling framework [58]. In this framework, each
+time step is assigned a label, which the neural network must predict accurately. This approach enables
+precise segmentation at the timestep level. As shown in Figure 3.1, the comparison between sliding
+window labeling and dense labeling highlights the benefits of the latter. However, the cost of using
+dense labeling is an increase in complexity. The neural network is required to make many inferences to
+handle the finer granularity of the data.
+11 Tanguy Lewko , 7.3.2024
+
+--- PAGE 19 ---
+Master’s Thesis
+Figure 3.1: Sliding window labeling vs. dense labeling. Dense labeling is better for fine action segmen-
+tation due to its ability to contain multiple labels in each window, allowing for more granularity.
+Two critical parameters frequently discussed are window length and stride, illustrated in Figure 3.2.
+Window length should ideally encompass a sufficient duration of motions to capture essential contextual
+information. For tasks involving fine-grained motions, it is desirable for the window to cover entire
+actions unless dealing with rhythmic actions like brushing teeth or cleaning a table, where its repetitive
+structure allows for information extraction without the necessity of the entire activity duration.
+Figure 3.2: Windowing a time-series: window length, stride and overlap. Window length defines the
+size of each window, stride determines the step size between consecutive windows, and overlap specifies
+the amount of shared data points between adjacent windows.
+Banos et al. (2014) [59] showed that large window sizes do not necessarily translate into better recogni-
+tion performance and that optimal window length is activity-dependent. Jaén-Vargas et al. (2022) [60]
+showed that for the detection of walking, sitting to standing and squatting, small windows (0.20-0.25s)
+showed similar performance as bigger ones (1-2s) while the inference time could be reduced by a factor
+4 for LSTM and 2 for the CNN-LSTM model from windows of 100 frames (1s) to 20 frames (0.2s).
+While this result does not translate to upper-body activities, which include more semantics, especially
+for precise segmentation, it still points to the critical trade-off between window length and processing
+time. For upper-extremity activities, researchers tend to use longer windows of a few seconds to capture
+UE ADL patterns.
+Established knowledge assumes that introducing overlap between consecutive windows helps prevent in-
+formation loss at boundaries during training. However, Dehghani et al. (2019) [61] compared the use of
+non-overlapping windows and overlapping windows and showed that the performance improvements us-
+ing overlapping windows reported in literature seem to be associated with the subject-dependent nature
+of the cross-validation process used. For subject-independent training, they concluded that when using
+subject-independent cross-validation, no improvement was found using overlapping windows.
+12 Tanguy Lewko , 7.3.2024
+
+--- PAGE 20 ---
+Master’s Thesis
+We introduce a windowing framework designed for context-aware predictions. The objective is to avoid
+making predictions at window boundaries, where contextual information tends to be lacking. Leveraging
+both the left and right boundaries, representing past and future inputs, we enhance the model’s capacity
+to predict labels at the center of the window, improving the predictive capabilities through a more
+comprehensive contextual understanding. Figure 3.3 illustrates the context-aware framework.
+Figure 3.3: Context-aware prediction framework.
+We use windows of 180 timesteps, corresponding to 5.45s, as it allows our algorithm to capture the
+temporal dependencies of upper extremity actions. We use the first 60 timesteps (1.82s) and the last 60
+timesteps as context, and only the 60 middle timesteps are each paired with a corresponding label.
+Managing imbalanced datasets
+In multi-label classification scenarios, datasets often exhibit a substantial imbalance in the representa-
+tion of each class label, i.e., specific labels occur much more frequently than others. Exposure to such
+imbalanced datasets can lead to model bias. Instead of discerning the distinctive features in the data
+that characterize the majority class, the model may somewhat default to predicting the majority class.
+This tendency arises because, in some cases, solely predicting the majority class and disregarding all
+other classes can yield better accuracy than trying to distinguish between all classes.
+Standard solutions to the data imbalance challenge include random oversampling, undersampling, and
+weighted loss functions. Random undersampling removes instances from the majority classes until a
+more balanced distribution is achieved. This method was proven particularly effective in HAR with a
+large null class [44]. However, in some cases, particularly with smaller datasets, this method may result
+in a less accurate representation of the majority classes due to the potential loss of important informa-
+tion. On the contrary, random oversampling involves duplicating examples from minority classes. This
+strategy proves advantageous, especially for small datasets, as it avoids information loss. Nonetheless,
+a potential drawback is the risk of overfitting, given that exact replicas of examples are created. This
+could cause the model to memorize the examples instead of developing generalizable boundaries. Lastly,
+weighted loss functions can increase penalties for misclassification in the minority class. The weights can
+be inversely proportional to the frequency of classes. Doing so encourages the model to prioritize and
+improve its performance in underrepresented classes, fostering a more equitable learning process.
+We opt for random oversampling due to the relatively small size of our dataset. We randomly sample
+the data with replacement until each class is represented by a minimum number of samples equal to the
+number of samples present in the majority class divided by 1.5, allowing us to balance all the classes
+we want to segment.
+13 Tanguy Lewko , 7.3.2024
+
+--- PAGE 21 ---
+Master’s Thesis
+Figure 3.4: Classes distribution before oversampling.
+Figure 3.5: Classes distribution after oversam-
+pling.
+3.3 Architectures and model selection
+Obtaining an excellent performance in deep learning is an iterative and complex process. Indeed, there
+are a lot of parameters to take into account. There is a trade-off, as we cannot do an exhaustive grid
+search of parameters due to the computational resources in each model training, but we still want to
+reach the highest accuracy possible. We need to select the features to use as input to the model, the
+type of architectures and the natures of the layers being used, the number of layers and their width, the
+optimizer, learning rate, choice of data augmentation, etc. Often, we try to include as much knowledge
+from the field as possible to avoid trying many underperforming pipelines. We try to justify each choice
+either from literature or from experiments.
+3.3.1 Validation strategies
+Validation strategies are essential when assessing a model’s performance, particularly in the context
+of upper body activity detection. The distinctive nature of datasets for such activities lies in the
+variability of how individuals perform the same activities. Subjects may exhibit variations in motion
+speed, employ different combinations of joint angles, and have slightly varying sensor placements and
+orientations. Two different types of models include personalized and generalized models. When aiming
+to assess the performance of a generalized model, testing should involve recordings from subjects not
+included in the training set. Conversely, training and testing datasets should encompass data from the
+same subjects for evaluating a personalized model.
+Leave-One-Subject-Out (LOSO) validation is a form of cross-validation that involves training the model
+on all subjects but one and evaluating it on the remaining subject. This method assesses cross-subject
+generalization, uncovering potential biases or limitations specific to individual subjects [62]. If a gen-
+eralized model works, user specific training data isn’t needed, and we can use the same model univer-
+sally.
+14 Tanguy Lewko , 7.3.2024
+
+--- PAGE 22 ---
+Master’s Thesis
+Figure 3.6: Leave-One-Subject-Out (LOSO) cross-validation process.
+In within-subjects validation, each individual contributes to training and testing, capturing subject-
+specific patterns in both sets. Approximately 80% of the data from all subjects is utilized for training
+and model fitting, with the remaining 20% reserved for independent testing.
+Employing both LOSO and within-subjects validation provides a nuanced assessment of the model’s
+performance. LOSO enables the evaluation of a generalized model’s performance. At the same time,
+within-subject validation offers more comprehensive insights into the model’s performance, accounting
+for subject-specific nuances and allowing for rapid prototyping at a smaller computational cost.
+3.3.2 Architecture
+Given insights from the literature highlighting the effectiveness of LSTM and convolutional layers for
+activity recognition, we integrated these into our architecture.
+The architecture presented in Figure 3.7 is a hybrid architecture that combines convolutional and
+recurrent layers to solve a multi-output classification task, predicting for each timestep both the activity
+being performed and which hand is performing. One example of output for a given timestep would be
+{brushing teeth, right}, meaning that the network predicts that the subject is brushing his teeth with
+his right hand.
+The neural network takes an input window of the signal of size ws and with #features as the number
+of different input IMU channels. Then, a 1D convolutional layer is used to extract information on
+local patterns in the sensor data, followed by a Rectified Liner Unit (ReLU) activation to introduce
+non-linearity. Two bidirectional LSTM layers are then used to capture temporal patterns in the data
+sequences in the forward and backward directions. Finally, two fully connected layers are used for each
+classification task. The network outputs predictions only for the middle part of the signal to avoid
+making predictions on a signal that lacks context information.
+We implemented multiple regularization techniques such as dropout, which is applied after each biLSTM
+layer, and L1 and L2 regularization, with value 10−5
+for all model parameters.
+15 Tanguy Lewko , 7.3.2024
+
+--- PAGE 23 ---
+Master’s Thesis
+Figure 3.7: Hybrid architecture: Convolutional and BiLSTM layers
+The loss is computed as the sum of the cross-entropy losses of the two classification tasks, and we chose
+Adam Optimizer [63] for gradient descent.
+For comparison, we share the performance comparison with two other types of neural networks in
+Table 3.2, using only forearms IMUs accelerometer and gyroscope signals and within-subject evaluation.
+Reported metrics are explained in Appendix A. The LSTM architecture comprises three LSTM layers
+with decreasing sizes (256, 128, 64) and produces two sets of predictions with fully connected layers
+(output sizes 7 and 3). The biLSTM neural network is similar to the LSTM neural network, except all
+three LSTM layers are replaced with bidirectional LSTM layers. Using bidirectional LSTM layers led to
+a dramatic improvement in performance in the F1-score of 8.3% for the activity and 6.3% compared to
+regular LSTM layers. Replacing the first bi-LSTM layer of the biLSTM network by a 1D convolutional
+layer led only to a slight improvement (0.5% in activity and 0.7% in hand) but had the additional
+benefit of simplifying the model.
+Precision Recall Accuracy F1-score
+Act Hand Act Hand Act Hand Act Hand
+LSTM 0.766 0.811 0.776 0.771 0.766 0.811 0.764 0.811
+biLSTM 0.846 0.874 0.848 0.874 0.846 0.874 0.847 0.874
+CNN-biLSTM 0.852 0.880 0.854 0.880 0.852 0.880 0.852 0.881
+Table 3.2: Performance comparison of LSTM, BiLSTM, and CNN-BiLSTM architectures
+The implementation was done with Pytorch [64]. All training was done using a processor Intel(R)
+Core(TM) i7-8750H CPU @ 2.20GHz, 2208 MHz, six hearts, 12 logical processors, and an NVIDIA
+Quadro P1000 GPU (640 CUDA cores, 4 GB GDDR5 on-board memory, 128-bit memory interface,
+82GB/s memory bandwidth).
+3.3.3 Feature selection
+Feature selection is crucial when developing a deep learning model. Excessive features can lead to data
+sparsity, especially in small datasets, potentially resulting in the model overfitting the data. Conversely,
+16 Tanguy Lewko , 7.3.2024
+
+--- PAGE 24 ---
+Master’s Thesis
+too few features might make establishing boundaries between different instances challenging.
+As we work with wearable sensors, the practicality and added burden of using more sensors is an
+important consideration [29]. The Multi-Sensory dataset comprises five sensors on the upper body: one
+on the back, one on each upper arm, and another on each lower arm. The minimum set of sensors
+to detect unimanual activities for both arms is one per arm, with the lower arm being intuitively
+preferable because of its proximity to the end-effector, i.e., there is greater signal change in a more
+distally placed IMU. Additionally, the placement of sensors on the lower arms aligns with the positioning
+of smartwatches, which would minimize the system’s invasiveness, practicality, and cost.
+Meng et al. (2021) [65] gathered evidence of sensor placement, giving more information. They investi-
+gated HAR performance involving stroke survivors using one single sensor from different body positions.
+The best accelerometer placements were brachoradialis and extensor carpi ulnaris (both localized on
+the forearm).
+Table 3.3 compares CNN-biLSTM model performance on different sets of sensors. Interestingly, better
+performance was obtained with fewer features, with a 2.7% increase in within-subject F1-Score between
+a model with all five sensors and 50 features (x,y,z acceleration and gyroscope data and four quaternions)
+and a model taking only data from forearm IMUs and 12 features (acceleration and gyroscope data).
+Additionally, we investigated the effect of adding a 50% window overlap, which led to an improvement of
+2.2% in the F1-score. It is essential to point out that, contrary to the increase in performance obtained
+by selecting fewer features, this performance increase is very costly in terms of computational resources,
+effectively doubling the number of windows we train on.
+Performance is less good for LOSO cross-validation, with, respectively, 4.3% and 4.2% decrease in
+activity and hand F1 score. This can be explained by the fact that the training data does not include
+any subject-specific data used for validation. If one subject has a very different way of executing a
+motion or sensors are not placed in the same way, it will make it harder to detect by the algorithm that
+has not been trained on this kind of data.
+Table 3.3: Performance comparison with different sets of features/sensors.
+In Figures 3.8 and 3.9, we show the confusion matrices of the best-performing model (CNN-BiLSTM,
+forearm IMUs, x, y, z acceleration, and gyroscope data) for within-subject validation. Performance
+varies depending on the activity. The best performance is obtained for brushing the teeth (precision =
+0.98, recall = 0.98), probably because it is a very salient and specific motion for which the pattern is
+more straightforward to distinguish. The worst performance is for the pouring water activity (precision
+= 0.79, recall = 0.69), which is much shorter than brushing teeth and more complicated to identify.
+17 Tanguy Lewko , 7.3.2024
+
+--- PAGE 25 ---
+Master’s Thesis
+There is very little confusion between drinking glass and brushing teeth, which both require hand-to-
+mouth motions, and we notice that, in general, the inter-class confusion remains very low, most of
+the errors involving the negative class. One exception is for pouring water, where 8% of the pouring
+water task is confounded with drink glass. We argue that the confusion with the negative class is less
+important than between the classes of interest because while they exclude some examples of motion
+from the analysis, they do not lead us to analyze some motions wrongly. Finally, the hand confusion
+matrix reveals a lower performance for left-hand attributed actions, reflecting that we have a lower
+amount of left-handed actions in the dataset: only cleaning the table, pouring water, and drinking from
+a glass were done with both right and left arm.
+Figure 3.8: Intra-validation activity recall confusion matrix.
+Figure 3.9: Intra-validation hand recall
+confusion matrix.
+Table 3.4 shows the performance for each fold, i.e., left out subject, of the LOSO cross-validation.
+Performance varies significantly between the worst (activity F1-Score = 0.755) and the best predicted
+subject (activity F1-Score = 0.922). The mean of all subjects’ activity F1-score is 0.831, with a standard
+deviation of 0.057. The hand prediction’s mean is 0.857, and the standard deviation is 0.043.
+Figures 3.10 and 3.11 show the confusion matrices for LOSO cross-validation with the same model.
+Compared to within-subject validation, some classes experience no or little difference in recall (Pour
+Water, Brush Teeth, Open Door, Negative) while others show a lower performance with LOSO validation
+(Clean Table -10%, Drink Glass -11%, and more importantly Close Door -22%).
+S1 S2 S3 S4 S5 S6 S7 S8 S9 S10
+Activity F1 0.766 0.886 0.755 0.760 0.823 0.793 0.854 0.880 0.873 0.922
+Hand F1 0.818 0.898 0.819 0.776 0.841 0.841 0.893 0.893 0.871 0.923
+Table 3.4: LOSO cross-validation performance for each subject.
+18 Tanguy Lewko , 7.3.2024
+
+--- PAGE 26 ---
+Master’s Thesis
+Figure 3.10: LOSO validation activity recall confusion matrix.
+Figure 3.11: LOSO validation hand re-
+call confusion matrix.
+To better visualize results qualitatively, we show continuous activity segmentation visualizations. Fig-
+ure 3.12 shows a close to average performance (85% accuracy). Figure 3.13 shows close to the best
+performance to expect (92% accuracy) with our current model. We show that for this period, the pri-
+mary model error is predicting three times Close Door while the ground truth is Negative. We could not
+interpret false detections due to the absence of the video data shared in the dataset. A small fraction
+of the errors could be attributed to human error or ambiguity when labeling.
+Figure 3.12: Example of close to average segmentation performance.
+19 Tanguy Lewko , 7.3.2024
+
+--- PAGE 27 ---
+Master’s Thesis
+Figure 3.13: Example of close to best-case segmentation performance.
+3.3.4 Data augmentations
+When faced with a data shortage, data augmentations are an artificial solution to increase the size of
+the training set. The primary objective of data augmentation is to enhance the robustness of the trained
+model by introducing realistic transformations to the input data that mimic real-world scenarios. Wen et
+al. (2021) [66] review time series augmentations for deep learning and propose a taxonomy of time series
+augmentation techniques. We focus here on briefly exploring time-domain data augmentations.
+Eyobu and Han (2018) applied data augmentations on spectral features data [67]. Um et al.(2017)
+[68] investigated data augmentation for wearable sensor data and their protocol to augment the data
+increased the classification performance of the motor state of Parkinson’s disease patients from 77.54%
+to 86.88%. Uchitomi et al. (2023) also investigated data augmentations to classify Parkinson’s disease
+and had the best results with magnitude-domain transformations such as jittering, rotating, and scaling
+compared to time-domain transformations such as time warping or cropping [69]. Their experiments
+with data augmentations included jittering, scaling, rotating, permuting, magnitude warping, and time
+warping. Rotation was identified as having the most significant positive effect on performance.
+For time series data augmentation, several commonly utilized methods that we implemented include:
+1. Jittering
+Jittering aims to increase the robustness of the model to disturbances by adding noise to the data.
+When introducing jitter to a signal, it is essential to control the amplitude of the noise to prevent
+it from overshadowing the underlying signal. To do so, we define the maximum signal-to-noise
+ratio (SNR). The SNR is computed as the ratio of the signal power to the noise power and is
+expressed in decibels as follows:
+SNRdB = 10log10(Psignal/Pnoise) (3.1)
+Where Psignal is the signal power and Pnoise is the noise power, the power is calculated as the
+mean value of the squared signal. Once we define a suitable SNR value, we can use it to compute
+the maximum noise power:
+Pnoise =
+Psignal
+10(SNRdB/10)
+(3.2)
+We can then use this noise power to generate a random gaussian noise to add to the signal:
+20 Tanguy Lewko , 7.3.2024
+
+--- PAGE 28 ---
+Master’s Thesis
+Noise ∼ N(0,
+p
+Pnoise) (3.3)
+Jittered signal = Signal + Noise (3.4)
+2. Offsetting
+The objective of offsetting is to increase the robustness of the model to constant bias by adding or
+removing constant value. Similarly to jittering, we compute the maximum offset value by setting
+a maximum Signal-to-Offset Ratio (SOR). However, a different random value was added to each
+timestep to jitter the signal. To offset the signal, we added the same value to all timesteps.
+Poffset =
+Psignal
+10(SORdB/10)
+(3.5)
+Offset Value ∼ U
+
+−
+p
+Poffset,
+p
+Poffset
+
+(3.6)
+Offsetted Signal = Signal + Offset Value (3.7)
+3. Scaling
+Scaling is used to make the model robust to variations of sensor sensitivity by multiplying the
+signal by a constant value. The effect of scaling is increased on peak values.
+Scaled Signal = αs × Signal (3.8)
+Where αs is the scaling factor.
+4. Zooming
+Zooming mimics slowing down all motions by dilating the window in time. We zoom a signal
+by selecting a window and dividing the total number of timesteps in the window by a zoom
+factor (alphaz), which gives us a reduced number of timesteps. We then select a corresponding
+continuous set of timesteps in the signal and scale it back to the original window size using linear
+interpolation.
+5. Rotating
+Rotating simulates minor differences in sensor positioning by rotating the sensors along one of its
+axes. Rotation matrices Rx, Ry and Rz for rotating by an angle θ the sensor signal are defined
+as:
+Rx(θ) =
+
+
+1 0 0
+0 cos(θ) −sin(θ)
+0 sin(θ) cos(θ)
+
+ (3.9)
+Ry(θ) =
+
+
+cos(θ) 0 sin(θ)
+0 1 0
+−sin(θ) 0 cos(θ)
+
+ (3.10)
+Rz(θ) =
+
+
+cos(θ) −sin(θ) 0
+sin(θ) cos(θ) 0
+0 0 1
+
+ (3.11)
+21 Tanguy Lewko , 7.3.2024
+
+--- PAGE 29 ---
+Master’s Thesis
+6. Time warping
+Time warping is used to accelerate or slow down some parts of the window to make the model more
+robust to different speeds of motion. Our implementation of the time-warping data augmentation
+compresses 50% of the data chosen randomly by a compression factor Fc. It dilates the rest of
+the data so that the length of the signal stays the same. Compression and dilatation are done
+through linear interpolation.
+7. Down-sampling
+Down-sampling mimics a smaller frequency acquisition rate.
+Downsampled Signal = Signal[k · M] (3.12)
+where k = 0,1,2,...,
+ws−1
+M
+
+and M is the downsampling factor. ws is the window size.
+Figure 3.14 illustrates the change in signal operated by some of the chosen data augmentation techniques,
+including jittering, offsetting, scaling, down-sampling, and time warping.
+Figure 3.14: Data augmentations applied on an acceleration signal.
+We used the following protocol to apply data augmentations when training our deep learning model.
+We assign probabilities to each augmentation to control how often it is applied.
+Table 3.5 describes the probability and the parameters used for each applied data augmentation.
+Augmentation Parameter Probability
+Jittering SNR ∈ [25,∞] 0.3
+Offsetting SOR ∈ [10,∞] 0.3
+Scaling αs ∈ [0.9,1.1] 0.3
+Zooming αz ∈ [1,1.1] 0.2
+Rotating θ ∈ [−15deg,15deg] 0.3 per IMU
+Time warping F ∈ [0.85,1] 0.15
+Downsampling M ∈ {2,3,4} 0.15
+Table 3.5: Data augmentation parameters and probabilities.
+22 Tanguy Lewko , 7.3.2024
+
+--- PAGE 30 ---
+Master’s Thesis
+Training with data augmentations (see Table 3.6) led to improvements for all data augmentations, with
+the best improvement being for rotation (+1.4%).
+CNN-BiLSTM Jitter Scale Rotation Offset
+F1-Score 0.852 0.853 0.861 0.868 0.859
+DownS TimeW Zoom
+F1-Score 0.854 0.856 0.853
+Table 3.6: Performance comparison with different data augmentations. Performance is evaluated with
+intra-subject validation, using forearm accelerations and angular velocities and a non-overlapping win-
+dow.
+More experiments should be conducted in the future to quantify the gain obtained from data aug-
+mentations in cross-subject validation and by combining multiple data augmentations in the same
+training.
+3.4 Conclusion on upper-extremity ADL segmentation
+Our activity segmentation pipeline is effective and appropriate for segmenting activities of healthy
+participants in active living settings. The boundaries of activities are segmented with great precision
+and we achieved an F1-score of 0.87 in within-subjects validation and 0.83 in across-subjects validation.
+The 4% decrease in performance when using LOSO validation indicates the importance of incorporating
+subject-specific knowledge into the training data. Additionally, our experiments were conducted in a
+controlled environment, and it is crucial to explore how this algorithm can generalize to the home
+environment. Finally, it is important to investigate how our algorithm would generalize to stroke
+patients due to the variability in their motions caused by impairment. To do so, we collect our own
+dataset, with a protocol described in Chapter 4. In Chapter 5, we use our algorithm to segment activities
+in two mild stroke participants.
+This algorithm can be used to quantify the usage of the arms during specific ADLs and enables further
+kinematic analysis on pre-segmented ADLs. In Chapter 6, we examine differences in the execution of
+specific upper-extremity functional activities of daily living (ADLs) between healthy individuals and
+stroke patients.
+23 Tanguy Lewko , 7.3.2024
+
+--- PAGE 31 ---
+Chapter 4
+Collecting an annotated naturalistic
+dataset of post-stroke ADLs in a
+controlled environment
+In this Chapter, we present the protocol used for building a dataset consisting of stroke participants
+performing upper-extremity ADLs. This dataset addresses the limitations that open-source datasets
+have. It provides synced video data and ground-truth kinematics from optical motion capture.
+4.1 Protocol for unstructured ADL data collection
+We use the Movella Xsens DOT [70] wearable sensor development platform, which features sensors that
+incorporate a 3D accelerometer, gyroscope, and magnetometer. The sensors work wirelessly, making
+them suitable for our unstructured ADLs experiment. We use a set of 10 sensors placed on the forehead,
+forearms, upper arms, hands, lower back, upper back, and sternum as depicted in Figure 4.1.
+Figure 4.1: IMU placement on the upper body
+The experiment is recorded using an HD camera that films at 60fps. In addition, Qualysis motion
+capture cameras are utilized to capture motion.
+24
+
+--- PAGE 32 ---
+Master’s Thesis
+The signals are acquired and synced using a data acquisition system (Powerlab, ADInstruments) and
+recorded with a sampling rate of 200Hz per channel using appropriate software (Labchart, ADInstru-
+ments). Participants are screened before the experiment and their fine motor control and mobility levels
+are assessed to qualify them for the protocol.
+After taking the Fugl-Meyer upper extremity assessment, the participants perform a circuit of ADLs
+consisting of washing their face, brushing their teeth, combing hair, applying deodorant, folding a
+towel, stirring a pot, pulling a chair to sit, drinking from a bottle, eating with a spoon from a bowl,
+and donning a hat. The experimental setup is represented in Figure 4.2, and we illustrate some ADLs
+in Figure 4.3. We selected these ADLs because they represent self-feeding and self-grooming tasks,
+essential for independence and improvement of quality of life, and reduced caregiver burden.
+The circuit is done seven times for each participant under three conditions: A, B, and C. In condition
+A, which is repeated three times, participants are asked to perform the task in the same way they would
+perform it at home, as naturally as possible. In condition B, performed three times, an occupational
+therapist encourages using their impaired (non-dominant for healthy) arm. Finally, in condition C,
+participants wear a constraint-induced movement therapy glove (CIMT) (see Figure 4.3) to limit as
+much as possible the use of their non-impaired / dominant arm.
+Condition A allows us to understand the participants’ natural way of performing ADLs and quantify
+the use of their impaired arm across the various activities. It serves as a baseline. Condition B evaluates
+the impact of occupational therapist guidance on impaired arm use. Finally, condition C assesses the
+feasibility of each activity using only the impaired arm. These conditions allow us to obtain data for
+ADLs performed with both arms.
+Figure 4.2: 11-ADL circuit set up.
+Figure 4.3: Examples of ADLs (CIMT
+glove on).
+4.2 Labeling methodology
+To analyze the data of the unstructured ADL protocol, we label upper extremity ADL segments that
+have fixed boundaries, are required to complete activities, and can be potentially valuable for analysis.
+A pertinent instance is the motion involved in tooth brushing, which begins with brush contact with
+teeth and ends with its disengagement. Reaching motions are omitted from labelization due to their
+considerable variability, identification challenges, and lack of clear definition.
+25 Tanguy Lewko , 7.3.2024
+
+--- PAGE 33 ---
+Master’s Thesis
+Each categorized movement is linked to the start and end times, marked by discrete events. The list of
+25 labeled ADL segments, together with their respective initiating and concluding events, is presented
+in Table 4.1. We also indicate the hand performing the task.
+Activity Start Time End Time
+Wash face - Hand to face Hand starts moving upward Contact with face
+Wash face - Rubbing Contact with face Face contact ends
+Wash face - Turn handle Hand touches handle Hand leaves handle
+Brush teeth - Apply toothpaste Tube touches brush Tube leaves brush
+Brush teeth - Hand to face Toothbrush moves upwards Contact with mouth
+Brush teeth - Brushing Toothbrush touches teeth Toothbrush leaves mouth
+Brush teeth - Recovery Toothbrush leaves mouth Toothbrush touches table/cup
+Brush teeth - Rotate cap Cap rotation starts Cap on/removed
+Comb - Hand to head Comb leaves table Comb touches head
+Comb - Comb Comb in contact with head Last contact of comb with head
+Comb - Recovery Last contact of comb with head Comb touches table
+Apply deodorant - Rubbing Deodorant touches armpit Deodorant leaves armpit
+Apply deodorant - Recovery Deodorant leaves armpit Deodorant touches table
+Laundry - Fold Start first fold End last fold
+Laundry - Unfold Start unfolding End unfolding
+Pull Chair - Pull Chair moves Chair stops moving
+Stirring pot - Stirring Spoon touches pot Stirring stops
+Drinking - Rotate cap Cap rotation starts Cap on/removed
+Drinking - Hand to face Bottle leaves table Contact with mouth
+Drinking - Drinking Bottle touches mouth Bottle leaves mouth
+Drinking - Recovery Bottle leaves mouth Bottle touches table
+Eating - Hand to face Spoon leaves plate Spoon in the mouth
+Eating - Recovery Spoon leaves mouth Spoon touches plate
+Wear hat - Hand to head Hat leaves table Hat on head
+Wear hat - Recovery Hat leaves head Hat touches table
+Table 4.1: Definitions of activity labels
+We labeled the activities using an open-source Python-based labeling software [71], built with QT, a
+cross-platform software for creating applications. Minor modifications were applied to the source code
+to suit our application.
+The GUI allows one to open a video, visualize it, and move it frame by frame, select frames as the
+starting and ending times of an activity, select the activity, and add it. Then, the labels can be
+exported as a CSV table. The GUI also supports opening a CSV table to continue previously labeled
+videos. Labeling the data from one participant doing the unstructured ADL protocol with the labels
+defined in Table 4.1 takes about 3.5 hours and results in approximately fifty segmented actions.
+26 Tanguy Lewko , 7.3.2024
+
+--- PAGE 34 ---
+Master’s Thesis
+Figure 4.4: Labeling GUI. Adapted from [71].
+4.3 Intermediary dataset characterization
+We state the condition of the dataset as of the date this thesis was written. Table 4.2 provides infor-
+mation about the participants who took part in the study.
+Participant Sex Age Impaired arm UE-FMA Time since stroke
+GG87 M 41 left 31/60 3 years 6 months
+GG95 F 62 right 37/60 7 years
+GG98 M 49 left 55/60 3 years 10 months
+GG100 M 64 left 20/60 13 years
+GG102 M 74 left 53/60 4 years 6 months
+UA016 M 25 - - -
+UA020 F 26 - - -
+UA021 M 32 - - -
+UA022 F 23 - - -
+UA025 M 23 - - -
+Table 4.2: Participant data collection summary
+For each ADL run of the dataset, we provide videos (raw and blurred), optical motion capture data files,
+video-based labels, and IMU data (raw and synced with labels). On average, every run takes around 3.5
+to 7 minutes. However, this duration may vary based on the speed at which the participants complete
+the tasks. In each run, there are approximately 50 actions that need to be identified by determining
+their start and end frames following the guidelines in Table 4.1.
+This dataset was collected close to the end of this thesis, with much time dedicated to data acquisition,
+labeling, syncing, and blurring the videos. As a consequence, only a portion of the dataset was prepared
+for analysis at the time of the writing. Nonetheless, we were able to construct a proof-of-concept and
+some initial testing using the labeled data from stroke participants GG98 and GG102, and healthy
+participants UA016, UA020, UA021, and UA025.
+27 Tanguy Lewko , 7.3.2024
+
+--- PAGE 35 ---
+Chapter 5
+Proof-of-concept on post-stroke
+participants
+In this Chapter, we present a proof-of-concept of our activity segmentation algorithm on stroke par-
+ticipants GG98 and GG102 from our collected data. We use our activity segmentation algorithm to
+segment new activities for the participants. We also show that we can decompose segmented activities
+even more into analyzable motions using the same algorithm.
+5.1 Two-stage activity segmentation
+We test our upper extremity activity segmentation algorithm developed in Chapter 3 on our dataset
+(see Chapter 4) to verify that our algorithm can effectively be transferred to new tasks performed
+by stroke participants. We tested our algorithm on two mildly impaired stroke participants, GG98
+(UEFMA=55/60) and GG102 (UEFMA=53/60). The assessment revealed that both GG102 and GG98
+lack shoulder abduction and flexion and present diminished coordination and speed. Additionally, GG98
+lacks wrist circumduction and GG102 presents some flexor and extensor synergies.
+We trained two different models. The first one aims to detect general activities. We selected a subset
+of six unimanual tasks (see Table 4.1 for definitions of the tasks): Brush teeth - Brushing, Comb -
+Comb, Apply deodorant - Rubbing, Stirring pot - Stirring, Eating (from first Hand-to-Face to last
+Recovery), and Drinking (from the start of Hand-To-Face to the end of Recovery). All other motions
+are part of the negative class. The second model aims to segment specific motions within a meal, i.e.,
+within a combination of eating and drinking events. We segment the transport (lifting the spoon to the
+mouth) and recovery (lowering the spoon) phases of eating as well as the transport (lifting the bottle
+to the mouth), ingestion (drinking water), and recovery phases of drinking (lowering the bottle from
+the mouth to the table). Running the second model results in directly analyzable phases of an activity.
+The second model can be applied after the first one outputs the eating and drinking activity segments
+as shown in Figure 5.1.
+The Multi-Sensory dataset was used to develop our activity segmentation algorithms and had about
+15 repetitions of each task for ten subjects. Compared to the Multi-Sensory dataset, our dataset was
+much smaller when this thesis was written. We only had access to data from four healthy subjects and
+two post-stroke participants. Our dataset consisted of about 2 to 4 samples of the same activity per
+hand for each subject. This amount of data is minimal for training a deep-learning algorithm and the
+following results should thus be interpreted cautiously.
+We conducted two different model training settings. In the first setting, we trained a generalized model
+to determine if a model trained on data from four healthy participants could be applied to each stroke
+28
+
+--- PAGE 36 ---
+Master’s Thesis
+Figure 5.1: Two-stage activity segmentation
+participant. For this, we used data from UA016, UA020, UA021, and UA025 in the train set, and data
+from GG98 and GG102 in the test set.
+In the second setting, we trained an individualized model using only data from GG98 and GG102 using
+a leave-one-run-out approach. This setting is also known as the individualized setting. Each training
+fold was made up of two runs in condition A, two runs in condition B, and one run in condition C. Each
+test run consisted of one run in condition A and one run in condition B.
+We made no changes to the hyperparameters from the multi-sensory dataset model except for adjusting
+the learning rate to achieve a more optimal learning behavior. We could predict our new tasks with
+only two examples of each non-negative class in the training set and one for validation. We did not
+include data augmentations. Only the forearm accelerations and gyroscope data were used as input.
+While the activity segmentation model was trained on complete runs, the meal segmentation model was
+only trained on data beginning five seconds before the eating activity and ending five seconds after the
+drinking activity.
+Table 5.1 presents results for each of the settings for the activity segmentation model. The results were
+much better for the individualized models. For subject GG98, we reached F1 scores of 0.87 for the ADL
+segmentation and 0.71 for the meal segmentation task. For subject GG102, we obtained F1 scores of
+0.88 for the ADL segmentation and 0.82 for the meal segmentation task. These performances come from
+very different results across the six runs used in cross-validation, with accuracies as low as 74% and as
+high as 96% for ADL segmentation depending on the run. Confusion matrices for the individualized
+models are shown in Figures 5.2 and 5.3. We observe that the inter-class confusion is higher for the meal
+segmentation algorithm because tasks are shorter and next to each other. For example, lifting the cup
+while drinking is confused with tilting the container to drink. For such tasks, it could be interesting to
+assess the variation in the ground-truth when multiple people label the same data and compare it to the
+segmentation done by the algorithm, as part of the error might come from variations in labels.
+ADL segmentation Meal segmentation
+Model Accuracy F1-score Accuracy F1-score
+GG98 generalized 0.42 0.51 0.22 0.22
+GG98 individualized 0.87 0.85 0.71 0.71
+GG102 generalized 0.61 0.65 0.67 0.54
+GG102 individualized 0.88 0.87 0.84 0.82
+Table 5.1: Performance comparison of different models tested on GG98 and GG102.
+29 Tanguy Lewko , 7.3.2024
+
+--- PAGE 37 ---
+Master’s Thesis
+Figure 5.2: Individualized model GG98 ADL segmentation confusion matrix.
+Figure 5.3: Individualized model GG98 meal segmentation confusion matrix.
+30 Tanguy Lewko , 7.3.2024
+
+--- PAGE 38 ---
+Master’s Thesis
+Figure 5.4: Individualized model GG102 ADL segmentation confusion matrix.
+Figure 5.5: Individualized model GG102 meal segmentation confusion matrix.
+31 Tanguy Lewko , 7.3.2024
+
+--- PAGE 39 ---
+Master’s Thesis
+5.2 Discussion
+More data is required both to train and assess the performance of individualized models on stroke
+participants but these preliminary results are promising. The challenge will come from obtaining enough
+data to capture the variability in ADLs and avoid overfitting. Regarding the generalized models,
+the data from the four healthy participants did not generalize at all to the stroke participants. One
+reason could be that the post-stroke individuals were performing all motions much slower than the
+healthy individuals, or using compensatory strategies. Once more healthy and stroke data is acquired,
+generalized models should be tested again on stroke participants. However, healthy data might not
+generalize well to the large variance of stroke participants’ patterns used during ADLs, even with more
+subjects.
+32 Tanguy Lewko , 7.3.2024
+
+--- PAGE 40 ---
+Chapter 6
+Kinematic disparities between
+healthy and post-stroke ADLs with
+IMU sensors
+In this chapter, we focus on assessing the variations in the performance of particular upper-extremity
+functional ADLs, between healthy individuals and stroke patients. Evaluating the quality of motion
+post-stroke is necessary for understanding the sensorimotor capabilities of patients. Unlike most existing
+literature, which predominantly assesses post-stroke motion by having the stroke survivor perform
+structured tasks, we emphasize the importance of evaluating movement quality during unstructured
+tasks. Furthermore, our analysis utilizes IMU data, while most existing work relies on optical motion
+capture data.
+6.1 Task segmentation methodology
+To isolate motions of interest within the StrokeRehab dataset [31] activities, we utilized joint angles ob-
+tained from the Euler angles computed from the IMU signals. These angles were employed to construct
+a simplified 3D geometric model of the human arms, as illustrated in Figure 6.1.
+Figure 6.1: Simplified kinematic model of the arms used for visualization.
+33
+
+--- PAGE 41 ---
+Master’s Thesis
+Here, we describe the direct geometric model of the left arm. Similar computations can be applied to
+the right arm.
+Left elbow position:
+− − − →
+OlEl = K1,lK2,lK3,l
+− − − →
+OlEl0
+Left wrist position:
+− − →
+OlPl = K1,lK2,lK3,lK4,l
+− − − →
+OlPl0
+where:
+K1,l =
+
+
+
+
+1 0 0 0
+0 c1,l −s1,l 0
+0 s1,l c1,l 0
+0 0 0 1
+
+
+
+ K2,l =
+
+
+
+
+c2,l 0 s2,l 0
+0 1 0 0
+−s2,l 0 c2,l 0
+0 0 0 1
+
+
+
+ K3,l =
+
+
+
+
+c3,l −s3,l 0 0
+s3,l c3,l 0 0
+0 0 1 0
+0 0 0 1
+
+
+
+
+K4,l =
+
+
+
+
+1 0 0 0
+0 c4,l −s4,l l0s4,l
+0 s4,l c4,l (1 − c4,l)l0
+0 0 0 1
+
+
+
+
+− − − →
+OlEl0 =
+
+
+
+
+0
+0
+l0
+1
+
+
+
+
+− − − →
+OlPl0 =
+
+
+
+
+0
+0
+l0 + l1
+1
+
+
+
+
+(6.1)
+with ci,l = cosθi,l and si,l = sinθi,l for i = 1,2,3,4.
+Through manual inspection of the IMU signals and derived angles, coupled with an understanding of the
+contextual motions, we confidently segmented activities of daily living for further analysis. Specifically,
+we focused on the motions associated with brushing teeth and drinking from a container.
+6.2 Metrics for motion analysis of ADLs
+The most common kinematic deficits for stroke patients during goal-directed motions are longer times to
+perform the motions, discontinuous spatial and temporal motion trajectories, and irregular movement
+patterns [72, 73, 74]. They also use compensatory movements (e.g., recruiting range of motion from other
+joints to compensate for a deficit in another joint) to help with completing tasks. Jayasinghe et al. (2021)
+have shown that stroke survivors tend to use more trunk compensation when reaching with their affected
+arm compared to their unaffected arm [75]. Wang et al. (2022) conducted a review of technologies
+used for compensation assessment and detection during upper extremity (UE) rehabilitation for stroke
+patients. The review highlights that wearable IMU sensors can be used for compensation assessment
+and detection during structured tasks [76].
+Schwarz et al. (2019) give valuable recommendations for kinematic upper limb assessment post-stroke
+after reviewing existing work we used for our analysis [77]. Among these recommendations, they suggest
+that metrics should be selected based on clinimetric evidence and insights from motor control and that
+they should be hypothesis-driven.
+We formulate a set of robust metrics to assess potential differences among healthy individuals, those
+with mild impairments from stroke, and those with moderate impairments. These metrics aim to
+provide a holistic view of the patient’s quality of motion. We divide these metrics into three categories
+that cover the different aspects of motion that we identified: range of motion and mobility; temporal
+efficiency; and coordination and quality of movement.
+Range of motion and mobility
+Several studies highlight the importance of Range Of Motion (ROM) in stroke rehabilitation. Stroke
+results in a reduced ROM for joints on the paretic side [78]. Beebe and Lang (2019) showed that
+measurements of Active Range of Motion (AROM) of the upper extremity taken within one month
+after stroke could be used to predict upper extremity function after three months [79]. We investigate
+34 Tanguy Lewko , 7.3.2024
+
+--- PAGE 42 ---
+Master’s Thesis
+mobility-related metrics mainly related to joint angle values. Stroke participants’ motions are highly
+variable. Indeed, impairment might vary greatly depending on how the stroke occurred. Different stroke
+patients can reach different ROMs, and many tend to use other compensatory motions to overcome their
+impairments and still be able to perform the motions. Analyzing the amplitude of joints can reveal
+anomalies in use for certain activities.
+Temporal efficiency
+Temporal efficiency metrics relate to the effectiveness with which participants perform a movement.
+One underlying assumption is that because healthy participants do not struggle to do the activities,
+they might use less time and generate larger acceleration values. Possible metrics to investigate are
+total movement time, time to peak velocity, and velocity and acceleration values.
+Coordination and quality of movement
+After a stroke, patients tend to present a deficit in inter-joint coordination that can lead to segmented
+arm motions. During rehabilitation and recovery, there is evidence that patients regain this smoothness
+of motion [80]. To evaluate inter-joint coordination, we focus on smoothness computation and inter-joint
+cross-correlation. Cross-correlation measures the correlation between two-time series signals over time.
+The result is a correlation coefficient between -1 and 1 that indicates the strength and the direction of
+the relationship between the two signals. Smoothness of movement refers to the degree of continuity or
+lack of interruption in a motion. It assesses how closely a movement mirrors the pattern of starting with
+acceleration and then transitioning into deceleration. Melendez-Calderon et al. (2021) evaluated the
+validity of the different smoothness measures derived from IMU measurements [81]. Top approaches
+to measuring smoothness include Spectral Arc Length (SPARC) and log dimensionless jerk (LDLJ-
+V). It has been concluded that both measures should preferably be used with velocity measurements.
+They are prone to errors when applied to translational velocity reconstructed from acceleration due to
+drift. In addition, SPARC can be directly applied to rotational velocities, whereas LDLJ-V generates
+an error. SPARC [82] has been chiefly used in literature to quantify smoothness in point-to-point
+reaching motions in stroke. One of the significant benefits of using this measure is that it computes
+in the frequency domain, which means that the length of the motion doesn’t impact the smoothness
+calculation. Other metrics, such as trajectory, velocity, and jerk, require adjustments due to changes in
+length, but this isn’t the case for SPARC. The main idea behind SPARC computation is that less smooth
+movements have more frequency composition when approaching the signal with a Fourier series. Beck
+et al. (2018) compared the smoothness of walking using inertial sensors during walking in Parkinson’s
+disease, computing SPARC from acceleration and gyroscope data [83]. Garcia et al. (2021) used SPARC
+for smoothness analysis of gait using IMUs [84]. Similarly to what they did, we first subtract the mean
+of the signal when computing smoothness and apply a cutoff frequency of 10 hertz. SPARC is calculated
+on the entire motion. Refai et al. (2021) obtained kinematic and clinical measurements in forty stroke
+participants during a reach-to-grasp movement in weeks 1 to 26 post-stroke [85]. The study revealed
+that the restoration of smoothness in a reaching task is correlated over time with the recovery from
+motor impairment as evaluated by the UEFMA. Until five weeks post-stroke, both SPARC and UEFMA
+scoring improved significantly.
+The SPARC formula [81] is given by:
+λv
+S(v) ≜ −
+Z ωc
+0
+v
+u
+u
+t
+
+1
+ωc
+2
++
+dV̂ (ω)
+dω
+!2
+dω (6.2)
+where V̂ (ω) = V (ω)
+V (0) and V (ω) = F ∥v(t)∥2
+
+.
+v(t) represents the angular velocity of a movement in the time domain, F(.) is the Fourier transform
+operator, wc is an adaptative cutoff frequency.
+35 Tanguy Lewko , 7.3.2024
+
+--- PAGE 43 ---
+Master’s Thesis
+With this definition, motions with low SPARC values are unsmooth compared to those with high
+SPARC values.
+6.3 Brushing teeth post-stroke motion analysis
+Using the method described in Section 6.1, we were able to extract with high confidence 86 samples
+(583 seconds) of healthy subject brushing coming from 18 different subjects, 84 samples (404 seconds)
+of mild (FMA 26-52) subject brushing from 19 subjects, and 98 samples (918 seconds) of moderate
+(FMA 26-52) subject brushing from 21 subjects.
+Motivation for using the toothbrushing ADL for analysis of motor impairment in stroke.
+In [86], Inada et al. evaluate the arm joint motion during toothbrushing motion. Their study highlights
+that the toothbrushing motion typically falls within the frequency range of 3.9 to 4.5 Hz, that it is
+a consistent and synchronous motion across all arm joints, and that the elbow plays a pivotal role in
+maintaining stability during brushing. Simkins et al. (2013) [87] investigated the effect of rhythmic
+motions on joint synergies between shoulder and elbow rotation after stroke at different speeds. It was
+concluded that people with hemiparesis move their arms at a lower frequency when asked to move as
+fast as possible. They also use smaller amplitudes, and the more the speed of the rhythmic motion
+increases, the more synergies are observed. This motivates the analysis of brushing teeth ADL for
+analyzing motor impairment in stroke.
+In the following, we showcase, for a selection of selected metrics, the comparisons of their distribution
+for healthy, mildly impaired, and moderately impaired subjects. More evaluated metrics can be found
+in Table B.3.
+Arm rotational speed when brushing teeth
+Figure 6.2: Brushing teeth median upper arm ac-
+celeration comparison between healthy, mild, and
+moderate subjects.
+Figure 6.3: Brushing teeth median forearm ac-
+celeration comparison between healthy, mild and
+moderate subjects.
+We conducted an Analysis of Variance (ANOVA) to assess the overall group differences in upper arm
+angular velocity (see Figure 6.2) during the brushing teeth activity (F = 42.57,p < 0.0001), reveal-
+ing a large effect size (η2
+= 0.243). Post-hoc t-tests with Bonferroni correction confirmed significant
+differences between healthy and stroke participants:
+• Healthy vs. Mild: significant (p < 0.0001,t = −9.95).
+• Mild vs. Moderate: not significant (p = 1.00,t = 0.75).
+36 Tanguy Lewko , 7.3.2024
+
+--- PAGE 44 ---
+Master’s Thesis
+• Healthy vs. Moderate: significant (p < 0.0001t = −8.08).
+Healthy participants (mean=0.32rad/s, SD=0.13rad/s) tend to use smaller upper arm angular velocities
+than mild (mean=0.69rad/s, SD=0.32rad/s) and moderate (mean=0.65rad/s, SD=0.36rad/s).
+Similarly, for the forearm (Figure 6.3), ANOVA showed significant results (F = 30.41,p < 0.0001) with
+a large effect size (η2
+= 0.187). Post-hoc t-tests with Bonferroni correction revealed:
+• Healthy vs. Mild: significant (p < 0.0001,t = −7.45).
+• Mild vs. Moderate: not significant (p = 1,t = 0.35).
+• Healthy vs. Moderate: significant (p < 0.0001,t = 7.16).
+As for the upper arm, healthy participants (mean=0.44rad/s, SD=0.14rad/s) used smaller forearm
+median angular velocities than mild (mean=0.67rad/s, SD=0.24rad/s) and moderate (mean=0.66rad/s,
+SD=0.24rad/s).
+Individuals who have had a stroke tend to rotate their arms at a higher velocity when brushing their
+teeth, in comparison to healthy individuals. We hypothesize that this increase in angular velocity may
+be a compensatory mechanism, which reflects their adaptation to overcome the reduced motor control
+caused by the stroke. For instance, if the wrist is unable to move the toothbrush, they rotate their arm
+more to compensate for the lack of movement.
+Arm acceleration when brushing teeth
+Figure 6.4: Brushing teeth median upper arm ac-
+celeration comparison between healthy, mild, and
+moderate subjects.
+Figure 6.5: Brushing teeth median forearm ac-
+celeration comparison between healthy, mild and
+moderate subjects.
+ANOVA used to assess the overall group differences in upper arm acceleration (see Figure 6.4) during
+the brushing teeth activity(F = 15,p < 0.0001), revealed a medium effect size (η2
+= 0.102). Post-hoc
+t-tests with Bonferroni correction confirmed significant differences between groups:
+• Healthy vs. Mild: not significant (p = 1,t = −0.52).
+• Mild vs. Moderate: significant (p < 0.0001,t = 4.86).
+• Healthy vs. Moderate: significant (p < 0.0001t = 5.71).
+Moderately impaired patients present a smaller median upper arm acceleration (mean=85.8mg, SD=42.8mg)
+than mild (mean=143.9mg, SD=108.3mg) and healthy (mean=136.43mg, SD=74.5mg).
+Similarly, for the forearm (Figure 6.5), ANOVA showed significant results (F = 23.86,p < 0.0001) with
+a large effect size (η2
+= 0.187). Post-hoc t-tests with Bonferroni correction revealed:
+• Healthy vs. Mild: not significant (p = 0.06,t = 2.37).
+37 Tanguy Lewko , 7.3.2024
+
+--- PAGE 45 ---
+Master’s Thesis
+• Mild vs. Moderate: significant (p = 0.0001,t = 4.28).
+• Healthy vs. Moderate: significant (p < 0.0001,t = 7.26).
+Moderately impaired patients use lower median forearm acceleration (mean=152.7mg, SD=148.6mg)
+than mild (mean=235.3mg, SD=151.8mg) and healthy (mean=290.4mg, SD=148.6mg).
+Overall, stroke participants use less acceleration when brushing their teeth. This can be due to muscle
+weakness, coordination loss, joint stiffness, sensory impairments, or cognitive issues.
+Joint angle amplitudes when brushing teeth
+We also investigated the differences in joint angle amplitudes during brushing teeth. We hypothesized
+that stroke survivors might find it challenging to elevate their arms, in contrast with arm elevation
+used by healthy subjects. We thus analyzed the range of shoulder abduction (Figure 6.6) and shoulder
+flexion (Figure 6.7) angles being used by stroke and healthy participants.
+Figure 6.6: Brushing teeth median shoulder ab-
+duction comparison between healthy, mild, and
+moderate subjects.
+Figure 6.7: Brushing teeth median shoulder flex-
+ion comparison between healthy, mild and mod-
+erate subjects.
+For shoulder abduction, ANOVA highlighted significant differences between groups (F = 9.69,p =
+0.0001), with a medium effect size (η2
+= 0.0682). Post-hoc t-tests with Bonferroni correction only
+confirmed significantly lower abduction joint angle used by moderate compared to mild.
+• Healthy vs. Mild: not significant (p = 0.076,t = −2.26).
+• Mild vs. Moderate: significant (p = 0.0001,t = 4.38).
+• Healthy vs. Moderate: significant (p = 0.11,t = 2.08).
+On average, moderately impaired participants use a median shoulder abduction of 30.4 degrees (SD=18.4
+deg), mild 43.6 degrees (SD=22.16 deg), and healthy participants 36.3 degrees (SD=19.9 deg).
+Regarding flexion, ANOVA also confirmed differences (F = 16.96,p < 0.0001,η2
+= 0.113), and post-hoc
+showed that moderately impaired subjects use significantly lower shoulder flexion angles (mean=43.1
+deg, SD=18.7 deg) than mild (mean=55.8 deg, SD=13.5 deg) and healthy (mean=53.6 deg, SD=14.4
+deg).
+• Healthy vs. Mild: not significant (p = 0.87,t = −1.06).
+• Mild vs. Moderate: significant (p < 0.0001,t = 5.18).
+• Healthy vs. Moderate: significant (p = 0.0001,t = 4.20).
+Paretic/Non-paretic arm brushing asymmetry
+38 Tanguy Lewko , 7.3.2024
+
+--- PAGE 46 ---
+Master’s Thesis
+Among all the participants, only one brushed his teeth changing the arm brushing. A plot showing the
+evolution of the joint angles for a mild subject brushing first with its paretic arm and then switching
+the arm brushing to brush with the non-paretic arm is presented in Figure 6.8. We observed that while
+brushing with the non-impaired arm, shoulder rotation and shoulder flexion angles follow a sinusoidal
+pattern; however, when brushing with the impaired arm, the angles are much less regular.
+Figure 6.8: Paretic/non-paretic brushing motion asymmetry in shoulder joint angles
+Conclusions on stroke vs. healthy participants brushing motion
+Our analyses showed that stroke participants use less accelerations, higher rotational velocities, and
+smaller shoulder elevation when brushing their teeth. We found no significant difference in elbow joint
+angles being used and in the frequency of the brushing motion. The amplitude of the motion is also
+larger for healthy individuals compared to post-stroke, as shown by the higher median absolute deviation
+of both shoulder flexion, abduction and rotation.
+Brushing teeth can contribute to evaluating impairment levels during activities of daily living, as it is a
+challenging and constrained activity that requires mobility and coordination in the upper extremities.
+While complex ADLs might be more efficient for highlighting differences between healthy and stroke
+participants, severely impaired participants would not be able to do them, which is a downside.
+39 Tanguy Lewko , 7.3.2024
+
+--- PAGE 47 ---
+Master’s Thesis
+6.4 Drinking post-stroke motion analysis
+6.4.1 Decomposition of the drinking ADL
+The drinking motion during which the hand is in contact with an open container can be decomposed
+into three distinct phases based on their kinematic properties, as described by Murphy’s phase distri-
+bution:
+1. Transport phase: This phase involves elevating the liquid container from the resting position to
+the mouth. The primary motions are elbow flexion and shoulder abduction/flexion. As this phase
+requires dynamically moving an object, the kinematics can be characterized as dynamic.
+2. Ingestion phase: The goal is to stabilize the container while sipping liquid. Minor adjustments
+such as forearm rotation or shoulder abduction/flexion may be used to tilt the container precisely.
+Compared to the transport phase, this phase emphasizes stability over dynamic movement.
+3. Recovery phase: In the recovery phase, the container is lowered back to its original position. This
+is accomplished primarily through elbow extension and shoulder flexion/abduction reduction.
+Figure 6.9 illustrates this decomposition, indicating key events that mark the start and end of each
+phase.
+Figure 6.9: Decomposition of the drinking task.
+By analyzing each drinking phase separately based on their distinct kinematic properties, we can de-
+velop a more scientifically rigorous understanding of the biomechanics underlying this everyday task.
+The drinking ADL has been well studied, mainly in structured experiments isolating each phase and
+with motion capture systems. It has been much less studied using wearable sensors in unstructured
+settings.
+In [88], Murphy et al. evaluated the change of a set of kinematical parameters describing movement time,
+velocity, strategy, interjoint coordination, and compensatory movement between stroke and healthy par-
+ticipants during drinking task using motion capture. They found that the number of movement units,
+total movement time, and peak angular velocity of the elbow were the best features to discriminate be-
+tween healthy, mild, and moderate groups, with the number of movement units being the best indicator
+of motion quality. They also showed that time is correlated with number of movement units.
+Kim et al. (2014) [89] conducted a study identifying kinematic differences between 16 hemiplegic
+and 32 healthy participants during drinking phases. The hemiplegic group took longer to achieve the
+drinking task, taking extra care when lifting the cup to avoid spilling water and caring less during
+recovery. Interestingly, hemiplegic participants used more extensive abduction in all phases of drinking
+and smaller flexion in the shoulder joint for the transporting and ingestion phases.
+40 Tanguy Lewko , 7.3.2024
+
+--- PAGE 48 ---
+Master’s Thesis
+6.4.2 Analysis
+We analyze both dynamic phases of the drinking task with the same set of metrics. Using the segmenta-
+tion method described in Section 6.1, we could confidently isolate the transport, ingestion, and recovery
+phases of drinking. For each stage, we could isolate 70 samples from 15 mildly impaired participants, 78
+samples from 18 moderately impaired participants, and 86 samples from 18 healthy subjects, totaling
+234 drinking samples analyzed. As for the toothbrushing ADL, we only discuss here a subset of the
+analyzed metrics, more detailed analysis can be found in Tables B.1 and B.2.
+Smoothness
+Figure 6.10: Drinking transport forearm angu-
+lar velocity based SPARC distributions of healthy,
+mild, and moderate subjects.
+Figure 6.11: Drinking recovery forearm angu-
+lar velocity based SPARC distributions of healthy,
+mild, and moderate subjects.
+Wrist angular speed SPARC during the drinking transport phase distributions are represented in Figure
+6.10. We conducted an Analysis of Variance (ANOVA) to assess the overall group differences (F =
+8.93,p = 0.0005), revealing a large effect size (η2
+= 0.27). Post-hoc t-tests with Bonferroni correction
+confirmed significant differences:
+• Healthy vs. Mild: significant (p = 0.020,t = 2.91).
+• Mild vs. Moderate: non significant (p = 0.71,t = 1.21).
+• Healthy vs. Moderate: significant (p = 0.0005,t = 4.26).
+Healthy participants (mean=-5.25, SD=0.62) present higher transport wrist angular velocity SPARC
+than mild (mean=-6.01, SD=0.84) and moderate (mean=-6.40, SD=0.92).
+Similarly, for the recovery phase (Figure 6.11), ANOVA showed significant results (F = 7.62,p = 0.001)
+with a large effect size (η2
+= 0.24). Post hoc t-tests with Bonferroni correction revealed:
+• Healthy vs. Mild: significant (p = 0.014,t = 3.04).
+• Mild vs. Moderate: non significant (p = 1,t = 0.73).
+• Healthy vs. Moderate: significant (p = 0.002,t = 3.71).
+Healthy participants (mean=-4.96, SD=0.80) present higher recovery wrist angular velocity SPARC
+than mild (mean=-5.90, SD=0.92) and moderate (mean=-6.16, SD=1.06).
+Figures 6.10 and 6.11 show that the healthy group exhibits significantly smoother transport and recovery
+motion when drinking compared to the mildly and moderately impaired stroke participants, which is
+in line with the literature.
+41 Tanguy Lewko , 7.3.2024
+
+--- PAGE 49 ---
+Master’s Thesis
+Time efficiency during transport and recovery phase
+Figure 6.12: Drinking transport movement time
+distributions of healthy, mild, and moderate sub-
+jects.
+Figure 6.13: Drinking recovery mean movement
+time of healthy, mild, and moderate subjects.
+We evaluated group differences for total transport movement time (Figure 6.12), ANOVA showed signif-
+icant results (F = 6.35,p = 0.004) with a large effect size (η2
+= 0.213). Post-hoc t-tests with Bonferroni
+correction revealed:
+• Healthy vs. Mild: not significant (p = 1,t = 2.68).
+• Mild vs. Moderate: significant (p = 0.047,t = 2.56).
+• Healthy vs. Moderate: significant (p = 0.032,t = 2.71).
+Moderately impaired subjects (mean=1.87s, SD=1.02s) perform the transport phase using more time
+than mildly impaired (mean=1.14s, SD=0.36s) and healthy participants (mean=1.17s, SD=0.30s).
+Similarly, for the recovery phase (Figure 6.13), ANOVA resulted in F = 10.03,p = 0.0002,η2
+= 0.299
+and post-hoc:
+• Healthy vs. Mild: not significant (p = 1,t = 0.4).
+• Mild vs. Moderate: significant (p = 0.008,t = 3.26).
+• Healthy vs. Moderate: significant (p = 0.001,t = 3.98).
+As for the transport phase, the moderate group (mean=1.41s, SD=0.35) performed the recovery phase
+slower than the healthy (mean=0.99s, SD=0.23s) and mild (mean = 1.03, SD=0.26).
+We conclude that moderately impaired patients tend to perform the motions much slower than mildly
+impaired and healthy participants, with more significant intra-group differences.
+6.5 Conclusion on post-stroke upper-extremity motion analy-
+sis within ADLs
+In conclusion, our study on the drinking and tooth-brushing motions gives us important insights into
+how people who have had a stroke compare to those who have not. Although specific measurements
+help to separate the two groups, there is still some overlap between the distributions of the different
+groups.
+The metrics investigated (see Tables B.3, B.1 and B.2) include some descriptive statistics such as
+medians, 95th percentile, and median absolute deviation calculated on the forearm and upper arm
+42 Tanguy Lewko , 7.3.2024
+
+--- PAGE 50 ---
+Master’s Thesis
+norms of acceleration and angular velocity. These descriptive statistics are robust versions of mean,
+peak, and standard deviation. For the toothbrushing ADL, we also looked at shoulder abduction,
+rotation, and flexion as most of the motion comes from the shoulder. Then, for drinking tasks, we
+added total movement time and SPARC to measure smoothness and cross-correlation between forearm
+and upper arm angular velocities and accelerations. These additional task-specific metrics have been
+shown to effectively distinguish between the movements of participants who have had a stroke and
+healthy participants. Comparison between healthy, mildly impaired, and moderately impaired subjects
+can be found in Appendix B.
+Our findings suggest stroke survivors are likelier to present heavy tails in bio-mechanical metrics that
+translate a motion’s quality aspect. Looking at specific aspects like SPARC and movement time, we
+notice interesting differences between stroke and healthy participants. While some stroke survivors
+move similarly to healthy individuals, many show less smooth motions and take more time to finish
+tasks. This highlights the fact that the experiences of stroke survivors can vary widely.
+It is crucial to recognize the limitations of our study, like the limited range of motions and instances
+we analyzed. Future research with a broader set of motions and a larger dataset will help us better
+understand the subtleties of how motor skills play out in stroke survivors during activities of daily
+living.
+43 Tanguy Lewko , 7.3.2024
+
+--- PAGE 51 ---
+Chapter 7
+The motion healthiness score: A
+data-driven framework for
+naturalistic motion quality
+assessment
+While UE motor impairment assessments like the UEFMA or the ARAT provide valuable informa-
+tion about upper extremity motor function, that can help treatment planning and track rehabilitation
+progress, they do not capture patients’ capacity to perform specific functional tasks. For example, Mur-
+phy et al.[90] showed that kinematic movement performance measures obtained during a drinking task,
+such as movement time, smoothness, and angular velocities, correlate much more with activity capacity
+than with actual impairment level obtained through UEFMA and ARAT. Assessing impairment in a
+functional setting holds considerable promise to understand activity capacity better.
+In an attempt to replicate the FMA score from wearable sensors, Yu et al. (2016) employed two
+accelerometers and seven flex sensors to monitor the function of the upper limb [91]. The proposed
+quantitative FMA model based on wearable sensor data can precisely predict the FMA scores, with a
+coefficient of determination of up to 0.917. Chaeibakhsh et al. (2016) used accelerometer and gyroscope
+data to score UEFMA using machine learning algorithms [92]. Although these works offer a good
+opportunity to do assessments at home, without the need for a therapist, impairment is still evaluated
+on very structured tasks. Oubre et al. (2020) [93] proposed an approach to estimate upper-limb
+impairment in stroke survivors by using two wearable inertial sensors on the wrist and sternum and
+evaluating on two minutes of continuous random voluntary upper limb movements spanning the entire
+range of motion. They achieved a root mean square error of 18.2% for 23 stroke survivors. Vanmechelen
+et al. (2023) conducted a scoping review on using wearable sensors to assess movement disorders during
+upper limb tasks. The review found that most of the assessments were carried out during structured
+tasks and identified commonly computed metrics that are used to identify different kinds of impairments
+[94].
+In Chapter 6, we observed distinct distributions between the Healthy, Mild, and Moderate participant
+groups for the identified set of robust wearable-IMU-based metrics. This suggests that valuable informa-
+tion about motion quality is contained within the IMU data during specific constrained ADL segments.
+Within this chapter, our primary objective is to develop a method to incorporate identified metrics into
+a framework for the assessment of naturalistic motion quality. We aim to calculate a Motion Healthiness
+Score (MHS) for each movement by integrating various metrics related to mobility, time efficiency, and
+overall motion characteristics.
+44
+
+--- PAGE 52 ---
+Master’s Thesis
+The fundamental concept behind the MHS we develop is to gauge the disparity between the motion
+under evaluation and the same motion executed by healthy subjects. This approach is based on the
+assumption that the standard for high-quality of motion is established by the movements of healthy
+individuals. We take into account the substantial variability in stroke impairments among individuals:
+some stroke participants may execute certain motions with proficiency while struggling with others.
+Furthermore, a fundamental principle of stroke rehabilitation is to gradually align movements with
+those that healthy individuals would typically perform, and this score measures the quality of the
+alignment. The proposed score has convenient applications. It could be communicated to therapists
+and patients to monitor rehabilitation and gauge progress in motion performance. Therapists could use
+this information to emphasize training for motions with lower MHS to optimize recovery.
+7.1 Methods and results
+In this Section, we explain the derivation of the MHS and compute the MHS for StrokeRehab partici-
+pants in three motions: brushing teeth, the transport phase of drinking (lifting the container), and the
+recovery phase of drinking (lowering the container).
+Figure 7.1 shows the principal steps of the MHS framework. The first step is to pre-segment a motion of
+interest, this can be done either manually or using our activity segmentation algorithm (see Chapter 3).
+Then, we compute a set of robust metrics, as defined in Chapter 6. Subsequent steps involve reducing
+the dimensionality of the metrics using PCA and computing the distance between each motion and
+healthy references for that motion in the principal component space. More detailed explanations of
+these steps will follow in the following sections.
+Figure 7.1: Motion healthiness score (MHS) framework
+7.1.1 PCA dimensionality reduction
+In Chapter 6, we identified a set of robust descriptive statistics and task-specific metrics, that are
+interpretable, and allow for Healthy, Mild, and Moderate group differentiation. We first compute these
+metrics for each pre-segmented motion.
+Subsequently, employing Principal Component Analysis (PCA), we reduce the dimensionality of the
+computed metrics, optimizing the retained variance. A desirable property of PCA is its orthogonality:
+principal components are orthogonal to each other, which makes them linearly independent. Each
+principal component captures a non-redundant aspect of the data.
+To apply PCA, we first compute the covariance matrix Σ:
+45 Tanguy Lewko , 7.3.2024
+
+--- PAGE 53 ---
+Master’s Thesis
+Σ =
+1
+n − 1
+(X − X̄)T
+(X − X̄) (7.1)
+with X the data matrix, X̄ the mean of each feature and n the number of features.
+We then compute the eigenvalues λi of the covariance matrix by solving the following:
+det(Σ − λI) = 0 (7.2)
+and solve for the eigenvectors vi by substituting each eigenvalue into:
+(Σ − λiI)vi = 0 (7.3)
+We then sort the eigenvalues in descending order and select all λi > 1 following the Guttman-Kaiser
+criterion [95]. This criterion is based on the argument that no component explaining less than the
+variance of an original variate represents a significant source dimension. Although it may not be
+optimal in all situations, it is a widely-spread, easy-to-use method for selecting the number of principal
+components. We select the corresponding eigenvectors to form the projection matrix W.
+W = [v1,v2,...,vk]
+Where k is the number of eigenvalues greater than 1.
+Finally, we can project the data matrix X in the subspace of principal components defined by the
+eigenvectors:
+Y = XW (7.4)
+Figure 7.2 shows the scree plots for the three tasks we analyze. The Guttman-Kaiser criterion keeps the
+six first principal components for the brushing teeth activity, five for the drinking transport activity,
+and five for the drinking recovery activity, leading to respectively 88%, 84%, and 86% of explained
+variance retained.
+(a) Brushing teeth (b) Drinking transport (c) Drinking recovery
+Figure 7.2: Scree plots for brushing teeth, drinking transport and recovery PCA
+46 Tanguy Lewko , 7.3.2024
+
+--- PAGE 54 ---
+Master’s Thesis
+7.1.2 Mahalanobis distance to healthy data
+The Mahalanobis distance [96] measures the distance between a point and a distribution under the
+assumption that the data conforms to a multivariate normal distribution. This distance metric is
+more relevant than the Euclidean distance because it incorporates the covariance structure of the data,
+allowing for considering correlations between variables. It is computed as:
+D2
+M = (x − m)T
+· C−1
+· (x − m) (7.5)
+Where D2
+M is the square of the Mahalanobis distance, x is the observation vector, m is the mean of
+each variable, and C is the covariance matrix of the variables.
+We use the Mahalanobis-MCD distance, which is known as a robust criterion for outlier detection.
+Instead of computing the mean and covariance matrix of the whole data, it uses the minimum covariance
+determinant (MCD) method to estimate the multivariate mean and covariance matrix using a subset
+of the data so that we minimize the influence of anomalies on their computations. Following the
+recommendations in [97], we use a support fraction of 0.75 when calculating the MCD. We use the
+Mahalanobis-MCD distance to compute the distance from sample motions to the distribution of healthy
+in the principal components subspace. For the sake of simplicity, we will refer to the Mahalanobis-MCD
+distance as Mahalanobis distance going forward.
+The square of the Mahalanobis distance can be approximated by a Chi-square distribution, with a
+degree of freedom equal to the number of principal components. We use the quantile value 0.95 as a
+threshold to define the limit of what is considered healthy data. Any point with a Mahalanobis distance
+superior to the threshold value set using the Chi-Square distribution is regarded as an outlier. Any
+point within the threshold is given a maximum MHS, meaning the motion is considered healthy. To
+give an intuition on the method, we show in Figures 7.3, 7.4 and 7.5 the projection of metrics in the
+3D space defined by the three first principal components, with, in green the ellipsoid of healthy data
+defined with this threshold. We observe that most of the healthy data fall into this ellipsoid, while mild
+and moderate samples are more dispersed. A black dot marks points outside of the ellipsoid. We refer
+to these points as outliers.
+Figure 7.3: Brushing teeth PCA projection (3D)
+47 Tanguy Lewko , 7.3.2024
+
+--- PAGE 55 ---
+Master’s Thesis
+Figure 7.4: Drinking transport PCA projection (3D)
+Figure 7.5: Drinking recovery PCA projection (3D)
+Figures 7.6, 7.8 and 7.8 respectively show the Mahalanobis distance to the center of the healthy ellipsoid
+for both healthy and stroke participants. The green and red dotted lines, indicating distance thresholds
+serve for the future calculation of the motion healthiness score from the Mahalanobis distance to the
+healthy data.
+When brushing teeth, healthy individuals’ motions have a mean Mahalanobis distance to the center of
+48 Tanguy Lewko , 7.3.2024
+
+--- PAGE 56 ---
+Master’s Thesis
+the healthy ellipsoid of 3.22 (SD=1.69), while for post-stroke participants, the mean distance is 6.33
+(SD=2.47).
+Similarly, for the transport phase of drinking, the mean Mahalanobis distance for healthy motions is
+2.99 (SD=1.93) and for stroke, 7.46 (SD=6.06). For the recovery phase, the mean distance is 2.99
+(SD=1.97) for healthy subjects and 7.83 (SD=3.76) for stroke participants.
+Figure 7.6: Brushing teeth Mahalanobis distance to healthy ellipsoid distribution.
+Figure 7.7: Drinking transport Mahalanobis dis-
+tance to healthy ellipsoid distribution.
+Figure 7.8: Drinking recovery Mahalanobis dis-
+tance to healthy ellipsoid distribution.
+Although we do not have a ground truth for how far a motion is to healthy data, we verify that our
+distance behaves well by demonstrating that mild group samples have a smaller distance to healthy
+data than moderate, by computing the correlation between the UE-FMA score and the distance for
+each sample, as well as by evaluating the variation of the resulting score from different samples of the
+same subject. We also evaluate the correlation between the scores obtained for each of the three tasks
+we examine.
+We provide the Bhattacharyya distance [98] to measure overlap and convergence between distribu-
+tions. The greater the Bhattacharyya distance is, the more dissimilar the two distributions are. The
+Bhattacharyya distance DB1−2
+between two distributions 1 and 2 is computed by formula 7.6:
+49 Tanguy Lewko , 7.3.2024
+
+--- PAGE 57 ---
+Master’s Thesis
+DB1−2
+=
+1
+8
+(m1 − m2)
+T
+
+C1 + C2
+2
+−1
+(m1 − m2) +
+1
+2
+log
+det C1+C2
+2
+
+p
+det(C1) · det(C2)
+!
+(7.6)
+where:
+m1 and m2 are the means of the two distributions.
+C1 and C2 are the covariance matrices of the two distributions.
+Table 7.1 shows the Bhattacharyya distance between the distributions of principal components between
+the different activities. We notice that the healthy-to-moderate distance is more significant for all three
+activities than the healthy-to-mild distance, especially for the transport and recovery tasks, where it
+more than doubles.
+Brushing teeth Drinking transport Drinking recovery
+Healthy to Mild DB 1.60 0.92 1.16
+Healthy to Moderate DB 1.93 2.87 2.38
+Mild to Moderate DB 0.51 1.07 0.83
+Table 7.1: Bhattacharyya distance between distributions of healthy, mild, and moderate groups in the
+principal component space for brushing teeth, drinking transport, and drinking recovery analysis.
+We examined the Pearson correlation between brushing teeth, drinking transport, and drinking recovery
+distances to healthy data. The correlation coefficient between brushing and drinking transport Maha-
+lanobis distances to the healthy ellipsoid is 0.59, indicating a moderate positive correlation. Brushing
+and recovery distances are correlated at 0.62, while transport and recovery distances show a notably
+strong correlation at 0.91. All distances are moderately or strongly correlated, with a very high corre-
+lation for each individual between the transport and recovery phases of drinking.
+From the Mahalanobis distances computation, we define the MHS as follows. The best attainable MHS
+for a task is 10, obtained when the Mahalanobis distance to the healthy distribution is less than the
+distance defined by the 0.95 quantile of the chi-square distribution with a degree of freedom equal to
+the number of selected principal components. The worst score is 0 when the Mahalanobis distance to
+the healthy cluster is superior to the 0.95 quantile distance estimated with a Kernel Density Estimation
+(KDE) of stroke participants’ distances. These two distance thresholds are shown in Figures 7.6, 7.7
+and 7.8. Between these two values, the score is linearly interpolated using the piecewise linear function
+described in Equation 7.7:
+MHS = 10 − (DB − th) ×
+10
+ts − th
+(7.7)
+With th the 0.95 quantile of the chi-square distribution with a degree of freedom equal to the number
+of selected principal components, and ts the 0.95 quantile distance estimated with a Kernel Density
+Estimation (KDE) of stroke participants’ distances.
+We use Silverman’s bandwidth estimation for the KDE [99].
+The mean Mahalanobis distance to the healthy distribution and the resulting MHS for each subject and
+each activity are reported in Table 7.2 and shown in Figures 7.9, 7.10 and 7.11.
+50 Tanguy Lewko , 7.3.2024
+
+--- PAGE 58 ---
+Master’s Thesis
+Figure 7.9: Brushing teeth mean MHS per subject.
+Figure 7.10: Drinking transport mean MHS per
+subject.
+Figure 7.11: Drinking recovery mean MHS per
+subject.
+We computed the standard deviation in MHS ratings of the different samples of a subject performing
+the same activity. The mean standard deviation was 0.56 for brushing teeth, 0.60 for drinking transport,
+and 0.70 for drinking recovery. This highlights consistency in the score as the rating does not vary a
+lot between motions performed by the same subject.
+We also quantified the separability power of the MHS by optimizing a threshold to maximize the
+accuracy to predict if the person doing the motion is healthy or has had a stroke. Each motion rated
+above the threshold is classified as healthy and below as belonging to an impaired participant. The
+optimal thresholds for brushing teeth, drinking transport, and drinking recovery scores were respectively
+9.9, 9.3, and 9.5, leading to accuracies of 0.76, 0.82, and 0.84.
+51 Tanguy Lewko , 7.3.2024
+
+--- PAGE 59 ---
+Master’s Thesis
+Figure 7.12: Confusion matrices for MHS threshold-based classification of stroke vs. healthy. The MHS
+threshold are respectively 9.9, 9.3 and 9.5 for brushing teeth, drinking transport, and drinking recovery.
+We analyzed the correlation between UEFMA score and brushing teeth, drinking transport, and drinking
+recovery MHS. The correlation coefficients were 0.37, 0.43, and 0.47, respectively.
+7.2 Discussion
+We have developed a new data-driven framework called the motion healthiness score (MHS) to evaluate
+the quality of naturalistic motion. The MHS framework incorporates various metrics to assess the
+distance between a motion being evaluated and the same motion performed by healthy individuals.
+The framework has shown good properties like high consistency when rating sample motions from the
+same subject and good separability with over 80% accuracy between healthy and post-stroke individuals.
+It provides an opportunity to evaluate a person’s impairment in a functional setting without the need
+for a therapist’s evaluation.
+This framework offers multiple advantages and can be used to analyze a wide range of motions in both
+structured and unstructured tasks. A normative dataset is utilized to define what constitutes a healthy
+motion, without relying on the UEFMA, which does not correlate well with activity capacity. The MHS
+is an interpretable measure of motion quality and could be used to identify motions that require further
+training at home. Compared to other impairment measures like UEFMA, the MHS allows for more
+sensitivity in the moderate and severe range, as there is no maximum distance to healthy data. The
+MHS provides an opportunity to move impairment measurements into the functional place and could
+therefore correlate better than other assessments with arm use and independence.
+We have identified some areas that require further consideration before using the MHS measure. This
+measure needs additional validation and future studies should investigate the effect of varying the
+selected metrics. Although the rating system has desirable properties, its correlation with expert-
+perceived motion quality should be investigated. Additionally, the scoring system assumes that a stroke
+participant’s motion should approximate that of a healthy participant during recovery. However, the
+optimal motion solution for a participant with a stroke may differ significantly from that of a healthy
+participant. One key question to answer is defining the Minimal Clinically Important Difference (MCID)
+of the distance to healthy data. Using the MHS to track the four to twelve weeks of recovery that take
+place during outpatient therapy could offer a better understanding of this impairment measure.
+One limitation is that the data needs to conform to a multivariate normal distribution. For some
+activities, there could be different clusters of how healthy people perform an activity. For example,
+brushing hair and combing hair might produce different measurements of a similar task. In such cases,
+it may be considered to create more than one ellipsoid for the healthy data, with two or more regions of
+the PC space being associated with healthy behavior. Including information on the age and gender of
+the subject can also be beneficial as motions can vary significantly with age, resulting in slower motions,
+for example.
+52 Tanguy Lewko , 7.3.2024
+
+--- PAGE 60 ---
+Master’s Thesis
+Table 7.2: Mean Mahalanobis distance to healthy data and MHS for each subject and activity
+Brushing teeth Drinking transport Drinking recovery
+Subject Impairment UEFMA DM MHS DM MHS DM MHS
+C04 healthy 66 3.25 10.00 3.64 9.75 3.38 9.95
+C05 healthy 66 2.03 10.00 2.75 10.00 2.08 10.00
+C07 healthy 66 1.98 10.00 2.23 10.00 7.35 6.60
+C09 healthy 66 5.46 7.11 2.15 10.00 2.05 10.00
+C11 healthy 66 2.08 10.00 2.53 10.00 2.43 10.00
+C12 healthy 66 2.38 10.00 1.54 10.00 1.79 10.00
+C15 healthy 66 2.34 10.00 2.81 10.00 2.42 10.00
+C19 healthy 66 4.32 8.83 1.89 10.00 1.97 10.00
+C20 healthy 66 2.21 10.00 2.69 10.00 2.07 10.00
+C22 healthy 66 2.51 10.00 N/A N/A N/A N/A
+C23 healthy 66 6.05 6.21 2.94 10.00 3.82 9.58
+C24 healthy 66 2.48 10.00 1.49 10.00 2.13 10.00
+C25 healthy 66 2.65 10.00 1.85 10.00 1.40 10.00
+C26 healthy 66 N/A N/A 2.06 10.00 2.26 10.00
+C27 healthy 66 2.50 10.00 3.44 9.91 3.83 9.58
+C28 healthy 66 4.77 8.16 2.15 10.00 2.16 10.00
+C29 healthy 66 2.58 10.00 4.11 9.36 1.81 10.00
+C30 healthy 66 2.46 10.00 7.89 6.25 3.61 9.76
+C31 healthy 66 7.06 4.69 7.23 6.80 6.81 7.06
+s05 mild 65 12.01 0.00 6.89 7.07 7.71 6.30
+s08 mild 63 8.15 3.05 N/A N/A N/A N/A
+s26 mild 63 7.10 4.63 17.06 0.00 18.36 0.00
+s23 mild 61 6.91 4.92 6.39 7.49 6.64 7.20
+s16 mild 61 2.90 10.00 3.19 10.00 2.89 10.00
+s30 mild 61 11.01 0.00 8.68 5.61 9.03 5.19
+s37 mild 61 3.41 10.00 2.23 10.00 2.87 10.00
+s10 mild 59 7.93 3.38 N/A N/A N/A N/A
+s13 mild 59 3.87 9.52 N/A N/A N/A N/A
+s43 mild 58 7.14 4.57 N/A N/A N/A N/A
+s32 mild 58 2.37 10.00 3.13 10.00 3.08 10.00
+s09 mild 57 9.60 0.85 8.29 5.93 8.33 5.78
+s33 mild 57 7.33 4.29 7.96 6.20 8.27 5.82
+s42 mild 56 8.47 2.56 7.93 6.23 9.18 5.05
+s28 mild 56 7.50 4.03 39.65 0.00 18.56 0.00
+s41 mild 55 5.70 6.75 3.62 9.76 2.71 10.00
+s35 mild 55 4.48 8.59 3.83 9.59 5.62 8.07
+s47 mild 54 2.37 10.00 3.43 9.92 3.30 10.00
+s12 mild 53 4.54 8.50 4.68 8.89 8.29 5.80
+s36 moderate 51 3.04 10.00 4.23 9.26 3.60 9.77
+s44 moderate 49 8.41 2.65 8.85 5.47 9.36 4.91
+s17 moderate 48 4.04 9.26 8.20 6.00 8.62 5.53
+s46 moderate 48 N/A N/A 8.74 5.56 7.65 6.35
+s03 moderate 48 7.83 3.53 7.85 6.29 8.94 5.26
+s27 moderate 47 8.29 2.83 N/A N/A N/A N/A
+s11 moderate 47 3.30 10.00 2.88 10.00 8.31 5.79
+s53 moderate 45 6.06 6.20 8.15 6.05 9.48 4.80
+s54 moderate 45 7.95 3.35 N/A N/A N/A N/A
+s06 moderate 42 2.76 10.00 6.46 7.43 8.85 5.34
+s01 moderate 42 3.41 10.00 5.76 8.01 5.27 8.36
+s19 moderate 38 7.70 3.72 11.53 3.28 12.80 2.00
+s39 moderate 37 5.70 6.75 8.19 6.01 5.24 8.39
+s20 moderate 37 8.02 3.24 6.96 7.02 8.37 5.74
+s07 moderate 34 5.58 6.92 N/A N/A N/A N/A
+s45 moderate 34 3.39 10.00 N/A N/A N/A N/A
+s22 moderate 34 8.25 2.90 8.11 6.08 9.92 4.43
+s02 moderate 32 N/A N/A 8.47 5.78 11.22 3.34
+s24 moderate 32 7.75 3.66 6.64 7.29 7.32 6.63
+s18 moderate 31 7.64 3.82 7.42 6.64 8.42 5.70
+s04 moderate 27 7.52 3.99 7.40 6.66 8.21 5.88
+s25 moderate 26 4.59 8.43 N/A N/A N/A N/A
+s21 severe 8 7.89 3.44 N/A N/A N/A N/A
+53 Tanguy Lewko , 7.3.2024
+
+--- PAGE 61 ---
+Chapter 8
+Conclusion
+In conclusion, this research aimed to investigate the ability of inertial measurement units (IMUs) to
+segment and analyze upper extremity (UE) movements during activities of daily living (ADLs). The
+capability to do so could help encourage stroke survivors to use their affected arm more throughout the
+day. We have demonstrated the ability to accurately segment UE ADLs from raw IMU data using a deep
+learning algorithm that utilizes both CNN and biLSTM layers. While most existing work focuses on
+classifying a pre-segmented window as part of an activity, we focused on precisely segmenting continuous
+non-pre-segmented data. The algorithm was tested on ten healthy participants from the Multi-Sensory
+dataset. The six segmented activities were opening and closing a door, brushing teeth, drinking from
+a glass, pouring water, and cleaning a table. One of the unique features of our algorithm is the use of
+context-aware predictions, taking into account past and future data. We achieved respectively F1-scores
+of 0.83 in across-subject validation and 0.87 in within-subject validation, using only two IMUs located
+on the forearms. We proposed a methodology for collecting an annotated naturalistic IMU-based ADL
+dataset in a controlled environment, using video ground truth to reliably label ADLs. We collected data
+from five stroke patients and five healthy participants and used this data to demonstrate the proof-
+of-concept of our UE ADL segmentation algorithm on two stroke patients. Our results highlight the
+potential need for tailored models for post-stroke individuals due to their high motion variability. From
+the StrokeRehab open-source dataset, we isolated a total of 182 samples of stroke participants brushing
+their teeth and 148 sample drinking events. In addition, we gathered 86 samples of healthy participants
+brushing their teeth and 88 samples of healthy participants drinking. Based on the wearable sensor
+data, we identified robust metrics that can be directly computed and effectively distinguish between
+healthy and stroke participants’ motions during these two ADLs. Finally, we developed a method
+to aggregate these metrics into a Motion Healthiness Score (MHS). This score uses the Mahalanobis
+distance to measure the disparity between the movement of a stroke survivor and the same motion
+executed by healthy subjects. It showed good properties such as high consistency when rating sample
+motions from the same subject and good separability (>80% accuracy) between healthy and post-stroke
+individuals.
+We want to acknowledge certain limitations of our study despite the promising results. (1) The first
+limitation of this research comes from the use of open-source datasets with important information
+missing. The datasets we used did not include video data, which made it difficult to interpret the
+results of our algorithms. For example, we were unable to determine why the algorithm made certain
+false detections for activity segmentation. Additionally, for the motion healthiness score, we could not
+verify whether motions that were considered close to healthy appeared healthy or not. The StrokeRehab
+dataset also lacked crucial information, such as the age of healthy subjects. (2) Activity segmentation
+should still be evaluated in stroke participants with moderate or severely affected stroke participants. (3)
+Our algorithms were tested in controlled environments and we need to evaluate their performance in a
+home setting. (4) Our analysis of motion quality left out some important aspects such as compensation,
+which is a good indicator of bad use. (5) The MHS requires further evaluation. Analysis should be
+54
+
+--- PAGE 62 ---
+Master’s Thesis
+extended for more tasks, and the minimal clinically important differences (MCID) remain to determine
+for different tasks.
+We also highlight some future steps that should be taken to further advance toward a home-based system
+for monitoring rehabilitation progress at home. (1) An effort should be made to reduce the cost of data
+collection or the quantity of data required by deep learning algorithms. Indeed, data collection and
+labeling through video is a very expensive process. One solution could be the self-labeling of data by the
+user who records his motion by pressing a button on an app. We can also investigate methods such as
+self-supervised learning to reduce the reliance on labeled data. (2) We believe it is important to collect
+data at home to test the performance of the algorithms in an uncontrolled setting. (3) The algorithm
+for activity segmentation should also be adapted for bi-manual tasks, as stroke participants tend to
+use both their arms even for typically considered uni-manual tasks like brushing teeth when trying to
+integrate their affected arm into tasks, as they might lack the ability to use only the impaired arm. More
+testing on impaired participants is required. (4) Further evaluating the optimal number of wearable
+IMU sensors to not burden the user and still be able to provide useful information is required. Different
+configurations can go from only one IMU on the paretic forearm, to multiple sensors, potentially able
+to provide more information on joint angles and compensation strategies. Acceptability by the end user
+is critical and this is an important trade-off. (5) The MHS could be validated either by having multiple
+OTs rating motions and checking the correlation with the MHS, or by following patients’ recovery
+post-stroke.
+55 Tanguy Lewko , 7.3.2024
+
+--- PAGE 63 ---
+Acknowledgements
+I had an amazing time doing research at the Harvard Biodesign lab for six months. I learned a lot
+from the different studies and enjoyed thinking of ways to solve problems. I am deeply grateful to
+everyone who made this opportunity possible. I sincerely thank Dr. Prabhat Pathak and James Arnold
+for their valuable advice and engaging discussions. Their expertise and feedback have been invaluable
+in helping me approach the subject matter more comprehensively and it was a real pleasure working
+with them. I would also like to thank Prof. Conor Walsh and Prof. Auke Ijspeert for their guidance
+and mentorship. Thanks to all the people at the Harvard Biodesign Lab for providing such an exciting
+working environment that fosters collaboration, innovation, and positivity.
+56
+
+--- PAGE 64 ---
+Bibliography
+[1] Valery L Feigin, Michael Brainin, Bo Norrving, Sheila Martins, Ralph L Sacco, Werner Hacke,
+Marc Fisher, Jeyaraj Pandian, and Patrice Lindsay. World Stroke Organization (WSO): Global
+Stroke Fact Sheet 2022. International Journal of Stroke, 17(1):18–29, January 2022. Publisher:
+SAGE Publications.
+[2] Szilvia Geyh, Alarcos Cieza, Jan Schouten, Hugh Dickson, Peter Frommelt, Zaliha Omar, Nenad
+Kostanjsek, Haim Ring, and Gerold Stucki. ICF Core Sets for stroke. Journal of Rehabilitation
+Medicine, 36(0):135–141, August 2004.
+[3] Bruce H. Dobkin. Rehabilitation after Stroke. The New England journal of medicine,
+352(16):1677–1684, April 2005.
+[4] Peter Langhorne, Julie Bernhardt, and Gert Kwakkel. Stroke rehabilitation. The Lancet,
+377(9778):1693–1702, May 2011. Publisher: Elsevier.
+[5] Jeffrey A. Kleim and Theresa A. Jones. Principles of experience-dependent neural plasticity:
+implications for rehabilitation after brain damage. Journal of speech, language, and hearing
+research: JSLHR, 51(1):S225–239, February 2008.
+[6] Bruce H. Dobkin and Andrew Dorsch. New evidence for therapies in stroke rehabilitation. Current
+atherosclerosis reports, 15(6):331, June 2013.
+[7] Baron. Neuroimaging in Stroke Recovery: A Position Paper from the First International Workshop
+on Neuroimaging and Stroke Recovery. Cerebrovascular Diseases, 18(3):260–267, September 2004.
+[8] Marijke Rensink, Marieke Schuurmans, Eline Lindeman, and Thóra Hafsteinsdóttir. Task-oriented
+training in rehabilitation after stroke: systematic review. Journal of Advanced Nursing, 65(4):737–
+754, 2009. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1365-2648.2008.04925.x.
+[9] Davide G de Sousa, Lisa A Harvey, Simone Dorsch, and Joanne V Glinsky. Interventions involving
+repetitive practice improve strength after stroke: a systematic review. Journal of Physiotherapy,
+64(4):210–221, October 2018.
+[10] Preeti Raghavan. Upper Limb Motor Impairment After Stroke. Physical Medicine and Rehabili-
+tation Clinics of North America, 26(4):599–610, November 2015.
+[11] Nancy E. Mayo. Stroke Rehabilitation at Home. Stroke, 47(6):1685–1691, June 2016. Publisher:
+American Heart Association.
+[12] Belén Rubio Ballester, Alica Lathe, Esther Duarte, Armin Duff, and Paul F. M. J. Verschure. A
+Wearable Bracelet Device for Promoting Arm Use in Stroke Patients:. In Proceedings of the 3rd
+International Congress on Neurotechnology, Electronics and Informatics, pages 24–31, Lisbon,
+Portugal, 2015. SCITEPRESS - Science and and Technology Publications.
+[13] Ann David, StephenSukumaran ReethaJanetSureka, Sankaralingam Gayathri, Salai Jeyseelan
+Annamalai, Selvaraj Samuelkamleshkumar, Anju Kuruvilla, Henry Prakash Magimairaj, SKM
+Varadhan, and Sivakumar Balasubramanian. Quantification of the relative arm use in patients
+57
+
+--- PAGE 65 ---
+Master’s Thesis
+with hemiparesis using inertial measurement units. Journal of Rehabilitation and Assistive Tech-
+nologies Engineering, 8:20556683211019694, January 2021. Publisher: SAGE Publications Ltd
+STM.
+[14] Grace Kim, Avinash Parnandi, Sharon Eva, and Heidi Schambra. The use of wearable sensors to
+assess and treat the upper extremity after stroke: a scoping review. Disability and Rehabilitation,
+44:1–20, July 2021.
+[15] Qi Wang, Panos Markopoulos, Bin Yu, Wei Chen, and Annick Timmermans. Interactive wearable
+systems for upper body rehabilitation: a systematic review. Journal of NeuroEngineering and
+Rehabilitation, 14(1):20, March 2017.
+[16] Ryan R. Bailey, Joseph W. Klaesner, and Catherine E. Lang. An Accelerometry-Based Methodol-
+ogy for Assessment of Real-World Bilateral Upper Extremity Activity. PLOS ONE, 9(7):e103135,
+July 2014. Publisher: Public Library of Science.
+[17] G Thrane, N Emaus, T Askim, and A Anke. Arm use in patients with subacute stroke monitored
+by accelerometry: Association with motor impairment and influence on self-dependence. Journal
+of Rehabilitation Medicine, 43(4):299–304, 2011.
+[18] Gitendra Uswatte, Wai Leong Foo, Harry Olmstead, Kristine Lopez, Ashleigh Holand, and
+Leslie Box Simms. Ambulatory monitoring of arm movement using accelerometry: an objective
+measure of upper-extremity rehabilitation in persons with chronic stroke. Archives of Physical
+Medicine and Rehabilitation, 86(7):1498–1501, July 2005.
+[19] Gitendra Uswatte and Laura Hobbs Qadri. A Behavioral Observation System for Quantifying Arm
+Activity in Daily Life after Stroke. Rehabilitation psychology, 54(4):398–403, November 2009.
+[20] Carme Zambrana, Sebastian Idelsohn-Zielonka, Mireia Claramunt-Molet, Maria Almenara-
+Masbernat, Eloy Opisso, Josep Maria Tormos, Felip Miralles, and Eloisa Vargiu. Monitoring of
+upper-limb movements through inertial sensors – Preliminary results. Smart Health, 13:100059,
+August 2019.
+[21] Peter S. Lum, Liqi Shu, Elaine M. Bochniewicz, Tan Tran, Lin-Ching Chang, Jessica Barth, and
+Alexander W. Dromerick. Improving Accelerometry-Based Measurement of Functional Use of the
+Upper Extremity After Stroke: Machine Learning Versus Counts Threshold Method. Neuroreha-
+bilitation and Neural Repair, 34(12):1078–1087, December 2020.
+[22] Sang Hoon Chae, Yushin Kim, Kyoung-Soub Lee, and Hyung-Soon Park. Development and
+Clinical Evaluation of a Web-Based Upper Limb Home Rehabilitation System Using a Smartwatch
+and Machine Learning Model for Chronic Stroke Survivors: Prospective Comparative Study.
+JMIR mHealth and uHealth, 8(7):e17216, July 2020.
+[23] Ruth H Da-Silva, Frederike van Wijck, Lisa Shaw, Helen Rodgers, Madeline Balaam, Lianne Brkic,
+Thomas Ploetz, Dan Jackson, Karim Ladha, and Christopher I Price. Prompting arm activity
+after stroke: A clinical proof of concept study of wrist-worn accelerometers with a vibrating alert
+function. Journal of Rehabilitation and Assistive Technologies Engineering, 5:2055668318761524,
+January 2018. Publisher: SAGE Publications Ltd STM.
+[24] Ruth H. Da-Silva, Sarah A. Moore, Helen Rodgers, Lisa Shaw, Louise Sutcliffe, Frederike van
+Wijck, and Christopher I. Price. Wristband Accelerometers to motiVate arm Exercises after
+Stroke (WAVES): a pilot randomized controlled trial. Clinical Rehabilitation, 33(8):1391–1403,
+August 2019.
+[25] Maureen Whitford, Eric Schearer, and Maria Rowlett. Effects of in home high dose accelerometer-
+based feedback on perceived and actual use in participants chronic post-stroke. Physiotherapy
+Theory and Practice, 36(7):799–809, July 2020.
+[26] Sunghoon I. Lee, Catherine P. Adans-Dester, Matteo Grimaldi, Ariel V. Dowling, Peter C. Horak,
+Randie M. Black-Schaffer, Paolo Bonato, and Joseph T. Gwin. Enabling Stroke Rehabilitation
+58 Tanguy Lewko , 7.3.2024
+
+--- PAGE 66 ---
+Master’s Thesis
+in Home and Community Settings: A Wearable Sensor-Based Approach for Upper-Limb Motor
+Training. IEEE journal of translational engineering in health and medicine, 6:2100411, 2018.
+[27] Avinash Parnandi, Aakash Kaku, Anita Venkatesan, Natasha Pandit, Audre Wirtanen, Haresh
+Rajamohan, Kannan Venkataramanan, Dawn Nilsen, Carlos Fernandez-Granda, and Heidi
+Schambra. PrimSeq: a deep learning-based pipeline to quantitate rehabilitation training, De-
+cember 2021. arXiv:2112.11330 [cs].
+[28] Heidi M. Schambra, Avinash Parnandi, Natasha G. Pandit, Jasim Uddin, Audre Wirtanen, and
+Dawn M. Nilsen. A Taxonomy of Functional Upper Extremity Motion. Frontiers in Neurology,
+10, 2019.
+[29] Issam Boukhennoufa, Xiaojun Zhai, Victor Utti, Jo Jackson, and Klaus D. McDonald-Maier.
+Wearable sensors and machine learning in post-stroke rehabilitation assessment: A systematic
+review. Biomedical Signal Processing and Control, 71:103197, January 2022.
+[30] Marco Ruzzon, Alessandro Carfì, Takahiro Ishikawa, Fulvio Mastrogiovanni, and Toshiyuki Mu-
+rakami. A multi-sensory dataset for the activities of daily living. Data in Brief, 32:106122,
+October 2020.
+[31] Aakash Kaku, Kangning Liu, Avinash Parnandi, Haresh Rengaraj Rajamohan, Kannan
+Venkataramanan, Anita Venkatesan, Audre Wirtanen, Natasha Pandit, Heidi Schambra, and
+Carlos Fernandez-Granda. StrokeRehab: A Benchmark Dataset for Sub-second Action Identifi-
+cation. Advances in Neural Information Processing Systems, 35:1671–1684, December 2022.
+[32] Michelle L. Woodbury, Craig A. Velozo, Lorie G. Richards, and Pamela W. Duncan. Rasch
+Analysis Staging Methodology to Classify Upper Extremity Movement Impairment After Stroke.
+Archives of Physical Medicine and Rehabilitation, 94(8):1527–1533, August 2013.
+[33] Collecting complex activity data sets in highly rich networked sensor environments. 2010 Seventh
+International Conference on Networked Sensing Systems (INSS), 2010. Meeting Name: Seventh
+International Conference on Networked Sensing Systems.
+[34] Attila Reiss and Didier Stricker. Introducing a New Benchmarked Dataset for Activity Monitoring.
+In 2012 16th International Symposium on Wearable Computers, pages 108–109, June 2012. ISSN:
+2376-8541.
+[35] Ryanne J. M. Lemmens, Yvonne J. M. Janssen-Potten, Annick A. A. Timmermans, Rob J. E. M.
+Smeets, and Henk A. M. Seelen. Recognizing Complex Upper Extremity Activities Using Body
+Worn Sensors. PLOS ONE, 10(3):e0118642, March 2015. Publisher: Public Library of Science.
+[36] Tâm Huỳnh, Ulf Blanke, and Bernt Schiele. Scalable Recognition of Daily Activities with Wearable
+Sensors. In Jeffrey Hightower, Bernt Schiele, and Thomas Strang, editors, Location- and Context-
+Awareness, Lecture Notes in Computer Science, pages 50–67, Berlin, Heidelberg, 2007. Springer.
+[37] Ling Bao and Stephen S. Intille. Activity Recognition from User-Annotated Acceleration Data. In
+Alois Ferscha and Friedemann Mattern, editors, Pervasive Computing, Lecture Notes in Computer
+Science, pages 1–17, Berlin, Heidelberg, 2004. Springer.
+[38] Pin-Wei Chen, Nathan A. Baune, Igor Zwir, Jiayu Wang, Victoria Swamidass, and Alex W.K.
+Wong. Measuring Activities of Daily Living in Stroke Patients with Motion Machine Learning
+Algorithms: A Pilot Study. International Journal of Environmental Research and Public Health,
+18(4):1634, February 2021.
+[39] Allen Y. Yang, Sameer Iyengar, Philip Kuryloski, and Roozbeh Jafari. Distributed segmentation
+and classification of human actions using a wearable motion sensor network. In 2008 IEEE
+Computer Society Conference on Computer Vision and Pattern Recognition Workshops, pages
+1–8, Anchorage, AK, USA, June 2008. IEEE.
+[40] Davide Anguita Jorge Reyes-Ortiz. Human Activity Recognition Using Smartphones, 2013.
+59 Tanguy Lewko , 7.3.2024
+
+--- PAGE 67 ---
+Master’s Thesis
+[41] A. G. Ivakhnenko and Valentin Grigorevich Lapa. Cybernetics and Forecasting Techniques. Amer-
+ican Elsevier Publishing Company, 1967. Google-Books-ID: rGFgAAAAMAAJ.
+[42] Jürgen Schmidhuber. Deep learning in neural networks: An overview. Neural Networks, 61:85–
+117, January 2015.
+[43] Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. ImageNet Classification with Deep Con-
+volutional Neural Networks. In Advances in Neural Information Processing Systems, volume 25.
+Curran Associates, Inc., 2012.
+[44] Xiang Yang Lim, Kok Beng Gan, and Noor Azah Abd Aziz. Deep ConvLSTM Network with
+Dataset Resampling for Upper Body Activity Recognition Using Minimal Number of IMU Sensors.
+Applied Sciences, 11(8):3543, January 2021. Number: 8 Publisher: Multidisciplinary Digital
+Publishing Institute.
+[45] Nils Y. Hammerla, Shane Halloran, and Thomas Ploetz. Deep, Convolutional, and Recurrent
+Models for Human Activity Recognition using Wearables, April 2016. arXiv:1604.08880 [cs, stat].
+[46] Xiaochun Yin, Zengguang Liu, Deyong Liu, and Xiaojun Ren. A Novel CNN-based Bi-LSTM
+parallel model with attention mechanism for human activity recognition with noisy data. Scientific
+Reports, 12(1):7878, May 2022. Number: 1 Publisher: Nature Publishing Group.
+[47] Zartasha Baloch, Faisal Karim Shaikh, and Mukhtiar Ali Unar. CNN-LSTM-Based Late Sensor
+Fusion for Human Activity Recognition in Big Data Networks. Wireless Communications and
+Mobile Computing, 2022:e3434100, August 2022. Publisher: Hindawi.
+[48] Madhuri Panwar, Dwaipayan Biswas, Harsh Bajaj, Michael Jöbges, Ruth Turk, Koushik Ma-
+haratna, and Amit Acharyya. Rehab-Net: Deep Learning Framework for Arm Movement Clas-
+sification Using Wearable Sensors for Stroke Rehabilitation. IEEE Transactions on Biomedi-
+cal Engineering, 66(11):3026–3037, November 2019. Conference Name: IEEE Transactions on
+Biomedical Engineering.
+[49] Juan Pablo Gomez-Arrunategui, Janice J. Eng, and Antony J. Hodgson. Monitoring Arm Move-
+ments Post-Stroke for Applications in Rehabilitation and Home Settings. IEEE Transactions on
+Neural Systems and Rehabilitation Engineering, 30:2312–2321, 2022. Conference Name: IEEE
+Transactions on Neural Systems and Rehabilitation Engineering.
+[50] Konstantinos Kyritsis, Christos Diou, and Anastasios Delopoulos. A Data Driven End-to-End
+Approach for In-the-Wild Monitoring of Eating Behavior Using Smartwatches. IEEE Journal of
+Biomedical and Health Informatics, PP:1–1, April 2020.
+[51] Anusha David, Rajavel Ramadoss, Amutha Ramachandran, and Shoba Sivapatham. Activity
+recognition of stroke-affected people using wearable sensor. ETRI Journal, n/a(n/a). _eprint:
+https://onlinelibrary.wiley.com/doi/pdf/10.4218/etrij.2022-0242.
+[52] Aakash Kaku, Kangning Liu, Avinash Parnandi, Haresh Rengaraj Rajamohan, Kannan
+Venkataramanan, Anita Venkatesan, Audre Wirtanen, Natasha Pandit, Heidi Schambra, and Car-
+los Fernandez-Granda. Sequence-to-Sequence Modeling for Action Identification at High Temporal
+Resolution, November 2021. arXiv:2111.02521 [cs, q-bio].
+[53] Hongyi Zhu, Hsinchun Chen, and Randall Brown. A sequence-to-sequence model-based deep
+learning approach for recognizing activity of daily living for senior care. Journal of Biomedical
+Informatics, 84:148–158, August 2018.
+[54] Reem Abdel-Salam, Rana Mostafa, and Mayada Hadhood. Human Activity Recognition using
+Wearable Sensors: Review, Challenges, Evaluation Benchmark, January 2021. arXiv:2101.01665
+[cs].
+60 Tanguy Lewko , 7.3.2024
+
+--- PAGE 68 ---
+Master’s Thesis
+[55] Kexin Zhang, Qingsong Wen, Chaoli Zhang, Rongyao Cai, Ming Jin, Yong Liu, James Zhang,
+Yuxuan Liang, Guansong Pang, Dongjin Song, and Shirui Pan. Self-Supervised Learning for Time
+Series Analysis: Taxonomy, Progress, and Prospects, July 2023. arXiv:2306.10125 [cs, eess, stat].
+[56] Setareh Rahimi Taghanaki, Michael J Rainbow, and Ali Etemad. Self-supervised Human Activity
+Recognition by Learning to Predict Cross-Dimensional Motion. In Proceedings of the 2021 ACM
+International Symposium on Wearable Computers, ISWC ’21, pages 23–27, New York, NY, USA,
+September 2021. Association for Computing Machinery.
+[57] Guodong Ding, Fadime Sener, and Angela Yao. Temporal Action Segmentation: An Analysis of
+Modern Techniques, August 2023. arXiv:2210.10352 [cs].
+[58] Rui Yao, Guosheng Lin, Qinfeng Shi, and Damith C. Ranasinghe. Efficient dense labelling of
+human activity sequences from wearables using fully convolutional networks. Pattern Recognition,
+78:252–266, June 2018.
+[59] Oresti Banos, Juan-Manuel Galvez, Miguel Damas, Hector Pomares, and Ignacio Rojas. Window
+Size Impact in Human Activity Recognition. Sensors (Basel, Switzerland), 14(4):6474–6499, April
+2014.
+[60] Milagros Jaén-Vargas, Karla Miriam Reyes Leiva, Francisco Fernandes, Sérgio Barroso Gonçalves,
+Miguel Tavares Silva, Daniel Simões Lopes, and José Javier Serrano Olmedo. Effects of sliding
+window variation in the performance of acceleration-based human activity recognition using deep
+learning models. PeerJ Computer Science, 8:e1052, August 2022.
+[61] Akbar Dehghani, Omid Sarbishei, Tristan Glatard, and Emad Shihab. A Quantitative Comparison
+of Overlapping and Non-Overlapping Sliding Windows for Human Activity Recognition Using
+Inertial Sensors. Sensors, 19(22):5026, January 2019. Number: 22 Publisher: Multidisciplinary
+Digital Publishing Institute.
+[62] Davoud Gholamiangonabadi, Nikita Kiselov, and Katarina Grolinger. Deep Neural Networks for
+Human Activity Recognition With Wearable Sensors: Leave-One-Subject-Out Cross-Validation
+for Model Selection. IEEE Access, 8:133982–133994, 2020. Conference Name: IEEE Access.
+[63] Diederik P. Kingma and Jimmy Ba. Adam: A Method for Stochastic Optimization, January 2017.
+arXiv:1412.6980 [cs].
+[64] Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan,
+Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban Desmaison, Andreas Köpf,
+Edward Yang, Zach DeVito, Martin Raison, Alykhan Tejani, Sasank Chilamkurthy, Benoit
+Steiner, Lu Fang, Junjie Bai, and Soumith Chintala. PyTorch: An Imperative Style, High-
+Performance Deep Learning Library, December 2019. arXiv:1912.01703 [cs, stat].
+[65] Long Meng, Anjing Zhang, Chen Chen, Xingwei Wang, Xinyu Jiang, Linkai Tao, Jiahao Fan,
+Xuejiao Wu, Chenyun Dai, Yiyuan Zhang, Bart Vanrumste, Toshiyo Tamura, and Wei Chen.
+Exploration of Human Activity Recognition Using a Single Sensor for Stroke Survivors and Able-
+Bodied People. Sensors, 21(3):799, January 2021. Number: 3 Publisher: Multidisciplinary Digital
+Publishing Institute.
+[66] Qingsong Wen, Liang Sun, Fan Yang, Xiaomin Song, Jingkun Gao, Xue Wang, and Huan Xu.
+Time Series Data Augmentation for Deep Learning: A Survey. In Proceedings of the Thir-
+tieth International Joint Conference on Artificial Intelligence, pages 4653–4660, August 2021.
+arXiv:2002.12478 [cs, eess, stat].
+[67] Odongo Steven Eyobu and Dong Seog Han. Feature Representation and Data Augmentation for
+Human Activity Classification Based on Wearable IMU Sensor Data Using a Deep LSTM Neural
+Network. Sensors, 18(9):2892, September 2018. Number: 9 Publisher: Multidisciplinary Digital
+Publishing Institute.
+61 Tanguy Lewko , 7.3.2024
+
+--- PAGE 69 ---
+Master’s Thesis
+[68] Terry Taewoong Um, Franz Michael Josef Pfister, Daniel Pichler, Satoshi Endo, Muriel Lang,
+Sandra Hirche, Urban Fietzek, and Dana Kulić. Data Augmentation of Wearable Sensor Data
+for Parkinson’s Disease Monitoring using Convolutional Neural Networks. In Proceedings of the
+19th ACM International Conference on Multimodal Interaction, pages 216–220, November 2017.
+arXiv:1706.00527 [cs].
+[69] Hirotaka Uchitomi, Xianwen Ming, Changyu Zhao, Taiki Ogata, and Yoshihiro Miyake. Clas-
+sification of mild Parkinson’s disease: data augmentation of time-series gait data obtained via
+inertial measurement units. Scientific Reports, 13(1):12638, August 2023. Number: 1 Publisher:
+Nature Publishing Group.
+[70] E Ribera D’Alcala’, J A Voerman, J M Konrath, and A Vydhyanathan. Xsens DOT Wearable
+Sensor Platform White Paper.
+[71] Keval Chavda. kevalvc/Python-Annotator-for-VideoS, December 2023. original-date: 2020-01-
+21T10:44:35Z.
+[72] Carolyn Gowland, Hubert deBruin, John V Basmajian, Nancy Plews, and Ion Burcea. Agonist and
+Antagonist Activity During Voluntary Upper-Limb Movement in Patients with Stroke. Physical
+Therapy, 72(9):624–633, September 1992.
+[73] Catherine A. Trombly. Deficits of Reaching in Subjects With Left Hemiparesis: A Pilot Study.
+The American Journal of Occupational Therapy, 46(10):887–897, October 1992.
+[74] Mindy F. Levin. Interjoint coordination during pointing movements is disrupted in spastic hemi-
+paresis. Brain, 119(1):281–293, February 1996.
+[75] Shanie A. L. Jayasinghe, Rui Wang, Rani Gebara, Subir Biswas, and Rajiv Ranganathan. Com-
+pensatory Trunk Movements in Naturalistic Reaching and Manipulation Tasks in Chronic Stroke
+Survivors. Journal of Applied Biomechanics, 37(3):215–223, June 2021.
+[76] Xiaoyi Wang, Yan Fu, Bing Ye, Jessica Babineau, Yong Ding, and Alex Mihailidis. Technology-
+Based Compensation Assessment and Detection of Upper Extremity Activities of Stroke Survivors:
+Systematic Review. Journal of Medical Internet Research, 24(6):e34307, June 2022.
+[77] Anne Schwarz, Christoph M. Kanzler, Olivier Lambercy, Andreas R. Luft, and Janne M. Veerbeek.
+Systematic Review on Kinematic Assessments of Upper Limb Movements After Stroke. Stroke,
+50(3):718–727, March 2019. Publisher: American Heart Association.
+[78] A Williams Andrews and Richard W Bohannon. Decreased Shoulder Range of Motion on Paretic
+Side After Stroke. Physical Therapy, 69(9):768–772, September 1989.
+[79] Justin A. Beebe and Catherine E. Lang. Active Range of Motion Predicts Upper Extremity
+Function 3 Months After Stroke. Stroke, 40(5):1772–1779, May 2009. Publisher: American Heart
+Association.
+[80] Brandon Rohrer, Susan Fasoli, Hermano Igo Krebs, Richard Hughes, Bruce Volpe, Walter R.
+Frontera, Joel Stein, and Neville Hogan. Movement Smoothness Changes during Stroke Recovery.
+Journal of Neuroscience, 22(18):8297–8304, September 2002. Publisher: Society for Neuroscience
+Section: ARTICLE.
+[81] Alejandro Melendez-Calderon, Camila Shirota, and Sivakumar Balasubramanian. Estimating
+Movement Smoothness From Inertial Measurement Units. Frontiers in Bioengineering and
+Biotechnology, 8, 2021.
+[82] Sivakumar Balasubramanian, Alejandro Melendez-Calderon, and Etienne Burdet. A Robust and
+Sensitive Metric for Quantifying Movement Smoothness. IEEE Transactions on Biomedical En-
+gineering, 59(8):2126–2136, August 2012. Conference Name: IEEE Transactions on Biomedical
+Engineering.
+62 Tanguy Lewko , 7.3.2024
+
+--- PAGE 70 ---
+Master’s Thesis
+[83] Yoav Beck, Talia Herman, Marina Brozgol, Nir Giladi, Anat Mirelman, and Jeffrey M. Hausdorff.
+SPARC: a new approach to quantifying gait smoothness in patients with Parkinson’s disease.
+Journal of NeuroEngineering and Rehabilitation, 15:49, June 2018.
+[84] Flora do Vale Garcia, Maira Jaqueline da Cunha, Clarissa Pedrini Schuch, Giulia Palermo Schifino,
+Gustavo Balbinot, and Aline Souza Pagnussat. Movement smoothness in chronic post-stroke
+individuals walking in an outdoor environment—A cross-sectional study using IMU sensors. PLOS
+ONE, 16(4):e0250100, April 2021. Publisher: Public Library of Science.
+[85] Mohamed Irfan Mohamed Refai, Mique Saes, Bouke L. Scheltinga, Joost van Kordelaar, Johannes
+B. J. Bussmann, Peter H. Veltink, Jaap H. Buurke, Carel G. M. Meskers, Erwin E. H. van Wegen,
+Gert Kwakkel, and Bert-Jan F. van Beijnum. Smoothness metrics for reaching performance after
+stroke. Part 1: which one to choose? Journal of NeuroEngineering and Rehabilitation, 18(1):154,
+October 2021.
+[86] Emi Inada, Issei Saitoh, Yong Yu, Daisuke Tomiyama, Daisuke Murakami, Yoshihiko Takemoto,
+Ken Morizono, Tomonori Iwasaki, Yoko Iwase, and Youichi Yamasaki. Quantitative evaluation of
+toothbrush and arm-joint motion during tooth brushing. Clinical Oral Investigations, 19(6):1451–
+1462, July 2015.
+[87] Matt Simkins, Anne Burleigh Jacobs, and Jacob Rosen. Rhythmic affects on stroke-induced joint
+synergies across a range of speeds. Experimental Brain Research, 229(4):517–524, September 2013.
+[88] Margit Alt Murphy, Carin Willén, and Katharina S. Sunnerhagen. Kinematic Variables Quanti-
+fying Upper-Extremity Performance After Stroke During Reaching and Drinking From a Glass.
+Neurorehabilitation and Neural Repair, 25(1):71–80, January 2011. Publisher: SAGE Publications
+Inc STM.
+[89] Kyung Kim, Won-Kyung Song, Jeongsu Lee, Hwi-Young Lee, Dae Sung Park, Byung-Woo Ko,
+and Jongbae Kim. Kinematic analysis of upper extremity movement during drinking in hemiplegic
+subjects. Clinical Biomechanics, 29(3):248–256, March 2014.
+[90] Margit Alt Murphy, Carin Willén, and Katharina S. Sunnerhagen. Movement Kinematics During a
+Drinking Task Are Associated With the Activity Capacity Level After Stroke. Neurorehabilitation
+and Neural Repair, 26(9):1106–1115, November 2012. Publisher: SAGE Publications Inc STM.
+[91] Lei Yu, Daxi Xiong, Liquan Guo, and Jiping Wang. A remote quantitative Fugl-Meyer assess-
+ment framework for stroke patients based on wearable sensor networks. Computer Methods and
+Programs in Biomedicine, 128:100–110, May 2016.
+[92] Sarvenaz Chaeibakhsh, Elissa Phillips, Amanda Buchanan, and Eric Wade. Upper extremity post-
+stroke motion quality estimation with decision trees and bagging forests. In 2016 38th Annual
+International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC),
+pages 4585–4588, August 2016. ISSN: 1558-4615.
+[93] Brandon Oubre, Jean-Francois Daneault, Hee-Tae Jung, Kallie Whritenour, Jose Garcia Vivas
+Miranda, Joonwoo Park, Taekyeong Ryu, Yangsoo Kim, and Sunghoon Ivan Lee. Estimat-
+ing Upper-Limb Impairment Level in Stroke Survivors Using Wearable Inertial Sensors and a
+Minimally-Burdensome Motor Task. IEEE Transactions on Neural Systems and Rehabilitation
+Engineering, 28(3):601–611, March 2020.
+[94] Inti Vanmechelen, Helga Haberfehlner, Joni De Vleeschhauwer, Ellen Van Wonterghem, Hilde
+Feys, Kaat Desloovere, Jean-Marie Aerts, and Elegast Monbaliu. Assessment of movement dis-
+orders using wearable sensors during upper limb tasks: A scoping review. Frontiers in Robotics
+and AI, 9, 2023.
+[95] Keith A. Yeomans and Paul A. Golder. The Guttman-Kaiser Criterion as a Predictor of the
+Number of Common Factors. Journal of the Royal Statistical Society. Series D (The Statistician),
+31(3):221–229, 1982. Publisher: [Royal Statistical Society, Wiley].
+63 Tanguy Lewko , 7.3.2024
+
+--- PAGE 71 ---
+Master’s Thesis
+[96] P. C. Mahalanobis. On the Generalized Distance in Statistics. Sankhyā: The Indian Journal of
+Statistics, Series A (2008-), 80:S1–S7, 2018. Publisher: [Springer, Indian Statistical Institute].
+[97] Christophe Leys, Olivier Klein, Yves Dominicy, and Christophe Ley. Detecting multivariate out-
+liers: Use a robust variant of the Mahalanobis distance. Journal of Experimental Social Psychology,
+74:150–156, January 2018.
+[98] A. Bhattacharyya. On a Measure of Divergence between Two Multinomial Populations. Sankhyā:
+The Indian Journal of Statistics (1933-1960), 7(4):401–406, 1946. Publisher: Springer.
+[99] Stanisław Węglarczyk. Kernel density estimation and its application. ITM Web of Conferences,
+23:00037, 2018. Publisher: EDP Sciences.
+[100] Jamie A. Ward, Paul Lukowicz, and Hans W. Gellersen. Performance metrics for activity recog-
+nition. ACM Transactions on Intelligent Systems and Technology, 2(1):6:1–6:23, January 2011.
+64 Tanguy Lewko , 7.3.2024
+
+--- PAGE 72 ---
+Appendix
+
+--- PAGE 73 ---
+Appendix A
+Evaluation metrics for activity
+segmentation
+Confusion matrix
+The confusion matrix is a pivotal tool for assessing the performance of classification models. Represented
+as a table, the confusion matrix compares the actual classifications of instances with the predictions
+made by the model. Let C be the confusion matrix, where Cij denotes the count of instances belonging
+to class i that were predicted as class j. The matrix is organized into rows and columns, where each
+row corresponds to the instances in a true class, and each column represents the instances predicted
+by the model for a given class. The diagonal elements (Cii) signify the number of correct predictions
+for each class, while the nondiagonal elements indicate misclassifications. The confusion matrix can be
+expressed as follows.
+C =
+
+
+
+
+
+C11 C12 ··· C1n
+C21 C22 ··· C2n
+. . .
+. . .
+...
+. . .
+Cn1 Cn2 ··· Cnn
+
+
+
+
+
+This detailed breakdown allows for a nuanced understanding of a model’s performance, enabling the
+computation of various metrics such as accuracy, precision, recall, and F1 score, which are crucial for a
+comprehensive evaluation of the model’s effectiveness in handling multiple classes.
+Accuracy
+The accuracy of a classifier with multiple labels is computed as follows:
+Accuracy =
+Pn
+i=1 Cii
+Pn
+i=1
+Pn
+j=1 Cij
+(A.1)
+Where:
+• Accuracy is the ratio of correctly predicted instances to the total number of instances.
+• C is the confusion matrix, where Cij represents the number of instances of class i that were
+predicted as class j.
+• n is the number of classes in the classification problem.
+1
+
+--- PAGE 74 ---
+Master’s Thesis
+Multi-Class F1 Score
+The F1 score is a widely used metric for assessing the performance of a classifier, particularly in scenarios
+with imbalanced class distribution. In the context of a multi-class classification task, the F1 score for
+each class can be expressed in terms of the confusion matrix:
+Precision(class = a) =
+Caa
+Pn
+i=1 Cia
+(A.2)
+Recall(class = a) =
+Caa
+Pn
+i=1 Cai
+(A.3)
+F1 Score(class = a) =
+2 × Precision(class = a) × Recall(class = a)
+Precision(class = a) + Recall(class = a)
+(A.4)
+The F1 scores for each class can then be averaged in different ways. Standard averaging methods include
+the weighted average, which uses the number of samples as weights; the macro average, the arithmetic
+mean of the F1 scores; and the micro average, equal to the overall accuracy.
+For a multiclass classification task, let F1(class = a) represent the F1 score for class a as computed in
+Equation (3). Then, the averaging methods are defined as follows:
+1. Weighted Average:
+Weighted F1 =
+Pn
+a=1 F1(class = a) × Number of samples in class a
+Pn
+a=1 Number of samples in class a
+(A.5)
+2. Macro Average:
+Macro F1 =
+1
+n
+n X
+a=1
+F1(class = a) (A.6)
+3. Micro Average (equal to overall accuracy):
+Micro F1 =
+Pn
+a=1 Caa
+Pn
+i=1
+Pn
+j=1 Cij
+(A.7)
+Comprehensive metrics for continuous activity recognition
+In [100], the authors insist that standard evaluation metrics borrowed from the pattern recognition
+field fail to capture common artifacts in continuous activity recognition, such as event fragmentation,
+event merging, or timing offsets. Their goal was to characterize performance by showing the algorithm’s
+strengths and weaknesses.
+They report true positives and true negatives as well as the following types of error [58]:
+• Overfill and underfill. Overfill occurs when a start label starts before the actual start time of the
+activity or when a stop ends after the end of the class. Conversely, underfill happens when the
+start is after the actual activity starts or the stop is before.
+• Insertion: Predicting an activity when the ground truth is negative class.
+• Fragmentation: Error of predicting the negative class between an uninterrupted activity class.
+• Deletion: Assigning a negative class label where there is an activity.
+• Substitution: Activity is classified as a different class than the negative one.
+2 Tanguy Lewko , 7.3.2024
+
+--- PAGE 75 ---
+Appendix B
+IMU-based metrics comparisons
+3
+
+--- PAGE 76 ---
+Master’s Thesis
+Healthy Mild Moderate ANOVA Healthy vs. Mild Healthy vs. Moderate Mild vs. Moderate
+Metric mean SD mean SD mean SD p-value F-stat p-value t-stat p-value t-stat p-value t-stat
+Forearm acc median 75.0 36.5 57.9 26.8 56.2 13.5 <0.0001 11.28 0.005 3.23 0.0001 4.24 1 0.48
+Forearm acc 95p 267.5 130.6 187.3 101.4 166.3 65.1 <0.0001 21.41 0.0002 4.17 <0.0001 6.13 0.41 1.50
+Forearm acc mead 32.5 17.9 22.4 12.7 20.7 5.8 <0.0001 18.67 0.0003 3.97 <0.0001 5.53 0.93 1.02
+Forearm acc SPARC -5.51 0.97 -6.02 1.29 -7.57 2.07 <0.0001 39.65 0.02 2.73 <0.0001 8.16 <0.0001 5.37
+Forearm gyr median 0.473 0.115 0.624 0.212 0.668 0.194 <0.0001 27.27 <0.0001 -5.58 <0.0001 -7.83 0.56 -1.33
+Forearm gyr 95p 0.619 0.089 0.731 0.167 0.770 0.162 <0.0001 24.85 <0.0001 -5.31 <0.0001 -7.42 0.46 -1.43
+Forearm gyr mead 0.105 0.036 0.071 0.035 0.068 0.038 <0.0001 26.24 <0.0001 5.92 <0.0001 6.45 1 0.55
+Forearm gyr SPARC -5.23 0.69 -5.99 00.89 -6.39 1.06 <0.0001 35.61 <0.0001 5.96 <0.0001 8.29 0.045 2.46
+Upper arm acc median 44.8 25.8 48.6 53.4 31.4 7.3 0.0046 5.51 1 -0.57 0.0001 4.42 0.017 2.80
+Upper arm acc 95p 125.4 72.4 138.9 121.8 76.33 25.32 <0.0001 12.36 1 -0.85 <0.0001 5.64 0.0001 4.40
+Upper arm acc mead 18.87 11.66 20.74 25.33 11.28 3.25 0.0006 7.69 1 -0.60 <0.0001 5.53 0.0043 3.25
+Upper arm acc SPARC -6.14 1.15 -5.87 1.05 -8.01 1.93 <0.0001 50.46 0.40 -1.51 <0.0001 7.57 <0.0001 8.23
+Upper arm gyr median 0.245 0.082 0.507 0.235 0.549 0.229 <0.0001 59.51 <0.0001 -9.52 <0.0001 -11.38 0.85 -0.73
+Upper arm gyr 95p 0.384 0.096 0.578 0.217 0.626 0.188 <0.0001 44.91 <0.0001 -7.34 <0.0001 -10.39 0.47 -1.43
+Upper arm gyr mead 0.061 0.029 0.040 0.030 0.039 0.039 <0.0001 11.02 0.0001 4.36 0.0003 3.99 1 0.13
+Upper arm gyr SPARC -5.81 1.09 -6.89 1.23 -6.78 1.08 <0.0001 22.27 <0.0001 5.80 <0.0001 5.71 1 -0.58
+Arm cross corr gyr 0.85 0.36 0.53 0.60 0.49 0.70 0.0001 10.13 0.0002 4.16 0.0001 4.22 1 0.37
+Movement time 1.17 0.40 1.16 0.40 1.85 1.20 <0.0001 20.34 1 0.21 <0.0001 -4.89 <0.0001 -4.55
+Table B.1: Drinking transport metrics and statistical tests. acc refers to the norm of the acceleration. gyr refers to the norm of the angular velocity.
+95p refers to the 95th percentile of the variable of interest and mead is the median absolute deviation. Arm cross corr gyr is the cross-correlation
+between angular velocities of the forearm and the upper arm.
+4 Tanguy Lewko , 7.3.2024
+
+--- PAGE 77 ---
+Master’s Thesis
+Healthy Mild Moderate ANOVA Healthy vs. Mild Healthy vs. Moderate Mild vs. Moderate
+Metric mean SD mean SD mean SD p-value F-stat p-value t-stat p-value t-stat p-value t-stat
+Forearm acc median 146.7 61.3 106.4 61.0 95.1 42.0 <0.0001 19.28 0.0002 4.06 <0.0001 6.18 0.58 1.30
+Forearm acc 95p 284.6 106.2 196.8 101.0 220.3 86.2 <0.0001 16.72 <0.0001 5.20 0.0001 4.20 0.40 -1.51
+Forearm acc mead 52.7 21.0 36.9 23.4 37.2 19.5 <0.0001 14.38 0.0001 4.39 <0.0001 4.84 1 -0.08
+Forearm acc SPARC -5.43 1.19 -6.00 1.46 -6.94 1.80 <0.0001 20.60 0.03 2.66 <0.0001 6.32 0.002 3.43
+Forearm gyr median 0.370 0.115 0.575 0.220 0.593 0.236 <0.0001 32.59 <0.0001 -7.42 <0.0001 -7.74 1 -0.49
+Forearm gyr 95p 0.645 0.083 0.742 0.158 0.783 0.146 <0.0001 23.75 <0.0001 -4.88 <0.0001 -7.47 0.32 -1.62
+Forearm gyr mead 0.113 0.058 0.090 0.057 0.074 0.048 0.0001 10.34 0.042 2.48 <0.0001 4.61 0.23 1.78
+Forearm gyr SPARC -4.95 0.86 -5.86 0.97 -6.19 1.14 <0.0001 33.94 <0.0001 6.20 <0.0001 7.85 0.20 1.85
+Upper arm acc median 72.9 42.9 68.3 50.6 45.3 15.4 <0.0001 11.28 1 0.62 <0.0001 5.35 0.0006 3.80
+Upper arm acc 95p 169.1 101.8 147.6 102.7 102.1 36.2 <0.0001 12.59 0.59 1.30 <0.0001 5.47 0.0011 3.64
+Upper arm acc mead 25.9 14.5 24.1 15.9 16.9 6.7 <0.0001 10.75 1 0.78 <0.0001 5.03 0.0012 3.61
+Upper arm acc SPARC -5.45 1.04 -5.95 1.56 -7.02 1.70 <0.0001 24.53 0.06 2.36 <0.0001 7.16 3.96 0.0003
+Upper arm gyr SPARC -5.60 1.08 -6.42 1.06 -6.72 0.97 <0.0001 24.93 <0.0001 4.70 <0.0001 6.87 0.24 1.76
+Upper arm gyr median 0.247 0.079 0.512 0.236 0.539 0.252 <0.0001 52.05 <0.0001 -9.64 <0.0001 -10.11 1 -0.68
+Upper arm gyr 95p 0.424 0.089 0.605 0.220 0.653 0.182 <0.0001 41.33 <0.0001 -6.91 <0.0001 -10.27 0.46 0.46
+Upper arm gyr mead 0.046 0.033 0.051 0.038 0.033 0.033 0.006 5.29 1 -0.95 0.051 2.41 0.008 3.06
+Arm cross corr gyr 0.81 0.45 0.63 0.59 0.53 0.7 0.009 4.83 0.09 2.18 0.008 3.07 1 0.91
+Movement time 1.00 0.30 1.05 0.32 1.42 0.45 <0.0001 30.92 1 -0.87 <0.0001 -6.95 <0.0001 -5.70
+Table B.2: Drinking recovery metrics and statistical tests. acc refers to the norm of the acceleration. gyr refers to the norm of the angular velocity.
+95p refers to the 95th percentile of the variable of interest and mead is the median absolute deviation. Arm cross corr gyr is the cross-correlation
+between angular velocities of the forearm and the upper arm.
+5 Tanguy Lewko , 7.3.2024
+
+--- PAGE 78 ---
+Master’s Thesis
+Healthy Mild Moderate ANOVA Healthy vs. Mild Healthy vs. Moderate Mild vs. Moderate
+Metric mean SD mean SD mean SD p-value F-stat p-value t-stat p-value t-stat p-value t-stat
+Forearm acc median 298.6 149.6 237.5 151.3 160.4 103.6 <0.0001 23.88 0.028 2.63 <0.0001 7.31 0.0002 4.03
+Forearm acc 95p 663.4 305.4 505.2 299.8 365.3 227.3 <0.0001 26.13 0.003 3.39 <0.0001 7.31 0.001 3.55
+Forearm acc mead 118.6 59.2 97.4 65.4 63.9 42.7 <0.0001 22.17 0.09 2.21 <0.0001 7.20 0.0002 4.11
+Forearm gyr median 0.448 0.140 0.672 0.243 0.658 0.242 <0.0001 29.25 <0.0001 -7.32 <0.0001 -7.02 1 0.39
+Forearm gyr 95p 0.501 0.139 0.699 0.237 0.684 0.234 <0.0001 23.76 <0.0001 -6.61 <0.0001 -6.29 1 0.416
+Forearm gyr mead 0.021 0.011 0.012 0.009 0.011 0.009 <0.0001 30.39 <0.0001 5.96 <0.0001 7.01 <0.0001 1.14
+Upper arm acc median 145.9 80.2 150.2 113.5 90.7 43.3 <0.0001 14.93 1 -0.28 <0.0001 5.87 <0.0001 4.77
+Upper arm acc 95p 320.8 156.7 339.2 223.6 212.5 106.1 <0.0001 15.56 1 -0.62 <0.0001 5.51 <0.0001 4.96
+Upper arm acc mead 58.2 30.1 64.0 48.9 36.4 18.3 <0.0001 16.76 1 -o.93 <0.0001 5.99 <0.0001 5.16
+Upper arm gyr median 0.321 0.132 0.688 0.313 0.651 0.357 <0.0001 42.19 <0.0001 -9.93 <0.0001 -8.04 1 0.74
+Upper arm gyr 95p 0.356 0.133 0.705 0.305 0.667 0.347 <0.0001 40.00 <0.0001 -9.67 <0.0001 -7.78 1 0.77
+Upper arm gyr mead 0.015 0.007 0.007 0.006 0.007 0.007 <0.0001 36.66 <0.0001 7.29 <0.0001 7.50 1 0.57
+Shoulder flexion median 54.04 14.62 55.81 14.07 43.49 18.67 <0.0001 15.77 1 -0.80 0.0001 4.20 <0.0001 4.93
+Shoulder flexion 95p 58.99 15.38 60.46 15.44 46.90 19.32 <0.0001 17.73 1 -0.61 <0.0001 4.63 <0.0001 5.14
+Shoulder flexion mead 2.30 1.32 2.16 1.52 1.49 0.95 <0.0001 10.64 1 0.63 <0.0001 4.78 0.001 3.59
+Shoulder abduction median 37.22 19.82 44.81 21.48 30.80 18.38 <0.0001 11.14 0.06 -2.38 0.07 -2.27 <0.0001 4.72
+Shoulder abduction 95p 44.63 20.60 51.31 20.64 39.94 18.97 <0.0001 13.34 0.11 -2.10 0.01 2.96 <0.0001 5.20
+Shoulder abduction mead 3.11 2.13 2.74 2.42 2.12 1.36 0.003 5.81 0.87 1.06 0.0006 3.79 0.10 2.16
+Shoulder rotation median 44.13 17.23 38.22 16.02 37.27 19.18 0.021 3.90 0.068 2.30 0.037 2.52 1 0.36
+Shoulder rotation 95p 51.97 17.64 44.20 18.48 42.69 20.96 0.003 5.93 0.018 2.79 0.0048 3.21 1 0.51
+Shoulder rotation mead 3.48 2.01 2.53 1.28 2.21 1.57 <0.0001 14.16 0.0011 3.65 <0.0001 4.76 0.45 1.45
+Table B.3: Brushing teeth metrics and statistical tests. acc refers to the norm of the acceleration. gyr refers to the norm of the angular velocity.
+95p refers to the 95th percentile of the variable of interest and mead is the median absolute deviation.
+6 Tanguy Lewko , 7.3.2024
+
+--- PAGE 79 ---

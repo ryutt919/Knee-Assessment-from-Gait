@@ -1,0 +1,1093 @@
+
+--- PAGE 1 ---
+npj Digital Medicine
+Towards Out-of-LabAnterior Cruciate Ligament Injury
+Prevention and RehabilitationAssessment:AReview of Portable
+SensingApproaches
+Tian Tan
+1,2
+,AnthonyA. Gatti
+2
+, Bingfei Fan
+3
+, Kevin G. Shea
+6
+, Seth L.
+Sherman
+6
+, Scott D. Uhlrich
+4
+, Jennifer L. Hicks
+4
+, Scott L. Delp
+4,5,6
+, Peter B.
+Shull
+1*
+andAkshay S. Chaudhari
+2,7
+1
+School of Mechanical Engineering, Shanghai Jiao Tong University, Shanghai,
+Shanghai, China.
+2
+Department of Radiology, Stanford University, Stanford, CA, USA.
+3
+College of Mechanical Engineering, Zhejiang University of Technology, Hangzhou,
+Zhejiang, China.
+4
+Department of Bioengineering, Stanford University, Stanford, CA, USA.
+5
+Department of Mechanical Engineering, Stanford University, Stanford, CA, USA.
+6
+Department of Orthopaedic Surgery, Stanford University, Stanford, CA, USA.
+7
+Department of Biomedical Data Science, Stanford University, Stanford, CA, USA.
+*Corresponding author(s). E-mail(s): pshull@sjtu.edu.cn; Contributing authors:
+alanttan@stanford.edu; aagatti@stanford.edu; bingfeifan@zjut.edu.cn;
+kgshea@stanford.edu; shermans@stanford.edu; suhlrich@stanford.edu;
+jenhicks@stanford.edu; delp@stanford.edu; akshaysc@stanford.edu;
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+
+--- PAGE 2 ---
+npj Digital Medicine
+Abstract
+Anterior cruciate ligament (ACL) injury and ACL reconstruction (ACLR) surgery are common. Many
+ACL-injured subjects develop osteoarthritis within a decade of injury, a major cause of disability
+without cure. Laboratory-based biomechanical assessment can evaluate ACL injury risk and
+rehabilitation progress after ACLR; however, lab-based measurements are expensive and inaccessible
+to a majority of people. Portable sensors such as wearables and cameras can be deployed during
+sporting activities, in clinics, and in patient homes for biomechanical assessment. Although many
+portable sensing approaches have demonstrated promising results during various assessments related
+to ACL injury, they have not yet been widely adopted as tools for ACL injury prevention training,
+evaluation of ACL reconstructions, and return-to-sport decision making. The purpose of this review is
+to summarize research on out-of-lab portable sensing applied to ACL and ACLR and offer our
+perspectives on new opportunities for future research and development. We identified 49 original
+research articles on out-of-lab ACL-related assessment; the most common sensing modalities were
+inertial measurement units (IMUs), depth cameras, and RGB cameras. The studies combined portable
+sensors with direct feature extraction, physics-based modeling, or machine learning to estimate a
+range of biomechanical parameters (e.g., knee kinematics and kinetics) during jump-landing tasks,
+cutting, squats, and gait. Many of the reviewed studies depict proof-of-concept methods for potential
+future clinical applications including ACL injury risk screening, injury prevention training, and
+rehabilitation assessment. By synthesizing these results, we describe important opportunities that exist
+for using sophisticated modeling techniques to enable more accurate assessment along with
+standardization of data collection and creation of large benchmark datasets. If successful, these
+advances will enable widespread use of portable-sensing approaches to identify ACL injury risk
+factors, mitigate high-risk movements prior to injury, and optimize rehabilitation paradigms.
+Key Words: Knee, Sports, Wearable, Screening, Risk factor
+1. Introduction
+Anterior cruciate ligament (ACL) injury is common in sports, with an estimated 400,000 people
+injuring their ACL in the United States each year [1], leading to over 129,000 ACL reconstruction
+(ACLR) surgeries [2]. Concerningly, nearly half of these patients are under 20 years of age, and they
+suffer from not only over 20% reinjury rates [115, 116] but also 50-80% knee osteoarthritis rates
+within a decade of injury [3, 4]. Knee osteoarthritis can lead to chronic pain and significant disability
+requiring surgical treatments such as total knee arthroplasty.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 3 ---
+npj Digital Medicine
+Preventing injury is a major goal of biomechanical assessments which seek to identify individuals at
+high risk of injury and provide feedback to prevent high-risk movement patterns. Identifying those
+with high injury risk and training them to adopt less risky movement patterns can lead to a wide range
+of health, societal, and economic benefits, including reductions in injury rates, sports drop-out rates,
+knee osteoarthritis incidence, and financial costs associated with rehabilitation and symptom
+management [5, 6].
+After an ACL injury, the goal of biomechanical assessment is to guide and monitor the progress of
+comprehensive rehabilitation to allow return to sport and other physical activities without reinjury.
+Rehabilitation following ACLR should be customized according to various individual factors, like the
+amount of healing present in the ACL graft, activity level, and personal preferences [7]. Periodic
+biomechanical assessment can provide insights into patients’ recovery status and allow for customized
+physical rehabilitation protocols, thus accelerating recovery, lowering the risk of a secondary ACL
+injury, and helping athletes return to pre-injury sports level [8, 9].
+Past research using laboratory-based biomechanical assessment has demonstrated that, for healthy
+athletes, non-contact ACL injury risk is associated with kinematic parameters such as the knee flexion
+and abduction angles (dynamic knee valgus), and kinetics parameters such as the knee extension and
+abduction moments during jump-landing and cutting [10-14]. Traditionally, measurement of these
+parameters requires optical motion capture and force plates. Although these devices are considered the
+gold standard for measurement, they confine the assessment to specialized motion laboratories,
+making evaluation inaccessible to a majority of people. Portable sensors such as inertial measurement
+units (IMUs) and smartphone cameras are less expensive and more portable, making them promising
+for out-of-lab assessment of pathologies like osteoarthritis [15], atrial fibrillation [16], and Parkinson’s
+disease [17]. Similarly, these sensors may offer tremendous opportunities for less expensive,
+widespreadACL injury risk screening and injury-prevention training.
+For patients undergoing rehabilitation after ACL injury and ACLR, kinematics and kinetics during
+squatting and walking may reveal dysfunctional movement patterns [18-20]. Although patients’
+readiness to return to sport is traditionally assessed via strength and hop tests, recent studies suggest
+that readiness could be more holistically assessed based on kinematics and kinetics during running
+[21, 22], squatting [23, 24], and single-leg drop vertical jump [25]. However, tools that are ready for
+at-scale, clinical assessment of kinematics and kinetics do not yet exist. Recent portable-sensor-based
+assessment methods can be used in clinics or homes [26-28], thus increasing accessibility and
+affordability, and potentially benefiting thousands of patients followingACLR.
+Accessibility of portable-sensor-based assessments can enable their broad use in ACL injury
+prevention and rehabilitation. However, the ideal methods to use, which clinically relevant parameters
+to assess, and at what point in the clinical workflow they should be employed remain unclear. We
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 4 ---
+npj Digital Medicine
+undertook this review to summarize the existing portable-sensor-based ACL assessment literature,
+including current target motions, sensing approaches, modeling techniques, and clinical applications.
+We also offer our perspectives on (1) future work that is necessary to achieve greater clinical impact
+and (2) new opportunities that may enhance the validity, reproducibility, and generalizability of the
+assessment methods.
+Fig. 1 PRISMAflow chart. Search and study selection process for this review.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 5 ---
+npj Digital Medicine
+Fig. 2 Characteristics of the included studies. a The number of articles has continually increased
+since 2007. b IMU was the most common sensor. “Multisensor” represents studies that used two or
+more sensing modalities. c Kinematic outcomes were most commonly estimated.All of the
+outcome measures used in each study were counted in the totals. d Direct feature extraction was the
+most common methodology.
+2. Results
+Our search yielded 1344 articles, of which 49 articles were included (Fig. 1), dating from 1990 to
+2022. 98% of articles were published since 2007 and 51% since 2019 (Fig. 2a). IMUs were the most
+common sensor used in isolation (22%), followed by depth cameras (16%), red-green-blue (RGB)
+cameras (8%), and electromyography (EMG) (4%) (Fig. 2b). Kinematic parameters were the
+dominant target (71%), followed by spatiotemporal parameters (18%), kinetics (12%), and muscle
+activation (10%) (Fig. 2c). The sum of percentages is greater than 100% because several studies
+targeted parameters in multiple categories. Direct feature extraction (37%) was the most common
+analysis approach, followed by physics-based modeling (24%), and machine learning (22%) (Fig. 2d).
+The majority of studies used custom methods in their analysis (71%), while the remaining studies
+(29%) used direct outputs from commercially-available systems. ACL injury risk screening (57%) and
+rehabilitation assessment (55%) were the most common clinical applications, with a smaller
+percentage focusing on injury prevention training (6%). The sum of percentages is greater than 100%
+because several studies targeted multiple clinical applications.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 6 ---
+npj Digital Medicine
+Table 1 Configurations of the included studies that only used one sensing modality.
+Sensor Number Placement Paper
+IMU 1 Shank [29-31]
+IMU 1 Waist [32, 33]
+IMU 1 Ear [34]
+IMU 1 Wrist [35]
+IMU 2 Thigh and shank [36, 37]
+IMU 2 Foot and shank [38]
+IMU 2 Both thighs [39]
+IMU 2 Both shanks [40]
+IMU 3 or More Multiple segments [26, 41-48]
+Depth camera 1 Frontal plane [27, 49-54]
+Depth camera 1 Sagittal plane [55]
+RGB camera 1 Frontal plane [56]
+RGB camera 1 Sagittal plane [57]
+RGB camera 2 Frontal and sagittal plane [58]
+RGB camera 4 Ceiling [59]
+EMG 1 Proximal to the patella [60]
+EMG 3 Vastus medialis and tibial tuberosity [61]
+Pressure insole 2 Foot [62]
+Soft fabric sensor 1 Above patella [63]
+2.1. SensingApproach
+IMU-based and RGB-camera-based studies had diverse configurations in terms of the number and
+placement of sensors (Table 1). The configuration of IMUs ranged from using one IMU for capturing
+shank movement to using seven IMUs for capturing all the lower-body joint kinematics. IMU sensors
+were most commonly placed on the shank, followed by the thigh, foot, and waist. The configuration
+of RGB cameras ranged from using one camera for capturing single-plane kinematics to using four
+calibrated cameras for capturing 3-D kinematics. The configurations of depth cameras were consistent
+in that seven out of eight studies placed a depth camera in front of the subject.
+Included studies used six different types of multi-sensor combinations, and five of them involve IMU
+(Fig. 3). Seven studies designed algorithms to fuse multi-sensor data to estimate parameters [28, 64,
+67-69, 73, 74], whereas the remaining five studies independently used different sensors to estimate
+different parameters [65, 66, 70-72]. Some sensor combinations might be redundant and could
+potentially be simplified. For example, four grounded optoelectronic bars were used to detect the
+initial foot-ground contact during landing alongside a shank IMU [73, 74]. The optoelectronic bars
+might be unnecessary because an IMU can estimate foot-ground collision by detecting the
+acceleration impulse [37]. Also, two studies simultaneously used a shank-worn IMU to measure tibial
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 7 ---
+npj Digital Medicine
+acceleration and a goniometer to measure knee flexion angle [70, 71]. The goniometer, which needs
+four belts to be strapped to the knee, could be replaced by an additional IMU on the thigh.
+Fig. 3 Studies used multiple sensing modalities. Eleven studies simultaneously used two sensing
+modalities and one study used three sensing modalities.
+2.2. Target Motions and Biomechanical Parameters
+Jump-landing, cutting, gait, and squatting were the most commonly measured activities in our
+included sample. Highlighted cells in Table 2 are primary parameters associated with ACL injury risk
+[10, 11] and rehabilitation outcomes [19, 20] that were identified in previous systematic reviews.
+Green cells are parameters that have been investigated using portable sensing, while red cells remain
+unstudied and represent important future opportunities. Many included studies estimated two primary
+kinematic parameters associated with ACL injury risk - knee flexion angle and abduction angle,
+mostly using IMUs, depth cameras, and RGB cameras (Table 2). Several studies estimated four
+primary parameters associated with ACL injury risk during jump-landing tasks, i.e., knee extension
+moment, knee separation distance, knee internal rotation, and vertical GRF during jump-landing tasks.
+Although knee abduction moment is a primary parameter that has been associated with ACL injury
+risk [10, 11] as well as knee osteoarthritis [77, 78], only one study estimated it during squatting [28].
+Apart from highlighted primary parameters, other target parameters can provide insights into ACL
+injury risk and rehabilitation outcomes as well. For example, trunk kinematics during drop jump [118]
+and the “LESS” score (Landing Error Scoring System) [117] can be used to identify athletes with
+risky movement patterns. In addition, some “non-primary” target parameters are correlated with
+primary parameters, e.g., tibial acceleration with knee extension moment during drop landing (r =
+0.72) [30], thigh angular velocity with knee extension moment during single-leg forward hopping (r =
+0.59) [48], tibial angular velocity with knee extension moment during gait (r = 0.76) [40], and tibial
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 8 ---
+npj Digital Medicine
+and thigh angular velocity with knee abduction moment during drop vertical jump (r = 0.28-0.51)
+[43].
+Table 2 Target motions and biomechanical parameters of included studies.
+Parameter Jump-landing tasks Cutting Gait Squat
+Knee flexion angle [26, 27, 36, 37, 41, 42, 44-46, 51,
+53, 57, 59, 63]
+[26, 41, 42, 45, 50, 57] [26, 46, 68, 70,
+71]
+[28, 46]
+Knee extension moment [36] [28]
+Knee abduction angle [26, 27, 41, 42, 45, 46, 57, 59] [26, 41, 42, 45, 50, 57] [26, 46] [28, 46, 54]
+Knee abduction moment [28]
+Knee separation distance [51, 53]
+Knee internal rotation [45, 46, 57] [45, 57] [46] [28, 46]
+Vertical GRF [36, 64, 72] [55]
+Trunk kinematics [26, 37, 41, 44] [26, 41] [26]
+Hip kinematics [26, 42, 46, 59] [26, 42, 50] [26, 46] [28, 46]
+Ankle kinematics [26, 42, 46, 59] [26, 42] [26, 46] [28, 46]
+Tibia kinematics [30, 31, 43, 44, 48, 59, 74] [50] [29, 40, 65, 70,
+71]
+[74]
+Thigh kinematics [39, 48] [29]
+“LESS” score [49, 52, 58, 73] [73]
+Quadriceps EMG [65, 66, 68] [61, 66]
+Hamstring EMG [66, 68] [66]
+Hip kinetics [28]
+Ankle kinetics [28]
+Anterior-posterior GRF [55]
+Medio-lateral GRF [55]
+Jump height [32]
+Hop distance [38]
+Human contour [56]
+Foot-ground contact [37, 38, 51, 72] [33, 34, 65]
+Step count [35]
+Injury risk rated by experts [47]
+Time after surgery [69]
+Recovery status [67, 68]
+Highlighted cells are “primary parameters” associated withACL in previous systematic reviews [10, 11, 19, 20]. Green
+cells: primary parameters that have been assessed by included studies. Red cells: primary parameters that have not been
+assessed by included studies.
+Sensing approaches are IMU [26, 29-48], depth camera [27, 49-55], RGB camera [56-59], EMG [60, 61], pressure insole
+[62], soft fabric sensor [63], and multiple sensors [28, 64-74].
+Three studies conducted injury prevention training during drop vertical jumps by combining visual
+feedback with wearable IMUs [44], an RGB camera [56], or a depth camera [53]. In a drop vertical
+jump, the subject drops off a box, lands with both feet on the ground, and then immediately performs
+a maximum height vertical jump. The first study trained subjects to control their knee flexion angle
+and trunk lean estimated by three IMUs, and the training outcomes included increased knee flexion
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 9 ---
+npj Digital Medicine
+angle, increased trunk lean, reduced thigh angular velocity, and reduced knee abduction moment [44].
+The second study trained subjects to maximize the overlap between their body contour estimated by
+an RGB camera and the contour of an expert movement, and the training outcomes included reduced
+vertical ground reaction force and ankle dorsiflexion moment [56]. The third study trained subjects to
+increase their knee separation distance estimated by a depth camera, and the training outcomes
+included increased knee flexion angle and knee separation distance [53]. Although these training
+regimes have been demonstrated effective in modifying ACL injury risk factors, their utility in
+reducing real-world injury incidence rates have not been prospectively validated.
+2.3.Accuracy and Reliability
+The validity of the sensing approaches proposed by 22 studies (45%) was examined against the gold
+standard from force plates, optical motion capture, and human raters. Three studies (6%) examined
+their validity against parameters measured by another portable sensing system, i.e. knee angles from
+goniometers [63], knee angles from a commercial IMU system [46], and step time asymmetry from
+pressure insoles [34]. The remaining 24 studies (49%) did not examine the validity of the estimated
+parameters. There were substantial differences in the accuracy metrics used across studies, making it
+challenging to compare the performance of different approaches. IMU-based studies reported root
+mean square errors (RMSEs) of 1.1 - 6.5 deg for knee flexion angle estimation [41, 26, 37, 45] and
+3.3 - 10.9 deg for knee abduction angle estimation [41, 26, 45]. The accuracy of knee abduction angle
+estimation was poor considering the small knee abduction range of motion. The RMSE of knee
+flexion angle estimation was 6.8 deg when using eight calibrated RGB cameras [28], while the RMSE
+was as low as 1.7 deg when using one single RGB camera and two reflective boards with Moiré
+patterns attached to the thigh and shank [57]. Three studies examined the reliability of the sensing
+approach, either within-day [33, 63] or between-day [74] test-retest repeatability based on intraclass
+correlation coefficients (ICC). Excellent repeatability was observed in the knee flexion angle
+estimated by a soft fabric sensor (ICC ≥ 0.9) [63].
+2.4. Methodology of Biomechanical Parameter Estimation
+We categorized the methodologies for the analysis of the acquired data into three separate categories:
+1) physics-based modeling that includes studies with kinematics reconstructed from raw sensor
+measurements and kinetics estimated via inverse dynamics or musculoskeletal models, 2) machine
+learning models to estimate subjects’ status or estimate parameters, and 3) direct feature extraction
+using investigator-defined parameters from the raw sensor data.
+Eleven studies primarily used physics-based modeling. Integration of gyroscope data was combined
+with several drift compensation methods to estimate the sensor and body segment orientation in eight
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 10 ---
+npj Digital Medicine
+investigations [37, 38, 41, 44-46, 68, 74], and seven of these studies used the relative orientation
+between two segments to derive joint angles [37, 41, 44-46, 68, 74]. Only one study used
+musculoskeletal modeling, which estimated the GRF by simulating 25 artificial muscle-like actuators
+placed under each foot [55].
+Most of the machine learning studies focused on building classification models, whereas only one
+study built a regression model (linear regression) to predict kinetic parameters [36]. Two other studies
+implemented an existing deep-learning-based keypoint detection algorithm, OpenPose [119], to
+estimate joint centers from 2-D videos; one of these studies used the keypoints to derive planar joint
+angles [58] and the other predicted the “LESS” score [59]. Classification models including Support
+Vector Machines [47, 65, 73], Linear Multinomial Logistic Regression [47], Decision Trees [47, 73],
+Naive Bayes [47], K Nearest Neighbors [47, 73], and Fuzzy Clustering [67, 69] were used to identify
+walking states, identify subjects at high ACL injury risk, and classify the time (e.g., 0-3 months, 3-6
+months, and 6 months or more) afterACLR surgeries.
+A few studies directly used raw sensor measurements for assessment [30, 31, 33, 34, 39, 40, 43, 48,
+61-64, 70-72], for example, extracting peak acceleration and angular velocity from the thigh or shank
+IMU data for assessment [30, 31, 39, 40, 43, 48, 64]. Characteristics of the IMU data (e.g., local
+peaks) can also be used to segment gait cycles and derive step time asymmetry [33, 34].
+Fig. 4 a Number of subjects and b percentage of female subjects.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 11 ---
+npj Digital Medicine
+2.5. Experimental Design
+The number of subjects recruited in the included studies ranged from 9 to 169, with the median being
+24 (Fig. 4a). Twenty-five studies (51%) did not exhibit biases across the sex of included subjects, in
+that the percentages of females were between 34% and 66% (Fig. 4b). Importantly, five studies (10%)
+focused on females [35, 36, 53, 70, 71, 73, 74] (Fig. 4b), as females are more than twice as likely as
+males to have a first-time non-contact ACL injury [80]. However, four studies (8%) recruited only
+male subjects without providing a scientific rationale. Twenty-one studies (43%) recruited patients
+following ACLR. The time from ACLR to experimental testing were within 3 months [33, 34, 40, 60,
+61, 65], 3-12 months [28, 29, 32, 34, 39, 40, 46, 48, 62, 64, 65, 67-69, 72], or more than 12 months
+[35, 38, 48, 72] for the recruited patients. Eight studies (16%) recruited athletes at high risk of ACL
+injury, including basketball players [73, 74], soccer players [42, 59], and gymnasts [53]. Eight studies
+(16%) explicitly reported that their experiments were performed out of lab, including clinics [34, 46,
+64], hospitals [33], soccer fields [42], and unconstrained daily life [35, 62, 65].
+None of the studies that estimated ACL injury risk factors prospectively evaluated their estimation
+results against subjects’ future injury occurrence. One study recruited thirteen basketball players, and
+one of them suffered from an ACL injury within two weeks after the first test session [74]. The injury
+was caused by an incorrect landing phase after a single-leg jump with a pivot-shift mechanism.
+Analysis of shank-worn IMU data revealed that the variances of her tibial orientation and acceleration
+were significantly larger than the 12 uninjured players during a countermovement jump test,
+indicating poor leg stability and load absorption capability. For rehabilitation assessment, six studies
+(12%) have used portable sensors to track post-surgery longitudinal changes of quadriceps EMG [60,
+61], step count [35, 65], and level of gait asymmetry [34, 35].
+2.6. Readiness for Deployment
+We categorized the included studies into three stages based on their readiness for deployment (Fig. 5).
+72% of the included studies are in stage I, development and prototyping, as they proposed a novel
+method in-laboratory and associated its outcome with ACL injury risk or rehabilitation status. 24% of
+the included studies are in stage II, preliminary clinical validation, as they demonstrated their clinical
+utility. These studies successfully used portable sensors to detect deficits in patients following ACLR
+[62, 64, 65, 70, 72], identify subjects with high-risk movement patterns [37, 42, 47, 52, 73], and
+enable injury prevention training that led to significant reductions in ACL injury risk factors [44, 53,
+56]. However, before the deployment of these studies, further clinical validation is needed to validate
+their test-retest reliability as well as effectiveness in accelerating the post-ACLR recovery, or
+predicting and reducing real-world injury incidence rate. 4% of the included studies are in stage III,
+clinical validation, as they have proved their utility among the target population (e.g., athletes, patients
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 12 ---
+npj Digital Medicine
+following ACLR) outside of laboratories (e.g., sports fields, clinics). The only two studies in this stage
+monitored the longitudinal changes of quadriceps EMG and performed feedback training during
+rehabilitation exercises among an ACLR cohort [60, 61], and one of them was published in 1990 [60].
+Randomized controlled trials showed that EMG biofeedback accelerated the recovery of quadriceps
+strength and knee range of motion in early-stage rehabilitation.
+Fig. 5 Categorization of the included studies into three stages based on their readiness for
+deployment.
+3. Discussion
+The use of portable sensing for ACL injury risk stratification and rehabilitation has been increasing at
+an accelerated rate, with 98% of our reported studies occurring since 2007 and 51% since 2019 (Fig.
+2). These studies have been dominated by the use of IMUs (43%) as well as depth and RGB cameras
+(24%). Such portable technologies for assessing mechanics have primarily been leveraged to collect
+kinematic data at the knee during jump-landing tasks, and, to a lesser extent, during cutting and gait
+motions. While these studies have laid important groundwork for portable sensing of ACL injury and
+rehabilitation, this review highlights important strengths, current knowledge gaps, and future
+opportunities for the underlying technologies as well as their clinical applications. In the following,
+we provide our perspective on how to improve existing modeling methods and achieve broader
+clinical impact.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 13 ---
+npj Digital Medicine
+3.1. ClinicalApplications
+3.1.1. Injury Risk Screening
+Using portable sensing to estimate traditional parameters or identify new parameters associated with
+ACL injury risk represents a significant research opportunity. Jump-landing tasks were the most
+popular dynamic motion among included studies and have been established as being well suited for
+identifying athletes at greater risk of ACL injury [10]. Cutting motions were less popular, but could be
+complementary to jump-landing tasks because knee kinematics and kinetics were significantly
+different during these two motions when assess in-lab [14, 79]. Thus, simultaneous evaluation of
+jump-landing and cutting movement quality would provide a broader array of real-world conditions
+for more reliable injury risk screening. Systematic reviews of lab-based assessments have established
+that the knee angles, knee moments, and vertical GRF during jump-landing tasks and cutting are
+primary parameters for understanding ACL injuries and rehabilitation [10, 11]. Among these primary
+parameters, knee angles were estimated by many of the reviewed studies; however, only one included
+study estimated knee extension moment [36] and no study estimated knee abduction moment during
+jump-landing tasks or cutting. Recent research has shown that knee abduction moment during gait can
+be estimated from simulated 2-D video data using neural networks [81] or from real 2-D video data
+using neural networks and musculoskeletal simulation [82]. Future research should test these methods
+for dynamic activities relevant to ACL injury risk screening, such as jump-landing and cutting
+motions.
+A particular challenge with studies to establish new metrics for injury risk screening, however, is the
+low occurrence of ACL injuries that makes it challenging to pair pre-injury mechanical patterns to
+injury occurrence. Previous studies recruited hundreds to thousands of athletes from high-risk sports
+(typically young female basketball and football players) to validate traditional ACL injury risk factors
+such as joint laxity measured using a knee arthrometer [83] and knee abduction moment measured by
+marker-based motion capture and force plates [13]. In contrast, despite the portable nature of the
+sensing approaches, the included studies estimated parameters with 9-169 subjects (the median is 24),
+and only 16% recruited athletes. Consequently, ACL injury incidence was rare among the included
+studies (only one study reported an incident [74]), suggesting the need for future studies that validate
+clinical utility through prospective evaluation of the estimated parameters against real injury
+occurrence. One solution to scarcity of data from injured athletes is the creation of a standardized
+pipeline of sensor deployment, data processing, archiving, and data sharing, which could enable
+multi-center data collection from a large number of athletes in the real world. Deployment of such a
+multi-center effort is particularly feasible for non-wearable sensors (e.g., RGB and depth cameras),
+which can passively collect data without the burden of donning and doffing the sensors. Furthermore,
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 14 ---
+npj Digital Medicine
+such datasets will enable the identification and prospective validation of novel parameters that may
+more accurately predictACL injury risk than traditional parameters.
+3.1.2. Injury Prevention Training
+The prospective studies of ACL injury risk mentioned previously will be pivotal for providing targets
+for preventative training. It has been shown that young athletes can be trained to adopt less risky
+posture and reduce injury risk [12]. However, effective training typically requires multiple sessions
+per week during both pre-season and in-season [84] along with verbal feedback from expert coaching
+staff based on subjective visual observations [85]. In reality, with practical constraints such as
+demanding exercise protocols for athletes and limited availability of coaches knowledgeable in injury
+prevention, such training and feedback are challenging to implement. Prior studies have demonstrated
+that the subjectivity of such feedback may also lead to athletes experiencing considerable variability
+between recommendations amongst coaches [86]. In contrast to the subjective verbal feedback from
+human observations, the visual feedback enabled by portable sensors is tangible, quantifiable, and
+more importantly, objective [44, 53, 56]. Further, the capabilities for automatic tracking of training
+and progress provided by portable sensing technologies could also open the door to new strategies,
+such as gamification, to motivate and engage athletes in completing injury prevention programs [121,
+122].
+Current efforts focus on the paradigm described above for testing specific movements, providing
+feedback, and athletes learning to change that movement. However, lab-based methods cannot
+measure risk factors during practice or game-play; thus real-world changes to risky behaviors in
+response to training are unknown. Portable sensors are now commonly used to measure athletes’
+position in field sports using GPS, or movements using IMUs [87], from which ACL injury risk
+factors can be extracted. Longitudinal tracking of risk factor improvements during practice and
+game-play provides a novel avenue to determine the effectiveness of injury prevention training.
+Additionally, in-game and in-practice tracking allows data collection in a much larger volume in terms
+of the duration and the number of athletes compared to traditional in-lab environments. The sheer
+scale of data may overcome relatively lower quality of portable sensors and enable the identification
+of novel risk factors that were not possible in a solely lab-based environment.
+3.1.3. Return-to-Sport Decision Making
+Patients following ACLR need 4 - 12 months of rehabilitation to restore movement quality [88, 89].
+After rehabilitation, patients’ readiness to return to sport is commonly determined by whether their
+inter-limb symmetry in muscle strength, hop distance, and hop task completion time are larger than
+90% [75, 76, 90]. While these tests are beneficial since they can be implemented in clinics, previous
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 15 ---
+npj Digital Medicine
+studies reported that strength tests lack functional relevance to sporting situations [91]. Furthermore, it
+was reported that since hop tests only indirectly assess knee function and loading, they may mask
+asymmetry in lower limb biomechanics [90, 92-94]. Hop tests are also sensitive to small alterations in
+the test procedures [95].
+Apart from strength and hop test measures, asymmetrical knee kinematics and kinetics during gait and
+double-leg squat as well as improper single-leg squat mechanics such as increased knee abduction
+angle may reveal dysfunctional movement patterns [19, 20, 96]. One barrier impeding the adoption of
+parameters during squatting and gait into return-to-sport decision-making is their reliance on force
+plates and marker-based motion capture from specialized laboratories. Many studies have proposed
+portable-sensing methods to estimate knee kinematics (Table 2). Also, as previously mentioned,
+portable sensors coupled with neural networks and musculoskeletal simulation have shown promise at
+predicting knee kinetics [36, 81, 82]. Using these technologies to develop assessments that are fast
+and accurate enough for clinical deployment could enable better return-to-sport decision making and
+potentially lower the risk of reinjury. Clinical validation studies could start with young athletes [115,
+116], since their high reinjury rate could increase statistical power. Additionally, the ability to track
+biomechanical changes over time will both inform the rehabilitation approaches of clinicians and
+promote long-term patient engagement.
+3.3. Modeling Technique
+Most of the included studies used direct feature extraction and IMU data integration with drift
+compensation to estimate parameters; however, they cannot provide insights into GRF or joint
+kinetics. In contrast, machine learning, despite being computationally expensive and prone to
+overfitting in low-data regimes [97], has shown its potential for estimating kinetics in an end-to-end
+manner [98-100] or in combination with musculoskeletal modeling [82]. Few studies have attempted
+to use machine learning to estimate kinetic parameters associated with an ACL injury, so this field
+remains unstudied and represents important future opportunities; here we offer a few ideas.
+• Using transfer learning to augment training data for machine learning models in conditions with
+limited data. For example, machine learning models can be pre-trained on large corpora of data
+collected during easier-to-measure motions (e.g., walking) and/or data synthesized from readily
+available sources (e.g., [101]). Subsequently, those models can be fine-tuned on data collected
+during drop vertical jump or cutting where massive data collection is more difficult.
+• Incorporation of machine learning to enhance physics-based modeling. For example,
+physics-based models simplify the human body using parameterized formulas, where parameters
+were traditionally determined empirically or using population averages. Alternatively, these
+parameters can be learned from collected data using machine learning [102, 103].
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 16 ---
+npj Digital Medicine
+• Extraction of 3-D joint angles from camera data. Calculation of 3D joint kinematics requires
+collection of ≥ 3 non-collinear markers per rigid segment. Body keypoint detection algorithms
+employed by the included studies only extract joint centers, making derivation of 3-D joint angles
+(flexion, abduction, and internal rotation) impossible. Future studies may consider employing
+novel algorithms for extracting body meshes [104-107] or conventional biomechanical
+markersets that can be used to derive 3-D angles.
+Machine learning models have a strong dependency on datasets, so it can be challenging to generalize
+the results to new datasets. To prevent overfitting and guarantee the models’ reliability and
+generalizability, we suggest future studies follow the general recommendations provided to
+biomechanists by Halilaj and colleagues [120]. Here we offer a few additional recommendations for
+ACL-related assessment.
+• Use the target population for model training and testing. If the dataset is from a general population
+cohort, the model may not generalize to an athlete cohort who are stronger and faster, or to a
+patient cohort with pathological movement patterns.
+• Use a large and representative dataset, for example, a dataset collected from multiple laboratories
+with a balanced distribution in sex, height, weight, and age of included subjects. A small dataset
+collected by one single operator using one set of devices can suffer from biases such as biased
+marker positioning [108]. If the model is trained on such datasets, whether those biases are
+inherited by the model needs to be investigated.
+• Do not test the model using the data from the subjects that were involved in model training, unless
+additionally training data can be easily acquired from new subjects in practical applications.
+3.4. Dataset and Benchmarking
+Benchmark datasets are curated, publicly available sets of data for enabling objective comparisons
+between studies and rigorous selection of state-of-the-art methods [109]. They have already proven
+their fundamental importance in research areas such as computer vision. Although many included
+studies estimated the same biomechanical parameter during the same type of motion (Table 2),
+significant differences exist in their recruited cohorts of subjects, sources of ground truth, and metrics
+of validity. It is therefore difficult to impossible to truly compare the validity, sensitivity to parameter
+changes, or test-retest repeatability between these methods. Although a few comprehensive
+biomechanical datasets containing multiple portable sensors have been published [110-112], none
+have focused on ACL-specific tasks. To make it easier for future researchers to select the optimal
+sensing approach and estimation method, we here call for collection and publication of a benchmark
+dataset, ideally following a standardized pipeline (section 3.1.1) and open science principles to ensure
+its findability, accessibility, interoperability, and reusability [113]. Such an ideal dataset should
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 17 ---
+npj Digital Medicine
+contain simultaneously collected ground-truth kinematics, GRF, and multiple portable sensor data
+(Table 1 and Fig. 3) during a range of ACL-specific motions (Table 2). A dataset that includes
+repeated measures on the same or separate days will enable assessment of measurement reliability,
+and thus calculation of the minimum detectable change which is crucial for clinical use on an
+individual basis [114].
+4. Conclusion
+In this manuscript, we summarize the state of using portable sensors to enable a range of ACL-related
+biomechanical assessments. Through these studies, we showed that portable sensing can be used to
+monitor patient progress through the rehabilitation process and train athletes to reduce injury risk
+factors. However, despite their promising results, we highlight numerous opportunities that exist in
+clinical validation of the methods proposed by the reviewed portable sensor studies. We also highlight
+two important opportunities for future research in: (1) exploring sophisticated modeling techniques to
+enable more accurate assessment and (2) standardizing data collection and processing methods to
+pave the way for procurement of large benchmark datasets, and multi-center trials for clinical
+validation. The sheer amount of portable sensor data may enable large-scale prospective studies for
+the identification of new ACL injury risk factors, leading to novel targets for preventative training.
+The capabilities for automatic tracking of training and progress provided by portable sensing
+technologies could open the door to new strategies, such as gamified platforms, to motivate and
+engage athletes and patients in completing training programs. If successful, these advances will enable
+widespread use of portable-sensing approaches to estimate ACL injury risk factors, mitigate high-risk
+movements, customize rehabilitation paradigms for improved long-term health outcomes, and
+quantify return-to-sport readiness.
+5. Methods
+5.1. Literature SearchApproach
+The systematic review was conducted in accordance with the Preferred Reporting Items for
+Systematic Reviews and Meta-Analyses (PRISMA-2020) guidance [123]. We searched articles
+published up to March 6, 2022 from the following databases: Medline (1950-) and Web of Science
+Core Collection (1950-). The search focused on retrieving articles that included: (1) ACL, (2) portable
+sensing approaches such as IMU, EMG, video, and pressure insole, and (3) clinical applications such
+as injury risk screening (Table 3). We only considered articles written in English and those contained
+at least one term from each of the three categories above either in their title, abstract, or keywords.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 18 ---
+npj Digital Medicine
+Table 3 Specific search terms used for the literature review
+General Specific Terms
+ACL ACL OR anterior cruciate ligament
+AND
+Sensing OR feedback pressure insol* OR force insol* OR acceleromete* OR gyroscop* OR IMU OR IMUs
+OR inertial measurement uni* OR inertial senso* OR electromyogra* OR EMG OR
+video OR cellphon* OR smartphon* OR camer* OR depth OR Kinect OR wearabl* OR
+portabl* OR field-based OR out of lab OR *n field OR feedback OR biofeedback
+AND
+Clinical application injury risk OR risk factor OR risk metrics OR risk mitigation OR risk reduction OR
+injury prevention OR screening OR rehabilitation OR rehab OR trainin* OR retrainin*
+OR return to spor* OR return to play OR secon* injury OR reinjur*
+* denotes wildcard matching.
+5.2. Inclusion and Exclusion Criteria
+Two authors (T.T. and A.A.G.) independently reviewed titles, abstracts, and keywords of all the
+retrieved articles. Inclusion/exclusion disagreements were resolved by full-text review and discussion
+to reach consensus. We excluded dissertations, theses, conference proceedings, and conference
+abstracts. We also excluded articles whose primary purpose was not development, validation, or use of
+portable sensing for ACL-related assessment. In addition, we excluded articles that did not involve
+human subjects, articles that required human raters or manual labeling for qualitative assessment, and
+articles that used force plates and marker-based motion capture measurements as input data for
+assessment. Articles were not excluded if those measurements were used as the gold standard to
+determine the validity of portable sensing approaches.
+5.3. Outcome Extraction
+We carefully read and extracted the following outcomes from the included articles: area of application
+(i.e., injury risk screening, injury prevention training, rehabilitation assessment), sensing approach
+(e.g., IMU, RGB camera, EMG), target motion (i.e., jump-landing tasks, cutting, gait, squatting),
+target biomechanical parameter (e.g., knee flexion angle, vertical GRF), category of the parameter
+(e.g., kinematics, kinetics), methodology of estimation (i.e., physics-based modeling, machine
+learning, direct feature extraction), developer of the method (i.e., academic laboratories, commercial
+companies), number of subjects, sex ratio, involvement of athletes, experiment site (e.g., laboratory,
+clinics), validation (e.g., validated against force plates and optical motion capture), and repeatability
+(e.g., test-retest reliability). We also assessed whether included articles validated their clinical utility
+in detecting patients’ recovery status, accelerating rehabilitation, predicting future ACL injury
+occurrences, or enabling feedback training for injury risk reduction. Some terminologies were unified
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 19 ---
+npj Digital Medicine
+or simplified if they depicted the same fundamental measurement. For example, knee flexion angle,
+knee extension angle, and sagittal plane knee angle were unified as knee flexion angle.
+Author Contribution
+A.S.C. and P.B.S. oversaw the development of the review. K.G.S., S.L.S, S.D.U, J.L.H., and S.L.D.
+conceptualized the study. T.T. and A.A.G conducted the literature search. T.T., A.A.G, and B.F.
+prepared the first draft of the manuscript. All authors participated in drafting the manuscript, critically
+reviewed drafts of the manuscript, and approved the final version to be submitted.
+Competing Interest
+The authors declare no competing interests.
+References
+[1] Murray, M. M. in History of acl treatment and current gold standard of care (eds Murray, M.
+M., Vavken, P. & Fleming, B.) The ACL Handbook: Knee Biology, Mechanics, and Treatment
+19-28 (Springer New York, New York, NY, 2013).
+[2] Mall, N. A. et al. Incidence and trends of anterior cruciate ligament reconstruction in the united
+states. The American journal of sports medicine 42 (10), 2363-2370 (2014).
+[3] Nishimori, M. et al. Articular cartilage injury of the posterior lateral tibial plateau associated
+with acute anterior cruciate ligament injury. Knee Surgery, Sports Traumatology, Arthroscopy
+16 (3), 270-274 (2008).
+[4] Muthuri, S., McWilliams, D., Doherty, M. & Zhang, W. History of knee injuries and knee
+osteoarthritis: a meta-analysis of observational studies. Osteoarthritis and cartilage 19 (11),
+1286-1293 (2011).
+[5] Maffulli, N., Longo, U. G., Gougoulias, N., Loppini, M. & Denaro, V. Long-term health
+outcomes of youth sports injuries. British journal of sports medicine 44 (1), 21-25 (2010).
+[6] Poulsen, E. et al. Knee osteoarthritis risk is increased 4-6 fold after knee injury-a systematic
+review and meta-analysis. British journal of sports medicine 53 (23), 1454-1463 (2019).
+[7] Ma, Y. et al. Graft maturity of the reconstructed anterior cruciate ligament 6 months
+postoperatively: a magnetic resonance imaging evaluation of quadriceps tendon with bone
+block and hamstring tendon autografts. Knee Surgery, Sports Traumatology, Arthroscopy 23 (3),
+661-668 (2015).
+[8] Della Villa, F., Della Villa, S. & Buckthorpe, M. Laver, L. et al. (eds) A biomechanical
+perspective on rehabilitation of acl injuries in basketball. (eds Laver, L. et al.) Basketball
+Sports Medicine and Science, 723-736 (Springer Berlin Heidelberg, Berlin, Heidelberg, 2020).
+[9] Perry, A. et al. Acl rehabilitation: How can we lessen injury rates? Operative Techniques in
+Sports Medicine 150892 (2022).
+[10] Pedley, J. S. et al. Utility of kinetic and kinematic jumping and landing variables as predictors
+of injury risk: a systematic review. Journal of Science in Sport and Exercise 2 (4), 287-304
+(2020).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 20 ---
+npj Digital Medicine
+[11] Hughes, G. A review of recent perspectives on biomechanical risk factors associated with
+anterior cruciate ligament injury. Research in sports medicine 22 (2), 193-212 (2014).
+[12] Alentorn-Geli, E. et al. Prevention of non-contact anterior cruciate ligament injuries in soccer
+players. part 2: a review of prevention programs aimed to modify risk factors and to reduce
+injury rates. Knee surgery, sports traumatology, arthroscopy 17 (8), 859-879 (2009).
+[13] Hewett, T. E. et al. Biomechanical Measures of Neuromuscular Control and Valgus Loading of
+the Knee Predict Anterior Cruciate Ligament Injury Risk in Female Athletes: A Prospective
+Study. The American Journal of Sports Medicine 33 (4), 492-501 (2005).
+[14] Kristianslund, E. & Krosshaug, T. Comparison of drop jumps and sport-specific sidestep
+cutting: implications for anterior cruciate ligament injury risk screening. The American journal
+of sports medicine 41 (3), 684-688 (2013).
+[15] Rose, M. J., Costello, K. E., Eigenbrot, S., Torabian, K. & Kumar, D. Inertial measurement
+units and application for remote health care in hip and knee osteoarthritis: Narrative review.
+JMIR Rehabilitation and Assistive Technologies 9 (2), e33521 (2022).
+[16] O’Sullivan, J. W. et al. Accuracy of smartphone camera applications for detecting atrial
+fibrillation: a systematic review and meta-analysis. JAMA network open 3 (4),
+e202064-e202064 (2020).
+[17] Warmerdam, E. et al. Long-term unsupervised mobility assessment in movement disorders. The
+Lancet Neurology 19 (5), 462-470 (2020).
+[18] Salem, G. J., Salinas, R. & Harding, F. V. Bilateral kinematic and kinetic analysis of the squat
+exercise after anterior cruciate ligament reconstruction. Archives of physical medicine and
+rehabilitation 84 (8), 1211-1216 (2003).
+[19] Slater, L. V., Hart, J. M., Kelly, A. R. & Kuenze, C. M. Progressive Changes in Walking
+Kinematics and Kinetics After Anterior Cruciate Ligament Injury and Reconstruction: A
+Review and Meta-Analysis. Journal of Athletic Training 52 (9), 847-860 (2017).
+[20] Hart, H. F. et al. Knee kinematics and joint moments during gait following anterior cruciate
+ligament reconstruction: A systematic review and meta-analysis. British Journal of Sports
+Medicine 50 (10), 597-612 (2016).
+[21] Pairot-de Fontenay, B. et al. Running biomechanics in individuals with anterior cruciate
+ligament reconstruction: a systematic review. Sports Medicine 49 (9), 1411-1424 (2019).
+[22] Knurr, K. A. et al. Running biomechanics before injury and 1 year after anterior cruciate
+ligament reconstruction in division i collegiate athletes. The American journal of sports
+medicine 49 (10), 2607-2614 (2021).
+[23] Batty, L. M., Feller, J. A., Hartwig, T., Devitt, B. M. & Webster, K. E. Single-leg squat
+performance and its relationship to extensor mechanism strength after anterior cruciate ligament
+reconstruction. The American journal of sports medicine 47 (14), 3423-3428 (2019).
+[24] Batty, L. M. et al. Single-leg squat after anterior cruciate ligament reconstruction: An analysis
+of the knee valgus angle at 6 and 12 months. Orthopaedic Journal of Sports Medicine 8 (8),
+2325967120946328 (2020).
+[25] King, E. et al. Whole-body biomechanical differences between limbs exist 9 months after acl
+reconstruction across jump/landing tasks. Scandinavian journal of medicine & science in sports
+28 (12), 2567-2578 (2018).
+[26] Di Paolo, S. et al. Rehabilitation and Return to Sport Assessment after Anterior Cruciate
+Ligament Injury: Quantifying Joint Kinematics during Complex High-Speed Tasks through
+Wearable Sensors. Sensors 21 (7), 2331 (2021).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 21 ---
+npj Digital Medicine
+[27] Tipton, C. C., Telfer, S., Cherones, A., Gee, A. O. & Kweon, C. Y. The Use of Microsoft Kinect
+™ for Assessing Readiness of Return to Sport and Injury Risk Exercises: A Validation Study.
+International Journal of Sports Physical Therapy 14 (5), 724-730 (2019).
+[28] Guiotto, A. et al. Reliability and Repeatability of ACL Quick Check®: A Methodology for on
+Field Lower Limb Joint Kinematics and Kinetics Assessment in Sport Applications. Sensors 22
+(1), 259 (2021).
+[29] Havens, K. L., Cohen, S. C., Pratt, K. A. & Sigward, S. M. Accelerations from wearable
+accelerometers reflect knee loading during running after anterior cruciate ligament
+reconstruction. Clinical Biomechanics 58, 57-61 (2018).
+[30] Morgan, A. M. & O’Connor, K. M. Evaluation of an accelerometer to assess knee mechanics
+during a drop landing. Journal of Biomechanics 86, 125-131 (2019).
+[31] Sell, T. C., Akins, J. S., Opp, A. R. & Lephart, S. M. Relationship Between Tibial Acceleration
+and Proximal Anterior Tibia Shear Force Across Increasing Jump Distance. Journal of Applied
+Biomechanics 30 (1), 75-81 (2014).
+[32] Fischer, F. et al. Isokinetic Extension Strength Is Associated With Single-Leg Vertical Jump
+Height. Orthopaedic Journal of Sports Medicine 5 (11), 2325967117736766 (2017).
+[33] Vervaat, W., Bogen, B. & Moe-Nilssen, R. Within-day test-retest reliability of an
+accelerometer-based method for registration of step time symmetry during stair descent after
+ACL reconstruction and in healthy subjects. Physiotherapy Theory and Practice 38 (1),
+226-234 (2022).
+[34] Jarchi, D. et al. Gait Analysis From a Single Ear-Worn Sensor: Reliability and Clinical
+Evaluation for Orthopaedic Patients. IEEE Transactions on Neural Systems and Rehabilitation
+Engineering 24 (8), 882-892 (2016).
+[35] Kuenze, C., Pfeiffer, K., Pfeiffer, M., Driban, J. B. & Pietrosimone, B. Feasibility of a
+Wearable-Based Physical Activity Goal-Setting Intervention Among Individuals With Anterior
+Cruciate Ligament Reconstruction. Journal of Athletic Training 56 (6), 555-564 (2021).
+[36] Chaaban, C. R. et al. Combining Inertial Sensors and Machine Learning to Predict vGRF and
+Knee Biomechanics during a Double Limb Jump Landing Task. Sensors 21 (13), 4383 (2021).
+[37] Dowling, A. V., Favre, J. & Andriacchi, T. P. A Wearable System to Assess Risk for Anterior
+Cruciate Ligament Injury During Jump Landing: Measurements of Temporal Events, Jump
+Height, and Sagittal Plane Kinematics. Journal of Biomechanical Engineering 133 (7), 071008
+(2011).
+[38] Ahmadian, N., Nazarahari, M., Whittaker, J. L. & Rouhani, H. Quantification of Triple
+Single-Leg Hop Test Temporospatial Parameters: A Validated Method Using Body-Worn
+Sensors for Functional Evaluation after Knee Injury. Sensors 20 (12), 3464 (2020).
+[39] Pratt, K. A. & Sigward, S. M. Detection of Knee Power Deficits Following Anterior Cruciate
+Ligament Reconstruction Using Wearable Sensors. Journal of Orthopaedic & Sports Physical
+Therapy 48 (11), 895-902 (2018).
+[40] Sigward, S. M., Chan, M.-S. M. & Lin, P. E. Characterizing knee loading asymmetry in
+individuals following anterior cruciate ligament reconstruction using inertial sensors. Gait &
+Posture 49, 114-119 (2016).
+[41] Chia, L. et al. Evaluating the validity and reliability of inertial measurement units for
+determining knee and trunk kinematics during athletic landing and cutting movements. Journal
+of Electromyography and Kinesiology 60, 102589 (2021).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 22 ---
+npj Digital Medicine
+[42] Di Paolo, S., Zaffagnini, S., Pizza, N., Grassi, A. & Bragonzoni, L. Poor Motor Coordination
+Elicits Altered Lower Limb Biomechanics in Young Football (Soccer) Players: Implications for
+Injury Prevention through Wearable Sensors. Sensors 21 (13), 4371 (2021).
+[43] Dowling, A. V., Favre, J. & Andriacchi, T. P. Characterization of Thigh and Shank Segment
+Angular Velocity During Jump Landing Tasks Commonly Used to Evaluate Risk for ACL
+Injury. Journal of Biomechanical Engineering 134 (9), 091006 (2012).
+[44] Dowling, A. V., Favre, J. & Andriacchi, T. P. Inertial Sensor-Based Feedback Can Reduce Key
+Risk Metrics for Anterior Cruciate Ligament Injury During Jump Landings. The American
+Journal of Sports Medicine 40 (5), 1075-1083 (2012).
+[45] Fan, B., Xia, H., Xu, J., Li, Q. & Shull, P. B. IMU-based knee flexion, abduction and internal
+rotation estimation during drop landing and cutting tasks. Journal of Biomechanics 124, 110549
+(2021).
+[46] Islam, R. et al. A Nonproprietary Movement Analysis System (MoJoXlab) Based on Wearable
+Inertial Measurement Units Applicable to Healthy Participants and Those With Anterior
+Cruciate Ligament Reconstruction Across a Range of Complex Tasks: Validation Study. JMIR
+mHealth and uHealth 8 (6), e17872 (2020).
+[47] Kianifar, R., Lee, A., Raina, S. & Kuli´c, D. Automated Assessment of Dynamic Knee Valgus
+and Risk of Knee Injury During the Single Leg Squat. IEEE Journal of Translational
+Engineering in Health and Medicine 5, 1-13 (2017).
+[48] Pratt, K. & Sigward, S. Inertial Sensor Angular Velocities Reflect Dynamic Knee Loading
+during Single Limb Loading in Individuals Following Anterior Cruciate Ligament
+Reconstruction. Sensors 18 (10), 3460 (2018).
+[49] Dar, G., Yehiel, A. & Cale’ Benzoor, M. Concurrent criterion validity of a novel portable
+motion analysis system for assessing the landing error scoring system (LESS) test. Sports
+Biomechanics 18 (4), 426-436 (2019).
+[50] Eltoukhy, M. et al. Concurrent Validity of Depth-Sensing Cameras for Noncontact ACL Injury
+Screening During Side-Cut Maneuvers in Adolescent Athletes: A Preliminary Study. Journal of
+Applied Biomechanics 35 (1), 2-10 (2019).
+[51] Gray, A. D. et al. Development and Validation of a Portable and Inexpensive Tool to Measure
+the Drop Vertical Jump Using the Microsoft Kinect V2. Sports Health 9 (6), 537-544 (2017).
+[52] Mauntel, T. C. et al. Automated Quantification of the Landing Error Scoring System With a
+Markerless Motion-Capture System. Journal of Athletic Training 52 (11), 1002-1009 (2017).
+[53] Nyman, E. & Armstrong, C. W. Real-time feedback during drop landing training improves
+subsequent frontal and sagittal plane knee kinematics. Clinical Biomechanics 30 (9), 988-994
+(2015).
+[54] Uhl´ar, A.´ et al. Kinect Azure-Based Accurate Measurement of Dynamic Valgus Position of
+the Knee-A Corrigible Predisposing Factor of Osteoarthritis. Applied Sciences 11 (12), 5536
+(2021).
+[55] Oh, J. et al. Estimation of ground reaction forces during stair climbing in patients with ACL
+reconstruction using a depth sensor-driven musculoskeletal model. Gait & Posture 84, 232-237
+(2021).
+[56] Dallinga, J. et al. Innovative Video Feedback on Jump Landing Improves Landing Technique in
+Males. International Journal of Sports Medicine 38 (02), 150-158 (2016).
+[57] Weinhandl, J. T., Armstrong, B. S., Kusik, T. P., Barrows, R. T. & O’Connor, K. M. Validation
+of a single camera three-dimensional motion tracking system. Journal of Biomechanics 43 (7),
+1437-1440 (2010).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 23 ---
+npj Digital Medicine
+[58] H´ebert-Losier, K., Hanzl´ıkov´a, I., Zheng, C., Streeter, L. & Mayo, M. The ‘DEEP’ Landing
+Error Scoring System. Applied Sciences 10 (3), 892 (2020).
+[59] Kawaguchi, K. et al. Sex-Based Differences in the Drop Vertical Jump as Revealed by Video
+Motion Capture Analysis Using Artificial Intelligence. Orthopaedic Journal of Sports Medicine
+9 (11), 23259671211048188 (2021).
+[60] Draper, V. Electromyographic Biofeedback and Recovery of Quadriceps Femoris Muscle
+Function Following Anterior Cruciate Ligament Reconstruction. Physical Therapy 70 (1),
+11-17 (1990).
+[61] Christanell, F., Hoser, C., Huber, R., Fink, C. & Luomajoki, H. The influence of
+electromyographic biofeedback therapy on knee extension following anterior cruciate ligament
+reconstruction: A randomized controlled trial. Sports Medicine, Arthroscopy, Rehabilitation,
+Therapy & Technology 4 (1), 41 (2012).
+[62] Chan, M.-S. & Sigward, S. M. Individuals following anterior cruciate ligament reconstruction
+practice underloading strategies during daily activity. Journal of Orthopaedic Research 40 (3),
+565-572 (2022).
+[63] Munro, B. J., Campbell, T. E., Wallace, G. G. & Steele, J. R. The intelligent knee sleeve: A
+wearable biofeedback device. Sensors and Actuators B: Chemical 131 (2), 541-547 (2008).
+[64] Peebles, A. T., Miller, T. K. & Queen, R. M. Landing biomechanics deficits in anterior cruciate
+ligament reconstruction patients can be assessed in a non-laboratory setting. Journal of
+Orthopaedic Research 40 (1), 150-158 (2022).
+[65] Gurchiek, R. D. et al. Open-Source Remote Gait Analysis: A PostSurgery Patient Monitoring
+Application. Scientific Reports 9 (1), 17966 (2019).
+[66] Kordatos, G. & Stavrakis, M. Design and evaluation of a wearable system to increase
+adherence to rehabilitation programmes in acute cruciate ligament (CL) rupture. Multimedia
+Tools and Applications 79 (45-46), 33549-33574 (2020).
+[67] Malik, O. A., Arosha Senanayake, S. M. N. & Zaheer, D. A Multisensor Integration-Based
+Complementary Tool for Monitoring Recovery Progress of Anterior Cruciate
+Ligament-Reconstructed Subjects. IEEE/ASME Transactions on Mechatronics 20 (5),
+2328-2339 (2015).
+[68] Arosha Senanayake, S. M. N., Ahmed Malik, O., Mohammad Iskandar, P. & Zaheer, D.
+Assessing post-anterior cruciate ligament reconstruction ambulation using wireless wearable
+integrated sensors. Journal of Medical Engineering & Technology 37 (8), 498-510 (2013).
+[69] Malik, O. A., Arosha Senanayake, S. & Zaheer, D. An Intelligent Recovery Progress
+Evaluation System for ACL Reconstructed Subjects Using Integrated 3-D Kinematics and
+EMG Features. IEEE Journal of Biomedical and Health Informatics 19 (2), 453-463 (2015).
+[70] Riskowski, J. L., Mikesky, A. E., Bahamonde, R. E. & Burr, D. B. Design and Validation of a
+Knee Brace With Feedback to Reduce the Rate of Loading. Journal of Biomechanical
+Engineering 131 (8), 084503 (2009).
+[71] Riskowski, J. L. Gait and neuromuscular adaptations after using a feedback-based gait
+monitoring knee brace. Gait & Posture 32 (2), 242-247 (2010).
+[72] Dan, M. J. et al. Wearable inertial sensors and pressure MAT detect risk factors associated with
+ACL graft failure that are not possible with traditional return to sport assessments. BMJ Open
+Sport & Exercise Medicine 5 (1), e000557 (2019).
+[73] Taborri, J. et al. A Machine-Learning Approach to Measure the Anterior Cruciate Ligament
+Injury Risk in Female Basketball Players. Sensors 21 (9), 3141 (2021).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 24 ---
+npj Digital Medicine
+[74] Molinaro, L. et al. Sensor-Based Indices for the Prediction and Monitoring of Anterior Cruciate
+Ligament Injury: Reliability Analysis and a Case Study in Basketball. Sensors 21 (16), 5341
+(2021).
+[75] Thome´e, R. et al. Muscle strength and hop performance criteria prior to return to sports after
+acl reconstruction. Knee Surgery, Sports Traumatology, Arthroscopy 19 (11), 1798 (2011).
+[76] Gokeler, A., Welling, W., Zaffagnini, S., Seil, R. & Padua, D. Development of a test battery to
+enhance safe return to sports after anterior cruciate ligament reconstruction. Knee surgery,
+sports traumatology, arthroscopy 25 (1), 192-199 (2017).
+[77] Hurwitz, D., Ryals, A., Case, J., Block, J. & Andriacchi, T. The knee adduction moment during
+gait in subjects with knee osteoarthritis is more closely correlated with static alignment than
+radiographic disease severity, toe out angle and pain. Journal of orthopaedic research 20 (1),
+101-107 (2002).
+[78] Sharma, L. et al. Knee adduction moment, serum hyaluronan level, and disease severity in
+medial tibiofemoral osteoarthritis. Arthritis & Rheumatism 41 (7), 1233-1240 (1998).
+[79] Olivares-Jabalera, J. et al. Is there association between cutting and jump-landing movement
+quality in semi-professional football players? implications for acl injury risk screening.
+Physical Therapy in Sport 56, 15-23 (2022).
+[80] Beynnon, B. D. et al. The effects of level of competition, sport, and sex on the incidence of
+first-time noncontact anterior cruciate ligament injury. The American journal of sports medicine
+42 (8), 1806-1812 (2014).
+[81] Boswell, M. A. et al. A neural network to predict the knee adduction moment in patients with
+osteoarthritis using anatomical landmarks obtainable from 2d video analysis. Osteoarthritis and
+cartilage 29 (3), 346-356 (2021).
+[82] Uhlrich, S. D. et al. Opencap: 3d human movement dynamics from smartphone videos. bioRxiv
+(2022).
+[83] Myer, G. D., Ford, K. R., Paterno, M. V., Nick, T. G. & Hewett, T. E. The effects of generalized
+joint laxity on risk of anterior cruciate ligament injury in young female athletes. The American
+journal of sports medicine 36 (6), 1073-1080 (2008).
+[84] Sugimoto, D., Myer, G. D., Barber Foss, K. D. & Hewett, T. E. Dosage effects of
+neuromuscular training intervention to reduce anterior cruciate ligament injuries in female
+athletes: Meta- and sub-group analyses. Sports Medicine 44 (4), 551 (2014).
+[85] Sugimoto, D. et al. Critical components of neuromuscular training to reduce acl injury risk in
+female athletes: meta-regression analysis. Br J Sports Med 50 (20), 1259 (2016).
+[86] Myklebust, G., Skjølberg, A. & Bahr, R. Acl injury incidence in female handball 10 years after
+the norwegian acl prevention study: important lessons learned. British journal of sports
+medicine 47 (8), 476-479 (2013).
+[87] Theodoropoulos, J. S., Bettle, J. & Kosy, J. D. The use of gps and inertial devices for player
+monitoring in team sports: A review of current and future applications. Orthopedic reviews 12
+(1) (2020).
+[88] Harris, J. D. et al. Return to sport after acl reconstruction. Orthopedics 37 (2), e103-e108
+(2014).
+[89] Buckthorpe, M. Recommendations for movement re-training after acl reconstruction. Sports
+Medicine 51 (8), 1601-1618 (2021).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 25 ---
+npj Digital Medicine
+[90] Davies, W. T., Myer, G. D. & Read, P. J. Is it time we better understood the tests we are using
+for return to sport decision making following acl reconstruction? a critical review of the hop
+tests. Sports Medicine 50 (3), 485-495 (2020).
+[91] Undheim, M. B. et al. Isokinetic muscle strength and readiness to return to sport following
+anterior cruciate ligament reconstruction: is there an association? a systematic review and a
+protocol recommendation. British journal of sports medicine 49 (20), 1305-1310 (2015).
+[92] Hughes, G., Musco, P., Caine, S. & Howe, L. Lower limb asymmetry after anterior cruciate
+ligament reconstruction in adolescent athletes: A systematic review and meta-analysis. Journal
+of Athletic Training (Allen Press) 55 (8) (2020).
+[93] Losciale, J. M. et al. Hop testing lacks strong association with key outcome variables after
+primary anterior cruciate ligament reconstruction: a systematic review. The American journal of
+sports medicine 48 (2), 511-522 (2020).
+[94] Kotsifaki, A. et al. Single leg hop for distance symmetry masks lower limb biomechanics: time
+to discuss hop distance as decision criterion for return to sport after acl reconstruction? British
+journal of sports medicine 56 (5), 249-256 (2022).
+[95] Read, P., Mc Auliffe, S., Wilson, M. G. & Myer, G. D. Better reporting standards are needed to
+enhance the quality of hop testing in the setting of acl return to sport decisions: a narrative
+review. British Journal of Sports Medicine 55 (1), 23-29 (2021).
+[96] de Mille, P. & Osmak, J. Performance: bridging the gap after acl surgery. Current reviews in
+musculoskeletal medicine 10 (3), 297-306 (2017).
+[97] Halilaj, E. et al. Machine learning in human movement biomechanics: Best practices, common
+pitfalls, and new opportunities. Journal of biomechanics 81, 1-11 (2018).
+[98] Dorschky, E. et al. Cnn-based estimation of sagittal plane walking and running biomechanics
+from measured and simulated inertial sensor data. Frontiers in bioengineering and
+biotechnology 604 (2020).
+[99] Johnson, W. R. et al. Multidimensional ground reaction forces and moments from wearable
+sensor accelerations via deep learning. IEEE Transactions on Biomedical Engineering 68 (1),
+289-297 (2020).
+[100] Tan, T., Wang, D., Shull, P. B. & Halilaj, E. Imu and smartphone camera fusion for knee
+adduction and knee flexion moment estimation during walking. IEEE Transactions on
+Industrial Informatics (2022).
+[101] Mahmood, N., Ghorbani, N., Troje, N. F., Pons-Moll, G. & Black, M. J. AMASS: Archive of
+motion capture as surface shapes. Paper presented at the International Conference on Computer
+Vision, 5442-5451, Oct 2019.
+[102] Taneja, K. et al. A feature-encoded physics-informed parameter identification neural network
+for musculo-skeletal systems. Journal of Biomechanical Engineering (2022).
+[103] Bartsoen, L. et al. Bayesian parameter estimation of ligament properties based on tibio-femoral
+kinematics during squatting. Mechanical Systems and Signal Processing 182, 109525 (2023).
+[104] Tian, Y., Zhang, H., Liu, Y. & Wang, L. Recovering 3d human mesh from monocular images: A
+survey (2022). Preprint at https://arxiv.org/ abs/2203.01923v2.
+[105] Hu, P., Ho, E. S.-L. & Munteanu, A. 3dbodynet: fast reconstruction of 3d animatable human
+body shape from a single commodity depth camera. IEEE Transactions on Multimedia 24,
+2139-2149 (2021).
+[106] Loper, M., Mahmood, N., Romero, J., Pons-Moll, G. & Black, M. J. Smpl: A skinned
+multi-person linear model. ACM transactions on graphics (TOG) 34 (6), 1-16 (2015).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 26 ---
+npj Digital Medicine
+[107] Xu, H. et al. Ghum & ghuml: Generative 3d human shape and articulated pose models. Paper
+presented at the IEEE/CVF Conference on Computer Vision and Pattern Recognition,
+6184-6193, 2020.
+[108] Scalona, E. et al. Inter-laboratory and inter-operator reproducibility in gait analysis
+measurements in pediatric subjects. International Biomechanics 6 (1), 19-33 (2019).
+[109] Perazzi, F. et al. A benchmark dataset and evaluation methodology for video object
+segmentation. Paper presented at the IEEE conference on computer vision and pattern
+recognition, 724-732, 2016.
+[110] Hu, B., Rouse, E. & Hargrove, L. Benchmark datasets for bilateral lowerlimb neuromechanical
+signals from wearable sensors during unassisted locomotion in able-bodied individuals.
+Frontiers in Robotics and AI 5, 14 (2018).
+[111] Camargo, J., Ramanathan, A., Flanagan, W. & Young, A. A comprehensive, open-source dataset
+of lower limb biomechanics in multiple conditions of stairs, ramps, and level-ground
+ambulation and transitions. Journal of Biomechanics 119, 110320 (2021).
+[112] Embry, K., Villarreal, D., Macaluso, R. & Gregg, R. The effect of walking incline and speed on
+human leg kinematics, kinetics, and emg. IEEE Dataport 10 (2018).
+[113] Wilkinson, M. D. et al. The fair guiding principles for scientific data management and
+stewardship. Scientific data 3 (1), 1-9 (2016).
+[114] Stratford, P. W. & Riddle, D. L. When minimal detectable change exceeds a diagnostic
+test-based threshold change value for an outcome measure: Resolving the conflict. Physical
+therapy 92 (10), 1338-1347 (2012).
+[115] Webster KE, Feller JA. Exploring the high reinjury rate in younger patients undergoing anterior
+cruciate ligament reconstruction. The American journal of sports medicine. 2016
+Nov;44(11):2827-32.
+[116] Barber-Westin S, Noyes FR. One in 5 Athletes Sustain Reinjury Upon Return to High-Risk
+Sports After ACL Reconstruction: A Systematic Review in 1239 Athletes Younger Than 20
+Years. Sport Heal A Multidiscip Approach. 2020;12(6):587-597.
+[117] Padua DA, Marshall SW, Boling MC, Thigpen CA, Garrett Jr WE, Beutler AI. The Landing
+Error Scoring System (LESS) is a valid and reliable clinical assessment tool of jump-landing
+biomechanics: the JUMP-ACL study. The American journal of sports medicine. 2009
+Oct;37(10):1996-2002.
+[118] Blackburn JT, Padua DA. Influence of trunk flexion on hip and knee joint kinematics during a
+controlled drop landing. Clinical biomechanics. 2008 Mar 1;23(3):313-9.
+[119] Cao Z, Simon T, Wei SE, Sheikh Y. Realtime multi-person 2d pose estimation using part affinity
+fields. Paper presented at the IEEE conference on computer vision and pattern recognition 2017
+(pp. 7291-7299).
+[120] Halilaj E, Rajagopal A, Fiterau M, Hicks JL, Hastie TJ, Delp SL. Machine learning in human
+movement biomechanics: Best practices, common pitfalls, and new opportunities. Journal of
+biomechanics. 2018 Nov 16;81:1-1.
+[121] McClincy M, Seabol LG, Riffitts M, Ruh E, Novak NE, Wasilko R, Hamm ME, Bell KM.
+Perspectives on the Gamification of an Interactive Health Technology for Postoperative
+Rehabilitation of Pediatric Anterior Cruciate Ligament Reconstruction: User-Centered Design
+Approach. JMIR Serious Games. 2021Aug 27;9(3):e27195.
+[122] Wiehr F, Vujic M, Krüger A, Daiber F. The Jungle Warm-Up Run: Augmenting Athletes with
+Coach-Guided Dynamic Game Elements. Paper presented at the the Augmented Humans
+International Conference 2020 Mar 16 (pp. 1-12).
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 27 ---
+npj Digital Medicine
+[123] Page MJ, McKenzie JE, Bossuyt PM, Boutron I, Hoffmann TC, Mulrow CD, Shamseer L,
+Tetzlaff JM, Akl EA, Brennan SE, Chou R. The PRISMA 2020 statement: an updated guideline
+for reporting systematic reviews. Systematic reviews. 2021 Dec;10(1):1-1.
+. CC-BY-NC-ND 4.0 International license It is made available under a
+perpetuity.
+is the author/funder, who has granted medRxiv a license to display the preprint in (which was not certified by peer review) preprint
+The copyright holder for this this version posted October 21, 2022. ; https://doi.org/10.1101/2022.10.19.22281252 doi: medRxiv preprint
+
+--- PAGE 28 ---

@@ -1,0 +1,258 @@
+
+--- PAGE 1 ---
+Contents lists available at ScienceDirect
+SmartHealth
+journal homepage: www.elsevier.com/locate/smhl
+ClinicallyrelevantpredictivemodelingforpersonalizedACL
+reconstructionclassification
+Xishi Zhua
+, Ryan Henrya
+, Emily Jacksona
+, Joe M. Hartb
+, Jiaqi Gonga ,∗
+a
+Department of Computer Science, The University of Alabama, Tuscaloosa, AL, USA
+b
+Department of Orthopaedic Surgery, University of North Carolina at Chapel Hill, Chapel Hill, NC, USA
+A R T I C L E I N F O
+Keywords:
+Anterior Cruciate Ligament
+Machine learning
+Explainable AI
+Gait analysis
+A B S T R A C T
+Anterior Cruciate Ligament (ACL) reconstruction outcomes and return-to-sport readiness vary
+significantly among patients, yet current classification methods often lack interpretability and
+personalization. We propose an explainable predictive model for ACL reconstruction classifica-
+tion through multi-modal analysis of gait dynamics and patient characteristics. Using inertial
+measurement unit (IMU) sensors on participants’ wrists, ankles, and sacrum, we collected
+gait data during walking and jogging tasks, alongside patient-specific survey information. For
+gait dynamics, we employed Phase Slope Index to quantify inter-sensor relationships and
+trained classifiers for different ACL reconstruction outcomes(left vs right injury, healthy vs
+injured), achieving high classification performance (96.37% accuracy). Model explanations
+using heatmaps and permutation importance revealed that paired body movements are crucial
+in classification, with more distinct patterns in jogging than walking. For patient characteristics,
+t-SNE visualization demonstrated that model confidence correlated strongly with recovery
+duration. While longer recovery typically leads to more normal gait patterns, our approach
+provides a quantitative method to visualize this process transparently. This explainable, person-
+alized approach can improve rehabilitation strategies and inform more accurate return-to-sport
+decisions in sports medicine.
+1. Introduction
+Anterior Cruciate Ligament (ACL) injuries represent a significant challenge in sports medicine and orthopedics, affecting athletes
+across various disciplines and skill levels. These injuries not only lead to substantial time away from sport but also increase the
+risk of early-onset osteoarthritis and other long-term complications (Lohmander et al., 2007). With an estimated 250,000 ACL
+reconstructions annually in the United States alone, the impact extends beyond individual athletes to team performance, healthcare
+costs, and long-term quality of life.
+Current methods for assessing ACL reconstruction outcomes and determining return-to-sport readiness typically involve clinical
+examinations, functional tests, and subjective assessments (Abrams et al., 2014). While valuable, these methods often neglect
+complex movement patterns and lack precision and objectivity, particularly failing to account for the complex interplay between
+different body segments during movement.
+Recent research has focused on quantifying gait measures using IMU sensors and machine learning models. These wearable
+sensors capture high-frequency three-dimensional motion data, providing precise insights into joint kinematics during functional
+∗ Corresponding author.
+E-mail addresses: xzhu39@crimson.ua.edu (X. Zhu), rwhenry1@crimson.ua.edu (R. Henry), egjackson5@crimson.ua.edu (E. Jackson),
+joe_hart@med.unc.edu (J.M. Hart), jiaqi.gong@ua.edu (J. Gong).
+https://doi.org/10.1016/j.smhl.2025.100575
+Received 15 March 2025; Accepted 15 March 2025
+Smart Health 36 (2025) 100575
+Available online 29 April 2025
+2352-6483/© 2025 Published by Elsevier Inc.
+
+--- PAGE 2 ---
+X. Zhu et al.
+tasks (Picerno, 2017). Many studies derived time-domain features (statistical moments, peak accelerations) and frequency-domain
+features (power spectral density, wavelet coefficients) to characterize movement patterns (Saboor et al., 2020). Despite promising
+performance, these advanced analytical methods face limitations in clinical interpretability, with their ‘‘black box’’ nature hindering
+translation into actionable insights.
+To address these limitations, we propose a novel approach integrating multi-modal gait analysis using IMU sensors with patient-
+specific characteristics. We hypothesized that: (1) paired body segment movements quantified by Phase Slope Index (PSI) matrices
+would significantly contribute to ACL reconstruction classification; (2) the importance of specific sensor pair combinations would
+differ between walking and jogging tasks; and (3) patient-specific factors would correlate with classification confidence, revealing
+insights into temporal dynamics of gait recovery.
+2. Related work
+This section reviews the current state of research in ACL reconstruction prediction, focusing on IMU-based techniques, multimodal
+approaches, and the interpretability challenge.
+Research has developed predictive models for ACL reconstruction outcomes using IMU data and feature engineering techniques.
+The engineered features are typically categorized as time-domain features (mean acceleration, RMS values, peak angular velocity)
+that summarize movement characteristics, and frequency-domain features (derived through Fourier or Wavelet Transforms) that
+capture periodic components and energy distributions (Duong, 2023). These features represent gait dynamics more accurately,
+enabling deeper understanding of recovery status and re-injury risks. Leveraging these features, ACL predictive models have
+demonstrated strong performance in classifying outcomes such as ‘successful recovery’ versus ‘at risk of re-injury’ (Saboor et al.,
+2020).
+Building on these single-source approaches, data fusion methods have emerged to optimize ACL predictive model performance
+by incorporating multiple perspectives beyond IMU data alone. This approach combines information from various sources, such
+as IMUs with motion capture systems, to provide a more comprehensive view of human movement and knee joint forces (Qiu
+et al., 2022). Many research efforts have attempted to combine these features using methods ranging from simple concatenation
+to more advanced techniques such as Kalman filtering or principal component analysis. Nweke et al. (2019). Studies implementing
+this multimodal approach have reported accuracy improvements of 5% to 15% compared to single-source models (Dehzangi et al.,
+2017), suggesting that multiple measurement perspectives help identify subtle injury risk indicators.
+Despite the strong performance of these models in classifying outcomes, poor interpretability remains a significant barrier to
+their clinical application. The complexity of machine learning algorithms often creates ‘‘black box’’ models that obscure decision-
+making processes, challenging clinical trust and implementation (Horst et al., 2019). Efforts to improve interpretability include
+feature importance scoring to identify which features are most indicative of ACL outcomes, though this approach focuses primarily
+on global importance, limiting personalized analysis capabilities. For local interpretation, LIME (Local Interpretable Model-agnostic
+Explanations) has been adopted (Kim et al., 2022), approximating complex models locally with more interpretable models. However,
+these explanations are valid only for individual predictions and may not generalize well, potentially leading to unstable explanations.
+3. Methodology
+This section outlines our research methodology addressing poor interpretability in ACL predictive modeling, as shown in Fig.
+1. We recruited 79 participants, including 74 ACL patients (31 with left knee injuries, 43 with right knee injuries) and 5 healthy
+individuals. Data collection utilized five Shimmer IMU sensors placed on participants’ bodies (bilateral wrists, ankles, and sacrum),
+recording accelerometer and gyroscope data at 128 Hz. The protocol consisted of two sequential tasks: walking on a treadmill at 3
+mph for 5 min, followed by jogging at 6 mph for 3 min.
+For preprocessing, we first synchronized data across sensors and separated walking and jogging sequences through visual
+inspection of signal pattern changes. We then downsampled the data from 128 Hz to 64 Hz and segmented it into non-overlapping 10-
+second windows, providing sufficient temporal resolution to capture multiple gait cycles while maintaining computational efficiency.
+To capture complex interactions between sensor readings, we calculated the Phase Slope Index (PSI) to form a pairwise causality
+feature matrix. This process involved frequency domain transformation using Fast Fourier Transform, calculating cross-spectral
+density between sensor dimension pairs, deriving the phase spectrum, computing PSI through linear regression on the phase spectrum
+across different frequency bands (8 Hz, 16 Hz, 32 Hz), and constructing the pairwise causality matrix. With 5 sensors each providing
+accelerometer and gyroscope readings across three axes, we had 30 dimensions per window, resulting in 435 unique features
+representing all possible dimension pairs.
+To investigate our first hypothesis and evaluate PSI-based features, we implemented five machine learning models (SVM, Naive
+Bayes, Random Forest, KNN, and Neural Network) for two binary classification tasks: Left Injured vs. Right Injured and Injured vs.
+Healthy. We employed 5-fold cross-validation for walking and jogging phases independently, with randomly shuffled data windows.
+We experimented with three maximum frequency cutoffs (8 Hz, 16 Hz, and 32 Hz) to determine the optimal range for feature
+extraction.
+For model interpretation addressing our second hypothesis regarding task-specific gait adaptations, we calculated permutation
+importance scores from the trained model, mapped these to their corresponding sensor dimensions, aggregated them by sensor pairs,
+and visualized them using heatmaps for both walking and jogging conditions. This approach allowed direct comparison of sensor
+pair importance between tasks, revealing task-specific gait adaptations. To address our third hypothesis concerning patient-specific
+Smart Health 36 (2025) 100575
+2
+
+--- PAGE 3 ---
+X. Zhu et al.
+Fig. 1. Five IMU sensors (bilateral wrists, ankles, and sacrum) captured movement during walking and jogging tasks. Data sequences were segmented into
+10-second windows with pairwise causality matrices computed using Phase Slope Index (PSI). This feature matrix trained machine learning models for ACL
+reconstruction outcome prediction. Our hypotheses explored: (H1) whether PSI-based features improve model performance, (H2) if sensor pair importance differs
+between walking and jogging tasks as shown in the heatmaps, and (H3) whether patient factors correlate with model classification confidence, visualized through
+t-SNE plots colored by model output probability.
+Table 1
+Accuracy performance comparison of SVM, Naive Bayes, random forest, KNN, and neural network classifiers on difference ACL reconstruction
+outcome: (1) left or right injury while walking, (2) left or right injury while jogging, (3) healthy or injured while walking, and (4) healthy or
+injured while jogging. The results show the KNN model using the 16 Hz low-pass filtered data has the highest overall performance.
+Activity phase Walking Jogging
+Classification task Left vs Right Healthy vs Injured Left vs Right Healthy vs Injured
+Frequency Threshold 8 Hz 16 Hz 32 Hz 8 Hz 16 Hz 32 Hz 8 Hz 16 Hz 32 Hz 8 Hz 16 Hz 32 Hz
+SVM 0.87 0.85 0.86 0.95 0.95 0.95 0.93 0.96 0.95 0.95 0.95 0.96
+Naïve Bayes 0.72 0.75 0.74 0.95 0.94 0.94 0.81 0.79 0.80 0.92 0.95 0.96
+Random Forest 0.73 0.71 0.73 0.92 0.92 0.92 0.80 0.78 0.82 0.90 0.90 0.91
+KNN 0.93 0.93 0.92 0.98 0.98 0.98 0.96 0.98 0.96 0.96 0.99 0.99
+Neural Network 0.86 0.81 0.79 0.95 0.92 0.95 0.85 0.83 0.88 0.95 0.95 0.95
+factors and classification confidence correlation, we applied t-SNE for dimensionality reduction of our feature matrix and examined
+the distribution of classification confidence scores across patients. By separating these into high-confidence and low-confidence
+groups, we identified patient-specific factors correlating with model confidence, revealing insights into temporal dynamics of gait
+recovery and individual variability in adaptations following ACL reconstruction.
+4. Results
+4.1. Predictive modeling evaluation
+Our predictive modeling evaluation, illustrated in Table 1, compared the performance of five machine learning models (SVM,
+Naive Bayes, Random Forest, KNN, and Neural Network) across three frequency ranges (8 Hz, 16 Hz, and 32 Hz) for two classification
+tasks in both walking and jogging activities. Across all scenarios, the models demonstrated different levels of accuracy, with most
+achieving above 80% accuracy for left–right classification and above 90% for healthy-injured classification.
+The KNN classifier consistently achieved the highest accuracy scores in all scenarios. For left–right classification, KNN reached
+a peak accuracy of approximately 93% during walking and 98% during jogging using the 16 Hz frequency range. For healthy-
+injured classification, KNN’s performance was even more impressive, achieving approximately 98% accuracy for walking and 99%
+for jogging, both with the 16 Hz filtered data. While other models showed competitive performance in certain scenarios, their
+Smart Health 36 (2025) 100575
+3
+
+--- PAGE 4 ---
+X. Zhu et al.
+Fig. 2. Heatmap charts showing the relative importance of sensor pairs on predicting outcomes for (a) left vs right injury while walking, (b) left vs right injury
+while jogging, (c) healthy vs injured while walking, and (d) healthy vs injured while jogging.
+Fig. 3. T-sne dimension reduction plot using PSI feature matrix colored by (a) left or right injury (walking phase) (b) model confidence (walking phase), (c)
+left or right injury (jogging phase) (d) model confidence (jogging phase),.
+accuracy was generally lower and more variable across different frequency ranges. The 16 Hz frequency range for PSI feature
+calculation typically yielded the highest accuracy scores across most models and tasks.
+4.2. Task-specific sensor pair importance analysis
+Fig. 2 presents heatmap charts illustrating the relative importance of sensor pairs in predicting outcomes during walking and
+jogging activities. The heatmaps were generated by accumulating permutation importance scores for each feature dimension, mapped
+back to the original sensor reading dimensions.
+For the left vs. right injury classification during walking (Fig. 2a), five sensor pairs showed importance scores above 0.07,
+indicated by dark red colors. In contrast, the jogging condition (Fig. 2b) displayed only two sensor pairs with importance scores
+above 0.0175. This difference suggests that walking data exhibits more variability in discriminative patterns between left and right
+injuries compared to jogging.
+In the healthy vs. injured classification, a similar trend was observed. The walking condition (Fig. 2c) showed two sensor
+pairs with importance scores above 0.002, while the jogging condition (Fig. 2d) had only one sensor pair exceeding the dark red
+threshold (> 0.008). This pattern aligns with the left vs. right injury analysis, indicating fewer highly important sensor pairs for
+jogging compared to walking. These observations correspond with the model prediction accuracies reported earlier, where jogging
+classifications generally achieved higher accuracy than walking classifications.
+4.3. Dimension reduction examination
+To visualize the high-dimensional PSI feature matrix, we employed t-SNE dimension reduction. In Fig. 3, each data point
+represents an instance from the PSI feature matrix, with points in the right column colored by the KNN model’s output probability.
+The t-SNE plots revealed that inner circles predominantly contain instances where the model exhibits low confidence in
+distinguishing between classes. Notably, jogging phase plots showed more distinctly separated clusters with reduced class overlap
+compared to walking, suggesting that jogging captures better global data structure. This improved cluster separation aligns with the
+superior model performance in jogging conditions relative to walking.
+4.4. Patient-specific factor analysis
+We examined patient-specific factors associated with data points in low-confidence regions and high-confidence regions of the
+t-SNE plots, focusing on recovery duration. Box plots in Fig. 4 illustrate recovery duration distributions for walking, further divided
+into low-confidence and high-confidence regions. For left leg injury, low-confidence regions had a median recovery of approximately
+Smart Health 36 (2025) 100575
+4
+
+--- PAGE 5 ---
+X. Zhu et al.
+Fig. 4. Recovery duration for walking data, categorized by injured leg and location within or outside the low-confidence area (inner and outer regions).
+Fig. 5. Recovery duration for jogging data, categorized by injured leg and location within or outside the low-confidence area (inner and outer regions).
+10 months (IQR: 8–13 months), while high-confidence regions showed a median of about 8 months (IQR: 6–10 months). Right leg
+injury during walking showed similar patterns. Fig. 5 displays recovery durations for jogging, with left leg injury following the same
+trend as walking. However, right leg injury in jogging exhibited a different pattern, with high-confidence regions showing a higher
+median recovery duration (approximately 10 months) compared to low-confidence regions (median of about 7 months), possibly
+due to outliers with recovery durations exceeding 20 months.
+These findings suggest that participants with longer recovery durations generally exhibit gait patterns that are more difficult for
+the model to classify with high confidence. This trend supports the clinical understanding that as recovery progresses, movement
+patterns gradually normalize, becoming more similar to uninjured gait. The correlation between recovery duration and classification
+Smart Health 36 (2025) 100575
+5
+
+--- PAGE 6 ---
+X. Zhu et al.
+confidence provides quantitative evidence for rehabilitation progress, indicating that our model could potentially serve as an
+objective tool for tracking recovery timeline and informing return-to-sport decisions based on movement pattern normalization.
+5. Discussion & conclusion
+This study developed an explainable predictive model for ACL reconstruction classification through multi-modal analysis of gait
+dynamics and patient characteristics. Our findings supported our hypotheses: PSI-based features from IMU data effectively classified
+ACL reconstruction outcomes with 95.37% accuracy using KNN; sensor pair importance differed between walking and jogging tasks,
+with jogging showing more focused importance patterns; and recovery duration correlated with model confidence, suggesting gait
+patterns normalize over time post-reconstruction. The explainable nature of our approach offers significant clinical advantages by
+identifying key movement relationships affected by ACL reconstruction and providing quantitative tools to track patient progress.
+Despite limitations including small sample size, reliance solely on IMU data, and single time point analysis, our novel approach
+demonstrates the potential of combining multi-modal gait analysis with explainable machine learning for ACL reconstruction
+assessment. By providing interpretable results that enhance clinical decision-making, this work establishes a foundation for future
+research integrating quantitative gait analysis into clinical practice, potentially enabling more personalized rehabilitation protocols
+and data-driven return-to-sport criteria.
+CRediT authorship contribution statement
+Xishi Zhu: Conceptualization, Formal analysis, Investigation, Methodology, Validation, Visualization, Writing – original draft.
+Ryan Henry: Methodology, Visualization. Emily Jackson: Formal analysis, Methodology. Joe M. Hart: Conceptualization, Data
+curation, Methodology, Resources, Writing – review & editing. Jiaqi Gong: Conceptualization, Investigation, Methodology, Project
+administration, Supervision, Writing – review & editing.
+Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared
+to influence the work reported in this paper.
+Data availability
+The data that has been used is confidential.
+References
+Abrams, G. D., Harris, J. D., Gupta, A. K., McCormick, F. M., Bush-Joseph, C. A., Verma, N. N., Cole, B. J., & Bach Jr, B. R. (2014). Functional performance
+testing after anterior cruciate ligament reconstruction: a systematic review. Orthopaedic Journal of Sports Medicine, 2(1), Article 2325967113518305.
+Dehzangi, O., Taherisadr, M., & ChangalVala, R. (2017). IMU-based gait recognition using convolutional neural networks and multi-sensor fusion. Sensors, 17(12),
+2735.
+Duong, T. T. H. (2023). Toward real-life gait analysis using wearable sensors (Ph.D. thesis), Stevens Institute of Technology.
+Horst, F., Lapuschkin, S., Samek, W., Müller, K.-R., & Schöllhorn, W. I. (2019). Explaining the unique nature of individual gait patterns with deep learning.
+Scientific Reports, 9(1), 2391.
+Kim, J.-K., Bae, M.-N., Lee, K., Kim, J.-C., & Hong, S. G. (2022). Explainable artificial intelligence and wearable sensor-based gait analysis to identify patients
+with osteopenia and sarcopenia in daily life. Biosensors, 12(3), 167.
+Lohmander, L. S., Englund, P. M., Dahl, L. L., & Roos, E. M. (2007). The long-term consequence of anterior cruciate ligament and meniscus injuries: osteoarthritis.
+The American Journal of Sports Medicine, 35(10), 1756–1769.
+Nweke, H. F., Teh, Y. W., Mujtaba, G., & Al-Garadi, M. A. (2019). Data fusion and multiple classifier systems for human activity detection and health monitoring:
+Review and open research directions. Information Fusion, 46, 147–170.
+Picerno, P. (2017). 25 years of lower limb joint kinematics by using inertial and magnetic sensors: A review of methodological approaches. Gait & Posture, 51,
+239–246.
+Qiu, S., Zhao, H., Jiang, N., Wang, Z., Liu, L., An, Y., Zhao, H., Miao, X., Liu, R., & Fortino, G. (2022). Multi-sensor information fusion based on machine
+learning for real applications in human activity recognition: State-of-the-art and research challenges. Information Fusion, 80, 241–265.
+Saboor, A., Kask, T., Kuusik, A., Alam, M. M., Le Moullec, Y., Niazi, I. K., Zoha, A., & Ahmad, R. (2020). Latest research trends in gait analysis using wearable
+sensors and machine learning: A systematic review. Ieee Access, 8, 167830–167864.
+Smart Health 36 (2025) 100575
+6
+
+--- PAGE 7 ---

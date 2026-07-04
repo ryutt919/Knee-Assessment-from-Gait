@@ -1,0 +1,857 @@
+
+--- PAGE 1 ---
+Sensors 2014, 14, 6891-6909; doi:10.3390/s140406891
+OPEN ACCESS
+sensors
+ISSN 1424-8220
+www.mdpi.com/journal/sensors
+Article
+IMU-Based Joint Angle Measurement for Gait Analysis
+Thomas Seel 1,
+*, Jörg Raisch 1,2
+and Thomas Schauer 1
+1
+Control Systems Group (Fachgebiet Regelungssysteme), Technische Universität Berlin, 10623 Berlin,
+Germany; E-Mails: raisch@control.tu-berlin.de (J.R.); schauer@control.tu-berlin.de (T.S.)
+2
+Systems and Control Theory Group, Max Planck Institute for Dynamics of Complex Technical
+Systems, 39106 Magdeburg, Germany
+* Author to whom correspondence should be addressed; E-Mail: seel@control.tu-berlin.de;
+Tel.: +49-30-314-240-94; Fax.: +49-30-314-211-37.
+Received: 20 November 2013; in revised form: 20 March 2014 / Accepted: 10 April 2014 /
+Published: 16 April 2014
+Abstract: This contribution is concerned with joint angle calculation based on inertial
+measurement data in the context of human motion analysis. Unlike most robotic devices,
+the human body lacks even surfaces and right angles. Therefore, we focus on methods
+that avoid assuming certain orientations in which the sensors are mounted with respect
+to the body segments. After a review of available methods that may cope with this
+challenge, we present a set of new methods for: (1) joint axis and position identification; and
+(2) flexion/extension joint angle measurement. In particular, we propose methods that use
+only gyroscopes and accelerometers and, therefore, do not rely on a homogeneous magnetic
+field. We provide results from gait trials of a transfemoral amputee in which we compare the
+inertial measurement unit (IMU)-based methods to an optical 3D motion capture system.
+Unlike most authors, we place the optical markers on anatomical landmarks instead of
+attaching them to the IMUs. Root mean square errors of the knee flexion/extension angles
+are found to be less than 1◦
+on the prosthesis and about 3◦
+on the human leg. For the
+plantar/dorsiflexion of the ankle, both deviations are about 1◦
+.
+Keywords: inertial measurement units; gait analysis; gyroscopes and accelerometers; avoid
+magnetometers; exploit kinematic constraints; sensor-to-segment mounting; joint axis and
+position identification; joint angle measurement; validation against optical gait analysis;
+validation on prosthetic and human leg
+
+--- PAGE 2 ---
+Sensors 2014, 14 6892
+1. Introduction
+1.1. Inertial Measurement Units
+Inertial sensors, also known as inertial measurement units (IMUs), measure acceleration, angular
+rate and the magnetic field vector in their own three-dimensional local coordinate system. With proper
+calibration, the axes of this local coordinate system represent an orthonormal base that is typically
+well aligned with the outer casing of the sensor. In addition to the mentioned inertial measurement
+signals, some commercially available devices incorporate algorithms that provide estimates of the
+sensor’s orientation with respect to a global fixed coordinate system (see, e.g., [1]). This orientation
+can be represented by a quaternion, a rotation matrix or Euler angles. A number of algorithms
+have been proposed for sensor orientation estimation [2]. Typically, these algorithms employ
+strap-down-integration [3] of the angular rates to obtain a first estimate of the orientation. The drift
+in the inclination part of the IMU’s orientation is eliminated using the assumption that the measured
+acceleration is dominated by gravitational acceleration [4]. Similarly, the estimation of the IMU’s
+azimuth (or heading) requires the use of magnetometer measurements. Therefore, the presence of
+magnetic disturbances (as induced, e.g., by ferromagnetic material) may limit the accuracy of the
+orientation estimates, as demonstrated in [5,6]. We shall keep these limitations in mind, while we discuss
+methods for IMU-based joint angle estimation in the remainder of this article.
+1.2. Robotic Hinge Joint vs. Human Knee
+Since this contribution is concerned with IMU-based human gait analysis, we briefly highlight one of
+the major challenges of this task. Although many of the following statements are true in more general
+cases, we will focus our arguments on hinge joints (or pin joints, or knuckle joints), i.e., joints with one
+rotational degree of freedom, as depicted in Figure 1. It has been demonstrated in many publications,
+e.g., [7] and the references therein, that inertial measurement data can be used to calculate hinge joint
+angles when at least one IMU is attached to each side of the joint. In most robotic and mechanical
+applications, the sensors can be mounted in such a way that one of the local coordinate axes coincides
+with the hinge joint axis; see, e.g., [7,8]. In that case, the hinge joint angle can be calculated by
+integrating the difference of both angular rates around the corresponding coordinate axis. Since even
+the most precise calibration will yield a non-zero bias, this calculated angle will be subject to drift.
+However, multiple techniques have been suggested to eliminate this effect using additional information
+from the accelerometers and/or the magnetometers, e.g., [7].
+Similarly, inertial measurement units can be used to calculate hinge joint angles on the human body,
+for example on the knee joint (we will discuss the fact that the human knee is not a perfect hinge joint
+in Sections 2 and 3.3). However, there is a very important difference between the human leg and most
+robotic setups: It is very difficult to attach IMUs to the leg in such a way that one of the local coordinate
+axes coincides exactly with the knee joint axis. There have been some attempts (see, e.g., [9,10]), but
+since the human body lacks even surfaces and right angles, the accuracy of such approaches is limited.
+In contrast, the body straps that are commonly used to attach IMUs to the leg yield an almost arbitrary
+orientation of the IMU towards its segment, as illustrated in Figure 1. Nevertheless, the hinge joint angle
+
+--- PAGE 3 ---
+Sensors 2014, 14 6893
+can be calculated from the inertial measurement data. However, the data from both sensor units must
+be transformed into joint-related coordinate systems [11], i.e., coordinate systems in which one or two
+axes coincide with the joint axis and/or the longitudinal axis of the segment. This is a major challenge in
+IMU-based joint angle measurement, not only on hinge-type joints. How it might be faced is discussed
+in Section 1.3 by reviewing common methods from the literature and in Section 3.1 by introducing new
+approaches that exploit the kinematic constraints of the joint. Furthermore, we will analyze in Section 2
+how these techniques have been used by different authors to calculate knee joint angles. Finally, we
+will introduce a novel method for the measurement of flexion/extension angles on the knee and ankle in
+Section 3.2 and compare it to an established method in Section 4.
+Figure 1. The placement of inertial sensors on the human body, the definition of joint angle
+and a model of a hinge joint. (a) The local sensor coordinate axes are not aligned with the
+physiological axes and planes by which the joint angle, α, is defined; (b) the coordinates
+of the joint axis direction (green arrows) and the joint position (blue arrows) in the local
+coordinate systems of the sensors characterize the sensor-to-segment mounting.
+(a) (b)
+x
+y z
+x
+y
+z
+x
+y z
+1.3. Arbitrary Mounting Orientation and Position
+A fundamental problem in IMU-based human motion analysis is that the IMUs’ local coordinate axes
+are not aligned with any physiologically meaningful axis; see Figure 1 for an illustration. First, we shall
+note that in some publications, this problem is ignored completely by assuming that the IMUs can be
+mounted precisely in a predefined orientation towards the joint; see, e.g., [9,10]. As can also be seen in
+the figures therein, this is a rather rough approximation. In the more realistic and, from a user’s point
+of view, more convenient case of arbitrary mounting orientation, it is required to identify the joint axis
+coordinates in the local coordinate systems of the sensors attached to both ends of the joint.
+As illustrated in Figure 1, the sensor-to-segment mounting orientation and position are characterized
+by the local coordinates of the joint axis and the joint position, respectively. Both quantities might be
+measured manually, but in three-dimensional space, this is a cumbersome task that yields low accuracy
+results, as demonstrated, e.g., in [9,12]. Fortunately, at least for axis direction, alternatives exist. A
+common approach is to do this via calibration postures and/or calibration movements. Some authors,
+e.g., [13,14], make the subject stand with vertical, straight legs for a few seconds and use the acceleration
+
+--- PAGE 4 ---
+Sensors 2014, 14 6894
+measured during that time interval to determine the local coordinates of the segment’s longitudinal
+axis. Additional sitting calibration postures are used in [13]. Besides static postures, predefined
+calibration motions can be used to identify the coordinates of physically meaningful axes in the upper
+and lower sensor coordinate system. Examples can be found in Figure 2 and in [14–16]. Moreover,
+a combination of postures and motions might be used to identify the sensor-to-segment orientations,
+as e.g., in the Outwalk protocol [17,18]. It employs pure flexion/extension motions and static poses
+to find the local coordinates of joint-related axes. Finally, the protocol used in [19] solves a closed
+kinematic chain to refine joint axis and position coordinates that have been obtained from a combination
+of calibration postures, predefined motion and manual measurements of body dimensions. However, it
+is important to note that, both in calibration postures and calibration motions, the accuracy is limited by
+the precision with which the subject can perform the postures or motions. Nevertheless, the mentioned
+methods for joint axis identification make a major contribution to the quality of IMU-based joint angle
+measurements. Therefore, most of the methods that are reviewed in Section 2 employ such techniques.
+In Section 3.1.1, we will introduce a new method that, unlike previous approaches, identifies the local
+joint axis coordinates from arbitrary motion data by exploiting kinematic constraints.
+Figure 2. Examples for calibration motions that are used in the literature [14,15,17–19] to
+determine the coordinates of physiologically meaningful axes, e.g., the knee joint axis, in
+the local coordinate systems of the sensors. In such methods, the precision depends on how
+accurately the subject performs the motion. In contrast, the present approach uses arbitrary
+motions and identifies the sensor-to-segment mounting by exploiting kinematic constraints.
+Sensor-to-segment calibration using: arbitrary motions →
+. (see [20] for animations)
+. precisely defined motions
+. . ↓ &
+Besides the need of knowing the joint axis, some joint angle algorithms require additional knowledge
+of the joint position in local sensor coordinates; see, e.g., [9,21,22]. Furthermore, it has been
+demonstrated by Young [23] that joint position vectors can be used to improve the accuracy of body
+segment orientation estimates if the kinematic constraints of the joints are exploited. Vice versa,
+kinematic constraints have been used by Roetenberg et al. to estimate the joint positions based on
+accelerations and angular rates measured during motion, as briefly described in [21]. The method is
+also mentioned as an optional part of the body segment orientation Kalman filter described in [22]. In
+Section 3.1.3, we will propose a new method that exploits the same constraints, but uses a nonlinear least
+squares technique.
+
+--- PAGE 5 ---
+Sensors 2014, 14 6895
+2. Brief Review of IMU-Based Knee Angle Estimation
+Many algorithms and techniques have been suggested for IMU-based knee angle estimation. Despite
+the variety of approaches, the vast majority of authors defines the flexion/extension angle of the knee
+joint as the angle between the upper and lower leg along the main axis of relative motion, i.e., the
+knee joint axis [9,13,14,24]. In other words, the projections of the upper and lower leg into the joint
+plane, to which the joint axis is normal, confine this angle; see Figure 1. However, we shall note that
+considering the knee as a hinge joint is an approximation. Although flexion/extension is the major degree
+of freedom, a biological joint, such as the knee, is not perfectly constrained to rotation around one axis.
+This is often addressed by additionally considering abduction/adduction and internal/external rotation,
+which leads to a three-dimensional knee joint angle, as in [10,14,25]. However, abduction/adduction and
+internal/external rotation angles hardly ever exceed a range of ±10◦
+[14,26] and are strongly affected by
+soft-tissue artifacts [27,28]. Therefore, these additional degrees of freedom are not considered in many
+publications, e.g., [9,13,17,18,24].
+As mentioned before, the simplest approaches in the literature assume that the IMUs are attached
+such that one of the local coordinate axes is aligned with the joint axis. Integrating the difference
+of the upper and lower sensor’s angular rates around that axis will yield a drifting flexion/extension
+angle. In [10], this drift was removed using a high-pass filter. In another publication with the same
+mounting assumption, it was demonstrated that the joint angle can also be estimated from the measured
+accelerations if the position of the joint in both local coordinate systems is known [9]. Thereby, a root
+mean square error (RMSE) of less than 4◦
+with respect to an optical reference system was achieved.
+Although both techniques may seem restricted to a special sensor mounting, they are just as helpful in
+the case of arbitrary mounting orientation, as long as the local joint axis coordinates are known.
+A fundamentally different approach is found in [13]. After identifying the segment’s longitudinal
+axis coordinates, the authors calculate the thigh’s and shank’s inclination and approximate the
+flexion/extension angle by the difference of these inclinations. Thereby, they achieve an RMSE of
+approximately 7◦
+with respect to an optical reference system. However, their method is bound to
+the assumption that the knee axis remains horizontal during the entire motion. While that might be
+an acceptable approximation for most walking and running situations, this assumption does not hold
+during quick direction changes and for a number of other motions, like skating, hurdles or martial arts.
+In [24], the aforementioned method has been advanced. Instead of assuming a horizontal knee axis,
+the authors model the knee as a pure hinge joint and exploit its kinematic constraints using an extended
+Kalman filter. Thereby, they are able to calculate flexion/extension angles in good accordance with an
+optical reference system, both at the speed of running (8 km/h, RMSE < 4◦
+) and walking (3 km/h,
+RMSE < 1◦
+). Approximately the same precision for walking is achieved in [14]. Here, however, the
+complete orientation of each IMU with respect to a global reference coordinate system is calculated
+using a fusion algorithm that combines gyroscope and accelerometer measurements. Similarly, the
+algorithm used in [21,22] estimates sensor orientations from accelerations and angular rates. In [29],
+an RMSE below 4◦
+was achieved by combining that algorithm with the Outwalk protocol mentioned
+in Section 1.3. Finally, a mean error (RMSE not available) below 2◦
+was reported for the proprietary
+algorithm used in [30]. While it employs calibration poses and optional calibration motions to identify
+
+--- PAGE 6 ---
+Sensors 2014, 14 6896
+sensor-to-segment orientations (and, thus, the joint axis coordinates), the algorithm uses a biomechanical
+model and kinematic constraints to overcome integration drift [19].
+It is important to note that almost all the mentioned RMS errors were obtained with the reference
+systemmarkersbeingrigidlyattached(usuallyinclustersonrectangularorL-shapedcardboardorplastic
+tiles) to the inertial sensors in order to eliminate the effect of soft tissue and skin motion artifacts on
+the measured joint angle difference [21,30]. The only exception from this statement is the work of
+Takeda et al. [13], who placed optical markers on anatomical landmarks, as it is common practice in
+optical gait analysis. However, they obtain a significantly larger RMS error than those authors who
+connected the reference markers to the IMUs. This means that most previous publications only compare
+the measurement accuracy of the optical and the inertial system, instead of comparing the results of an
+optical gait analysis to those of an inertial gait analysis. We believe that this aspect has received too little
+attention in previous publications. Therefore, we will place optical reference markers on anatomical
+landmarks during the experiments in Section 4, although this might increase the observed error.
+Whichofthereviewedmethodsismostsuitableforaspecificapplicationdependsalsoontheavailable
+sensor information. In many of the mentioned publications, the orientations of the thigh and shank are
+used to calculate the flexion/extension angle [13,14,18,24]. This is straight forward if reliable sensor
+orientation estimates are available and if the local joint axis coordinates are known. However, knowing
+the joint axis allows one to reduce the problem to one dimension immediately. Therefore, especially
+if reliable orientation estimates are not immediately available, it might be advantageous to use one of
+the methods in [9,10] instead or to combine them in a new way. We will examine both approaches in
+Sections 3.2 and 4.
+3. New Methods for Inertial Sensor-Based Joint Angle Measurement
+As explained in Section 1, handling arbitrary sensor-to-segment mounting is a major challenge in gait
+analysis with inertial sensors. Manual measurements, as well as calibration poses and movements, are
+commonly suggested solutions. Furthermore, we pointed out that the use of magnetometers is typically
+limited by the assumption of a homogeneous magnetic field. In this section, we describe a set of methods
+for IMU-based joint angle estimation that allow us to face these two challenges in a new way. We will
+combine elements of the methods reviewed above, but unlike most previous attempts, we will:
+• avoid sensor-to-segment mounting assumptions;
+• require no manual measurements of any distances, etc.;
+• not rely on the accuracy with which the subject performs predefined postures or movements;
+• and avoid the use of magnetometers.
+Instead of employing any of these commonly used assumptions and restrictions, we make use of the
+fact that the knee joint behaves approximately like a mechanical hinge joint. The kinematic constraints
+that result from this fact are exploited to obtain the position vector and the direction vector of the knee
+flexion/extension axis in the local coordinates of both sensors. As outlined above, this information is
+crucial to precise joint angle calculation. We will use it to fill the gap between the sensor coordinate
+
+--- PAGE 7 ---
+Sensors 2014, 14 6897
+systems and the joint-related coordinate systems in which the angles are defined. Subsequently, this will
+allow us to calculate flexion/extension joint angles on joints with a major axis of motion, for example
+the knee and the ankle during walking. All of the methods that we will introduce use only angular rates
+and accelerations, while the use of magnetometer readings is completely avoided.
+Beforewedescribetherespectivealgorithms, letusdefinetheavailablemeasurementsignals. Assume
+that two inertial sensors, one attached to the upper leg and the other attached to the lower leg, measure
+the accelerations, a1(t),a2(t) ∈ R3
+, and angular rates, g1(t),g2(t) ∈ R3
+, at some sample period,
+∆t. Additionally, we calculate the time derivatives ġ1(t),ġ2(t)∈ R3
+of the angular rates via the third
+order approximation:
+ġ1/2(t) ≈
+g1/2(t − 2∆t) − 8g1/2(t − ∆t) + 8g1/2(t + ∆t) − g1/2(t + 2∆t)
+12∆t
+(1)
+3.1. Identification of the Joint Axis and Position
+Both the location of the sensors on the segments and their orientation with respect to the segments are
+assumed to be completely unknown. In particular, we do not assume that any of the local sensor axes
+coincides with the knee joint axis or the longitudinal axis of the segment or bone. Therefore, neither
+the direction nor position of the knee flexion/extension axis are known. However, these coordinates can
+be identified from the measurement data of arbitrary motions by exploiting kinematic constraints, as
+explained in [12]. The first step of this identification is the gathering of identification data, while the
+knee is moved around its degrees of freedom in an arbitrary manner (i.e., we do not assume any type
+of particular motion, like walking or motions in a certain direction). About every tenth of a second, a
+dataset, S(i), of the form:
+S(i) = {a1(ti),a2(ti),g1(ti),g2(ti),ġ1(ti),ġ2(ti)} (2)
+is recorded (of course, the time between taking two datasets must be a multiple of the sample period,
+i.e., ∆t|(ti+1 − ti)∀i). Thereby, a total number of N  1 datasets are collected, which will be used in
+the subsequent sections to identify local joint axis and position coordinates.
+3.1.1. Identification of the Joint Axis Coordinates
+The datasets, S(i),i ∈ [1,N], are used to identify the unit-length direction vectors, j1,j2 ∈ R3
+, of the
+knee flexion/extension axis in the local coordinates of both sensors. It is important to note that j1 and j2
+are constants and depend only on the orientation in which the sensor is mounted with respect to the joint.
+As explained in [12], the angular rates, g1(t),g2(t), measured on a hinge joint differ only by the joint
+angle velocity vector and a (time-variant) rotation matrix. Hence, their projections into the joint plane
+(i.e., the geometrical plane to which the joint axis is the normal vector) have the same lengths for each
+instant in time, which is equivalent to:
+||g1(t) × j1||2 − ||g2(t) × j2||2 = 0 ∀t (3)
+where || · ||2 denotes the Euclidean norm. This constraint holds regardless of where and in which
+orientation the sensors are mounted on the segments. In particular, every dataset, S(i),i ∈ [1,N], must
+
+--- PAGE 8 ---
+Sensors 2014, 14 6898
+fulfill Equation (3). We can therefore identify j1 and j2 by minimizing the left-hand side of Equation (3)
+for all datasets in a least squares sense. More precisely, we write j1 and j2 in spherical coordinates:
+j1 = (cos(φ1)cos(θ1),cos(φ1)sin(θ1),sin(φ1))T
+(4)
+j2 = (cos(φ2)cos(θ2),cos(φ2)sin(θ2),sin(φ2))T
+(5)
+and define the sum of squared errors:
+Ψ(φ1,φ2,θ1,θ2) :=
+N X
+i=1
+e2
+i , ei = ||g1(ti) × j1||2 − ||g2(ti) × j2||2 (6)
+Figure 3 depicts the typical form of this cost function. Since Equation (3) is invariant with respect
+to the signs of j1 and j2, this cost function has four minima, which correspond to the four possible
+combinations of signs, (j1,j2), (−j1,j2), (j1,−j2) and (−j1,−j2). By minimizing Ψ(φ1,φ2,θ1,θ2) over
+its arguments, we identify these true joint axis coordinates. This optimization might be implemented
+using a Gauss-Newton algorithm, as further described in [12], or any other standard optimization
+method [31].
+Figure 3. Sum of squares Ψ(j1,j2) of the error in the kinematic constraint (3). The two
+minima represent the true local coordinates, j1 and −j1, of the joint axis direction vector.
+3.1.2. Matching Signs of the Joint Axis Coordinates
+In Section 3.2, we will use j1 and j2 to approximate the gyroscope-based joint angle velocity by
+g1(t) · j1 − g2(t) · j2. Therefore, it is important to ensure that the signs of j1 and j2 match, i.e., that
+they point to the same direction. In practice, this can easily be achieved by a quick look at the sensor’s
+mounting orientation. An example is given in Figure 1b, where the z-axis of both sensors point roughly
+laterally (i.e., the coordinate axis points into the lateral half space, which is an easy observation; we do
+not restrict the mounting orientation in any way). If instead, to give another example, the local y-axis
+of the first sensor points roughly medially, while the local z-axis of the second sensor points roughly
+laterally, then the x-coordinate of j1 and the z-coordinate of j2 should have opposite signs. In case the
+mounting of the sensors cannot be observed, the correct pairing of the signs can also be determined from
+the inertial data itself. As a first step, we choose a period from the identification data during which the
+angular velocities around the joint axis were negligible, i.e., g1(t) · j1 ≈ 0,g2(t) · j2 ≈ 0. Then, as
+
+--- PAGE 9 ---
+Sensors 2014, 14 6899
+demonstrated in Figure 4, the traces of the angular rates in the local joint planes of the two sensors reveal
+the correct pairing. They are congruent up to rotation if the signs match, and they are rotated mirror
+images of each other if the signs do not match. For the present data analysis, this step is implemented as
+an automatic routine in the joint axis identification algorithm.
+Figure 4. Projection of the measured angular rates of both sensors into the joint plane
+(defined by the coordinates in Equation (13)) for a motion with little flexion/extension. In
+both plots, the projections have the same length at each moment in time, cf. Equation (3).
+However, when the joint axis signs match, the two curves are congruent up to some rotation
+around the origin, while in the case of opposite signs, they are mirror images of each other.
+...start
+...end
+...every 0.2s
+x-coordinate of hinge joint plane
+y-coordinate of hinge joint plane
+...start
+...end
+...every 0.2s
+x-coordinate of hinge joint plane
+y-coordinate of hinge joint plane
+3.1.3. Identification of the Joint Position Coordinates
+For a number of methods in the literature and for one of the methods that will be introduced in
+Section 3.2, it is useful to determine the position of the sensors with respect to the joint, i.e., in other
+words, the joint center position in the local coordinates of the sensors. Again, it should be noted that
+the vectors, o1,o2 ∈ R3
+, from the joint center to the origin of the first and the second sensor frame are
+constants that do not change during motion and only depend on the mounting position and orientation.
+A method is introduced in [12] that allows us to determine these quantities on spheroidal joints from
+the inertial data of arbitrary motions that excite all degrees of freedom of the joint. It exploits the fact
+that the acceleration of each sensor can be thought of as the sum of the joint center’s acceleration and
+the acceleration due to the rotation of that sensor around the joint center. Apparently, the acceleration
+of the joint center must be the same in both local frames, up to some time-variant rotation matrix
+that corresponds to the rotation of both local frames to each other. Mathematically, this constraint is
+expressed by:
+||a1(t) − Γg1(t)(o1)||2 − ||a2(t) − Γg2(t)(o2)||2 = 0 ∀t (7)
+Γgi(t)(oi) := gi(t) × (gi(t) × oi) + ġi(t) × oi, i = 1,2
+where Γgi(t)(oi) is the radial and tangential acceleration due to rotation around the joint center. By
+subtracting Γgi(t)(oi), the measured acceleration, ai(t), is shifted by −oi yielding the acceleration of the
+joint center.
+
+--- PAGE 10 ---
+Sensors 2014, 14 6900
+In [12], this argument is given for spheroidal joints only. However, the very same constraint also holds
+on a hinge joint. Every point on the hinge joint axis is a solution of Equation (7). More precisely, every
+pair of coordinates, o1,o2, that describes a point on the joint axis fulfills that constraint for any given
+motion that the joint might perform. Therefore, we use the same arbitrary motion data, S(i),i ∈ [1,N],
+as in Section 3.1.1, and define another sum of squared errors:
+Ψ̃(o1,o2) :=
+N X
+i=1
+e2
+i , ei = ||a1(t) − Γg1(t)(o1)||2 − ||a2(t) − Γg2(t)(o2)||2 (8)
+We minimize Ψ̃(o1,o2) over its arguments via a Gauss-Newton algorithm, the implementation of
+which is described in [12]. As mentioned above, any other optimization method [31] might be employed
+as well. Since the result of that optimization, denoted by ô1,ô2, refers to an arbitrary point along the
+joint axis, we shift it as close as possible to the sensors by applying:
+o1 = ô1 − j1
+ô1 · j1 + ô2 · j2
+2
+, o2 = ô2 − j2
+ô1 · j1 + ô2 · j2
+2
+(9)
+which uses the previously identified joint axis coordinates. For the present data analysis, this step is
+implemented as the final step of an automatic algorithm for joint position identification.
+3.2. Calculation of the Flexion/Extension Angle
+We assume that the local joint axis coordinates, j1,j2, and the local joint position coordinates,
+−o1,−o2, have been successfully identified using the methods described above. As explained in
+Section 1.3, this is crucial for IMU-based joint angle measurement. The identified values of j1,j2 and
+o1,o2 are now used to calculate the flexion/extension angle of an anatomical joint with one major degree
+of freedom. While we consider a knee joint to explain the methods, we extend them to the more general
+case of saddle and spheroidal joints in Section 3.3.
+Figure 5. Two algorithms for IMU-based knee angle calculation are considered.
+(Left) Sensor orientation estimates are used to calculate the orientational difference (i.e.,
+the joint angle) around a given axis. (Right) The problem is reduced to one dimension
+immediately by integrating the difference of the angular rates around the joint axis. Then, an
+acceleration-based joint angle estimate is used to remove drift.
+IMU1 IMU2
+g1(t)
+a1(t)
+m1(t)
+g2(t)
+a2(t)
+m3(t)
+Orientation
+Estimation
+Orientation
+Estimation
+R1(t)
+R2(t)
+αacc+gyr+mag(t)
+direction j1
+of joint axis
+direction j2
+of joint axis
+IMU1 IMU2
+g1(t)
+a1(t)
+g2(t)
+a2(t)
+Integrate
+g 1 ·j 1 – g 2 ·j 2
+shift a 1,2 to
+joint center
+αgyr(t)
+αacc(t)
+αacc+gyr(t)
+directions j1,2
+of joint axis
+directions j1,2
+& positions −o1,2
+of joint axis
+
+--- PAGE 11 ---
+Sensors 2014, 14 6901
+Figure 5 shows the main ideas of the two methods for joint angle measurement that we will describe.
+The first method assumes that each IMU provides highly accurate estimates of its orientation with respect
+to a common fixed reference coordinate system. Together with the local joint axis coordinates, these
+orientations directly yield an accurate flexion/extension angle. This approach is well known from the
+literature [13,14,29]. The second and novel method reduces the problem to the joint plane from the very
+start by integrating both angular rates only around the joint axis, which yields a highly accurate, but
+slowly drifting, joint angle. This angle is combined in a sensor fusion with a noisy, but driftless, joint
+angle estimate that is calculated from the measured accelerations. At this point, the second method also
+uses the joint position vectors, but unlike the first method, it does not rely on magnetometer readings.
+3.2.1. Joint Angle from Sensor Orientation Estimates
+As mentioned previously, some inertial sensors include on-board orientation estimation, which
+is usually based on a sensor fusion of the acceleration, angular rate and magnetic field vector
+measurements. These estimates describe the orientation of the sensors with respect to a fixed reference
+coordinate system, either in quaternions, rotation matrices or Euler angles. As mentioned in Section 2,
+it is an established method to use sensor orientation estimates for the calculation of joint angles; see,
+e.g., [13,14,29]. In the following, we assume that the orientation of both sensors with respect to a
+common fixed reference frame (i.e., the reference frame must be identical for each sensor) are given by
+rotation matrices, which we denote by R1(t) and R2(t). They shall be defined, such that they transform
+a locally measured vector into the reference frame, i.e., we have R1(t)j1 = R2(t)j2 ∀t. Under these
+circumstances, the flexion/extension angle αacc+gyr+mag(t) can simply be computed as:
+αacc+gyr+mag(t) = ^3d (R1(t)(j1 × c),R2(t)(j2 × c)), c ∦ j1,c ∦ j2 (10)
+where ^3d() denotes the (signed) angle between two vectors in R3
+and c ∈ R3
+can be any vector that
+makes none of the vector products zero (e.g., c = [1,0,0]T
+can be used, unless j1 or j2 happens to
+be exactly [±1,0,0]T
+). It is important to note that, by construction, this joint angle can only be as
+precise as the employed sensor orientation estimates, and it might be drifting if the orientation estimates
+are drifting.
+3.2.2. Joint Angle from Accelerometer and Gyroscope Readings
+In the following, we will compute the flexion/extension angle only from accelerations and angular
+rates. A gyroscope-based flexion/extension angle can be calculated by integrating the difference of the
+angular rates around the joint axis, i.e.,
+αgyr(t) =
+Z t
+0
+(g1(τ) · j1 − g2(τ) · j2)dτ (11)
+Furthermore, the knowledge of the joint axis coordinates allows us to employ many of the restrictive
+methods from the literature reviewed above, which require the sensor axes to coincide with joint axes or
+segment axes. In particular, we can extend the approach used in [9] to three-dimensional space. We shift
+the measured accelerations onto the joint axis by applying:
+
+--- PAGE 12 ---
+Sensors 2014, 14 6902
+ã1(t) = a1(t) − Γg1(t)(o1), ã2(t) = a2(t) − Γg2(t)(o2) (12)
+with Γg1/2(t)(o1/2) defined in Equation (7). As explained in Section 3.1.3, ã1(t) and ã2(t) are the same
+quantity measured in two different local coordinate systems, which rotate with respect to each other
+around one axis. Therefore, the flexion/extension angle can be approximated by the angle between
+the projections of ã1(t) and ã2(t) into the joint plane (ideally, the two angles are identical, but due to
+measurement inaccuracies, it is rather an approximation). Consequently, we define a pair of joint plane
+axes x1/2,y1/2 ∈ R3
+for each local frame:
+x1 = j1 × c, y1 = j1 × x1, x2 = j2 × c, y2 = j2 × x2, c ∦ j1,c ∦ j2, (13)
+and we calculate the accelerometer-based joint angle by:
+αacc(t) = ^2d
+"
+ã1(t) · x1
+ã1(t) · y1
+#
+,
+"
+ã2(t) · x2
+ã2(t) · y2
+#!
+(14)
+where ^2d() denotes the (signed) angle between two vectors in R2
+. The resulting angle, αacc(t), is not
+affected by drift, since we did not employ any integration to calculate it. We shall note that the above
+equations are sensitive to measurement errors if the shifted accelerations, ã1/2(t), are almost collinear
+with the joint axes j1/2. However, in almost every practical situation, the gravitational acceleration
+dominates the acceleration signals a1(t),a2(t) and ã1(t),ã2(t). Therefore, the errors should only be
+significant when the knee axis is close to vertical or during the periods in which the knee is strongly
+accelerated in the medial or lateral direction. Both situations are rare in walking and most other motions
+of sports or daily activities. Please also note that Γg1/2(t)(o1/2) in Equation (12) is typically small
+compared to gravitational acceleration and therefore sensitivity to inaccuracies in o1,o2 is low.
+Figure 6 shows the typical course of the two angles, αgyr(t) and αacc(t), that we derived in this
+subsection. The gyroscope-based angle is very precise on short time scales, but exhibits some slow
+drift of about 1.5 ◦
+/s (please note that the drift depends on the the bias of the gyroscopes). The
+accelerometer-based angle does not drift, but it is affected by the accelerometer noise and seems to
+be less reliable in moments of large acceleration changes. Therefore, it is advantageous to combine both
+angles using a standard tool of sensor fusion, e.g., a complementary filter [32] or a Kalman filter. The
+result shall be denoted by αacc+gyr(t). A simple implementation example is given by:
+αacc+gyr(t) = λαacc(t) + (1 − λ)(αacc+gyr(t − ∆t) + αgyr(t) − αgyr(t − ∆t)), λ ∈ [0,1] (15)
+Figure 6 presents the result of the sensor fusion for a weight λ = 0.01 and a sample period
+∆t = 0.02 s. As demonstrated, αacc+gyr(t) does not follow the spikes of the acceleration-based angle
+and also does not exhibit the drift of the gyroscope-based angle. In Section 4, we will examine how
+accurate this IMU-based flexion/extension angle measurement is.
+
+--- PAGE 13 ---
+Sensors 2014, 14 6903
+Figure 6. Sensor fusion of the gyroscope-based and the accelerometer-based knee angle of a
+leg prosthesis. The noisy, but driftless, angle, αacc(t), is combined with the very precise, but
+drifting, angle, αgyr(t), using the complementary filter (15). The resulting angle, αacc+gyr(t),
+is accurate on small and on large time scales.
+3.3. Extension to Saddle and Spheroidal Joints
+The method that was introduced in the previous subsection assumes that two segments are connected
+by a joint with one rotational degree of freedom. As mentioned before, the human knee is not exactly
+such a hinge joint, since it admits some rotation in the frontal and the transversal plane of up to about
+8◦
+[26]. These motions are even stronger when saddle or spheroidal joints, e.g., the ankle or the hip,
+are considered. Therefore, we briefly discuss the influence of these additional motions on the methods
+proposed above. Since the joint position estimation introduced in Section 3.1.3 exploits the kinematic
+constraint of a spheroidal joint, it works just as well when such motions occur, as demonstrated in [12]
+for ankle joints. Likewise, the joint axis estimation, which exploits the kinematic constraint (3) of a
+hinge joint, can be employed on saddle and spheroidal joints. However, it will always identify the main
+axis of motion, i.e., the axis that minimizes the sum of squares in (6). This means that other motion may
+occur. However, while the identification data is recorded, flexion/extension must be dominant in order
+to obtain the corresponding axis. In Section 4, we will demonstrate that, in the case of the ankle joint,
+data from normal walking is sufficient to properly identify the dorsiflexion/plantarflexion axis.
+The calculation of joint angles, as described above, is limited to rotations around the identified joint
+axis in both methods. While both methods might also be adapted and employed for abduction/adduction
+and inversion/eversion angle measurements, we focus only on flexion/extension. As mentioned above,
+this is in accordance with numerous authors [9,13,17,18,24]. Nevertheless, small additional rotations
+in the other dimensions do not affect any of the geometrical arguments used in the algorithms above.
+Therefore, they can be employed for flexion/extension angle measurement on real saddle or spheroidal
+joints, e.g., the hip or the ankle. In Section 4, we will examine how accurate these methods work on the
+plantar/dorsiflexion of ankle joints.
+4. Experimental Results and Discussion
+The two methods that were introduced in Section 3 are now evaluated in repeated gait experiments
+with a transfemoral amputee (age 40, height 182 cm, weight 83 kg, K-Level 4, i.e., the highest level of
+
+--- PAGE 14 ---
+Sensors 2014, 14 6904
+the Amputee Mobility Predictor). The subject is wearing a leg prosthesis and has given informed consent
+to the investigations. Reflection markers are placed on the body segments of the subject at corresponding
+physiological landmarks; see Figure 7. The 3D positions of these markers are recorded at 120 Hz by an
+optical motion tracking system with ten cameras (Vicon V612 [33]). Furthermore, we use elastic body
+straps to equip the upper and lower leg, as well as the foot, of both the prosthesis and the contralateral leg
+with one inertial measurement unit (Xsens MTw [1]) each, as depicted in Figure 7. At a measurement
+rate of 60Hz, these six devices provide 3D accelerations and angular rates in local coordinates, as well as
+estimates of sensor orientations with respect to a common global reference frame. We neither restrict the
+mounting of the IMUs to certain locations or orientations, nor do we measure these quantities. Instead,
+the subject is instructed to perform circling motions of the upper leg, the lower leg and the foot with a
+few arbitrary changes in direction and amplitude. This motion is executed for about ten seconds on both
+sides (see Figure 2 and [20] for an illustration). The methods from Sections 3.1.1 and 3.1.3 are used
+to estimate the knee axis direction and position, as well as the ankle joint position on both sides from
+the recorded inertial data. Subsequently, the subject walks repeatedly about ten meters at a self-selected
+speed on a straight line within the range of an optical gait analysis system and far away from potential
+magnetic disturbances. The data that is gathered during these walking trials is, on the one hand, used
+to identify the ankle plantar/dorsiflexion axis on both sides. On the other hand, we calculate the knee
+flexion/extension angles and the ankle plantar/dorsiflexion angle of both legs using the methods from
+Sections 3.2.1 and 3.2.2.
+Figure 7. Placement of inertial measurement units and optical markers on the legs of a
+transfemoralamputee. Theopticalmarkersareplacedatthetypicalphysiologicallandmarks.
+The IMUs are attached using body straps without restricting their position or orientation.
+The resulting ankle and knee angle traces of two different trials are provided in Figures 8 and 9.
+The difference between the prosthesis and the human leg is considerable, but this aspect is outside the
+focus of this manuscript and, therefore, shall not be discussed here. For additional orientation, gait
+phase transitions are indicated, which were detected based on inertial measurement data from the foot
+
+--- PAGE 15 ---
+Sensors 2014, 14 6905
+sensor using an offline version of the algorithm described in [34,35]. With respect to the optical system,
+both IMU-based methods achieve a root-mean-square deviation of less than 0.6◦
+on the prosthesis side
+and more than 3◦
+on the contralateral side. The deviations of the subsequent trials are summarized in
+Table 1. In all trials, both IMU-based approaches yield similar values, although they use the inertial data
+in completely different ways.
+Figure 8. Comparison of the two IMU-based knee flexion/extension angle measurements
+(αacc+gyr+mag(t) and αacc+gyr(t)) with the result of an optical gait analysis system (αopt(t)).
+On the prosthesis side, there is no significant deviation (epr < 0.6◦
+). However, on the
+contralateral side, skin and muscle motion effects, which are strongest during push-off and
+heel-strike, lead to RMS errors ecl of almost 4◦
+.
+-20
+0
+20
+40
+60
+80
+0.0 0.2 0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8 2.0
+opt
+acc+gyr
+acc+gyr+mag
+cl
+cl
+pr
+pr
+opt
+acc+gyr
+acc+gyr+mag
+opt acc+gyr
+opt acc+gyr+mag
+Figure 9. Comparison of the two IMU-based ankle plantar/dorsiflexion angle measurements
+(αacc+gyr+mag(t) and αacc+gyr(t)) with the result (αopt(t)) of an optical gait analysis system.
+Both on the prosthesis side and on the contralateral side, the deviation is about 1◦
+.
+-50
+-40
+-30
+-20
+-10
+0
+10
+20
+0.0 0.2 0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8 2.0
+opt
+acc+gyr
+acc+gyr+mag
+cl
+cl
+pr
+pr
+opt
+acc+gyr
+acc+gyr+mag
+opt acc+gyr
+opt acc+gyr+mag
+
+--- PAGE 16 ---
+Sensors 2014, 14 6906
+Table 1. Deviations between the knee flexion/extension and ankle plantar/dorsiflexion angle
+measurements of the optical and the inertial system for six gait trials of a transfemoral
+amputee. Results are given for αacc+gyr only, since both methods yield very similar results.
+The deviations vary little (σ ≈ 1◦
+). For the knee angles, the same difference in the accuracies
+of the prosthesis and human leg is observed as in Figure 8.
+Trials RMSE
+1 2 3 4 5 6 σ Average
+knee
+prosthesis 0.46◦
+0.89◦
+0.59◦
+0.95◦
+0.57◦
+0.77◦
+0.19◦
+0.71◦
+contralateral 3.25◦
+2.76◦
+3.10◦
+3.16◦
+0.40◦
+3.83◦
+1.20◦
+3.30◦
+ankle
+prosthesis 0.92◦
+1.03◦
+0.91◦
+0.65◦
+0.67◦
+0.69◦
+0.16◦
+0.81◦
+contralateral 0.95◦
+1.50◦
+1.25◦
+1.53◦
+1.85◦
+2.61◦
+0.57◦
+1.62◦
+It is important to note that the errors on the human leg are about four times larger than on
+the prosthesis. One might suppose that this is because of the human knee being less close to a
+perfect hinge joint. However, we just explained in Section 3.3 that the IMU-based algorithms ignore
+abduction/adduction and internal/external rotations, just as the optical analysis does. Therefore, a more
+reasonable explanation is found in the following remarkable difference between the two sides: on the
+prosthesis, the IMUs and the optical markers are rigidly connected by the artificial thigh and shank.
+However, on the human leg, the inertial sensors and the markers move relative to each other as a result
+of muscle and skin motions. This argument is supported by the fact that deviations between optical
+and IMU-based angles are largest during push-off and heel strike, i.e., when the leg is accelerated and
+decelerated. Furthermore, there are a number of experimental studies (see Section 2) in which the optical
+markers were placed directly on the inertial sensors or onto rigid plastic or wood parts that also held the
+inertial sensors. In these studies, deviations of less than 2◦
+were observed, which further supports the
+argument that the deviations in Figure 8 result from skin and muscle motions.
+5. Conclusions
+In the previous sections, we discussed methods for IMU-based joint angle measurement on the human
+body. Special attention was dedicated to the challenge of arbitrary mounting orientation and position.
+We proposed a set of methods that allow us to determine the local joint axis and position coordinates
+from arbitrary motions by exploitation of the kinematic constraints of the joint. We believe that these
+methods are more practical and more robust than previously suggested methods that require the subject
+to perform a precise calibration movement or pose than methods that require one to attach the sensors in
+specific positions or orientations
+In addition, we described two methods for the calculation of precise flexion/extension angles on
+hinge, saddle and spheroidal joints. The first method is known from the literature and requires precise
+estimates of the sensors’ orientations with respect to a common fixed reference frame. The second and
+novel method employs only accelerometer and gyroscope readings. Since the use of magnetometers
+is avoided, it can be used indoors and in the proximity of magnetic disturbances. Both methods were
+evaluated against an optical gait analysis system on the gait of a transfemoral amputee. We obtained
+
+--- PAGE 17 ---
+Sensors 2014, 14 6907
+highly precise results with RMSE of about 1◦
+on the ankle joints, as well as on the prosthetic knee, and
+discussed the effect of skin and muscle motions on the contralateral knee, which led to slightly larger
+deviations of about 3◦
+. Future research will be dedicated to the question of how these effects can be
+compensated for or minimized.
+Furthermore, the proposed algorithms are such that it is straight forward to implement them for online
+use. Therefore, andsincetheysupersedemanualmeasurementsandprecisecalibrationmovements, these
+new methods open the door to a plug-and-play gait analysis, in which one simply attaches the IMUs,
+moves the legs for a few seconds and then receives joint angle measurements in real time. This will be
+the subject of our future research, including extensions for 2D and 3D angle measurements on ankle and
+hip joints.
+Acknowledgments
+The authors are indebted to Timo von Marcard, Bettina Westebbe and Julius Thiele, as well as
+to Thomas Schmalz and his team for their excellence and cooperation before, during and after the
+gait experiments. Furthermore, we gratefully acknowledge Steffen Schäperkötter’s skillful support in
+programming and data evaluation. We sincerely thank the subject of the gait trials for letting us record
+inertial data during his examination in the optical gait lab. Finally, we thank Celine Sin for her valuable
+advice on language and style. As part of the research project, mebGO, this work was supported by the
+German Federal Ministry of Education and Research (FKZ 01EZ1112).
+Author Contributions
+Thomas Seel developed and implemented the algorithms for joint axis and position identification and
+for joint angle measurement under the valuable guidance and advice of Thomas Schauer. Both prepared
+the data acquisition for the experiments that the acknowledged colleagues and Thomas Seel carried
+out. Jörg Raisch is the head of the research group in which the reported research was performed. His
+contribution to the research was general guidance and advice. All authors contributed in writing and
+revising the manuscript.
+Conflicts of Interest
+The authors declare no conflict of interest.
+References
+1. Xsens MTw. Available online: http://www.xsens.com/en/mtw (accessed on 10 April 2014).
+2. Sabatini, A.M. Estimating Three-Dimensional Orientation of Human Body Parts by
+Inertial/Magnetic Sensing. Sensors 2011, 11, 1489–1525.
+3. Savage, P.G. Strapdown inertial navigation integration algorithm design part 1: Attitude algorithms.
+J. Guid. Control Dynam. 1998, 21, 19–28.
+4. Luinge, H.J.; Veltink, P.H. Measuring orientation of human body segments using miniature
+gyroscopes and accelerometers. Med. Biol. Eng. Comput. 2005, 43, 273–282.
+
+--- PAGE 18 ---
+Sensors 2014, 14 6908
+5. Bachmann, E.; Yun, X.; Brumfield, A. Limitations of Attitude Estimation Algorithms for
+Inertial/Magnetic Sensor Modules. IEEE Robot. Autom. Mag. 2007, 14, 76–87.
+6. De Vries, W.H.; Veeger, H.E.; Baten, C.T.; van der Helm, F.C. Magnetic distortion in motion labs,
+implications for validating inertial magnetic sensors. Gait Posture 2009, 29, 535–541.
+7. Cheng, P.; Oelmann, B. Joint-Angle Measurement Using Accelerometers and Gyroscopes—A
+Survey. IEEE Trans. Instrum. Meas. 2010, 59, 404–414.
+8. Moreno, J.C.; de Lima, E.R.; Ruíz, A.F.; Brunetti, F.J.; Pons, J.L. Design and implementation
+of an inertial measurement unit for control of artificial limbs: Application on leg orthoses. Sens.
+Actuators B Chem. 2006, 118, 333–337.
+9. Liu, K.; Liu, T.; Shibata, K.; Inoue, Y. Ambulatory measurement and analysis of the lower limb 3D
+posture using wearable sensor system. In Proceedings of International Conference on Mechatronics
+and Automation (ICMA 2009), Changchun, China, 9–12 August 2009; pp. 3065–3069.
+10. Favre, J.; Luthi, F.; Jolles, B.M.; Siegrist, O.; Najafi, B.; Aminian, K. A new ambulatory system
+for comparative evaluation of the three-dimensional knee kinematics, applied to anterior cruciate
+ligament injuries. Knee Surg. Sports Traumatol. Arthrosc. 2006, 14, 592–604.
+11. Wu, G.; Cavanagh, P.R. ISB recommendations for standardization in the reporting of kinematic
+data. J. Biomech. 1995, 28, 1257–1261.
+12. Seel, T.; Schauer, T.; Raisch, J. Joint axisandposition estimationfrom inertialmeasurementdata by
+exploiting kinematic constraints. In Proceedings of the IEEE International Conference on Control
+Applications, Dubrovnik, Croatia, 3–5 October 2012; pp. 45–49.
+13. Takeda, R.; Tadano, S.; Natorigawa, A.; Todoh, M.; Yoshinari, S. Gait posture estimation using
+wearable acceleration and gyro sensors. J. Biomech. 2009, 42, 2486–2494.
+14. Favre, J.; Jolles, B.M.; Aissaoui, R.; Aminian, K. Ambulatory measurement of 3D knee joint angle.
+J. Biomech. 2008, 41, 1029–1035.
+15. O’Donovan, K.J.; Kamnik, R.; O’Keeffe, D.T.; Lyons, G.M. An inertial and magnetic sensor based
+technique for joint angle measurement. J. Biomech. 2007, 40, 2604–2611.
+16. Favre, J.; Aissaoui, R.; Jolles, B.M.; de Guise, J.A.; Aminian, K. Functional calibration procedure
+for 3D knee joint angle description using inertial sensors. J. Biomech. 2009, 42, 2330–2335.
+17. Cutti, A.G.; Ferrari, A.; Garofalo, P.; Raggi, M.; Cappello, A.; Ferrari, A. Outwalk: A protocol for
+clinical gait analysis based on inertial and magnetic sensors. Med. Biol. Eng. Comput. 2010, 48,
+17–25.
+18. Ferrari, A.; Cutti, A.G.; Garofalo, P.; Raggi, M.; Heijboer, M.; Cappello, A.; Davalli, A. First
+in vivo assessment of outwalk: A novel protocol for clinical gait analysis based on inertial and
+magnetic sensors. Med. Biol. Eng. Comput. 2010, 48, 1–15.
+19. Roetenberg, D.; Luinge, H.; Slycke, P. Xsens MVN: Full 6DOF Human Motion Tracking
+Using Miniature Inertial Sensors. Available online: http://www.xsens.com/images/stories/PDF/
+MVN_white_paper.pdf (accessed on 12 March 2014).
+20. Inertial Sensor-Based Gait Analysis. Available online: http://www.control.tu-berlin.de/
+IMU-Based_Gait_Analysis (accessed on 10 April 2014).
+
+--- PAGE 19 ---
+Sensors 2014, 14 6909
+21. Roetenberg, D; Schipper, L; Garofalo, P; Cutti, A.G.; Luinge, H.J. Joint angles and segment length
+estimation using inertial sensors. Presented at 3DMA-10 Meeting of the Technical Group on 3-D
+Analysis of Human Movement of the ISB, San Francisco, CA, USA, 14–16 July 2014.
+22. Luinge, H.J.; Roetenberg, D.; Slycke, P.J. Inertial Sensor Kinematic Coupling. Patent
+US20110028865 A1, 3 February 2011.
+23. Young, A.D. Use of Body Model Constraints to Improve Accuracy of Inertial Motion Capture. In
+Proceedings of the International Workshop on Wearable and Implantable Body Sensor Networks
+(BSN), Singapore, Singapore, 7–9 June 2010; pp. 180–186.
+24. Cooper, G.; Sheret, I.; McMillian, L.; Siliverdis, K.; Sha, N.; Hodgins, D.; Kenney, L.; Howard, D.
+Inertial sensor-based knee flexion/extension angle estimation. J. Biomech. 2009, 42, 2678–2685.
+25. Brennan, A.; Zhang, J.; Deluzio, K.; Li, Q. Quantification of inertial sensor-based 3D joint angle
+measurement accuracy using an instrumented gimbal. Gait Posture 2011, 34, 320–323.
+26. Perry, J.; Burnfield, J.M. Gait Analysis: Normal and Pathological Function, 2nd ed.; Slack
+Incorporated: Thorofare, NJ, USA, 1992.
+27. Ramsey, D.K.; Wretenberg, P.F. Biomechanics of the knee: Methodological considerations in the
+in vivo kinematic analysis of the tibiofemoral and patellofemoral joint. J. Biomech. 1999, 14,
+595–611.
+28. Stagni, R.; Fantozzi, S.; Cappello, A.; Leardini, A. Quantification of soft tissue artefact in motion
+analysis by combining 3D fluoroscopy and stereophotogrammetry: A study on two subjects. Clin.
+Biomech. 2005, 20, 320–329.
+29. Van den Noort, J.C.; Ferrari, A.; Cutti, A.G.; Becher, J.G.; Harlaar, J. Gait analysis in children with
+cerebral palsy via inertial and magnetic sensors. Med. Biol. Eng. Comput. 2013, 51, 377–386.
+30. Zhang, J.-T.; Novak, A.C.; Brouwer, B.; Li, Q. Concurrent validation of Xsens MVN measurement
+of lower limb joint angular kinematics. Physiol. Meas. 2013, 34, N63–N69.
+31. Fletcher, R. Practical Methods of Optimization, 2nd ed.; John Wiley & Sons: New York, NY,
+USA, 1987.
+32. Young, A.D. Comparison of Orientation Filter Algorithms for Realtime Wireless Inertial Posture
+Tracking. In Proceedings of the 6th International Workshop on Wearable and Implantable Body
+Sensor Networks (BSN 2009), Berkeley, CA, USA, 3–5 June 2009; pp. 59–64.
+33. Vicon. Available online: http://www.vicon.com (accessed on 10 April 2014).
+34. Seel, T.; Schäperkötter, S.; Valtin, M.; Werner, C.; Schauer, T. Design and Control of an Adaptive
+Peroneal Stimulator with Inertial Sensor-Based Gait Phase Detection. In Proceedings of the 18th
+Annual International FES Society Conference, San Sebastian, Spain, 6–8 June 2013; pp. 177–180.
+35. Seel, T.; Landgraf, L.; Schauer, T. Online Gait Phase Detection with Automatic Adaption to Gait
+Velocity Changes Using Accelerometers and Gyroscopes. Biomed. Tech. (Berl.), submitted for
+publication, 2014.
+c 2014 by the authors; licensee MDPI, Basel, Switzerland. This article is an open access article
+distributed under the terms and conditions of the Creative Commons Attribution license
+(http://creativecommons.org/licenses/by/3.0/).
+
+--- PAGE 20 ---

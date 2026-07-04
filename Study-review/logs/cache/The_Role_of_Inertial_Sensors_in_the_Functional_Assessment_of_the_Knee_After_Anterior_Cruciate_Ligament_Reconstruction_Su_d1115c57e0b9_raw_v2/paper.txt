@@ -1,0 +1,1116 @@
+
+--- PAGE 1 ---
+School of Medicine
+MSc Applied Biomechanics in Orthopaedics
+2019 - 2020
+Postgraduate Thesis:
+THE ROLE OF INERTIAL SENSORS IN THE
+FUNCTIONAL ASSESSMENT OF THE KNEE AFTER
+ANTERIOR CRUCIATE LIGAMENT
+RECONSTRUCTION SURGERY.
+A SYSTEMATIC REVIEW.
+Vassilios Baliotis
+R.N. 20190927
+Athens, 2022
+
+--- PAGE 2 ---
+Copyright © Vassilios Baliotis, 2022
+All rights reserved.
+Thisdissertation wasprepared intheframeworkoftherequirementsofthePostgraduate
+Specialization Program in Applied Biomechanics in Orthopaedics by the School of
+Medicine of the National and Kapodistrian University of Athens. Its approval does not
+necessarily imply theacceptance of the author's views by theNational and Kapodistrian
+University of Athens.
+
+--- PAGE 3 ---
+The present dissertation was prepared in the context of the studies for the acquisition
+of a Postgraduate Specialization Diploma in "Applied Biomechanics in Orthopaedics"
+awarded by the School of Medicine of the National and Kapodistrian University of
+Athens.
+Approved ………………………... by the examination committee:
+Elias Tsepis
+Professor of Physiotherapy Dept, University of Patras
+(Supervisor)
+Signature
+Olga Savvidou
+Asc. Professor of Orthopaedics, National & Kapodistrian University of Athens
+Signature
+Panagiotis Koulouvaris
+Asc. Professor of Orthopaedics, National & Kapodistrian University of Athens
+Signature
+
+--- PAGE 4 ---
+I certify that this postgraduate thesis results from my work and is not a product of
+copying. I have used quotation marks where required and listed their sources in the
+bibliography section in the published or unpublished sources I mention.
+Signature: ...............................................
+
+--- PAGE 5 ---
+Acknowledgements
+I would like to express my gratitude to my primary supervisor, Prof Elias Tsepis, who
+guided me throughout this project. I would also like to thank the teaching staff of the
+postgraduate program for the valuable knowledge they imparted to me, as well as the
+secretariat for the technical support. Finally, I would like to thank my wife Despina for
+her unconditional support in these two very intense academic years.
+
+--- PAGE 6 ---
+i
+ABSTRACT
+Objective: This article's primary purpose is to systematically review the literature on
+whether portableandaffordable inertial sensors can reveal reliableinter-limb kinematic
+asymmetries in ACL reconstructed (ACLR) patients.
+Design: Systematic review following PRISMA-DTA guidelines
+Methods: We conducted a database search of PUBMED, CINAHL, SCOPUS, and
+SPORTDISCUS, checking for publications that compared the use of inertial sensors to
+motion analysis systems, assessing subjects with ACLR during a dynamic test or
+walking. The reviewers appraised every eligible study for its methodological quality
+according to the QUADAS-2 checklist.
+Results: Initially, 279 articles were retrievedand finally, fivemet theinclusion criteria.
+In four studies, the extracted features from inertial sensors revealed significant inter-
+limb differences in ACLR patients. Some of these features were strongly correlated
+with metrics acquired from the motion analysis systems.
+Conclusion: Inertial sensors can provide comparable information to motion analysis
+systems during dynamic knee assessment after ACLR surgery. This has significant
+potential for clinical use, enhancing patients' functional assessment and the monitoring
+of the rehabilitation process.
+Key words: inertial sensors, knee assessment, ACL, diagnostic accuracy
+
+--- PAGE 7 ---
+ii
+TABLE OF CONTENTS
+ABSTRACT ................................................................................................................ i
+List of tables ................................................................................................................. iii
+List of figures................................................................................................................ iii
+Abbreviations ............................................................................................................... iv
+Chapter 1. INTRODUCTION ....................................................................................... 1
+1.1 Optical motion capturesystems ................................................................... 1
+1.2 Non optical motion capture systems ........................................................... 2
+1.3 Anterior CruciateLigament ......................................................................... 4
+1.4 Biomechanical Asymmetries after ACLR.................................................... 4
+1.5Quadriceps Strength Deficits ....................................................................... 5
+1.6 Objectives.....................................................................................................5
+Chapter 2. METHODS .................................................................................................. 6
+2.1Informationsourcesandsearchstrategy..........................................................................6
+2.2 Study selection............................................................................................. 6
+2.3 Eligibility criteria......................................................................................... 6
+2.4 Assessment of risk of bias............................................................................ 7
+2.5 Diagnostic accuracy measures and synthesis of results............................... 7
+Chapter 3. RESULTS..............................................................................................…... 8
+3.1 Demographic data.......................................................................…............. 9
+3.2 Tested devises - index.................................................................................. 9
+3.3 Reference standard..................................................................................... 10
+3.4 Test Tasks.......................................................................…....................... 10
+3.5 Risk ofbiasand applicabilityconcerns....................................................... 11
+3.6 IMUs Diagnostic accuracy......................................................................... 11
+3.7 Motion analysis systems' diagnostic accuracy........................................... 13
+3.8 IMUs correlation with the Motion analysis system.................................... 14
+Chapter 4. DISCUSSION............................................................................................ 15
+4.1 Clinical implications andconsiderations.................................................... 16
+4.2 Limitations................................................................................................. 18
+4.3 Conclusion.......................................................................................….…. 19
+REFERENCES............................................................................................................ 20
+ΠΕΡΙΛΗΨΗ................................................................................................................. 26
+
+--- PAGE 8 ---
+iii
+LIST OF TABLES
+2.1 Booleansearch strategy............................................................................................ 6
+2.2 Inclusion, exclusion criteria..................................................................................... 7
+3.1. Population summary for the studies........................................................................ 9
+3.2. Inertial Sensors summary used in studies................................................................ 9
+3.3. Motion analysis systems summary used in studies................................................ 10
+3.4. Test tasks summary............................................................................................... 11
+3.5. Summary of IMUs' extracted variables and inter-limb differences........................12
+3.6. Summary of motion analysis systems' extracted variables inter-limb differences 13
+3.7. Summary of correlation between extracted variables of the two systems............. 14
+LIST OF FIGURES
+1.1. Types of motion capture systems………………………………………………… 3
+3.1. PRISMA literature review flow diagram................................................................ 8
+
+--- PAGE 9 ---
+iv
+ABBREVIATIONS
+ACL: Anterior Cruciate Ligament
+ACLR: Anterior Cruciate Ligament Reconstruction
+IMU: Inertial Measurement Unit
+KAV: Knee Angular Velocity
+KMom: Knee Extensor Moment
+KPow: Knee Power Absorption
+MEMS: Micro-Electro-Mechanical Systems
+MIMU: Magnetic Inertial Measurement Unit
+PRISMA-DTA: Preferred ReportingItems for Systematic Reviews and Meta-Analyses
+for Diagnostic Test Accuracy
+QUADAS-2: Quality Assessment of Diagnostic Accuracy Studies
+SAV: Shank Angular Velocity
+SLL: Single Limb Loading
+TAV: Thigh Angular Velocity
+
+--- PAGE 10 ---
+1
+1. INTRODUCTION
+Human motion analysis has a significant value in medicine, especially in orthopedics and
+sports medicine. The measurement of movement and how the forces are applied during a
+functional task can be valuable for appraising various surgical or therapeutic treatments (An,
+1984).
+Thestudy ofhumanmovement hasbecomeanareaof interest sincetheearliest times. During
+the renaissance, the concurrent evolution of science and mathematics settled the foundations
+for experimental observation. The unprecedented evolution of computer technology has
+provided us with sophisticated systems to capture human motion (Colyer et al., 2018). The
+gold standard for this purpose is a system consisting of cameras and retroreflective markers
+attached to the human body's anatomical landmarks, providing 3D visualization (Baker et
+al., 2007). Moreover, force measurement platformsin the ground provide the reaction forces
+during motion, andthroughinverse dynamics, cancalculate net joint torques (Aurbach et al.,
+2017). Lastly, EMG recordings produce accurate signals of electrical muscle activity (Raez
+et al., 2006).
+1.1 Optical motion capture systems
+The term motion capture includes many systems for quantitatively recording body
+movements. They can be divided into two major categories, optical and non-optical (Roggio
+et al., 2021). The first category is camera-based systems. These derive motion data from
+video recordings with special cameras. In the marker-based motion detection systems,
+multiple markers, active (luminous) or passive (reflective), are placed on the subject's
+prespecified anatomical landmarks according to various anthropometricmodels and adigital
+3D representation is acquired. Then the video is captured from multiple angles using
+multiple cameras. The markers' positions define the body's segments coordinates in space
+and through mathematical algorithms and geometrical equations, the kinematics variables
+for the joints of interest are calculated in all movement planes (frontal, sagittal, and
+transversal). This is the most flexible and standard method used in the industry (Oppelt et
+al., 2019).
+
+--- PAGE 11 ---
+2
+A markerless motion detection system has also been developed. There is no need to mark
+the body here. The software can track the subject's characteristics and infer relative motion
+from the video. Those movement data can be mapped to existing frameworks such as 3D
+models of the human body, hands, and face. Markerless systems can be based on regular
+video cameras, but it is also common to use depth-sensitive cameras. Such cameras use
+patterns of near-infrared light to recognize depth.
+However, although these are still the gold-standard systems, they also have considerable
+disadvantages; establishing a gait laboratory requires equipment purchases that average
+$300,000 maintenance contracts for hardware and software ($30–$50,000) and full-time
+laboratory personnel. Theyarealso time-consuming and confinedto a small collectionspace
+(Simon et al., 2004).
+1.2 Non optical motion capture systems
+The second category, sensor-based systems, gets more detailed motion data from a small
+number of specific points (Andriacchi et al., 2006). Lately, new technology acquired from
+aerospace, industrial and robotic engineering appears a promising development in the field
+of human motion analysis. Small, low-powered electromechanical sensors may bridge the
+gap between large laboratory systems and clinical systems (Cuesta-Vargas et al., 2010).
+These Micro-Electro-Mechanical Systems (MEMS) use accelerometers, magnetometers,
+and gyroscopes. Linear acceleration sensors are exclusively able to measure the acceleration
+along a specific direction. These transducers can be classified into one- two- and three-axis
+accelerometers depending on the number of sensitivity directions. When information
+regarding the device's rotation in space is required, as in gait analysis, angular velocity
+sensors (gyroscopes) must be added. A magnetometer measuring the earth's magnetic field
+orientation is often added to the sensor assembly to allow for easier re-calibration of the
+device and compensate for gyroscope drift issues. A device of a three-axis gyroscope and a
+three-axis accelerometer is called an Inertial Measurement Unit (IMU). When a
+magnetometer is also used, the device is known as MIMU (Magnetic Inertial Measurement
+Unit) (Petraglia et al., 2019).
+
+--- PAGE 12 ---
+3
+Worn on thebody segments, they providemotioninformationmeasured directlyonthebody,
+and they can be used for in-field measurements. Sensors are usually placed on each recorded
+body segment to derive joint kinematics. Rather than requiring accurate positioning, the user
+calibrates the IMUs according to the segment's coordinate system. Therefore, the placement
+procedure is less time-consuming compared to an optical system and their use requires much
+less expertise (Bleser et al., 2017).
+Figure 1.1: Types of motion capture systems
+Numerous studies have incorporated IMUs for assessing gait, functional movements, and
+sports activities throughout the literature. Gait analysis is the most commonly evaluated
+activity (Weygers et al., 2020). Compared with an optical motion capture system, wearable
+sensors can detect clinically relevant parameters with excellent test-retest reliability for all
+spatio-temporal metrics (Teufl, 2019; Washabough, 2017; Cho, 2018). 3D joint kinematics
+during dynamic tasks can also be assessed with a range of motion error below 3o
+(Teufl et
+al., 2019).
+There is also an electromagnetic tracking system consisting of a transmitter and a sensor.
+The transmitter emits a low-frequency magnetic field, and a sensor placed on the moving
+motion capturesystems
+optical
+with markers
+passive active
+markerless
+non optical
+inertial magnetic electromagnetic
+
+--- PAGE 13 ---
+4
+object measures the strength of each of these magnetic fields. From the field strength data
+for each axis, you can calculatethepositionandorientation of thesensor (Stelzeret al,2004).
+1.3 Anterior Cruciate Ligament
+Muscles, ligaments, and menisci supply the knee joint with rigidity and stability, allowing it
+to transfer enormous loads while performing numerous everyday duties (Markolf et al.,
+1976). The anterior cruciate ligament is the primary static stabilizer against the anterior
+translation of the tibia on the femur (Woo et al., 2006). It plays a vital role as a guide of the
+screw-home mechanism of the knee. The tibia internally rotates when the knee flexes and
+externally rotates as the femoral condyles roll and glide on the tibial plateau as the knee
+extends—the knee joint locks in a position of maximum stability during full extension
+(close-packed position) (Moglo et al., 2005).
+For activeindividualswith an ACLrupture, ligament repair isthecurrent standardoftherapy
+(Marx et al.,2003). When designing a personalized post-surgical rehabilitation protocol for
+patients with ACLR, numerous factors should be considered, including the required return
+activity level, time to surgical intervention, type of surgery and graft choice, post-surgical
+muscle strength, and proprioceptive deficits (Della Villa et al., 2015). Despite the high
+functional outcomes after reconstructive surgery, biomechanical abnormalities and
+movement asymmetries can linger (Dunn et al., 2010). Biomechanical and neuromuscular
+control deficits and imbalances are closely connected to secondary injury (Patterno et al.,
+2010).
+1.4 Biomechanical Asymmetries after ACLR
+Several biomechanical studies examined the kinematic and kinetic characteristics of ACLR
+patients. The ACLR groups had lower peak knee flexion angles, external knee flexion
+moments, and external knee adduction moments during walking (Kaur et al., 2016). This
+movement pattern during the loading phase of walking has been associated with cartilage
+deterioration in the knee and may have a role in the progression of osteoarthritis following
+ACLR (Slater et al., 2017).
+Tibial rotation was observed to be substantially bigger in the ACLR knee compared to the
+contralateral intact leg and the healthy control group in a subsequent examination with a
+higher demand activity (stair descent and pivoting) (Ristanis et al., 2003). When combining
+
+--- PAGE 14 ---
+5
+evidence, the most altered variables after ACLR are knee flexion motion and internal knee
+extension moment, which are consistently smaller in the reconstructed limb while running
+(Pairot-de-Fontenay et al., 2019).
+Asymmetry was found more frequently in kinetic variables than in kinematic variables. The
+asymmetry between limbs for peak vertical ground reaction force, peak knee-extension
+moment, and loading rate during double-limb landings, as well as the mean knee-extension
+moment and knee energy absorption during both double- and single-limb landings, appeared
+to besignificantlyaffectedbyanteriorcruciateligamentreconstruction(Hugheset al., 2020).
+1.5 Quadriceps Strength Deficits
+Following ACL rupture and surgery, significant quadriceps atrophy progresses rapidly
+(Williams et al., 2005). Strength impairments ranging from 2% to 20% have been
+documented in participants more than two years after ACL surgery (Palmieri-Smith et al.,
+2008). The underlying causes for such weakness are still unknown. Researchers have also
+proposed that the inability to engage the quadriceps muscle fully (i.e., voluntary activation
+failure) is a crucial source of persistent quadriceps weakness in persons who have had ACL
+repair (Hart et al., 2010). This concept, however, has not been validated. Graft-related
+muscular impairments occur following ACL repair. A patellar tendon transplant is related to
+extensor deficits, whereas hamstring grafts are associated with flexion abnormalities
+(Petersen et al., 2014). One of the most crucial rehabilitation goals following ACLR is to
+restore lower extremity muscular strength (Buckthorpe et al., 2019).
+Regarding the lower limb, knee osteoarthritis and total knee arthroplasty have been the two
+most common musculoskeletal issues where inertial sensors are used as a diagnostic tool for
+measuring risk factors and recovery.
+1.6 Objectives
+Thisarticle'sprimary purposeisto systematicallyreviewthe literatureontheinertial sensors'
+use for functional assessment of patients who have undergone ACL reconstructive surgery.
+To investigate whether IMUs can distinguish asymmetries in the function of the
+reconstructed knee and whether metrics derived from IMUs can significantly correlate with
+metrics from the gold standard motion analysis systems.
+
+--- PAGE 15 ---
+6
+2. METHODS
+This systematic review is based on Preferred Reporting Items for Systematic Review and
+Meta-Analyses (PRISMA) Extension for Diagnostic Test Accuracy for reporting.
+2.1Informationsourcesandsearchstrategy
+We conducted systematic research in the following electronic databases: PubMed, Scopus,
+Cinahl, Sportdiscus. The Boolean strategy is depicted in the table (2.1). Moreover, we
+examined reference lists to retrieve relevant studies.
+2.2 Study selection
+The articles were initially imported into Endnote, and after removing duplicates, they were
+screened by title and abstract. Two authors independently extracted data from the studies
+according to the inclusion criteria.
+2.3 Eligibility criteria
+For the analysis, we included any study or trial that uses inertial sensor units to evaluate the
+knee function during physical activities or special tests regarding the lower limp as long as
+they are referred to a population undergoing anterior cruciate ligament reconstructive
+surgery (ACLR). Thisanalysiscould beconductedin aclinical setting orahumanmovement
+analysis lab but with the concurrent use of a gold standard motion analysis system. A
+summary of inclusion and exclusion criteria is given in table 2.2
+Table 2.1. Boolean search strategy
+Database Keywords PubMed, Scopus, Cinahl, Sportdiscus
+((inertial sensors) OR (IMUs)) AND ((anterior cruciate ligament) OR (ACL)) AND (deficits)
+((inertial sensors) OR (IMUs)) AND ((anterior cruciate ligament) OR (ACL)) AND (assessment)
+((inertial sensors) OR (IMUs)) AND ((anterior cruciate ligament) OR (ACL)) AND (injury)
+((inertial sensors) OR (IMUs)) AND ((anterior cruciate ligament) OR (ACL)) AND (evaluation)
+((inertial sensors) OR (IMUs)) AND ((anterior cruciate ligament) OR (ACL)) AND (asymmetries)
+(accelerometry OR accelerometer OR gyroscope OR inertial sensor OR inertial measurement unit OR
+wearable sensor OR wearable system OR wearable device OR IMU OR MEMS) AND (anterior cruciate
+ligament OR ACL)
+
+--- PAGE 16 ---
+7
+Table 2.2. Inclusion, exclusion criteria
+Inclusion criteria Exclusion criteria
+-Studies including theuseofinertialsensorsandmotion
+analysis systems for evaluating knee function after
+ACLR surgery
+-Studies published in English
+-Studies published in 2000 or earlier
+-Conference abstracts
+-Systematics reviews
+-Studies that do not refer to ACL injuries
+-Studies that use inertial sensors for passive
+evaluation of the knee joint and not through
+dynamic testing
+-Studies using cadaveric, robotic, or animal
+models
+-Published study protocols
+2.4 Assessment of risk of bias
+The retrieved documents were assessed for methodological quality using the QUADAS-2
+checklist in four domains: patient selection, index test, reference standard, flow and timing.
+We evaluated all four domainsfor riskof bias, andthe first three alsoregarding applicability.
+2.5 Diagnostic accuracy measures and synthesis of results
+The data extraction from the selected studies was focused on the patients' characteristics, the
+type, thenumberand theanatomical positioningofsensorsused. Theaccuracyandreliability
+measures of the IMUs compared to the gold standard optoelectronic 3D motion analysis
+system and the correlation of the metrics between the two systems were also primary areas
+of interest.
+
+--- PAGE 17 ---
+8
+3. RESULTS
+The initial search retrieved 279 publications. After removing duplicates, remained 157
+studies. Through title and abstract reading, we included 35 articles for full-text reading.
+Finally, five studies were included in this review.
+Figure 3.1. PRISMA literature review flow diagram
+Records identified from:
+PUBMED (n=148)
+SCOPUS (n=80)
+CINAHL (n=26)
+SPORTDISCUS (n=25)
+Records removed before
+screening:
+Duplicate records removed
+(n =122 )
+Records screened by title and
+abstract
+(n =158 )
+Records excluded
+(n =123 )
+Records sought for full text
+reading
+(n = 35)
+Records excluded
+(n = 20)
+Records assessed for eligibility
+(n =15)
+Studies included in review
+(n =5)
+Identification of studies via databases
+Identification Eligibility Screening Included
+Records excluded
+Studies with no gold standard
+motion analysis system (n=7)
+Studies with no ACLR population
+(n=3)
+
+--- PAGE 18 ---
+9
+3.1 Demographic data
+A total of 109subjects between 17 and40years oldwere examined. Only one study included
+a healthy control group consisting of 17 people. Ninety-two had undergone ACL
+reconstruction, with time since surgery ranging from three months to three and a half years.
+The majority of the patients had undergone surgery four months ago (Table 3.1).
+Table 3.1. Population summary for the studies
+Study Age
+ACLR
+Control Time Since Surgery
+Female Male
+Patterson et al.
+(2014)
+23,7 ± 3,12 yrs. 17 - 17 females 3,50 ± 3,25 yrs.
+Sigward et al.
+(2016)
+26,8 ± 12,4 yrs. 14 5 - 96,7 ± 16,8 days
+Pratt et al.
+(2018)
+28,8 ± 11,2 yrs. 12 9 - 5,1 ± 1,5 months
+Pratt et al.
+(2018)
+28,8 ± 11,2 yrs. 12 9 - 5,1 ± 1,5 months
+Havens et al.
+(2018)
+29 ± 12 yrs. 7 7 - 20,3 ± 7,1 weeks
+3.2 Tested devices - index
+Three-axis accelerometers, gyroscopes, and magnetometers contained in a portable device
+weretestedin all eligiblestudies. Most authorsutilizedthesignalfrom gyroscopesto capture
+the angular velocity, and only one used the accelerometer's output as the primary variable of
+interest. The number of IMUs used also varied amongst the studies, with three using two
+IMUs, and four using four IMUs. Precise positioning and additional technical information
+are provided in table 3.2.
+Table 3.2. Inertial Sensors summary used in studies
+Study Model Sensors
+Number
+of IMUs
+Position
+Sampling
+Rate
+Patterson et al.
+(2014)
+Xsens MTx G25,
+Enchende,
+The Netherlands
+A3 + G3 2 shank bilateral 100 Hz
+Sigward et al.
+(2016)
+Opal APDM,
+Portland, OR,
+USA
+A3 + G3 +M3 2 shank bilateral 128 Hz
+
+--- PAGE 19 ---
+10
+Table 3.2. Inertial Sensors summary used in studies (Continued)
+Study Model Sensors
+Numbers
+of IMUs
+Position
+Sampling
+Rate
+Pratt et al.
+(2018)
+Opal APDM,
+Portland, OR,
+USA
+A3 +G3 + M3 2 thigh bilateral 128 Hz
+Pratt et al.
+(2018)
+Opal APDM,
+Portland, OR,
+USA
+A3 + G3 +M3 4
+thigh and shank
+bilateral
+128 Hz
+Havens et al.
+(2018)
+Opal APDM,
+Portland, OR,
+USA
+A3 + G3 +M3 4
+thigh and shank
+bilateral
+128 Hz
+A3: triaxial accelerometer; G3: triaxial gyroscope; M3: triaxial magnetometer
+3.3 Reference standard
+All eligible studies used a gold standard motion analysis system to obtain and compare
+resultswith IMUs. Patterson et al.(2014) usedathree-camerasystemand therest researchers
+a more advanced setup with 14 cameras. Furthermore, motion capture systems were coupled
+with force platforms in all studies. (Table 3.3)
+Table 3.3. Motion analysis systems summary used in studies
+Study Motion Analysis System Cameras Force Platforms
+Patterson et al.
+(2014)
+CODA 3 MPX30 at 200 Hz 2 AMTI at 1000 Hz
+Sigward et al.
+(2016)
+Qualysis Inc. or 11 at 250 Hz AMTI at 1500 Hz or
+BTS Smart - DX 14 at 340 Hz BTS P-6000 DX at 1360 Hz
+Pratt et al.
+(2018)
+Qualysis Inc. 11 at 250 Hz AMTI at 1500 Hz or
+BTS Smart - DX 14 at 340 Hz BTS P-6000 DX at 1360 Hz
+Pratt et al.
+(2018)
+Qualysis Inc. 11 at 250 Hz AMTI at 1500 Hz or
+BTS Smart - DX 14 at 340 Hz BTS P-6000 DX at 1360 Hz
+Havens et al.
+(2018)
+BTS Bioengineering Corp. 14 at 340 Hz 4 BTS at 1360 Hz
+3.4 Test Tasks
+The test procedures to investigate the load differences in ACLR subjects were different
+amongst the studies. Patterson et al. (2014) and Sigward et al. (2016) incorporated walking,
+Havens et al. (2018) running, and Pratt et al. (2018) a single limb loading task. (Table 3.4)
+
+--- PAGE 20 ---
+11
+Table 3.4. Test tasks summary
+STUDY TEST TASKS
+Patterson et al.
+(2014)
+Walk barefoot across 15m walkway at their self-selected average walking speed.
+Sigward et al.
+(2016)
+Walk at their comfortable pace across a 10m path.
+Pratt et al.
+(2018)
+Dynamic Single limb loading task.
+Participants were standing on both feet on a single force platform in front of a
+target where was another force platform. The distance they had to cover was
+normalized to each participant's tibia length. They leaped forward to the mark
+onto a single limb, lowering themselves as far as they could, and then returned to
+the starting position without pausing.
+Havens et al.
+(2018)
+Participants were running at a self-selected speed for 15m.
+3.5 Risk of bias and applicability concerns
+Considering the risk of bias and applicability, we evaluated each article according to the
+QUADAS-2 tool. Patient selection in all studies was rated as high risk because there was not
+clear how the collection was performed. Pattersonet al. (2014) incorporated a control group,
+which could have exaggerated the diagnostic accuracy of the index test.
+In the index test and reference standard domains, we rated the risk of bias unclear in all the
+studies. The main concern was if the results of the one could have influenced the
+interpretation of the other. Flow and timing domain was rated as low risk of bias, but not all
+subjects received the same reference standard in three studies. Finally, all studies were rated
+as low in terms of the applicability domain.
+3.6 IMUs Diagnostic accuracy
+In all eligible studies, the use of IMUs revealed significant differences between limbs or
+between the ACLR group and control in some metrics. In two studies, inertial sensors were
+tested during walking. Patterson et al. (2014) found no differences in temporal parameters
+between ACLR and control. Still, they revealed significant differences in three gyroscope
+variables, peak shank angular velocity (SAV) at midstance, minimum rotation rate at initial
+contact, and post heel strike shank adjustments. All the gyroscope extracted features
+significantly differed between the ACLR and the control group and were positively
+correlated.
+
+--- PAGE 21 ---
+12
+On the other hand, Sigward et al. (2016) found no differences between limbs during stance
+and swing phase but found differences at peak SAV during loading response. The review
+included two studies from Pratt et al. (2018). Both of them used inertial sensors during a
+dynamic single limb loading task. Metrics were taken during the deceleration phase. The
+first one used only two sensors at thighs and found asymmetries at peak thigh angular
+velocity (TAV). The second one placed two more sensors at the shanks and revealed
+differences between knee angular velocity (KAV), TAV and SAV for the ACLR limbs.
+Finally, Havens et al. (2018) used the metrics from the accelerometer but found no
+differences between limbs in the thigh and shank axial acceleration during running.
+Table 3.5. Summary of IMUs' extracted variables and inter-limb differences
+STUDY
+IMUS
+Extracted Variables Between Limb Differences
+Patterson et al.
+(2014)
+Gait cycle duration
+Stance time
+Swing time
+Double support time
+Shank rotation rate (toe-off)
+Shank rate of change (initial swing)
+Peak shank rotation rate (swing)
+Shank rotation rate (initial contact)
+Post initial contact shank rotation rare
+variance
+Shank rotation rate variance (mid-
+stance)
+Smaller on ACLR:
+Peak shank rotation rate during swing
+Shank rotation rate at initial contact
+Post- initial contact shank rotation rate
+variance
+Sigward et al.
+(2016)
+Peak SAV at mid-swing
+Peak SAV at heel strike
+Peak SAV at loading response
+Between limb ratio of peak SAV
+Smaller on ACLR:
+Peak SAV during loading response
+Pratt et al.
+(2018)
+Peak TAV
+Peak TAV ratios
+Smaller on ACLR:
+TAV ratios
+Pratt et al.
+(2018)
+Peak KAV
+Peak TAV
+Peak SAV
+Smaller on ACLR:
+KAV
+TAV
+SAV
+Havens et al.
+(2018)
+Shank axial acceleration
+Thigh axial acceleration
+No differences
+
+--- PAGE 22 ---
+13
+3.7 Motion analysis systems' diagnostic accuracy
+Optoelectronic motion analysis systems are the gold standard for revealing asymmetries in
+all fivestudies. Pattersonet al. (2014) foundthatthe ACLR groupdisplayed lower peakknee
+adduction moments during early stance. Also, the ACLR group showed small knee joint
+angular kinematic differences during the swing phase (more extended and adducted knee
+position). No temporal or spatial parameter alterations were noted between groups. Sigward
+et al. (2016) found differences in peak knee internal extensor moment during loading
+response (approximately 20% of stance) but no differences at temporal events of gait. In
+their first study, Pratt et al. (2018) calculated net joint power, peak knee power absorption
+and knee power symmetry ratios and foundthe last smaller on the ACLR limb. Inthe second
+study, Pratt et al. (2018) recorded peak knee extensor moment, knee angular velocity, thigh
+angular velocity and shank angular velocity. All features were smaller on the ACLR limb.
+Finally, Havenset al.(2018)utilizedpeakverticalGRF, peakkneeextensor moment,sagittal
+plane peak knee power absorption, peak knee joint angular velocity and knee range of
+motion. Compared to the non-surgical limb, individuals exhibited smaller knee joint
+biomechanical variables.
+Table 3.6. Summary of motion analysis systems' extracted variables inter-limb differences
+STUDY
+MOTION ANALYSIS SYSTEM
+Extracted Variables Between Limb Differences
+Patterson et al.
+(2014)
+Gait cycle duration
+Stance time
+Swing time
+Double support time
+Knee angular kinematic
+Kinetic data
+Smaller on ACLR:
+Peak knee adduction moment
+Normalized knee adduction moment
+Sigward et al.
+(2016)
+Peak KMom during loading response
+Between limb ratio of peak KMom
+Smaller on ACLR:
+Peak KMom
+Pratt et al.
+(2018)
+Net joint power
+Peak knee power absorption
+Knee power symmetry ratios
+Smaller on ACLR:
+Knee power symmetry ratios
+Pratt et al.
+(2018)
+Peak knee power absorption
+Peak knee extension moment
+KAV, TAV, SAV
+All features smaller
+Havens et al.
+(2018)
+Peak vertical GRF
+Peak knee Ext moment
+Sagittal plane peak knee power
+absorption
+Peak knee joint angular velocity
+Knee range of motion
+Smaller on ACLR:
+Sagittal plane knee range of motion
+KMom
+KPow
+KAV
+
+--- PAGE 23 ---
+14
+3.8 IMUs correlation with the Motion analysis system
+All eligible studies integrated motion analysis systems into their experiments along with
+IMUs. In Patterson et al. (2014) study, the ACLR participants displayed significantly lower
+peak knee adduction moments at early stance. Still, the results did not confirm a correlation
+with the reduced shank rotation rate acquired from the IMUs during the swing phase. The
+second article testing walking by Sigward et al. (2016) found a positive correlation between
+knee extensor moment (KMom) and shank angular velocity during the loading response
+phase. Greater shank angular velocity was related to greater knee extensor moment. In the
+first article from Pratt et al. (2018), thigh angular velocity symmetry ratios (peak TAV in
+reconstructed limb divided by peak TAV in non-surgical limb) positively correlated with
+knee power ratio (knee power absorption in the reconstructed limb divided by knee power
+absorption in the non-surgical knee).Inertial sensor measurements showed nofalse positives
+(100% specificity) and a few false negatives (81,2% sensitivity). In the second article from
+Pratt et al. (2018), the statistical analysis indicated strong agreement between measurements
+systems for KAV, TAV, and SAV during single limb loading test (SLL). Furthermore, TAV
+was strongly correlated with knee power absorption (KPow) and moderately associated with
+knee extensor moment (KMom). Finally, Havens et al. (2018) found that limb differences in
+thigh axial acceleration were the only predictor of ground reaction force (GRF) differences
+and knee power absorption.
+Table 3.7. Summary of correlation between extracted variables of the two systems
+STUDY
+CORRELATION BETWEEN SYSTEMS
+IMUs Motion analysis system
+Patterson et al.
+(2014)
+No correlation
+Sigward et al.
+(2016)
+Between limb ratio of SAV Between limb ratio of KMom
+Pratt et al.
+(2018)
+TAV symmetry KPow symmetry
+Pratt et al.
+(2018)
+TAV KPow and KMom
+Havens et al.
+(2018)
+TAA GRF and KPow
+
+--- PAGE 24 ---
+15
+4. DISCUSSION
+The purpose of this review is to investigate whether the use of IMUs can reliably reveal
+loading differences after an ACLR surgery. We included five studies, and a total of 109
+participants were analyzed. Angular velocities derived from IMUs were the primary
+outcome measure. Two studies (Patterson, 2014; Sigward, 2016) tested these portable
+devices during walking and found lower SAV in the ACLR limb than in the healthy
+limb or control group. In particular, ACLR limbs depicted differences in SAV during
+the swing, initial contact, andloadingresponse. Pratt et al.(2018) presentedtwo articles
+with the same SLL task measuring angular velocities during the deceleration phase. In
+both of them, SAV and TAV were lower. In one study (Havens et al., 2018), thigh and
+shank axial acceleration was the prime variable of interest, but it did not differ during
+running.
+Regarding theassociation betweenthemetricsfrom IMUsandthegold standardmotion
+analysissystem, thigh and shank angular velocitieswerepositivelycorrelatedwith knee
+extensor moment and knee power absorption. Pratt et al. (2018) also demonstrated that
+thigh angular velocity was more predictive of KPow and KMom than SAV. Lastly,
+Havens et al. (2018) correlated thigh axial acceleration with GRF and KPow.
+To our knowledge, thisis thefirst review focusingon the use of IMUs in assessing knee
+function after ACLR surgery compared with gold standard motion analysis systems.
+Petraglia et al. (2019) recently reviewed the application of IMUs versus traditional
+methods in gait analysis, but the included studies did not have any participants with
+orthopedic knee conditions.
+Another scoping review was issued in 2019 by Small et al. investigating wearable
+sensors' methodology and clinical application to evaluate patient recovery and
+functional outcomes following knee arthroplasty. This work provides a comprehensive
+image of the aforementioned aspects without a detailed comparison with the motion
+analysis systems.
+
+--- PAGE 25 ---
+16
+4.1 Clinical implications and considerations
+Throughout the literature, researchers use IMUs to identify movement disorders across
+a broad spectrum of neurological and orthopaedical conditions. They have shown good
+agreement with classical gait analysis systems regarding the spatio-temporal
+parameters, even in real-life situations (Petraglia et al., 2019). Gait pattern studies have
+shown that the kinematics in the sagittal plane of the reconstructed limb return to the
+normal level of healthy subjects after six months (Gao, 2010; Leporace, 2012). Spatio-
+temporal variables are not suitable parameters to distinguish knee gait biomechanics of
+ACLR subjectsfrom healthy onesandshould not beusedasbenchmarksin determining
+return to sports after ACL reconstruction (Leporace et al., 2016).
+Throughout the rehabilitation process, ACLR results in subtle and persistent kinematic
+and kinetic alterations in the knee and consequently in lower extremity movement
+patterns. These changes may not be detrimental for the ACL craft while walking, but
+they have been associated with the early onset of knee osteoarthritis (Gokeler, 2013;
+Slater, 2017).
+In this review, two studies have confirmed that direct outputs from IMUs can reveal
+differences in shank angular velocities during walking even in individuals three years
+post-ACLR. Furthermore, Sigward et al. (2016) established a link between the
+kinematic differences detected with the IMUs and loading impairments assessed with
+the motion analysis system. Specifically, the lowershank angular velocity of theACLR
+limb is correlated with the lower knee extensor moment. During the second rocker of
+gait, the tibia is rolled forward over the talus, rotating around the ankle joint (Mayich
+et al., 2014). At that point, the shank rotates faster than the femur, resulting in knee
+flexion, which coincides with a peak knee extensor moment generated by the activation
+of the quadriceps. The recovery of quadriceps strength is often incomplete even years
+after surgery (Krishnan et al., 2011). Detecting between limp differences in shank
+angular velocity during loading response with the help of IMUs may be helpful for the
+clinician to assess between limp deficits and address them in their everyday practice.
+
+--- PAGE 26 ---
+17
+The most significant hurdle for sports clinicians is how to return the athlete to their
+original sport or anyindividual whohas undergonean ACLR surgery at an even greater
+level of functional ability and, at the same time, significantly reducing the possibility
+of reinjury (Kaplan et al., 2019). Eighty-one percent of individuals return to some form
+of sport after surgery, 65% return to their previous level of sport, and 55% return to
+competitive sport (Ardern, 2014; Lai, 2018). Nevertheless, even after rehabilitation,
+between 35% and 45% of injured athletes will not return to perform at premorbid levels
+(Sepulveda et al., 2017). Moreover, there is an increased reinjury rate among young
+athletes who haveundergoneanACLR; 1 in 4sustain another ACL injury at some point
+in their career relatively early upon their return to high-risk sport (Wiggins, 2014;
+Paterno, 2014). Presently, there is still no gold standard to clear athletes for return to
+sport (RTS) after ACLR surgery. The clinical decision is multifactorial and based on a
+combination of physical and psychological factors (Cheney et al., 2020).
+The evidence from thetwo studies from Pratt et al. (2018) suggests that IMUs can serve
+as a valuable tool to detect dynamic loading deficits of the knee when the patient is
+ready for a more challenging task like running. A previous study from Dowling et al.
+(2012) has reported a relationship between coronal plane thigh and shank angular
+velocities and knee adductor moments in a healthy population during a jump landing
+task. Pratt et al. (2018) correlated segment angular velocity to joint power (product of
+joint moment and jointangular velocity), exploringthepower absorptionduring sagittal
+plane loading. These results imply that in the lack of force platforms and a marker-
+based motion capture system, inertial sensors and, more specifically, a sensor based on
+the thigh may be helpful in the clinic to quantify modified knee loading during a single
+limb loading task after an ACLR surgery.
+At this point, two more studies can be mentioned even though they were not met the
+inclusion criteria. The first is from Setuain et al. (2015), which quantifies jumping
+biomechanics using direct mechanics-based approaches to simplify the measurement
+methodology. They studied the behavior of the center of mass during various jumping
+activities, taking into consideration the complete body as a single system of mass and
+inertia. For that reason, a single IMU was used in the L3 area where the human's center
+of gravity is thought to be. After identifying the various events of the jumping task
+(based on vertical velocity records), the linear acceleration, direction, and jumping
+
+--- PAGE 27 ---
+18
+phase timings were assessed to determine the important parameters for each phase.
+Compared to their non-ACL injured counterparts, ACL-reconstructed athletes had
+higher supporting three-axis peak accelerations and worse jumping performance
+(expressed as the duration in seconds of the flight time phase of the jump).
+The second one is from Dan et al. (2019). They predicted changes in limb kinetics
+during functionalexercisethatthecurrent returntosportsassessmentsdoesnot identify.
+The current study aimed to investigate the effectiveness of this accelerometer,
+gyroscope system, and pressure sensor mat in detecting patients' kinetic differences
+prior to returning to sport after ACL surgery. The main factors of concern were varus
+and valgus alignment. ACL patients showed more significant deviations in the
+reconstructed leg when undertakingsingle-leg exercises such as the single-leg box drop
+and single-leg squat. There were no variations in alignment in the double leg activities;
+however, the force plate revealed that the reconstructed leg involves less force than the
+contralateral leg.Theforceplatealsodemonstratedareducedflyingtimeintherepaired
+leg during a single-leg hop test. IMUs did not find any asymmetrical variations in
+coronal alignment in double-leg exercise. This might be explained by the patient
+adjusting to accept less force through the repaired limb, but the force plate detects less
+force via the repaired leg in a double leg landing.
+Inertial-based motion capture handles many limitations of traditional motion capture
+systems, such as marker occlusion, expensive equipment costs, and performing
+movements in a confined laboratory environment. The accuracy of IMU systems is
+mainly determined by the data fusion algorithms and pose estimation methodologies
+used to interpret human motion from raw IMU data. Also, there are several sources of
+possible error. To enhance IMU-derived spatiotemporal and kinematic estimations, the
+clinician must consider the effect of soft tissue artifacts, device placement,
+biomechanical modeling methods, and ferromagnetic interference within the
+environment. (Hindle et al., 2021).
+4.2 Limitations
+Thecurrent study hasanumber of limitations.Firstof all, althoughweretrievedenough
+articles referring to the dynamic assessment of the knee after an ACLR surgery with
+the use of IMUs, only five met the eligible criteria. Most of the studies excluded from
+
+--- PAGE 28 ---
+19
+this review lacked a concurrent evaluation by a gold standard optoelectronic system or
+did not incorporate an ACLR population. Secondly, the included studies were not
+uniform regarding the executed tasks and the outcome measures. Precisely, we
+encountered three different tasks that the authors used to compare knee function and
+various outcome measures. Additionally, it is unknown if the reported diagnostic
+accuracy applies to other phases of rehabilitation than those mentioned or is maintained
+with multiple dynamic tests. Future studies are needed to establish a more standardized
+test procedure and incorporate IMUs as a diagnostic tool.
+4.3 Conclusion
+Inertial sensor measurement units can serve as a valuable instrument in the clinical
+quantification of dynamickneeloadingasymmetries. Intheabsenceof high-endmotion
+analysis systems and force platforms, inertial sensors may be a practical alternative for
+analyzing knee function. Further development is needed to improve their techniques
+and their application in an ACLR population
+
+--- PAGE 29 ---
+20
+5. REFERENCES
+1. An, K. (1984). 'Kinematic analysis of human movement'. Annals of Biomedical
+Engineering, 12(6), pp.585-597.
+2. Ardern, C., Taylor, N., Feller, J. and Webster, K. (2014). 'Fifty-five per cent return
+to competitive sport following anterior cruciate ligament reconstruction surgery:
+an updated systematic review and meta-analysis including aspects of physical
+functioning and contextual factors'. British Journal of Sports Medicine, 48(21),
+pp.1543-1552.
+3. Andriacchi, T.P., Muendermann, L., Corazza, S. and Chaudhari, A. (2006). 'Anew
+era in the capture of human movement; markerless capture of human movement'.
+Journal of Biomechanics, 39, p.S190.
+4. Aurbach, M., Wagner, K., Süß, F. and Dendorfer, S. (2017). 'Implementation and
+Validation of Human Kinematics Measured Using IMUs for Musculoskeletal
+Simulations by the Evaluation of Joint Reaction Forces'. IFMBE Proceedings,
+pp.205-211.
+5. Baker, R. (2007). 'The history of gait analysis before the advent of modern
+computers'. Gait & Posture, 26(3), pp.331-342.
+6. Bleser, G., Taetz, B., Miezal, M., Christmann, C., Steffen, D. and Regenspurger,
+K. (2017). 'Development of an Inertial Motion Capture System for Clinical
+Application'. i-com, 16(2), pp.113-129.
+7. Buckthorpe, M., La Rosa, G. and Villa, F.D. (2019). 'Restoring knee extensor
+strength after anterior cruciate ligament reconstruction: A clinical commentary'.
+International Journal of Sports Physical Therapy, 14(1), pp.159–172
+8. Caldas, R., Mundt, M., Potthast, W., Buarque, de Lima Neto, F. and Markert, B.
+(2017). 'A systematic review of gait analysis methods based on inertial sensors and
+adaptive algorithms'. Gait & Posture, 57, pp.204-210.
+9. Cheney, S., Chiaia, T., de Mille, P., Boyle, C. and Ling, D. (2020). 'Readiness to
+Return to Sport After ACL Reconstruction: A Combination of Physical and
+Psychological Factors'. Sports Medicine andArthroscopy Review, 28(2), pp.66-70.
+10. Cho, Y., Jang, S., Cho, J., Kim, M., Lee, H., Lee, S. and Moon, S. (2018).
+'Evaluation of Validity and Reliability of Inertial Measurement Unit-Based Gait
+Analysis Systems'. Annals of Rehabilitation Medicine, 42(6), pp.872-883.
+
+--- PAGE 30 ---
+21
+11. Colyer, S., Evans, M., Cosker, D. and Salo, A. (2018). 'A Review of the Evolution
+of Vision-Based Motion Analysis and the Integration of Advanced Computer
+Vision Methods Towards Developing a Markerless System'. Sports Medicine -
+Open, 4(1).
+12. Cuesta-Vargas, A., Galán-Mercant, A. and Williams, J. (2010). 'The use of inertial
+sensors system for human motion analysis'. Physical Therapy Reviews, 15(6),
+pp.462-473.
+13. Dan, M., Lun, K., Dan, L., Efird, J., Pelletier, M., Broe, D. and Walsh, W., 2019.
+Wearable inertial sensors and pressure MAT detect risk factors associated with
+ACL graft failure that are not possible with traditional return to sport assessments.
+BMJ Open Sport & Exercise Medicine, 5(1), p.e000557.
+14. Della Villa, F., Ricci, M., Perdisa, F., Filardo, G., Gamberini, J., Caminati, D. and
+Della Villa, S. (2015). 'Anterior cruciate ligament reconstruction and
+rehabilitation: predictors of functional outcome'. Joints, 03(04), pp.179–185.
+15. Dunn, W., Spindler, K., Annunziato, A., Wolf, B., Andrish, J., Bergfeld, J., Jones,
+M., Parker, R., Flanigan, D., Kaeding, C., Marx, R., Matava, M., Wright, R.,
+McCarty, E., Wolcott, M., Vidal, A., Harrell, F. and Dittus, R. (2010). 'Predictors
+of Activity Level 2 Years after Anterior Cruciate Ligament Reconstruction
+(ACLR)'. The American Journal of Sports Medicine, 38(10), pp.2040-2050.
+16. Gao, B. and Zheng, N. (2010). 'Alterations in three-dimensional joint kinematics
+of anterior cruciate ligament-deficient and -reconstructed knees during
+walking'. Clinical Biomechanics, 25(3), pp.222-229.
+17. Gokeler, A., Benjaminse, A., Eck, C., Webster, K., & Schot, L. and Otten, E.
+(2013). 'Return of Normal Gait as an Outcome Measurement in ACL
+Reconstructed Patients. A Systematic Review'. International Journal of Sports
+Medicine. 8. 441.
+18. Hart, J.M., Pietrosimone, B., Hertel, J. and Ingersoll, C.D. (2010). Quadriceps
+Activation Following Knee Injuries: A Systematic Review. Journal of Athletic
+Training, 45(1), pp.87–97.
+19. Havens, K., Cohen, S., Pratt, K. and Sigward, S. (2018). 'Accelerations from
+wearable accelerometers reflect knee loading during running after anterior cruciate
+ligament reconstruction'. Clinical Biomechanics, 58, pp.57-61.
+
+--- PAGE 31 ---
+22
+20. Hindle, B., Keogh, J. and Lorimer, A. (2021). 'Inertial-Based Human Motion
+Capture: A Technical Summary of Current Processing Methodologies for
+Spatiotemporal and Kinematic Measures'. Applied Bionics and Biomechanics,
+2021, pp.1-14.
+21. Hughes, G., Musco, P., Caine, S. and Howe, L. (2020). 'Lower Limb Asymmetry
+After Anterior Cruciate Ligament Reconstruction in Adolescent Athletes: A
+Systematic Review and Meta-Analysis'. Journal of Athletic Training, 55(8),
+pp.811-825
+22. Johnston, P., McClelland, J. and Webster, K. (2018). 'Lower Limb Biomechanics
+During Single-Leg Landings Following Anterior Cruciate Ligament
+Reconstruction: ASystematicReviewandMeta-Analysis'. SportsMedicine, 48(9),
+pp.2103-2126.
+23. Kaplan, Y. and Witvrouw,E. (2019). 'WhenIsIt Safeto Returnto Sport After ACL
+Reconstruction? Reviewing the Criteria'. Sports Health: A Multidisciplinary
+Approach, 11(4), pp.301-305.
+24. Kaur, M., Ribeiro, D., Theis, J., Webster, K. and Sole, G. (2016). 'Movement
+Patterns of the Knee During Gait Following ACL Reconstruction: A Systematic
+Review and Meta-Analysis'. Sports Medicine, 46(12), pp.1869-1895.
+25. Krishnan, C. and Williams, G. (2011). 'Factors explaining chronic knee extensor
+strength deficits after ACL reconstruction'. Journal of Orthopaedic Research,
+29(5), pp.633-640.
+26. Lai, C., Ardern, C., Feller, J. and Webster, K. (2017). 'Eighty-three per cent of elite
+athletes return to preinjury sport after anterior cruciate ligament reconstruction: a
+systematic review with meta-analysis of return to sport rates, graft rupture rates
+and performance outcomes'. British Journal of Sports Medicine, 52(2), pp.128-
+138.
+27. Leporace, G., Metsavaht, L., Zeitoune, G., Marinho, T., Oliveira, T., Pereira, G.,
+Oliveira, L. and Batista, L. (2016). ‘Use of spatiotemporal gait parameters to
+determine return to sports after ACL reconstraction’. Acta Ortopédica Brasileira,
+24(2), pp.73-76.
+28. Markolf, K., Mensch, J. and Amstutz, H. (1976). 'Stiffness and laxity of the knee-
+-the contributions of the supporting structures. A quantitative in vitro study'. The
+Journal of Bone & Joint Surgery, 58(5), pp.583-594.
+
+--- PAGE 32 ---
+23
+29. Marx, R., Jones, E., Angel, M., Wickiewicz, T. andWarren, R. (2003). 'Beliefs and
+attitudes of members of the American Academy of orthopaedic surgeons regarding
+the treatment of anterior cruciate ligament injury'. Arthroscopy: The Journal of
+Arthroscopic & Related Surgery, 19(7), pp.762-770.
+30. Mayich, D., Novak, A., Vena, D., Daniels, T. and Brodsky, J. (2013). 'Gait
+Analysis in Orthopedic Foot and Ankle Surgery-Topical Review, Part 1'. Foot &
+Ankle International, 35(1), pp.80-90.
+31. Moglo, K. and Shirazi-Adl, A. (2005). 'Cruciate coupling and screw-home
+mechanism in passive knee joint during extension–flexion'. Journal of
+Biomechanics, 38(5), pp.1075-1083.
+32. Oppelt, K., Hogan, A., Stief, F., Grützner, P.A. and Trinler, U. (2019). ‘Movement
+Analysis in Orthopedics andTrauma Surgery –Measurement Systems and Clinical
+Applications’. Zeitschrift für Orthopädie und Unfallchirurgie, 158(03), pp.304–
+317.
+33. Pairot-de-Fontenay, B., Willy, R., Elias, A., Mizner, R., Dubé, M. and Roy, J.
+(2019). 'Running Biomechanics in Individuals with Anterior Cruciate Ligament
+Reconstruction: A Systematic Review'. Sports Medicine, 49(9), pp.1411-1424.
+34. Palmieri-Smith, R.M., Thomas, A.C. and Wojtys, E.M. (2008). 'Maximizing
+QuadricepsStrength AfterACLReconstruction'. Clinicsin SportsMedicine, 27(3),
+pp.405–424.
+35. Paterno, M., Rauh, M., Schmitt, L., Ford, K. and Hewett, T. (2014). 'Incidence of
+Second ACL Injuries 2 Years After Primary ACL Reconstruction and Return to
+Sport'. The American Journal of Sports Medicine, 42(7), pp.1567-1573.
+36. Paterno, M., Schmitt, L., Ford, K., Rauh, M., Myer, G., Huang, B. and Hewett, T.,
+(2010). 'Biomechanical Measures during Landing and Postural Stability Predict
+Second Anterior Cruciate Ligament Injury after Anterior Cruciate Ligament
+Reconstruction and Return to Sport'. The American Journal of Sports Medicine,
+38(10), pp.1968-1978.
+37. Patterson, M.,Delahunt,E., Sweeney, K. andCaulfield, B.(2014). 'AnAmbulatory
+Method of Identifying Anterior Cruciate Ligament Reconstructed Gait
+Patterns'. Sensors, 14(1), pp.887-899.
+38. Petersen, W.,Taheri, P.,Forkel, P. andZantop,T.(2014). 'Returnto playfollowing
+ACL reconstruction: a systematic review about strength deficits'. Archives of
+Orthopaedic and Trauma Surgery, [online] 134(10), pp.1417–1428
+
+--- PAGE 33 ---
+24
+39. Petraglia, F., Scarcella, L., Pedrazzi, G., Brancato, L., Puers, R. and Costantino, C.
+(2019). 'Inertial sensors versus standard systems in gait analysis: a systematic
+review and meta-analysis'. European Journal of Physical and Rehabilitation
+Medicine, 55(2).
+40. Pratt, K. and Sigward, S. (2018). 'Detection of Knee Power Deficits Following
+Anterior Cruciate Ligament Reconstruction Using Wearable Sensors'. Journal of
+Orthopaedic & Sports Physical Therapy, 48(11), pp.895-902.
+41. Pratt, K. and Sigward, S. (2018). 'Inertial Sensor Angular Velocities Reflect
+Dynamic Knee Loading during Single Limb Loading in Individuals Following
+Anterior Cruciate Ligament Reconstruction'. Sensors, 18(10), p.3460.
+42. Reaz, M., Hussain, M. and Mohd-Yasin, F. (2006). 'Techniques of EMG signal
+analysis: detection, processing, classification and applications'. Biological
+Procedures Online, 8(1), pp.11-35.
+43. Ristanis, S., Giakas, G., Papageorgiou, C., Moraiti, T., Stergiou, N. and
+Georgoulis, A. (2003). 'The effects of anterior cruciate ligament reconstruction on
+tibial rotation during pivoting after descending stairs'. Knee Surgery, Sports
+Traumatology, Arthroscopy, 11(6), pp.360-365
+44. Roggio, F., Ravalli, S., Maugeri, G., Bianco, A., Palma, A., Di Rosa, M. and
+Musumeci, G. (2021). 'Technological advancements in the analysis of human
+motion and posture management through digital devices'. World Journal of
+Orthopedics, 12(7), pp.467–484.
+45. Sepúlveda, F., Sánchez, L., Amy, E. and Micheo, W. (2017). ‘Anterior Cruciate
+Ligament Injury: ReturntoPlay,Functionandlong-Term Considerations’. Current
+Sports Medicine Reports, 16(3), pp.172-178.
+46. Setuain, I., Millor, N., González-Izal, M., Gorostiaga, E., Gómez, M., Alfaro-
+Adrián, J., Maffiuletti, N. and Izquierdo, M., 2015. Biomechanical jumping
+differences among elitefemale handball players with and without previous anterior
+cruciate ligament reconstruction: a novel inertial sensor unit study. Sports
+Biomechanics, 14(3), pp.323-339.
+47. Sigward, S., Chan, M. and Lin, P. (2016). 'Characterizing knee loading asymmetry
+in individuals following anterior cruciate ligament reconstruction using inertial
+sensors'. Gait & Posture, 49, pp.114-119.
+
+--- PAGE 34 ---
+25
+48. Simon, S. (2004). 'Quantification of human motion: gait analysis—benefits and
+limitations to its application to clinical problems'. Journal of Biomechanics,
+37(12), pp.1869-1880.
+49. Slater, L., Hart, J., Kelly, A. and Kuenze, C. (2017). 'Progressive Changes in
+Walking Kinematics and Kinetics After Anterior Cruciate Ligament Injury and
+Reconstruction: AReviewandMeta-Analysis'. Journal of AthleticTraining,52(9),
+pp.847-860.
+50. Stelzer, A., Pourvoyeur, K. and Fischer, A. (2004). 'Concept and Application of
+LPM-A Novel 3-D Local Position Measurement System'. IEEE Transactions on
+Microwave Theory and Techniques, 52(12), pp.2664–2669.
+51. Teufl, W., Lorenz, M., Miezal, M., Taetz, B., Fröhlich, M. and Bleser, G. (2018).
+‘Towards Inertial Sensor Based Mobile Gait Analysis: Event-Detection and
+Spatio-Temporal Parameters’. Sensors, 19(1), p.38.
+52. Teufl, W., Miezal, M., Taetz, B., Fröhlich, M. and Bleser, G. (2019). 'Validity of
+inertial sensor-based 3D joint kinematics of static and dynamic sport and
+physiotherapy specific movements'. PLOS ONE, 14(2), p.e0213064.
+53. Washabaugh, E., Kalyanaraman, T., Adamczyk, P., Claflin, E. and Krishnan, C.
+(2017). 'Validity and repeatability of inertial measurement units for measuring gait
+parameters'. Gait & Posture, 55, pp.87-93.
+54. Wiggins, A., Grandhi, R., Schneider, D., Stanfield, D., Webster, K. and Myer, G.
+(2016). 'Risk of Secondary Injury in Younger Athletes After Anterior Cruciate
+Ligament Reconstruction'. The American Journal of Sports Medicine, 44(7),
+pp.1861-1876.
+55. Williams, G.N., Buchanan, T.S., Barrance, P.J., Axe, M.J. and Snyder-Mackler, L.
+(2005). Quadriceps Weakness, Atrophy, and Activation Failure in Predicted
+Noncopers after Anterior Cruciate Ligament Injury. The American Journal of
+Sports Medicine, 33(3), pp.402–407.
+56. Woo, S., Wu, C., Dede, O., Vercillo, F. and Noorani, S. (2006). 'Biomechanics and
+anterior cruciate ligament reconstruction'. Journal of Orthopaedic Surgery and
+Research, 1(1).
+
+--- PAGE 35 ---
+26
+ΠΕΡΙΛΗΨΗ
+Στόχος: Ο πρωταρχικός σκοπός αυτού του άρθρου είναι η συστηματική ανασκόπηση
+της βιβλιογραφίας σχετικά με το εάν οι φορητοί και οικονομικά προσιτoί αδρανειακοί
+αισθητήρες, μπορούν να αποκαλύψουν με αξιοπιστία κινηματικές ασυμμετρίες μεταξύ
+των άκρων σε ασθενείς με ανακατασκευή Πρόσθιου Χιαστού Συνδέσμου (ΠΧΣ).
+Σχεδιασμός: Συστηματική ανασκόπηση σύμφωνα με τις οδηγίες PRISMA-DTA
+Μεθοδολογία: Πραγματοποιήσαμε συστηματική αναζήτηση στη βάσηδεδομένων των
+PUBMED, CINAHL, SCOPUS καιSPORTDISCUS, ελέγχοντας γιαδημοσιεύσεις που
+συνέκριναν τη χρήση αδρανειακών αισθητήρων με οπτοηλεκτρονικά συστήματα
+ανάλυσης κίνησης, αξιολογώντας άτομα με ανακατασκευασμένο (ΠΧΣ) κατά τη
+διάρκεια μιας δυναμικής δοκιμής ή περπατήματος. Κάθε επιλέξιμη μελέτη
+αξιολογήθηκε για τη μεθοδολογική της ποιότητα σύμφωνα με τη λίστα ελέγχου
+QUADAS-2
+Αποτελέσματα: Αρχικά ανακτήθηκαν 279 άρθρα και τελικά πέντε πληρούσαν τα
+κριτήρια συμπερίληψης στην έρευνα. Τα εξαγόμενα χαρακτηριστικά από
+αδρανειακούς αισθητήρες αποκάλυψαν σημαντικές διαφορές μεταξύ των άκρων σε
+ασθενείς με ανακατασκευασμένο (ΠΧΣ) σε τέσσερις μελέτες. Ορισμένα από αυτά τα
+χαρακτηριστικά συσχετίστηκαν ισχυρά με μετρήσεις που αποκτήθηκαν από τα
+συστήματα ανάλυσης κίνησης.
+Συμπέρασμα: Οι αδρανειακοί αισθητήρες μπορούν να παρέχουν συγκρίσιμες
+πληροφορίες με τα συστήματα ανάλυσης κίνησης κατά τη δυναμική αξιολόγηση του
+γόνατος μετά από χειρουργική επέμβαση (ΠΧΣ). Αυτό έχει σημαντικές δυνατότητες
+για κλινική χρήση, ενισχύοντας τη λειτουργική αξιολόγηση των ασθενών και την
+παρακολούθηση της διαδικασίας αποκατάστασης τους.
+Λέξεις κλειδιά: αδρανειακοί αισθητήρες, αξιολόγηση γόνατος, πρόσθιος χιαστός,
+διαγνωστική ακρίβεια.
+
+--- PAGE 36 ---

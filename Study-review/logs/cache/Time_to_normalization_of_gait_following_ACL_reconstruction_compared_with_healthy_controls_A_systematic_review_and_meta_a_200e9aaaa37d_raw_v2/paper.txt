@@ -1,0 +1,1025 @@
+
+--- PAGE 1 ---
+Time to normalization of gait following ACL reconstruction compared with
+healthy controls: A systematic review and meta-analysis
+Shiwei Chena,1
+, Han Gongb,2
+, Chennan Lyuc,3
+, Kehan Lid,4
+, Shazlin Shaharudina,*,5
+a
+School of Health Sciences, Universiti Sains Malaysia, Kelantan, Malaysia
+b
+School of Biological Science and Medical Engineering, Beihang University, Beijing Key Lab for Biomaterials and Neural Regeneration, Beijing, China
+c
+School of Physical Education, Wuhan Sports University, Wuhan, China
+d
+Department of Sports Studies, Universiti Putra Malaysia, Selangor, Malaysia
+A R T I C L E I N F O
+Keywords:
+Biomechanics
+Longitudinal multilevel modeling
+Knee functional recovery
+Human health
+Rehabilitation trajectory
+A B S T R A C T
+Background: Gait abnormalities often persist after anterior cruciate ligament reconstruction (ACLR) and may
+increase the risk of reinjury and joint degeneration. This review aimed to assess differences in key gait param­
+eters between ACLR patients and healthy controls, and to estimate when these parameters normalize
+postoperatively.
+Methods: Studies comparing individuals ≥3 months post–ACLR with healthy controls were included. A sys­
+tematic search across five databases yielded 5251 records, with 20 studies (n= 976) retained. A longitudinal
+multilevel meta-analysis was performed, with pooled effect sizes calculated using Cohen’s d, representing the
+standardized mean difference. Postoperative time was modeled as a moderator in meta-regression analyses.
+Results: Compared to healthy controls, ACLR patients assessed at 3–107 months postoperatively exhibited
+significantly lower peak knee flexion angle (d = − 0.48, 95% CI: − 0.87 to − 0.10) and peak knee flexion moment
+(d = − 1.06, 95 % CI: − 2.06 to − 0.07), while walking speed was non-significant (d = − 0.17, 95 % CI:
+− 0.47–0.13). Logarithmic modeling indicated that group differences became non-significant at 16.2 months for
+flexion angle and 10.1 months for flexion moment. Walking speed was statistically non-significant at any
+timepoint.
+Significance: At ≥ 3 months post-ACLR, patients exhibited significantly reduced peak knee flexion angle and
+flexion moment compared to controls. These deficits normalized at approximately 16.2 and 10.1 months,
+respectively. Walking speed did not significantly differ at any postoperative timepoint. These findings suggest
+that early-phase rehabilitation should emphasize quadriceps strengthening and knee flexion restoration within
+the first 10–16 months to address persistent biomechanical deficits.
+1. Introduction
+Injuries to the anterior cruciate ligament (ACL) represent one of the
+most frequent and serious forms of knee trauma in athletic populations
+[1]. Epidemiological data indicate that tens of thousands of ACL rup­
+tures occur annually, with an estimated incidence of 1 in 3500 per year
+in the United States alone [2]. ACL injuries often lead to joint pain,
+instability, and early-onset osteoarthritis, significantly impairing phys­
+ical performance and quality of life [3].
+Anterior cruciate ligament reconstruction (ACLR) is currently the
+treatment of choice for restoring knee stability, with the primary
+objective of enabling patients—particularly young athletes—to safely
+return to sport [4]. Although most patients achieve clinical stability
+following ACLR, gait recovery often remains incomplete in the short
+* Correspondence to: School of Health Sciences, Universiti Sains Malaysia, Kubang Kerian, Kelantan 16150, Malaysia.
+E-mail addresses: shiweichenccc@student.usm.my (S. Chen), gonghan2024@buaa.edu.cn (H. Gong), 2023420028@whsu.edu.cn (C. Lyu), gs70726@student.upm.
+edu.my (K. Li), shazlin@usm.my (S. Shaharudin).
+1
+ORCID: 0009-0005-2919-4667.
+2
+ORCID: 0009-0006-1466-7430.
+3
+ORCID: 0009-0008-8675-2057.
+4
+ORCID: 0009-0002-5085-4189.
+5
+ORCID: 0000-0001-5583-7631.
+Contents lists available at ScienceDirect
+Gait & Posture
+journal homepage: www.elsevier.com/locate/gaitpost
+https://doi.org/10.1016/j.gaitpost.2025.109972
+Received 27 June 2025; Received in revised form 10 August 2025; Accepted 8 September 2025
+Gait & Posture 123 (2026) 109972
+Available online 10 September 2025
+0966-6362/© 2025 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+--- PAGE 2 ---
+term [5]. Research has demonstrated that ACLR patients commonly
+exhibit biomechanical impairments during gait compared to healthy
+controls [6], with persistent gait abnormalities frequently observed even
+at 6–12 months postoperatively, and in some cases lasting up to two
+years [7]. Such gait abnormalities not only increase the risk of ACL
+re-injury but are also closely associated with postoperative joint
+degeneration [7,8]. Therefore, identifying which gait parameters are
+prone to long-term impairment and which parameters recover relatively
+early following surgery is critical for evaluating rehabilitation progress
+and developing targeted intervention strategies.
+Currently, the findings regarding gait recovery following ACLR
+remain inconsistent.For example, one study reported that ACLR patients
+exhibited lower external knee flexion moment during walking compared
+to healthy controls between 2 and 12 months postoperatively [9], while
+another found that both knee flexion angle and joint moments were
+higher in ACLR patients within the first 6 months post-surgery [10].
+Although numerous studies have focused on alterations in joint loading
+patterns during gait after ACLR, systematic summaries specifically
+addressing the recovery timeline of gait parameters postoperatively
+remain limited [11].
+Therefore, a comprehensive synthesis of existing literature is neces­
+sary to determine the critical time points at which key gait parameters
+return to normal following ACLR, which is critical for optimizing
+rehabilitation and guiding clinical assessment timing. Meta-analysis
+provides a robust statistical framework to synthesize findings across
+studies and to identify time-specific recovery trajectories following ACL
+reconstruction [12], thereby making it well-suited to address this
+question.
+However, most existing meta-analyses have utilized traditional
+frameworks, treating each study as an independent unit and extracting
+effect sizes only at single time points [13], thus failing to fully leverage
+data available from multiple follow-up assessments [14,15]. Conse­
+quently, such approaches are insufficient to characterize the dynamic
+trajectory of postoperative gait recovery.
+To address these limitations, the present study aims to employ a
+multilevel longitudinal meta-analytic approach. This method moves
+beyond the traditional meta-analytic assumption of single effect-size
+extraction by integrating data across multiple follow-up time points,
+thus providing detailed insight into the temporal patterns of gait re­
+covery. Given that current research on postoperative gait after ACLR
+primarily focuses on core parameters such as walking speed, peak knee
+flexion angle, and peak knee flexion moment [16–18], and considering
+that consensus regarding their recovery trajectories has not yet been
+reached [19], this study will specifically examine the dynamic changes
+of these three parameters. Clarifying the time points at which these
+parameters return to normal baseline value will provide robust evidence
+to inform the optimization of postoperative rehabilitation strategies and
+the establishment of clinical evaluation frameworks.
+2. Methods
+This systematic review and meta-analysis were conducted following
+the PRISMA guidelines [20]. Additionally, the study protocol was
+registered with the PROSPERO database (registration number:
+CRD420251073937) on June 14, 2025.
+2.1. Eligibility criteria
+Participants included in this study were patients with primary ACL
+rupture who underwent surgical reconstruction and had a postoperative
+recovery period of at least three months. Each study needed to include a
+healthy control group, ensuring baseline comparability between ACLR
+patients and healthy individuals; comparisons must be made between
+ACLR patients and healthy controls (i.e., between-subject comparisons).
+Studies comparing reconstructed ACL limbs with the contralateral
+healthy limbs (within-subject comparisons) were excluded to avoid bias
+due to individual variability.
+Studies had to report quantitative data for at least one of the
+following gait-related parameters: peak knee flexion angle, peak knee
+flexion moment, or walking speed. Additionally, studies needed to
+explicitly identify the reconstructed limb.
+2.2. Literature search and selection
+After reviewing key literature to test appropriate terminology, our
+search specifically targeted two elements: population (anterior cruciate
+ligament reconstruction or ACL reconstruction or anterior cruciate lig­
+ament or ACL) and outcomes ("gait" or "walking"). We systematically
+searched PubMed, Embase, The Cochrane Library, Web of Science, and
+EBSCOhost-SportDiscus using appropriate Medical Subject Headings
+(Mesh) terms tailored to each database from database inception up to
+February 28, 2025 (see Supplementary File 1). Additionally, relevant
+meta-analyses on this topic were cross-referenced to identify further
+original studies meeting our inclusion criteria.
+2.3. Data extraction
+Two independent pairs of reviewers (S.C. & H.G.; C. Lyu. & K.L.)
+extracted data according to a customized data extraction table. Infor­
+mation extracted included study design, basic demographic character­
+istics (e.g., sample size, country, age, percentage of females, body mass
+index, patient population), postoperative time points, and gait-related
+outcome data (means and standard deviations for both experimental
+and control groups). Since this was a longitudinal meta-analysis
+comparing ACLR patients with healthy controls, all available time
+points from long-term studies were extracted.
+Upon completion of data extraction, the two reviewer pairs (S.C. &
+H.G.; C. Lyu. & K.L.) performed cross-validation together with the cor­
+responding author (S.S.). Any inconsistencies were resolved through
+discussion within the research team, and relevant data were re-extracted
+as necessary. Finally, the corresponding author (S.S.) conducted a
+comprehensive review of all extracted data to ensure accuracy and
+consistency.
+2.4. Risk of bias and grade assessment
+All studies included in this research were observational, comparing
+gait parameters of ACLR patients with healthy controls (non- random­
+ized controlled trials studies). Two pairs of reviewers (S.C. & H.G.; C.
+Lyu. & K.L.) independently assessed the risk of bias using the Risk of Bias
+In Non-randomized Studies of Interventions (ROBINS-I) tool, evaluating
+seven bias domains [21]. Any disagreements were resolved through
+discussion with the corresponding author (S.S.).
+To evaluate the overall certainty of evidence, we conducted a
+structured evidence grading process using the GRADE (Grading of
+Recommendations Assessment, Development and Evaluation) frame­
+work, in accordance with the GRADE Working Group’s guidance for
+non-randomized studies [22]. We systematically assessed five
+domains—risk of bias, inconsistency, indirectness, imprecision, and
+publication bias—for each outcome. Detailed outcome-specific GRADE
+ratings are presentedin Supplementary File 2, indicating low to very low
+certainty of evidence for peak knee flexion angle, peak knee flexion
+moment, and walking speed.
+2.5. Publication bias and sensitivity analysis
+Funnel plot asymmetry and Egger’s regression test were used to
+evaluate publication bias, with p>0.05 indicating no evidence of sig­
+nificant bias [23]. Given that the longitudinal multilevel meta-analysis
+incorporated multiple follow-up time points within individual studies,
+we evaluated publication bias at two levels: first, within individual
+studies (assessing data symmetry); second, across studies (evaluating
+S. Chen et al. Gait & Posture 123 (2026) 109972
+2
+
+--- PAGE 3 ---
+overall distribution symmetry) [24]. Sensitivity analyses were con­
+ducted by systematically excluding each study to assess its individual
+influence on the overall results, analyzing both within and between
+studies.
+2.6. Statistical analysis
+To evaluate the temporal trends in gait parameters following ACL
+reconstruction, we conducted a series of meta-analyses using RStudio.
+First, pooled standard deviations (pooled SD) were calculated from the
+means and standard deviations reported by experimental and control
+groups. From these, standardized mean differences (SMD, Cohen’s d)
+and their variances were computed to quantify effect sizes and statistical
+uncertainty [25]. To account for correlation between multiple time
+points within the same study, we assumed a correlation coefficient of
+r=0.85, consistent with previous longitudinal meta-analyses in ACLR
+patients [26]. This value was used to construct a within-study var­
+iance-covariance matrix for the multilevel meta-analysis model. Cohen’s
+d values were classified according to Cochrane Handbook thresholds:
+<0.2 as trivial, 0.2–0.5 as small, >0.5–0.8 as moderate, and >0.8 as
+large [27], facilitating comparisons between ACLR patients and healthy
+controls at different time points.
+A longitudinal mixed-effects meta-analysis was performed using the
+restricted maximum likelihood (REML) method, primarily employing
+the metafor package in R, following established analytical frameworks
+[28,29]. To handle potential correlations across multiple follow-up time
+points within different study cohorts, we developed multilevel
+correlated-effect models [30]. The final model defined time points as
+random effects nested within individual study cohorts and incorporated
+a continuous autoregressive (CAR) structure to model temporal
+correlations.
+Subsequently, time points were included as fixed-effect moderators
+to analyze trends in gait parameters over time. To identify the best
+model fit, we explored various modeling strategies, including linear,
+logarithmic-linear, 3-knot spline, and 4-knot spline models. Optimal
+model selection was guided by criteria including Akaike Information
+Criterion (AIC), Bayesian Information Criterion (BIC), and visual in­
+spection of fitted curves. Spline modeling was performed using the rms
+package, with knot placement based on recommended guidelines [31].
+Robust variance estimation for the final model was conducted using the
+clubSandwich package [22].
+The final results were presented as predicted effect sizes with their
+95% confidence intervals, quantifying both magnitude and statistical
+uncertainty. Additionally, the predict() function was used to estimate
+effects at critical time points and to determine the time points at which
+the effect sizes reached zero (i.e., statistical significance between ACLR
+and control groups disappeared), thereby identifying critical milestones
+for gait parameter recovery [32].
+Detailed information about modelspecifications,parameters, scripts,
+and all data is publicly available at: [https://github.com/Shiwei-Lab/
+ACLR-Gait-Meta2025].
+3. Results
+3.1. Study selection and basic characteristics
+As of February 28, 2025, a total of 5251 records were retrieved
+through database searches. After initial screening, 70 potentially eligible
+studies were identified. Following full-text review, 20 studies [11,14,15,
+17,33–47,59] were ultimately included in the meta-analysis. A detailed
+flowchart outlining the study selection process is presented in Fig. 1.
+These 20 studies collectively involved 976 participants. All included
+studies compared gait parameters between individuals with ACLR and
+healthy controls, focusing primarily on peak knee flexion angle, peak
+knee flexion moment, and walking speed. Postoperative follow-up pe­
+riods for gait assessments ranged from 3 m to 107 months. Notably, 8
+studies reported gait outcomes at multiple postoperative time points.
+Key characteristics of the included studies are summarized in Table 2.
+Fig. 1. PRISMA flow diagram of study selection. Flowchart outlining the literature screening process, including the number of records identified, screened, excluded
+(with reasons), and the final studies included in the meta-analysis.
+S. Chen et al. Gait & Posture 123 (2026) 109972
+3
+
+--- PAGE 4 ---
+3.2. Risk of bias and publication bias
+An overview of the risk of bias across included studies is provided in
+Supplementary File 3. The majority of studies demonstrated methodo­
+logical robustness in terms of intervention classification, handling of
+missing data, outcome measurement, and selective reporting. However,
+the quality of evidence was primarily affected by confounding factors
+and selection bias. Specifically, only one study was rated as having a low
+risk of bias [33]. Sixteen studies were judged to have a moderate risk of
+bias, largely due to acceptable limitations in participant selection. Three
+Table 1
+Estimated gait parameter differences at 3, 6, and 12 months after ACL reconstruction.
+Gait test N (total
+sample)
+Total studies [total effects
+(k)]
+3-month estimate 6-month estimate 12-month estimate Estimated time- point
+of no difference
+(months)
+Peak Knee Flexion
+Angle
+401 9(11) − 0.75(− 1.33, − 0.18)
+*
+− 0.61(− 1.04, − 0.18)
+*
+− 0.46
+(− 0.84,− 0.08）
+16.2
+Peak Knee Flexion
+Moment
+230 5(7) − 1.87(− 3.18,
+− 0.567) *
+− 1.29(− 2.17, − 0.42)
+*
+− 0.71(− 1.63,0.21） 10.1
+Walking Speed 486 10(13) − 0.28(− 0.75,0.19) − 0.23(− 0.60,0.14） − 0.19(− 0.50,0.13） N/A
+Estimated time-point of no difference (months): The predicted postoperative time at which the 95 % confidence interval for the effect estimate first crosses zero (i.
+e., no difference between groups). N/A: Not Applicable; indicates that the confidence interval did not cross zero within the observed time range.
+Table 2
+Characteristics of included literature.
+Author Country N (total
+sample)
+Measure Post-operative
+time
+Age(years) Height(m)/ Weight(kg)/
+BMI(Kg/m)
+Georgoulis,2003 Greece 31 gait velocity (m/s)
+Peak Knee flexion angle (◦
+)
+7 months C:24.7 ± 3.7
+E:25 ± 4
+C:1.73 ± 0.05
+E:1.73 ± 0.06
+C:62.1
+± 12.4 kg
+E:69.1
+± 7.9 kg
+Czamara,2015 Poland 62 Peak Knee flexion angle (◦
+) 3.2 months C:25.93 ± 4.57
+E: 28.65 ± 8.57
+C:1.81 ± 0.07
+E:1.81 ± 0.09
+C:80.4 ± 12.3
+E:81.9 ± 11.7
+Padhye,2023 USA 60 Averaged gait velocity (m/s) 48 months C:22.7 ± 2.9
+E:22.3 ± 4.4
+C:73 ± 15.7
+E:73.1 ± 15.7
+N/A
+Noehren,2013 USA 40 Peak Knee flexion angle (◦
+) 62 months C:26 ± 5.1
+E:25 ± 6.2
+C:1.6 ± 0.06
+E:1.6 ± 0.06
+C:61 ± 5.1
+E:64 ± 8.2
+Büttner,2024 USA 116 Gait speed (m/s) 3.76, 5.74, 11.4
+months
+C:21.6 ± 4.3
+E: 21.8 ± 4.7
+N/A C: BMI:24.5
+± 3.2
+E: BMI:24.2
+± 3.2
+Armitano-
+Lago,2020
+USA 32 Velocity (m/s) 107 months C:28.90 ± 6.24
+E:29.25 ± 6.9
+C:1.71 ± 0.09
+E: 17.4 ± 0.07
+C:74.61 ± 17
+E:81.46 ± 14
+Skvortsov,2020 Russia 40 Peak Knee flexion angle (◦
+) 12 months C:34.2
+E:29.7
+N/A N/A
+Leporace,2016 Brazil 22 Gait Velocity（m/s） 11 months C:27.3 ± 2.7
+E:33.1 ± 11.1
+C:1.80 ± 0.04
+E: 1.82 ± 0.03
+C:82.1 ± 9.5
+E:82.1 ± 7.4
+Davis-Wilson,2019 USA 60 Walking speed (m/s） 6, 12 months C:22 ± 4
+E:22 ± 3
+N/A C: BMI:23.6
+± 2.1
+E: BMI:23.8
+± 2.2
+Goetschius,2018 USA 58 Peak Knee flexion motion (◦
+) 103 months C:22.4 ± 3.2
+E:26.7 ± 4.4
+C:1.71 ± 0.13
+E: 1.73 ± 0.1
+C:68.9 ± 13.1
+E:69.5 ± 12.7
+Davis,2018 USA 40 Walking Speed (m/s) 84 months N/A N/A C: BMI:22.4
+± 2.4
+E: BMI: 25
+± 3.5
+Hadizadeha,2016 Malaysia 37 Mean gait velocity (m/s) 3 months C:21.5 ± 1.0
+E:23.6 ± 5.4
+C:1.66 ± 0.07
+E:1.69 ± 0.09
+C:61.7 ± 11.3
+E:66 ± 13.8
+Patterson,2013 Ireland 34 Gait velocity (m/s) 42 months C:20.8 ± 1.17
+E:23.7 ± 3.12
+C: 1.65 ± 0.06
+E: 1.64 ± 0.05
+C:64.7 ± 7.06
+E:64.9 ± 9.02
+Zabala,2013 USA 90 Peak Knee Flexion Momen (Nm/kg) 26 months C:30.2 ± 4.68
+E:29.5 ± 6.1
+C: 1.73 ± 0.09
+E: 1.72 ± 0.10
+C:74.2 ± 12.3
+E:74.4 ± 12.4
+Lewek,2002 USA 28 Peak Knee Flexion moment
+Peak Knee flexion angle (◦
+)
+Peak Knee Flexion (◦
+)
+3.3, 4.8 months C:32.2 ± 6.6
+E: 25 ± 7.8
+N/A N/A
+Michelle Hall,2012 Australia 32 Peak Knee flexion angle (◦
+) 72 months C:26 ± 4
+E: 26 ± 6
+C: 1.7 ± 0.12
+E: 1.74 ± 0.14
+C:68 ± 2
+E:75 ± 15
+Karimi,2013 Iran 30 Gait speed (m/s)
+Peak Knee Flexion moment (Nm/kg)
+6 months C:32 ± 3
+E: 33 ± 2.6
+C:1.74 ± 0.06
+E:1.75 ± 0.05
+N/A
+Reed Ferber,2002 USA 20 Peak Knee flexion moments (Nm/kg) 3, 4 months C:24.4 ± 3.1
+E:27.7 ± 9.1
+C: 1.7 ± 0.09
+E: 1.66 ± 0.2
+C:67.2 ± 10.7
+E:79.1 ± 13.8
+Kono,2023 Japan 62 Peak Knee flexion angle (◦
+) Peak knee
+flexion moment (Nm/kg/m)
+12 months C:24.07 ± 4.73
+E:25.91 ± 11.61
+C: 1.68 ± 0.09
+E: 1.66 ± 0.09
+C:63.5 ± 12.4
+E:64.1 ± 12.6
+Zsolt Knoll,2004 Hungary 76 Peak Knee flexion angle (◦
+) 8, 12 months C:31.70 ± 4.1
+E:34.78 ± 6.91
+C: 1.71 ± 0.12
+E: 1.73 ± 0.57
+C:72.1 ± 25.2
+E:84.7 ± 15.6
+Abbreviations: C, control group; E, experimental group.
+S. Chen et al. Gait & Posture 123 (2026) 109972
+4
+
+--- PAGE 5 ---
+studies were assessed as high risk [41,45,59], primarily due to inade­
+quate control of confounders and participant selection issues.
+Regarding publication bias, funnel plots and Egger’s regression tests
+are shown in Supplementary File 4. Under the conventional two-level
+modeling framework, both peak knee flexion moment and walking
+speed outcomes demonstrated marked asymmetry, with significant
+Egger test results (p < 0.001), indicating left-skewed and right-skewed
+distributions, respectively. In contrast, the distribution for peak knee
+flexion angle appeared more symmetrical, with a non-significant Egger
+test (p = 0.31), suggesting no substantial publication bias.
+Under the multilevel meta-analytic framework, distributions for
+peak knee flexion angle and peak knee flexion moment remained sym­
+metrical, with non-significant Egger test results (p = 0.54 and p = 0.07,
+respectively), indicating no notable publication bias. For walking speed,
+however, Egger’s test yielded a significant result (p = 0.04), suggesting
+potential but not definitive publication bias. Thus, evidence for publi­
+cation bias in walking speed outcomes remains limited.
+3.3. Main effects of gait parameters
+3.3.1. Peak knee flexion angle
+ACLR patients exhibited significantly lower peak knee flexion angles
+during walking compared to controls (SMD = –0.48, 95 % CI: –0.87 to
+–0.10*, p = 0.013). Heterogeneity analysis revealed substantial
+between-study heterogeneity (τ² = 0.23, ρ = 0.90, Q = 25.55,
+p = 0.004). Detailed results are presented in Supplementary File 5A
+(forest plot and related model outputs).
+3.3.2. Peak knee flexion moment
+For peak knee flexion moment, ACLR patients showed significantly
+lower values compared to healthy controls (SMD = –1.06, 95 % CI:
+–2.06 to –0.07*, p = 0.04). Heterogeneity analysis again indicated
+considerable between-study variability (τ² = 1.15, ρ = 0.88, Q = 29.20,
+p < 0.001), as shown in Supplementary File 5B.
+3.3.3. Walking speed
+For walking speed, ACLR patients exhibited slightly reduced values
+compared to controls, but the difference did not reach statistical sig­
+nificance (SMD = –0.17, 95 % CI: –0.47–0.13, p = 0.28). Heterogeneity
+was significant across studies (τ² = 0.14, ρ = 1.00, Q = 27.46, p = 0.01),
+as shown in Supplementary File 5C.
+3.4. Meta-regression results with postoperative time as a moderator
+This analysis examined the relationship between postoperative time
+and gait recovery by treating time as a moderator variable. The best-
+fitting models were then used for final estimation.
+3.4.1. Peak knee flexion angle
+The effect of postoperative time on peak knee flexion angle was
+assessed using a logarithmic model. Results indicated that time since
+surgery was not a statistically significant moderator of peak knee flexion
+angle (F = 1.99, p = 0.24). Although the trend suggested gradual
+improvement in peak knee flexion angle over time, the regression co­
+efficient did not reach statistical significance (k = 11, β = 0.21, 95 % CI:
+–0.23–0.65, p = 0.24). As shown in Fig. 2(A).
+3.4.2. Peak knee flexion moment
+A logarithmic model was also employed to assess the influence of
+postoperative time on peak knee flexion moment. The results similarly
+showed no statistically significant moderating effect of time (F = 2.02,
+p = 0.28). While the overall trend indicated some improvement in peak
+knee flexion moment over time, the association was not statistically
+significant (k = 7, β = 0.84, 95 % CI:–1.44–3.12, p = 0.28). As shown in
+Fig. 2(B).
+3.4.3. Walking speed
+The relationship between postoperative time and walking speed was
+evaluated using a linear model. The analysis revealed no statistically
+significant trend (F = 0.14, p = 0.73). Although walking speed appeared
+to improve slightly over time, the regression coefficient remained non-
+significant (k = 13, β = 0.002, 95 % CI: –0.018–0.023, p = 0.73). As
+shown in Fig. 2(C).
+3.5. Trajectory of gait recovery at key postoperative time points
+Gait recovery trajectories were further examined at five key post­
+operative time points (3, 6, 12, 18, and 24 months) using model-based
+predictions. Although spline and logarithmic models yielded similar
+AIC/BIC values, the logarithmic model was ultimately selected for its
+greater interpretability. The log function captures the nonlinear trend of
+early rapid recovery followed by a plateau, which aligns with known
+rehabilitation trajectories in ACLR patients. Additionally, it reduces the
+risk of overfitting relative to spline models given the moderate number
+of studies available at later time points.
+3.5.1. Peak knee flexion angle
+At 3 months postoperatively, ACLR patients exhibited significantly
+lower peak knee flexion angles compared to healthy controls (SMD =
+–0.75, 95 % CI: –1.33 to –0.18). This difference gradually diminished
+over time: at 6 months (SMD = –0.61, 95 % CI: –1.04 to –0.18); 12
+months (SMD = –0.46, 95 % CI: –0.84 to –0.08); 18 months (SMD =
+–0.38, 95 % CI: –0.79–0.03); and 24 months (SMD = –0.32, 95 % CI:
+–0.78–0.14). According to model-based predictions, the 95 % confi­
+dence interval for the effect estimate first crossed zero at approximately
+Fig. 2. Meta-regression of gait over time. Meta-regression plot showing the relationship between postoperative time and standardized mean differences (SMD) in gait
+parameters. The curve represents the fitted longitudinal mixed-effects model with restricted maximum likelihood (REML) estimation. Shaded areas indicate 95 %
+confidence intervals.
+S. Chen et al. Gait & Posture 123 (2026) 109972
+5
+
+--- PAGE 6 ---
+16.2 months, indicating that group differences in peak knee flexion
+angle were no longer statistically significant beyond this time point.
+Detailed results are provided in Table 1 and Fig. 3(A).
+3.5.2. Peak knee flexion moment
+At 3 months postoperatively, peak knee flexion moments in ACLR
+patients were significantly lower than in healthy controls (SMD = –1.87,
+95 % CI: –3.18 to –0.56). This difference lessened over time: at 6 months
+(SMD = –1.29, 95 % CI: –2.17 to –0.42); 12 months (SMD = –0.71, 95 %
+CI: –1.63–0.21); 18 months (SMD = –0.37, 95 % CI: –1.54–0.79); and 24
+months (SMD = –0.13, 95 % CI: –1.52–1.26). According to the model’s
+fitted predictions, the confidence interval for the effect estimate crossed
+zero at approximately 10.1 months postoperatively, suggesting that
+group differences in peak knee flexion moment were no longer statisti­
+cally significant after this time point. Full results are shown in Table 1
+and Fig. 3(B).
+3.5.3. Walking speed
+At 3 months postoperatively, ACLR patients demonstrated slightly
+reduced walking speed relative to healthy controls (SMD = –0.28, 95 %
+CI: –0.75–0.19). This trend of minimal difference persisted over time: at
+6 months (SMD = –0.23, 95 % CI: –0.60–0.14); 12 months (SMD =
+–0.19, 95 % CI: –0.50–0.13); 18 months (SMD = –0.16, 95 % CI:
+–0.47–0.15); and 24 months (SMD = –0.14, 95 % CI: –0.46–0.18). At all
+key time points, the 95 % confidence intervals crossed zero, indicating
+that while walking speed showed a trend toward improvement over
+time, none of the observed differences reached statistical significance.
+Detailed data are presented in Table 1 and Fig. 3(C).
+4. Discussion
+4.1. Analysis of differences in gait parameters
+4.1.1. Peak knee flexion angle differences
+The results of this review indicate that ACLR patients exhibited
+significantly reduced peak knee flexion angles during walking compared
+to healthy controls, consistent with findings from existing systematic
+reviews. Previous reviews reported generally lower peak knee flexion
+angles in ACL-reconstructed patients compared to healthy individuals
+during the postoperative period [53], and similar deficits have also been
+reported during running at various stages of postoperative recovery [62,
+63,65]. This limitation in flexion angles may be attributed to excessive
+scarring and adhesions on the medial and lateral sides of the patella
+following surgery [54]. Additionally, psychological factors such as pa­
+tients’ fear of reinjury may reduce patients’ willingness or ability to fully
+flex the knee [55]. Similarly, recent findings suggest that quadriceps
+strength is associated with differences in knee flexion angle during gait
+among individuals with ACLR [61], suggesting a possible link between
+muscle function and knee flexion angle. Collectively, these factors likely
+restrict the range of motion, thereby affecting knee flexion performance
+during gait.
+4.1.2. Peak knee flexion moment differences
+Our review found that peak knee flexion moments were significantly
+lower in ACLR patients compared to healthy controls, aligning with
+trends reported in prior literature. Previous reviews highlighted that
+reduced peak knee flexion moments commonly occur among ACL-
+reconstructed patients for a period post-surgery [56]. This reduction
+in peak knee flexion moment is potentially due to early postoperative
+muscle atrophy, impaired neuromuscular control, and protective
+compensatory strategies to avoid loading the reconstructed limb [57,
+58]. These combined factors likely contribute to the observed deficit in
+peak knee flexion moment during gait.
+4.1.3. Walking speed differences
+The present review noted that ACLR patients exhibited slightly lower
+walking speeds compared to healthy controls, although the difference
+was not statistically significant. This observation aligns with certain
+previous studies, which reported no significant differences in spatio­
+temporal gait parameters, including walking speed, between ACLR pa­
+tients and healthy controls within 4–15 months post-surgery [59]. This
+phenomenon might be explained by patients’ subjective adjustments
+and compensatory mechanisms involving other joints [60], allowing
+them to maintain nearly normal walking speeds despite incomplete knee
+function recovery.
+4.2. Recovery trends of gait parameters over time
+4.2.1. Temporal changes in peak knee flexion angle
+At 3 months postoperatively, ACLR patients showed significantly
+lower knee flexion angles compared to healthy controls, indicating
+noticeable asymmetry in sagittal plane movement between affected and
+unaffected limbs in early postoperative gait [48]. Over time, these dif­
+ferences gradually diminished and became statistically non-significant
+at approximately 16.2 months, suggesting recovery of peak knee
+flexion angle by the mid-term postoperative stage. This recovery trend is
+consistent with previous research; for example, studies have shown that
+both males and females exhibit abnormal peak knee flexion angles at 6
+months post-ACLR, with normalization typically observed around 12
+months [49]. However, some cross-sectional evidencesuggests that even
+in the later stages of recovery—on average four years after surger­
+y—ACLR patients may still exhibit reduced knee flexion angles during
+running compared to healthy controls, indicating that full biomechan­
+ical restoration may not occur in all individuals [64], with some studies
+also reporting alterations in distal gait parameters such as foot pro­
+gression angle and center of pressure trajectory during running [66].
+The current findings further support the notion that peak knee flexion
+angle recovery follows a dynamic trajectory characterized by early
+Fig. 3. Trajectory of Gait Recovery at Key Postoperative Time Points. Predicted recovery trends for gait parameters across multiple postoperative timepoints. The
+figure illustrates the point at which group differences become statistically non-significant, indicating functional normalization.
+S. Chen et al. Gait & Posture 123 (2026) 109972
+6
+
+--- PAGE 7 ---
+limitations followed by mid-term normalization, although long-term
+deviations may persist in some cases.
+4.2.2. Temporal changes in knee flexion moment
+A similar temporal pattern was observed for peak knee flexion
+moment. At 3 months postoperatively, ACLR patients exhibited signifi­
+cantly reduced peak knee flexion moments compared to healthy con­
+trols, reflecting early postoperativedeficits in neuromuscularoutput and
+potential quadriceps avoidance behaviors [50]. The differences between
+groups gradually decreased over time, becoming statistically
+non-significant by approximately 10.1 months, suggesting mid-term
+recovery. This trend aligns with previous studies, which have reported
+an initial postoperative decline in peak knee joint moments followed by
+gradual recovery toward normal levels [11]. Our review further re­
+inforces the characterization of peak knee flexion moment recovery as
+exhibiting early postoperative limitations followed by mid-term
+recovery.
+4.2.3. Temporal changes in walking speed
+In contrast to the aforementioned parameters, walking speed did not
+significantly differ between ACLR patients and healthy controls at any
+critical postoperative time points, indicating a relatively rapid recovery
+of walking speed postoperatively. This finding concurs with previous
+research, which reported no significant differences in walking speeds
+between ACLR patients and controls within 4–15 months post-surgery
+[59]. It is noteworthy, however, that subtle gait adjustments, potentially
+stemming from postoperative neuromuscular control changes [51], such
+as asymmetries or alterations in specific gait phases [52], may still occur
+despite the lack of overt differences in walking speed. Consequently,
+when assessing the recovery of spatiotemporal gait parameters, atten­
+tion should focus on gait symmetry and critical gait phases in ACLR
+patients to more comprehensively reflect their functional recovery
+status.
+Although walking speed did not differ significantly between ACLR
+patients and healthy controls in our analysis, this may not necessarily
+indicate full walking speed recovery. Previous studies have suggested
+that patients may adopt compensatory strategies—such as reducing
+stride length or increasing cadence—to maintain a “normal” walking
+speed despite persistent neuromuscular deficits and inter-limb asym­
+metries [7,60]. These adjustments may mask underlying functional
+limitations. Thus, walking speed alone may not be sensitive enough to
+detect subtle gait asymmetries or functional limitations, and should be
+interpreted in conjunction with other gait parameters.
+4.3. Limitations and future directions
+Given the limited and inconsistent reporting of acute postoperative
+gait data, this study included only ACLR patients assessed at ≥ 3 months
+post-surgery, potentially missing early-phase gait changes. Moreover,
+uneven follow-up time distributions and small sample sizes at certain
+intervals may have affected the precision of effect estimates.
+Despite applying a multilevel modeling framework with continuous
+autoregressive covariance and robust variance estimation to account for
+within-study correlations, notable heterogeneity remained—particu­
+larly for peak knee flexion moment (τ² = 1.15). This variability may
+reflect differences in graft types, rehabilitation protocols, or follow-up
+durations. However, insufficient reporting of these variables precluded
+stratified analyses, limiting our ability to identify sources of heteroge­
+neity. Additionally, the lack of standardized reporting for certain gait
+parameters (e.g., phase-specific metrics) limited more comprehensive
+exploration of motor control mechanisms.
+Although including studies that used contralateral limbs as controls
+may introduce additional sources of heterogeneity,it is also important to
+acknowledge that excluding them and limiting the analysis to between-
+group comparisons does not eliminate heterogeneity either.
+Future research should focus on conducting high-quality,
+prospective studies with extended follow-up periods, covering gait
+changes across all postoperative phases following ACL reconstruction.
+While the current study focused exclusively on gait-related parameters,
+future work should aim to provide a more comprehensive evaluation of
+knee function. Emphasis should be placed on detailed functional met­
+rics, such as anterior-posterior (AP) joint stability, muscle strength, and
+limb symmetry indices, to enable a more holistic assessment of func­
+tional recovery.
+5. Conclusion
+This longitudinal multilevel meta-analysis synthesized evidence
+across multiple postoperative time points to delineate the recovery
+trajectories of key gait parameters following ACL reconstruction. At ≥ 3
+months post-ACLR, patients demonstrated significantly reduced peak
+knee flexion angle and peak knee flexion moment compared to healthy
+controls. These deficits progressively resolved, reaching statistical
+normalization at approximately 16.2 and 10.1 months, respectively.
+Walking speed did not significantly differ at any postoperative time
+point but may reflect compensatory strategies employed to maintain
+normal gait. These findings highlight the importance of targeting
+quadriceps strengthening and knee flexion restoration during early-
+phase rehabilitation, particularly within the first 10–16 months, to
+address persistent biomechanical deficits.
+Author contributions
+Shiwei Chen, Han Gong: conducted the experimental design and
+execution, carried out data analysis, crafted figures and tables, wrote
+and reviewed the initial article drafts, and gave approval for the final
+version.
+Chennan Lyu, Kehan Li: Carried out the experiments, designed fig­
+ures and tables, and gave approval to the final draft.
+Shazlin Shaharudin: designed the experiments, authored and
+reviewed the initial article drafts, and gave approval for the final
+version.
+CRediT authorship contribution statement
+Chennan Lyu: Methodology, Data curation, Conceptualization.
+Kehan Li: Software, Resources, Methodology, Data curation. Shazlin
+Shaharudin: Writing – review & editing, Supervision, Methodology,
+Formal analysis. Shiwei Chen: Writing – review & editing, Writing –
+original draft, Methodology, Investigation, Formal analysis, Data cura­
+tion. Han Gong: Writing – original draft, Methodology, Investigation,
+Formal analysis, Conceptualization.
+Financial benefits
+The authors did not receive any financial benefits or compensation
+related to this study.
+Previous presentation
+This research has not been previously presented in any form,
+including conferences, symposiums, or online preprint servers.
+Funding
+This work was supported by a Universiti Sains Malaysia, Short-Term
+Grant with Project No: R501-LR-RND002-0000000018-0000.
+Declaration of Competing interest
+The authors declare that they have no known competing financial
+interests or personal relationships that could have appeared to influence
+S. Chen et al. Gait & Posture 123 (2026) 109972
+7
+
+--- PAGE 8 ---
+the work reported in this paper.
+Appendix A. Supporting information
+Supplementary data associated with this article can be found in the
+online version at doi:10.1016/j.gaitpost.2025.109972.
+Data availability
+Code availability: Full dataset and analysis scripts available from
+https://github.
+com/Shiwei-Lab/ACLR-Gait-Meta2025/tree/main/scripts
+Availability of data and material: Full dataset and analysis scripts
+available from https://github.com/Shiwei-Lab/ACLR-Gait-Meta
+2025/tree/main/data
+Supplementary File: The online version contains supplementary
+material available at https://github.com/Shiwei-Lab/ACLR-Gait-
+Meta2025/tree/main/supplement
+Modeling Results: Detailed results from model testing, selection and
+final estimation processes are available at:
+https://github.
+com/Shiwei-Lab/ACLR-Gait-Meta2025/tree/main/Results%20Output
+References
+[1] F. Mancino, B. Kayani, A. Gabr, A. Fontalis, R. Plastow, F.S. Haddad, Anterior
+cruciate ligament injuries in female athletes: risk factors and strategies for
+prevention, Bone Jt Open 5 (2) (2024) 94–100, https://doi.org/10.1302/2633-
+1462.52.Bjo-2023-0166.
+[2] C.C. Kaeding, B. Léger-St-Jean, R.A. Magnussen, Epidemiology and diagnosis of
+anterior cruciate ligament injuries, Clin. Sports Med. 36 (1) (2017) 1–8, https://
+doi.org/10.1016/j.csm.2016.08.001.
+[3] N.A. Friel, C.R. Chu, The role of ACL injury in the development of posttraumatic
+knee osteoarthritis, Clin. Sports Med. 32 (1) (2013) 1–12, https://doi.org/
+10.1016/j.csm.2012.08.017.
+[4] M.R. Gharpinde, A. Pundkar, Y. Dhanwani, R. Chandanwale, A.M. Jaiswal,
+Navigating Post-operative challenges: a comprehensive review of complications
+following anterior cruciate ligament (ACL) tear surgery, Cureus 16(8 (2024)
+e67768, https://doi.org/10.7759/cureus.67768.
+[5] K. White, D. Logerstedt, L. Snyder-Mackler, Gait asymmetries persist 1 year after
+anterior cruciate ligament reconstruction, Orthop. J. Sports Med 1 (2) (2013),
+https://doi.org/10.1177/2325967113496967.
+[6] A. Gokeler, A. Benjaminse, C.F. van Eck, K.E. Webster, L. Schot, E. Otten, Return of
+normal gait as an outcome measurement in acl reconstructed patients. A systematic
+review, Int. J. Sports Phys. Ther. 8 (4) (2013) 441–451.
+[7] R.J. Knobel, N. Ito, E.K. Arhos, J.J. Capin, T.S. Buchanan, L. Snyder-Mackler,
+Patients walking faster after anterior cruciate ligament reconstruction have more
+gait asymmetry, Int. J. Sports Phys. Ther. 16 (1) (2021) 169–176, https://doi.org/
+10.26603/001c.18710.
+[8] F. Sharafoddin-Shirazi, A. Letafatkar, J. Hogg, V. Saatchian, Biomechanical
+asymmetries persist after ACL reconstruction: results of a 2-year study, J. Exp.
+Orthop. 7 (1) (2020) 86, https://doi.org/10.1186/s40634-020-00301-2.
+[9] M. Kaur, D.C. Ribeiro, J.C. Theis, K.E. Webster, G. Sole, Movement patterns of the
+knee during gait following ACL reconstruction: a systematic review and meta-
+analysis, Sports Med. 46 (12) (2016) 1869–1895, https://doi.org/10.1007/s40279-
+016-0510-4.
+[10] H.F. Hart, A.G. Culvenor, N.J. Collins, D.C. Ackland, S.M. Cowan, Z. Machotka, et
+al., Knee kinematics and joint moments during gait following anterior cruciate
+ligament reconstruction: a systematic review and meta-analysis, Br. J. Sports Med.
+50 (10) (2016) 597–612, https://doi.org/10.1136/bjsports-2015-094797.
+[11] J. Goetschius, J. Hertel, S.A. Saliba, S.F. Brockmeier, J.M. Hart, Gait biomechanics
+in anterior cruciate Ligament-reconstructed knees at different time frames
+postsurgery, Med. Sci. Sports Exerc. 50 (11) (2018) 2209–2216, https://doi.org/
+10.1249/mss.0000000000001693.
+[12] D. Jackson, R. Turner, Power analysis for random-effects meta-analysis, Res Synth.
+Methods 8 (3) (2017) 290–302, https://doi.org/10.1002/jrsm.1240.
+[13] J. Xu, S. Guo, Y. Feng, Y. Ma, Y. Zhang, J.C. Núñez, et al., Parental homework
+involvement and students’ achievement: a Three-Level Meta-Analysis, Psicothema
+36 (1) (2024) 1–14, https://doi.org/10.7334/psicothema2023.92.
+[14] M. Hadizadeh, S. Amri, H. Mohafez, S.A. Roohi, A.H. Mokhtar, Gait analysis of
+national athletes after anterior cruciate ligament reconstruction following three
+stages of rehabilitation program: symmetrical perspective, Gait Posture 48 (2016)
+152–158, https://doi.org/10.1016/j.gaitpost.2016.05.002.
+[15] D. Skvortsov, S. Kaurkin, A. Akhpashev, A. Altukhova, A. Troitskiy, N. Zagorodniy,
+Gait analysis and knee kinematics in patients with anterior cruciate ligament
+rupture: before and after reconstruction, Appl. Sci. 10 (2020).
+[16] L.V. Slater, J.M. Hart, A.R. Kelly, C.M. Kuenze, Progressive changes in walking
+kinematics and kinetics after anterior cruciate ligament injury and reconstruction:
+a review and Meta-Analysis, J. Athl. Train. 52 (9) (2017) 847–860, https://doi.
+org/10.4085/1062-6050-52.6.06.
+[17] H.C. Davis-Wilson, S.J. Pfeiffer, C.D. Johnston, M.K. Seeley, M.S. Harkey, J.
+T. Blackburn, et al., Bilateral gait 6 and 12 months Post-Anterior cruciate ligament
+reconstruction compared with controls, Med. Sci. Sports Exerc. 52 (4) (2020)
+785–794, https://doi.org/10.1249/mss.0000000000002208.
+[18] M. Asaeda, M. Deie, Y. Kono, Y. Mikami, H. Kimura, N. Adachi, The relationship
+between knee muscle strength and knee biomechanics during running at 6 and 12
+months after anterior cruciate ligament reconstruction, Asia Pac. J. Sports Med
+Arthrosc. Rehabil. Technol. 16 (2019) 14–18, https://doi.org/10.1016/j.
+asmart.2018.11.004.
+[19] G. Milandri, M. Posthumus, T.J. Small, A. Bothma, W. van der Merwe,
+R. Kassanjee, et al., Kinematic and kinetic gait deviations in males long after
+anterior cruciate ligament reconstruction, Clin. Biomech. (Bristol) 49 (2017)
+78–84, https://doi.org/10.1016/j.clinbiomech.2017.07.012.
+[20] M.J. Page, J.E. McKenzie, P.M. Bossuyt, I. Boutron, T.C. Hoffmann, C.D. Mulrow, et
+al., The PRISMA 2020 statement: an updated guideline for reporting systematic
+reviews, Bmj 372 (2021) n71, https://doi.org/10.1136/bmj.n71.
+[21] J.A. Sterne, M.A. Hernán, B.C. Reeves, J. Savović, N.D. Berkman, M. Viswanathan,
+et al., ROBINS-I: a tool for assessing risk of bias in non-randomised studies of
+interventions, Bmj 355 (2016) i4919, https://doi.org/10.1136/bmj.i4919.
+[22] H.J. Schünemann, J. Brożek, G.H. Guyatt, A.D. Oxman, The GRADE working
+group, GRADE Handb. Grading Qual. Evid. Strength Recomm. (2013). 〈https://gdt.
+gradepro.org/app/handbook/handbook.html〉.
+[23] J.L. Peters, A.J. Sutton, D.R. Jones, K.R. Abrams, L. Rushton, Contour-enhanced
+meta-analysis funnel plots help distinguish publication bias from other causes of
+asymmetry, J. Clin. Epidemiol. 61 (10) (2008) 991–996, https://doi.org/10.1016/
+j.jclinepi.2007.11.010.
+[24] K. Xu, A.J. Blazevich, D. Boullosa, R. Ramirez-Campillo, M. Yin, Y. Zhong, et al.,
+Optimizing Post-activation performance enhancement in athletic tasks: a
+systematic review with Meta-analysis for prescription variables and research
+methods, Sports Med. 55 (4) (2025) 977–1008, https://doi.org/10.1007/s40279-
+024-02170-6.
+[25] L.V.H. Michael Borenstein, Julian P.T. Higgins, Hannah R. Rothstein, Effect sizes
+based on means, Introd. Meta-Anal. (2009) 21–32.
+[26] M.A. Girdwood, K.M. Crossley, E.K. Rio, B.E. Patterson, M.J. Haberfield, J.
+L. Couch, et al., Hop to it! a systematic review and longitudinal Meta-analysis of
+hop performance after ACL reconstruction, Sports Med. 55 (1) (2025) 101–113,
+https://doi.org/10.1007/s40279-024-02121-1.
+[27] I. Alwahaibi, D. Alhidabi, H. Alkharusi, Cohen’s criteria for interpreting practical
+significance indicators: a critical study, Cypriot J. Educ. Sci. 15 (2020) 246–258,
+https://doi.org/10.18844/cjes.v15i2.4624.
+[28] T.A. Trikalinos, I. Olkin, Meta-analysis of effect sizes reported at multiple time
+points: a multivariate approach, Clin. Trials 9 (5) (2012) 610–620, https://doi.org/
+10.1177/1740774512453218.
+[29] K.J. Ishak, R.W. Platt, L. Joseph, J.A. Hanley, J.J. Caro, Meta-analysis of
+longitudinal studies, Clin. Trials 4 (5) (2007) 525–539, https://doi.org/10.1177/
+1740774507083567.
+[30] J.E. Pustejovsky, E. Tipton, Meta-analysis with robust variance estimation:
+expanding the range of working models, Prev. Sci. 23 (3) (2022) 425–438, https://
+doi.org/10.1007/s11121-021-01246-3.
+[31] F. Harrell, Regression Modeling Strategies: With Applications to Linear Models,
+Logistic Regression, and Survival Analysis, 2010.
+[32] J. IntHout, J.P. Ioannidis, M.M. Rovers, J.J. Goeman, Plea for routinely presenting
+prediction intervals in meta-analysis, BMJ Open 6 (7) (2016) e010247, https://doi.
+org/10.1136/bmjopen-2015-010247.
+[33] C.N. Armitano-Lago, S. Morrison, J.M. Hoch, H.J. Bennett, D.M. Russell, Anterior
+cruciate ligament reconstructed individuals demonstrate slower reactions during a
+dynamic postural task, Scand. J. Med Sci. Sports 30 (8) (2020) 1518–1528, https://
+doi.org/10.1111/sms.13698.
+[34] A.D. Georgoulis, A. Papadonikolakis, C.D. Papageorgiou, A. Mitsou, N. Stergiou,
+Three-dimensional tibiofemoral kinematics of the anterior cruciate ligament-
+deficient and reconstructed knee during walking, Am. J. Sports Med. 31 (1) (2003)
+75–79, https://doi.org/10.1177/03635465030310012401.
+[35] Y. Kono, M. Deie, K. Hirata, M. Asaeda, C. Terai, H. Kimura, et al., Influence of time
+from injury to surgery on knee biomechanics during walking in patients with
+anterior cruciate ligament reconstruction, Sports Biomech. 23 (12) (2024)
+3112–3120, https://doi.org/10.1080/14763141.2023.2236978.
+[36] B. Noehren, H. Wilson, C. Miller, C. Lattermann, Long-term gait deviations in
+anterior cruciate ligament-reconstructed females, Med. Sci. Sports Exerc. 45 (7)
+(2013) 1340–1347, https://doi.org/10.1249/MSS.0b013e318285c6b6.
+[37] M. Lewek, K. Rudolph, M. Axe, L. Snyder-Mackler, The effect of insufficient
+quadriceps strength on gait after anterior cruciate ligament reconstruction, Clin.
+Biomech. (Bristol) 17 (1) (2002) 56–63, https://doi.org/10.1016/s0268-0033(01)
+00097-3.
+[38] Z. Knoll, L. Kocsis, R.M. Kiss, Gait patterns before and after anterior cruciate
+ligament reconstruction, Knee Surg. Sports Trauma. Arthrosc. 12 (1) (2004) 7–14,
+https://doi.org/10.1007/s00167-003-0440-1.
+[39] A. Czamara, I. Markowska, M. Hagner-Derengowska, Three-dimensional kinematic
+analysis of ankle, knee, hip, and pelvic rotation during gait in patients after
+anterior cruciate ligament reconstruction - early results, BMC Musculoskelet.
+Disord. 16 (2015) 266, https://doi.org/10.1186/s12891-015-0726-8.
+[40] M. Hall, C.A. Stevermer, J.C. Gillette, Gait analysis post anterior cruciate ligament
+reconstruction: knee osteoarthritis perspective, Gait Posture 36 (1) (2012) 56–60,
+https://doi.org/10.1016/j.gaitpost.2012.01.003.
+S. Chen et al. Gait & Posture 123 (2026) 109972
+8
+
+--- PAGE 9 ---
+[41] M. Karimi, F. Fatoye, S.M. Mirbod, H. Omar, K. Nazem, M.R. Barzegar, et al., Gait
+analysis of anterior cruciate ligament reconstructed subjects with a combined
+tendon obtained from hamstring and peroneus longus, Knee 20 (6) (2013)
+526–531, https://doi.org/10.1016/j.knee.2013.07.007.
+[42] R. Ferber, L.R. Osternig, M.H. Woollacott, N.J. Wasielewski, J.H. Lee, Gait
+mechanics in chronic ACL deficiency and subsequent repair, Clin. Biomech.
+(Bristol) 17 (4) (2002) 274–285, https://doi.org/10.1016/s0268-0033(02)00016-
+5.
+[43] M.E. Zabala, J. Favre, S.F. Scanlan, J. Donahue, T.P. Andriacchi, Three-
+dimensional knee moments of ACL reconstructed and control subjects during gait,
+stair ascent, and stair descent, J. Biomech. 46 (3) (2013) 515–520, https://doi.org/
+10.1016/j.jbiomech.2012.10.010.
+[44] M.R. Patterson, E. Delahunt, B. Caulfield, Peak knee adduction moment during gait
+in anterior cruciate ligament reconstructed females, Clin. Biomech. (Bristol) 29 (2)
+(2014) 138–142, https://doi.org/10.1016/j.clinbiomech.2013.11.021.
+[45] C. Büttner, C. Lisee, E. Bjornsen, A. Buck, N. Favoreto, A. Creighton, et al., Bilateral
+waveform analysis of gait biomechanics presurgery to 12 months following ACL
+reconstruction compared to controls, J. Orthop. Res. 43 (2) (2025) 322–336,
+https://doi.org/10.1002/jor.26001.
+[46] A.A. Padhye, S.A. Meardon, A. Kulas, J. Willson, Lower extremity joint contact
+force symmetry during walking and running, 2-7 years post-ACL reconstruction,
+J. Orthop. Res. 42 (5) (2024) 1009–1019, https://doi.org/10.1002/jor.25751.
+[47] K. Davis, J.L. Williams, B.A. Sanford, A. Zucker-Levin, Assessing lower extremity
+coordination and coordination variability in individuals with anterior cruciate
+ligament reconstruction during walking, Gait Posture 67 (2019) 154–159, https://
+doi.org/10.1016/j.gaitpost.2018.10.010.
+[48] J.J. Capin, R. Zarzycki, A. Arundale, K. Cummer, L. Snyder-Mackler, Report of the
+primary outcomes for gait mechanics in men of the ACL-SPORTS trial: secondary
+prevention with and without perturbation training does not restore gait symmetry
+in men 1 or 2 years after ACL reconstruction, Clin. Orthop. Relat. Res. 475 (10)
+(2017) 2513–2522, https://doi.org/10.1007/s11999-017-5279-8.
+[49] S.F. Scanlan, A.M. Chaudhari, C.O. Dyrby, T.P. Andriacchi, Differences in tibial
+rotation during walking in ACL reconstructed and healthy contralateral knees,
+J. Biomech. 43 (9) (2010) 1817–1822, https://doi.org/10.1016/j.
+jbiomech.2010.02.010.
+[50] E.K. Arhos, J.J. Capin, T.S. Buchanan, L. Snyder-Mackler, Quadriceps strength
+symmetry does not modify gait mechanics after anterior cruciate ligament
+reconstruction, rehabilitation, and Return-to-Sport training, Am. J. Sports Med. 49
+(2) (2021) 417–425, https://doi.org/10.1177/0363546520980079.
+[51] B.D. Roewer, S.L. Di Stasi, L. Snyder-Mackler, Quadriceps strength and weight
+acceptance strategies continue to improve two years after anterior cruciate
+ligament reconstruction, J. Biomech. 44 (10) (2011) 1948–1953, https://doi.org/
+10.1016/j.jbiomech.2011.04.037.
+[52] J.A. Roper, M.J. Terza, M.D. Tillman, C.J. Hass, Adaptation strategies of
+individuals with anterior cruciate ligament reconstruction, Orthop. J. Sports Med.
+4 (2) (2016) 2325967115627611, https://doi.org/10.1177/2325967115627611.
+[53] D.L. Shi, Y.B. Wang, Z.S. Ai, Effect of anterior cruciate ligament reconstruction on
+biomechanical features of knee in level walking: a meta-analysis, Chin. Med. J. 123
+(21) (2010) 3137–3142.
+[54] K.E. Wilk, L.C. Macrina, E.L. Cain, J.R. Dugas, J.R. Andrews, Recent advances in
+the rehabilitation of anterior cruciate ligament injuries, J. Orthop. Sports Phys.
+Ther. 42 (3) (2012) 153–171, https://doi.org/10.2519/jospt.2012.3741.
+[55] A. Meierbachtol, M. Obermeier, W. Yungtum, J. Bottoms, E. Paur, B.J. Nelson, et
+al., Injury-Related fears during the Return-to-Sport phase of ACL reconstruction
+rehabilitation, Orthop. J. Sports Med. 8 (3) (2020) 2325967120909385, https://
+doi.org/10.1177/2325967120909385.
+[56] S.M. Sigward, P. Lin, K. Pratt, Knee loading asymmetries during gait and running in
+early rehabilitation following anterior cruciate ligament reconstruction: a
+longitudinal study, Clin. Biomech. (Bristol) 32 (2016) 249–254, https://doi.org/
+10.1016/j.clinbiomech.2015.11.003.
+[57] S.K. Lee, The effect of a vertical load on gluteus medius activity and gait
+characteristics during walking, J. Phys. Ther. Sci. 25 (11) (2013) 1397–1399,
+https://doi.org/10.1589/jpts.25.1397.
+[58] J. Goetschius, C.M. Kuenze, S. Saliba, J.M. Hart, Reposition acuity and postural
+control after exercise in anterior cruciate ligament reconstructed knees, Med. Sci.
+Sports Exerc. 45 (12) (2013) 2314–2321, https://doi.org/10.1249/
+MSS.0b013e31829bc6ae.
+[59] G. Leporace, L. Metsavaht, G. Zeitoune, T. Marinho, T. Oliveira, G.R. Pereira, et al.,
+Use of Spatiotemporal Gait Parameters to Determine Return to Sports after ACL
+Reconstruction, Acta Ortop. Bras. 24 (2) (2016) 73–76, https://doi.org/10.1590/
+1413-785220162402147450.
+[60] M.R. Torry, M.J. Decker, H.B. Ellis, K.B. Shelburne, W.I. Sterett, J.R. Steadman,
+Mechanisms of compensating for anterior cruciate ligament deficiency during gait,
+Med. Sci. Sports Exerc. 36 (8) (2004) 1403–1412, https://doi.org/10.1249/01.
+mss.0000135797.09291.71.
+[61] B. Pietrosimone, H.C. Davis-Wilson, M.K. Seeley, C. Johnston, J.T. Spang, R.
+A. Creighton, G.M. Kamath, J.T. Blackburn, Gait biomechanics in individuals
+meeting sufficient quadriceps strength cutoffs after anterior cruciate ligament
+reconstruction, J. Athl. Train. 56 (2021) 960–966, https://doi.org/10.4085/425-
+20.
+[62] B. Pairot-de-Fontenay, R.W. Willy, A.R. Elias, R.L. Mizner, M.O. Dube, J.S. Roy,
+Running biomechanics in individuals with anterior cruciate ligament
+reconstruction: a systematic review, Sports Med. 49 (2019) 1411–1424, https://
+doi.org/10.1007/s40279-019-01120-x.
+[63] K.A. Knurr, S.A. Kliethermes, M.R. Stiffler-Joachim, D.G. Cobian, G.S. Baer, B.
+C. Heiderscheit, Running biomechanics before injury and 1 year after anterior
+cruciate ligament reconstruction in division I collegiate athletes, Am. J. Sports
+Med. 49 (2021) 2607–2614, https://doi.org/10.1177/03635465211026665.
+[64] D.N. Pamukoff, M.M. Montgomery, K.H. Choe, T.J. Moffit, S.A. Garcia, M.
+N. Vakula, Bilateral alterations in running mechanics and quadriceps function
+following unilateral anterior cruciate ligament reconstruction, J. Orthop. Sports
+Phys. Ther. 48 (2018) 960–967.
+[65] M. Shahbazi, H. Esmaeili, F. Salari-Esker, B. Bashiri, D. Khezri, Hip and knee joints
+mechanics and asymmetries in individuals with a history of anterior cruciate
+ligament reconstruction during overground running, Knee 52 (2025) 1–8, https://
+doi.org/10.1016/j.knee.2024.10.010.
+[66] A. Sharifi, H. Esmaeili, V. Zolaktaf, Walking and running roll-off characteristics in
+patients with ACL reconstruction history, Gait Posture 107 (2024) 330–336,
+https://doi.org/10.1016/j.gaitpost.2023.10.025.
+S. Chen et al. Gait & Posture 123 (2026) 109972
+9
+
+--- PAGE 10 ---

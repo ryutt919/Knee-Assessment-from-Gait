@@ -1,0 +1,1215 @@
+
+--- PAGE 1 ---
+applied
+sciences
+Article
+Gait Analysis and Mathematical Index-Based Health
+Management Following Anterior Cruciate
+Ligament Reconstruction
+Hamzah Sakeran 1,2 , Noor Azuan Abu Osman 2,3,* , Mohd Shukry Abdul Majid 1,* ,
+Mohd Hafiz Fazalul Rahiman 1 , Wan Zuki Azman Wan Muhamad 4 and Wan Azani Mustafa 5
+1 School of Mechatronic Engineering, Pauh Putra Campus, Universiti Malaysia Perlis, Arau 02600, Perlis,
+Malaysia; hamzahsakeran@unimap.edu.my (H.S.); hafiz@unimap.edu.my (M.H.F.R.)
+2 Centre for Applied Biomechanics, Department of Biomedical Engineering, Faculty of Engineering,
+University of Malaya, Kuala Lumpur 50603, Malaysia
+3 The Chancellery, University of Malaysia Terengganu, Kuala Terengganu 21030, Malaysia
+4 Institute of Engineering Mathematics, Pauh Putra Campus, Universiti Malaysia Perlis, Arau 02600, Perlis,
+Malaysia; wanzuki@unimap.edu.my
+5 Department of Electrical Technology Engineering, Faculty of Engineering Technology, UniCITI Alam Campus,
+Universiti Malaysia Perlis, Sungai Chuchuh, Padang Besar 02300, Perlis, Malaysia;
+wanazani@unimap.edu.my
+* Correspondence: azuan@um.edu.my (N.A.A.O.); shukry@unimap.edu.my (M.S.A.M.);
+Tel.: +60-19-2628-785 (N.A.A.O.); +60-12-736-7500 (M.S.A.M.)
+Received: 11 September 2019; Accepted: 1 November 2019; Published: 2 November 2019 
+
+Abstract: Gait analysis is recognized as a method used in quantifying gait disorders and in clinical
+evaluations of patients. However, the current guidelines for the evaluation of post anterior cruciate
+ligament reconstruction (ACLR) patient outcomes are primarily based on qualitative assessments.
+This study aims to apply gait analyses and mathematical, index-based health management, using the
+Mahalanobis Taguchi System (MTS) and the Kanri Distance Calculator (KDC) to diagnose the level of
+the gait abnormality and to identify its contributing factors following ACLR. It is hypothesized that
+(1)themethodisabletodiscriminatethegaitpatternsbetweenahealthygroup(HG)andpatientswith
+ACLR (PG), and (2) several contributing factors may affect ACLR patients’ rehabilitation performance.
+This study compared the gait of 10 subjects in the PG group with 15 subjects in the HG. The analysis
+was based on 11 spatiotemporal parameters. Gait data of all subjects were collected in a motion
+analysis laboratory. The data were then analyzed using MTS and KDC. In this study, two significant
+groups were recognized: the HG, who achieved results which were within the Mahalanobis space
+(MS), and (ii) the PG who achieved results above the MS. The results may be seen as being on-target
+and off-target, respectively. Based on the analysis, three variables (i.e., step width, single support time,
+and double support time) affected patient performance and resulted in an average mark of above
+1.5 Mahalanobis distance (MD). The results indicated that by focusing on the contributing factors
+that affect the rehabilitation performance of the patients, it is possible to provide individualized and
+need-based treatment.
+Keywords: gait analysis; Mahalanobis-Taguchi system; Kanri Distance Calculator;
+ACLR; rehabilitation
+1. Introduction
+Gait analysis aims to determine the factors that influence a person to walk in the manner that
+he/she does. To accomplish this target, gait analysis involves the collection and investigation of
+Appl. Sci. 2019, 9, 4680; doi:10.3390/app9214680 www.mdpi.com/journal/applsci
+
+--- PAGE 2 ---
+Appl. Sci. 2019, 9, 4680 2 of 22
+qualitative data regarding the gait patterns of the individual. Gait analysis has been used in clinical
+settings for several disorders, including cerebral palsy, Parkinson’s disease, muscular dystrophy,
+osteoarthritis, rheumatoid arthritis, lower limb amputation, head injury, stroke, spinal cord injury,
+myelodysplasia, and multiple sclerosis.
+Thisanalyticalmethodiswidelyusedtoorganizesurgeryinthecaseofcerebralpalsyandmultiple
+joint disease, to produce unique insoles, to prescribe footwear, to schedule and monitor physiotherapy
+in various illnesses such as hemiplegia, to predict future issues such as foot ulceration in peripheral
+neuropathy, and to monitor the manufacturing and application of orthoses and prostheses.
+For ACLR patients, the current guidelines for the evaluation of an ACLR patient’s results are
+primarily based on the clinician’s decisions and experience. These guidelines usually consist of a
+qualitative assessment of the early intervention plans that emphasizes the restoration of flexibility,
+muscular strength, and ligament stability by using closed kinetic chain exercises [1–4]. However, none
+of the post-ACLR rehabilitation guidelines included gait analysis as an examination or evaluation tool.
+It is unclear why this approach has been overlooked from the guidelines.
+The Medical Outcomes Study 36-item Short Form (SF-36) is one of the most popular general health
+outcome measures used in the follow up of post-ACLR patients. The Knee Outcome Survey-Activities
+ofDailyLivingScale(KOS-ADLS)canassessthefunctionallimitationsofthekneeusingaself-reporting
+mechanism. The Knee Injury and Osteoarthritis Outcome Score is the most effective for young and
+active individuals. The International Knee Documentation Committee 2000 Subjective Knee Evaluation
+Form can be used to assess patient improvement. Other commonly-used questionnaires included the
+Lysholm Knee Scale, the Cincinnati Knee Rating Scale, the Tegner Activity Level Scale, and the Marx
+Activity Level Scale [5,6].
+These questionnaires and scores are based either entirely on the patient’s subjective opinions,
+on the clinician’s objective results using the test methods described earlier, or a mixture of both.
+However, subjective functionality and/or pain in certain operations do not indicate whether certain
+muscles are being used in certain operations. It is also not a good indicator to show if a person is at
+greater risk of developing osteoarthritis in the near future, even though he/she might be problem-free
+currently [7,8].
+A major problem with this kind of subjective assessment is that the clinician’s capacity to provide
+safe and high-qualitycare relies on their abilityto reason, think, and judge appropriately. Theseabilities
+and skills may be lacking among less experienced clinicians [9,10]. Furthermore, a number of exams
+need to be conducted to verify the medical diagnosis. The inclusion of a gait analysis may reduce the
+time required to achieve a diagnosis.
+Recently, the use of medical apps in computerized intelligence systems is gaining importance.
+In addition, the implementation of computerized, health-related, decision support schemes represents
+a viable alternative to achieve a quick and precise medical diagnosis for patients. Therefore, medical
+information needs to integrate a classification approach with a mixed decision support scheme to
+facilitate digital access to health care information for healthcare professionals.
+The Mahalanobis Taguchi System (MTS) is a new technique for diagnosing and predicting
+multivariate data [11–16]. MTS is a relatively new statistical method that incorporates several
+mathematical ideas. It is also used in the field of medical diagnoses and multidimensional system
+classifications [17–20]. For a relatively new technique, MTS is extremely effective, and it has been
+applied in a variety of fields [17,19,21]. For example, MTS has been incorporated in a variety of
+apps for healthcare diagnoses, fire detection, earthquake and weather forecasting, and loan rating
+prediction [11,13,22–27].
+Furthermore, MTS is capable of eliminating any unnecessary items in the information system
+and providing useful data to assist healthcare professionals in decision making during diagnoses of
+diseases [28–30]. In addition, MTS is able to perform classification duties and recognize the significant
+multivariate system variables.
+
+--- PAGE 3 ---
+Appl. Sci. 2019, 9, 4680 3 of 22
+Tosignificantlyimprovetheprocessofdiscoveringthemosthelpfulparameters,theKanriDistance
+Calculator (KDC) is incorporated into the MTS [31,32]. KDC-MTS is an extremely efficient approach
+to improve the accuracy of the predictive model. Both MTS and KDC are statistical methods that
+incorporate several mathematical ideas [6]. These techniques are used for diagnosing and predicting
+multivariate data [17–20]. Although many tools have been created to evaluate the patterns and
+dynamics of large data sets, only KDC allows users to understand exactly how far they are from
+the desired target state, and how each variable contributes to the entire distance from the target
+state. Apart from calculating connections among the factors within a general information set, KDC
+is also able to calculate the correlation between each of the factors mathematically [7]. With regard
+to MTS, this research implemented KDC to define the specific factors affecting the performance of
+post-ACLR patients.
+Thus, data mining applications can be created by implementing a mathematical, index-based
+health management system to better recognize and monitor the states of gait abnormality among
+high-risk patients, to design suitable procedures, and to decrease the number of hospital admissions
+and claims.
+For this study, ACLR patients from the Rehab and Physiotherapy Unit of Hospital Tuanku Fauziah
+at Kangar, Perlis were recruited. Ten patients, all male, with unilateral primary ACLR were chosen
+for the ACLR group (PG). All the patients underwent similar rehabilitation procedures, starting with
+passive and then active mobilization after surgery. Our goal is to apply gait analyses and mathematical,
+index-based health management (MTS and KDC) to diagnose the level of gait abnormality and to
+identify its contributing factors following ACLR.
+2. Method
+2.1. Mathematical, Index-Based Health Management System
+A mathematical, index-based health management system describes the mathematical formulations
+of a health status index model. Health status index models have received a great deal of attention
+in recent years as a new quantitative approach for health planning and policy making. This study
+therefore proposes a new health management system (monitoring, diagnosis, and actions that should
+be taken based on findings). Equations are formulated to calculate ACLR health indexes and to
+determine the amount of health improvement produced by a health care program. This study aims to
+utilize mathematical formulations, including MTS as a diagnosis system and the Kanri Model as high
+impact prescription tool, to monitor, diagnose, and plan the actions to be taken based on the findings.
+2.1.1. Mahalanobis–Taguchi System (MTS)
+The Mahalanobis–Taguchi System (MTS), which was developed by Taguchi, is a diagnosis and
+forecasting technique for multivariate data [22,30]. MTS combines the Mahalanobis distance (MD)
+with Taguchi’s method (TM), and is used to optimize multidimensional systems [19].
+Recent developments in the MTS have enhanced the diagnostic techniques with an assessment
+scale for data classification. In general, MD provides two categories, namely, ‘healthy’ or ‘normal’
+and ‘abnormal’ groups of elements. MD is employed to distinguish the level of abnormality between
+the groups of elements. The abnormal group is different from the normal group in a few aspects.
+Elements that are in the normal or desirable form are considered to be normal data, whereas those
+that are undesirable are considered to be abnormal data. Depending on the acuteness levels of their
+abnormalities, abnormal elements may occasionally be categorized into groups [11]. The Signal to
+Noise (S/N) ratio is utilized to assess the efficiency of the system in the MTS, and OAs are employed to
+maximize the potential of the features that directly optimize the S/N ratio.
+
+--- PAGE 4 ---
+Appl. Sci. 2019, 9, 4680 4 of 22
+The Four Steps in MTS
+The data are analyzed using the Mahalanobis–Taguchi System (MTS) [18], i.e., a combination of
+MD and Taguchi strategies. MD is a generalized distance that is useful to identify similarities between
+healthy and unhealthy sample sets. A scalar value is used to represent a multivariate system [33].
+Taguchi strategies are statistical approaches used to enhance the engineered quality to make the system
+more powerful [28,34,35]. There are four steps in MTS [18]:
+Step 0: Identification of assessment criteria and collection of patients’ spatiotemporal data
+Step I: Mahalanobis space (MS) creation
+Data from the healthy subjects are collected to create a standard data set. Their MDs constitute
+a reference space, called MS. Their MDs are approximately equal to one. In this study, a feature
+dataset consisting of spatiotemporal data from healthy subjects was used to create the MS. The
+healthy data set is denoted as H, hij is the ith observation on the jth feature, where i = 1,2,...,m,
+and j = 1,2, ..., n. Then, Hj and Sj are the mean and standard deviations of the jth feature
+
+Hj
+
+respectively, where j = 1,2, ..., n. Each individual feature of each data vector (Hj) is normalized by
+the mean (Hj) and the standard deviation (Sj). Hence, the normalized values are as follows:
+zij =
+hij −Hj
+Sj
+i = 1,2,...,m, j = 1,2,...,n (1)
+where
+Hj =
+1
+m
+m X
+i=1
+hij (2)
+and
+Sj =
+s
+Pm
+i=1
+
+hij −Hj
+2
+m−1
+(3)
+The MDs of the healthy dataset are calculated with the following formula:
+MDi =
+1
+n
+ziC−1
+zT
+i (4)
+where z = [zi1,zi2 ...,zin], zT
+i
+is the transpose vector and ziand C−1 is the inverse of the covariance
+coefficient matrix C. We compute C as:
+C =
+1
+m−1
+m X
+i=1
+zT
+i zi (5)
+Multicollinearity (strong correlations among features) is one issue that can be tackled with MD.
+Multicollinearities will have a problematic impact within a singular covariance coefficient matrix,
+resulting in an imprecise inverse of the covariance coefficient matrix, and subsequently producing an
+inaccurate MD [29]. MDA may be utilized to address this issue. MDA is MD corresponding to the
+adjoint matrix of the covariance coefficient matrix, as shown below:
+MDAI =
+1
+n
+ziCadjzT
+i (6)
+
+--- PAGE 5 ---
+Appl. Sci. 2019, 9, 4680 5 of 22
+where Cadj is the adjoint matrix of the covariance coefficient matrix C. Since C−1 = Cadj/|C|,
+the relationship between MD and MDA is given by:
+MDi =
+1
+|C|
+MDAi (7)
+Step II: Validation of MS
+In this step, the trials of ACLR subjects are selected [13]. The abnormal data set is symbolized as P;
+pij is the ith observation of the jth feature, where i = 1,2,..., m, and j = 1,2, ..., n. It is normalized
+by applying the mean and standard deviation of the healthy data set, while the MDs are estimated
+using the feature information and the coefficient matrix. MDs which correspond to the ACLR will
+be out of the MS if the MS is appropriately constructed. In other words, the MDs associated with
+abnormal conditions will have higher values [36,37].
+Step III: Identification of useful features
+The useful features are selected via the OAs and S/N ratios. In MTS, OAs are used to recognize the
+significant features by decreasing the number feature combinations which were initially established.
+The number of features determines the true number of columns in the OA. Two levels of factors are
+used: Level-1 indicates that the feature is included, while Level-2 means that it is not. To measure
+the accuracy of the MS predictions, S/N ratios are used. These are calculated using only the ACLR
+conditions. The equation for determining the S/N ratio (ηi) corresponding to the ith run of the OA is
+ηi = −10log
+
+      
+1
+t
+t X
+j=1
+1
+MDj
+
+      
+(8)
+where ith is the number of ACLR conditions and MDj is the MD of the jth ACLR condition. By
+evaluating the gain in the S/N ratios, the useful features are identified. By using Equation (9), the gain
+of each feature is computed. Features with positive gains are considered useful.
+Gain = S/NratioLevel−1 − S/NratioLevel−2 (9)
+Step IV: Future diagnosis
+The MS is rebuilt using the attributes recorded in Step III, and the MDs of the monitored products
+are calculated. The subjects are healthy if the MDs are inside the MS. If the MDs are outside the
+MS, then the subjects reveal abnormal (ACLR) behavior. A greater MD indicates a greater deviation
+between healthy and ACLR patients [13].
+2.1.2. Kanri Distance Calculator (KDCTM)
+The proprietary combination of patented statistical and method techniques provided by the
+Kanri model offers an exceptionally strong capacity to assess big information sets with multiple
+variables [31,32,38,39]. While many instruments assess models and dynamics for big information
+sets, only KDCTM enables users to know where they are in relation to a required target state and the
+particular contribution of each variable to the general distance from the target state. The Kanri model
+is able to calculate the connection of the factors within the general information set. In addition, it can
+also determine mathematically the correlation between each of the factors [7].
+The Kanri method aims to provide a multi-attribute (variables) management scheme to develop a
+multivariate measurement scale with which to measure the distances from a target or reference group
+that is described as effective. A root cause assessment (RCA) is conducted on an individual basis
+
+--- PAGE 6 ---
+Appl. Sci. 2019, 9, 4680 6 of 22
+after the development, validation, and optimization of the measurement scale. For each attribute,
+we calculate contribution ratios (CRs) in the RCA so that we can concentrate on the characteristics with
+the highest impact.
+Step V: Perform Root Cause Analysis (RCA)
+RCA is performed to identify any abnormality in the influencing variables of a person [40].
+The effect of the variables associated with the abnormality can be approximated by using the evaluation
+of variance [40,41]. The evaluation of variance assists us in discovering the efforts of factors for the
+general variant (abnormality) from the reference group or CG. In order to perform RCA, orthogonal
+arrays (OA) or any fractional factorial form design of the experimental matrix are utilized.
+The purpose of using fractional factorial designs is to estimate the effects of several variables
+and the required interactions by reducing the number of trials. In RCA, the impact ratios (IR) of the
+variables are determined. In fractional factorial trials, a small percentage of the total number of trials is
+usually performed to decrease the price, time, and material. Primary results and chosen connections
+can end up being approximated with such fresh outcomes. The OA is an example of this [39,42,43].
+Orthogonal Arrays (OAs)
+OAs are extensively utilized in applications for robust engineering. In robust engineering,
+the principal purpose of OAs is to allow technical engineers to appraise a product design with regard
+to robustness against noise and cost. This is accomplished by altering the configurations of control
+factors. OA is normally an inspection tool to prevent a bad design from going ‘downstream’.
+Arrays may have factors with many levels, although two- and three-level factors are commonly
+encountered. A Ls (2) array is shown in Table 1. This is normally a two-level array where the variables
+are different within the two levels. In this array, an optimum of eleven factors can be allocated.
+The twelve combinations with 2s and 1s correspond to the different variable combinations to be
+examined. 1s and 2s correspond to the presence (on) and absence (off) of the variable, respectively.
+As mentioned earlier, an analysis of the variance to calculate the impact proportions of the factors is
+performed in RCA. Since MD is usually a squared distance, and an analysis of variance cannot be
+performed on squared values, we need to make use of the square root of MD (WMD) for the evaluation,
+as shown in Table 1. WMD is denoted as D hereafter.
+Table 1. Physical layout of corresponding L12 (211) orthogonal array with 11 variables.
+Variables
+Combination X1 X2 X3 X4 X5 X6 X7 X8 X9 X10 X11 Response Response for RCA
+1 On On On On On On On On On On On MD1 D1 =
+√
+MD1
+2 On On On On On Off Off Off Off Off Off MD2 D1 =
+√
+MD2
+3 On On Off Off Off On On On Off Off Off MD3 D1 =
+√
+MD3
+4 On Off On Off Off On Off Off On On Off MD4 D1 =
+√
+MD4
+5 On Off Off On Off Off On Off On Off On MD5 D1 =
+√
+MD5
+6 On Off Off Off On Off Off On Off On On MD6 D1 =
+√
+MD6
+7 Off On Off Off On On Off Off On Off On MD7 D1 =
+√
+MD7
+8 Off On Off On Off Off Off On On On Off MD8 D1 =
+√
+MD8
+9 Off On On Off Off Off On Off Off On On MD9 D1 =
+√
+MD9
+10 Off Off Off On On On On Off Off On Off MD10 D1 =
+√
+MD10
+11 Off Off On Off On Off On On On Off Off MD11 D1 =
+√
+MD11
+12 Off Off On On Off On Off On Off Off On MD12 D1 =
+√
+MD12
+Impact Ratios (IRs)
+Consider that an orthogonal array (or any fractional factorial experimental design) has r runs
+(variable combinations) and k + 1 columns. Let the k variables X1, X2, and Xk be allocated to the first k
+columns of this array, as shown in Table 2:
+
+--- PAGE 7 ---
+Appl. Sci. 2019, 9, 4680 7 of 22
+Table 2. Fractional factorial design or orthogonal array with 12 runs and 11 columns.
+Variables
+Combination X1 X2 X3 ... ... ... Response Response for RCA
+1 On On On ... ... ... MD1 D1
+2 On On On ... ... ... MD2 D2
+3 On On Off ... ... ... MD3 D3
+. . . . ... ... ... ... .
+The impact ratios are computed as follows:
+Total Sum of Squares = TSS =
+r X
+i=1
+(MDi)−
+Pr
+i=1 Di
+2
+r
+(10)
+where r = total number of runs
+Sum of squares owing to factor X1 = SS x1 =
+
+X1on −X1of f
+2
+r
+(11)
+where
+X1on = sum of all Ds when X1 is ‘on’ in Table 2 and X1 of f = sum of all Ds when X1 is ‘off’ in
+Table 2
+Impact Ratio (in %) of factor X1 = IRX1 =
+SSX1
+TSS
+×100 (12)
+Sum of squares owing to factor X2 = SS x2 =
+
+X2on −X2of f
+2
+r
+(13)
+where
+X2on = sum of all Ds when X2 is ‘on’ in Table 2, X2 of f = sum of all Ds when X2 is ‘off’ in Table 2,
+and r = total number of runs
+Impact Ratio (in %) of factor X2 = IRX1 =
+SSX2
+TSS
+×100 (14)
+In general,
+Sum of squares owing to factor Xi = SS xi =
+
+Xion −Xiof f
+2
+r
+(15)
+where
+Xion = sum of all Ds when Xi is ‘on’ in Table 2, Xi of f = sum of all Ds when Xi is ‘off’ in Table 2,
+and r = total number of runs
+Impact Ratio (in %) of factor Xi = IRXi =
+SSXi
+TSS
+×100 (16)
+2.1.3. Integrated Approach
+In this study, we proposed a combination MTS–KDC approach for health management.
+This approach included data collection on the gait of the individuals, and the health of each individual
+was determined by performing MD for each individual [19]. After that, the participants would be
+given a tailored prescription to improve their health, as demonstrated in Figure 1.
+
+--- PAGE 8 ---
+Appl. Sci. 2019, 9, 4680 8 of 22
+Appl. Sci. 2019, 9, 4680 8 of 22
+Figure 1. Flow chart of integrated gait abnormality detection approach based on MTS and the Kanri
+model.
+The data flow of the present study is shown in Figure 1. A patient is first examined using a gait
+analysis unit and/or procedure to obtain the values needed to derive certain scores, such as the
+Mahalanobis Distance (MD). The level of ACLR patient performance is then determined using the
+MDscore.Patients withaMDvalueless thantheMahalanobisSpace(MS)valuewouldbeconsidered
+as fully recovered, whereas patients with a MD value more than MS value would need to undergo
+further treatment. The useful features are then analyzed using the Taguchi Method. This method
+aims to reduce the number of required assessments by focusing only on essential factors. Finally,
+therapies are prescribed by using the Kanri Model.
+No
+Yes
+No
+Yes Healthy?
+(within MS)
+Discharge
+Diagnosis
+(Mahalanobis‐Taguchi System)
+To ascertain either healthy or not
+Treatment/Rehabilitation
+(Kanri Model)
+Healthy?
+(within MS)
+Data Collection
+(Clinical Gait Analysis)
+Figure 1. Flow chart of integrated gait abnormality detection approach based on MTS and the
+Kanri model.
+The data flow of the present study is shown in Figure 1. A patient is first examined using a
+gait analysis unit and/or procedure to obtain the values needed to derive certain scores, such as the
+Mahalanobis Distance (MD). The level of ACLR patient performance is then determined using the MD
+score. Patients with a MD value less than the Mahalanobis Space (MS) value would be considered
+as fully recovered, whereas patients with a MD value more than MS value would need to undergo
+further treatment. The useful features are then analyzed using the Taguchi Method. This method aims
+to reduce the number of required assessments by focusing only on essential factors. Finally, therapies
+are prescribed by using the Kanri Model.
+
+--- PAGE 9 ---
+Appl. Sci. 2019, 9, 4680 9 of 22
+2.2. Proposed Approach
+We proposed an integrated approach using the MTS and Kanri Model to enhance the diagnosis
+and analysis of ACLR. This approach can be split into two phases: the first would use the MD to
+distinguish the routine ACLR, and would use OAs and the S/N ratios to select important features [13];
+the second phase demonstrates how to use the model created in the initial phase and to identify
+contributing factors from the Kanri Model. A flow chart describing this strategy is shown in Figure 2.
+A broader description is given below.
+Appl. Sci. 2019, 9, 4680 9 of 22
+2.2. Proposed Approach
+We proposed an integrated approach using the MTS and Kanri Model to enhance the diagnosis
+and analysis of ACLR. This approach can be split into two phases: the first would use the MD to
+distinguish the routine ACLR, and would use OAs and the S/N ratios to select important features
+[13]; the second phase demonstrates how to use the model created in the initial phase and to identify
+contributing factors from the Kanri Model. A flow chart describing this strategy is shown in Figure
+2. A broader description is given below.
+Figure 2. Flow chart of the approach proposed in this study.
+Step 0:
+Identify the criteria for evaluation;
+gather relevant patients’
+spatiotemporal data.
+Step I:
+Mahalanobis space (MS)
+construction
+Normal Data
+Calculate mean and
+standard deviation
+Normalise Normal Data
+Calculate Correlation Matrix:
+C
+Calculate Mahalanobis Distance
+(MD) of normal data
+Step II:
+Validation of MS Abnormal
+Abnormal Data
+Normalise Abnormal Data
+Calculate MD of abnormal
+data to validate the MS
+Step III: Identification of useful features
+Orthogonal Arrays (OAs) and
+S/N ratios
+Step VI: Future diagnosis
+Use identified features to reconstruct MS and calculate MDs
+for future diagnosis
+Problem
+Building a
+predictive
+model of
+Anterior
+Cruciate
+Ligament
+Reconstruct
+ion (ACLR)
+Features
+Selection
+Diagnosis
+and
+prediction
+The modelling stages The Application Stage
+Step V: Identify the contributions of the factors.
+Perform root cause analysis to identify
+contributing variables for each
+participant
+Rehabilitation
+Figure 2. Flow chart of the approach proposed in this study.
+
+--- PAGE 10 ---
+Appl. Sci. 2019, 9, 4680 10 of 22
+2.2.1. Modelling Stage
+There are three steps in the model development; the first was to define the issue whereby the
+spatiotemporal gait parameters were identified. Next, we gathered the essential data to select a ‘normal’
+or ‘healthy’ group to construct the MS. Following that, the information from the healthy group and
+the spatiotemporal gait parameters was used to get the Mahalanobis distance MS1, while data from
+the ACLR group and the chosen attributes were used to get the Mahalanobis distance MS2. Next, we
+identified an appropriate threshold to efficiently distinguish the healthy and ACLR groups. The final
+step involved the attribute selection, in which the vital features are chosen.
+2.2.2. Application Stage
+The developed model can be used to forecast the ACLR rehabilitation patterns by entering the
+ACLR data and the chosen features. In addition, at this stage, we can offer customized assessments
+and exercises based on the factors which affect the patients.
+2.3. Case Study
+Step 0: Identify the criteria for evaluation and gather patients’ relevant spatiotemporal data.
+2.3.1. Participants
+To assess the efficiency of the method in this study, ACLR patients from the Rehab and
+Physiotherapy Unit of Hospital Tuanku Fauziah at Kangar, Perlis were recruited for this study.
+Tenpatients,allmales,withunilateralprimaryACLRwerechosenfortheACLRgroup(PG).Allpatients
+underwent similar rehabilitation procedures, starting with passive and then active mobilization after
+surgery. Meanwhile, 15 healthy subjects were selected for the healthy group (HG) with the condition
+that they had no previous history of lower extremity injuries, surgery, or neuropathy. The HG consisted
+of 15 males. The height, age, and weight distribution of the two groups were not significantly different
+(p > 0.05) (Table 3). Ethical approval was granted by the University of Malaysia Perlis, and the
+participants provided written informed consent.
+Table 3. Anthropometric data of the subjects and p-value of relationship between the healthy group
+(HG) and ACLR group (PG). Values stated as mean ± standard deviation.
+Parameter HG PG p-Value
+Age (years) 27.73 ± 0.80 25.8 ± 5.41 0.137
+Body mass (kg) 60.22 ± 6.04 71.6 ± 9.66 0.608
+Height (cm) 167 ± 5.0 172.0 ± 6.0 0.837
+2.3.2. Procedures
+Subjects were instructed to walk seven times on an 8m walkway. The first two laps were not
+measured to allow for familiarization with the task and instrumentation. The last five laps were
+assessed to capture the gait cycles, employing the dominant limb from the HG and the injured limb
+from the PG.
+The trial was conducted in the Motion Lab at the University of Malaysia, Perlis. Motion data
+were collected using a motion capture system comprising five Oqus cameras (Oqus, Qualisys AB,
+Gothenburg, Sweden). Atotalof36reflectivemarkerswereplacedonthejointlandmarksandsegments
+of the lower limb. Two force plates were reset for the next trial. The vertical ground reaction force was
+detected by two force plates with dimensions of 400 × 600 mm (Bertec, Worthington, Ohio, OH, USA)
+while the subject performed several walks at his own pace. At least five successful trials were collected
+and interpreted using the Qualisys Track Manager. The 11 spatiotemporal parameters (Table 4) of the
+trial were generated in Visual 3D Pro v6. This includes variations in the step width, stride speed, swing
+time, stance time, stride time, step time, step width, stride length, and step length.
+
+--- PAGE 11 ---
+Appl. Sci. 2019, 9, 4680 11 of 22
+Table 4. Operational definitions of gait parameters and variables.
+Variables Operational Definition
+Step Length (cm) X1
+Anterior–posterior distance from the heel of one footprint to the heel of
+the opposite footprint.
+Stride Length (cm) X2
+Anterior–posterior distance between the heels of two consecutive
+footprints of the same foot (left to left, right to right) and two steps (e.g.,
+a right step followed by a left step) comprise one stride or one gait cycle.
+Step Width (cm) X3
+Lateral distance from the heel center of one footprint to the line of
+progression formed by two consecutive footprints of the opposite foot.
+Stance Time (s) X4
+The stance phase is the weight-bearing portion of each gait cycle
+beginning at heel contact and ending at toe off of the same foot; stance
+time is the time elapsed between the initial contact last contact of a
+single footfall.
+Swing Time (s) X5
+The swing begins with toe off and ends with initial contact of the same
+foot; swing time is the time elapsed between the last contact of the
+current footfall to the initial contact of the next footfall of the same foot.
+Single Support Time (s) X6
+Single support occurs when only one foot is in contact with the ground;
+single support time is the time elapsed between the last contact of the
+opposite footfall to the initial contact of the next footfall of the same foot.
+Double Support Time (s) X7
+Double support occurs when both feet are in contact with the ground
+simultaneously; double support time is the sum of the time elapsed
+during two periods of double support in the gait cycle.
+Stance Time (%GC) X8 Stance time normalized to stride time.
+Double Support Time (%GC) X9 Double support time normalized to stride time.
+Gait Speed (m/s) X10 Calculated by dividing the distance walked by the ambulation time.
+Stride Speed (m/s) X11 Calculated by dividing stride length by the stride time.
+Note = %GC = % gait cycle.
+3. Results
+3.1. Step I: Construction of MS
+After collecting the necessary information (Table 5), we calculated the MD using the formulas in
+Section 2.2.1. To compute MD1, we utilized the HG data and the 11 selection features. The 15 healthy
+subjects were used as the benchmark (healthy) group. The average and standard deviation of every
+characteristic from the HG were computed, and the information from Table 5 was normalized using
+Equation (1). This normalized information was used to build the correlation matrix and its inverse.
+Next, the MDs were computed using Equation (4) as presented in Table 6. Likewise, using the inverse
+correlation matrix generated from the HG data, the MDs were computed for the 10 sets of PG data.
+The MDs of the HG were almost equal to one, as shown in Table 6.
+
+--- PAGE 12 ---
+Appl. Sci. 2019, 9, 4680 12 of 22
+Table5. Meanandstandarddeviation(SD)ofhealthygroup(HG)andACLRgroup(PG)forallvariables.
+Parameter Unit
+HG PG
+Mean SD Mean SD
+Step Length (m) 0.584 0.043 0.562 0.030
+Stride Length (m) 1.161 0.077 1.079 0.197
+Step Width (m) 0.156 0.049 0.153 0.060
+Stance Time (s) 0.864 0.157 0.961 0.172
+Swing Time (s) 0.566 0.116 0.604 0.076
+Single Support Time (s) 1.100 0.176 1.023 0.284
+Double Support Time (s) 0.312 0.087 0.390 0.094
+Stance Time (% GC) 60.502 3.409 61.186 3.381
+Double Support Time (% GC) 21.918 2.946 28.584 8.888
+Gait Speed (m/s) 0.507 0.088 0.425 0.085
+Stride Speed (m/s) 42.974 6.198 39.09 5.762
+Table 6. MD of the healthy group (HG) data sets.
+HG X1 X2 X3 X4 X5 X6 X7 X8 X9 X10 X11 MD
+H1 0.66 1.314 0.171 0.75 0.47 0.943 0.277 61.48 22.7 0.641 49.18 0.923
+H2 0.59 1.156 0.171 0.76 0.485 0.958 0.287 61.04 23.05 0.551 48.193 1.084
+H3 0.634 1.278 0.182 0.975 0.61 1.262 0.323 61.51 20.38 0.462 37.855 1.017
+H4 0.594 1.206 0.251 0.895 0.53 1.118 0.307 62.81 21.54 0.507 42.105 1.082
+H5 0.632 1.249 0.222 0.72 0.745 0.962 0.258 49.15 21.15 0.602 40.956 1.166
+H6 0.546 1.143 0.166 0.75 0.51 1.045 0.215 59.52 17.06 0.531 47.619 1.058
+H7 0.599 1.127 0.138 0.78 0.535 1.025 0.29 59.32 22.05 0.51 45.627 0.867
+H8 0.524 1.085 0.18 0.825 0.485 1.033 0.277 62.98 21.15 0.504 45.802 0.617
+H9 0.61 1.165 0.163 0.76 0.46 0.938 0.282 62.3 23.11 0.565 49.18 0.916
+H10 0.514 1.056 0.119 0.8 0.509 1.091 0.274 61.12 20.07 0.496 45.837 0.674
+H11 0.55 1.145 0.211 0.883 0.6 1.25 0.233 59.54 15.71 0.489 40.459 1.084
+H12 0.528 1.095 0.077 1.155 0.785 1.465 0.483 59.54 24.79 0.331 30.928 1.150
+H13 0.606 1.205 0.115 0.815 0.49 0.985 0.308 62.45 23.82 0.572 45.977 0.622
+H14 0.586 1.131 0.111 0.83 0.483 0.978 0.327 63.21 25.06 0.525 45.697 0.560
+H15 0.582 1.055 0.1 1.265 0.79 1.445 0.538 61.56 27.13 0.313 29.197 1.180
+Average 0.933
+3.2. Step II: Validation of MS
+In Step II of the MTS, the ACLR data were utilized to confirm the MS dimension scale. Using
+the average and standard deviation of the HG data, the PG data were normalized. The MDs of the
+ACLR group were computed using the covariance coefficient matrix of the HG data. From this study,
+the MDs were clearly out of the range of this MS, as shown in Figure 3. Therefore, the MS was valid.
+The 10 ACLR spatiotemporal data, along with the calculated MDs, are displayed in Table 7.
+
+--- PAGE 13 ---
+Appl. Sci. 2019, 9, 4680 13 of 22
+3.2 Step II: Validation of MS
+In Step II of the MTS, the ACLR data were utilized to confirm the MS dimension scale. Using the
+average and standard deviation of the HG data, the PG data were normalized. The MDs of the ACLR
+group were computed using the covariance coefficient matrix of the HG data. From this study, the
+MDs were clearly out of the range of this MS, as shown in Figure 3. Therefore, the MS was valid. The
+10 ACLR spatiotemporal data, along with the calculated MDs, are displayed in Table 7.
+Figure 3. Mahalanobis distance (MD) for the healthy group (HG) and ACLR group (PG).
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+H1
+H2
+H3
+H4
+H5
+H6
+H7
+H8
+H9
+H10
+H11
+H12
+H13
+H14
+H15
+P1
+P2
+P3
+P4
+P5
+P6
+P7
+P8
+P9
+P10
+Mahalanobis Distance
+Subjects
+Figure 3. Mahalanobis distance (MD) for the healthy group (HG) and ACLR group (PG).
+Table 7. MD for ACLR group (PG) data.
+PG X1 X2 X3 X4 X5 X6 X7 X8 X9 X10 X11 MD
+P1 0.52 1.05 0.202 0.96 0.55 1.15 0.46 63.7 28.8 0.38 39.55 15.77
+P2 0.55 1.05 0.189 0.84 0.54 1.01 0.34 61.0 25.2 0.48 43.25 2.308
+P3 0.51 1.08 0.232 1.08 0.55 1.14 0.47 66.3 29.3 0.39 36.74 26.035
+P4 0.58 1.12 0.172 1.03 0.62 1.16 0.46 62.3 28.6 0.38 36.18 5.721
+P5 0.57 1.11 0.217 0.98 0.73 1.34 0.42 57.2 24.0 0.36 34.95 17.78
+P6 0.60 1.26 0.051 0.68 0.55 1.02 0.20 55.0 16.8 0.59 48.58 9.979
+P7 0.56 1.14 0.149 1.08 0.66 1.29 0.43 62.1 24.9 0.38 34.38 4.404
+P8 0.59 1.20 0.086 0.75 0.53 1.05 0.27 58.3 20.4 0.51 46.69 3.133
+P9 0.54 0.55 0.136 1.26 0.72 0.57 0.46 63.7 44.9 0.29 30.22 1287.16
+P10 0.55 1.18 0.102 0.92 0.56 0.48 0.35 61.8 42.5 0.44 40.32 1509.81
+Average 288.21
+3.3. Step III: Identification of Useful Features
+In Step III of the MTS, OAs and S/N ratios were used to examine the effects of every feature.
+Since 11 attributes were assembled, an L12 (211) OA was used. As revealed in Tables 8 and 9, X1, X2,
+and X8 did not have a significant effect on the MD. Hence, the number of attributes was reduced from
+11 to 8. The PG could be clearly distinguished from the HG group, as their MDs deviated significantly
+in the MS (PG: 2.308–1509.811, HG: 0.560–1.190).
+
+--- PAGE 14 ---
+Appl. Sci. 2019, 9, 4680 14 of 22
+Table 8. L12 (211) OA for the ACLR conditions.
+Run
+Features S/N Ratio
+X1 X2 X3 X4 X5 X6 X7 X8 X9 X10 X11
+1 1 1 1 1 1 1 1 1 1 1 1 8.49550614
+2 1 1 1 1 1 2 2 2 2 2 2 1.31702001
+3 1 1 2 2 2 1 1 1 2 2 2 −1.4245509
+4 1 2 1 2 2 1 2 2 1 1 2 5.12522506
+5 1 2 2 1 2 2 1 2 1 2 1 3.6517743
+6 1 2 2 2 1 2 2 1 2 1 1 0.67514098
+7 2 1 2 2 1 1 2 2 1 2 1 2.99885419
+8 2 1 2 1 2 2 2 1 1 1 2 3.19462065
+9 2 1 1 2 2 2 1 2 2 1 1 3.29197259
+10 2 2 2 1 1 1 1 2 2 1 2 2.85909121
+11 2 2 1 2 1 2 1 1 1 2 2 3.71676119
+12 2 2 1 1 2 1 2 1 2 2 1 2.65860164
+Table 9. Average S/N ratios and gain for each feature.
+X1 X2 X3 X4 X5 X6 X7 X8 X9 X10 X11
+Level-1 2.9733 2.978 4.1 3.696 3.343 3.4521 3.501 2.886 4.5304 3.94 3.628
+Level-2 3.1199 3.1144 1.9924 2.397 2.75 2.641 2.662 3.207 1.563 2.153 2.464
+Gain −0.1466 −0.1364 2.1076 1.299 0.593 0.8111 0.839 -0.321 2.9674 1.787 1.164
+3.4. Step IV: Future Diagnosis
+The MS was reconstructed, and the MDs of monitored products were calculated using the useful
+featuresidentifiedinStepIII.IftheMDswerewithintheMS,themonitoredproductswereconsideredto
+benormal. IfMDswereoutoftheMS,themonitoredproductsexhibitedabnormalbehavior. Thehigher
+the MDs, the more deviation there was between the monitored product and the normal product.
+The important set of variables can be identified at this stage using the OAs and S/N ratios. For the
+target groups, it is preferable to use a larger S/N ratio to generate MDs which are as large as possible.
+A L12 (211) OA was used, since 11 characteristics were built. There was no significant effect of X1,
+X2, and X8 on MD, as shown in Table 5. Therefore, the number of features decreased from 11 to 8.
+The threshold for MDs and MS was recalculated, incorporating only the useful features that were
+identified. Table 10 shows the updated MDs for both HG and PG.
+Table 10. MDs Value after recalculation using only the useful features.
+HG Subject MD PG Subject MD
+HG 1 1.266747 PG 1 21.114
+HG 2 0.550847 PG 2 1.677
+HG 3 0.598248 PG 3 10.110
+HG 4 1.406498 PG 4 7.539
+HG 5 1.590177 PG 5 10.305
+HG 6 1.108 PG 6 5.188
+HG 7 0.419 PG 7 1.077
+HG 8 0.414 PG 8 1.128
+HG 9 0.765 PG 9 701.893
+HG 10 0.601 PG 10 544.263
+HG 11 1.118
+HG 12 1.181
+HG 13 0.818
+HG 14 0.753
+HG 15 1.407
+Average 0.933 Average 130.429
+
+--- PAGE 15 ---
+Appl. Sci. 2019, 9, 4680 15 of 22
+3.5. Step V: Perform RCA
+3.5.1. Orthogonal Arrays (OAs)
+Orthogonalarray(OA)wasintroducedasanapproachutilizedforthefeatureselectionmechanism.
+OA incorporates the use of “1” and “2” for two-level factors, as shown in Tables 11 and 12. This is
+normallyatwo-levelarraywherethevariablesaredifferentwithintwolevels. Inthisarray, anoptimum
+of eleven factors can be allocated. The twelve combinations with 2s and 1s correspond to the different
+variable combinations to be examined. 1s and 2s correspond to the presence (on) and absence (off) of
+the variable, respectively.
+Table 11. L12 (28) OA of ACLR conditions.
+Combination
+Variables
+X3 X4 X5 X6 X7 X9 X10 X11
+1 1 1 1 1 1 1 1 1
+2 1 1 1 1 1 2 2 2
+3 1 1 2 2 2 1 1 1
+4 1 2 1 2 2 1 2 2
+5 1 2 2 1 2 2 1 2
+6 1 2 2 2 1 2 2 1
+7 2 1 2 2 1 1 2 2
+8 2 1 2 1 2 2 2 1
+9 2 1 1 2 2 2 1 2
+10 2 2 2 1 1 1 1 2
+11 2 2 1 2 1 2 1 1
+12 2 2 1 1 2 1 2 1
+Table 12. Physical layout of corresponding to L12 (28) orthogonal array with 11 variables.
+Variables
+Response Response for RCA
+Combination X3 X4 X5 X6 X7 X9 X7 X8
+1 On On On On On On On On MD1 D1 =
+√
+MD1
+2 On On On On On Off Off Off MD2 D1 =
+√
+MD2
+3 On On Off Off Off On On On MD3 D1 =
+√
+MD3
+4 On Off On Off Off On Off Off MD4 D1 =
+√
+MD4
+5 On Off Off On Off Off On Off MD5 D1 =
+√
+MD5
+6 On Off Off Off On Off Off On MD6 D1 =
+√
+MD6
+7 Off On Off Off On On Off Off MD7 D1 =
+√
+MD7
+8 Off On Off On Off Off Off On MD8 D1 =
+√
+MD8
+9 Off On On Off Off Off On Off MD9 D1 =
+√
+MD9
+10 Off Off Off On On On On Off MD10 D1 =
+√
+MD10
+11 Off Off On Off On Off On On MD11 D1=
+√
+MD11
+12 Off Off On On Off On Off On MD12 D1 =
+√
+MD12
+In this study, eleven variables were allocated to the first 11 columns of the orthogonal array.
+The last column was reserved for the responses of the combinations of the five variables. In the
+root cause analysis (RCA), the response was the MD corresponding to the variables in the respective
+combination (Table 11). The MDs in terms of the physical layout are listed in Table 11. For RCA,
+two-level arrays are preferred to ascertain the importance of the variables when the system is “on” and
+“off”; see Table 12. For the first combination, all variables were included, and MD was computed for a
+given participant. In the second combination, variables X3, X4, X5, X6, and X7 were used, and MD was
+computed with these five variables for the same participant. MDs for all other combinations were
+computed in a similar manner.
+
+--- PAGE 16 ---
+Appl. Sci. 2019, 9, 4680 16 of 22
+3.5.2. Impact Ratios (IRs)
+Equations (10)–(16) were calculated for all participants, and IRs of all the variables for all the
+participants were obtained. Based on the example above, IRs were calculated for the 11 variables of all
+10 participants. The results are shown in Table 13.
+Table 13. Analysis of the root cause by contribution ratios (percentages).
+PG Distance X3 X4 X5 X6 X7 X9 X10 X11
+P9 701.893 2 18 1 36 16 18 0 2
+P10 544.263 1 12 0 33 18 28 1 1
+P1 21.114 62 9 4 4 15 4 2 0
+P5 10.305 36 39 5 4 13 0 1 2
+P3 10.110 66 2 0 9 1 6 3 11
+P4 7.539 53 1 1 20 1 15 2 7
+P6 5.188 69 3 11 0 1 12 4 1
+P2 1.677 47 1 13 12 4 15 8 3
+P8 1.128 35 5 2 34 1 1 18 1
+P7 1.077 9 3 1 16 2 5 0 23
+4. Discussion
+A procedure for the health management of individuals comprises the following: (1) gather data
+about the health attributes of the individual, (2) calculate the gait abnormality value for the individual
+by determining the MD, and (3) offer the individual a high-effect prescription based on the health
+attributes to improve his/her health status [13,14,16,30–32,44].
+In order to construct a measurement scale, it is necessary for a homogeneous data set from
+normal observations to be collected. This leads to the creation of a reference group called the normal
+group. In the scale, this group is used as a reference point. The collected normal datasets need to
+be standardized in order to obtain a dimensionless unit vector, followed by the MD computation.
+Practically, the MD for unknown data is interpreted as the closeness to the mean of the normal group.
+As a countercheck, it is necessary for the average value of the MDs for the normal group to be constantly
+close to unity. Therefore, they are called the normal space or Mahalanobis Space (MS) [18,27,30].
+In order evaluate the measurement scale, observations made outside the MS or abnormal datasets
+are used.
+The same mathematical calculation is repeated for the calculation of the same goal (MD value)
+using the abnormal sample data. However, the mean, standard deviation, and correlation matrix
+of the normal group determine the way the abnormal data is normalized. The normal MDs and
+abnormal MDs are then compared. An acceptable measurement scale should demonstrate significant
+differentiation between normal and abnormal MD values [18,27,30].
+Different values of MD enable the group of HG and PG to be distinguished. The lower the value
+of the MD, the healthier the patient, as shown in Figure 3. This method also allows for a more objective
+assessment to be made of the patient’s state of health [30–32,38,44].
+4.1. Diagnosis
+In this approach, the level of abnormality is normally structured on a measure known as
+MD [12–14,16]. We needed to define the target group first. On a measurement scale in MS [5], the target
+group was used as a reference point. The target group in MS in this study was 15 healthy male subjects.
+Following the collection of the target group information, we calculated the MD using Equations (1)–(4).
+The MD value was very small in the normal (healthy) dataset, and the average MD was near
+to 1. The abnormal (ACLR) MD values were greater than normal, illustrating the capacity of MD to
+classify the normal and abnormal values. Tables 6 and 7 represent the MDs of normal and abnormal
+data, respectively.
+
+--- PAGE 17 ---
+Appl. Sci. 2019, 9, 4680 17 of 22
+Furthermore, this method was able to provide specific recommendations for therapy following
+knee operations. The MDs can be utilized to determine the best time for patients to return fully to
+sports activities.
+It should be observed that the average value of the MD for ACLR individuals in Table 10 (typical
+MD = 130.429) was higher than that of the healthy individuals in Table 10 (average MD = 0.933).
+The patients could be rated in an ascending sequence based on the MD values. The results showed that
+for lower MD values, the deviation from healthy participants was likely lower, and thus, the patients
+would have an excellent likelihood of returning to work (RTW) [45]. From the results, subjects 2, 7,
+and 8 recorded MD values which were close to those of the healthy participants. For individuals with
+higher MD values, constant rehabilitation should be continued until reaching the ideal MD value [46].
+4.2. Contributions of Variables
+KDCTM is required to evaluate the effect of each parameter on the patient’s results. This can be
+done by using RCA to comprehend individual needs. The impact ratios (IRs) of the features were
+determined for all patients in this study using RCA [31,32,39,47]. In this way, we were able to define
+the contribution of the factors for each patient. Each candidate had a distinct distance variable effect.
+Table 13 outlines the contributing factors for the distances of the 10 patients being studied.
+In Table 13, the RCA output shows the contributions of all the candidate distance variables.
+The output was structured to prioritize the greater distances in descending order. It enabled us to
+determine the contributing factors individually. Traditional analytics will emphasize this, and drive the
+conduct of the population. KDCTM offers a personalized driver perspective with each patient’s effects.
+If viewed individually, P9 was heavily influenced by X4 and X9, which were the Stance Time
+and Double Support Time, respectively. As for P10, X6 and X9 affected the element in an abnormal
+way. This proved the importance of patient care tailored to each patient’s needs. The relationships
+established in this study can serve as a prescription for patients to consider corrective activities to
+decrease the influence of these factors on their general health. These essential features will be discussed
+in detail.
+In terms of the parameters, X3 (step width) was the most important feature, followed by X6 (single
+support) and X9 (double support). X3 had the highest IR for P6 (69%), P3 (66%), P1 (62%), P4 (53%),
+and P5 (36%). The step width refers to the distance between the rear end of the right and left heel
+center lines along the mediolateral axis. A base of support domain was characterized by the step width
+and step width variability [48–51]. An increased step width indicates a loss of automaticity in walking
+that would render an individual more vulnerable to falling. Therefore, the step width is used as a
+parameter to evaluate the risk of falling and dementia. Under dual-task conditions, the step width can
+be also used to test the executive function in ACLR patients.
+X3 variability reflected that step width had the highest IR for P1, P5, P3, P4, P6, P2, and P8.
+It can also be used to identify peripheral sensory impairments that lead to walking malfunction [52].
+Other studies characterized increased step as a feature of ACLR patients who are fearful of falling,
+butalsonotedthatthemeasurewidthitselfisnotapredictoroffalling[53,54]. Incomparison,decreased
+and increased step width variability were both linked to a history of falls. While the correlation
+between the step width variability of an ACLR knee and the drop risk is not clear, the results of this
+study revealed that the analysis of a base-of-support variable is justified [55,56].
+The ACLR knees demonstrated reduced single support (X6) phases in comparison to healthy
+knees. This reflects the prolonged time in which the ACLR knees remain in flexion prior to maximum
+extension to prevent a sudden weight change. This adaptation mechanism has been also shown by
+an electromyography experiment, in which ACLR patients were shown to have prolonged firing of
+biceps, femoris, and vastus medialis during the stance phase in comparison to the HG [57].
+X9 reflected Double Support, and had the highest IR for P10, P9, P4, and P2. The stance phase can
+be divided into sub phases, namely, first double support (both feet in contact with the floor), single
+support (one foot in contact with the floor), and second double support [58]. Compared with an
+
+--- PAGE 18 ---
+Appl. Sci. 2019, 9, 4680 18 of 22
+uninjured leg, individuals with ACLR spent less time in double-limb support during late adaptation.
+However, the ACLR group was capable of adjusting this parameter in such a way that the PG leg spent
+an increased amount of time in double support during the de-adaptation period [59–62].
+The differences in the double-support time are possibly related to the sensory alterations which
+emerge from a reconstructed knee. The problem was not corrected by medical procedures or therapy,
+and eventually, slow-adapting responses were formed as a response to repeated perturbations.
+An ACLR individual would attempt to reestablish the mechanical balance of the leg through therapy;
+thus, the common objective of therapy is to restore gross motion patterns. Comprehensive recovery of
+the physical functions of the reconstructed ACL requires reinnervation of free-of-charge nerve endings
+and mechanoreceptors, and the reestablishment of the ACLR reflex (hamstring activation after tibial
+translation) [59,63].
+4.3. Customized Rehab Program
+In identifying the contributing factors, it is crucial to have a tailored rehabilitation program for
+each patient. This ensures that individual issues of each patient can be addressed more specifically,
+and steps can be taken in a quicker manner to reduce the impact of the contributing factors. It was
+obvious from Table 13 that different patients had different numbers of impact factors.
+For instance, X3 was a parameter that evaluated the risk of falling and of dementia. An increased
+step width indicated a loss of automaticity in walking which would make individuals more
+vulnerable to falls. Therefore, proprioceptive and balance training would be most relevant to
+such patients. By stimulating the proprioceptive and balance system through specific exercises, other
+mechanoreceptors of the knee joint would be stimulated to produce compensatory muscle activation
+patterns in the neuromuscular system, which may eventually improve joint stability [64–66].
+As for X6 and X9, differences in the single/double-support time were related to the sensory
+alterations that emerged from reconstructed knees which led to slow-adapting responses as a result of
+repeated perturbations. In this case, muscular strength and endurance training might be most relevant
+for such patients. Specific muscle strength deficits depend on the graft type employed for ACLR
+(patellar tendon vs. semitendinosus/gracilis). Strengthening exercises, such as speed and specific
+muscular contractions, should be performed to overcome these deficits [67,68].
+For patients with slower stride speeds (X11), the range of motion and flexibility training is more
+relevant. The slower stride speed of the ACLR was a result of the leg not being completely extended
+during the stance phase and at the end of the swing stage. Thus, it is vital to reestablish and maintain a
+full range of motion (ROM) of the knee. Quadriceps retraining was proven to increase ROM during the
+first phases. Achieving complete knee extension as soon as possible post-ACLR is not harmful to the
+graft or joint equilibrium; on the contrary, it might prevent patellofemoral pain and compensatory gait
+pathologies. It is strongly encouraged to incorporate a stretching program to maintain lower extremity
+flexibility [69].
+To date, there is no curative treatment for ACLR. The rehabilitative process has been shown
+to be beneficial in regaining full knee extension, decreasing edema, and developing quadricep
+strength. However, extensive disabilities such as a decline in mobility may also occur during
+rehabilitation. Therefore, rehabilitation post-ACLR should shift from a protocol-based paradigm to
+an individual-tailored program. Many of the current studies do not evaluate the effectiveness of the
+aforementioned training in reducing the contributing factors of gait problems. Thus, future research is
+necessary to determine whether specific interventions targeting the contributing factors may improve
+gait biomechanics, and subsequently, reduce the gait abnormality following ACLR.
+4.4. Limitations of the Study
+Our study was limited to the effects of spatiotemporal parameters on gait performance.
+Although spatiotemporal facets are sufficient parameters to differentiate knee gait biomechanics
+
+--- PAGE 19 ---
+Appl. Sci. 2019, 9, 4680 19 of 22
+between the ACLR and control groups, additional research is needed to evaluate kinetics, kinematics,
+and EMG parameters.
+We only determined the contributions of variables for each patient. Additional research is needed
+to evaluate whether proposed exercise (proprioceptive and balance training, muscular strength and
+endurance training, range of motion and flexibility training) will provide more improvements.
+The population being analyzed was relatively young, with an average age of 26 years and a
+low standard deviation. Conclusions from this study should be applied only to similar age groups,
+and future research on other age groups, especially older people, is required.
+5. Conclusions
+The present study provides a health management system for ACLR subjects. The system
+proposed by this study is useful in advancing rehabilitation performance. For example, the system
+can be incorporated as part of an integrated infrastructure built around a data capturing system.
+The system then allows for the automatic application of multivariate data and multidimensional
+mathematics to the data repository to perform specific commands or tasks, including the diagnosis of
+gaitdisorders. Thedevelopmentofsucharehabilitationmonitoringsystemfordoctors/physiotherapists
+has significant implications, as it allows healthcare professionals to make rapid decisions which are
+otherwise problematic when conventional rehabilitation diagnosis mechanisms are relied upon.
+Author Contributions: All authors discussed and agreed upon the idea and made scientific contributions. H.S.,
+N.A.A.O. and W.Z.A.W.M. designed the experiments and wrote the paper. H.S., M.S.A.M., M.H.F.R. and W.A.M.
+performed the experiments and analysed the data.
+Funding: The study received financial support from Malaysia Ministry of Education through SLAI scholarship
+programme and from Platfom HIP-2 grant no.: AIM/PlaTCOM/HIP2/CCGF/2017/168.
+Acknowledgments: The authors would like to express sincere gratitude to I.I.b.I. and A.b.A., supporting staff at
+Biomechanics Laboratory, Universiti Malaysia Perlis for their support. Special thanks to the Physioteraphy Unit of
+Hospital Tuanku Fauziah for providing physical therapy treatments for the subjects.
+Conflicts of Interest: The authors declare no conflicts of interest.
+References
+1. Konrath, J.M.; Saxby, D.J.; Killen, B.A.; Pizzolato, C.; Vertullo, C.J.; Barrett, R.S.; Lloyd, D.G. Muscle
+contributions to medial tibiofemoral compartment contact loading following ACL reconstruction using
+semitendinosus and gracilis tendon grafts. PLoS ONE 2017, 12, e0176016. [CrossRef] [PubMed]
+2. Drechsler, W.I.; Cramp, M.C.; Scott, O.M. Changes in muscle strength and EMG median frequency after
+anterior cruciate ligament reconstruction. Eur. J. Appl. Physiol. 2006, 98, 613–623. [CrossRef] [PubMed]
+3. Jenkins, P.J.; Clifton, R.; Gillespie, G.N.; Will, E.M.; Keating, J.F. Strength and function recovery after
+multiple-ligament reconstruction of the knee. Injury 2011, 42, 1426–1429. [CrossRef] [PubMed]
+4. Gokeler, A.; Benjaminse, A.; van Eck, C.F.; Webster, K.E.; Schot, L.; Otten, E. Return of normal gait as an
+outcome measurement in acl reconstructed patients. A systematic review. Int. J. Sports Phys. Ther. 2013, 8,
+441–451.
+5. Kim, S.-J.; Yoon, J.-Y.; Kim, S.-M.; Ha, S.; Kim, S.-H.; Cho, I. A Comparative Study on the Postoperative
+Outcomes of Anterior Cruciate Ligament Reconstruction Using Patellar Bone–Tendon Autografts and
+Bone–Patellar Tendon–Bone Autografts. Arthrosc. J. Arthrosc. Relat. Surg. 2016, 32, 1072–1079. [CrossRef]
+6. Frank, R.M.; Mascarenhas, R.; Haro, M.; Verma, N.N.; Cole, B.J.; Bush-Joseph, C.A.; Bach, B.R. Closure
+of patellar tendon defect in anterior cruciate ligament reconstruction with bonee-patellar tendone-bone
+autograft: Systematic review of randomized controlled trials. Arthrosc. - J. Arthrosc. Relat. Surg. 2015, 31,
+329–338. [CrossRef]
+7. Yu, P.V.; Wun, Y.; Yung, S.P. Role of Physiotherapy in Preventing Failure of Primary Anterior Cruciate
+Ligament Reconstruction. J. Orthop. Trauma Rehabil. 2017, 22, 6–12. [CrossRef]
+8. Winiarski, S.; Czamara, A. Evaluation of gait kinematics and symmetry during the first two stages of
+physiotherapy after anterior cruciate ligament reconstruction. Acta Bioeng. Biomech. 2012, 14.
+
+--- PAGE 20 ---
+Appl. Sci. 2019, 9, 4680 20 of 22
+9. Lee, Y.C.; Teng, H.L. Predicting the financial crisis by Mahalanobis-Taguchi system - Examples of Taiwan’s
+electronic sector. Expert Syst. Appl. 2009, 36, 7469–7478. [CrossRef]
+10. Pal, A.; Maiti, J. Development of a hybrid methodology for dimensionality reduction in Mahalanobis–Taguchi
+system using Mahalanobis distance and binary particle swarm optimization. Expert Syst. Appl. 2010, 37,
+1286–1293. [CrossRef]
+11. Wang, P.C.; Su, C.T.; Chen, K.H.; Chen, N.H. The application of rough set and Mahalanobis distance to
+enhance the quality of OSA diagnosis. Expert Syst. Appl. 2011, 38, 7828–7836. [CrossRef]
+12. Jin, X.; Chow, T.W.S. Anomaly detection of cooling fan and fault classification of induction motor using
+Mahalanobisâ€“Taguchi system. Expert Syst. Appl. 2013, 40, 5787–5795. [CrossRef]
+13. Reséndiz, E.; Rull-Flores, C.A. Mahalanobis-Taguchi system applied to variable selection in automotive
+pedals components using Gompertz binary particle swarm optimization. Expert Syst. Appl. 2013, 40,
+2361–2365. [CrossRef]
+14. Iquebal, A.S.; Pal, A.; Ceglarek, D.; Tiwari, M.K. Enhancement of Mahalanobis-Taguchi System via Rough
+Sets based Feature Selection. Expert Syst. Appl. 2014, 41, 8003–8015. [CrossRef]
+15. Muhamad, W.Z.A.W.; Ramlie, F.; Jamaludin, K.R. Mahalanobis-Taguchi system for pattern recognition:
+A brief review. Far East J. Math. Sci. 2017, 102, 3021–3052. [CrossRef]
+16. Taguchi, G.; Jugulum, R. The Mahalanobis–Taguchi Strategy; John Wiley & Sons: Hoboken, NJ, USA, 2002.
+17. Taguchi, G.; Rajesh, J. New Trends in Multivariate Diagnosis. Sankhyā Indian J. Stat. Ser. B 2000, 62, 233–248.
+18. Muhamad, W.Z.A.W.; Jamaludin, K.R.; Yahya, Z.R.; Ramlie, F. A hybrid methodology for the
+mahalanobis-taguchi system using random binary search-based feature selection. Far East J. Math. Sci. 2017,
+101, 2663–2675. [CrossRef]
+19. Sakeran, H.; Abu Osman, N.A.; Abdul Majid, M.S. Gait Classification Using Mahalanobis–Taguchi System
+for Health Monitoring Systems Following Anterior Cruciate Ligament Reconstruction. Appl. Sci. 2019, 9,
+3306. [CrossRef]
+20. Woodall, W.H.; Koudelik, R.; Tsui, K.L.; Kim, S.B.; Stoumbos, Z.G.; Carvounis, C.P. A review and analysis of
+the mahalanobis—taguchi system. Technometrics 2003, 45, 1–15. [CrossRef]
+21. Buenviaje, B.; Bischoff, J.; Roncace, R.; Willy, C. Mahalanobis Taguchi System to Identify Pre- indicators of
+Delirium in the ICU. IEEE J. Biomed. Heal. Inform. 2015, 20, 1205–1212.
+22. Lalaeva, A. Instrumental Gait Analysis in the ACL Patient. Charles University in Praguefaculty of
+Physical Education and Sportdepartment of Physiotherapy, Prague, Czech Republic, 2011. Available
+online: https://dspace.cuni.cz/bitstream/handle/20.500.11956/35880/DPTX_2010_2__0_279986_0_80084.pdf?
+sequence=1&isAllowed=y (accessed on 1 January 2019).
+23. Whittle, M. Gait Analysis: An Introduction; Butterworth-Heinemann: Oxford, UK, 2003; ISBN 0750652624.
+24. Reséndiz, E.; Moncayo-Martínez, L.A.; Solís, G. Binary ant colony optimization applied to variable screening
+in the Mahalanobis-Taguchi System. Expert Syst. Appl. 2013, 40, 634–637. [CrossRef]
+25. Cudney, E.A.; Drain, D.; Paryani, K.; Sharma, N. A Comparison of the Mahalanobis-Taguchi System to A
+Standard Statistical Method for Defect Detection. J. Ind. Syst. Eng. 2009, 2, 250–258.
+26. Ali, A.; Haldar, N.A.H.; Khan, F.A.; Ullah, S. ECG arrhythmia classification using mahalanobis-taguchi
+system in a body area network environment. In Proceedings of the 2015 IEEE Global Communications
+Conference (GLOBECOM), San Diego, CA, USA, 6–10 December 2015.
+27. Su, C. Mahalanobis – Taguchi System and Its Medical Applications. Neuropsychiatry (London) 2017, 7, 316–320.
+28. Muhamad,W.Z.A.W.; Jamaludin,K.R.; Saad,S.A.; Yahya,Z.R.; Zakaria,S.A.Randombinarysearchalgorithm
+based feature selection in Mahalanobis Taguchi system for breast cancer diagnosis. AIP Conf. Proc. 2018,
+1974, 020027-1–020027-6. [CrossRef]
+29. Muhamad, W.Z.A.W.; Jamaludin, K.R.; Ramlie, F.; Harudin, N.; Jaafar, N.N. Criteria selection for an mba
+programme based on the mahalanobis taguchi system and the kanri distance calculator. In Proceedings of
+the 2017 IEEE 15th Student Conference on Research and Development (SCOReD): Inspiring Technology for
+Humanity, Putrajaya, Malaysia, 13–14 December 2017; pp. 220–223.
+30. Azziz, N.H.A.; Saad, S.A.; Yazid, N.M.; Muhamad, W.Z.A.W. Factors affecting engineering students
+performance: ThecaseofstudentsinUniversitiMalaysiaPerlis. AIPConf. Proc. 2018,2013,020030-1–020030-7.
+[CrossRef]
+31. Song, J.L.; Hu, W.; Zhang, R. Automated detection of epileptic EEGs using a novel fusion feature and extreme
+learning machine. Neurocomputing 2015, 175, 383–391. [CrossRef]
+
+--- PAGE 21 ---
+Appl. Sci. 2019, 9, 4680 21 of 22
+32. Fearn, T. Taguchi methods. NIR News 2001, 12, 2013. [CrossRef]
+33. Su, C.T.; Hsiao, Y.H. An evaluation of the robustness of MTS for imbalanced data. IEEE Trans. Biomed. Eng.
+2007, 19, 1321–1332. [CrossRef]
+34. Long, B.; Xian, W.; Li, M.; Wang, H. Improved diagnostics for the incipient faults in analog circuits using
+LSSVM based on PSO algorithm with Mahalanobis distance. Neurocomputing 2014, 133, 237–248. [CrossRef]
+35. Aly, S. Learning invariant local image descriptor using convolutional Mahalanobis self-organising map.
+Neurocomputing 2014, 142, 239–247. [CrossRef]
+36. Zakaria, S.A.; Muhamad, W.Z.A.W.; Azziz, N.H.A. Analyzing undergraduate students’ performance in
+engineering statistics course using educational data mining: Case study in UniMAP. AIP Conf. Proc. 2018,
+2013, 020028-1–020028-7. [CrossRef]
+37. Jugulum, R.; Gray, D.; Cadogan, R.G. Mathematical Index Based Health Management System. U.S. Patent
+Application No. 12/729,723, 30 September 2010.
+38. Michelson, S.; Kemp, T.M.; Gibbons, I.; Holmes, E.A. Methods And Systems For Assessing Clinical Outcomes.
+U.S.PatentUS20090318775A1,26March2008. Availableonline: www.google.com.my/patents/US20090318775
+(accessed on 1 January 2019).
+39. Jugulum, R.; Taguchi, G.; Taguchi, S. Multivariate Data Analysis Method and Uses Thereof. U.S. Patent
+US7043401B2, 6 February 2004. Available online: www.google.com.my/patents/US7043401 (accessed on 1
+January 2019).
+40. Rajeswari, B.; Amirthagadeswaran, K.; Anbarasu, K. Investigation on mechanical properties of aluminium
+7075-silicon carbide-alumina hybrid composite using Taguchi method. Aust. J. Mech. Eng. 2015, 13, 127–135.
+[CrossRef]
+41. Ketkar, M.; Vaidya, O.S. ScienceDirect Evaluating and Ranking Candidates for MBA program: Mahalanobis
+Taguchi System Approach. Procedia Econ. Financ. 2014, 11, 654–664. [CrossRef]
+42. Muhamad, W.Z.A.W.; Jamaludin, K.R.; Muhtazaruddin, M.N.; Yahya, Z.R.; Ramlie, F.; Harudin, N. Optimal
+variable screening in automotive crankshaft remanufacturing process using statistical pattern recognition
+approach in the Mahalanobis-Taguchi system. AIP Conf. Proc. 2018, 2013, 020031-1–020031-5. [CrossRef]
+43. Paterno, M.V.; Schmitt, L.C.; Ford, K.R.; Rauh, M.J.; Hewett, T.E. Altered postural sway persists after anterior
+cruciate ligament reconstruction and return to sport. Gait Posture 2013, 38, 136–140. [CrossRef]
+44. Haldar, N.A.H.; Khan, F.A.; Ali, A.; Abbas, H. Arrhythmia classification using Mahalanobis distance based
+improved Fuzzy C-Means clustering for mobile health monitoring systems. Neurocomputing 2017, 220,
+221–235. [CrossRef]
+45. Jugulum, R.; Gray, D.; Cadogan, R.G. Mathematical Index Based Health Management System. U.S. Patent
+US20100250274A1, 30 September 2010. Available online: www.google.com.my/patents/US20100250274
+(accessed on 1 January 2019).
+46. Sigward, S.M.; Chan, M.-S.M.; Lin, P.E. Characterizing knee loading asymmetry in individuals following
+anterior cruciate ligament reconstruction using inertial sensors. Gait Posture 2016, 49, 114–119. [CrossRef]
+[PubMed]
+47. Moraiti,C.O.;Stergiou,N.;Vasiliadis,H.S.;Motsis,E.;Georgoulis,A.Anteriorcruciateligamentreconstruction
+results in alterations in gait variability. Gait Posture 2010, 32, 169–175. [CrossRef] [PubMed]
+48. Plotnik, M.; Bartsch, R.P.; Zeev, A.; Giladi, N.; Hausdorff, J.M. Effects of walking speed on asymmetry and
+bilateral coordination of gait. Gait Posture 2013, 38, 864–869. [CrossRef] [PubMed]
+49. Hall, M.; Stevermer, C.A.; Gillette, J.C. Gait analysis post anterior cruciate ligament reconstruction: knee
+osteoarthritis perspective. Gait Posture 2012, 36, 56–60. [CrossRef]
+50. Hart, H.F.; Culvenor, A.G.; Collins, N.J.; Ackland, D.C.; Cowan, S.M.; Machotka, Z.; Crossley, K.M. Knee
+kinematics and joint moments during gait following anterior cruciate ligament reconstruction: a systematic
+review and meta-analysis. Br. J. Sports Med. 2015. [CrossRef]
+51. Morgan, K.D.; Zheng, Y.; Bush, H.; Noehren, B. Nyquist and Bode stability criteria to assess changes in
+dynamic knee stability in healthy and anterior cruciate ligament reconstructed individuals during walking.
+J. Biomech. 2016, 49, 1686–1691. [CrossRef]
+52. Misonoo, G.; Kanamori, A.; Ida, H.; Miyakawa, S.; Ochiai, N. Evaluation of tibial rotational stability of
+single-bundle vs. anatomical double-bundle anterior cruciate ligament reconstruction during a high-demand
+activity - a quasi-randomized trial. Knee 2012, 19, 87–93. [CrossRef]
+
+--- PAGE 22 ---
+Appl. Sci. 2019, 9, 4680 22 of 22
+53. Kruse, L.M.; Gray, B.; Wright, R.W. Rehabilitation after anterior cruciate ligament reconstruction: a systematic
+review. J. Bone Joint Surg. Am. 2012, 94, 1737–1748. [CrossRef]
+54. Hartigan, E.H.; Zeni, J.; Di Stasi, S.; Axe, M.J.; Snyder-Mackler, L. Preoperative predictors for noncopers to
+pass return to sports criteria after ACL reconstruction. J. Appl. Biomech. 2012, 28, 366–373. [CrossRef]
+55. Knoll, Z.; Kiss, R.M.; Kocsis, L. Gait adaptation in ACL deficient patients before and after anterior cruciate
+ligament reconstruction surgery. J. Electromyogr. Kinesiol. 2004, 14, 287–294. [CrossRef]
+56. Lai, P.P.K.; Leung, A.K.L.; Li, A.N.M.; Zhang, M. Three-dimensional gait analysis of obese adults. Clin.
+Biomech. 2008, 23, 2–6. [CrossRef] [PubMed]
+57. Zheng,N.;Gao,B.;Moser,M.;Indelicato,P.BILATERALDIFFERENCESOF3-DMOTIONINACL-DIFICENT
+AND ACL-RECONSTRUCTED KNEES. J. Biomech. 2007, 40. [CrossRef]
+58. Culvenor, A.G.; Perraton, L.; Guermazi, A.; Bryant, A.L.; Whitehead, T.S.; Morris, H.G.; Crossley, K.M. Knee
+kinematics and kinetics are associated with early patellofemoral osteoarthritis following anterior cruciate
+ligament reconstruction. Osteoarthr. Cartil. 2016, 24, 1548–1553. [CrossRef] [PubMed]
+59. Ohsumi, Y.; Ohkoshi, Y.; Ino, T.; Kotake, S.; Ukishiro, K.; Miura, K.; Ohmori, K.; Yoshida, T.; Kawakami, K.;
+Suzuki, S.; et al. Are kinematics and kinetics of the knee normalized after anterior cruciate ligament
+reconstruction? J. Orthop. Res. 2016, 34.
+60. Sanford, B.A.; Zucker-Levin, A.R.; Williams, J.L.; Mihalko, W.M.; Jacobs, E.L. Principal component analysis
+of knee kinematics and kinetics after anterior cruciate ligament reconstruction. Gait Posture 2012, 36, 609–613.
+[CrossRef]
+61. Isberg, J.; Faxén, E.; Brandsson, S.; Eriksson, B.I.; Kärrholm, J.; Karlsson, J. Early active extension after anterior
+cruciate ligament reconstruction does not result in increased laxity of the knee. Knee Surgery, Sport. Traumatol.
+Arthrosc. 2006, 14, 1108–1115. [CrossRef]
+62. Cooper, R.L.; Taylor, N.F.; Feller, J.A. A systematic review of the effect of proprioceptive and balance exercises
+on people with an injured or reconstructed anterior cruciate ligament. Res. Sport. Med. 2005, 13, 163–178.
+[CrossRef]
+63. Cappellino, F.; Paolucci, T.; Zangrando, F.; Iosa, M.; Adriani, E.; Mancini, P.; Bellelli, A.; Saraceni, V.M.
+Neurocognitive rehabilitative approach effectiveness after anterior cruciate ligament reconstruction with
+patellar tendon. A randomized controlled trial. Eur. J. Phys. Rehabil. Med. 2012, 48, 17–30.
+64. Barrack, R.L.; Skinner, H.B.; Buckley, S.L. Proprioception in the anterior cruciate deficient knee. Am. J. Sports
+Med. 1989, 17, 1–6. [CrossRef]
+65. Heller, B.M.; Pincivero, D.M. The effects of ACL injury on lower extremity activation during closed kinetic
+chain exercise. J. Sports Med. Phys. Fitness 2003, 43, 180–188.
+66. Morrissey, M.C.; Hudson, Z.L.; Drechsler, W.I.; Coutts, F.J.; Knight, P.R.; King, J.B. Effects of open versus
+closed kinetic chain training on knee laxity in the early period after anterior cruciate ligament reconstruction.
+Knee Surgery, Sport. Traumatol. Arthrosc. 2000, 8, 343–348. [CrossRef] [PubMed]
+67. Rubinstein, R.A.; Shelbourne, K.D.; Vanmeter, C.D.; Mccarroll, J.R.; Rettig, A.C.; Gloyeske, R.L. Effect on
+Knee Stability if Full Hyperextension is Restored Immediately After Autogenous Bone-Patellar Tendon-Bone
+Anterior Cruciate Ligament Reconstruction. Am. J. Sports Med. 1995, 23, 365–368. [CrossRef] [PubMed]
+68. Shaw, T.; Williams, M.T.; Chipchase, L.S. Do early quadriceps exercises affect the outcome of ACL
+reconstruction? A randomised controlled trial. Aust. J. Physiother. 2005, 51, 9–17. [CrossRef]
+69. Bandy, W.D.; Irion, J.M.; Briggler, M. The effect of time and frequency of static stretching on flexibility of the
+hamstring muscles. J. Am. Phys. Ther. Assoc. 1997, 77, 1090–1096. [CrossRef] [PubMed]
+© 2019 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+article distributed under the terms and conditions of the Creative Commons Attribution
+(CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+
+--- PAGE 23 ---

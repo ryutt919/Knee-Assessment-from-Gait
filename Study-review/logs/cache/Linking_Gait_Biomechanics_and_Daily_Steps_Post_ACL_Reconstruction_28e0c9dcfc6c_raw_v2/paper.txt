@@ -1,0 +1,622 @@
+
+--- PAGE 1 ---
+Linking Gait Biomechanics and Daily Steps Post ACL-
+Reconstruction
+Caroline Lisee1, Hope Davis-Wilson2, Alyssa Evans-Pickett1,5, W. Zachary Horton3, Troy
+Blackburn1,5,6, Jason R. Franz4, Louise Thoma5, Jeffrey T. Spang6, Brian Pietrosimone1,5,6
+1MOTION Science Institute, Department of Exercise and Sports Science, University of North
+Carolina at Chapel Hill, NC
+2Department of Physical Medicine and Rehabilitation, University of Colorado, Aurora, CO
+3Department of Statistics, University of California Santa Cruz, Santa Cruz, California
+4Joint Department of Biomedical Engineering, University of North Carolina at Chapel Hill and
+North Carolina State University, Chapel Hill, NC
+5Department of Allied Health Sciences, University of North Carolina at Chapel Hill, NC
+6Department of Orthopaedics, University of North Carolina at Chapel Hill, Chapel Hill, NC
+Abstract
+Purpose: Aberrant biomechanics and altered loading frequency are associated with poor knee
+joint health in osteoarthritis development. After ACLR, individuals demonstrate underloading
+(lesser vertical ground reaction force [(vGRF]) with stiffened knee gait biomechanics (lesser knee
+extension moment [KEM] and knee flexion angle) and take fewer daily steps as early as 6 months
+post-surgery. The purpose of this cross-sectional laboratory study is to compare gait biomechanics
+throughout stance between individuals 6-12 months post-ACLR who take the lowest, moderate,
+and highest daily steps.
+Methods: Individuals with primary, unilateral history of ACLR between the ages of 16-35
+were included (n=36, 47% females, age=21±5 years, months since ACLR=8±2). Barefoot gait
+biomechanics of vGRF (body weight [BW]), KEM (BW x height), and knee flexion angle
+during stance were collected and time-normalized. Average daily steps were collected via a
+waist-mounted accelerometer in free-living settings over 7 days. Participants were separated into
+tertiles based on lowest daily steps (3,326-6,042 daily steps), moderate (6,043-8,198 daily steps),
+and highest (8,199-12,680 daily steps). Biomechanical outcomes of the ACLR limb during stance
+were compared between daily step groups using functional waveform gait analyses.
+Results: There were no significant differences in sex, body mass index, age, or gait speed
+between daily step groups. Individuals with the lowest daily steps walk with lesser vGRF and
+lesser KEM during weight acceptance, and lesser knee flexion angle throughout stance in the
+ACLR limb compared to individuals with highest and moderate daily steps.
+Corresponding Author: Brian Pietrosimone, Ph.D., Associate Professor, Department of Exercise and Sport Science, University
+of North Carolina at Chapel Hill, CB#8700, 210 South Road, Fetzer Hall, Chapel Hill, NC 27599; telephone: (919) 962-3617;
+brian@unc.edu.
+HHS Public Access
+Author manuscript
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Published in final edited form as:
+Med Sci Sports Exerc. 2022 May 01; 54(5): 709–716. doi:10.1249/MSS.0000000000002860.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 2 ---
+Conclusions: After ACLR, individuals who take the fewest daily steps also walk with lesser
+vGRF during weight acceptance and a stiffened knee strategy throughout stance. These results
+highlight complex interactions between joint loading parameters post-ACLR.
+Keywords
+mechanical loading; vertical ground reaction force; osteoarthritis; physical activity
+INTRODUCTION
+Individuals with a history of anterior cruciate ligament (ACL) injury and surgical
+reconstruction (ACLR) are 4-6 times more likely to develop radiographic posttraumatic
+osteoarthritis (PTOA) compared to uninjured individuals (1). Previous literature supports a
+link between aberrant mechanical loading and PTOA development (2–4). In animal studies,
+both excessive and insufficient mechanical loading lead to deleterious changes to joint tissue
+metabolism (5, 6), decreased articular cartilage proteoglycan and aggrecan content (7), and
+eventual articular cartilage thinning (8–10). Maintaining optimal mechanical joint loading
+following ACLR is likely critical for delaying or preventing PTOA onset by stimulating
+chondroprotective pathways that promote cartilage health (5). Multiple parameters must be
+addresed to optimize joint loading including lower extremity kinematics and kinetics (i.e.,
+gait biomechanics) and the frequency with which loads are applied to an injured extremity
+(i.e., daily steps). Previous studies have assessed the effects of ACL injury and ACLR on
+changes in gait biomechanics and daily steps separately (11–13), but the interaction between
+these loading parameters remains understudied in individuals with ACLR.
+Individuals within the first 6-12 months following ACLR demonstrate less dynamic vertical
+ground reaction force (vGRF) waveforms throughout the stance phase of gait characterized
+by a lesser peak vGRF during weight acceptance and greater vGRF during midstance
+compared to uninjured matched controls (11). Less dynamic vGRF waveforms are also
+associated with a stiffened knee strategy characterized by smaller knee flexion excursion
+from weight acceptance to midstance and a smaller peak internal knee extension moment
+(KEM) (11). These aberrant gait biomechanics of vGRF, KEM, and knee flexion excursion
+have been linked to deleterious joint tissue metabolism (14, 15), altered femoral cartilage
+composition (16, 17), and worse patient-reported outcomes (18, 19) associated with early
+PTOA development. Together, these studies suggest that gait strategies which incorportate
+a less dynamic vGRF waveform and stiffened knee strategy are associated with poor joint
+health.
+Another parameter of loading associated with joint health is loading frequency. Loading
+frequency is typically measured over an extended period of time (e.g., 1 day or 1 week)
+via daily steps to reflect typical behavior (20). In individuals at risk for or living with
+idiopathic OA, those who complete fewer daily steps demonstrate worsening tibiofemoral
+cartilage degeneration (21) and greater risk of disability (22). Pre-operatively, patients with
+ACL injury who walk with a stiffened knee strategy and engage in greater daily steps
+demonstrate worse tibiofemoral cartilage composition (23). However, the influence of daily
+steps on indicators of knee joint health after ACLR surgery is unclear. Unfortunately,
+Lisee et al. Page 2
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 3 ---
+individuals post-ACLR demonstrate fewer daily steps as early as 6 months after surgery
+compared to uninjured controls (24). This behavior may persist for years post-ACLR (13)
+and may accelerate poor knee joint health development similar to individuals living with
+idiopathic OA. Furthermore, substantially different joint loading environments may develop
+if individuals with aberrant gait biomechanics also engage in significantly fewer daily steps,
+but it is unclear if individuals with ACLR who demonstrate aberrant gait biomechanics also
+engage in fewer daily steps.
+Examining the extent to which aberrant gait biomechanics and altered daily steps relate is
+a critical step towards developing comprehensive rehabilitative strategies to optimize joint
+loading post-ACLR. Therefore, the purpose of this study was to compare gait biomechanics
+(i.e. vGRF, KEM, knee flexion angle) throughout stance between those with the lowest,
+moderate, and highest loading frequency (i.e., daily steps) in individuals 6-12 months
+post-ACLR. We hypothesized that individuals with the lowest number of daily steps would
+demonstrate less vGRF in weight acceptance and greater vGRF through midstance (i.e. less
+dynamic vGRF waveform throughout stance), less knee flexion angle through midstance,
+and less KEM in weight acceptance in the ACLR limb during gait compared to individuals
+with moderate and highest daily steps.
+METHODS
+We conducted a cross-sectional observational study in individuals who underwent primary
+ACLR 6 to 12 months prior to enrollment. Daily steps were collected in free-living settings
+during all waking hours for 7 days using a waist-mounted triaxial Actigraph GT9X Link
+monitor (version 6.13.4, Actigraph LLC., Pensacola, FL). Participants also completed a gait
+analysis during a single laboratory session during which vGRF, KEM, and knee flexion
+angle were evaluated. All participants provided written informed consent or assent and
+permission from their parent or guardian before participating in the study as approved by the
+university’s Institutional Review Board.
+Participants.
+Participants (n=36) were recruited from a local orthopedic clinic, the university campus,
+and the local community through referral, flyers, and emails. Participants between the
+ages of 16 and 35 years who underwent primary unilateral ACLR with an autograft
+(bone-patellar tendon-bone: n=32, hamstring tendon: n=2, quadriceps tendon: n=2) 6 to
+12 months before enrollment and had completed formalized rehabilitation were included.
+We included participants who had a meniscal injury or meniscal procedure at the time of
+ACL injury or surgery. Participants were excluded from the study if they had history of
+a lower extremity fracture at the time of ACL injury, multiple ligament surgery at time
+of ACLR, ACLR revision surgery, or clinical diagnosis of knee PTOA in either limb.
+Participants completed the Knee Injury and Osteoarthritis Outcome Score (KOOS) survey to
+determine the participant’s self-reported knee related-symptoms, pain, daily function, sport
+participation, and quality of life (25).
+A previous study using functional waveform gait analyses reported that individuals less
+than 12 months post-ACLR demonstrated a moderate effect (d=0.60) for peak vGRF
+Lisee et al. Page 3
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 4 ---
+mean differences during the weight acceptance phase of stance between those who are
+symptomatic and asymptomatic (19). We determined that daily step tertile groups of 10
+participants (total cohort = 30) were needed to detect a moderate effect for statistically
+significant differences in gait outcomes with the assumption that variability between trials
+is similar to the previous study (two-tailed alpha, 1-ß=0.8, α=0.05) (19). Sample size
+estimations were calculated using G*Power Statistics Power Analysis Software (version 3.1,
+Heinrich-Heine-Universität, Düsseldorf, Germany).
+Daily Step Assessment.
+Participants were instructed to wear a triaxial Actigraph GT9X Link monitor (version
+6.13.4, Actigraph LLC., Pensacola, FL) on their right hip during all waking hours for 7
+days. Data were collected at 30 Hz and processed at 60 second epochs. Wear and non-wear
+time were defined using the Choi et al. algorithm (26). Briefly, non-wear time was defined
+as any period of zero count epochs that exceeded 90 minutes. Spike tolerance of nonzero
+count epochs less than two consecutive minutes in duration with at least 30 minutes of zero
+count epochs before and after each spike were also considered non-wear time. Valid wear
+time over the 7-day monitoring period was defined as 4 days with at least 10 hours of wear
+time and at least one weekend day. Steps were calculated using Actilife’s step detection
+algorithm with a proprietary acceleration amplitude threshold based on uniaxial acceleration
+data in Actilife software (version 6.13.4, Actigraph LLC., Pensacola, FL) (27). Loading
+frequency was defined as the average daily steps over the monitor wear period. Participants
+were retrospectively assigned to groups based on tertile ranking of daily steps (i.e., lowest,
+moderate, and highest daily step groups).
+Gait Biomechanical Assessment.
+Participants were outfitted with 26 retroreflective markers and 1 sacral cluster of 3 markers.
+A 10-camera three-dimensional motion capture system (Vicon, Nexus, Denver, Colorado)
+and two embedded force plates (FP406010, Bertec Corporation, Columbus, Ohio) staggered
+within a 6-meter walkway were used to collect marker trajectories and kinetics at 120 and
+1200 Hz, respectively. Participants were asked to walk barefoot at their habitual walking
+speed as if they were “comfortably walking on a sidewalk” over the 6 meter track between
+infrared timing gates (TF100, Trac Tronix, Lenexa, Kansas) spaced 0.97 meters a part (28).
+Practice trials were performed until the participant felt comfortable completing the task.
+Next, habitual walking speed was calculated as the average walking speed from five trials
+which was used to ensure that participants walked at a consistent gait speed for testing
+trials. Gait biomechanics were collected from five successful testing trials and used for final
+analysis. A trial was considered unsuccessful and repeated if participants exceeded ±5% of
+average habitual walking speed, demonstrated visually abnormal gait deviations (i.e., studder
+step), or both feet failed to make full contact with the staggered force plates during a single
+trial (11).
+Visual3D software (C-Motion, Germantown, Maryland) was used to process kinematic and
+kinetic data using a fourth-order Butterworth filter at a cut-off of 10 Hz. The stance phase
+of gait was identified from heel strike (vGRF > 20 N) to toe-off (vGRF < 20 N). All
+biomechanical outcomes were time normalized to 101 data points (0-100%) throughout the
+Lisee et al. Page 4
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 5 ---
+stance phase. Gait stance phases were defined as three phases including weight acceptance
+(0-24%), midstance (25-62%), and late stance (63-100%) (29). Knee and ankle joint centers
+were estimated as half of the distance between the medial and lateral femoral epicondyles
+and malleoli retroreflective markers, respectively. Hip joint centers were calculated using the
+Bell method (30). Euler angles were used to calculate sagittal plane knee flexion based on
+the position of the shank relative to the thigh. An inverse dynamics approach was used to
+calculate internal joint moments based on anthropometrics, kinetics, and kinematics. vGRF
+was normalized to body weight (N) and KEM was normalized to the product of bodyweight
+(N) and height (m). Knee flexion angles and KEM were reported as positive values.
+Statistical Analysis.
+Descriptive statistics (means, standard deviations, or percentages) were calculated for
+participant characteristics in all study participants and for participants in each daily step
+group (i.e., lowest, moderate, and highest daily step groups). Age, body mass index (BMI),
+gait speed, daily steps, monitor wear time, and months since ACLR were compared across
+groups using one-way ANOVAs. If participant characteristics were significantly different,
+Bonferroni post-hoc tests were used to determine specific differences between groups. The
+percentage of women and participants with meniscal injury in each group were compared
+using the Fisher’s exact test. Analyses of descriptive statistics were performed using SPSS
+Statistics (version 26, IBM Corp, Armonk, NY).
+Functional Waveform Gait Analysis.—Functional waveform analyses were conducted
+to allow for the evaluation of gait differences or relationships at multiple portions of stance
+using a single analysis (11, 31, 32). Previous studies have demonstrated that individuals
+post-ACLR demonstrate differences in gait biomechanics compared to uninjured controls
+over multiple portions of stance (11). Therefore, separate functional waveform gait analyses
+were conducted to compare ACLR limb vGRF, KEM, and knee flexion angle between:
+1) highest and lowest daily step groups, 2) highest and moderate daily step groups, and
+3) moderate and lowest daily step groups. Between group comparisons were analyzed
+across time-normalized percentiles of gait stance (0 to 100%). First, Bayesian functional
+models were fit to participants’ time-normalized gait waveforms using a P-spline model to
+form a representative waveform for each group (33). Next, differences between waveforms
+for each group and associated 95% confidence intervals were calculated. We considered
+between-group waveform differences to exist at proportions of stance where associated 95%
+confidence intervals did not include zero for greater than 3% of stance. All functional
+analyses were performed in R version 3.5 using the package bayesFDA which were
+modified from the package described in Horton et al. (32). Cohen’s d effect sizes and
+95% confidence intervals were also calculated at portions of stance with the largest group
+differences to determine the magnitude of gait biomechanical differences between groups
+(see Table, Supplemental Digital Content 1, SDC 1). A post-hoc supplementary analysis
+using the same functional waveform analysis was completed to compare uninjured limb
+vGRF, KEM, and knee flexion angle between daily step groups.
+Lisee et al. Page 5
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 6 ---
+RESULTS
+Participant characteristics for the entire cohort and each daily step group are reported in
+Table 1. Daily steps were significantly different between daily step groups (all p<0.001), but
+there were no significant differences between groups for any other characteristic (Table 1).
+ACLR Limb Gait Biomechanics.
+ACLR limb gait waveforms of vGRF, KEM, and knee flexion angle during stance for each
+daily step group are reported in Figure 1A, 2A, and 3A.
+vGRF.
+The highest daily step group demonstrated greater vGRF compared to the lowest daily step
+group (15-32%) (Figure 1B), but lesser vGRF compared to the moderate daily step group
+during weight acceptance (4-13%) (Figure 1C). The moderate daily step group demonstrated
+greater vGRF during weight acceptance compared to the lowest daily step group (5-25%)
+(Figure 1D).
+Knee Extension Moment.
+The highest daily step group demonstrated greater KEM during weight acceptance (9-27%)
+and late stance (68-93%) compared to the lowest daily step group (Figure 2B), but lesser
+KEM during weight acceptance compared to the moderate daily step group (12-22%)
+(Figure 2C). The moderate daily step group demonstrated greater KEM during weight
+acceptance compared to the lowest daily step group (8-30%) (Figure 2D).
+Knee Flexion Angle.
+The highest daily step group demonstrated greater knee flexion angle throughout stance
+compared to the lowest daily step group (0-100%) (Figure 3B) as well as during mid-
+and late stance (48-100%) compared to the moderate daily step group (Figure 3C). The
+moderate daily step group demonstrated greater knee flexion angle throughout most of
+stance compared to the lowest daily step group (0-67% and 87-100%) (Figure 3D).
+Uninjured Limb Gait Biomechanics.
+While gait biomechanics of the uninjured limb were not part of the primary analysis, a
+post hoc supplementary analyses found that between-group differences for vGRF, KEM, and
+knee flexion angle were similar to those reported in the ACLR limb (see Table, Figures,
+Supplemental Data Files 1-4, SDC 1, SDC 2, SDC 3, SDC 4).
+DISCUSSION
+In support of our hypothesis, individuals engaging in the fewest daily steps demonstrated
+lesser vGRF during the weight acceptance phase of stance, lesser KEM during weight
+acceptance and late stance, and lesser knee flexion angle throughout all of stance during
+walking compared to individuals taking the highest daily steps. Our novel findings suggest
+that individuals who load the ACLR limb less frequently during the day (i.e. fewer
+daily steps) also exert lesser magnitudes of force (i.e. vGRF normalized to body weight)
+Lisee et al. Page 6
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 7 ---
+through the ACLR extremity with stiffer knee kinematics during each step. Contrary to our
+hypothesis, individuals engaging in the fewest daily steps did not demonstrate greater vGRF
+during midstance. The first vGRF impact peak during the weight acceptance phase of stance
+is typically characterized as a portion of stance when individuals must attenuate higher
+magnitudes of force (34). Adequate lower extremity muscle strength and neuromuscular
+control is needed to properly attenuate loads exerted on the lower extremity during gait
+(35). ACLR patients often demonstrate decreased lower extremity muscle strength (36) and
+aberrant neuromuscular control (37), which may limit the ability to control force across the
+joint. It is possible that with the inability to properly attenuate loading that patients attempt
+to minimize peak vGRF early after ACLR and thus develop aberrant gait biomechanics
+(38). If not addressed with rehabilitation, gait compensations used to initially attenuate load
+may persist as profiles characterized by underloaded, less dynamic vGRF waveforms and
+stiffened knee flexion angles (11). Similar between group differences were reported in the
+uninjured limb. These findings are not surprising because previous work has demonstrated
+that the uninjured limb may develop altered gait patterns that are similar to the ACLR limb
+(11). These data suggest that multiple loading parameters (daily steps and biomechanics) are
+simultaneously affected in some individuals following ACL injury and ACLR (2, 15, 16).
+Our study indicates that future efforts should be made to measure both gait biomechanics
+and loading frequency following ACLR in order to best understand the cumulative loading
+changes in specific patients.
+While we did not directly compare gait biomechanics in our ACLR cohort to uninjured
+individuals in the current study, all group averages demonstrate lesser peak vGRF (uninjured
+controls=1.12±0.09 x BW), peak KEM (uninjured controls=0.03±0.01 BW x height), and
+peak knee flexion angle (uninjured controls= 11.6±5.2°) during the loading phase of gait
+compared to previously reported uninjured sex, age, and BMI matched control participants
+(see Table, Supplemental Data File 5, SDC 5) (11). Likewise, individuals in the lowest
+(4970±852 daily steps) and moderate daily step groups (7030±648 daily steps) took fewer
+daily steps than previously reported uninjured individuals (uninjured controls=9769±2785
+daily steps) (12). Daily step groupings reported in this study should be interpretated with
+caution as thresholds of high moderate and low daily steps are specific to our particular
+cohort. Our results indicate that, in general, individuals who engage in low daily steps
+also demonstrate gait underloading 6-12 months post-ACLR. Future work is needed to
+determine if a specific range of daily steps would also predict specific changes in gait
+biomechanics. Underloading of the ACLR limb in the first months to years following
+ACL injury is hypothesized to result in insufficient loading of some regions of knee joint
+articular cartilage which may contribute to poor long-term knee health outcomes (2, 14,
+16). Both underloading combined with a stiffened knee strategy during gait (i.e. lesser
+vGRF, KEM, and knee flexion angle) and lesser daily steps have been associated with
+deleterious aspects of knee joint health including poor joint metabolism, poor cartilage
+composition, and cartilage degeneration in individuals at risk for PTOA or idiopathic OA (2,
+14, 16, 21). The aforementioned gait pattern may result in underloading in some cartilage
+regions, while reduced knee flexion range of motion may facilitate sustained contact force
+patterned across other cartilage regions. Future longitudinal research studies should evaluate
+Lisee et al. Page 7
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 8 ---
+the relative contributions of persistent aberrant loading parameters to poor knee joint health
+development and potential PTOA risk after ACLR.
+Due to the cross-sectional nature of the study, we cannot determine cause and effect
+relationships between mechanical loading parameters. However, it is possible that changes
+in gait biomechanics and daily steps may influence each other. For example, individuals
+who take fewer daily steps between 6 to 12 months post-ACLR may inadvertently limit
+the amount of time they practice normalizing walking gait biomechanics preventing the
+re-adoption of optimal gait biomechanics following ACL injury and ACLR. Alternatively,
+the adoption of aberrant gait biomechanics following ACL injury and ACLR may lead to
+less engagement in physical activity resulting in fewer daily steps. Previous work has linked
+aberrant gait biomechanics to cartilage compositional changes (2, 28) and symptomatic knee
+function after ACLR (19), thus individuals with worse underlying joint tissue changes or
+increased symptoms may simultaneously adopt compensatory gait biomechanics and choose
+not to engage in activities that require greater daily steps. Ultimately, the mechanistic link
+between gait biomechanical movement patterns and loading frequency are undefined and
+should be explored in future research to devise best treatment approaches to aberrant joint
+loading.
+Gait retraining interventions are effective for improving aberrant gait biomechanics (39, 40).
+Encouraging research highlights the beneficial effects of a single session of real-time gait
+biofeedback to improve biomechanical underloading and deleterious joint tissue metabolism
+in patients after ACLR (15, 41). Additionally, physical activity promotion is effective in
+increasing daily steps in individuals with low daily step counts (42). It remains unknown
+whether increasing steps in individuals with low daily steps who also demonstrate gait
+biomechanical underloading is beneficial or detrimental to knee joint health in individuals
+post-ACLR. Increasing steps without first addressing compensatory gait behavior may
+subject the knee to greater loading frequency that is similar to uninjured individuals, but
+also result in more steps completed with aberrant biomechanical loading. The order in which
+these loading parameters are addressed during a rehabilitation protocol to maximize joint
+health requires further investigation. Given the association between gait biomechanics and
+daily steps reported in the current study, it would be important to determine if addressing
+one parameter of loading results in improvements in the other. For example, patients
+with idiopathic knee OA who participated in an exercise intervention over 18 months
+demonstrated improvements in knee compressive forces during gait (43). Alternatively,
+individuals participating in gait retraining interventions multiple times per week over
+2-6 weeks may accumulate up to 3,000 steps each session (39) potentially resulting in
+short-term increases in daily steps. However, long-term improvements in daily steps often
+require interventions that target behavior change and maintenance (i.e. goal setting or social
+support) (44) which is not a typical component of gait retraining interventions. Both aberrant
+gait biomechanics and insufficient daily step counts may need to be addressed separately
+or at different time points in rehabilitation. Trials investigating interventions targeting either
+aberrant gait biomechanics or daily step promotion should include assessments of both
+aspects of joint loading to determine transfer between these two parameters of overall joint
+loading in individuals with an ACLR.
+Lisee et al. Page 8
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 9 ---
+Limitations.
+The results of the current study provide unique insights into the relationships between
+different aspects of joint loading after ACLR by combining laboratory and free-living
+assessments. However, limitations of the current study should be considered to inform
+future research. The current study design is cross-sectional with a conservative sample size
+and cannot determine mechanistic links between aberrant gait biomechanics and daily step
+frequencies. Understanding the causal relationship between gait biomechanical underloading
+and low daily step accumulation in a larger cohort may help develop comprehensive
+assessments and interventions targeting aberrant mechanical loading and should be an
+area of focus for future research. Additionally, participants in the current study were
+recruited after their ACLR surgery. We were unable collect pre-injury biomechanical or
+daily step data and cannot determine whether the gait biomechanics and/or daily steps
+measured post ACLR existed prior to ACL injury. We currently lack the ability to control
+for covariates related to joint loading in functional waveform analyses (i.e. age (45), gait
+speed (46), and BMI (47)), but there were no differences in participants characteristics
+between groups (Table 1). Participants with concomitant meniscal pathology and subsequent
+surgical procedures at time of ACL injury were included in study and concomitant meniscal
+injury may impact gait biomechanics after ACLR (48). The percentage of participants
+with meniscal pathology were not statistically significantly different between step groups,
+suggesting that that the potential for meniscal injury may have been distributed similar
+across the three groups in our study. Future studies should specifically determine the role
+that meniscal pathology has on altered gait biomechanics and daily steps following ACLR.
+CONCLUSIONS
+These data suggest a link between aberrant gait biomechanics and fewer daily steps
+following ACLR. Specifically, individuals 6 to 12 months post-ACLR who take fewer
+daily steps demonstrate biomechanical gait strategies characterized by underloading during
+weight-acceptance (i.e. lesser peak vGRF) and a stiffened knee strategy (i.e. lesser KEM and
+knee flexion angle) during weight acceptance and late stance in the ACLR extremity.
+Supplementary Material
+Refer to Web version on PubMed Central for supplementary material.
+Conflict of Interest and Funding Statement:
+This study was funded by the National Institute of Arthritis and Musculoskeletal and Skin Diseases of the National
+Institutes of Health (1R21AR074094-01). The authors have no conflicts of interest to declare. The results of the
+study are presented clearly, honestly, and without fabrication, falsification, or inappropriate data manipulation. The
+results of the present study do not constitute endorsement by ACSM.
+REFERENCES
+1. Poulsen E, Goncalves GH, Bricca A, Roos EM, Thorlund JB, Juhl CB. Knee osteoarthritis risk
+is increased 4-6 fold after knee injury-a systematic review and meta-analysis. Br J Sports Med.
+2019;53(23):1454–63. [PubMed: 31072840]
+Lisee et al. Page 9
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 10 ---
+2. Wellsandt E, Gardinier ES, Manal K, Axe MJ, Buchanan TS, Snyder-Mackler L. Decreased knee
+joint loading associated with early knee osteoarthritis after anterior cruciate ligament injury. Am J
+Sports Med. 2016;44(1):143–51. [PubMed: 26493337]
+3. Chu CR, Andriacchi TP. Dance between biology, mechanics, and structure: A systems-based
+approach to developing osteoarthritis prevention strategies. J Orthop Res. 2015;33(7):939–47.
+[PubMed: 25639920]
+4. Hart HF, Collins NJ, Ackland DC, Cowan SM, Crossley KM. Gait characteristics of people with
+lateral knee osteoarthritis after ACL reconstruction. Med Sci Sports Exerc. 2015;47(11):2406–15.
+[PubMed: 25830360]
+5. Sun HB. Mechanical loading, cartilage degradation, and arthritis. Ann N Y Acad Sci.
+2010;1211:37–50. [PubMed: 21062294]
+6. Castrogiovanni P, Di Rosa M, Ravalli S et al. Moderate physical activity as a prevention method for
+knee osteoarthritis and the role of synoviocytes as biological key. Int J Mol Sci. 2019;20(3):511.
+7. Wallace IJ, Bendele AM, Riew G et al. Physical inactivity and knee osteoarthritis in guinea pigs.
+Osteoarthritis Cartilage. 2019;27(11):1721–8. [PubMed: 31302235]
+8. Nomura M, Sakitani N, Iwasawa H et al. Thinning of articular cartilage after joint unloading or
+immobilization. An experimental investigation of the pathogenesis in mice. Osteoarthritis Cartilage.
+2017;25(5):727–36. [PubMed: 27916560]
+9. Hagiwara Y, Ando A, Chimoto E, Saijo Y, Ohmori-Matsuda K, Itoi E. Changes of articular cartilage
+after immobilization in a rat knee contracture model. J Orthop Res 2009;27(2):236–42. [PubMed:
+18683886]
+10. Maldonado DC, Silva MCPd, Neto SE-R, de Souza MR, de Souza RR. The effects of
+joint immobilization on articular cartilage of the knee in previously exercised rats. J Anat.
+2013;222(5):518–25. [PubMed: 23480127]
+11. Davis-Wilson HC, Pfeiffer SJ, Johnston CD et al. Bilateral gait 6 and 12 months post-anterior
+cruciate ligament reconstruction compared with controls. Med Sci Sports Exerc. 2020;52(4):785–
+94. [PubMed: 31809411]
+12. Bell DR, Pfeiffer KA, Cadmus-Bertram LA et al. Objectively measured physical activity in
+patients after anterior cruciate ligament reconstruction. Am J Sports Med. 2017;45(8):1893–900.
+[PubMed: 28419817]
+13. Lisee C, Montoye AH, Lewallen NF, Hernandez M, Bell DR, Kuenze CM. Assessment of
+free-living cadence using actigraph accelerometers among individuals with and without ACL
+reconstruction. J Athl Train. 2020;55(9):994–1000. [PubMed: 32818959]
+14. Pietrosimone B, Loeser RF, Blackburn JT et al. Biochemical markers of cartilage metabolism
+are associated with walking biomechanics 6-months following anterior cruciate ligament
+reconstruction. J Orthop Res. 2017;35(10):2288–97. [PubMed: 28150869]
+15. Luc-Harkey BA, Franz J, Hackney AC et al. Immediate biochemical changes after gait biofeedback
+in individuals with anterior cruciate ligament reconstruction. J Athl Train. 2020;55(10):1106–15.
+[PubMed: 32966563]
+16. Pfeiffer SJ, Spang J, Nissman D et al. Gait mechanics and T1rho MRI of tibiofemoral cartilage 6
+months post ACL reconstruction. Med Sci Sports Exerc. 2018;51(4):630–639.
+17. Teng HL, Wu D, Su F et al. Gait characteristics associated with a greater increase in medial
+knee cartilage T1rho and T2 relaxation times in patients undergoing anterior cruciate ligament
+reconstruction. Am J Sports Med. 2017;45(14):3262–71. [PubMed: 28898105]
+18. Pietrosimone B, Blackburn JT, Padua DA et al. Walking gait asymmetries 6 months following
+anterior cruciate ligament reconstruction predict 12-month patient-reported outcomes.J Orthop
+Res. 2018;36(11):2932–40. [PubMed: 29781550]
+19. Pietrosimone B, Seeley MK, Johnston C, Pfeiffer SJ, Spang JT, Blackburn JT. Walking ground
+reaction force post-ACL reconstruction: Analysis of time and symptoms. Med Sci Sports Exerc.
+2019;51(2):246–54. [PubMed: 30157111]
+20. Troiano RP, Berrigan D, Dodd KW, Mâsse LC, Tilert T, McDowell M. Physical activity in the
+United States measured by accelerometer. Med Sci Sports Exerc. 2008;40(1):181–8. [PubMed:
+18091006]
+Lisee et al. Page 10
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 11 ---
+21. Voinier D, Neogi T, Stefanik JJ et al. Using cumulative load to explain how body mass index
+and daily walking relate to worsening knee cartilage damage over two years: The MOST Study.
+Arthritis Rheumatol. 2020;72(6):957–65. [PubMed: 31785075]
+22. White DK, Tudor-Locke C, Zhang Y et al. Daily walking and the risk of incident functional
+limitation in knee osteoarthritis: an observational study. Arthritis Care Res (Hoboken).
+2014;66(9):1328–36. [PubMed: 24923633]
+23. Wellsandt E, Kallman T, Golightly Y et al. Knee joint unloading and daily physical activity
+associate with cartilage T2 relaxation times 1 month after ACL injury. J Orthop Res.
+2021;29:10.1002/jor.25034. [PubMed: 33751638]
+24. Kuenze C, Collins K, Triplett A et al. Comparison of free living step accumulation among
+adolescent patients six months after ACL reconstruction and healthy controls. J Athl Train.
+2020;55(6s):S-1-S-378.
+25. Collins NJ, Prinsen CAC, Christensen R, Bartels EM, Terwee CB, Roos EM. Knee Injury and
+Osteoarthritis Outcome Score (KOOS): systematic review and meta-analysis of measurement
+properties. Osteoarthritis Cartilage. 2016;24(8):1317–29. [PubMed: 27012756]
+26. Choi L, Liu Z, Matthews CE, Buchowski MS. Validation of accelerometer wear and nonwear time
+classification algorithm. Med Sci Sports Exerc. 2011;43(2):357–64. [PubMed: 20581716]
+27. John D, Morton A, Arguello D, Lyden K, Bassett D. “What is a step?” Differences in how a step
+is detected among three popular activity monitors that have impacted physical activity research.
+Sensors (Basel). 2018;18(4):1206.
+28. Pfeiffer S, Harkey MS, Stanley LE et al. Associations between slower walking speed and
+T1rho magnetic resonance imaging of femoral cartilage following anterior cruciate ligament
+reconstruction. Arthritis Care Res (Hoboken). 2018;70(8):1132–40. [PubMed: 29193888]
+29. Perry J, Burnfield JM. Gait analysis. Normal and pathological function 2nd ed. California: Slack.
+2010.
+30. Bell AL, Brand RA, Pedersen DR. Prediction of hip joint centre location from external landmarks.
+Hum Mov Sci. 1989;8(1):3–16.
+31. Evans-Pickett A, Longobardi L, Spang JT et al. Synovial fluid concentrations of matrix
+Metalloproteinase-3 and Interluekin-6 following anterior cruciate ligament injury associate with
+gait biomechanics 6 months following reconstruction. Osteoarthritis Cartilage. 2021;29(7):1006–
+1019. [PubMed: 33781899]
+32. Horton WZ, Page GL, Reese CS, Lepley LK, White M. Template Priors in Bayesian Curve
+Registration. Technometrics. 2021;63(4):487–499.
+33. Lang S, Brezger A. Bayesian P-Splines. J Comput Graph Stat. 2004;13(1):183–212.
+34. Müller B, Wolf S, Brueggemann GP, Deng Z, Miller F, Selbie WS. Handbook of Human Motion.
+Springer International Publishing; 2018.
+35. Jefferson RJ, Collins JJ, Whittle MW, Radin EL, O’Connor JJ. The role of the quadriceps
+in controlling impulsive forces around heel strike. Proc Inst Mech Eng H. 1990;204(1):21–8.
+[PubMed: 2353989]
+36. Blackburn JT, Pietrosimone B, Harkey MS, Luc BA, Pamukoff DN. Quadriceps function and gait
+kinetics after anterior cruciate ligament reconstruction. Med Sci Sports Exerc. 2016;48(9):1664–
+70. [PubMed: 27128669]
+37. Di Stasi SL, Snyder-Mackler L. The effects of neuromuscular training on the gait patterns of
+ACL-deficient men and women. Clin Biomech (Bristol, Avon). 2012;27(4):360–5.
+38. Knoll Z, Kiss RM, Kocsis L. Gait adaptation in ACL deficient patients before and after anterior
+cruciate ligament reconstruction surgery. J Electromyogr Kinesiol. 2004;14(3):287–94. [PubMed:
+15094142]
+39. Davis IS, Tenforde AS, Neal BS, Roper JL, Willy RW. Gait retraining as an intervention for
+patellofemoral pain. Curr Rev Musculoskelet Med. 2020;13(1):103–14. [PubMed: 32170556]
+40. Cheung RTH, Ho KKW, Au IPH et al. Immediate and short-term effects of gait retraining on
+the knee joint moments and symptoms in patients with early tibiofemoral joint osteoarthritis: a
+randomized controlled trial. Osteoarthritis Cartilage. 2018;26(11):1479–86. [PubMed: 30081075]
+Lisee et al. Page 11
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 12 ---
+41. Evans-Pickett A, Davis-Wilson HC, Luc-Harkey BA et al. Biomechanical effects of manipulating
+peak vertical ground reaction force throughout gait in individuals 6-12 months after anterior
+cruciate ligament reconstruction. Clin Biomech (Bristol, Avon). 2020;76:105014.
+42. Adams MA, Sallis JF, Norman GJ, Hovell MF, Hekler EB, Perata E. An adaptive physical activity
+intervention for overweight adults: a randomized controlled trial. PLoS One. 2013;8(12):e82901.
+[PubMed: 24349392]
+43. Messier SP, Mihalko SL, Legault C et al. Effects of intensive diet and exercise on knee joint loads,
+inflammation, and clinical outcomes among overweight and obese adults with knee osteoarthritis:
+the IDEA randomized clinical trial. JAMA. 2013;310(12):1263–73. [PubMed: 24065013]
+44. Howlett N, Trivedi D, Troop NA, Chater AM. Are physical activity interventions for healthy
+inactive adults effective in promoting behavior change and maintenance, and which behavior
+change techniques are effective? A systematic review and meta-analysis. Transl Behav Med.
+2019;9(1):147–57. [PubMed: 29506209]
+45. Tudor-Locke C, Craig CL, Brown WJ et al. How many steps/day are enough? For adults. Int J
+Behav Nutr Phys Act. 2011;8:79. [PubMed: 21798015]
+46. Fukuchi CA, Fukuchi RK, Duarte M. Effects of walking speed on gait biomechanics in
+healthy participants: a systematic review and meta-analysis. Syst Rev. 2019;8(1):153. [PubMed:
+31248456]
+47. Pamukoff DN, Lewek MD, Blackburn JT. Greater vertical loading rate in obese compared to
+normal weight young adults. Clin Biomech (Bristol, Avon). 2016;33:61–5.
+48. Capin JJ, Khandha A, Zarzycki R, Manal K, Buchanan TS, Snyder-Mackler L. Gait mechanics
+after ACL reconstruction differ according to medial meniscal treatment. J Bone Joint Surg Am.
+2018;100(14):1209–16. [PubMed: 30020126]
+Lisee et al. Page 12
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 13 ---
+Figure 1.
+Comparisons of vertical ground reaction force ([vGRF] body weight) waveforms during
+stance between daily step groups in the ACLR limb of individuals 6-12 months post-ACLR
+(A). vGRF differences and 95% confidence intervals throughout gait stance between the
+highest and lowest (B), highest and moderate (C), and moderate and lowest (D) daily step
+groups in the ACLR limb. Positive values indicate greater vGRF in the highest (B & C) and
+moderate (D) daily step groups, respectively.
+Lisee et al. Page 13
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 14 ---
+Figure 2.
+Comparisons of knee extension moment ([KEM] body weight x height) waveforms during
+stance between daily step groups in the ACLR limb of individuals 6-12 months post-ACLR
+(A). KEM differences and 95% confidence intervals throughout gait stance between the
+highest and lowest (B), highest and moderate (C), and moderate and lowest (D) daily step
+groups in the ACLR limb. Positive values indicate greater KEM in the highest (B & C) and
+moderate (D) daily step groups, respectively.
+Lisee et al. Page 14
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 15 ---
+Figure 3.
+Comparisons of knee flexion angle (°) waveforms during stance between daily step
+groups in the ACLR limb of individuals 6-12 months post-ACLR (A). Knee flexion angle
+differences and 95% confidence intervals throughout gait stance between the highest and
+lowest (B), highest and moderate (C), and moderate and lowest (D) daily step groups in the
+ACLR limb. Positive values indicate greater knee flexion angle in the highest (B & C) and
+moderate (D) daily step groups, respectively.
+Lisee et al. Page 15
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 16 ---
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+Lisee et al. Page 16
+Table 1.
+Participant characteristics of each daily step group
+Participant Characteristics All Participants (n=36) Lowest Daily Step Group (n=12) Moderate Daily Step Group (n=12) Highest Daily Step Group (n=12) P-value
+Sex (% Females) 47% 50% 50% 42% 0.86
+Age (years) 21.4 ± 4.6 21.6 ± 4.8 23.5 ± 5.5 19.1 ± 2.2 0.06
+BMI (kg/m^2) 24.3 ± 6.8 24.0 ± 2.7 24.8 ± 3.5 24.2 ± 2.3 0.78
+Gait Speed (m/s) 1.23 ± 0.12 1.23 ± 0.14 1.26 ± 0.12 1.21 ± 0.10 0.56
+Daily Steps 7283 ± 2294 4970 ± 852
+†Ŧ
+7030 ± 648
+§ 9851 ± 1582 <0.001 *
+Monitor Wear Time (Min.) 4784.9 ± 804.6 4424.3 ± 780.4 5000.9 ± 906.1 4929.6 ± 643.8 0.16
+Months Since ACLR 8.3 ± 1.7 8.6 ± 2.0 8.5 ± 1.7 7.7 ± 1.3 0.41
+Meniscal Injury (%) 65% 67% 67% 50% 0.41
+Graft Type (PT/HT/QT) 32/2/2 12/0/0 10/2/0 10/0/2 0.08
+KOOS Symptoms 81.4 ± 11.4 84.2 ± 10.8 75.3 ± 9.3 84.8 ± 12.1 0.07
+KOOS Pain 88.3 ± 7.3 87.9 ± 6.7 88.9 ± 5.3 88.0 ± 9.9 0.94
+KOOS ADL 95.3 ± 5.8 95.3 ± 8.1 95.7 ± 2.9 94.7 ± 5.6 0.92
+KOOS Sport 71.8 ± 18.5 71.7 ± 20.6 74.6 ± 18.8 69.2 ± 17.2 0.78
+KOOS QOL 60.9 ± 17.2 63.5 ± 17.0 55.2 ± 18.8 60.9 ± 17.2 0.38
+*
+= significant difference between daily step groups using one-way ANOVA
+†
+= significant difference between lowest and moderate daily step group using Bonferroni post-hoc test
+Ŧ
+= significant difference between lowest and highest daily step group using Bonferroni post-hoc test
+§
+= significant difference between moderate and highest daily step group using Bonferroni post-hoc test
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 May 01.
+
+--- PAGE 17 ---

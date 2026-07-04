@@ -1,0 +1,423 @@
+
+--- PAGE 1 ---
+Individual hop analysis and reactive strength ratios provide
+better discrimination of ACL reconstructed limb deﬁcits than
+triple hop for distance scores in athletes returning to sport
+Rhodri S. Lloyda,b,c,
+⁎, Jon L. Olivera,b
+, Lucy S. Kembera
+, Gregory D. Myerd,e,f
+, Paul J. Readg,h
+a
+Youth Physical Development Centre, Cardiff School of Sport and Health Sciences, Cardiff Metropolitan University, Cardiff, UK
+b
+Sport Performance Research Institute, New Zealand (SPRINZ), AUT University, Auckland, New Zealand
+c
+Centre for Sport Science and Human Performance, Waikato Institute of Technology, Hamilton, New Zealand
+d
+Division of Sports Medicine, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, USA
+e
+Department of Pediatrics and Orthopaedic Surgery, College of Medicine, University of Cincinnati, Cincinnati, OH, USA
+f
+The Micheli Center for Sports Injury Prevention, Boston, MA, USA
+g
+Athlete Health and Performance Research Centre, Aspetar Orthopaedic and Sports Medicine Hospital, Doha, Qatar
+h
+School of Sport and Exercise, University of Gloucestershire, Gloucester, UK
+a r t i c l e i n f o
+Article history:
+Received 24 April 2020
+Received in revised form 9 June 2020
+Accepted 5 July 2020
+Background: The triple hop for distance test commonly uses a limb symmetry index (LSI)
+‘pass’ threshold of N90% for total hop distance following anterior cruciate ligament reconstruc-
+tion (ACLR). However, understanding the manner in which athletes generate and dissipate
+forces during consecutive hops within the test may provide greater insight into residual limb
+deﬁcits. The aim of the study was to examine reactive strength ratios (RSR) of individual
+hops during a triple hop test in a cohort of ACLR patients at discharge prior to return-to-sport.
+Methods: Twenty male athletes (24.6 ± 4.2 years; height 175.3 ± 10.2 cm; mass 73.6 ±
+14.5 kg) completed the test on both non-operated and operated limbs. Total distance hopped,
+contact times, ﬂight times and RSR were collected for each hop using a ﬂoor-level optical mea-
+surement system.
+Results: Signiﬁcant, small to moderate between-limb differences (p b 0.05; d = 0.45–0.72)
+were shown for triple hop distance, ﬂight time and RSR for each hop, with lower performance
+consistently displayed in the operated limb. Large, signiﬁcant differences in RSR were evident
+between hops one and two on the operated limb (p b 0.05; d = 0.97). Despite 80% of partic-
+ipants achieving N90% LSI for total hop distance, less than 50% of participants reached the N90%
+LSI threshold for RSR.
+Conclusions: Standardised LSI ‘pass’ thresholds (N90% LSI) for triple hop distance may mask
+residual deﬁcits in reactive strength performance of operated limbs; therefore, more detailed
+analyses of individual hop performance may be warranted to enhance return to sport criteria
+following ACLR.
+© 2020 Elsevier B.V. All rights reserved.
+Keywords:
+Triple hop
+Knee injury
+Return-to-sport
+Limb symmetry index
+Soccer
+The Knee 27 (2020) 1357–1364
+⁎ Corresponding author at: School of Sport, Cardiff Metropolitan University, Cyncoed Campus, Cyncoed Road, Cardiff CF23 6XD, UK.
+E-mail address: rlloyd@cardiffmet.ac.uk. (R.S. Lloyd).
+https://doi.org/10.1016/j.knee.2020.07.003
+0968-0160/© 2020 Elsevier B.V. All rights reserved.
+Contents lists available at ScienceDirect
+The Knee
+
+--- PAGE 2 ---
+1. Introduction
+Surgical treatment and rehabilitation programmes for anterior cruciate ligament reconstruction (ACLR) remain a costly burden
+to health care services [1]. Approximately two thirds of patients successfully return to sport [2]; however, re-injury rates are high
+(~35%), occurring to either the reconstructed graft or the contralateral ACL [3]. To minimise the risk of re-injury, return-to-sport
+(RTS) test batteries are used as part of the rehabilitation process to ensure neuromuscular function recovers as close to their pre-
+injury levels as possible.
+Research has previously identiﬁed between-limb functional differences in lower limb strength [4], peak power [5], and range
+of motion [6]. However, asymmetrical control of joint torques upon drop jump landings, which leads to between-limb differences
+in dynamic knee valgus, has also been recognised as a potential risk factor for ACL injury [7]. Furthermore, the commonly used
+threshold of 15% has previously been noted as a lower limb isokinetic muscle strength cut-off above which injury risk is magniﬁed
+[8]. Between-limb asymmetries are a common outcome of ACLR, with studies reporting post-surgical deﬁcits in knee joint mo-
+ments in the operated limb during both stop-jump landings at six and 12 months post-surgery [9] and over ground running
+≥12 months post-surgery [10]. Read et al. [11] demonstrated that soccer players presented with signiﬁcant concentric impulse
+asymmetry N9 months post-ACLR, while Butler et al. [9] reported that between-limb asymmetries in knee extension moments
+can persist up to 12 months post-surgery. Cumulatively, the research indicates functional deﬁcits can remain present in ACLR ath-
+letes and that modiﬁcation of lower limb function following ACLR can be a long-term process.
+Practitioners will use a combination of clinical and functional tests to assess RTS readiness [12]. Hop tests are reliable ﬁeld-
+based functional assessment tools that are easy to use and time efﬁcient [13–15]. Common tests involve the single hop for dis-
+tance, six-meter timed hop, triple hop and crossover hop for distance [15,16]. Asymmetries in hop distance, or time, are typically
+determined using the limb symmetry index (LSI), which expresses function of the injured limb as a percentage of the non-injured
+limb. While some concerns exist with regard to the abnormal mechanics in the non-injured limb inﬂuencing the LSI [17], clinical
+practice often adopts the recommendation that athletes should achieve an LSI of N90% in hop tests as part of their RTS criteria
+[18]. However, emerging evidence indicates that compensatory strategies can be developed in order to achieve symmetrical
+hop distances and caution should be applied when using arbitrary LSI thresholds (e.g. N90% LSI) for all variables [17,19].
+Research has shown that hop distance during single leg hopping protocols is positively related to clinical performance vari-
+ables, such as isokinetic knee extension torque [20,21] and vertical jump height [22], while also being strongly associated with
+patient self-reported outcome measures [23]. However, research has also indicated that hop testing was unable to predict RTS
+outcomes at 12 months [24,25] and is not always associated with ACL re-injury rates [26–28]. Thus, in-line with recent literature,
+further insights to examine the utility of current hop testing protocols and their ability to identify residual between-limb deﬁcits
+are warranted [19,28].
+Of the available evidence, the triple hop for distance (relative to stature and LSI) has revealed the strongest predictive ability
+for re-injury [29]. While some of the criterion validity of the triple hop test is conﬂicting [30], it is a commonly used hop test by
+practitioners that requires the patient to perform three consecutive maximal effort hops in a straight line. The LSI is typically cal-
+culated using total distance; however, this performance variable fails to provide insight into the distance the athlete covers with
+each hop and importantly fails to characterise the manner in which the athlete interacts with the ground during consecutive hops.
+Rebound tasks such as the triple hop utilize the stretch-shortening cycle, which includes rapid eccentric loading at the point of
+ground contact, followed by a brief period of amortization, and ﬁnally a concentric muscle action [31]. Longer amortization indi-
+cates reduced ability to absorb and regenerate ground reaction forces upon landing [32,33] and this may be an evident compen-
+satory strategy following ACL reconstruction [34]. This athletic ability has been quantiﬁed using reactive strength indices in drop
+jumping tasks [35], but to the author's knowledge no studies have employed this focused approach in more commonly used tests
+such as the triple hop for distance which may limit their clinical utility or association with secondary ACL injury [28].
+In light of the existing literature, the current study aimed to examine the discriminative ability of the LSI threshold N90% using
+total hop distance versus reactive strength ratios of individual hops during a triple hop test, in a cohort of ACLR patients during
+their discharge assessment ≥6 months post-surgery. The hypothesis for the study was that a LSI N90% in reactive strength ratios
+from individual hops would provide better discriminative ability compared to a LSI N90% for total hop distance.
+2. Methods
+2.1. Participants
+Twenty male professional soccer players (24.6 ± 4.2 years; height 175.3 ± 10.2 cm; mass 73.6 ± 14.5 kg) volunteered to take
+part in the study. All participants underwent surgical reconstruction using an autograft, with 76% and 24% selecting a bone–
+patellar tendon–bone graft and hamstring tendon graft (semitendinosus and gracilis) respectively. A priori power analysis was
+conducted using G*Power3 v. 3.1.9.6 [36] to test the difference between two dependent group means using a one-tailed test, a
+moderate effect size (d = 0.60), and an alpha of 0.05; results indicated that a total sample of n = 19 was required to achieve
+a power of 0.80. The mean time from surgery at the time of testing was 36 ± 10.5 weeks (range 24–58 weeks). Inclusion criteria
+required athletes to be male, having undergone unilateral ACL reconstruction, and competing as a registered elite soccer player
+within one of the recognised competitive leagues of the Qatar Football Association prior to their injury. Players were excluded
+if they reported a previous ACL injury or surgery to either the involved or contralateral limb. Informed written consent and ethical
+1358 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 3 ---
+approval were obtained prior to commencement of testing. The study was approved by the Aspetar Orthopaedic and Sports Med-
+icine Hospital institutional review board and the Anti-Doping Laboratory (ADLQ), Doha, Qatar (IRB: F2017000227).
+2.2. Procedures
+2.2.1. Experimental design
+All tests were performed as part of the institution's athlete discharge assessment process which is required for athletes to com-
+plete their rehabilitation. Prior to testing, a practical demonstration and verbal instructions were provided for all protocols. All
+players had completed the tests previously and were regularly familiarized with the protocols during their rehabilitation. A
+standardised warm up was ﬁrst undertaken consisting of light jogging and dynamic stretching. Athletes then completed two agil-
+ity tests and the single hop for distance (not included in this study), and following a ﬁve-minute rest period then performed the
+triple hop tests. Three practice trials of the triple hop were performed on each leg in accordance with previous research to reduce
+the presence of a learning effect [13] and to ensure technical competence, which was determined by the principal investigator.
+Participants were asked to refrain from strenuous physical activity and eat according to their normal diet in the 24 h prior to test-
+ing. Two recorded trials were performed on both the non-operated and operated limb in that order, with 30 s of rest provided
+between trials.
+2.2.2. Triple hop for distance
+The triple hop for distance has been shown to display acceptable reliability, with standard errors of measurement of ~3–5%
+[15]. Hop distances were recorded using a tape measure marked out to a length of 10 m. Contact time (s) data were collected
+via a ﬂoor-level optical measurement system (Optojump, Microgate, Italy) with two tracks of bars (one transmitter and one re-
+ceiver) positioned one meter apart and connected for the entire 10 m capture distance. This system has been shown to be reliable
+and valid in comparison to criterion force plate data [37]. Players began by standing on the designated test leg with their toe on
+the marked starting line, and the hip of the free leg ﬂexed at 90° to minimise contralateral propulsion. Participants were
+instructed to hop forward as far as possible using an arm swing, landing on the same leg and aiming to minimise ground contact
+time before immediately propelling themselves forward into each consecutive hop. Players were required to stick the ﬁnal landing
+and hold their position for two seconds without any other body part touching the ﬂoor. A schematic of the triple hop protocol is
+provided in Figure 1. The distance travelled from the start line to the heel was recorded to the nearest 0.1 cm, with the average of
+two trials used for subsequent analysis.
+2.2.3. Variables
+Contact times (s) and ﬂight times (s) were calculated instantaneously for each individual hop within the capture area using
+the manufacturer's software. Reactive strength ratios (RSR) were subsequently calculated as the ratio between contact time
+and ﬂight time [38]. The LSI was reported as a percentage and calculated for each variable according to the formula: [operated
+limb / non-operated limb] ∗ 100.
+2.3. Statistical analysis
+Descriptive statistics (mean ± SD) were calculated for each player across all variables. A paired samples t-test was used to
+compare performance on operated versus non-operated limbs for total hop distance. Differences in contact time, ﬂight time
+and RSR were analysed using a 2 × 2 (limb × hop) repeated measures analysis of variance (ANOVA), where “limb” denotes op-
+erated vs non-operated limbs and “hop” refers to hop 1 vs hop 2. The level of signiﬁcance was set at an alpha level p b 0.05.
+Cohen's effect sizes (d) were also calculated to interpret the magnitude of asymmetry using standardised mean differences of
+b0.2, 0.2–0.49, 0.5–0.79, and 0.8 for trivial, small, moderate, and large effect sizes, respectively. The number of players achieving
+the pass criteria (N90% LSI) was also calculated for each metric and across both hops as this is the most common method of
+reporting ‘pass/fail’ in RTS tests. All data were computed through Microsoft Excel® 2010, with paired samples t-tests and
+ANOVA processed using Statistical Package for the Social Science (SPSS®, V.22. Chicago, Illinois).
+3. Results
+Descriptive statistics for each variable, inclusive of LSI, and absolute values for the operated and non-operated limbs are
+displayed in Table 1.
+3.1. Between-limb comparisons
+Signiﬁcant between-limb differences and small to moderate effect sizes were shown for triple hop distance. Signiﬁcant main
+effects in ﬂight time and RSR were reported for hop and limb, but there were no signiﬁcant hop × limb interactions. This was
+conﬁrmed with both ﬂight time and RSR being signiﬁcantly lower in the operated limb during both hops, with moderate to
+large effect sizes. There was a signiﬁcant main effect in contact time for hop, however there was not a signiﬁcant hop × limb in-
+teraction. Differences in contact times between the operated and non-operated limbs were small and non-signiﬁcant. The greatest
+limb symmetry deﬁcit was present for RSR; however, LSI values of N90% were reported for all variables.
+1359 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 4 ---
+3.2. Within-limb comparisons
+Mean performance differences were evident between the two recorded hops for all variables on both the operated and non-
+operated limbs. Notably, ﬂight times in both the operated (d = 1.13) and non-operated limbs (d = 1.67) were signiﬁcantly longer
+for hop 1 compared to hop 2 (p b 0.05), while RSR in both the operated (d = 1.01) and non-operated (d = 0.97) limbs were
+signiﬁcantly lower during hop 1 compared to hop 2 (p b 0.05). Contact time in the non-operated limb was signiﬁcantly shorter
+in hop 2, but the difference between hops in the operated limb failed to reach signiﬁcance (p N 0.05); however, the differences
+in contact time in either limb were trivial and small respectively (d = −0.18; d = −0.22). All other differences between
+steps for each variable (including the LSI%) for both the operated and non-operated limbs were non-signiﬁcant and trivial.
+Figure 1. Schematic of the triple hop protocol.
+Table 1
+Mean (±SD) for each limb.
+Operated Non-operated Between-limb effect size (d) LSI%
+Triple hop distance (m) 5.03 ± 0.41 5.22 ± 0.43⁎ 0.45 96.5 ± 5.9
+Contact time (s) hop 1 0.35 ± 0.04 0.34 ± 0.06^
+−0.20 96.5 ± 13.6
+Contact time (s) hop 2 0.34 ± 0.05 0.33 ± 0.05 −0.20 96.6 ± 13.3
+Flight time (s) hop 1 0.28 ± 0.03^
+0.30 ± 0.03⁎,^ 0.67 93.7 ± 10.5
+Flight time (s) hop 2 0.32 ± 0.04 0.35 ± 0.03⁎ 0.85 93.5 ± 11.0
+RSR hop 1 0.81 ± 0.12^
+0.92 ± 0.17⁎,^ 0.75 90.4 ± 17.5
+RSR hop 2 0.97 ± 0.19 1.09 ± 0.18⁎ 0.65 90.3 ± 18.9
+RSR = reactive strength ratio.
+⁎ Signiﬁcantly different to operated limb in same step (p b 0.05).
+^
+Signiﬁcantly different to hop 2 in same limb (p b 0.05).
+1360 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 5 ---
+3.3. Group and individual LSI pass rates
+Despite trivial, non-signiﬁcant mean differences in LSI% for ﬂight time, contact time and RSR between hop 1 and hop 2, var-
+iability in the frequency of those achieving the pass criteria were evident for each variable. Group means and individual variability
+in the LSI% for RSR for both hops are presented in Figure 2. During hop 1, 35% of participants passed the N90% LSI threshold, while
+45% passed the threshold during hop 2. These data were in contrast to the number of participants (80%) that achieved the LSI
+threshold for total hop distance. Pass rates for ﬂight time (65% hop 1, 75% hop 2) and contact time (70% hop 1, 60% hop
+2) also showed discrepancies in the number of individuals passing the LSI% threshold. Of note, only 60% of participants achieved
+the same outcome (pass/fail) on each hop, while only 30% and 40% percentage of participants achieved a pass score on all vari-
+ables for the ﬁrst and second hops, respectively.
+4. Discussion
+The current study aimed to examine the reactive strength capabilities of individual hops during a triple hop for distance in a
+cohort of ACLR patients ≥6 months post-surgery. Results showed small, signiﬁcant differences between limbs for total hop dis-
+tance. Data also indicated that RSR was signiﬁcantly lower in the operated limb during both hops (moderate effect), and that
+large, signiﬁcant differences in RSR were evident between the ﬁrst and second hop on both operated and non-operated limbs.
+While mean LSI% for all variables across both steps exceeded the N90% LSI threshold for total hop distance, individual variation
+within hops was clearly evident. Despite 80% of participants passing the LSI threshold for total hop distance, only 35% and 45%
+of participants passed the threshold for RSR during the ﬁrst and second hops respectively. Cumulatively, these data indicate
+that using a N90% LSI threshold for reactive strength ratios from individual hops provides better discriminative ability to identify
+residual deﬁcits in reactive strength capabilities of the operated limb in individuals following ACLR, compared to a N90% LSI
+threshold for total hop distance. Consequently, the original hypothesis in the current study was accepted.
+Successfully returning to play following ACLR requires patients to satisfy criteria within both clinical and functional RTS assessments,
+with the triple hop for distance protocol often used as part of a functional test battery [18]. Total hop distances on the operated (5.03 ±
+0.41 m) and non-operated limbs (5.22 ± 0.43 m) reported in this study were very similar to those previously stated in the literature for
+maleathletes[17].Similarly,participantsdisplayedlimbasymmetriesfortriplehopdistanceat~6monthspost-ACLR,whichiscommen-
+surate with previous research that showed strength and hop test asymmetries persisted in male ACLR patients six to nine months post-
+surgery [17,39,40]. While the non-operated limb may also exhibit declines in muscle strength as a result of ACL injury [41], the height-
+ened muscle weakness and reduced reactive strength function in the operated limb are a plausible explanation for the magniﬁed
+asymmetries during hopping protocols [14]. This notion is relevant when interpreting the sub-analysis of the composite variables of
+RSR in the current study. Moderate and large, signiﬁcant between-limb differences in ﬂight times and small, non-signiﬁcant differences
+in contact times were evident during both hops. These ﬁndings indicate that while contact times remained similar between both limbs,
+theoperatedlimb was unabletoabsorb and regenerate comparative propulsiveforce during ground contact, therebyresulting in the re-
+duced ﬂight times, shorter individual hops and a reduced total hop distance. Research has shown signiﬁcant reductions in muscle cross-
+sectional area [42], ﬁbre force production [43] and impaired corticospinal excitability [44] in ACLR athletes; and while speculative, the
+reduced ﬂight times in the current study could likely be a combination of undesirable morphological and neuromuscular adaptations
+that result in reduced strength and power abilities.
+Studies which have examined triple hop for distance performance in ACLR patients have typically failed to report discrete dif-
+ferences between hops, instead analysing asymmetries based on the entirety of the test performance (i.e. total distance). While
+total triple hop distance provides an objective performance measure for clinicians and is often reported in the literature
+[45–47], failure to distinguish between the movement characteristics of individual hops during the test may mask potential def-
+icits that remain undetected and ultimately the clinical utility to identify risk of future injury [28]. In the current study, large sig-
+niﬁcant differences between hops for RSR were evident, with both operated and non-operated limbs producing a lower RSR
+during the ﬁrst hop compared to the second hop. This result implies that participants were less able to react explosively upon
+ground contact during the ﬁrst hop in comparison to the second hop, which could be symptomatic of reduced reﬂexive stiffness
+regulation. Given that RSR is calculated as the ratio between ﬂight time and contact time, the longer ﬂight times recorded in the
+second hop, in the absence of any meaningful change in contact times, would explain the increased RSR. Within the triple hop,
+momentum will likely increase stretch loads and force production during consecutive hops, which could mechanistically drive
+the heightened RSR in the second hop compared to the ﬁrst.
+Within the current study, data for RSR indicated signiﬁcant main effects for both hop and limb, but the limb × hop interaction
+was not signiﬁcant. Thus, the RSR was consistently lower in the operated limb across both hops, but the between-limb deﬁcits did
+not necessarily increase from the ﬁrst to second hop. However, the demands of performing multiple hops in series are likely a
+better means to examine the deﬁcits in the functional status of both knees as opposed to a single hop. Research has shown
+that post-ACLR, athletes can display reduced eccentric deceleration impulse, slower vertical jump contraction times and greater
+asymmetry in countermovement jump concentric phase kinetic impulse [48]. Such characteristics would be indicative of reduced
+knee extensor strength and power deﬁcits that would undermine stretch-shortening cycle function. Given the lack of interaction
+in the current study, it would appear that post-ACLR the reactive strength capabilities of the operated limb consistently
+underperformed compared to the non-operated limb. Therefore, in addition to examining individual hops, practitioners are en-
+couraged to examine alternative variables such as RSR when analysing triple hop performance to better understand functional
+performance in ACLR athletes.
+1361 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 6 ---
+The sole use of N90% LSI thresholds for functional hop tests has previously been questioned owing to the risk of masking
+movement deﬁciencies during functional tasks [17]. The current study revealed no signiﬁcant mean differences in LSI% for ﬂight
+time, contact time or RSR, between hops 1 and 2; however, pronounced individual variability was shown for each variable across
+the study cohort with respect to the frequency of individuals achieving the pass criteria for all variables. For example, while mean
+LSI% for RSR in the operated limb was similar in both hops at a group level, only 35% and 45% of participants satisﬁed the N90% LSI
+threshold for RSR in the ﬁrst and second hops, respectively. This ﬁnding was in contrast to 80% of participants achieving the LSI
+threshold for total hop distance and provides further credence to examining individual hops during functional hop testing. These
+ﬁndings also illustrate that hop distance alone is insufﬁcient to determine readiness to RTS and may over-estimate knee function,
+due to the low number of athletes that ‘passed’ the test using this criterion (i.e. N90% LSI) for RSR. Previous research has reported
+LSI values of 78% for RSI in male team sport athletes nine months post-ACLR [34]; however, their study included a drop vertical
+jump, whereas we measured RSR during a horizontal task. This further highlights the task and variable dependent nature of asym-
+metry [49]. Thus, the current study underlines the need to consider variability in individual performance during each hop and test
+variable when interpreting functional status of the lower limb post-ACLR. This approach is needed to better identify those patients
+who remain at a potentially heightened risk of re-injury due to residual deﬁcits in physical characteristics required for effective
+performance and knee joint stabilization.
+When interpreting the ﬁndings from this study, some limitations should be noted. Firstly, the use of the optical measurement
+system to quantify hop performance only provided contact time, ﬂight time and RSR data and did not provide insight into the
+kinetics or kinematics associated with each ground contact as an indicator of movement performance. However, previous research
+has typically only reported total hop distance for this protocol; therefore, this study provides original insight not only with respect
+to the variables reported, but also the examination of individual hops and how athletes may alter their hop strategy following
+ACLR. Secondly, the study used a single post-operative time point in which athletes were performing a discharge assessment
+prior to RTS; thus, the exact time course to note temporal recovery in reactive strength capabilities in ACLR patients remains
+somewhat unclear, which may warrant further research. Similarly, it is necessary to evaluate whether the use of RSR during in-
+dividualized hop analysis can discriminate those athletes that remain uninjured versus those that experience future re-injury; if
+future utility is found, these analytics could support better rehabilitation practice and injury risk targets for practitioners. Finally,
+much like the LSI the RSR is a ratio, which can potentially mask information about movement strategies and can be altered by
+changes in either of the composite variables [38]. However, contact times and ﬂight times were reported in the current study
+which aids in the interpretation of the RSR results. Notwithstanding these limitations, the current study provides novel and im-
+pactful data that can be used to help inform RTS screening assessments for ACLR patients and may help direct future empirical
+studies.
+5. Conclusions
+This study has shown that alternative functional hop test metrics such as RSR can be used to identify existing limb deﬁcits in
+patients who are in the ﬁnal stages of rehabilitation post-ACLR that were not apparent when using the more traditional analysis of
+total hop distance. When using the triple hop as part of a RTS criteria, clinicians are encouraged to examine a wider range of
+Figure 2. Limb symmetry index (LSI%) for reactive strength ratio (RSR) during both hops of the triple hop protocol. Dashed line indicates the 90% LSI threshold,
+grey bars represent group mean LSI%, while clear circles represent RSR LSI% for each individual.
+1362 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 7 ---
+variables, and importantly the individual hops within each trial to identify individual variation in performance that might be
+masked when solely assessing total hop distance. Literature has highlighted the merits of assessing movement kinematics during
+single leg hop testing using simple two-dimensional (2D) video analysis to identify potential movement deﬁcits [50]. Further, re-
+cent technological advancements have provided clinicians with affordable, reliable and valid mobile phone application that can be
+used to assess the mechanics of human locomotion [51]. Using the high-speed recording capabilities of the iPhone (240 frames
+per second), the Runmatic application identiﬁes the contact and ﬂight times of each step, which could then be used to determine
+RSR.
+Ethical approval
+The work has been approved by the appropriate ethical committees related to the institution(s) in which it was performed
+and that subjects gave informed consent to the work.
+Funding
+This research did not receive any speciﬁc grant from funding agencies in the public, commercial, or not-for-proﬁt sectors.
+Declaration of competing interest
+None declared.
+References
+[1] Herzog MM, Marshall SW, Lund JL, Pate V, Spang JT. Cost of outpatient arthroscopic anterior cruciate ligament reconstruction among commercially insured pa-
+tients in the United States, 2005–2013. Orthop J Sports Med. 2017;5 2325967116684776.
+[2] Walden M,Hagglund M, Magnusson H, EkstrandJ.ACL injuriesinmen’s professional football: a 15-year prospective studyon time trends and return-to-play rates
+reveals only 65% of players still play at the top level 3 years after ACL rupture. Br J Sports Med. 2016;50:744–50.
+[3] Webster KE, Feller JA. Exploring the high reinjury rate in younger patients undergoing anterior cruciate ligament reconstruction. Am J Sports Med. 2016;44:
+2827–32.
+[4] Fousekis K, Tsepis E, Vagenas G. Lower limb strength in professional soccer players: profile, asymmetry, and training age. J Sports Sci Med. 2010;9:364–73.
+[5] Menzel HJ, Chagas MH, Szmuchrowski LA, Araujo SR, de Andrade AG, de Jesus-Moraleida FR. Analysis of lower limb asymmetries by isokinetic and vertical jump
+tests in soccer players. J Strength Cond Res. 2013;27:1370–7.
+[6] DeLang MD, Kondratek M, DiPace LJ, Hew-Butler T. Collegiate male soccer players exhibit between-limb symmetry in body composition, muscle strength, and
+range of motion. Int J Sports Phys Ther. 2017;12:1087–94.
+[7] Ford KR, Myer GD, Hewett TE. Valgus knee motion during landing in high school female and male basketball players. Med Sci Sports Exerc. 2003;35:1745–50.
+[8] Croisier JL, Crelaard JM. Hamstring muscle tear with recurrent complaints: an isokinetic profile. Isokinet Exerc Sci. 2000;8:175–80.
+[9] Butler RJ, Dai B, Huffman N, Garrett WE, Queen RM. Lower extremity movement differences persist after anterior cruciate ligament reconstruction and when
+returning to sports. Clin J Sport Med. 2016;26:411–6.
+[10] Perraton LG, Hall M, Clark RA, Crossley KM, Pua YH, Whitehead TS, et al. Poor knee function after ACL reconstruction is associated with attenuated landing force
+and knee flexion moment during running. Knee Surg Sports Traumatol Arthrosc. 2018;26:391–8.
+[11] Read PJ, Michael Auliffe S, Wilson MG, Graham-Smith P. Lower limb kinetic asymmetries in professional soccer players with and without anterior cruciate liga-
+ment reconstruction: nine months is not enough time to restore “functional” symmetry or return to performance. Am J Sports Med. 2020;48:1365–73.
+[12] Gokeler A,Dingenen B, Mouton C, Seil R. Clinical course and recommendations for patients after anterior cruciate ligament injury and subsequent reconstruction:
+a narrative review. EFORT Open Rev. 2017;2:410–20.
+[13] Munro AG, Herrington LC. Between-session reliability of four hop tests and the agility T-test. J Strength Cond Res. 2011;25:1470–7.
+[14] Peebles AT, Renner KE, Miller TK, Moskal JT, Queen RM. Associations between distance and loading symmetry during return to sport hop testing. Med Sci Sports
+Exerc. 2019;51:624–9.
+[15] Reid A, Birmingham TB, Stratford PW, Alcock GK, Giffin JR. Hop testing provides a reliable and valid outcome measure during rehabilitation after anterior cruciate
+ligament reconstruction. Phys Ther. 2007;87:337–49.
+[16] Noyes FR, Barber SD, Mangine RE. Abnormal lower limb symmetry determined by function hop tests after anterior cruciate ligament rupture. Am J Sports Med.
+1991;19:513–8.
+[17] Gokeler A, Welling W, Benjaminse A, Lemmink K, Seil R, Zaffagnini S. A critical analysis of limb symmetry indices of hop tests in athletes after anterior cruciate
+ligament reconstruction: a case control study. Orthop Traumatol Surg Res. 2017;103:947–51.
+[18] Gokeler A, Welling W, Zaffagnini S, Seil R, Padua D. Development of a test battery to enhance safe return to sports after anterior cruciate ligament reconstruction.
+Knee Surg Sports Traumatol Arthrosc. 2017;25:192–9.
+[19] Davies WT, Myer GD, Read PJ. Is it time we better understood the tests we are using for return to sport decision making following ACL reconstruction? A critical
+review of the hop tests. Sports Med. 2020;50:485–95.
+[20] Jarvela T, Kannus P, Latvala K, Jarvinen M. Simple measurements in assessing muscle performance after an ACL reconstruction. Int J Sports Med. 2002;23:
+196–201.
+[21] Nagai T, Schilaty ND, Laskowski ER, Hewett TE. Hop tests can result in higher limb symmetry index values than isokinetic strength and leg press tests in patients
+following ACL reconstruction. Knee Surg Sports Traumatol Arthrosc. 2020;28:816–22.
+[22] Hamilton RT, Shultz SJ, Schmitz RJ, Perrin DH. Triple-hop distance as a valid predictor of lower limb strength and power. J Athl Train. 2008;43:144–51.
+[23] Reinke EK, Spindler KP, Lorring D, Jones MH, Schmitz L, Flanigan DC, et al. Hop tests correlate with IKDC and KOOS at minimum of 2 years after primary ACL re-
+construction. Knee Surg Sports Traumatol Arthrosc. 2011;19:1806–16.
+[24] Edwards PK, Ebert JR, Joss B, Ackland T, Annear P, Buelow JU, et al. Patient characteristics and predictors of return to sport at 12 months after anterior cruciate
+ligament reconstruction: the importance of patient age and postoperative rehabilitation. Orthop J Sports Med. 2018;6 2325967118797575.
+[25] Toole AR, Ithurburn MP, Rauh MJ, Hewett TE, Paterno MV, Schmitt LC. Young athletes cleared for sports participation after anterior cruciate ligament reconstruc-
+tion: how many actually meet recommended return-to-sport criterion cutoffs? J Orthop Sports Phys Ther. 2017;47:825–33.
+[26] Grindem H, Snyder-Mackler L, Moksnes H, Engebretsen L, Risberg MA. Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the
+Delaware–Oslo ACL cohort study. Br J Sports Med. 2016;50:804–8.
+[27] Kyritsis P, Bahr R, Landreau P, Miladi R, Witvrouw E. Likelihood of ACL graft rupture: not meeting six clinical discharge criteria before return to sport is associated
+with a four times greater risk of rupture. Br J Sports Med. 2016;50:946–51.
+1363 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 8 ---
+[28] Losciale JM, Bullock G, Cromwell C, Ledbetter L, Pietrosimone L, Sell TC. Hop testing lacks strong association with key outcome variables after primary anterior
+cruciate ligament reconstruction: a systematic review. Am J Sports Med. 2020;48:511–22.
+[29] Muller U, Kruger-Franke M, Schmidt M, Rosemeyer B. Predictive parameters for return to pre-injury level of sport 6 months following anterior cruciate ligament
+reconstruction surgery. Knee Surg Sports Traumatol Arthrosc. 2015;23:3623–31.
+[30] Hegedus EJ, McDonough S, Bleakley C, Cook CE, Baxter GD. Clinician-friendly lower extremity physical performance measures in athletes: a systematic review of
+measurement properties and correlation with injury, part 1. The tests for knee function including the hop tests. Br J Sports Med. 2015;49:642–8.
+[31] Komi PV. Stretch-shortening cycle: a powerful model to study normal and fatigued muscle. J Biomech. 2000;33:1197–206.
+[32] Chmielewski TL, Myer GD, Kauffman D, Tillman SM. Plyometric exercise in the rehabilitation of athletes: physiological responses and clinical application. J Orthop
+Sports Phys Ther. 2006;36:308–19.
+[33] Struzik A, Juras G, Pietraszewski B, Rokita A. Effect of drop jump technique on the reactive strength index. J Hum Kinet. 2016;52:157–64.
+[34] King E, Richter C, Franklyn-Miller A, Daniels K, Wadey R, Moran R, et al. Whole-body biomechanical differences between limbs exist 9 months after ACL recon-
+struction across jump/landing tasks. Scand J Med Sci Sports. 2018;28:2567–78.
+[35] Flanagan EPC, T.M.. The use of contact time and the reactive strength index to optimize fast stretch-shortening cycle training. Strength Cond J. 2008;30:32–8.
+[36] Faul F, Erdfelder E, Lang AG, Buchner A. G*Power 3: a flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behav Res
+Methods. 2007;39:175–91.
+[37] Slomka KJ, Sobota G, Skowronek T, Rzepko M, Czarny W, Juras G. Evaluation of reliability and concurrent validity of two optoelectric systems used for recording
+maximum vertical jumping performance versus the gold standard. Acta Bioeng Biomech. 2017;19:141–7.
+[38] Healy R, Kenny IC, Harrison AJ. Reactive strength index: a poor indicator of reactive strength? Int J Sports Physiol Perform. 2018;13:802–9.
+[39] Raoul T, Klouche S, Guerrier B, El-Hariri B, Herman S, Gerometta A, et al. Are athletes able to resume sport at six-month mean follow-up after anterior cruciate
+ligament reconstruction? Prospective functional and psychological assessment from the French Anterior Cruciate Ligament Study (FAST) cohort. Knee. 2019;26:
+155–64.
+[40] Xergia SA, Pappas E, Zampeli F, Georgiou S, Georgoulis AD. Asymmetries in functional hop tests, lower extremity kinematics, and isokinetic strength persist 6 to
+9 months following anterior cruciate ligament reconstruction. J Orthop Sports Phys Ther. 2013;43:154–62.
+[41] Chung KS, Ha JK, Yeom CH, Ra HJ, Lim JW, Kwon MS, et al. Are muscle strength and function of the uninjured lower limb weakened after anterior cruciate liga-
+ment injury? Two-year follow-up after reconstruction. Am J Sports Med. 2015;43:3013–21.
+[42] Thomas AC, Wojtys EM, Brandon C, Palmieri-Smith RM. Muscle atrophy contributes to quadriceps weakness after anterior cruciate ligament reconstruction. J Sci
+Med Sport. 2016;19:7–11.
+[43] Gumucio JP, Sugg KB, Enselman ERS, Konja AC, Eckhardt LR, Bedi A, et al. Anterior cruciate ligament tear induces a sustained loss of muscle fiber force production.
+Muscle Nerve. 2018.
+[44] Norte GE, Hertel J, Saliba SA, Diduch DR, Hart JM. Quadriceps neuromuscular function in patients with anterior cruciate ligament reconstruction with or without
+knee osteoarthritis: a cross-sectional study. J Athl Train. 2018;53:475–85.
+[45] Ford KR, Schmitt LC, Hewett TE, Paterno MV. Identification of preferred landing leg in athletes previously injured and uninjured: a brief report. Clin Biomech
+(Bristol, Avon). 2016;31:113–6.
+[46] Pairot de Fontenay B, Argaud S, Blache Y, Monteil K. Contralateral limb deficit seven months after ACL-reconstruction: an analysis of single-leg hop tests. Knee.
+2015;22:309–12.
+[47] Schmitt LC, Paterno MV, Hewett TE. The impact of quadriceps femoris strength asymmetry on functional performance at return to sport following anterior cru-
+ciate ligament reconstruction. J Orthop Sports Phys Ther. 2012;42:750–9.
+[48] Jordan MJ, Aagaard P, Herzog W. Lower limb asymmetry in mechanical muscle function: a comparison between ski racers with and without ACL reconstruction.
+Scand J Med Sci Sports. 2015;25:e301–9.
+[49] Bishop C, Lake J, Loturco I, Papadopoulos K, Turner A, Read P. Interlimb asymmetries: the need for an individual approach to data analysis. J Strength Cond Res.
+2020. https://doi.org/10.1519/JSC.0000000000002729.
+[50] Welling W, Benjaminse A, Seil R, Lemmink K, Gokeler A. Altered movement during single leg hop test after ACL reconstruction: implications to incorporate 2-D
+video movement analysis for hop tests. Knee Surg Sports Traumatol Arthrosc. 2018;26:3012–9.
+[51] Balsalobre-Fernandez C, Agopyan H, Morin JB. The validity and reliability of an iPhone app for measuring running mechanics. J Appl Biomech. 2017;33:222–6.
+1364 R.S. Lloyd et al. / The Knee 27 (2020) 1357–1364
+
+--- PAGE 9 ---

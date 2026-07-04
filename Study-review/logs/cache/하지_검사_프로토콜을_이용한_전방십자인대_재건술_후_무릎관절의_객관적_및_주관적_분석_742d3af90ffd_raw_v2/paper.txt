@@ -1,0 +1,577 @@
+
+--- PAGE 1 ---
+Clinical Article The Korean Journal of Sports Medicine 2021;39(1):34-41
+https://doi.org/10.5763/kjsm.2021.39.1.34 pISSN 1226-3729 eISSN 2288-6028
+하지 검사 프로토콜을 이용한 전방십자인대 재건술 후
+무릎관절의 객관적 및 주관적 분석
+연세대학교 스포츠과학 & 운동의학센터
+1
+, 연세대학교 체육교육학과
+2
+, 연세대학교 대학원
+3
+김병훈
+1,2
+∙ 전형규
+1,2
+∙ 최종환
+3
+∙ 강태규
+1,2
+∙ 이세용
+1,2
+Objective and Subjective Analysis of the Knee Joint Function Using Lower Extremity
+Assessment Protocol after Anterior Cruciate Ligament Reconstruction
+Byong Hun Kim
+1,2
+, Hyung Gyu Jeon
+1,2
+, Jong Han Cheo
+3
+, Tae Kyu Kang
+1,2
+, Sae Yong Lee
+1,2
+1
+Yonsei Institute of Sports Science and Exercise Medicine (YISSEM), Yonsei University, Seoul,
+2
+Department of Physical Education, Yonsei University, Seoul, 3
+Graduate School of Education, Yonsei University, Seoul, Korea
+Purpose: Anterior cruciate ligament reconstruction (ACLR) is one of the most common procedures in sports medicine.
+It is important for patients to determine whether or not to return to the pre-operative state after the ACRL. This
+study is to evaluate the objective and subjective analysis of the knee joint function and to compare between injured
+knee and non-injured knee in those with ACLR.
+Methods: This cross-sectional study recruited 15 individuals with ACLR using autograft (age, 27.87±4.10 years;
+height, 172.56±4.81 cm; weight, 75.51±13.03 kg; time to surgery, 27.11±14.03 months). International Knee Document
+Committee subjective knee evaluation form and Lower Extremity Assessment Protocol (LEAP) including muscle
+strength, static and dynamic postural control, functional task was used to assess the knee joint function. Deficit
+ratio between injured knee and non-injured knee and independent t-test were used for analysis.
+Results: Injured knee has significantly decreased isokinetic extension strength (90º/sec), isometric flexion strength
+and one-leg hopping distance (p＜0.05).
+Conclusion: Although individuals who successfully returned to play (RTP) did not experience subjective dysfunction
+and pain, there are items of LEAP that indicates deficit ratio between injured knee and non-injured knee. Therefore,
+when considered whether and when to RTP, it is very important to assess not only subjective dysfunction and pain
+but also whether the patient has recovered to a level similar to that of the non-injured knee in various aspects
+of the knee joint.
+Keywords: Return to sports, Muscle strength, Physical functional performance, Anterior cruciate ligament
+reconstruction
+34 대한스포츠의학회지
+Received: January 14, 2021 Revised: February 9, 2021 Accepted: February 22, 2021
+Correspondence: Sae Yong Lee
+Yonsei Institute of Sports Science and Exercise Medicine (YISSEM), Yonsei University, 50 Yonsei-ro, Seodaemun-gu, Seoul 03722,
+Korea
+Tel: +82-2-2123-6189, Fax: +82-2-2123-8375, E-mail: sylee1@yonsei.ac.kr
+Copyright ©2021 The Korean Society of Sports Medicine
+CC This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/
+licenses/by-nc/4.0) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.
+
+--- PAGE 2 ---
+김병훈 외. 전방십자인대 재건술 후 스포츠 현장 복귀 기준
+제39권 제1호 2021 35
+Table 1. Demographics of participants
+Variable Data
+Subject 15
+Sex, male:female 12:3
+Age (yr) 27.87±4.10
+Height (cm) 172.56±4.81
+Body mass (kg) 75.51±13.03
+Time to surgery (mo) 27.11±14.03
+IKDC 71.87±16.60
+Landing Error Scoring System 5.40±2.38
+IKDC: International Knee Document Committee.
+서 론
+무릎관절 손상은 스포츠 활동 시 발생하는 하지 근골격계
+상해 중 가장 빈번하게 발생하는 유형이며, 그 중 전방십자인대
+(anterior cruciate ligament, ACL) 손상이 가장 높은 비율을 차지한
+다1
+. ACL 손상은 하지 근력의 약화 및 위축과 함께 관절 불안정성
+을 야기하여 움직임 기능을 제한하고
+2,3
+, 반월상 연골의 퇴행이
+가속화되는 등의 2차적 문제를 발생시키는 것으로 보고된다
+4
+.
+또한, ACL 손상으로 인한 스포츠 참여 제한은 심리적 우울감,
+훈련 중단, 시간적 및 금전적 손실 등의 문제를 야기하여 전반적인
+삶의 질을 감소시키기 때문에
+5
+조속하고 적절한 부상 관리가
+필요하다. 따라서 대다수의 ACL 손상 환자들은 관절 가동범위,
+근력, 균형능력 등을 손상 전 상태로 회복하여 고강도 수준의
+스포츠로 복귀하기 위해 ACL 재건술(ACL reconstruction, ACLR)
+을 받고 있다6,7
+.
+ACLR은 가장 좋은 수술적 치료 방법 중 하나임에도 불구하고,
+손상으로 인해 발생된 관절 불안정성 및 양측 하지의 비대칭
+문제를 모두 해결하기 어려운 것으로 보인다8
+. ACL이 손상된
+무릎관절은 건측에 비해 근육의 힘, 질량, 기능 등이 모두 감소하
+고
+9,10
+, 비정상적 움직임 패턴이 나타남으로써 관절에 적용되는
+부하가 변화된다11
+. 이러한 환측과 건측 사이의 비대칭은 근신경
+조절 능력의 감소를 야기하고 ACL 재손상 위험 요인으로 작용할
+수 있기 때문에
+12,13
+, 손상 직후뿐만 아니라 수술적 치료 후에도
+체계적인 재활 프로그램이 필수적으로 수행되어야 한다. 뿐만
+아니라 수술적 치료와 재활 프로그램 실시 후, ACLR을 실시한
+환자는 무릎관절의 근력, 정적 균형 능력, 기능성 능력 등 다양한
+측면에서 정상적으로 회복되었는지 평가하는 과정 또한 반드시
+필요하다.
+부상 평가 시 주관적으로 경험하는 기능부전, 통증, 활동 수준
+등과 같은 환자 중심 결과(patient-oriented outcome)는 개인의
+현재 상태와 회복 정도를 가늠할 수 있기 때문에 주목할 필요가
+있다. 그 중 International Knee Document Committee (IKDC)의
+주관적 무릎 설문지는 기능부전 및 통증 발생 관련 문항으로
+구성되어 있어, 무릎관절 손상 환자가 일상생활과 스포츠 활동
+중 느끼는 증상을 객관화할 수 있는 도구로 널리 사용되고 있다.
+ACLR 환자들을 대상으로 한 선행연구는 IKDC 설문을 활용하여
+수술 후 시간이 지남에 따라 회복 정도를 비교하고 이를 스포츠
+복귀(return to play)의 기준 제시에 활용하였으며
+14
+, 수술 후 환자
+들의 증상과 기능부전을 나타내는 가장 유용한 도구로 제시하였
+다
+15
+. 그러므로 무릎관절의 폄 및 굽힘 근육의 등속성, 근력, 등척성
+근력, 한 발 균형능력, 착지 오류 점수 체계(Landing Error Scoring
+System, LESS) 및 한 다리 기능 동작과 같은 객관적인 평가
+지표와 함께 IKDC 주관적 설문지를 사용한다면 임상가와 환자
+모두에게 유용한 정보를 제공할 수 있을 것이다.
+ACL 손상은 재부상률이 높고, 건측과 환측 사이에 불균형을
+초래하는 위험요인으로 보고된다. 따라서 ACLR 후 환자의 스포
+츠 복귀 여부와 시기를 결정하기 전에 다방면의 평가와 전문가의
+충분한 논의가 필요하다. 이를 위해 Difabio 등
+16
+은 이전에 언급된
+객관적인 하지 평가 프로토콜(Lower Extremity Assessment
+Protocol, LEAP)을 새롭게 제시하여 ACLR 이후 무릎관절의
+종합적 회복 정도를 검사하였다. 이러한 LEAP는 다양한 측면으
+로 무릎관절을 평가하였다는 점에서 의의가 있으나, ACL 재부상
+위험요인으로 알려져 있는 건측과 환측 사이의 불균형에 대해
+제시하지 않았기 때문에 명확한 스포츠 복귀 시점의 제시에 제한
+점이 있을 것으로 판단된다. 따라서 본 연구의 목적은 LEAP를
+이용하여 ACLR 이후 일상생활에 무리가 없는 대상자들을 대상으
+로 무릎관절의 근력, 근신경 조절 능력, 기능성 능력, 균형능력
+등을 평가하여 복귀 가능한 수준을 제시하고, 건측과 환측 간의
+종합적 기능을 비교하는 것이다.
+연구 방법
+1. 연구대상
+교내 게시판을 통하여 자발적 연구 참여 의사를 밝힌 15명의
+성인 남녀를 모집하였으며(Table 1), 포함 기준은 다음과 같다.
+(1) 만 19세부터 40세까지의 성인, (2) ACLR 후 1년 이상, 5년
+미만인 자, (3) ACLR 수술 시 자가이식조직(autograft)을 사용한
+자, (4) 일상생활 및 스포츠로 복귀한 자. 다음과 같은 연구 대상자
+는 본 연구에서 제외되었다. (1) 신체활동 수준(Tegner activity
+score) level 4에 해당하는 ‘가벼운 노동’이 불가한 자, 2) 수술
+
+--- PAGE 3 ---
+BH Kim, et al. Criteria for Return to Sports after ACLR
+36 대한스포츠의학회지
+Fig. 1. Isokinetic and isometric
+measurement of strength. (A) Knee
+flexion 90° (left) and (B) knee
+extension 180° (right). Written in-
+formed consent was obtained for
+publication of this study and ac-
+companying images.
+Table 2. Dependent variables and items of Lower Extremity Assessment Protocol
+Variable Category Item
+Strength Isokinetic 90°/sec extension torque, 90°/sec flexion torque, 180°/sec
+extension torque, 180°/sec flexion torque
+Isometric Peak extension torque, peak flexion torque
+Fatigue index Decreasing rate Extension, flexion
+Landing Error Scoring
+System
+Motion analysis Joint angle at initial contact, stance width, foot position (joint
+angle, symmetry), joint angle displacement, overall impression
+Static postural control One-leg standing Center of pressure
+Functional task Hopping distance and time Single hop, triple hop, cross-over hop, 6 m timed hop
+기록지 제출이 불가한 자.
+2. 실험 절차
+본 연구는 Y대학교 생명윤리심의위원회를 통해 승인 받은
+연구 내용과 절차에 따라 진행되었다(No. 7001988-201804-HR-
+356-02). IKDC 주관적 설문지를 통해 일상생활과 스포츠 활동
+중 무릎관절의 기능과 통증을 검사하였으며, LEAP의 검사항목은
+근력, 정적 균형 조절 능력, 점프 및 착지, 기능성 동작 평가로
+구성하였다(Table 2).
+3. 측정 방법
+1) 무릎관절 등속성 및 등척성 허벅지 근력
+무릎관절의 폄근 및 굽힘근의 정확한 측정 및 보상작용을
+예방하기 위해 스트랩(strap)을 이용하여 무릎관절의 움직임을
+최소화하였다. 검사 전 10분간의 준비운동과 3회의 연습 기회가
+주어졌으며, 등속성 측정장비(CON-TREX MJ; Physiomed,
+Laipersdorf, Germany)를 이용하여 검사를 진행하였다. 건측과
+환측 모두 등속성 및 등척성 허벅지 근력을 측정하였다. 등속성
+근력 측정 각속도는 90°/초, 180°/초로 설정하였으며, 등척성 근력
+은 무릎관절 굽힘 90° 자세에서 측정되었다(Fig. 1). 무릎관절의
+모든 근력 데이터는 건측과 환측 모두 3회 측정 후, 각 측정 중
+peak/체중% 값의 평균 값을 기록하였다.
+2) 정적 자세 조절
+정적 자세 조절 능력 측정을 위해 피험자는 AccuSway force
+plate (AMTI, Watertown, MA, USA) 위에서 눈을 감은 채 한
+발로 10초간 자세를 유지하였다(Fig. 2). 피험자가 무릎관절 90º
+굴곡, 엉덩뼈능선(iliac crest) 옆 양손 유지, 시선 정면 응시를
+유지하였을 때 올바른 자세로 간주되었다. 측정 반대발이 바닥에
+닿거나 측정 다리에 지지할 경우, 눈을 뜬 경우, 또는 손을 이용하여
+균형을 유지하였을 경우 재측정하였다. 한 발 지지 자세를 통한
+압력중심점(center of pressure)의 속도(velocity) 데이터는 50 Hz
+로 기록되었으며, 한 번의 연습 후 건측과 환측 각 3회 측정하여
+평균 값을 구하였다.
+3) Landing Error Scoring System
+피험자는 30 cm 높이의 도약대에서 신장의 1/2 지점으로 양
+
+--- PAGE 4 ---
+김병훈 외. 전방십자인대 재건술 후 스포츠 현장 복귀 기준
+제39권 제1호 2021 37
+Fig. 3. Landing Error Scoring System. (A) Start, (B) Land and (C) Jump. Written informed consent was obtained for pub-
+lication of this study and accompanying images.
+Fig. 2. Static postural control. Written informed consent
+was obtained for publication of this study and accompany-
+ing images.
+발로 착지한 후, 발이 닿는 즉시 최대 수직 점프를 실시하였다
+(Fig. 3). LESS를 분석하기 위해 동작 분석 프로그램(Kinovea,
+version 0.8.15; free software available at http://www.kinovea.org)
+을 사용하여 측정하였다. 두 대의 카메라(Fujinon 1:1.2 6 mm,
+Fujifilm, Tokyo, Japan; MT057C4-G, Manfrotto, Italy)는 피험자
+의 정면과 측면 3.5 m 거리에 배치하여 도약 및 착지 동작을
+녹화하였다. 고유한 움직임 패턴 분석을 위해 착지 연구 참여자에
+게 LESS의 채점 항목을 사전에 고지하지 않았으며, 측정 전
+3회의 연습 기회가 주어졌다. LESS의 총점은 19점으로, 최초
+접지 시 발, 하지, 체간의 각도, 최고 무릎관절 굴곡 각도, 최고
+무릎관절 굴곡 각도 시 하지와 체간의 각도, 전체적 착지 움직임
+등 총 17가지 항목을 평가하였다
+17
+.
+4) 기능성 검사
+도약(hopping) 동작(Fig. 4)을 통한 기능성 검사는 한 발 도약
+(single hop), 한 발 3회 도약(triple hop), 한 발 교차 도약(cross-over
+hop), 6 m 도약(6 m timed hop) 등 총 4가지 동작으로 구성되었다18
+.
+한 발 도약, 한 발 3회 도약, 한 발 교차하여 3회 도약 검사의
+기록은 출발선으로부터 착지 지점까지의 거리를 cm 단위로 수집
+하였고, 6 m 도약 검사는 6 m의 거리를 한 발로 연속 도약하여
+통과한 시간으로 기록하였다. 모든 동작은 건측과 환측 모두
+각 3회 실시하여 평균값을 기록하였다.
+4. 통계 분석
+모든 LEAP 데이터의 분석은 IBM SPSS version 25.0 (IBM
+Corp., Armonk, NY, USA)를 이용하였다. 환측과 건측의 LEAP
+결과를 비교하기 위하여 대응표본(paired) t-검정을 실시하였다.
+모든 통계치의 유의수준은 α=0.05로 설정하였으며, Cohen’s
+d 공식을 이용한 효과크기(effect size, ES)와 95% 신뢰구간
+(confidence interval, CI)을 산출하였다.
+결 과
+ACLR 후 평균 2.33년이 지난 대상자의 IKDC 주관적 설문
+점수는 71.87±16.60점으로 나타났으며, LESS는 5.40±2.38점을
+기록하였다. 건측 대비 환측 관절의 결손율은 Table 3과 같다.
+건측과 환측 간 LEAP 결과를 비교하기 위해 대응표본 t-검정을
+실시한 결과, 환측보다 건측 무릎관절의 등속성(90°/초) 폄 근력
+(t=2.693, p=0.017, ES=1.39, 95% CI=0.26–2.52)과 등척성 굽힘
+
+--- PAGE 5 ---
+BH Kim, et al. Criteria for Return to Sports after ACLR
+38 대한스포츠의학회지
+Fig. 4. Hop tests. (A) Start. (B)
+End (single, triple, cross-over,
+and 6 m timed hop). Written in-
+formed consent was obtained
+for publication of this study and
+accompanying images.
+Table 3. Defect rate of the injured knee compared to the
+non-injured knee
+Variable Defect rate (%)
+Isokinetic
+Extension 90°/sec −16.88
+Flexion 90°/sec −12.33
+Extension 180°/sec −15.48
+Flexion 180°/sec −23.05
+Isometric
+Extension −15.80
+Flexion −17.02
+One-leg standing (functional hop test) 8.71
+Single hop (cm) −14.38
+Triple hop (cm) −37.79
+Cross-over hop (cm) −3.77
+6 m timed hop (sec) 22.31
+근력(t=3.054, p=0.009, ES=1.58, 95% CIs=0.42–2.74)이 더욱
+높고, 긴 한 발 도약 기록(t=3.094, p=0.008, ES=1.60, 95%
+CI=0.44–2.76)이 나타났다(Table 4). 등속성 굽힘 근력(90°/초, 180°/초),
+폄 근력(180°/초), 등척성 폄 근력, 폄 및 굽힘 근력의 정적 자세
+조절, 한 발 3회 도약, 한 발 교차 도약, 6 m 도약은 통계적으로
+유의한 차이가 나타나지 않았다(p＞0.05).
+고 찰
+본 연구는 성공적으로 일상생활 및 스포츠로 복귀한 대상자들
+에게 IKDC 설문지와 LEAP를 이용하여 주관적 및 객관적 무릎관
+절 기능을 평가함으로써 스포츠로 복귀할 수 있는 기준을 마련하
+고, 건측과 환측 관절 간 비교를 통해 잠재적 재부상 위험성을
+검사하기 위한 목적으로 수행되었다. IKDC 점수는 평균 약 71점
+으로 나타났으며, LEAP 결과 성공적으로 일상생활과 스포츠로
+복귀했음에도 불구하고 건측 관절에 비해 환측의 기능이 유의하
+게 낮은 항목이 있는 것으로 나타났다.
+본 연구는 ACLR 후 무릎 신전근 및 굴곡근의 근력을 평가하기
+위해 등속성 및 등척성 검사를 진행하였다. 환측과 건측 간 무릎관
+절 근력을 평가한 결과, 환측 무릎관절의 등속성 신전근(90°/초)과
+등척성 굽힘 근력이 건측에 비해 유의하게 낮은 것으로 나타났으
+며, 건측 대비 환측 관절의 결손율은 각각 16.9%, 17.0%로 나타났
+다. 여러 선행연구는 무릎 신전근 및 굴곡근의 근력 평가를 위해
+등속성 및 등척성 수축 형태를 활용하였으며, 이를 활용하여
+ACLR 이후 무릎관절의 회복 정도를 제시하였다. 특히 무릎관절
+의 신전 근력은 ACLR 이후 수 년까지 약화되어
+19
+일상생활과
+스포츠 활동을 제한하고 전반적인 삶의 질에 부정적 영향을 미치
+기 때문에, 이에 대한 평가의 중요성이 강조되었다. 따라서 ACLR
+후 환측 무릎관절의 근력을 손상 전 또는 건측과 동일한 수준으로
+회복하는 것이 스포츠 복귀와 이후 재손상 방지를 위해 매우
+중요하다고 할 수 있다.
+ACL 손상 후 복귀 기준을 제시한 선행연구에 의하면, 건측에
+비해 환측 무릎관절의 근력 결손율이 10% 미만일 경우 스포츠
+복귀에 적합하다고 제시되었다
+20,21
+. 그러나 본 연구에서 나타난
+LEAP 결과는 이보다 높은 결손율을 보였는데, 이는 선행연구에
+서 재건술 이후 1년 이상의 시간이 경과한 뒤 근력을 평가한
+결손율이 10%에서 27%의 차이를 보인 결과와 유사하다
+22,23
+.
+이러한 결과를 볼 때 환측 무릎관절의 근력의 회복이 매우 중요하
+지만, 본 연구에서 ACLR 이후 성공적으로 복귀한 대상자들이
+기능부전 및 통증을 크게 경험하지 않은 것으로 미루어 보면
+환자의 주관적 증상들이 복귀에 더욱 큰 영향을 미치는 것으로
+판단된다. 그러나 복귀 이후 결손율이 높은 대상자들은 ACL
+재부상 위험이 높기 때문에, 환측 관절의 근력을 회복하기 위해
+지속적인 관리가 필요할 것으로 생각된다. 또한, 복귀 결정 시
+
+--- PAGE 6 ---
+김병훈 외. 전방십자인대 재건술 후 스포츠 현장 복귀 기준
+제39권 제1호 2021 39
+Table 4. Lower Extremity Assessment Protocol results between non-injured and injured limb
+Variable Non-injured Injured t p
+Effect size
+(Cohen’s d)
+95% CI
+Isokinetic
+Extension 90°/sec 145.70±47.06 121.11±41.87 2.693 0.017 1.39 0.26 to 2.52
+Flexion 90°/sec 93.0±33.06 81.53±25.25 1.823 0.090 0.94 −0.13 to 2.01
+Extension 180°/sec 111.85±39.51 94.54±42.98 1.884 0.080 0.97 −0.10 to 2.04
+Flexion 180°/sec 80.53±31.45 61.97±51.50 1.564 0.140 0.81 −0.24 to 1.86
+Isometric
+Extension 170.23±44.2 143.33±50.48 1.834 0.088 0.95 −0.12 to 2.01
+Flexion 80.83±21.85 67.07±21.17 3.054 0.009 1.58 0.42 to 2.74
+One-leg standing (functional
+hop test)
+8.71±2.45 9.23±2.53 −0.562 0.583 −0.29 −1.31 to 0.73
+Single hop (cm) 131.13±28.25 112.27±44.98 3.094 0.008 1.60 0.44 to 2.76
+Triple hop (cm) 591.87±701.34 368.20±137.92 1.174 0.260 0.61 −0.43 to 1.64
+Cross-over hop (cm) 352.07±106.71 338.80±140.4 0.466 0.648 0.24 −0.78 to 1.26
+6 m timed hop (sec) 2.42±0.70 2.96±1.59 −2.109 0.053 −1.09 −2.17 to −0.004
+CI: confidence interval.
+객관적 평가 없이 환자의 주관적 증상에만 근거하여 판단할 경우
+건측과 환측 관절 간 높은 결손율로 인해 재부상 위험이 높아질
+수 있기 때문에 종합적인 평가가 필요하다.
+본 연구에서는 ACLR 후 기능성 움직임 평가를 위해 4가지
+도약 검사를 실시한 결과, 한 발 도약검사(single leg hop test)에서
+건측 무릎관절에 비해 환측이 낮은 기록을 나타냈다. ACLR 후
+통증 없이 올바른 동작을 수행하는 것은 스포츠 참여뿐 아니라
+일상생활 측면에서 볼 때도 매우 중요한 요인 중의 하나이다.
+무릎관절은 앉았다 일어나기, 계단 오르내리기와 같은 일상생활
+동작에 중요한 역할을 담당하기 때문에, 불편함을 느낄 경우
+실내활동 또한 제한될 수 있다. 또한 동작 중 통증이나 부종,
+경직 등을 경험할 경우 환자의 만족도가 크게 저하될 수 있기
+때문에 객관적인 지표와 함께 환자의 주관적 증상 또한 함께
+고려해야 한다.
+ACLR 후에는 근력과 기능성 평가와 같은 객관적인 기준뿐
+아니라 환자 개인의 주관적인 만족도를 평가하는 것이 매우 중요
+하다. 본 연구에서 성공적으로 복귀한 대상자들의 무릎관절 기능
+부전 및 통증을 평가한 결과, IKDC 점수가 약 71.87±16.60점인
+것으로 나타났다. 즉 관절 기능에 문제가 없고 통증을 느끼지
+않아 일상생활과 스포츠에 복귀한 것으로 보인다. 앞서 언급한
+LEAP 항목 중 일부가 결손율을 보였으므로, 객관적 지표로만
+복귀를 결정하는 것은 다소 무리가 있는 것으로 판단된다. 선행연
+구에서 Sernert 등
+24
+은 한 발 도약 검사와 IKDC 점수의 상관계수를
+0.28로 보고하였으며, Ageberg 등25
+은 기능적 검사 결과와 주관적
+검사 결과에서 0.25–0.43 범위의 상관계수를 보고하였다. 이와
+같이 LEAP의 각 항목은 환자의 기능부전 및 통증과 상관관계를
+갖지만 비교적 낮은 상관계수를 갖는다고 할 수 있다. 따라서
+본 연구에서 나타난 IKDC 결과는 복귀 기준으로서 높은 점수임에
+도 불구하고, 객관적 지표에서 제시한 결과와 비교했을 때 환자의
+실제 상태를 모두 반영하기 어렵다고 할 수 있다.
+본 연구에서는 정적 및 동적 자세 조절 능력을 확인한 결과
+동적 자세 조절 능력(LESS)은 평균 5.40점으로 나타났으며, 정적
+자세 조절 능력은 환측과 건측 무릎관절 간 유의한 차이가 나타나
+지 않았다. 즉, 무릎관절 신전근 및 굴곡근의 근력과 기능성 검사에
+서 보여지는 결손과는 다르게 정적 및 동적 균형 능력은 동일한
+수준이라 할 수 있다. 본 연구의 결과와 마찬가지로 선행연구는
+ACLR 환자와 대조군 간 정적 균형 능력의 차이가 없다고 보고하
+였다26
+. 이러한 결과는 두 가지 이유로 인해 나타났다고 판단된다.
+첫째, 정적 자세 조절 능력의 측정은 무릎관절의 위치가 완전히
+펴진 상태로 수행되어 비교적 안정적인 상태로 진행되기 때문에,
+ACL 손상이 균형 능력에 미치는 영향이 다소 감소한 것으로
+보인다. 두 번째, 균형 능력은 근력과 기능성 평가 등 다른 LEAP
+항목과는 다르게 빠르게 회복된 것으로 판단된다. 따라서 추후
+연구에서는 무릎관절이 보다 불안정한 상태에서 정적 균형 능력
+의 측정을 통해 ACL의 손상이 실질적 정적 균형 능력의 감소를
+야기하는지, 또는 손상 후 균형 능력은 다른 요소들보다 빠르게
+회복되는지 확인할 필요가 있을 것이다.
+본 연구의 제한점으로는 첫째, ACL 손상 후에 수술 후 재활
+치료 프로그램의 참여 여부를 조사하지 않았다는 것이다. 이는
+복귀 시점과 복귀 이후 무릎관절의 전반적 기능에 영향을 미칠
+수 있기 때문에 본 연구의 제한점이라 하겠다. 두 번째로는 ACL
+손상 시 동반 손상 조직을 확인하지 않았기 때문에 환자마다
+
+--- PAGE 7 ---
+BH Kim, et al. Criteria for Return to Sports after ACLR
+40 대한스포츠의학회지
+손상의 영향이 다를 수 있다는 것이다. 그러나 이러한 제한점에도
+불구하고 본 연구는 주관적 환자 중심 결과물과 LEAP를 통해
+객관적 및 주관적 무릎관절의 기능을 검사함으로써, 복귀 기준을
+제시하고 건측과 환측 무릎관절 간 결손율 제시를 통하여 재부상
+위험성을 보고하였다는 의미가 있다.
+본 연구의 결론은 다음과 같다. (1) ACLR 후 복귀 여부와
+시기를 결정할 때 IKDC 검사와 LEAP 검사의 결과를 고려하는
+것이 매우 중요하다. (2) 복귀했음에도 불구하고 LEAP 검사
+결과 건측과 환측 관절 간 결손율을 보이는 항목이 존재한다.
+그러므로 ACLR 후 복귀 여부와 시기를 고려할 때, 환자의 주관적
+기능부전 및 통증이 존재하는지 확인해야 하며, 무릎관절의 다양
+한 측면에서 건측 관절과 비슷한 수준으로 회복했는지 검사하는
+것이 매우 중요하다.
+LEAP는 무릎관절의 다양한 측면을 평가할 수 있는 방법이기
+때문에, 추후연구에서는 ACL뿐만 아니라 무릎관절 내 동반 손상
+및 환자 대조군 연구를 함께 확인하여 적용한다면, 무릎관절
+손상 및 재활 분야에서 더욱 의미 있는 연구가 될 것으로 판단된다.
+Conflict of Interest
+No potential conflict of interest relevant to this article was
+reported.
+ORCID
+Byong Hun Kim https://orcid.org/0000-0001-6220-6774
+Hyung Gyu Jeon https://orcid.org/0000-0002-8782-5341
+Jong Han Cheo https://orcid.org/0000-0002-4835-3126
+Tae Kyu Kang https://orcid.org/0000-0002-7274-0476
+Sae Yong Lee https://orcid.org/0000-0002-0526-3243
+Author Contributions
+Conceptualization: BHK, JHC, SYL. Data curation: BHK, JHC.
+Formal analysis: BHK, HGJ. Methodology: BHK, JHC, SYL.
+Project administration: BHK, HGJ, SYL. Visualization: TKK.
+Writing–original draft: BHK, JHC, SYL. Writing–review & editing:
+TKK.
+References
+1. Corry I, Webb J. Injuries of the sporting knee. Br J Sports
+Med 2000;34:395.
+2. Grapar Žargi T, Drobnič M, Vauhnik R, Koder J, Kacin A.
+Factors predicting quadriceps femoris muscle atrophy during
+the first 12weeks following anterior cruciate ligament recon-
+struction. Knee 2017;24:319-28.
+3. Wurtzel CN, Gumucio JP, Grekin JA, et al. Pharmacological
+inhibition of myostatin protects against skeletal muscle atrophy
+and weakness after anterior cruciate ligament tear. J Orthop
+Res 2017;35:2499-505.
+4. Gföller P, Abermann E, Runer A, et al. Non-operative treat-
+ment of ACL injury is associated with opposing subjective
+and objective outcomes over 20 years of follow-up. Knee
+Surg Sports Traumatol Arthrosc 2019;27:2665-71.
+5. Filbay SR, Culvenor AG, Ackerman IN, Russell TG, Crossley
+KM. Quality of life in anterior cruciate ligament-deficient in-
+dividuals: a systematic review and meta-analysis. Br J Sports
+Med 2015;49:1033-41.
+6. Wright RW, Preston E, Fleming BC, et al. A systematic
+review of anterior cruciate ligament reconstruction rehabilita-
+tion: part I: continuous passive motion, early weight bearing,
+postoperative bracing, and home-based rehabilitation. J Knee
+Surg 2008;21:217-24.
+7. Kaplan Y. Identifying individuals with an anterior cruciate
+ligament-deficient knee as copers and noncopers: a narrative
+literature review. J Orthop Sports Phys Ther 2011;41:758-66.
+8. Weiler A, Schmeling A, Stöhr I, Kääb MJ, Wagner M.
+Primary versus single-stage revision anterior cruciate ligament
+reconstruction using autologous hamstring tendon grafts: a
+prospective matched-group analysis. Am J Sports Med 2007;
+35:1643-52.
+9. Jordan MJ, Aagaard P, Herzog W. Lower limb asymmetry in
+mechanical muscle function: a comparison between ski racers
+with and without ACL reconstruction. Scand J Med Sci Sports
+2015;25:e301-9.
+10. Sharifmoradi K, Karimi MT, Hoseini Y. Evaluation of the
+asymmetry of leg muscles forces in the subjects with anterior
+cruciate ligament reconstruction. J Knee Surg 2019 Sep 2
+[Epub]. https://doi.org/10.1055/s-0039-1695703.
+11. Schmitt LC, Paterno MV, Ford KR, Myer GD, Hewett TE.
+Strength asymmetry and landing mechanics at return to sport
+after anterior cruciate ligament reconstruction. Med Sci Sports
+Exerc 2015;47:1426-34.
+12. Hewett TE, Myer GD, Ford KR, et al. Biomechanical
+measures of neuromuscular control and valgus loading of the
+
+--- PAGE 8 ---
+김병훈 외. 전방십자인대 재건술 후 스포츠 현장 복귀 기준
+제39권 제1호 2021 41
+knee predict anterior cruciate ligament injury risk in female
+athletes: a prospective study. Am J Sports Med 2005;33:492-
+501.
+13. Paterno MV, Ford KR, Myer GD, Heyl R, Hewett TE. Limb
+asymmetries in landing and jumping 2 years following anterior
+cruciate ligament reconstruction. Clin J Sport Med 2007;17:
+258-62.
+14. Bodkin SG, Rutherford MH, Diduch DR, Brockmeier SF,
+Hart JM. How much time is needed between serial “return to
+play” assessments to achieve clinically important strength
+gains in patients recovering from anterior cruciate ligament
+reconstruction? Am J Sports Med 2020;48:70-7.
+15. Hambly K, Griva K. IKDC or KOOS?: which measures
+symptoms and disabilities most important to postoperative
+articular cartilage repair patients? Am J Sports Med 2008;
+36:1695-704.
+16. DiFabio M, Slater LV, Norte G, Goetschius J, Hart JM,
+Hertel J. Relationships of functional tests following ACL
+reconstruction: exploratory factor analyses of the lower extre-
+mity assessment protocol. J Sport Rehabil 2018;27:144-50.
+17. Padua DA, Marshall SW, Boling MC, Thigpen CA, Garrett
+WE Jr, Beutler AI. The Landing Error Scoring System
+(LESS) is a valid and reliable clinical assessment tool of
+jump-landing biomechanics: the JUMP-ACL study. Am J
+Sports Med 2009;37:1996-2002.
+18. Reid A, Birmingham TB, Stratford PW, Alcock GK, Giffin
+JR. Hop testing provides a reliable and valid outcome measure
+during rehabilitation after anterior cruciate ligament recon-
+struction. Phys Ther 2007;87:337-49.
+19. Palmieri-Smith RM, Thomas AC, Wojtys EM. Maximizing
+quadriceps strength after ACL reconstruction. Clin Sports Med
+2008;27:405-24.
+20. Ardern CL, Webster KE, Taylor NF, Feller JA. Return to the
+preinjury level of competitive sport after anterior cruciate
+ligament reconstruction surgery: two-thirds of patients have
+not returned by 12 months after surgery. Am J Sports Med
+2011;39:538-43.
+21. Risberg MA, Holm I, Myklebust G, Engebretsen L. Neuro-
+muscular training versus strength training during first 6
+months after anterior cruciate ligament reconstruction: a
+randomized clinical trial. Phys Ther 2007;87:737-50.
+22. Lautamies R, Harilainen A, Kettunen J, Sandelin J, Kujala
+UM. Isokinetic quadriceps and hamstring muscle strength and
+knee function 5 years after anterior cruciate ligament recon-
+struction: comparison between bone-patellar tendon-bone and
+hamstring tendon autografts. Knee Surg Sports Traumatol
+Arthrosc 2008;16:1009-16.
+23. Moisala AS, Järvelä T, Kannus P, Järvinen M. Muscle strength
+evaluations after ACL reconstruction. Int J Sports Med 2007;
+28:868-72.
+24. Sernert N, Kartus J, Köhler K, et al. Analysis of subjective,
+objective and functional examination tests after anterior cru-
+ciate ligament reconstruction: a follow-up of 527 patients.
+Knee Surg Sports Traumatol Arthrosc 1999;7:160-5.
+25. Ageberg E, Thomeé R, Neeter C, Silbernagel KG, Roos EM.
+Muscle strength and functional performance in patients with
+anterior cruciate ligament injury treated with training and
+surgical reconstruction or training only: a two to five-year
+followup. Arthritis Rheum 2008;59:1773-9.
+26. Mattacola CG, Perrin DH, Gansneder BM, Gieck JH, Saliba
+EN, McCue FC 3rd. Strength, functional outcome, and postural
+stability after anterior cruciate ligament reconstruction. J Athl
+Train 2002;37:262-8.
+
+--- PAGE 9 ---

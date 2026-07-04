@@ -1,0 +1,508 @@
+
+--- PAGE 1 ---
+1 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata
+TheCOMPWALK-ACL:ADataset
+ofMulti-paceIMUGaitKinematics
+inAdolescents,Adults,andACL
+InjuredPatients
+TomerYona1
+,BezalelPeskin2
+&ArielleFischer 1✉
+Gaitanalysisprovidesobjective,quantitativeparametersessentialforassessingmobility,identifying
+movementimpairments,andmonitoringtheprogressofrehabilitation.Whiletraditionallab-
+basedsystemsofferhighaccuracy,wearableInertialMeasurementUnits(IMUs)enableportable,
+cost-effectivegaitassessmentsoutsidethelaboratoryenvironment.However,thereliabilityand
+applicabilityofIMU-deriveddataacrossdiversepopulationsandwalkingconditionsrequirerobust
+datasets.ThispaperpresentsalowerlimbkinematicdatasetacquiredwiththeXsensAwindaIMU
+system.Datawerecollectedfrom92uniqueparticipants:healthyadults(n=25),healthyadolescents
+(n=27),andindividualswithACLinjuriesassessedbeforesurgery(n=40),with27completinga
+follow-upthreemonthspost-reconstruction.Participantswalkedovergroundatself-selectedslow,
+normal,andfastspeeds.Thedatasetcontainsspatiotemporalparameters,aswellaslowerlimbjoint
+kinematics.Itenablesresearchonnormativegaitacrossagegroups,theeffectsofACLinjuryandearly
+recoveryonmovementpatterns,andthedevelopmentofIMU-basedgaitanalysismethodsunder
+differentwalkingspeedsandclinicalconditions.
+Background&Summary
+Human gait provides objective information about an individual’s movement capabilities, neurological func-
+tion, and musculoskeletal health1,2
+. Consequently, gait parameters such as lower limb kinematics and kinetics,
+alongside spatiotemporal metrics, are recognized for their clinical utility in diagnosing conditions, planning
+personalizedtreatments,andmonitoringrecovery,suchasfollowingAnteriorCruciateLigament(ACL)recon-
+struction3–6
+. Historically, gait analysis has required specialized laboratory settings with multiple optical motion
+capture cameras. While accurate, these systems are limited to controlled environments and are not suitable for
+use outside the laboratory7
+.
+Wearable sensors, such as Inertial Measurement Units (IMUs), offer a portable and cost-effective alternative
+that enables gait assessment in real-world and clinical settings8
+. IMUs measure linear acceleration and angular
+velocity of body segments, which can be used to estimate their orientation and, consequently, joint kinematics.
+Despite these advantages, broader clinical adoption of IMU-based gait analysis necessitates robust accuracy
+andreliabilityacrossdiversepopulationsandwalkingconditions9
+.However,IMUshavemainlybeenfocusedon
+singletasks,oftenlimitedtojump-landingorhoppingtasks,resultinginascarcityofgeneralizable,standardized
+datasets suitable for analyzing walking in clinical populations10
+.
+In particular, there is a need for normative IMU datasets spanning different age groups, such as adoles-
+cents and adults, as well as clinical populations, including ACL-injured participants, where gait patterns are
+altered11,12
+. ACL injuries are associated with altered knee flexion and extension angles, reduced symmetry, and
+compensatory hip or ankle strategies following surgery6,13–15
+. Additionally, variations in walking speed, which
+significantly influence gait patterns, should be considered in any comparative analysis12,16
+.
+Yet,fewpubliclyavailabledatasetssystematicallyincorporatevariationinwalkingspeedacrossbothhealthy
+andACL-injuredpopulations,despitethefactthatspeedstronglymodulatesjointkinematicsandcompensatory
+strategies10,17
+.Priordatasetsoftenfocusexclusivelyonhealthyadults,emphasizeenvironmentalvariabilityover
+1
+Department of Biomedical Engineering, Technion, Israel Institute of Technology, Haifa, Israel. 2
+Orthopedic
+Department,RambamHealthCareCampus,Haifa,Israel.✉e-mail:ariellef@technion.ac.il
+Data Descriptor
+OPEN
+
+--- PAGE 2 ---
+2 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+clinical populations, or lack repeated measures across recovery stages. Additionally, most do not include pre-
+and post-operative measures within the same individuals18–21
+.
+Comparedtoexistingdatasets,theCOMPWALK-ACLdataset(COMParingmulti-paceWALKingkinemat-
+icsviaIMUinhealthyadolescents,adults,andindividualswithACLinjury)providesauniquecontribution.Itis
+an IMU-based gait dataset comprising data from 92 participants: 25 healthy adults, 27 healthy adolescents, and
+40 individuals with ACL injury, of whom 27 completed a follow-up assessment three months after ACL recon-
+struction. Each participant completed overground walking at three self-selected speeds: slow, normal, and fast.
+This design systematically integrates speed variation, age stratification, and pre- and post-operative measures
+within a single resource.
+TheselimitationshighlighttheneedforstructuredIMU-basedreferencedatasetsthatfacilitaterobust inter-
+pretationandmodelingofgaitacrossvariousagegroups,clinicalconditions,andwalkingintensities.Toaddress
+thisgap,wedevelopedtheCOMPWALK-ACLdatasetasanopenlyavailableresourcecapturingbothage-related
+variability and post-surgical changes using a standardized IMU protocol. This dataset supports within-subject
+andbetween-groupanalysesunderecologicallyvalidconditions,facilitatingthestudyofpost-ACLbiomechan-
+ical adaptations as well as the development of normative gait references for both youth and adults.
+Methods
+This dataset comprises three cohorts that followed a similar gait protocol: 25 healthy adults (IRB approval
+number 143-2022), 27 healthy adolescents (IRB approval number 174-2023), and 40 adults with ruptured
+ACLs (IRB approval number 0089-21-RMB), of whom 27 completed a follow-up assessment at three months
+post-reconstruction.
+Healthyadultswererecruitedthroughcampusflyers,socialmediapostings,andwordofmouth.Adolescent
+participantswererecruitedthroughanationalscienceprogramforgiftedhighschoolstudents.Participantswith
+ACLinjurieswererecruitedfrompatientsscheduledforACLreconstructionattheOrthopedicCenter,Rambam
+Health Care Campus (Haifa, Israel).
+All participants provided written informed consent for study participation and for future research use of
+their de-identified data (secondary-use clause). For adolescent participants, written consent was also obtained
+from their legal guardians. Refusal of the secondary-use clause did not affect eligibility for participation. Only
+participants who explicitly consented to the secondary use of their data were included in the publicly shared
+dataset.
+To protect participant information, all data were de-identified at the point of collection. Each participant
+was assigned a unique, non-identifiable study code, and no personally identifying information is included in
+the final dataset.
+Participants. The healthy adults’ cohort included healthy males and females aged 18–45 years. Participants
+were excluded if they had any of the following: inability to provide informed consent or understand the study
+protocol, current pregnancy, known cardiovascular, neurological, or respiratory conditions, allergies to adhesive
+or silver materials, lower limb pain within the past six months, prior orthopedic surgery in the lower limbs, or a
+history of lower limb or back fractures, surgeries, known neuropathies, active cancer, or inflammatory arthritis.
+The healthy adolescents’ cohort consisted of healthy males and females aged 15–17 years, with written
+informed consent provided by a parent or guardian. Exclusion criteria were inability to understand the study
+protocol, pregnancy, cardiovascular, neurological, or respiratory conditions, and any history of lower limb
+orthopedic pathologies or surgeries.
+The ACL injury cohort included participants with ACL injuries, aged 18–40 years, who were scheduled for
+primaryACLreconstruction(ACLR)usinghamstring,bone-patellartendon-bone,orquadricepstendongrafts.
+All ACLR surgeries were conducted by one of five senior orthopedic surgeons at a single orthopedic center.
+Participants were excluded if they had multi-ligament injuries, significant meniscal damage requiring modified
+weight-bearing protocols, previous knee surgeries or fractures in either leg, known neuropathies, active cancer,
+or inflammatory arthritis.
+A summary of demographic characteristics for each cohort is presented in Table 1.
+Cohort Healthyadults(n=25) Healthyadolescents(n=27) ACLD(n=40) ACLR(n=27)
+Age(year) 28.5±5.7 15.7±0.6 23.9±5.9 23.6±5.8
+Sex,n(%)
+Male 13 (52) 17 (63) 33 (82) 21 (78)
+Female 12 (48) 10 (37) 7 (18) 6 (22)
+Height(cm) 1.67±0.1 1.69±0.1 1.76±0.1 1.77±0.1
+Mass(kg) 64.6±14.8 60.7±8.0 76.3±13.4 75.8±11.6
+Injuredleg,n(%)
+Left N/A N/A 18 (45) 10 (37)
+Right 22 (55) 17 (63)
+Table1. Demographic details of the participants grouped by cohort. Values are presented as mean±standard
+deviation for continuous variables and as count (percentage) for categorical variables. Percentages are rounded
+to the nearest whole number. N/A=Not applicable.
+
+--- PAGE 3 ---
+3 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Equipmentandcalibration. The data were recorded using an Xsens Awinda system (Xsens Technologies
+B.V.,Enschede,Netherlands),awirelessIMU-basedmotioncapturesystem,usingthemanufacturer’sproprietary
+software(MVNAnalyze,version2023.0.0).Specifically,werecordedlowerlimbkinematicsutilizingamodelthat
+consists of seven lightweight (16 grams) sensors, each containing a 3D accelerometer, a 3D gyroscope, and a 3D
+magnetometer.
+Before data collection, participants’ anthropometric measurements were taken and entered into the MVN
+software to create a scaled personalized biomechanical model. Using velcro straps, the IMU sensors were then
+attached at the following standardized locations: on both feet, shanks, thighs, and the pelvis.
+After the sensors’ placement, each participant performed a standard calibration routine, which consisted of
+the following steps:
+• N-pose calibration: Participants stood in a neutral pose with feet parallel and shoulder-width apart, arms
+relaxedatthesides,andlookingstraightahead.Thisestablishesthedefaultreferencepositionforallsegments.
+• Walk calibration: Participants walked around the room, turned, and walked back to the starting position.
+This calibration helps establish the relationship between sensor orientations and anatomical axes, thereby
+determining walking direction.
+• Calibrationverification:Thesoftwareprovidesfeedbackonthequalityofalignment.Theprocesswasrepeated
+if the calibration quality fell below the recommended threshold.
+The recordings were captured at a frequency of 100Hz and transmitted wirelessly to a laptop running Xsens
+MVN software, which implements proprietary sensor fusion algorithms to calculate joint kinematics.
+Research protocol. The walking protocol consisted of three tasks, each performed along a 20-meter cor-
+ridor. In each task, participants walked in a straight line, without turning, at one of three self-selected speeds:
+normal, slow, and fast (faster than normal walking but not running). Standardized verbal cues given to partic-
+ipants, adapted from a prior study, were: “Walk across the walkway at a slow speed,” “Walk across the walkway
+at your normal speed,” and “Walk as fast as possible”22
+. For each speed condition, participants completed three
+consecutive trials. No external feedback was provided. Speeds were intentionally unconstrained to capture each
+participant’s natural pacing. Participants rested between trials and resumed when they confirmed readiness to
+proceed. Only the straight overground walking segments were used for analysis.
+For participants in the ACL injury cohort, the initial assessment was conducted before their scheduled sur-
+gery, and the follow-up assessment was performed three months after surgery using identical procedures.
+DataRecords
+ThedatasetispubliclyavailableonZenodoundertheCreativeCommonsAttribution4.0International(CCBY4.0)
+license23
+. It is organized as four separate compressed folders, one for each cohort (Healthy Adults, Healthy
+Adolescents, ACLD, and ACLR). The dataset can be accessed at https://doi.org/10.5281/zenodo.15624356.
+Valuesthroughoutthemanuscriptarepresentedasmean±standarddeviationormedian[minimum-maximum].
+The dataset is structured hierarchically to support group-level and longitudinal analyses. It includes four
+top-level subdirectories corresponding to participant groups:
+• Healthy adults (HA): Adults without lower limb injury or known gait impairments
+• Healthy adolescents (HK): Pediatric participants without known musculoskeletal conditions
+• ACLD: ACL-injured participants recorded before surgery, during the ACL-deficient stage.
+• ACLR:Thesameparticipantsassessedthreemonthspost-ACLreconstruction(n=27),asubsetoftheinitial
+ACLD cohort (n=40); 13 were lost to follow-up.
+• Each group folder contains data from individual participants, labeled with unique identifiers (e.g., ACLD3,
+ACLR3,HA4,HK2).ForACLparticipantswhocompletedbothphasesofdatacollection,theiridentifiersare
+consistent across time points (e.g., ACLD5 becomes ACLR5).
+A summary of the folder hierarchy, file types, and contents is provided in Table 2.
+Withineachparticipant’sfolder,dataarefurthersubdividedintonormal,slow,andfastwalkingspeeds.Each
+speed folder contains multiple trials labeled sequentially (e.g., normal-001, slow-002, fast-003). Each trial con-
+sists of an .mvnx file paired with an .xlsx spreadsheet.
+The .mvnx file provides a structured record of time-series data, including joint angles, segment orientations
+and positions, linear and angular velocities and accelerations, center of mass trajectories, and sensor-level data
+such as free acceleration, magnetic field, and orientation in both quaternion and Euler formats. The .mvnx file
+also includes binary foot contact information (for the heel and toe) and is not available in the .xlsx file.
+The.xlsxfilecontainsaflattened,tabularversionofkeytime-seriesvariables,organizedintomultiplelabelled
+sheets.‘SegmentOrientation’,providedinbothQuaternionandEulerangleformatsforrotationaldata;‘Segment
+Position’,detailingthe3Dcoordinatesofeachsegment;andsheetsfor‘SegmentVelocity’,‘SegmentAcceleration’,
+‘Segment Angular Velocity’, and ‘Segment Angular Acceleration’, which together provide a complete kinematic
+profile of the body’s movement.
+Thefilealsoincludesdetailedinformationonjointangles.Therearesheetsfor‘JointAngles’and‘Ergonomic
+JointAngles’,witheachtypecalculatedusingbothZXYandXZYrotationalconventions.Akeyadvantageofthe
+.xlsx format, compared to the .mvnx file, is the use of clear anatomical labels for joint angle variables, such as
+“Left Ankle Dorsiflexion/Plantarflexion,” simplifying interpretation. Furthermore, the data includes a sheet for
+the ‘Center of Mass’, which provides the position, velocity, and acceleration of the body’s overall center of mass.
+
+--- PAGE 4 ---
+4 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Finally, the workbook provides both raw and processed sensor outputs, including ‘Sensor Free Acceleration’,
+‘Sensor Magnetic Field’ (a tri-axial magnetometer), and ‘Sensor Orientation’, with orientation available in both
+quaternion and Euler representations.
+For analyses requiring steady-state walking, we trimmed the dataset during preprocessing by removing the
+firsttwoandlasttwostepsfromeachwalkingtrial,therebyexcludingtheinitialaccelerationandfinal decelera-
+tionphases.Whilethefull(untrimmed)datasetisprovidedwiththismanuscript,allgroup-levelspatiotemporal
+comparisons and technical validation analyses were conducted using the trimmed data to ensure consistency
+and biomechanical relevance.
+While both formats capture equivalent core kinematic and inertial data, the .mvnx file offers full fidelity for
+biomechanical modeling, whereas the .xlsx file provides greater readability and access for statistical analyses.
+Full details on the .mvnx structure and axis conventions are available in the Xsens MVN User Manual24
+.
+At the root of the COMPWALK-ACL directory, a metadata file titled ID.csv provides participant informa-
+tion, including:
+• ID: Unique participant code
+• Group: Participant cohort (HA, HK, ACLD, ACLR)
+• Sex: Male/Female
+• Age: in years
+• Mass: Body mass in kilograms
+• Height: Stature in centimeters
+• Injured leg: Side of injury (for ACL participants only)
+The mean number of steps per participant is 182.9±30.9 for all trials and 144.8±29.5 for the trimmed
+dataset. The corresponding strides were 89.1±15.4 and 70.0±14.8, respectively. Table 3 shows the mean and
+medianvaluesofstepsandstridesperparticipantforeachgroup,forboththeuntrimmedandtrimmeddatasets.
+As an example of the joint-level kinematic data available in the dataset, Fig. 1 illustrates sagittal-plane tra-
+jectories of the hip, knee, and ankle joints across walking speeds in healthy adults. The data are averaged across
+all gait cycles from all trimmed trials in this cohort, highlighting speed-dependent changes in joint angles. This
+figure demonstrates how the .mvnx and .xlsx files can be used to extract joint-specific waveforms across condi-
+tions, supporting stride-level and time-normalized analyses across populations.
+TechnicalValidation
+To assess if our IMU‐derived gait metrics are both reliable and physiologically meaningful across cohorts and
+speeds, we performed a series of statistical tests. All analyses in this section were conducted using the trimmed
+data, in which the first two and last two steps of each trial were excluded to focus on steady-state walking. This
+sectiondescribestheanalysesperformedtoquantifywithin-participantconsistency,speedeffects,groupdiffer-
+ences, and concordance with manufacturer benchmarks.
+Specifically, we evaluated (1) trial‐to‐trial consistency within each cohort, (2) responsiveness of key gait
+parameters to speed changes, (3) cohort‐specific differences, especially between the ACL‐injured group and
+healthy adults, and (4) comparisons with manufacturer-reported benchmarks from the Xsens whitepaper.
+Reliability(Within-ParticipantConsistency). Within-participantreliabilitywasassessedbycalculating
+the coefficient of variation (CV) for five spatiotemporal gait parameters: gait speed, cadence, stride length, step
+width, and stride/step time. Across all groups and speed conditions, gait speed exhibited low intra-individual
+variability, with mean CV values ranging from 2.29% to 5.85%. Cadence showed mean CVs ranging from 2.00%
+Level Folder/File FileType Contents Notes
+Root COMPWALK-ACL/ Folder All data
+Includes four cohort folders and a
+metadata CSV file
+Metadata ID.csv CSV
+Participant-level metadata: ID,
+group, sex, age, height, mass,
+injured leg (if applicable)
+Useful for filtering participants by
+cohort or demographics
+CohortLevel HA/, HK/, ACLD/, ACLR/ Folder
+Participant data grouped by
+cohort (Healthy adults, Healthy
+adolescents, ACLD, ACLR)
+ACLD and ACLR are longitudinal
+assessments of the same individuals
+(some missing follow-up)
+ParticipantLevel HA01/, ACLD02/, etc. Folder Individual participant folder Participant ID matches row in ID.csv
+WalkingSpeedLevel slow/, normal/, fast/ Folder
+Data for each of three walking
+speeds per participant
+Each folder includes multiple trial
+files (e.g., normal-001)
+TrialLevel
+normal-001.mvnx MVNX
+Raw time-series data, segment
+kinematics, sensor data, binary
+foot contacts
+XML structured data for full
+biomechanical modeling
+normal-001.xlsx XLSX
+Flattened joint angles, center of
+mass, ergonomic kinematics
+Tabular format for statistical analysis
+or spreadsheet-based analysis
+Table2. Data file structure and content summary. HA=healthy adults; HK=healthy adolescents;
+ACLD=anterior-cruciate-ligament-deficient (pre-operative); ACLR=anterior-cruciate-ligament-
+reconstructed (≈3 months post-operative). MVNX=proprietary XML-structured motion file generated by
+Xsens MVN Analyze; XLSX=Microsoft Excel Open XML spreadsheet.
+
+--- PAGE 5 ---
+5 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+to 5.02%, and stride length CVs ranged from 1.70% to 5.35%. Stride time and step time CVs ranged from 1.41%
+to 5.19% and 1.46% to 5.11%, respectively. In contrast, step width demonstrated the highest variability, with CVs
+ranging from 5.45% to 11.9%. Group-level mean values for these parameters across all cohorts are summarized
+in Table 4.
+Speed Responsiveness. To validate the dataset’s ability to capture physiological responses, data from all
+participant cohorts (healthy adults, adolescents, ACLD, and ACLR) were pooled together to illustrate the over-
+all trend and confirm the universal effect of speed cues. As seen in Fig. 2, gait speed, cadence, and stride length
+all increased significantly from slow to normal and fast walking speeds. Specifically, gait speed increased from
+0.88±0.01m/s in the slow condition to 1.24±0.01m/s in the normal condition and 1.80±0.01m/s in the fast
+condition, with a significant main effect of speed (F(2, N)=1736.99, p<0.001). Cadence increased similarly,
+from 88.47±0.59 steps/min (slow) to 106.59±0.51 steps/min (normal) and 126.75±0.61 steps/min (fast), with
+a significant main effect (F (2, N)=1107.31, p<0.001). Stride length also increased from 1.18±0.01m (slow)
+to 1.40±0.01m (normal) and 1.70±0.01m (fast), with a significant main effect of speed (F (2, N)=918.62,
+p<0.001). Post hoc analyses indicated that all pairwise comparisons between speed conditions were statistically
+significant(allp<0.001).Thespeed-dependencyinjointkinematicsisfurtherillustratedinFig.1,demonstrating
+the expected flexion-extension patterns across walking conditions.
+Furthermore,thekinematicpatternsobservedinourIMU-deriveddatasetareconsistentwiththosereported
+in the large-scale optical motion capture study by Schwartz et al. that examined gait across a range of walk-
+ing speeds25
+. Despite differences in measurement technology and participant demographics, the fundamental
+speed-relatedeffectsonsagittalplanekinematicsareconsistent.Inbothourdata(Fig.1)andthereferencestudy,
+increasing walking speed is associated with a greater range of motion at the hip, knee, and ankle.
+CohortComparisons bySpeed. At all speed conditions, significant group differences were observed in
+gait speed, cadence, and stride length.
+At slow walking speed, healthy adults walked significantly faster than the ACLD group (0.87±0.02m/s vs.
+0.79±0.01m/s,p=0.0037),withnoothersignificantpairwisedifferences.Cadencewashigherinhealthyadults
+compared to both ACLD (88.94±1.35 vs. 84.90±0.93 steps/min, p=0.0202) and ACLR (85.55±1.04 steps/
+min, p=0.1191), although only the ACLD comparison reached statistical significance. No significant pairwise
+differences were found in stride length at slow speed (p>0.05 for all comparisons).
+At normal walking speed, both ACLD and ACLR groups demonstrated significantly slower gait speed than
+healthy adults (ACLD: 1.19±0.01m/s; ACLR: 1.19±0.02m/s; healthy adults: 1.33±0.02m/s; both p<0.001).
+Cadence was significantly lower in both ACL groups relative to healthy adults (ACLD: 104.33±0.61; ACLR:
+101.18±1.05; healthy adults: 112.90±1.26 steps/min; both p<0.001), and the ACLR group had a marginally
+lower cadence than ACLD (p=0.054). Stride length was significantly shorter in the ACLD group compared to
+healthy adults (1.37±0.01m vs. 1.42±0.02m, p=0.0456).
+At fast speed, both ACL groups exhibited significantly slower gait speed than healthy adults (ACLD:
+1.73±0.03m/s; ACLR: 1.66±0.03m/s; healthy adults: 1.94±0.03m/s; both p<0.001). Cadence was signif-
+icantly lower in both ACL groups compared to healthy adults (ACLD: 123.56±1.06; ACLR: 119.59±1.34;
+healthy adults: 134.41±1.22 steps/min; both p<0.001), with a marginal difference between ACLD and ACLR
+(p=0.0559). Stride length was significantly shorter in both ACL groups compared to healthy adults (ACLD:
+1.67±0.02m, ACLR: 1.66±0.02m, healthy adults: 1.73±0.02m; p=0.0351 and p=0.0313, respectively).
+Acrossspeeds,healthyadultshadhighergaitspeed,cadence,andlongerstridelengththanthosewithACLD/
+ACLR, particularly at normal and fast speeds. Differences between the ACLD and ACLR groups were minimal
+Group Steps(Mean±SD) Median[Range] Strides(Mean±SD) Median[Range]
+AllTrials
+HealthyAdults 183.76±31.74 181 [135–270] 89.28±15.66 89 [65–132]
+HealthyAdolescents 185.95±17.21 183 [140–215] 89.82±8.96 88 [67–105]
+ACLD 189.40±28.49 192 [120–254] 92.72±14.17 93 [58–124]
+ACLR 169.54±39.18 172 [109–297] 82.73±19.46 84 [52–146]
+Trimmed
+HealthyAdults 146.16±29.94 145 [99–234] 70.48±14.79 71 [47–114]
+HealthyAdolescents 130.68±15.19 129 [96–159] 62.18±8.0 61 [45–77]
+ACLD 154.90±27.88 159 [92–222] 75.47±13.87 77 [44–108]
+ACLR 139.85±35.56 141 [85–257] 67.88±17.66 68 [40–126]
+Overall
+AllParticipants(alltrials) 182.91±30.91 182 [109–297] 89.10±15.37 88 [52–146]
+AllParticipants(trimmed) 144.79±29.50 144 [85–257] 70.04±14.81 69 [40–126]
+Table3. Total steps and strides per participant by group (untrimmed and trimmed data). Values are presented
+as mean±standard deviation and median [minimum - maximum]. Trimmed refers to datasets with the first
+two and last two steps and strides of each walking trial removed to exclude acceleration and deceleration phases,
+keeping only the steady-state gait cycles. ACLD=Anterior cruciate ligament deficiency. ACLR=Anterior
+cruciate ligament reconstruction.
+
+--- PAGE 6 ---
+6 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+and did not reach statistical significance for any parameter across speed conditions. To specifically assess the
+dataset’s ability to capture differences due to ACL injuries, these analyses compared the adult clinical groups
+(ACLD/ACLR) only to their age-matched healthy adults. The adolescent cohort was excluded to isolate the
+effects of the injury from potential age-related confounding variables.
+ComparisonwithXsenswhitepaper. Toassesstheconsistencyofthedatasetwithmanufacturer-reported
+values, we compared spatiotemporal gait parameters from our healthy adult cohort with the reported reference
+values in the Xsens MVN Analyze white paper24
+. At self-selected normal walking speed, the mean step length in
+our dataset was 70.5cm, compared to 67.6cm in the Xsens reference. The step width was 8.32cm in our dataset,
+comparedto7.79cmintheXsensdata.Similarly,thestridelengthinourdatasetwas142cm,comparedto134cm
+in the whitepaper. Observed values were comparable in magnitude to those reported in the whitepaper.
+Fig.1 Sagittal-plane joint kinematics across walking speeds in healthy and injured cohorts. Averaged joint
+angle trajectories across all gait cycles from all trimmed walking trials of the healthy adult (n=25), healthy
+adolescent (n=27), ACLD (n=40), and ACLR (n=27) cohorts, with all trajectories time-normalized to 101
+points. Solid, dashed, and dotted lines correspond to slow, normal, and fast walking trials, respectively. Positive
+values denote flexion (knee & hip) or dorsiflexion (ankle). Zero equals the anatomically neutral position. ACLD:
+Anterior Cruciate Ligament Deficiency; ACLR: Anterior Cruciate Ligament Reconstruction.
+
+--- PAGE 7 ---
+7 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+UsageNotes
+The COMPWALK-ACL dataset cohort folders (ACLD, ACLR, healthy adults, and healthy adolescents) contain
+participant folders, each of which includes three speed-condition subfolders with paired trial files, .mvnx files,
+and .xlsx files.
+The .mvnx files contain comprehensive time-series data of the raw sensor signals, segment orienta-
+tions (quaternions), joint kinematics, and heel/toe contact events, suitable for advanced biomechanical or
+signal-processinganalysesusingcustomscripts.The.xlsxfilesprovidekeyjointangleandcenterofmassdatain
+atabularformatandareeasilyimportableintosharedspreadsheetsandstatisticalanalysissoftware.Participants’
+metadataareavailableintheID.csvfileandprovideanonymiseddemographicmetadatasuchasage,sex,height,
+mass, and injured side (for ACL participants).
+The dataset supports a range of uses, including establishing normative joint-angle references across the ado-
+lescent–adult lifespan, benchmarking stride-segmentation or gait-speed classification algorithms, and tracking
+longitudinal changes after ACLR to evaluate recovery.
+PotentialusersshouldnotethattheACLDandACLRgroupscomprisethesameindividuals.However,some
+participants were lost to follow-up, resulting in slightly different sample sizes between these two longitudinal
+measurement points.
+Additionally, as with all IMU-based systems, users should be aware of limitation factors, such as environ-
+mental magnetic disturbances, that can impact data accuracy. However, the Xsens system uses a proprietary
+algorithm to mitigate such effects. Users should be further aware of several dataset-specific limitations. First,
+eachovergroundtrialspansonly~20m,yielding8–10steadystrides.Second,force-platedataandcamera-based
+motioncapturearenotincluded.Therefore,withoutgold-standardmeasurements,thedatasetcannotbeusedto
+validateanyofthereportedmetrics,includingjointkinematicsandspatiotemporalparameters.Lastly,footwear
+and walkway surface were kept consistent within a session but not standardised across participants, possibly
+introducing between-subject differences.
+Dataavailability
+The dataset is available on Zenodo under the Creative Commons Attribution 4.0 International (CC BY 4.0)
+license and can be accessed at https://doi.org/10.5281/zenodo.15624356.
+Codeavailability
+The full analysis pipeline used to extract spatiotemporal gait parameters from the Xsens MVNX files is openly
+available on GitHub (https://github.com/TomerIL/COMP-ACL/). This code includes functions for parsing
+MVNX files, detecting gait events, computing spatiotemporal parameters, and trimming trials to remove
+acceleration/deceleration phases. The repository also includes a few example scripts illustrating additional
+potential uses of the dataset.
+Cohort GaitSpeed(meters/second) Cadence(steps/minute) StrideLength(meters) StrideTime(seconds)
+HealthyAdults 1.37±0.47 112±21.60 1.44±0.28 1.12±0.23
+HealthyAdolescents 1.45±0.40 113±17.70 1.52±0.25 1.09±0.17
+ACLD 1.24±0.40 104±18.30 1.39±0.27 1.19±0.21
+ACLR 1.23±0.38 102±16.70 1.41±0.24 1.21±0.20
+Table4. Group-level spatiotemporal key parameters across cohorts. Values are presented as mean±standard
+deviation. Gait speed, cadence, stride length, and stride time were averaged across all walking trials and speed
+conditions. ACLD=Anterior cruciate ligament deficiency. ACLR=Anterior cruciate ligament reconstruction.
+Fig.2 Responsiveness of gait metrics across speed conditions. The data presented pools together all participant
+cohorts (healthy adults, adolescents, ACLD, and ACLR) to illustrate the overall trend. Each grey point on the
+chart represents an individual walking trial. The data for each speed condition is summarized using a box plot,
+where the box shows the inter-quartile range, the horizontal line inside the box is the median, and the whiskers
+extend to 1.5 times the inter-quartile range. Gait speed is expressed in meters per second, cadence in steps per
+minute, and stride length in meters.
+
+--- PAGE 8 ---
+8 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Received: 23 June 2025;Accepted: 11 November 2025;
+Published: xx xx xxxx
+References
+1. Das, R., Paul, S., Mourya, G. K., Kumar, N. & Hussain, M. Recent Trends and Practices Toward Assessment and Rehabilitation of
+Neurodegenerative Disorders: Insights From Human Gait. Front Neurosci. 16, 859298, https://doi.org/10.3389/fnins.2022.859298
+(2022).
+2. Winner, T. S. et al. Discovering individual-specific gait signatures from data-driven models of neuromechanical dynamics. PLoS
+Comput Biol. 19(10), e1011556, https://doi.org/10.1371/journal.pcbi.1011556 (2023).
+3. Büttner,C.etal.Bilateralwaveformanalysisofgaitbiomechanicspresurgeryto12monthsfollowingACLreconstructioncompared
+to controls. J Orthop Res. 43(2), 322–336, https://doi.org/10.1002/jor.26001 (2025).
+4. Park, J. H. et al. Gait deviations of patients with ruptured anterior cruciate ligament: a cross-sectional gait analysis study on male
+patients. Knee Surg Relat Res. 33(1), 45, https://doi.org/10.1186/s43019-021-00128-w (2021).
+5. Lyle, M. A. et al. Associations of Strength and Spatiotemporal Gait Variables With Knee Loading During Gait After Anterior
+Cruciate Ligament Reconstruction. J Athl Train. 57(2), 158–164, https://doi.org/10.4085/1062-6050-0186.21 (2022).
+6. Gribbin, T. C. et al. Differences in hip-knee joint coupling during gait after anterior cruciate ligament reconstruction. Clin Biomech
+(Bristol, Avon). 32, 64–71, https://doi.org/10.1016/j.clinbiomech.2016.01.006 (2016).
+7. Prisco, G. et al. Validity of Wearable Inertial Sensors for Gait Analysis: A Systematic Review. Diagnostics (Basel). 15, https://doi.
+org/10.3390/diagnostics15010036 (2024).
+8. Jung, S. et al. The Use of Inertial Measurement Units for the Study of Free Living Environment Activity Assessment: A Literature
+Review. Sensors (Basel). 20(19), https://doi.org/10.3390/s20195625 (2020).
+9. Blanco-Coloma, L. et al. Validation of inertial measurement units based on waveform similarity assessment against a
+photogrammetry system for gait kinematic analysis. Front Bioeng Biotechnol 12, 1449698, https://doi.org/10.3389/
+fbioe.2024.1449698 (2024).
+10. Tan,T.etal.Ascopingreviewofportablesensingforout-of-labanteriorcruciateligamentinjurypreventionandrehabilitation.NPJ
+Digit Med 6(1), 46, https://doi.org/10.1038/s41746-023-00782-2 (2023).
+11. Goetschius,J.,Hertel,J.,Saliba,S.A.,Brockmeier,S.F.&Hart,J.M.GaitBiomechanicsinAnteriorCruciateLigament-reconstructed
+Knees at Different Time Frames Postsurgery. Med Sci Sports Exerc 50(11), 2209–2216, https://doi.org/10.1249/
+MSS.0000000000001693 (2018).
+12. Yona,T.,Peskin,B.&Fischer,A.OutofLabLongitudinalGaitAssessmentofParticipantsPreandPostAnteriorCruciateLigament
+Reconstruction Surgery: An Observational Longitudinal Study. J Athl Train. 2025. https://doi.org/10.4085/1062-6050-0423.24
+13. Erhart-Hledik, J. C., Chu, C. R., Asay, J. L. & Andriacchi, T. P. Longitudinal changes in knee gait mechanics between 2 and 8 years
+after anterior cruciate ligament reconstruction. J Orthop Res 36(5), 1478–1486, https://doi.org/10.1002/jor.23770 (2018).
+14. Krishnan,C.,Johnson,A.K.&Palmieri-Smith,R.M.MechanicalFactorsContributingtoAlteredKneeExtensionMomentduring
+Gait after ACL Reconstruction: A Longitudinal Analysis. Med Sci Sports Exerc 54(12), 2208–2215, https://doi.org/10.1249/
+MSS.0000000000003014 (2022).
+15. Ursei, M. E. et al. Foot and ankle compensation for anterior cruciate ligament deficiency during gait in children. Orthop Traumatol
+Surg Res 106(1), 179–183, https://doi.org/10.1016/j.otsr.2019.07.009 (2020).
+16. Garcia,S.A.,Brown,S.R.,Koje,M.,Krishnan,C.&Palmieri-Smith,R.M.Gaitasymmetriesareexacerbatedatfasterwalkingspeeds
+in individuals with acute anterior cruciate ligament reconstruction. J Orthop Res 40(1), 219–230, https://doi.org/10.1002/jor.25117
+(2022).
+17. Bejek, Z., Paróczai, R., Illyés, A. & Kiss, R. M. The influence of walking speed on gait parameters in healthy people and in patients
+with osteoarthritis. Knee Surg Sports Traumatol Arthrosc 14(7), 612–622, https://doi.org/10.1007/s00167-005-0005-6 (2006).
+18. van der Zee, T. J., Mundinger, E. M. & Kuo, A. D. A biomechanics dataset of healthy human walking at various speeds, step lengths
+and step widths. Sci Data 9(1), 704, https://doi.org/10.1038/s41597-022-01817-1 (2022).
+19. Luo, Y. et al. A database of human gait performance on irregular and uneven surfaces collected by wearable sensors. Sci Data 7(1),
+219, https://doi.org/10.1038/s41597-020-0563-y (2020).
+20. Lavikainen, J. et al. Gait data from 51 healthy participants with motion capture, inertial measurement units, and computer vision.
+Data Brief 56, 110841, https://doi.org/10.1016/j.dib.2024.110841 (2024).
+21. Jlassi, O., Shah, V. & Dixon, P. C. The NACOB multi-surface walking dataset. Sci Data 11(1), 880, https://doi.org/10.1038/s41597-
+024-03683-5 (2024).
+22. Brinkerhoff,S.A.,Murrah,W.M.,Hutchison,Z.,Miller,M.&Roper,J.A.Wordsmatter:instructionsdictate“self-selected”walking
+speed in young adults. Gait Posture https://doi.org/10.1016/j.gaitpost.2019.07.379 (2019).
+23. Yona, T., Peskin, B. & Fischer, A. G. The COMPWALK-ACL Dataset [Data Set]. Zenodo https://doi.org/10.5281/zenodo.15624356
+(2025).
+24. XSENS. Xsens User Manual. https://www.movella.com/hubfs/User_Manual_Xsens%202025.pdf (2025).
+25. Schwartz, M. H., Rozumalski, A. & Trost, J. P. The effect of walking speed on the gait of typically developing children. J Biomech
+41(8), 1639–1650, https://doi.org/10.1016/j.jbiomech.2008.03.015 (2008).
+Authorcontributions
+T.Y. - Conceptualization, Methodology, Data collection, Data curation, Investigation, Formal analysis,
+Visualization,Writing–originaldraft,review&editing.B.P.-Methodology,Datacollection,Resources,Clinical
+coordination, review & editing. A.F. - Conceptualization, Methodology, Supervision, Project administration,
+Funding acquisition, Writing – review & editing.
+Competinginterests
+The authors declare no competing interests.
+Additionalinformation
+Correspondence and requests for materials should be addressed to A.F.
+Reprintsandpermissionsinformationis available at www.nature.com/reprints.
+Publisher’snote Springer Nature remains neutral with regard to jurisdictional claims in published maps and
+institutional affiliations.
+
+--- PAGE 9 ---
+9 Scientific Data | (2026)13:4 |https://doi.org/10.1038/s41597-025-06307-8
+www.nature.com/scientificdata www.nature.com/scientificdata/
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International
+License, which permits use, sharing, adaptation, distribution and reproduction in any medium or
+format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the
+Creative Commons licence, and indicate if changes were made. The images or other third party material in this
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the
+material. If material is not included in the article’s Creative Commons licence and your intended use is not per-
+mittedbystatutoryregulationorexceedsthepermitteduse,youwillneedtoobtainpermissiondirectlyfromthe
+copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2025
+
+--- PAGE 10 ---

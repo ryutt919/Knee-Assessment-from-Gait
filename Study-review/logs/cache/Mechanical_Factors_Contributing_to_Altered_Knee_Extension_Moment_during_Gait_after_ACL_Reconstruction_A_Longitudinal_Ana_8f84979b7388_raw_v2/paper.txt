@@ -1,0 +1,606 @@
+
+--- PAGE 1 ---
+Mechanical Factors Contributing to Altered Knee Extension
+Moment during Gait after ACL Reconstruction: A Longitudinal
+Analysis
+Chandramouli Krishnan1,2,3,4,6, Alexa K. Johnson2, Riann M. Palmieri-Smith2,5
+1Physical Medicine and Rehabilitation, Michigan Medicine, Ann Arbor, MI;
+2School of Kinesiology, University of Michigan, Ann Arbor, MI;
+3Robotics Institute, University of Michigan, Ann Arbor, MI;
+4Department of Biomedical Engineering, University of Michigan, Ann Arbor, MI;
+5Department of Orthopedic Surgery, University of Michigan, Ann Arbor, MI
+6Physical Therapy Department, College of Health Sciences, University of Michigan-Flint, Flint, MI
+Abstract
+Purpose: To comprehensively examine the extent to which knee flexion angle at initial contact,
+peak knee flexion angle, and vertical ground reaction force (vGRF) contribute to knee extension
+moments during gait in individuals with anterior cruciate ligament (ACL) reconstruction.
+Methods: Overground gait biomechanics were evaluated in twenty-six participants with ACL
+reconstruction at three timepoints (about 2 months, 4 months, and 6 months after the surgery).
+Knee flexion angle at initial contact, peak knee flexion angle, peak vGRF, and peak knee
+extension moment were calculated for each limb during the early stance phase of gait for all three
+timepoints. A change score from baseline (timepoint 2−timepoint 1 and timepoint 3−timepoint
+1) along with limb symmetry values (ACL−non-ACL limb values) were also calculated for these
+variables. Multiple linear regressions utilizing classical and Bayesian interference methods were
+used to determine the contribution of knee flexion angle and vGRF to knee extension moment
+during gait.
+Results: Peak knee flexion angle and peak vGRF positively contributed to knee extension
+moment during gait in both the reconstructed (R2 = 0.767, p<0.001) and non-reconstructed limbs
+(R2 = 0.815, p<0.001). Similar results were observed for the symmetry values (R2 = 0.673,
+p<0.001) and change scores (R2 = 0.731–0.883; all p<0.001), except that the changes in knee
+flexion angle at initial contact also contributed to the model using the change scores in the
+non-reconstructed limb (timepoint 2−timepoint 1: R2 = 0.844, p<0.001; timepoint 3−timepoint 1:
+Address for Correspondence: Chandramouli Krishnan, PT, PhD, University of Michigan, 325 E Eisenhower Parkway, Suite 3013,
+Ann Arbor, MI – 48108; Phone: (319)-321-0117; Fax: (734)-615-1770; mouli@umich.edu.
+Conflict of Interest
+None
+SUPPLEMENTAL DIGITAL CONTENT
+SDC 1: Appendix 1 GRF Knee Moment Bayesian and Linear Regression.pdf – Appendix
+HHS Public Access
+Author manuscript
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Published in final edited form as:
+Med Sci Sports Exerc. 2022 December 01; 54(12): 2208–2215. doi:10.1249/MSS.0000000000003014.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 2 ---
+R2 = 0.883, p<0.001). Bayesian regression evaluating the likelihood of these prediction models
+showed that there was decisive evidence favoring the alternative model over the null model (all
+Bayes Factors [BF10]>1000). Standardized beta coefficients indicated that changes in knee flexion
+angle had a greater impact (>2x) on knee extension moments than vGRF at both timepoints in both
+limbs (βvGRF = 0.204–0.309; βkneeflexion= 0.703–0.831).
+Conclusions: The findings indicate that both knee flexion angle and peak vGRF positively
+contribute to altered knee extension moments during gait, but the contribution of knee flexion
+angle is much greater than vGRF. Therefore, treatment strategies targeting these variables may
+improve knee loading after ACL reconstruction.
+Keywords
+KNEE MOMENT; KNEE KINETICS; JOINT LOADING; KNEE ANGLE; LIGAMENT
+INJURY; SPORTS
+INTRODUCTION
+Restoration of normal gait patterns is a major clinical goal when rehabilitating individuals
+with anterior cruciate ligament (ACL) reconstruction. However, despite significant
+rehabilitation efforts to normalize gait patterns, several studies show that altered knee
+biomechanics is commonplace after ACL reconstruction (1–4). Specifically, knee joint
+underloading during walking (as measured by knee moments or contact forces) has been
+identified as a significant issue in these individuals due to the growing evidence that
+points to its association with the development of post-traumatic osteoarthritis after ACL
+reconstruction (5–8). These deficits in knee joint loading are seen as early as 2–3 months
+following surgery and persist for years after the surgery (9–12). Hence, early interventions
+that target altered knee loading could potentially improve the long-term knee health after
+ACL reconstruction. However, a critical step before developing new interventions to combat
+post-ACL reconstruction knee loading deficits is to identify the mechanical factors that
+contribute to these deficits.
+Several mechanical and neuromuscular factors can contribute to altered knee loading during
+gait. Neuromuscular factors such as quadriceps weakness and dysfunction (e.g., arthrogenic
+muscle inhibition) may alter knee joint loading indirectly by altering the ability of the knee
+to properly attenuate forces during the loading phase of the gait (13). In contrast, mechanical
+factors such as knee flexion angle and vertical ground reaction forces (vGRFs) could directly
+influence knee joint loading, as they serve as primary inputs to the calculation of knee
+joint moments and contact forces (9). While previous research on the role of neuromuscular
+factors on knee joint loading has been conflicting (13–15), there has been a consistent
+link between mechanical factors and knee joint loading. For example, previous research
+indicates that reduced vertical ground reaction force (vGRF) in the ACL-reconstructed limb
+is strongly associated with reduced knee extensor moments in the ACL-reconstructed limb
+and that modulation in vGRF alters knee moments during gait (9, 10). Similarly, there is
+a moderate positive association between knee flexion angle and knee moments during gait
+after ACL reconstruction (9). These findings have instigated researchers to use biofeedback
+to improve knee moments and restore normal gait patterns after ACL reconstruction (16).
+Krishnan et al. Page 2
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 3 ---
+While previous research has established the cross-sectional association between vGRF,
+knee flexion angle, and the knee moment during gait, the longitudinal nature of this
+relationship is currently unknown. In other words, is the change in vGRF and knee flexion
+angle with time associated with the change in knee moment with time? Moreover, the
+extent to which changes in knee angle and vGRF asymmetry between limbs with time
+contribute to changes in knee moment asymmetry is not clear. Further, prior studies have
+used classical hypothesis testing based on p-values, which is often affected by small
+sample size and does not answer the primary research question of interest – what is the
+probability of the null hypothesis being true given the observed data? These are crucial
+gaps that need to be filled before implementing any targeted intervention to address
+altered knee loading after ACL reconstruction. Therefore, the purpose of this study was
+to comprehensively (both cross-sectionally and longitudinally) examine the extent to which
+knee flexion angle at initial contact, peak knee flexion angle, and vGRF contribute to
+knee extension moments during gait in individuals with ACL reconstruction. Participants
+were evaluated at three timepoints: about 1) 2 months after ACL reconstruction, 2) 4
+months after ACL reconstruction, and 3) 6 months after ACL reconstruction. Cross-sectional
+analyses were performed using the normalized raw data and the symmetry values (ACL
+limb−non-ACL limb) from all timepoints. Longitudinal analyses were performed at the
+4-month and 6-month timepoints using the change scores from baseline (i.e., timepoint
+2−timepoint 1 and timepoint 3−timepoint 1). We hypothesized that knee flexion angle at
+initial contact, peak knee flexion angle, and vGRF would be positively associated with
+peak knee extension moment and significantly contribute to altered knee loading during gait
+both cross-sectionally and longitudinally. These hypotheses were evaluated both using the
+traditional p-values obtained from classical hypothesis testing and Bayes factors obtained
+from Bayesian statistics.
+METHODS
+Participants
+Twenty-six individuals (17 females, 9 males; Age: 20.7±5.6 years; Height: 1.72±0.10
+meters (m), Body mass: 70.0±12.0 kilograms (kg), Body mass index: 23.6±3.6 kg/m2) with
+ACL reconstruction (21 bone-patellar tendon-bone graft, 4 hamstring tendon graft, and 1
+quadriceps tendon graft) volunteered to participate in this study. Participants were part of
+a clinical trial (NCT03282565) that examined the effects of functional resistance training
+on knee strength and biomechanics after ACL reconstruction and were tested at three
+timepoints: about 1) 2 months after ACL reconstruction (2.2±0.7 months), 2) 4 months after
+ACL reconstruction (4.6±0.8 months), and 3) 6 months after ACL reconstruction (6.7±0.8
+months). Participants in both the intervention and control arms of the study were included
+to ensure that there was enough spread in the data for regression analyses. Participants were
+included if they 1) were aged 14–40 years old, 2) had suffered an acute, primary, unilateral
+complete ACL rupture, and 3) had undergone ACL reconstruction with an autograft.
+Participants were excluded from the study if they 1) had suffered a previous ACL injury or
+previous surgery to either knee, 2) had sustained a recent significant knee injury other than
+the ACL tear, 3) had sustained a bony fracture or knee dislocation accompanying their ACL
+injury, 4) were pregnant or planning to become pregnant, 5) had a medical condition (e.g.,
+Krishnan et al. Page 3
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 4 ---
+a history of uncontrolled diabetes or hypertension) that could negatively affect the study
+results, and/or 6) were unable to provide written informed consent. All participants read
+and signed an informed consent/assent document approved by the University of Michigan
+Medical Institutional Review Board before their participation. Parental consent was obtained
+if the participant was a minor child.
+Gait Biomechanics Testing
+Overground knee biomechanical gait data were collected using a 15-camera motion capture
+system (MX-13, Vicon Motion System Ltd., Oxford, GBR) and two independent force
+plates (AMTI OR6–7, Advanced Mechanical Technology Inc., Watertown, MA, USA)
+embedded on level ground. Motion capture data (240Hz) were synchronized with GRF data
+(1200Hz) using Vicon hardware/software. A total of 34 reflective markers (14 mm diameter)
+were placed bilaterally over the participant’s anatomical locations (17). A static trial of each
+participant aligned within the laboratory coordinate system was recorded, following which
+walking trials were performed. Five trials were collected at the participant’s self-selected
+gait speed during all three testing sessions and were used in further analysis. Participants
+were instructed to walk at their comfortable, habitual walking pace. Marker data and ground
+reaction forces were filtered with a zero phase-lag low-pass Butterworth filter (4th order,
+12 Hz cut-off). Visual 3D software (v3.90, C-Motion, Rockville, MD, USA) was used
+to calculate bilateral knee sagittal plane flexion-extension motions and internal moments.
+Lower limb joint rotations were calculated using the Cardan rotation sequence and were
+expressed relative to each participant’s neutral static position recorded during the static
+trial. Joint moments were normalized to the participant’s height and mass (obtained at each
+timepoint) and vGRF was normalized to the participant’s body weight. All biomechanical
+data were time normalized to the stance phase of the gait cycle, with the initial contact
+and toe-off being defined using a vGRF threshold of 10 N (18). The ensemble averages
+of the time-normalized knee angle, vGRF, and knee moment data were used in further
+analyses. Knee flexion angle at initial contact, peak knee flexion angle, peak vGRF, and
+peak knee extension moment were calculated for each limb during the early stance phase
+of gait, identified as the first 50% of the stance phase, for all three timepoints (Figure 1)
+(15). We chose the first 50% of the stance phase for two reasons: (1) Most of the prior
+research in ACL-reconstructed population has almost exclusively focused on the peak knee
+moment during the loading response/early stance, and (2) this is also the region where
+individuals with ACL reconstruction typically exhibit differences in gait mechanics when
+compared with uninjured controls. A change score (timepoint 2−timepoint 1 and timepoint
+3−timepoint 1) along with limb symmetry values (i.e., ACL limb values−non-ACL limb
+values) were also calculated for these variables.
+Statistical Analyses
+All statistical analyses were performed using the JASP version 0.14.0.0 statistical software
+(https://jasp-stats.org/), and the JASP outputs are provided in Appendix 1 and in the Open
+Science Framework (OSF - https://osf.io/zxkes/). Descriptive statistics were computed for
+each variable, and rain cloud plots were generated for robust data visualization (19).
+Stepwise multiple linear regression analysis was used to determine the contribution of
+knee flexion angle at initial contact, peak knee flexion angle during early stance, and
+Krishnan et al. Page 4
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 5 ---
+peak vGRF during early stance to knee joint loading (i.e., peak knee moment) during the
+early stance phase of gait. Separate regression analyses were performed using the data
+from the reconstructed limb, non-reconstructed limb, symmetry values, and the change
+scores to comprehensively understand the contributions of knee flexion angle and vGRF
+to peak knee extension moment during gait. We adopted an inclusive statistical approach
+where both classical and Bayesian regression analyses were performed to measure statistical
+significance (p-value) and the Bayes Factor (BF10), respectively (20–25). More details
+regarding the Bayesian analysis and how to interpret the results of this analysis are provided
+in the JASP manual:(http://static.jasp-stats.org/Manuals/Bayesian_Guide_v0_12_2_1.pdf).
+Briefly, Bayesian regression analyses in JASP were conducted using the default prior to
+compute BF10 that describes the likelihood of the alternative model (β ≠ 0) to the likelihood
+of the null model (β = 0). Thus, the BF10 indicates the relative strength of evidence in the
+data for two competing hypotheses. We used the descriptive classifications adopted by JASP
+(based Jeffreys’s scheme (26)) to identify Bayes Factor values as none, anecdotal, moderate,
+strong, very strong, or decisive relative evidence for our alternative hypothesis (Table 1).
+The Volk-Selke Maximum p-Ratio (VS-MPR) was also computed to estimate the maximum
+possible odds in favor of the alternative hypothesis (H1) over the null hypothesis (H0), based
+on a two-sided p-value (27, 28). This was computed using the following equation:
+VS‐MPR =
+1
+−e × p × ln p
+forp ≤ 0.37
+A significance level of α = 0.05 was used for classical regression analyses.
+RESULTS
+Raw Scores
+Raincloud plots showing the distributions of knee flexion angle at initial contact, peak knee
+flexion angle, peak vGRF, and peak knee extension moment for the ACL-reconstructed and
+non-ACL-reconstructed limbs at the three timepoints are shown in Figure 2. Regression
+analyses indicated that peak knee flexion angle and peak vGRF together significantly
+predicted peak knee extension moment during gait in both the reconstructed (p < 0.001, R2
+= 0.767, VS-MPR = 1.702e +21; Figure 3A) and the non-reconstructed limbs (p < 0.001, R2
+= 0.815, VS-MPR = 7.616e +24; Figure 3B). Bayesian regression evaluating the likelihood
+of these prediction models showed that there was decisive evidence favoring the alternative
+regression model that included peak knee flexion angle and peak vGRF as opposed to the
+null model that only included the intercept (ACL BF10 = 8.463e +20 and non-ACL BF10 =
+3.607e +24).
+Limb Symmetry Values
+Raincloud plots showing the distributions of limb symmetry values for knee flexion angle
+at initial contact, peak knee flexion angle, peak vGRF, and peak knee extension moment
+at the three timepoints are shown in Figure 4. Regression analyses indicated that peak
+knee flexion angle symmetry and peak vGRF symmetry together significantly predicted
+peak knee extension moment symmetry during gait (p < 0.001, R2 = 0.673, VS-MPR =
+Krishnan et al. Page 5
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 6 ---
+8.197e +15; Figure 3C). Bayesian regression evaluating the likelihood of these prediction
+models showed that there was decisive evidence favoring the alternative regression model
+that included peak knee flexion angle symmetry and peak vGRF symmetry as opposed to the
+null model that only included the intercept (BF10 = 4.390e +15).
+Change Scores
+Raincloud plots showing the distributions of changes (from timepoint 1) in knee flexion
+angle at initial contact, peak knee flexion angle, peak vGRF, and peak knee extension
+moment for the ACL-reconstructed and non-ACL-reconstructed limbs at timepoints 2 and
+3 are shown in Figure 5. When evaluating the reconstructed limb, regression analyses
+indicated that the changes in peak knee flexion angle and peak vGRF together significantly
+predicted the changes in peak knee extension moment during gait at both timepoint 2
+(p < 0.001, R2 = 0.775, VS-MPR = 606628.184; Figure 6A) and timepoint 3 (p <
+0.001, R2 = 0.731, VS-MPR = 47973.267; Figure 6C). Bayesian regression evaluating the
+likelihood of these prediction models showed that there was decisive evidence favoring
+the alternative regression model that included changes in peak knee flexion angle and
+peak vGRF as opposed to the null model that only included the intercept (ACL BF10 at
+timepoint 2 = 329729.448 and ACL BF10 at timepoint 3 = 27481.216). When evaluating the
+non-reconstructed limb, regression analyses indicated that the changes in knee flexion angle
+at initial contact, peak knee flexion angle, and peak vGRF together significantly predicted
+the changes in peak knee extension moment during gait at both timepoint 2 (p < 0.001, R2 =
+0.844, VS-MPR = 4.129e +6; Figure 6B) and timepoint 3 (p < 0.001, R2 = 0.883, VS-MPR
+= 3.068e +7; Figure 6D). Bayesian regression evaluating the likelihood of these prediction
+models showed that there was decisive evidence favoring the regression model that included
+changes in peak knee flexion angle and peak vGRF as opposed to the null model that only
+included the intercept (non-ACL BF10 at timepoint 2 = 2.526e +6 and non-ACL BF10 at
+timepoint 3 = 1.779e +7).
+DISCUSSION
+This study was performed to evaluate the extent to which knee flexion angle and
+vGRF contribute to knee extension moment during walking in individuals with ACL
+reconstruction. As hypothesized, both peak knee flexion angle and peak vGRF significantly
+contributed to peak knee extension moment during the early stance phase of gait.
+Specifically, these variables explained more than 75% of the variance in the peak knee
+extension moment data in both the ACL-reconstructed and the non-ACL-reconstructed
+limbs. While the amount of variance explained by the model reduced slightly when using the
+symmetry values, peak knee flexion angle and peak vGRF symmetry values still explained
+more than 67% of the variance in peak knee extension moment symmetry. More importantly,
+the longitudinal changes in peak knee flexion angle and peak vGRF explained about 73%
+to 84% of the variance in peak knee extension moment changes after ACL reconstruction.
+The Bayes factors (BF10) and VS-MPR values for each of these predictive models were also
+extremely high (>10,000), indicating that the evidence in favor of the alternative predictive
+models over the null model was decisive. Collectively, these findings indicate that alterations
+in knee kinematics (peak knee flexion angle) and kinetics (vGRF) contribute to altered knee
+Krishnan et al. Page 6
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 7 ---
+loading (knee extension moments) during gait and emphasize the importance of developing
+targeted interventions that improve knee kinematics and kinetics to restore normal gait
+mechanics after ACL reconstruction.
+Individuals with ACL reconstruction exhibit abnormal gait patterns (e.g., reduced GRFs and
+knee flexion angle) that do not recover even years after surgery and rehabilitation (1–4).
+These altered gait patterns have been shown to contribute to abnormal knee loading (e.g.,
+reduced knee moment) and poor knee function after ACL reconstruction and have been
+linked to the pathogenesis of posttraumatic osteoarthritis (5, 6, 9, 10, 29, 30). Accordingly,
+researchers have placed considerable efforts to develop new interventions targeting abnormal
+knee loading in individuals with ACL reconstruction. However, a clear understanding of
+the mechanical factors that contribute to altered knee loading after ACL reconstruction is
+critical to developing appropriate intervention strategies. The results of this study indicate
+that peak knee flexion angle and peak vGRF during early stance contribute significantly
+to the peak knee extension moment during gait, which is consistent with previous cross-
+sectional research showing that reduced GRFs and knee flexion range of motion are strongly
+associated with reduced knee extensor moments 3–4 months after ACL reconstruction (9).
+Interestingly, when evaluating the standardized coefficients, it appears that the peak knee
+flexion angle contributes to a much larger extent (>2x) than the peak vGRF to the observed
+knee extension moments during gait (see Appendix, Supplemental Digital Content 1). This
+finding suggests that interventions that target to increase knee flexion angles may have a
+higher impact on improving knee joint loading than interventions that target to increase
+vGRF. Knee flexion angles are also easier to target in a clinic due to the increasing
+availability of low-cost camera systems that can provide real-time feedback of knee joint
+angles (31–33). However, further research is warranted to determine if targeting greater knee
+flexion angle during gait can improve knee joint loading and cartilage health following ACL
+reconstruction.
+There are two novel aspects to this study. First, unlike previous studies, we performed
+a comprehensive analysis of the relationship between vGRF, knee flexion angle, and
+peak knee moment. Specifically, we evaluated the ability of peak vGRF and peak knee
+flexion angle to predict peak knee extension moment cross-sectionally using individual limb
+data and symmetry values. We also examined the relationships between these variables
+longitudinally to understand how a change in one variable contributes to the other. This
+information is critical because a strong initial correlation between vGRF, knee flexion
+angle, and knee moment does not necessarily imply that these variables will also follow
+a similar trend of improvement with time (or training), which can be determined using a
+change/gain score (i.e., changes across timepoints) (34). Here, using a change score, we
+show for the first time that changes in vGRF and peak knee flexion angle predict changes
+in peak knee extension moment in individuals with ACL reconstruction. These findings
+suggest that the correlations seen between these variables can be inferred as causative, and
+hence, interventions improving knee flexion angle and vGRF early after ACL reconstruction
+could lead to sustained improvements in knee joint loading. Second, we also used a
+novel Bayesian approach that evaluated the likelihood of these predictive models given
+the observed experimental data. Unlike traditional hypothesis testing based on p-values,
+Bayesian analysis provides evidence related to the likelihood of two competing hypotheses
+Krishnan et al. Page 7
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 8 ---
+(null and alternative) and allows inferences to be made about whether the observed data is
+more consistent with the alternative hypothesis or the null hypothesis. The results of this
+study indicated that the Bayes Factors were very high (>1000), indicating decisive evidence
+favoring our predictive model over the null model. As indicated before, these are critical
+findings that strengthen the existing cross-sectional literature and provide a step in the right
+direction to develop interventions that could potentially address abnormal gait biomechanics
+after ACL reconstruction.
+There are some limitations to this study. One limitation is that we only evaluated the
+mechanical factors that contribute to peak knee extension moments during gait. However,
+other factors such as graft type, knee pain, and gait speed can contribute to altered knee
+moments after ACL reconstruction. We do note that knee angle and vGRF contributed to
+more than 70% of the variation in peak knee extension moments; thus, the contributions
+of other variables that were not included in the analyses must be only minimal. Another
+limitation is that we only evaluated the peak knee extension moments during the first
+50% of the stance phase. This was an intentional choice because previous studies have
+primarily focused on peak knee moments during the loading response/early stance phase of
+the gait, where individuals with ACL reconstruction exhibit differences in gait mechanics
+when compared with uninjured controls. However, it is likely that knee moments during
+the latter part of the stance phase may also be crucial to the development of post-traumatic
+knee osteoarthritis and need to be evaluated in future studies. Finally, while we evaluated
+the causal association of knee flexion angle and vGRF with knee extension moment during
+gait, we do not know whether improvements in knee flexion angle and vGRF would lead
+to sustained improvements in knee moments during gait. Future studies are warranted to
+examine this important research question, as it has implications for improving gait function
+after ACL reconstruction.
+CONCLUSIONS
+In conclusion, the results of this study indicated that peak knee flexion angle and vGRF
+significantly predicted peak knee extension moment in individuals with ACL reconstruction,
+both cross-sectionally and longitudinally. Specifically, cross-sectional analyses using the
+normalized raw values and symmetry values from all timepoints indicated that peak knee
+flexion angle and peak vGRF together contributed positively to knee extension moment
+during gait. In addition, longitudinal analyses using change scores from baseline indicated
+that changes in peak knee flexion angle and vGRF with time predicted changes in peak
+knee extension moment, with knee flexion angle influencing knee extension moment more
+than vGRF in both limbs at both timepoints. Bayesian regression indicated that there was
+decisive evidence favoring the likelihood of these prediction models. These results suggest
+that treatment strategies targeting greater knee flexion angle and vGRF may improve knee
+loading after ACL reconstruction.
+Supplementary Material
+Refer to Web version on PubMed Central for supplementary material.
+Krishnan et al. Page 8
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 9 ---
+Acknowledgments
+This research was supported by the National Institute of Health NICHD (R21-HD092614). The content is solely
+the responsibility of the authors and does not represent the views of the NIH. The authors would also like to
+thank the past and current members of the NeuRRo Lab and the ORB Lab for their assistance with data collection
+and processing. The results of the study are presented clearly, honestly, and without fabrication, falsification, or
+inappropriate data manipulation. The results of the present study do not constitute endorsement by the American
+College of Sports Medicine.
+Conflict of Interest and Funding Source:
+This research was supported by the National Institute of Health NICHD (R21-HD092614). The authors declare no
+conflicts of interest. The results of the study are presented clearly, honestly, and without fabrication, falsification,
+or inappropriate data manipulation. The results of the present study do not constitute endorsement by the American
+College of Sports Medicine.
+REFERENCES
+1. Capin JJ, Khandha A, Zarzycki R, Manal K, Buchanan TS, Snyder-Mackler L. Gait mechanics and
+second ACL rupture: implications for delaying return-to-sport. J Orthop Res. 2017;35(9):1894–901.
+[PubMed: 27859527]
+2. Hart HF, Culvenor AG, Collins NJ, et al. Knee kinematics and joint moments during gait following
+anterior cruciate ligament reconstruction: a systematic review and meta-analysis. Br J Sports Med.
+2016;50(10):597–612. [PubMed: 26265562]
+3. Kaur M, Ribeiro DC, Theis JC, Webster KE, Sole G. Movement patterns of the knee
+during gait following ACL reconstruction: a systematic review and meta-analysis. Sports Med.
+2016;46(12):1869–95. [PubMed: 26936269]
+4. Slater LV, Hart JM, Kelly AR, Kuenze CM. Progressive changes in walking kinematics and kinetics
+after anterior cruciate ligament injury and reconstruction: a review and meta-analysis. J Athl Train.
+2017;52(9):847–60. [PubMed: 28985125]
+5. Amano K, Pedoia V, Su F, Souza RB, Li X, Ma CB. Persistent biomechanical alterations after
+ACL reconstruction are associated with early cartilage matrix changes detected by quantitative MR.
+Orthop J Sports Med. 2016;4(4):2325967116644421.
+6. Li H, Tao H, Hua Y, Chen J, Li Y, Chen S. Quantitative magnetic resonance imaging assessment
+of cartilage status: a comparison between young men with and without anterior cruciate ligament
+reconstruction. Arthroscopy. 2013;29(12):2012–9. [PubMed: 24286800]
+7. Shimizu T, Samaan MA, Tanaka MS, et al. Abnormal biomechanics at 6 months are associated
+with cartilage degeneration at 3 years after anterior cruciate ligament reconstruction. Arthroscopy.
+2019;35(2):511–20. [PubMed: 30473456]
+8. Culvenor AG, Perraton L, Guermazi A, et al. Knee kinematics and kinetics are associated with
+early patellofemoral osteoarthritis following anterior cruciate ligament reconstruction. Osteoarthritis
+Cartilage. 2016;24(9):1548–53. [PubMed: 27188685]
+9. Lin PE, Sigward SM. Contributors to knee loading deficits during gait in individuals following
+anterior cruciate ligament reconstruction. Gait Posture. 2018;66:83–7. [PubMed: 30170138]
+10. Sigward SM, Lin P, Pratt K. Knee loading asymmetries during gait and running in early
+rehabilitation following anterior cruciate ligament reconstruction: a longitudinal study. Clin
+Biomech (Bristol, Avon). 2016;32:249–54.
+11. Capin JJ, Zarzycki R, Arundale A, Cummer K, Snyder-Mackler L. Report of the primary outcomes
+for gait mechanics in men of the ACL-SPORTS trial: secondary prevention with and without
+perturbation training does not restore gait symmetry in men 1 or 2 years after ACL reconstruction.
+Clin Orthop Relat Res. 2017;475(10):2513–22. [PubMed: 28224442]
+12. Garcia SA, Brown SR, Koje M, Krishnan C, Palmieri-Smith RM. Gait asymmetries are
+exacerbated at faster walking speeds in individuals with acute anterior cruciate ligament
+reconstruction. J Orthop Res. 2022;40(1):219–30. [PubMed: 34101887]
+Krishnan et al. Page 9
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 10 ---
+13. Arhos EK, Capin JJ, Buchanan TS, Snyder-Mackler L. Quadriceps strength symmetry does not
+modify gait mechanics after anterior cruciate ligament reconstruction, rehabilitation, and return-to-
+sport training. Am J Sports Med. 2021;49(2):417–25. [PubMed: 33373534]
+14. Di Stasi SL, Logerstedt D, Gardinier ES, Snyder-Mackler L. Gait patterns differ between ACL-
+reconstructed athletes who pass return-to-sport criteria and those who fail. Am J Sports Med.
+2013;41(6):1310–8. [PubMed: 23562809]
+15. Lewek M, Rudolph K, Axe M, Snyder-Mackler L. The effect of insufficient quadriceps strength on
+gait after anterior cruciate ligament reconstruction. Clin Biomech (Bristol, Avon). 2002;17(1):56–
+63.
+16. Evans-Pickett A, Davis-Wilson HC, Luc-Harkey BA, et al. Biomechanical effects of manipulating
+peak vertical ground reaction force throughout gait in individuals 6–12 months after anterior
+cruciate ligament reconstruction. Clin Biomech (Bristol, Avon). 2020;76:105014.
+17. Brown SR, Washabaugh EP, Dutt-Mazumder A, Wojtys EM, Palmieri-Smith RM, Krishnan C.
+Functional resistance training to improve knee strength and function after acute anterior cruciate
+ligament reconstruction: a case study. Sports Health. 2021;13(2):136–44. [PubMed: 33337984]
+18. Lepley AS, Gribble PA, Thomas AC, Tevald MA, Sohn DH, Pietrosimone BG. longitudinal
+evaluation of stair walking biomechanics in patients with ACL injury. Med Sci Sports Exerc.
+2016;48(1):7–15. [PubMed: 26225766]
+19. Allen M, Poggiali D, Whitaker K, Marshall TR, Kievit RA. Raincloud plots: a multi-platform tool
+for robust data visualization. Wellcome Open Res. 2019;4:63. [PubMed: 31069261]
+20. Wagenmakers EJ, Love J, Marsman M, et al. Bayesian inference for psychology. Part II: example
+applications with JASP. Psychon Bull Rev. 2018;25(1):58–76. [PubMed: 28685272]
+21. Wagenmakers EJ, Marsman M, Jamil T, et al. Bayesian inference for psychology. Part I:
+theoretical advantages and practical ramifications. Psychon Bull Rev. 2018;25(1):35–57. [PubMed:
+28779455]
+22. Gardi AZ, Vogel AK, Dharia AK, Krishnan C. Effect of conventional transcranial direct current
+stimulation devices and electrode sizes on motor cortical excitability of the quadriceps muscle.
+Restor Neurol Neurosci. 2021;39(5):379–91. [PubMed: 34657855]
+23. Joshi V, Rouse EJ, Claflin ES, Krishnan C. How does ankle mechanical stiffness change as a
+function of muscle activation in standing and during the late stance of walking? IEEE Trans
+Biomed Eng. 2022;69(3):1186–93. [PubMed: 34606446]
+24. Krishnan C Effect of paired-pulse stimulus parameters on the two phases of short interval
+intracortical inhibition in the quadriceps muscle group. Restor Neurol Neurosci. 2019;37(4):363–
+74. [PubMed: 31306142]
+25. Ruiz-Ruano Garcia AM, Lopez Puga J. Deciding on null hypotheses using P-values or Bayesian
+alternatives: a simulation study. Psicothema. 2018;30(1):110–5. [PubMed: 29363479]
+26. Jeffreys H Theory of probability (3rd edt.). Oxford University Press. MR0187257. 1961;432.
+27. Sellke T, Bayarri M, Berger JO. Calibration of ρ values for testing precise null hypotheses. Am
+Stat. 2001;55(1):62–71.
+28. Vovk VG. A logic of probability, with application to the foundations of statistics. J R Stat Soc
+Series B Stat Methodol. 1993;55(2):317–41.
+29. Erhart-Hledik JC, Chu CR, Asay JL, Andriacchi TP. Gait mechanics 2 years after anterior cruciate
+ligament reconstruction are associated with longer-term changes in patient-reported outcomes. J
+Orthop Res. 2017;35(3):634–40. [PubMed: 27238273]
+30. Khandha A, Manal K, Wellsandt E, Capin J, Snyder-Mackler L, Buchanan TS. Gait mechanics in
+those with/without medial compartment knee osteoarthritis 5 years after anterior cruciate ligament
+reconstruction. J Orthop Res. 2017;35(3):625–33. [PubMed: 27082166]
+31. Krishnan C, Washabaugh EP, Seetharaman Y. A low cost real-time motion tracking approach using
+webcam technology. J Biomech. 2015;48(3):544–8. [PubMed: 25555306]
+32. Saner RJ, Washabaugh EP, Krishnan C. Reliable sagittal plane kinematic gait assessments are
+feasible using low-cost webcam technology. Gait Posture. 2017;56:19–23. [PubMed: 28482201]
+33. Viswakumar A, Rajagopalan V, Ray T, Gottipati P, Parimi C. Development of a robust, simple, and
+affordable human gait analysis system using bottom-up pose estimation with a smartphone camera.
+Front Physiol. 2021;12:784865. [PubMed: 35069246]
+Krishnan et al. Page 10
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 11 ---
+34. Moreau D, Conway AR. The case for an ecological approach to cognitive training. Trends Cogn
+Sci. 2014;18(7):334–6. [PubMed: 24972505]
+Krishnan et al. Page 11
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 12 ---
+Figure 1:
+An exemplary data of sagittal plane knee kinematics, vertical ground reaction force (vGRF),
+and knee moment from a participant in our study to depict the region at which the analysis
+was performed. The solid lines represent the anterior cruciate ligament-reconstructed limb
+(ACL), and the broken lines represent the non-ACL-reconstructed limb (Non-ACL). Ellipses
+represent the point at which gait data were evaluated: knee flexion angle at initial contact,
+peak knee flexion angle, peak vGRF, and peak knee extension moment during the early
+stance phase of gait when the knee is maximally loaded.
+Krishnan et al. Page 12
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 13 ---
+Figure 2:
+Raincloud plots showing distributions of (A) knee flexion angle at initial contact, (B) peak
+knee flexion angle, (C) peak vertical ground reaction force (vGRF), and (D) peak knee
+extension moment during early stance for the ACL-reconstructed limb (ACL) and non-ACL-
+reconstructed limb (Non-ACL) at the three timepoints (about 2 months, 4 months, and 6
+months post-surgery) tested in this study. The circles on the plot indicate individual data
+points for the reconstructed and the non-reconstructed limbs at timepoint 1 (1), timepoint
+2 (2), and timepoint 3 (3). Rainclouds and notched box plots show the distribution of the
+data, and the horizontal line on the box plot indicates the mean of the distribution. Note that
+a lower knee angle at initial contact (A) indicates that the participant walked with a more
+extended knee at heel strike, and a lower peak knee angle (B) indicates that the participant
+walked with reduced knee flexion during the early stance phase.
+Krishnan et al. Page 13
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 14 ---
+Figure 3:
+(A) A scatterplot of actual vs. predicted knee moments of the ACL-reconstructed limb
+(ACL) using the regression model that used peak knee flexion angle and peak vGRF
+during early stance in the ACL-reconstructed limb. (B) A scatterplot of actual vs. predicted
+knee moments of the non-ACL-reconstructed limb (Non-ACL) using the regression models
+that used peak knee flexion angle and peak vGRF during early stance in the non-ACL-
+reconstructed limb. (C) A scatterplot of actual vs. predicted knee moment symmetry (i.e.,
+ACL limb values−non-ACL limb values) using the regression model that used peak knee
+flexion angle and peak vGRF symmetry values during early stance.
+Krishnan et al. Page 14
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 15 ---
+Figure 4:
+Raincloud plots showing distributions of symmetry values (i.e., ACL-reconstructed limb
+values−non-ACL-reconstructed limb values) for (A) knee flexion angle at initial contact, (B)
+peak knee flexion angle, (C) peak vertical ground reaction force (vGRF), and (D) peak knee
+extension moment during early stance for the ACL-reconstructed limb (ACL) and non-ACL-
+reconstructed limb (Non-ACL) at the three timepoints (about 2 months, 4 months, and 6
+months post-surgery) tested in this study. The circles on the plot indicate individual data
+points for the reconstructed and the non-reconstructed limbs at timepoint 1 (1), timepoint 2
+(2), and timepoint 3 (3). Rainclouds and notched box plots show the distribution of the data,
+and the horizontal line on the box plot indicates the mean of the distribution. Note that a
+negative Δ value in limb symmetry indicates that the ACL-reconstructed limb had a lower
+value than the non-ACL-reconstructed limb, and vice versa for a positive Δ value.
+Krishnan et al. Page 15
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 16 ---
+Figure 5:
+Raincloud plots showing distributions of change scores (i.e., changes across timepoints) for
+(A) knee flexion angle at initial contact, (B) peak knee flexion angle, (C) peak vertical
+ground reaction force (vGRF), and (D) peak knee extension moment during early stance
+for the ACL-reconstructed limb (ACL) and non-ACL-reconstructed limb (Non-ACL) at the
+three timepoints (about 2 months, 4 months, and 6 months post-surgery) tested in this
+study. The circles on the plot indicate individual data points for the reconstructed and the
+non-reconstructed limbs at timepoint 2 (2−1) and timepoint 3 (3−1), and timepoint 3 (3).
+Rainclouds and notched box plots show the distribution of the data, and the horizontal
+line on the box plot indicates the mean of the distribution. Note that a negative Δ value
+in the change score indicates that the baseline value (timepoint 1) had a higher value than
+timepoint 2 or 3, and vice versa for a positive Δ value.
+Krishnan et al. Page 16
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 17 ---
+Figure 6:
+(A) Scatterplots of actual vs. predicted changes in knee moment of the ACL-reconstructed
+limb (ACL) and non-ACL-reconstructed limb (Non-ACL) using regression models that
+used changes in knee flexion angle at initial contact, peak knee flexion angle, and peak
+vGRF during early stance of the respective limbs across timepoints. Note that the ACL-
+reconstructed limb had peak knee flexion angle and peak vGRF as predictors in the model
+whereas the non-ACL-reconstructed limb had knee flexion angle at initial contact, peak knee
+flexion angle, and peak vGRF as predictors in the model.
+Krishnan et al. Page 17
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+
+--- PAGE 18 ---
+Author Manuscript Author Manuscript Author Manuscript Author Manuscript
+Krishnan et al. Page 18
+Table 1 –
+Interpretation of Bayes Factor (BF10) in favor of alternative hypothesis/model (H1) over null hypothesis/model
+(H0).
+Bayes Factor (BF10) Interpretation
+>100 Decisive evidence favoring the alternative hypothesis/model
+30–100 Very strong evidence favoring the alternative hypothesis/model
+10–30 Strong evidence favoring the alternative hypothesis/model
+3–10 Moderate evidence favoring the alternative hypothesis/model
+1–3 Anecdotal evidence favoring the alternative hypothesis/model
+1 No evidence favoring the null or the alternative hypothesis/model
+1/3–1 Anecdotal evidence favoring the null hypothesis/model
+1/10–1/3 Moderate evidence favoring the null hypothesis/model
+1/30–1/10 Strong evidence favoring the null hypothesis/model
+1/100–1/30 Very strong evidence favoring the null hypothesis/model
+<1/100 Decisive evidence favoring the null hypothesis/model
+Med Sci Sports Exerc. Author manuscript; available in PMC 2023 December 01.
+
+--- PAGE 19 ---

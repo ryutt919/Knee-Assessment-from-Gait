@@ -1,0 +1,532 @@
+
+--- PAGE 1 ---
+Gait analysis post anterior cruciate ligament reconstruction:
+Knee osteoarthritis perspective
+Michelle Halla,
+*, Catherine A. Stevermerb
+, Jason C. Gillettec
+a
+Centre of Health, Exercise Sports and Medicine, Department of Physiotherapy, University of Melbourne, Victoria 3010, Australia
+b
+Postprofessional DPT Program, Des Moines University, 317 Academic Center, Des Moines, IA 50312, United States
+c
+Department of Kinesiology, Iowa State University, 245 Forker Building, Ames, IA 50011-1160, United States
+1. Introduction
+Anterior cruciate ligament (ACL) injuries are among the most
+common musculoskeletal injuries, occurring frequently in young
+adults, especially women. Individuals younger than 30 years old
+sustain ACL ruptures more often as compared to the general
+population [1,2]. ACL ruptures are often concurrent with meniscal
+injuries [2] and where combined injury has occurred, 48% of cases
+have evidence of knee osteoarthritis (OA) within 5–20 years after
+initial ACL injury [2,3]. Therefore, individuals between 35 and 40
+years oldare at increasedrisk of kneeOAfollowingACL rupture[1].
+Structural changes associated with ACL injury combined with
+long-term changes in dynamic loading contribute to the develop-
+ment of knee OA [2]. As a measuring tool, gait analysis is
+considered a practical and reliable technique to indirectly assess
+dynamic loads on the lower extremity [4]. Investigating lower
+extremity kinetics during walking and stair negotiation can
+provide insight into everyday repetitive loads placed on the knee
+joint.
+Arguably, external knee varus moments have the greatest
+clinical consequence when considering potential knee OA risk
+factors. Knee varus moments are associated with medial compres-
+sion, the compartment most often affected with OA. Miyazaki et al.
+[5] established that the risk of knee OA progression increased by a
+factor of 6 with each 1% increase in knee varus moments. Attention
+has also focused on the role of the hip abductors in protecting
+against knee OA. Impaired hip abduction moment generation
+causes contralateral pelvis drop, increasing knee varus moments
+and medial compression [6,7]. Hooper et al. [8] observed no
+differences in knee varus moments while walking or using the
+stairs when comparing the injured and non-injured leg one year
+post-ACL reconstruction. However, Butler et al. [9] observed 21%
+greater knee varus moments during walking in individuals ﬁve
+years following ACL reconstruction when compared to a control
+group. Increased knee varus moments may not be present within
+Gait & Posture 36 (2012) 56–60
+A R T I C L E I N F O
+Article history:
+Received 9 February 2011
+Received in revised form 21 December 2011
+Accepted 5 January 2012
+Keywords:
+Anterior cruciate ligament reconstruction
+Knee osteoarthritis
+Gait analysis
+Biomechanics
+Stair ambulation
+A B S T R A C T
+Individuals with anterior cruciate ligament (ACL) reconstruction are at increased risk to develop knee
+osteoarthritis (OA). Gait analysis describing kinetics of the lower extremity during walking and stair
+use (stair ascent and stair descent) can provide insight to everyday dynamic knee joint loading. In this
+study, we compared lower extremity gait patterns of those with ACL reconstruction (>1 year) to a
+controlgroup. Fifteen ACL reconstructed individuals and 17 healthy controls participated in this study.
+Knee extensor and ﬂexor strength were assessed. Using inverse dynamics, lower extremity moments
+were calculated during the stance phase of walking and during two steps of stair ascent and descent.
+Univariate ANOVA was used to test for main effects between (1) injured leg and control group and (2)
+non-injured leg and control group. Student paired t-tests were used to determine differences between
+the injured and non-injured leg. Those with ACL reconstruction exhibited reduced initial knee ﬂexion
+angles during stair descent, reduced knee extension moments during stair descent and stair ascent
+(second step), and increased hip extension moments during stair ascent (second step) and walking as
+compared to controls. Knee ﬂexor strength was signiﬁcantly reduced in the ACL group, but no
+differences were found in knee extensor strength. No kinematic or kinetic differences were observed
+between the injured and non-injured leg of the ACL group. Walking and stair ambulation highlight
+altered joint loading in those with ACL reconstruction surgery. Individuals appeared to compensate for
+lower knee extension moments by increasing hip extension moments. Furthermore, the load
+distributiononthearticularcartilageislikelyshiftedasevidencedbyreducedkneeﬂexionanglesinthe
+ACL reconstructed leg.
+ß 2012 Elsevier B.V. All rights reserved.
+* Corresponding author.
+E-mail addresses: halm@unimelb.edu.au (M. Hall),
+catherine.stevermer@dmu.edu (C.A. Stevermer), gillette@iastate.edu (J.C. Gillette).
+Contents lists available at SciVerse ScienceDirect
+Gait & Posture
+journal homepage: www.elsevier.com/locate/gaitpost
+0966-6362/$ – see front matter ß 2012 Elsevier B.V. All rights reserved.
+doi:10.1016/j.gaitpost.2012.01.003
+
+--- PAGE 2 ---
+the ﬁrst year of ACL rupture, but medial knee loading may increase
+as time progresses. Further study is required to assess whether
+dynamic knee joint loading is greater for individuals post-ACL
+surgery during walking and stair ambulation.
+Sagittal lower extremity kinetic accommodations at the knee
+[8,10,11] and hip [8,11,12] have been reported following ACL
+reconstruction. Individuals 6–12 months post-ACL reconstruction
+have altered walking patterns as compared to controls, including
+reduced knee ﬂexion angles at mid-stance [8,11] and reduced knee
+extension moments during early stance [10,11]. These gait
+adaptations may lead to degenerative changes in the articular
+cartilage by altering the loading patterns on the knee joint.
+Decreased knee ﬂexion angles and knee extension moments have
+beenassociatedwithquadricepsweaknessuptooneyearpost-ACL
+surgery [13,14]. Large cross-sectional studies have established
+strong relationships between quadriceps weakness and the onset
+of knee OA [15,16]. Persistent quadriceps weakness developed
+through arthrogenic inhibition leads to altered kinetics and
+kinematics after knee injury [17]. Despite ACL reconstruction
+and aggressive rehabilitation regimes, weakness in quadriceps
+musculature exists up to one year post-ACL reconstruction surgery
+[18]. Theoretically, weak quadriceps musculature reduces the
+abilityto generate thenecessary force toprovide efﬁcienteccentric
+control during the loading phase of gait [17]. It has yet to be
+determined if quadriceps weakness along with reduced knee
+extension moments and knee ﬂexion angles persist long-term
+(greater than one year after ACL reconstruction).
+The purpose of this study was to analyze the gait of those with
+ACL reconstruction and a comparable healthy group during stair
+ascent, stair descent, and level walking. The primary focus was to
+determine if factors associated with the development and/or
+progression of knee OA were observed in the ACL reconstructed
+limb when compared to the non-injured limb and healthy
+counterparts. We hypothesized that the ACL reconstructed leg
+would display: (1) increased external knee varus moments, (2)
+reduced knee extensor strength, (3) reduced knee ﬂexion angles,
+and (4) reduced knee extension moments when compared to the
+non-injured limb and control group.
+2. Participants
+Individuals >1 year from unilateral ACL reconstruction and
+healthy controls between 18 and 35 years old were recruited from
+auniversitysetting.Exclusioncriteriaincludedhistoryof anyother
+musculoskeletal or neurological conditions precluding safe walk-
+ing and stair negotiation. Control participants were excluded if
+they had a previous knee ligament injury or surgery. Our study
+aimed to match participants (i.e., age and sex) at group level. This
+study was approved by the Institutional Review Board at Iowa
+State University. The ACL group was on average 6 years from
+reconstructionsurgery(range2–18years).Thereconstructiontype
+varied: 41% hamstring graft, 41% patellar tendon, 12% combination
+of cadaver and hamstring, and 6% cadaver. Most of the ACL group
+sustained meniscal damage at time of ACL rupture (71%), and 59%
+of the ACL ruptures were considered non-contact in nature.
+3. Methods
+A 10 m walkway and a three-step staircase (step height 18.5 cm, tread depth
+29.5 cm) were used. Kinematic data were collected using an 8-camera, three-
+dimensional motion analysis system (Vicon Nexus, Los Angeles, CA). Kinetic data
+wererecordedusing twoportableforceplatformspositioned onthe ﬁrstandsecond
+step of the stairs and one in-ground force platform for level walking (AMTI,
+Watertown, MA). Kinematic data were collected at a sampling rate of 160 Hz, while
+force platform data were collected at a rate of 1600 Hz.
+After informed consent was obtained, age, height, weight, medical history, and
+physical activity levels (Tegner scale) were recorded. Knee extensor and knee ﬂexor
+strength data were acquired by two testers using a hand-held dynamometer
+(Lafayette Instrument Company, Lafayette, IN). Participants sat in an upright
+position with the knee ﬂexed approximately 908 while performing three maximal
+knee ﬂexion and knee extension contractions against matched manual resistance.
+Testers were braced against a wall, ensuring minimal change in knee joint position.
+Participantswere pain-freeandreceivedstandardizedinstructionswithcontinuous
+verbal encouragement during the strength tests. High inter-rater reliability and
+goodintra-raterreliabilitywereachieved(ICC = 0.89–0.97,ICC = 0.76,respectively).
+The peak dynamometer force used for analysis was normalized to body mass using
+an allometric model [19].
+Retro-reﬂective markers (1.9 cm diameter) were placed bilaterally on the medial
+and lateral malleoli, heel, ﬁfth metatarsal head, dorsal foot, anterior shank, medial
+and lateral femoral condyles, anterior thigh, greater trochanter, anterior superior
+iliac spine, posterior superior iliac spine, and acromion process. Individual markers
+were placed on the sacrum and cervicale. Following a static trial, markers on the
+heels, medial malleoli, medial femoral condyles, and posterior superior iliac spines
+were removed. Removed markers were recreated during dynamic trials using
+transforms derived from the static trial. Participants performed three trials leading
+with each leg for a total of six trials for each task: stair ascent, stair descent, and
+level walking. Individuals wore preferred shoes, performed tasks at a self-selected
+pace, and used a step-over-step technique to complete stair tasks.
+Data were analyzed from the stance phase of walking and the ﬁrst and second
+step of both stair ascent and descent. Stance phase for walking was deﬁned as the
+period from when vertical ground reaction force reached 5% of body weight (BW)
+to the point when vertical ground reaction force dropped below 5% BW. Step one
+was the ﬁrst step taken and step two was the second step taken for both stair
+ascentanddescent.Forstairnegotiation,stancephasewasinitiatedat20%BWand
+terminated when vertical ground reaction force dropped below 20% BW. A higher
+threshold for stair negotiation was used to avoid cross-talk in the force plates
+caused by potential vibrations during stance. Stance time was calculated for each
+of the three tasks. Gait analysis was performed on both legs of all participants.
+Noise was reduced in kinematic and kinetic data using a fourth order, symmetric
+Butterworth ﬁlter with a cutoff frequency of 6 Hz. Using inverse dynamics,
+maximum internal ankle plantar ﬂexion, knee extension, hip extension, hip
+abduction, and external knee varus moments were calculated during each stance
+phase, transformed to the distal segment coordinate system, and normalized by
+body mass. Peak moments were averaged across the three trials of each task.
+KineticandkinematicdatawereprocessedusingcustomcodewritteninMatlabTM
+(The Mathworks Inc., Natick, MA).
+Between group (post-ACL vs. control) differences for age, height, body mass,
+physical activity levels, and stance time were compared using t-tests. Univariate
+ANOVA was used to test for main effects between (1) injured leg and control group
+and (2) non-injured leg and control group. Student paired t-tests were used to
+determine differences between the injured and non-injured leg. Statistical analyses
+were performed using SPSS for Windows (SPSS, Chicago, IL). A statistical
+signiﬁcance level was set at p  0.05. An average of right and left leg was
+determined for the control group and used to compare with the injured and non-
+injured leg of the ACL group.
+4. Results
+Overall, 19 people with unilateral ACL reconstruction and 17
+healthy controls were examined. Due to equipment malfunction
+and numerical outliers, a subset of the cohort are presented for
+stair analysis (ACL = 14; control = 13) and walking analysis
+(ACL = 15; control = 17). There were no differences between the
+ACL group and controls for age, height, and body mass (Table 1).
+Furthermore, no differences in Tegner scores were found between
+the groups, verifying that all post-ACL individuals had returned to
+typical physical activity levels. No differences were found between
+the ACL and control group for stance time during stair ascent, stair
+descent, or walking. This variable was excluded as a possible
+confounder in our subsequent results.
+Knee extensor strength did not signiﬁcantly differ between the
+injured leg (21.5  7.3 N/kg0.67
+), non-injured leg (21.5  7.7 N/
+kg0.67
+), and controls (22.9  6.2 N/kg0.67
+). Knee ﬂexor strength was
+weaker in the injured leg (13.9  2.1 N/kg0.67
+) as compared to
+controls (15.9  2.4 N/kg0.67
+, p = 0.021) and approached signiﬁcance
+when compared to the non-injured limb (14.6  2.1 N/kg0.67
+,
+p = 0.058). There were no differences for knee ﬂexor strength
+between the non-injured leg and controls.
+Differences were observed in initial knee ﬂexion angles
+between the injured leg and controls (Table 2). The injured leg
+had signiﬁcantly reduced initial knee ﬂexion angles compared to
+M. Hall et al./Gait & Posture 36 (2012) 56–60 57
+
+--- PAGE 3 ---
+controls during stair descent on step one (p = 0.009) and on step
+two (p = 0.046). These reductions in knee ﬂexion angles were
+observed throughout stance phase (Fig. 1). Knee ﬂexion angles
+were also reduced for the non-injured limb during stair descent for
+step one (p = 0.049) as compared to controls. No signiﬁcant
+differences between the injured and non-injured legs were found
+for knee ﬂexion angles.
+There were signiﬁcant differences in peak hip extension and
+knee extension moments between the injured leg and non-injured
+legascomparedtocontrols(Table2).Hipextensionmomentswere
+signiﬁcantly increased for the injured leg and the non-injured leg
+as compared to the controls during the second step of stair ascent
+(p = 0.027,p = 0.004;injuredandnon-injuredleg,respectively)and
+during walking (p = 0.015, p = 0.004). Peak hip extension moments
+for the injured leg were 26% greater during the second step of stair
+ascent (Fig. 2) and 34% greater during level walking (Fig. 3) as
+compared to controls. Increased peak hip extension moments
+approached signiﬁcance for the non-injured limb during stair
+descent for step two (p = 0.051) as compared to controls.
+In contrast, peak knee extension moments were signiﬁcantly
+decreased for the injured leg during the second step of stair ascent
+(p = 0.024) as compared to controls. Peak knee extension moments
+were also reduced during both steps of stair descent for the injured
+leg (p = 0.034 and p = 0.002) and the non-injured leg (p = 0.028 and
+p = 0.004) as compared to controls. In comparison to controls, the
+injured leg displayed 22% lower peak knee extension moments on
+the second step of stair ascent (Fig. 2), 17% lower during step one of
+stair descent, and 25% lower during step two of stair descent
+(Fig. 2). Ankle plantar ﬂexion moments, external knee varus
+moments, and hip abduction moments did not differ between the
+Table 1
+Descriptive statistics comparing ACL reconstruction individuals and healthy
+controls.
+Variable ACL (n=15) Control (n=17) p-Value
+Gender (M/F) 7M/8F 7M/10F
+Age (years) 266 264 1.000
+Height (cm) 17414 17012 0.420
+Body mass (kg) 7515 6812 0.121
+Tegner activity level 72 61 0.165
+Stance time (s)
+Stair ascent 1.440.12 1.410.13 0.605
+Stair descent 1.260.13 1.300.12 0.503
+Walking 0.700.05 0.700.05 0.849
+Table 2
+Lower extremity kinematics and kinetics during stair ascent, stair descent, and walking. ACL injured compared to control: results are presented as the meanSD.
+Stair ascent Stair descent Walking
+ACL Control ACL Control ACL Control
+Injured Non-injured Injured Non-injured Injured Non-injured
+Joint angle (8)
+Knee ﬂexion
+Step 1 60.06.2 61.24.7 61.63.1 10.63.5*
+11.53.7*
+14.12.8 1.75.3 0.94.5 0.43.0
+Step 2 63.35.3 64.94.4 64.53.0 11.03.7*
+11.83.5 13.83.1
+Peak moments (NmkgS1
+)
+Hip extension
+Step 1 0.860.24 0.900.21 0.720.26 0.250.26 0.330.24 0.150.22 0.950.27*
+0.980.23*
+0.710.25
+Step 2 0.960.24*
+0.990.20*
+0.760.19 0.370.24 0.390.26 0.210.20
+Hip abduction
+Step 1 0.750.20 0.670.15 0.740.12 1.120.20 1.140.30 1.160.19 1.050.22 1.020.30 0.960.14
+Step 2 0.720.21 0.680.19 0.750.14 1.080.22 1.100.21 1.100.17
+Knee extension
+Step 1 1.050.21 1.070.18 1.220.33 1.040.24*
+1.040.21*
+1.260.28 0.420.21 0.500.31 0.450.14
+Step 2 0.850.18*
+0.930.14 1.090.33 0.870.21*
+0.880.23*
+1.160.23
+Knee varus
+Step 1 0.510.17 0.480.19 0.520.11 0.190.14 0.200.11 0.190.10 0.500.13 0.480.20 0.460.09
+Step 2 0.570.17 0.590.24 0.580.11 0.300.17 0.310.17 0.300.13
+Ankle plantar ﬂexion
+Step 1 1.380.15 1.390.17 1.450.14 1.170.14 1.200.14 1.210.18 1.430.19 1.480.22 1.420.07
+Step 2 1.400.20 1.470.19 1.500.08 1.250.13 1.200.07 1.300.17
+*
+p<0.05.
+[(Fig._1)TD$FIG]
+Fig. 1. Ensemble curves for knee ﬂexion angles and knee extension moments during
+step two of stair descent; injured vs. control.
+M. Hall et al./Gait & Posture 36 (2012) 56–60 58
+
+--- PAGE 4 ---
+injured leg and controls during any of the three tasks. No
+signiﬁcant differences between the injured and non-injured legs
+were found for any kinetic variables.
+5. Discussion
+This study aimed to determine if biomechanical parameters
+associated with the development and/or progression of knee OA
+existed >1 year post-ACL reconstruction. Knee injuries, including
+ACL ruptures, increase the risk for early-onset knee OA by 10-fold
+as compared to thegeneral, uninjured population [20]. Focusingon
+repetitive movements such as stair use and walking in a post-ACL
+reconstruction cohort provides a good model to investigate the
+early onset of knee OA pathogenesis.
+Contrary to our ﬁrst hypothesis, the injured leg did not display
+increased knee varus moments during any of the tasks as compared
+to the non-injured limb or controls. Knee varus moments, closely
+associated with knee OA, have been reported to be 21% greater in
+unilateral ACL reconstructed individuals during walking [9]. The
+average time from surgerywas similar tothat of this previous study
+[9], suggesting that additional factors may have inﬂuenced knee
+joint kinetics. For example, type of ACL reconstruction surgery,
+rehabilitation program, time from injury to surgery, and physical
+activity level may inﬂuence knee OA risk factors.
+During walking, the injured leg demonstrated increased hip
+extension moments despite similar knee extension moments.
+Increased hip extension moments during the stance phase of
+walking have also been found in those 6-months post-ACL
+reconstruction [21]. The injured leg also produced greater hip
+extension moments during the second step of stair ascent, likely as
+a compensation for reduced knee extension moments. Studies
+have found increased hip extension moments combined with
+decreased knee extension moments during closed-chain exercises
+in individuals within and following one year post-ACL reconstruc-
+tion [22,23]. The ratio of hip:knee extension moments is
+signiﬁcantly related to the magnitude of anterior tibia shear in
+those at least one year from ACL reconstruction surgery [22].
+Speciﬁcally, higher hip:knee extension moment ratios are associ-
+ated with reduced anterior tibia shear. Thus, to avoid placing strain
+on the repaired ACL, individuals may increase hip extension
+moments and decrease knee extension moments. How this
+compensatory strategy inﬂuences internal knee joint loading is
+unclear, but we speculate this adaptation likely increases
+hamstring:quadriceps co-contraction and results in higher com-
+pressive loading on the articular cartilage, which may relate to the
+initiation of knee OA.
+Despite our second hypothesis, no differences in isometric knee
+extensor strength were found. Possibly, isometric tests are less
+discriminating as a measure of strength compared to isokinetic
+strength tests. This observation has been made in those with
+partial meniscectomies [24], which had been performed on many
+of our participants. Interestingly, we found reduced knee ﬂexor
+strength in the injured limb as compared to controls.
+The third hypothesis was partially supported as the injured leg
+had reduced knee ﬂexion angles compared to controls during stair
+descent. While the clinical relevance of these small alterations in
+knee ﬂexion angles is unclear, it is widely believed that a spatial
+shift in the location of load contact will lead to degeneration of the
+articular cartilage [25]. Strength and proprioception affect knee
+position, and despite no differences in isometric extensor strength,
+it remains possible that strength deﬁcits at the end of range of
+motion are present. In addition, proprioception impairments have
+beenobservedinthoseuptooneyearpostACLreconstruction[26].
+Our fourth hypothesis was also partially supported, as reduced
+knee extension moments were found in the injured leg during stair
+descent and the second step of stair ascent. It is likely that reduced
+knee extensor moments are an adaptation to reduce stress on the
+injured ACL and to reduce pain related to compressive forces [27].
+Decreased knee extension moments have been observed in ACL
+reconstructed limbs up to one year post surgery during stair ascent
+[8,28], stair descent, and walking [14]. Our ﬁndings suggest this
+strategy continues long-term when surgical recovery is complete,
+individuals are pain-free, and normal physical activity levels
+return. Knee extension moments are indicative of quadriceps and
+hamstring neuromuscular function [17] and have been attributed
+to reduced quadriceps strength [13,14] and reduced knee ﬂexion
+angles in those with ACL injury [14].
+[(Fig._2)TD$FIG]
+Fig. 2. Ensemble curves for hip extension moments and knee extension moments
+during step two of stair ascent; injured vs. control.
+[(Fig._3)TD$FIG]
+Fig. 3. Ensemble curves for hip extension moments during the stance phase of
+walking; injured vs. control.
+M. Hall et al./Gait & Posture 36 (2012) 56–60 59
+
+--- PAGE 5 ---
+Our ﬁndings suggest that changes in sagittal moments precede
+potential changes in frontal moments in those considered at high
+risk to develop knee OA. However, changes in direction and
+magnitude of internal loads on the knee joint cannot be
+determined using only moment data. For example, knee extension
+moments are a net joint moment calculation [29] that does not
+account for quadriceps and hamstring contributions separately. A
+reduced knee extension moment in the injured leg may be the
+result of increased hamstring activity, in which case knee joint
+loading would increase. Regardless of deviation, changes in the
+position of loadtoareas thatwere previouslyunloaded arelikelyto
+initiate degeneration [25].
+Limitations of this cross-sectional study exist. The kinetic and
+kinematic differences we found may have existed prior to the ACL
+injury and perhaps even contributed to the injury occurring.
+Therefore, the timing of the observed changes and their effect on
+knee OA pathogenesis remain unknown [30]. While we aimed to
+investigate long-term gait patterns of those with ACL reconstruc-
+tion, the time range from surgery (2–18 years) was wide. Future
+studies with narrower time ranges from surgery are needed to
+assess ACL-reconstructed gait patterns to solidify possible causa-
+tive factors (e.g., reduced knee ﬂexion angles and knee extensor
+moments) for early knee OA onset. Indeed, longitudinal studies are
+warranted to investigate the onset of frontal plane adaptations, in
+particular knee varus moments that are closely associated with
+knee OA.
+In conclusion, our ﬁndings suggest that biomechanical changes
+associated with knee OA persist even after an average of six years
+post-ACLreconstruction.Toour knowledge,this istheﬁrststudyto
+determine long-term ACL group reductions in knee ﬂexion angles
+and knee extensor moments during stair use. We speculate that it
+is a coupling of hip and knee kinetic changes along with reduced
+knee ﬂexion angles that contribute to the initiation of knee OA.
+Conﬂict of interest
+The authors declare that there is no conﬂict of interest.
+References
+[1] Englund M. The role of biomechanics in the initiation and progression of OA of
+the knee. Best Pract Res Clin Rheumatol 2010;24(1):39–46.
+[2] Lohmander LS, Englund PM, Dahl LL, Roos EM. The long-term consequence of
+anterior cruciate ligament and meniscus injuries: osteoarthritis. Am J Sports
+Med 2007;35(10):1756–69.
+[3] Louboutin H, Debarge R, Richou J, Selmi TA, Donell ST, Neyret P, et al.
+Osteoarthritis in patients with anterior cruciate ligament rupture: a review
+of risk factors. Knee 2009;16(4):239–44.
+[4] Shakoor N, Moisio K. A biomechanical approach to musculoskeletal disease.
+Best Pract Res Clin Rheumatol 2004;18(2):173–86.
+[5] Miyazaki T, Wada M, Kawahara H, Sato M, Baba H, Shimada S. Dynamic load at
+baseline can predict radiographic disease progression in medial compartment
+knee osteoarthritis. Ann Rheum Dis 2002;61(7):617–22.
+[6] Bennell KL, Hunt MA, Wrigley TV, Hunter DJ, Hinman RS. The effects of hip
+muscle strengthening on knee load, pain, and function in people with knee
+osteoarthritis: a protocol for a randomised, single-blind controlled trial. BMC
+Musculoskelet Disord 2007;8:121.
+[7] Chang A, Hayes K, Dunlop D, Song J, Hurwitz D, Cahue S, et al. Hip abduction
+moment and protection against medial tibiofemoral osteoarthritis progres-
+sion. Arthritis Rheum 2005;52(11):3515–9.
+[8] Hooper DM, Morrissey MC, Drechsler WI, Clark NC, Coutts FJ, McAuliffe TB.
+Gait analysis 6 and 12 months after anterior cruciate ligament reconstruction
+surgery. Clin Orthop Relat Res 2002;16(403):8–78.
+[9] Butler RJ, Minick KI, Ferber R, Underwood F. Gait mechanics after ACL recon-
+struction: implications for the early onset of knee osteoarthritis. Br J Sports
+Med 2009;43(5):366–70.
+[10] Devita P, Hortobagyi T, Barrier J, Torry M, Glover KL, Speroni DL, et al. Gait
+adaptations before and after anterior cruciate ligament reconstruction sur-
+gery. Med Sci Sports Exerc 1997;29(7):853–9.
+[11] Timoney JM, Inman WS, Quesada PM, Sharkey PF, Barrack RL, Skinner HB, et al.
+Return of normal gait patterns after anterior cruciate ligament reconstruction.
+Am J Sports Med 1993;21(6):887–9.
+[12] Ferber R, Osternig LR, Woollacott MH, Wasielewski NJ, Lee JH. Gait mechanics
+in chronic ACL deﬁciency and subsequent repair. Clin Biomech (Bristol Avon)
+2002;17(4):274–85.
+[13] Bush-Joseph CA, Hurwitz DE, Patel RR, Bahrani Y, Garretson R, Bach Jr BR, et al.
+Dynamic function after anterior cruciate ligament reconstruction with autol-
+ogous patellar tendon. Am J Sports Med 2001;29(1):36–41.
+[14] Lewek M, Rudolph K, Axe M, Snyder-Mackler L. The effect of insufﬁcient
+quadriceps strength on gait after anterior cruciate ligament reconstruction.
+Clin Biomech (Bristol Avon) 2002;17(1):56–63.
+[15] Becker R, Berth A, Nehring M, Awiszus F. Neuromuscular quadriceps dysfunc-
+tion prior to osteoarthritis of the knee. J Orthop Res 2004;22(4):768–73.
+[16] Slemenda C, Brandt KD, Heilman DK, Mazzuca S, Braunstein EM, Katz BP, et al.
+Quadriceps weakness and osteoarthritis of the knee. Ann Intern Med
+1997;127(2):97–104.
+[17] Hart JM, Ko JWK, Konold T, Pietrosimione B. Sagittal plane knee joint moments
+following anterior cruciate ligament injury and reconstruction: a systematic
+review. Clin Biomech (Bristol Avon) 2010;25(4):277–83.
+[18] Suter E, Herzog W, Bray R. Quadriceps activation during knee extension
+exercises in patients with ACL pathologies. J Appl Biomech 2001;17(2):87–
+102.
+[19] Jaric S. Muscle strength testing: use of normalisation for body size. Sports Med
+2002;32(10):615–31.
+[20] Gillquist J, Messner K. Anterior cruciate ligament reconstruction and the long
+term incidence of gonarthrosis. Sports Med 1999;27(3):143–56.
+[21] DeVita P, Hortobagyi T, Barrier J. Gait biomechanics are not normal after
+anterior cruciate ligament reconstruction and accelerated rehabilitation. Med
+Sci Sports Exerc 1998;30(10):1481–8.
+[22] Osternig LR, Ferber R, Mercer J, Davis H. Human hip and knee torque accom-
+modations to anterior cruciate ligament dysfunction. Eur J Appl Physiol
+2000;83(1):71–6.
+[23] Salem GJ, Salinas R, Harding FV. Bilateral kinematic and kinetic analysis of the
+squat exercise after anterior cruciate ligament reconstruction. Arch Phys Med
+Rehabil 2003;84(8):1211–6.
+[24] Stam HJ, Binkhorst RA, Kuhlmann P, van Nieuwenhuyzen JF. Clinical progress
+and quadriceps torque ratios during training of meniscectomy patients. Int J
+Sports Med 1992;13(2):183–8.
+[25] Andriacchi TP, Mundermann A, Smith RL, Alexander EJ, Dyrby CO, Koo S. A
+framework for the in vivo pathomechanics of osteoarthritis at the knee. Ann
+Biomed Eng 2004;32(3):447–57.
+[26] Fremerey RW, Lobenhoffer P, Zeichen J, Skutek M, Bosch U, Tscherne H.
+Proprioception after rehabilitation and reconstruction in knees with deﬁcien-
+cy of the anterior cruciate ligament: a prospective, longitudinal study. J Bone
+Joint Surg Br 2000;82(6):801–6.
+[27] Sturnieks DL, Besier TF, Mills PM, Ackland TR, Maguire KF, Stachowiak GW,
+et al. Knee joint biomechanics following arthroscopic partial meniscectomy. J
+Orthop Res 2008;26(8):1075–80.
+[28] Kowalk DL, Duncan JA, McCue 3rd FC, Vaughan CL. Anterior cruciate ligament
+reconstruction and joint dynamics during stair climbing. Med Sci Sports Exerc
+1997;29(11):1406–13.
+[29] Winter DA. Biomechanics and motor control of human movement. New York:
+Wiley; 1990.
+[30] ThorlundJB,RoosEM,AagaardP.Neuromuscularfunctionduringstairdescentin
+meniscectomized patients and controls. Med Sci Sports Exerc 2011;43(7):
+1272–9.
+M. Hall et al./Gait & Posture 36 (2012) 56–60 60
+
+--- PAGE 6 ---

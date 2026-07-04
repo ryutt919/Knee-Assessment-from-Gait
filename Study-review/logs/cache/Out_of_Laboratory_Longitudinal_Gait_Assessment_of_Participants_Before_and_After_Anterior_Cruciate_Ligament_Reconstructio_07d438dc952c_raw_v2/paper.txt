@@ -1,0 +1,1196 @@
+
+--- PAGE 1 ---
+Journal of Athletic Training 2025;60(12):823–836
+doi: 10.4085/1062-6050-0423.24
+Ó by the National Athletic Trainers’ Association, Inc
+www.natajournals.org
+Anterior Cruciate Ligament
+Out-of-Laboratory Longitudinal Gait Assessment of
+Participants Before and After Anterior Cruciate
+Ligament Reconstruction Surgery: An Observational
+Longitudinal Study
+Tomer Yona, PhD*; Bezalel Peskin, MD†; Arielle G. Fischer, PhD*
+*Technion, Israel Institute of Technology, Haifa; †Rambam Medical Center, Haifa, Israel
+Background: After anterior cruciate ligament reconstruc-
+tion (ACLR), individuals often demonstrate altered knee kine-
+matics during walking. Understanding these changes across
+recovery time points is important for informing rehabilitation
+and return-to-sport decisions.
+Objectives: To evaluate the longitudinal changes in knee
+sagittal-plane kinematics before and after ACLR during varying
+walking speeds in nonlaboratory environments and to describe
+hip- and ankle-joint kinematics.
+Design: Observational longitudinal study.
+Setting: Hospital.
+Patients or Other Participants: A total of 40 patients with
+ACLR (age ¼ 23.9 6 5.9 years, height ¼ 1.76 6 0.10 m, mass ¼
+76.03 6 13.4 kg) and 17 healthy matched controls (age ¼ 28.4 6
+5.9 years, height ¼ 1.70 6 0.10 m, mass ¼ 68.3 6 15.4 kg) were
+recruited.
+Main Outcome Measure(s): Knee-joint sagittal-plane kine-
+matics were measured using 7 inertial measurement units pre-
+operatively and 3 and 5 months postoperatively while
+participants walked at slow, normal, and fast speeds.
+Results: Preoperatively, compared with the contralateral
+knee, the injured knee exhibited greater minimum flexion dur-
+ing normal and fast walking (P  .008) and less knee flexion at
+the first peak during fast walking (P ¼ .006). Statistical para-
+metric mapping indicated differences throughout the gait cycle
+at all speeds (P  .03). Compared with the control knee, the
+injured knee had greater minimum flexion during normal and
+slow walking (P  .03). At 3 months postoperatively, compared
+with the contralateral knee, the injured knee exhibited greater
+minimum flexion across all speeds (P  .005) and less knee
+flexion at the first peak during fast walking (P , .001). Statisti-
+cal parametric mapping indicated differences throughout the
+gait cycle at all speeds (P  .03). Compared with the control
+knee, the injured knee remained more flexed at the minimum
+angle across all speeds (all, P , .001) and exhibited less knee
+flexion at the first peak during slow walking (P ¼ .03). At
+5 months postoperatively, differences between limbs were
+reduced, with differences in minimum flexion at all speeds (P 
+.03). Statistical parametric mapping differences were limited to
+specific gait cycle portions during normal and fast walking (P 
+.01). Compared with the control knee, the injured knee
+remained more flexed at the minimum angle during slow and
+normal walking (P  .005). Lastly, hip adaptations resolved,
+and ankle asymmetries persisted during terminal stance.
+Conclusion: Patients with ACLR demonstrated progres-
+sive improvements in knee sagittal-plane kinematics, indicating
+a recovery trend. However, the recovery was nonlinear across
+different walking speeds.
+Key Words: walking, kinematic analysis, lower limb
+Key Points
+• Patients with anterior cruciate ligament reconstruction (ACLR) showed improved symmetry in knee-flexion angles at
+3 and 5 months post-ACLR during various walking speeds.
+• Asymmetries in knee, hip, and ankle kinematics were observed before ACLR, indicating altered movement patterns,
+and persisted post-ACLR.
+• The nonlinear recovery process across different walking speeds highlights the need for assessing and incorporating
+varied walking speeds in rehabilitation protocols.
+A
+nterior cruciate ligament (ACL) reconstruction
+(ACLR) often results in lasting kinematic asym-
+metries while walking, reduced quality of life, and
+increased risk of posttraumatic osteoarthritis (PTOA).1–3
+Early gait assessment within the ﬁrst 6 months post-
+ACLR is critical for guiding rehabilitation and reducing
+long-term joint degeneration risks, as these asymmetries
+can substantially affect knee function and potentially
+accelerate PTOA development.2,4
+Despite its clinical
+importance, comprehensive biomechanical assessment
+accounting for preoperative status, varying walking speeds,
+and hip and ankle compensatory adaptations remains under-
+explored. Moreover, traditional analyses focus primarily on
+discrete time points of the gait cycle, limiting our under-
+standing of continuous movement patterns in nonlaboratory
+settings.
+Journal of Athletic Training 823
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 2 ---
+The role of preoperative biomechanical status is often
+underexplored, with few researchers providing preoperative
+and postoperative assessments.5
+This gap is important, as
+preoperative biomechanics can inﬂuence postoperative
+recovery outcomes.6–8
+Speciﬁcally, Büttner et al demon-
+strated that gait asymmetries are present preoperatively and
+persist through recovery time points at 2, 4, 6, and 12 months
+post-ACLR.9
+Furthermore, Davis-Wilson et al observed
+bilateral gait abnormalities in patients at 6 and 12 months
+post-ACLR compared with uninjured controls, emphasizing
+the need to assess recovery across multiple stages and walk-
+ing speeds.10
+Walking speed inﬂuences lower extremity biomechanics
+post-ACLR, with faster speeds typically exacerbating biome-
+chanical deﬁcits.11–13
+This is particularly important, as daily
+activities require walking at varying speeds—from slow
+ambulation during routine tasks to fast walking when com-
+muting or exercising. By assessing these speed-dependent
+changes, clinicians can better understand how patients adapt
+their movement strategies in real-world contexts and can
+adjust rehabilitation interventions to improve performance
+across all activity levels. However, authors of only a handful
+of studies have assessed the inﬂuence of walking speed on
+gait kinematics post-ACLR.11–13
+Understanding how the rela-
+tionship between walking speed and biomechanics changes
+throughout rehabilitation might lead to better insight into
+recovery patterns and real-world mobility demands.
+Although knee kinematics is a primary concern post-
+ACLR, assessing hip and ankle kinematics alongside it pro-
+vides insight into compensatory strategies and overall
+lower limb adaptation. Researchers have shown that
+patients with ACLR display compensatory sagittal-plane
+adaptations, speciﬁcally reduced hip ﬂexion and ankle dor-
+siﬂexion, contributing to asymmetrical gait patterns.14–16
+These adaptations may contribute to altered joint-loading
+patterns throughout the kinetic chain.
+Movement analysis is focused on speciﬁc gait events,
+such as minimum and maximum points, providing impor-
+tant snapshots of movement. However, continuous analysis
+methods such as statistical parametric mapping (SPM) offer
+a more comprehensive view of movement mechanics and
+can be used alongside traditional discrete point analysis.17
+Speciﬁcally, SPM addresses these limitations of discrete
+analysis by examining continuous data, allowing the evalu-
+ation of how joint angles change over time and identifying
+differences or asymmetries that discrete analysis might
+miss. For example, SPM analysis of walking has revealed
+that knee sagittal-plane kinematic asymmetries post-ACLR
+occur during extended portions of the stance phase rather
+than just at discrete peak angles.11,18
+Despite these advan-
+tages, SPM remains underused in gait analysis, particularly
+with inertial measurement unit (IMU) data in ACLR
+populations.19
+Traditional optoelectrical camera systems, while accurate,
+are expensive and conﬁned to laboratory environments, reduc-
+ing ecological validity.20,21
+In contrast, wearable technologies
+such as IMUs allow real-world kinematic data collection,
+although normative values are needed to interpret differences
+from optoelectrical data.22
+Although no researchers have
+directly linked IMU-based gait analysis to ACLR and PTOA
+outcomes, IMU systems have shown promise in evaluating
+gait deviations associated with osteoarthritis (OA). When
+paired with SPM, wearable sensors have demonstrated the
+ability to identify gait deviations associated with knee OA
+that are characterized by asymmetries in ankle, knee, and hip
+sagittal-plane kinematics during stance and swing phases.23
+Greater asymmetries were associated with lower quality-
+of-life scores measured using the Knee Injury and Osteoar-
+thritis Outcome Score and Hip Disability and Osteoarthritis
+Outcome Score, suggesting that IMU-based gait analysis can
+provide meaningful insights into biomechanical asymmetries
+and related quality-of-life measures.
+The primary purpose of our study was to evaluate knee
+sagittal-plane kinematic differences between injured and
+contralateral limbs and healthy controls pre-ACLR and at 3
+and 5 months post-ACLR using an IMU system during
+slow, normal, and fast walking speeds. The secondary pur-
+pose was to describe potential compensatory adaptations of
+hip and ankle sagittal-plane kinematic differences at the
+same time points. We hypothesized that patients with
+ACLR would demonstrate differences in knee sagittal-
+plane kinematics between the injured and contralateral
+limbs and the injured and control limbs, with these differ-
+ences decreasing but persisting by 5 months post-ALCR.
+We also hypothesized that faster walking speeds would
+magnify these between-limbs differences compared with
+normal or slow walking speeds.
+METHODS
+Design
+Data for this study were obtained from a randomized
+clinical trial (ClinicalTrials.gov ID: NCT05001594), in
+which the effect of local muscle vibration on the lower
+limb kinematics of patients with ACLR was assessed. Fol-
+lowing the framework of Lakens for sample-size justiﬁca-
+tion in resource-constrained studies derived from previous
+trials, we performed a sensitivity power analysis for a sam-
+ple of 40 participants.24
+This analysis revealed that, with an
+a level of .05, our study had 80% power to detect effect
+sizes (ESs) of 0.45, 90% power for ESs of 0.53, and
+95% power for ESs of 0.58 in our between-limbs
+comparisons.
+In accordance with the Strengthening the Reporting of
+Observational Studies in Epidemiology guidelines, we con-
+ducted a longitudinal observational study.25
+The study
+involved individuals scheduled for ACLR surgery, with
+assessments conducted preoperatively and at 3 and
+5 months postoperatively. Gait kinematics at 3 different
+walking speeds were collected using an IMU motion-
+capture system (Xsens Technologies, BV).
+Participants
+Participants were recruited from the Rambam Health
+Care Campus Orthopaedic Department between 2020 and
+2023 during their scheduled preoperative meetings. Gait
+analysis was performed at 3 time points: preoperatively and
+at 3- and 5-month postoperative follow-up visits.
+We included male and female participants aged 18 to
+40 years who were scheduled for ACLR using hamstrings,
+bone-patellar tendon-bone, or quadriceps graft. The surger-
+ies took place between 2020 and 2023 and were conducted
+by a team of 5 experienced surgeons, each with 7 to
+25 years of senior surgical experience.
+824 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 3 ---
+Individuals were excluded if they had sustained multili-
+gament injuries, substantial meniscus damage, or any other
+concurrent injuries that altered the standard weight-bearing
+protocol. We also excluded individuals who had a history
+of previous knee surgery or fracture in either limb, known
+neuropathies, active cancer, or inﬂammatory arthritis; had
+received an injection for pain in the 6 months before the
+study; or declined to participate. All participants followed a
+standardized baseline rehabilitation protocol (Appendix
+Table 1).
+Volunteers matched by sex, weight, and height were
+recruited for a healthy control group and underwent a similar
+gait assessment protocol in a single testing session. The inclu-
+sion criteria were male or female volunteers aged 18 to 40
+with no self-reported lower limb or back pain in the 6 months
+before the study. The exclusion criteria were a history of any
+lower limb or back fractures, surgeries, known neuropathies,
+active cancer, or inﬂammatory arthritis.
+All participants provided written informed consent, and
+the study was approved by the Rambam Health Care Cam-
+pus Helsinki Committee (0089-21-RMB).
+Gait Assessment
+Each participant was ﬁtted with 7 IMUs (Xsens Awinda):
+1 on each foot, 1 just below each knee, 1 on each midthigh,
+and 1 on the pelvis. Data were collected, automatically pro-
+cessed, and ﬁltered using proprietary software (MVN Ana-
+lyze version 2023.0.0; Xsens) at a sampling rate of 100 Hz.
+The system captures acceleration, angular velocity, and
+magnetic ﬁeld data; exports them to a computer; and pro-
+cesses them using biomechanical modeling algorithms and
+proprietary software to compute joint angles, spatiotempo-
+ral parameters, and segment orientations in 3 dimensions.26
+This system was shown to be reliable compared with tradi-
+tional motion capture.27
+Before data collection, we performed a calibration
+process to ensure accurate sensor alignment. Next, par-
+ticipants were asked to walk across a 20-m corridor at 3
+speeds: slow, normal, and fast. The following standard-
+ized oral instructions were used for slow, normal, and
+fast speeds, respectively: “Walk across the walkway at a
+slow speed,” “Walk across the walkway at your normal
+speed,” and “Walk as fast as possible.”28
+Each speed was
+repeated 3 times. The main discrete outcome was the
+knee sagittal-plane angles, which comprised the ﬁrst
+peak angle, deﬁned as the ﬁrst peak of knee ﬂexion dur-
+ing the stance phase; the second peak angle, deﬁned as
+the peak of knee ﬂexion occurring during the swing
+phase; and the minimum ﬂexion angle, deﬁned as the
+smallest knee-ﬂexion angle reached during the gait
+cycle. The stance and swing phases were deﬁned as 0%
+to 60% and 60% to 100% of the gait cycle, respectively.
+The stance phase was subdivided into loading response
+(0%–10%), midstance (10%–30%), terminal stance
+(30%–50%), and preswing (50%–60%; Figure 1). The
+secondary outcome was the minimum and maximum
+sagittal-plane angles of the hip and ankle. All outcomes
+were averaged and used for the ﬁnal analysis. Partici-
+pants were asked to bring their own walking shoes and
+wear the same shoes at each visit.
+Statistical Analysis
+Independent-samples t tests were used to compare con-
+tinuous demographic variables, and v2
+tests were used for
+demographic categorical variables. Descriptive statistics
+are presented as median (minimum, maximum). The
+Figure 1. Knee sagittal-plane movement angle during the normalized gait cycle of healthy participants and commonly analyzed discrete
+points. a
+Point between the stance and swing phase.
+Journal of Athletic Training 825
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 4 ---
+median and interquartile range are reported for walking
+speed for each walking condition grouped by time point.
+The Wilcoxon signed rank test with the exact method was
+used to compare the injured and contralateral limbs at each
+time point, and the Mann-Whitney U test was used to com-
+pare the injured limb and the left limb of the control group.
+The Friedman test was used to assess differences between
+walking speeds.
+We used the Benjamini-Hochberg procedure to control
+for multiple comparisons and false discovery rates. We
+applied the Benjamini-Hochberg procedure separately for
+each aim, ensuring that the control of the false discovery
+rate was appropriate for each hypothesis and maintaining
+statistical power without the results of one aim affecting
+the other. The false discovery rate level was set at 0.1, bal-
+ancing the need to detect true effects.29
+Linear mixed-effects models were used to assess longi-
+tudinal changes in the lower limbs. Each joint angle was
+the independent variable, the time point was added as a
+ﬁxed effect, and the participants with ACLR were added
+as random effects. When differences were detected
+between time points, the Bonferroni post hoc test was
+used for pairwise comparisons between the different time
+points. The analyses were carried out using SPSS Statis-
+tics (version 29; IBM Corp) and Jamovi (version 2.4; The
+Jamovi Project).
+Before performing the SPM analysis, we normalized all
+time-series data to 101 data points, representing 0% to
+100% of the gait cycle. The data were interpolated to 101
+evenly spaced points for each gait cycle using a linear inter-
+polation function (scipy.interpolate.interp1d, SciPy version
+1.15.0; SciPy). Discrete outcome measures were then
+extracted from these normalized gait cycles, with the knee
+sagittal-plane angles deﬁned as the ﬁrst peak angle, the sec-
+ond peak angle, and the minimum ﬂexion angle. Next, 1-
+dimensional SPM (spm1d version 3.7; Python Software
+Foundation) was used to evaluate differences in the full
+kinematic wave during walking. The spm1d nonparametric
+paired-samples t test with 1000 permutations was used to
+assess the limb differences. Mean 6 1 SD joint-angle tra-
+jectory across participants is reported for SPM. The a level
+for all tests was set at .05.
+RESULTS
+Participant Characteristics and Walking Speeds
+Table 1 provides the descriptive data of the patients with
+ACLR and control participants. Knee kinematics are pre-
+sented in Table 2. We observed no differences in sex, age,
+height, mass, and graft type between the participants who
+attended the 5-month follow-up and those who were lost to
+follow-up at 5 months post-ACLR (Appendix Table 2).
+Figure 2 shows the difference in walking speeds at dif-
+ferent time points. The results of the Friedman test showed
+differences between slow, normal, and fast walking speeds
+within each time point (presurgery: v2
+2 ¼ 80.0, P , .001;
+3 months: v2
+2 ¼ 52.0, P ,.001; and 5 months: v2
+2 ¼ 36.0,
+P ,.001). When comparing the same speed categories across
+time points, no differences were observed in slow (v2
+2 ¼ 1.88,
+P ¼ .39), normal (v2
+2 ¼ 4.35, P ¼ .11), or fast (v2
+2 ¼ 3.29,
+P ¼.19) walking speeds, implying that speed was sustained
+over the 3 time points.
+Hip and ankle kinematics are detailed in Appendix
+Tables 3 and 4, respectively.
+Pre-ACLR Knee Kinematics
+The discrete analysis showed that the injured limb exhib-
+ited greater knee ﬂexion at the minimum ﬂexion angle
+compared with the contralateral limb during normal (M ¼
+1.78, SE ¼ 0.78; ES ¼ 0.48; P ¼.006) and fast (M ¼ 1.78,
+SE ¼ 0.78; ES ¼ 0.57; P ¼.008) walking. The injured limb
+showed less knee ﬂexion at the ﬁrst peak angle (M ¼
+1.78, SE ¼ 0.88; ES ¼ 0.49; P ¼.006).
+The SPM analysis revealed that the injured knee was
+less ﬂexed than the contralateral knee across multiple por-
+tions of the gait cycle (Table 3). During slow walking, dif-
+ferences were observed from 12% to 54% of the gait cycle
+Table 1. Participant Characteristics
+Characteristic Participants With ACLR (n ¼ 40) Uninjured Participants (n ¼ 17) Test Statistica
+P Value
+Sex, No. (%) v2
+1 (N ¼ 57) ¼ 1.02 .31
+Male 33 (82.5) 12 (70.5)
+Female 7 (17.5) 5 (29.5)
+Age, mean 6 SD, y 23.9 6 5.9 28.4 6 5.9 t55 ¼ 2.77 .008
+Height, mean 6 SD, m 1.76 6 0.10 1.70 6 0.10 t55 ¼ 1.98 .052
+Mass, mean 6 SD, kg 76.3 6 13.4 68.3 6 15.4 t55 ¼ 1.70 .09
+Injured leg, No. (%) NA N/A
+Left 18 (45) NA
+Right 22 (55) NA
+Time between injury and
+reconstruction, median
+(minimum, maximum), d 191 (45, 698) NA NA N/A
+Graft type, No. (%) NA N/A
+Hamstrings 26 (65) N/A
+Bone-patellar tendon-bone 8 (20) N/A
+Quadriceps 5 (12.5) N/A
+Allograft 1 (0.02) N/A
+Abbreviations: ACLR, anterior cruciate ligament reconstruction; NA, not available.
+a
+Test statistics are an independent-samples t test or v2
+test of independence.
+826 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 5 ---
+(t ¼ 2.48, P ¼.001; Figure 3). During normal walking, dif-
+ferences were observed from 24% to 48% of the cycle (t ¼
+2.75, P ¼ .001; Figure 4). Differences were noted during
+fast walking in 2 areas: 30% to 51% and 90% to 94% of
+the gait cycle (t ¼ 2.79, P ¼ .002 and t ¼ 2.79, P ¼ .03,
+respectively; Figure 5).
+We observed that the injured knee of the patients with
+ACLR was more ﬂexed at the minimum ﬂexion angle com-
+pared with the knee of controls during slow (M ¼ 2.78;
+ES ¼ 0.38; P ¼ .02) and normal (M ¼ 2.28; ES ¼ 0.37;
+P ¼.03) walking.
+3 Months Post-ACLR Knee Kinematics
+The discrete analysis indicated that, compared with the
+contralateral limb, the injured limb displayed greater knee
+ﬂexion at the minimum ﬂexion angle (M ¼ 4.38, SE ¼
+0.68; ES ¼ 0.96; P ,.001) and less knee ﬂexion at the sec-
+ond peak angle (M ¼ 4.78, SE ¼ 0.88; ES ¼ 0.92; P ,
+.001) during slow walking. The injured limb had greater
+knee ﬂexion at the minimum ﬂexion angle (M ¼ 4.38,
+SE ¼ 0.88; ES ¼ 0.98; P ,.001) and less knee ﬂexion at
+the ﬁrst (M ¼ 5.28, SE ¼ 0.98; ES ¼ 0.86; P ,.001)
+and second (M ¼ 2.28, SE ¼ 0.898; ES ¼ 0.60; P ¼
+.005) peak angles during fast walking.
+The SPM analysis showed multiple periods in which
+the injured knee was less ﬂexed across all walking
+speeds (Table 3). During slow walking, differences
+between limbs occurred across 3 clusters of the gait
+cycle: 0% to 3%, 19% to 61%, and 92% to 99% (t ¼
+2.63, P ¼.03; t ¼ 2.62, P ¼.001; and t ¼ 2.62, P ¼.001,
+respectively; Figure 3). We observed differences in nor-
+mal walking from 26% to 59% and 90% to 99% of the
+cycle (t ¼ 2.78, P ¼.001 for both; Figure 4). During fast
+walking, differences were observed from 30% to 62%
+and 90% to 97% of the gait cycle (t ¼ 2.86, P ¼.001 and
+t ¼ 2.86, P ¼.008, respectively; Figure 5).
+Compared with the control knee, the injured knee
+remained more ﬂexed at the minimum ﬂexion angle at slow
+(M ¼ 5.38; ES ¼ 0.78; P ,.001), normal (M ¼ 5.58; ES ¼
+0.77; P ,.001), and fast (M ¼ 4.98; ES ¼ 0.71; P ,.001)
+walking speeds. The knee was less ﬂexed at the ﬁrst peak
+angle during slow walking (M ¼ 4.68; ES ¼ 0.39; P ¼.03).
+5 Months Post-ACLR Knee Kinematics
+Compared with the contralateral knee, the discrete analy-
+sis showed that the injured knee was more ﬂexed at the
+minimum ﬂexion angles during slow (M ¼ 1.58, SE ¼ 0.68;
+ES ¼ 0.59; P ¼ .03) and normal (M ¼ 2.18, SE ¼ 0.78;
+ES ¼ 0.76; P ¼ .003) walking speeds. The injured knee
+was less ﬂexed at the ﬁrst peak angle during normal walk-
+ing speed (M ¼ 1.98, SE ¼ 1.08; ES ¼ 0.53; P ¼.048),
+but this ﬁnding was not different after correction.
+Similarly, during fast walking, the injured knee was
+more ﬂexed at the minimum ﬂexion angle (M ¼ 2.38, SE ¼
+0.68; ES ¼ 0.86; P ,.001) and less ﬂexed at the ﬁrst peak
+angle (M ¼ 5.18, SE ¼ 1.08; ES ¼ 0.83; P ,.001).
+Figures 4 and 5 show that differences were limited to
+93% to 95% of the gait cycle during normal walking (t ¼
+2.86, P ¼.003) and 38% to 61% during fast walking (t ¼
+2.83, P ¼.01). The injured knee remained less ﬂexed dur-
+ing the loading phase during fast walking compared with
+Table 2. Description of the Knee Sagittal-Plane Movements While Walking at 3 Different Speeds at 3 Time Points Comparing the Involved Limb With the Contralateral Limb and a
+Healthy Cohort a
+Control (n ¼ 17) Pre-ACLR (n ¼ 40) 3 mo Post-ACLR (n ¼ 27) 5 mo Post-ACLR (n ¼ 18)
+Walking Pace Angle Left Limb, 8 Right Limb, 8 P Value b
+Involved Limb, 8 Contralateral Limb, 8 P Value b
+Involved Limb, 8 Contralateral Limb, 8 P Value b
+Involved Limb, 8 Contralateral Limb, 8 P Value b
+Slow Minimum 3.8 (10.2, 1.8) 3.7 (9.6, 1.7) .24 1.3 (7.5, 14.6) 3.5 (10.8, 5.5) .053 c
+1.0 (5.2, 7.9) 3.5 (7.9, 1.3) ,.001 c,d
+1.8 (5.2, 6.9) 2.7 (6.5, 3.0) .03 c,d
+First peak 5.4 (6.2, 22.5) 7.1 (3.6, 21.7) .08 9.57 (4.1, 21.6) 7.2 (5.0, 21.5) .07 11.2 (0.1, 22) 10.5 (1.4, 23.5) .63 c
+10.0 (0.6, 21.0) 11.5 (3.0, 21.4) .61
+Second peak 58.6 (48.1, 65.7) 59.5 (52.7, 66.3) .23 58.7 (44.8, 71.7) 59.9 (53.7, 69.2) .06 55.9 (38.5, 66.6) 59.7 (53.7, 70.0) ,.001 d
+58.6 (48.3, 73.1) 59.5 (54.1, 70.9) .37
+Normal Minimum 4.3 (9.4, 0.6) 3.0 (10.8, 1.1) .03 b
+2.1 (8.0, 14.0) 3.9 (11.7, 4.2) .006 c,d
+1.3 (4.0, 9.0) 4.2 (8.2, 0.6) ,.001 c,d
+1.5 (6.5, 6.6) 3.2 (7.4, 1.5) .003 c,d
+First peak 13.7 (2.6, 28.1) 13.4 (2.6, 28.1) .23 14.5 (4.0, 25.3) 14.7 (3.6, 27.9) .62 13.1 (2.5, 23.8) 15.0 (1.8, 24.6) .26 13.0 (4.3, 21.6) 16.5 (0.7, 25.4) .048 c
+Second peak 60.7 (56.4, 69.4) 61.4 (54.3, 71.0) .26 63.3 (49.3, 71.0) 63.2 (58.5, 71.5) .13 60.2 (37.1, 71.7) 63.1 (55.0, 73.9) .001 c
+62.6 (51.1, 73.8) 61.8 (57.7, 72.0) .42
+Fast Minimum 2.9 (12.7, 1.7) 1.6 (10.3, 2.8) .13 1.5 (7.0, 12.4) 3.0 (11.1, 4.5) .008 c
+1.8 (3.1, 14.7) 2.7 (7.3, 3.6) ,.001 c,d
+0.6 (5.7, 7.9) 3.1 (7.3, 2.2) ,.001 c
+First peak 18.6 (5.2, 33.2) 21.8 (1.0, 30.9) .09 18.8 (4.4, 28.9) 20.3 (9.8, 29.9) .006 c
+17.1 (4.1, 29.8) 21.6 (12.2, 29.7) ,.001 c
+17.0 (2.2, 25.4) 21.5 (0.2, 31.1) ,.001 c
+Second peak 60.5 (55.2, 74.5) 59.8 (52.9, 70.4) .78 63.4 (48.4, 71.4) 62.6 (53.7, 71.6) .59 61.1 (51.7, 75.3) 61.9 (55.5, 71.2) .005 c
+62.4 (54.1, 73.7) 61.3 (57.7, 70.2) .47
+Abbreviation: ACLR, anterior cruciate ligament reconstruction.
+a
+Limb data are median (minimum, maximum).
+b
+P values represent between-limbs comparisons.
+c
+Indicates a difference between the involved and contralateral limbs of the ACLR group or right and left limbs of the control group at a single time point. Comparisons were made using
+the exact Wilcoxon signed-rank test.
+d
+Indicates a difference between the involved limb of the ACLR group at the chosen time and the left leg of the control group. Comparisons were made using the exact Mann-Whitney U
+test.
+Journal of Athletic Training 827
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 6 ---
+the contralateral knee, indicating that some asymmetries
+persisted, mostly at faster walking speeds. Compared with
+the control knee, the injured knee was more ﬂexed at the
+minimum angle at slow (M ¼ 3.28; ES ¼ 0.57; P ¼ .003)
+and normal (M ¼ 3.38; ES ¼ 0.54; P ¼ .005) walking
+speeds.
+As seen in Table 4, changes were observed in knee kine-
+matics from pre-ACLR to 3 months post-ACLR. At slow
+walking speed, knee ﬂexion was increased for the mini-
+mum angle (P ¼ .006). Similar patterns were observed at
+normal (P ,.001) and fast (P ¼.006) walking speeds.
+Associated Hip and Ankle Adaptations
+After correction for multiple comparisons, differences
+were observed at pre-ACLR in the ankle of the injured
+limb that demonstrated increased plantarﬂexion (slow
+speed, P ¼ .003) compared with the controls. No differ-
+ences were noted between the injured and contralateral
+limbs. By 3 months post-ACLR, the hip showed less ﬂex-
+ion across all walking speeds (normal and slow, P ¼ .001
+and fast, P ¼ .008) and less extension at normal walking
+speed (P ¼.004) in the injured than contralateral limb. The
+Figure 2. Median walking speed for each walking condition grouped by time point. Violin plots represent the probability density of data
+at different speed values, with the width of the violin indicating the frequency of observations at each speed. Black lines within the vio-
+lins indicate the median [interquartile range] speed of each group. Individual data points (gray circles) overlaid on the violin plots repre-
+sent the interparticipant differences in speed values.
+Table 3. Results of a Nonparametric Paired t Test Using 1-Dimensional Statistical Parametric Mappinga
+Analysis for Differences
+Between the Injured and Contralateral Limbs During Walking at 3 Different Speeds by Joint and Time
+Pre-ACLR (n ¼ 40) 3 mo Post-ACLR (n ¼ 27) 5 mo Post-ACLR (n ¼ 18)
+Walking
+Pace Joint
+Clusters,
+% Cycle tb
+P Value
+Clusters,
+% Cycle tb
+P Value
+Clusters,
+% Cycle tb
+P Value
+Slow Knee 12, 54 2.48 .001c
+0, 3 2.63 .03c d d d
+19, 61 .001c
+92, 99 .001c
+Hip 12, 37 2.56 .01c
+24, 50 2.68 .004c d d d
+Ankle 20, 43 2.69 .001c
+19, 48 2.89 .001c d d d
+67, 91 .02c
+Normal Knee 24, 48 2.75 .001c
+26, 59 2.78 .001c
+93, 95 2.86 .003
+90, 99 .001c
+Hip d d d
+34, 47 2.71 .01c d d d
+Ankle 29, 36 2.79 .03c
+23, 44 2.88 .001c
+34, 37 2.98 .04
+85, 88 .045c
+Fast Knee 30, 51 2.79 .002c
+30, 62 2.86 .001c
+38, 61 2.83 .01
+90, 94 .03c
+90, 97 .008c
+Hip d d d
+34, 57 2.75 .006c d d d
+Ankle d d d
+27, 41 2.85 .001c
+33, 39 3.03 .02
+Abbreviation: ACLR, anterior cruciate ligament reconstruction.
+a
+A permutation-based approach with 1000 iterations was used for cluster level.
+b
+A positive t value indicates a larger angle for the injured limb.
+c
+Indicates difference (P , .05).
+d
+Indicates no difference between limbs.
+828 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 7 ---
+ankle of the injured limb exhibited increased plantarﬂexion
+(slow speed, P ¼.002).
+By 5 months post-ACLR, no differences were found in
+the hip joints between limbs and between the injured and
+control limbs. The ankle of the injured limb showed less
+dorsiﬂexion and increased plantarﬂexion at slow walking
+speed (P ,.05) compared with controls, but those ﬁndings
+were not different after correction for multiple comparisons.
+The results of the SPM analysis are available in Table 3, and
+the discrete analysis is provided in Appendix Tables 3 to 6.
+DISCUSSION
+We assessed sagittal-plane kinematics during gait pre-
+ACLR and post-ACLR using IMUs in a nonlaboratory
+setting. Our primary ﬁndings indicated progressive improve-
+ment in knee sagittal-plane kinematics symmetry post-
+ACLR, particularly at 3 months post-ACLR, with compen-
+satory adaptations observed in hip and ankle kinematics.
+Few researchers have examined pre-ACLR and early post-
+ACLR gait kinematics or the effect of walking speed on gait
+asymmetries or have used SPM in this population.5,11,12,19,30
+Pre-ACLR Knee Kinematics
+The injured knee exhibited a more ﬂexed position during
+most of the stance phase across all speeds and just before
+the loading phase at fast speed. These results are consistent
+with those of Gao and Zheng, who observed that patients
+who were ,1 year since their ACL injury presented with a
+less extended knee during the stance phase.31
+The SPM anal-
+ysis revealed that these asymmetries occurred predominantly
+during midstance and terminal stance, highlighting how
+weight-bearing activities speciﬁcally challenge movement
+symmetry even before surgery. Increased knee ﬂexion dur-
+ing stance may represent a protective mechanism to reduce
+tibial translation and minimize ACL strain in the absence of
+a functional ACL.32
+The persistence of this pattern across
+different walking speeds suggests it is a robust compensa-
+tory strategy rather than a speed-dependent adaptation.
+Three Months Post-ACLR Knee Kinematics
+The discrete analysis found that, at 3 months post-
+ACLR, participants demonstrated less knee ﬂexion at the
+second peak during slow and normal walking speeds in
+their injured than contralateral limb. During fast walking,
+differences between limbs extended to include less ﬂexion
+at the ﬁrst peak angle in the injured knee.
+Whereas Williams et al reported smaller ﬁrst peak knee-
+ﬂexion angle in the involved than uninvolved limb during
+self-selected walking speeds (17.78 6 6.78 versus 20.98 6
+4.78), we only observed this difference during fast walk-
+ing.33
+This discrepancy may be explained by walking speed
+differences, as the self-selected speeds of their participants
+were faster than those of ours, falling between our normal
+Figure 3. One-dimensional statistical parametric mapping of the gait cycle for the anterior cruciate ligament reconstruction (ACLR) and
+contralateral limbs during slow walking at pre-ACLR and 3 and 5 months post-ACLR, respectively, for the, A–C, knee, D–F, hip, and G–I,
+ankle. Solid lines indicate the mean joint-angle trajectory across participants, with shaded areas indicating 61 SD. Shaded gray boxes
+indicate differences.
+Journal of Athletic Training 829
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 8 ---
+and fast conditions. Furthermore, Ferber et al found no dif-
+ference in ﬁrst-peak knee-ﬂexion angle at a self-selected
+walking speed but did not report on the actual walking
+speed of the participants (control ¼ 16.18 6 2.18; ACLR ¼
+19.88 6 5.48).34
+The SPM analysis indicated that the injured knee was
+more ﬂexed during most of stance and the beginning of the
+swing phase across all walking speeds but had less peak
+ﬂexion during the swing phase. Neal et al used SPM to
+assess knee kinematics 3 months post-ACLR and reported
+increased knee ﬂexion between 31% to 51% of the gait
+cycle, consistent with our ﬁndings.18
+On the contrary, they
+found decreased knee ﬂexion between 6.5% and 20% of
+the gait cycle. Notably, the self-selected speed in the study
+by Neal et al was closer to our participants’ fast walking
+speed, partially explaining this discrepancy.18
+These ﬁndings reinforce the speed-dependent nature of
+kinematic asymmetries post-ACLR, suggesting that move-
+ment deﬁcits may be less apparent at slower walking
+speeds but become more pronounced as task demands
+increase. Furthermore, the late stance and terminal swing
+asymmetries might highlight challenges in preparing for
+the next gait cycle.
+Five Months Post-ACLR Knee Kinematics
+By 5 months post-ACLR, the injured limb improved, but
+asymmetries persisted in terminal stance to preswing at fast
+walking speed. This speed-dependent pattern demonstrates
+how increasing task demands can reveal persistent move-
+ment asymmetries that might not be apparent in less chal-
+lenging walking.
+Discrete analysis revealed that the knee was more ﬂexed
+at the minimum ﬂexion angle and less ﬂexed at the ﬁrst
+peak at normal and fast speeds compared with the contra-
+lateral limb. These results differ from those of Georgoulis
+et al, who assessed normal walking speed (1.28 m/s) and
+found no differences at any discrete point of the gait cycle
+at a walking speed similar to that in our study (1.26 m/s).35
+One explanation is that Georgoulis et al compared 2 sepa-
+rate groups (different participants for the pre-ACLR and
+post-ACLR groups), whereas we performed within-subjects
+comparisons.35
+Neal et al assessed participants 6 months post-ACLR
+and found differences between 5% to 18% and 36% to 48%
+of the gait cycle.18
+Similar to the 3-month comparison, the
+self-selected speed was faster in their study than ours. The
+differences in sample size, movement-capture systems, and
+slightly different time points post-ACLR can further
+explain the different results.
+Although improvements during the ﬁrst 5 months post-
+ACLR are evident, knee kinematics do not fully return to
+preinjury levels even 1 year after surgery. Researchers have
+shown that ACLR limbs have less peak knee ﬂexion com-
+pared with control limbs, which could contribute to less-
+than-optimal recovery.2
+Furthermore, the persistence of
+Figure 4. One-dimensional statistical parametric mapping of the gait cycle for anterior cruciate ligament reconstruction (ACLR) and
+contralateral limbs during normal walking speed at pre-ACLR and 3 and 5 months post-ACLR, respectively, for the, A–C, knee, D–F, hip,
+and G–I, ankle. Solid lines indicate the mean joint-angle trajectory across participants, with shaded areas indicating 61 SD. Shaded gray
+boxes indicate differences.
+830 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 9 ---
+asymmetries primarily during midstance at faster speeds
+might suggest that the neuromuscular system still struggles
+with higher mechanical demands, such as excessive tibial
+translation.36
+Associated Hip and Ankle Adaptations
+As a secondary ﬁnding, we observed several adaptations
+in hip and ankle kinematics, possibly as a compensation
+strategy for the changes in the knee joint. Pre-ACLR, hip
+asymmetries were limited to midstance to terminal stance
+during slow walking. Ankle asymmetries during this period
+were evident in midstance to terminal stance when walking
+at slow and normal speeds. At 3 months post-ACLR, hip
+asymmetries persisted during midstance, terminal stance,
+or preswing across all walking speeds. Similarly, ankle
+asymmetries were observed in midstance and terminal
+stance across all walking speeds. By 5 months post-ACLR,
+hip asymmetries had resolved across all speeds, but ankle
+asymmetries persisted during terminal stance at normal and
+fast walking.
+The resolution of hip asymmetries by 5 months com-
+pared with the persistence of ankle asymmetries suggests
+a joint-speciﬁc recovery pattern. These ﬁndings suggest
+Figure 5. One-dimensional statistical parametric mapping of the gait cycle for anterior cruciate ligament reconstruction (ACLR) and
+contralateral limbs during fast walking speed at pre-ACLR and 3 and 5 months post-ACLR, respectively, for the, A–C, knee, D–F, hip, and
+G–I, ankle. Solid lines indicate the mean joint-angle trajectory across participants, with shaded areas indicating 61 SD. Shaded gray
+boxes indicate differences.
+Table 4. Description of Changes in the Knee Sagittal-Plane Movements Between the Different Time Points Before and After ACLR
+Pre-ACLR to 3 mo Post-ACLR 3 mo to 5 mo Post-ACLR Pre-ACLR to 5 mo Post-ACLR
+Walking Pace Angle Difference, Mean 6 SD, 8 P Value Difference, Mean 6 SD, 8 P Value Difference, Mean 6 SD, 8 P Value
+Slow Minimum 2.5 6 0.7 .006a
+2.2 6 0.8 .045a
+0.3 6 0.9 ..99
+First peak 1.0 6 0.9 .77 1.0 6 0.7 .41 0.1 6 1.0 ..99
+Second peak 3.0 6 1.1 .04a
+2.9 6 1.4 .14 0.1 6 1.2 ..99
+Normal Minimum 2.9 6 0.7 ,.001a
+2.2 6 0.8 .55 0.7 6 0.9 ..99
+First peak 0.1 6 0.9 ..99 0.3 6 0.5 ..99 0.4 6 0.9 ..99
+Second peak 3.0 6 1.2 .07 1.8 6 1.5 .69 1.1 6 0.9 .73
+Fast Minimum 3.1 6 0.9 .006a
+2.7 6 1.0 .042a
+0.4 6 1.0 ..99
+First peak 1.2 6 1.0 .72 0.45 6 1.0 ..99 1.6 6 1.0 .43
+Second peak 1.8 6 0.9 .16 1.6 6 0.9 .31 0.1 6 0.7 ..99
+Abbreviation: ACLR, anterior cruciate ligament reconstruction.
+a
+Indicates difference between time points.
+Journal of Athletic Training 831
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 10 ---
+compensations still exist, particularly under greater demands,
+which can lead to greater joint loading.37
+Clinical Implications
+The comparison of our study with others highlights the
+need for transparent, reproducible methodologies. Given
+that some researchers did not report walking speeds and
+others did not describe the exact oral cue given to their par-
+ticipants, a heterogeneous comparison between studies is
+hard to make.34,38
+Our ﬁndings using IMU-based gait analysis aligned with
+previous evidence supporting the clinical utility of wear-
+able sensors in assessing knee pathologies. In a recent
+study, Ghaffari et al demonstrated that IMU-derived gait
+variables can be used to discriminate between individuals
+with and those without knee OA.38
+In addition, IMU mea-
+surements have shown associations with patient-reported
+outcomes and pain levels, suggesting their potential value
+as objective markers of functional recovery.39,40
+Whereas
+researchers have primarily focused on primary knee OA,
+we extended these ﬁndings to the ACLR population, dem-
+onstrating that IMU-based gait analysis can capture subtle
+biomechanical changes and potentially early identiﬁcation
+of patients at risk for developing PTOA.
+Our ﬁndings have important implications for post-ACLR
+rehabilitation protocol design and implementation. The
+nonlinear recovery patterns across walking speeds align
+with those of previous studies in which increased asymme-
+tries at faster speeds were shown.11,30,41
+Our secondary ﬁnd-
+ing of compensatory mechanisms, particularly evident at
+higher speeds, may lead to excessive joint loading that
+could increase the risk of early degenerative changes in
+both the hip and ankle joints.41–44
+Furthermore, different
+walking speeds can reveal important insights: Slower walk-
+ing speeds may highlight joint patterns similar to those
+seen in OA, showing how patients with ACLR adapt their
+gait.45
+In addition, faster walking speeds place greater
+demands on joint moments, muscle activation, and range of
+motion.30
+Limitations
+We acknowledge some limitations in our study. Although
+our sample size was determined by a previous trial rather
+than an a priori power calculation, sensitivity power analyses
+demonstrated our study had sufﬁcient power (80%) to detect
+ESs of 0.45, aligning with the effects we observed (range,
+0.48–0.98). We used a single-center design with a limited
+follow-up period. However, the purpose of our study was to
+describe the kinematic changes during the pre-ACLR and
+early to middle stages of ACLR rehabilitation. We did not
+account for different graft types and sex differences, possibly
+introducing bias in our results. Furthermore, the participants
+available for this study had varied times between their injury
+and ACLR, which could have inﬂuenced their biomechanics
+and ACLR outcomes. Next, multiple comparisons of knee-,
+hip-, and ankle-joint kinematics might have increased type I
+errors. However, we predeﬁned the knee-joint kinematic
+analysis as the primary outcome of this study and adjusted
+the results accordingly. In addition, the high dropout rate
+may have introduced attrition bias, potentially linked to par-
+ticipants missing predeﬁned check-up meetings with their
+surgeon rather than the study itself. Lastly, although we
+observed no differences in characteristics between the con-
+trol and ACLR cohorts, the control participants were older
+and shorter and weighed less, which could have inﬂuenced
+their gait.
+CONCLUSIONS
+In our study, we highlighted several key ﬁndings regard-
+ing gait recovery in patients with ACLR. We observed
+improved symmetry in gait post-ACLR compared with the
+contralateral limb and controls. However, these improve-
+ments were inconsistent across different walking speeds,
+suggesting that varying walking speeds may challenge
+patients differently. Although hip and ankle adaptations
+were noted, the primary focus on knee kinematics revealed
+persistent asymmetries at faster walking speeds. These
+ﬁndings underscore the importance of integrating varied
+speed regimens in rehabilitation protocols to facilitate com-
+prehensive recovery of knee function.
+ACKNOWLEDGMENTS
+This study was supported by grants from the Zuckerman
+STEM Leadership Program (Dr Fischer) and the Israel Science
+Foundation (number 466/22; Dr Fischer).
+REFERENCES
+1. Liukkonen R, Vaajala M, Mattila VM, Reito A. Prevalence of post-
+traumatic osteoarthritis after anterior cruciate ligament injury remains high
+despite advances in surgical techniques. Bone Joint J. 2023;105-B(11):
+1140–1148. doi:10.1302/0301-620X.105B11.BJJ-2023-0058.R1
+2. Kaur M, Ribeiro DC, Theis JC, Webster KE, Sole G. Movement pat-
+terns of the knee during gait following ACL reconstruction: a system-
+atic review and meta-analysis. Sports Med. 2016;46(12):1869–1895.
+doi:10.1007/s40279-016-0510-4
+3. Filbay SR, Skou ST, Bullock GS, et al. Long-term quality of life, work
+limitation, physical activity, economic cost and disease burden following
+ACL and meniscal injury: a systematic review and meta-analysis for the
+OPTIKNEE consensus. Br J Sports Med. 2022;56(24):1465–1474.
+doi:10.1136/bjsports-2022-105626
+4. Hart HF, Culvenor AG, Collins NJ, et al. Knee kinematics and joint
+moments during gait following anterior cruciate ligament reconstruc-
+tion: a systematic review and meta-analysis. Br J Sports Med.
+2016;50(10):597–612. doi:10.1136/bjsports-2015-094797
+5. Moore JM, Cessford K, Willmott AP, et al. Lower limb biomechanics
+before and after anterior cruciate ligament reconstruction: a system-
+atic review. J Biomech. 2020;106:109828. doi:10.1016/j.jbiomech.
+2020.109828
+6. Carter HM, Lewis GN, Smith BE. Preoperative predictors for return
+to physical activity following anterior cruciate ligament reconstruc-
+tion (ACLR): a systematic review. BMC Musculoskelet Disord.
+2023;24(1):471. doi:10.1186/s12891-023-06489-5
+7. Smale KB, Alkjaer T, Flaxman TE, Krogsgaard MR, Simonsen EB,
+Benoit DL. Predicting post-operative functional ability from pre-
+operative measures in ACL-injured individuals. Scand J Med Sci
+Sports. 2020;30(1):166–173. doi:10.1111/sms.13549
+8. Zore MR, Kregar Velikonja N, Hussein M. Pre- and post-operative
+limb symmetry indexes and estimated preinjury capacity index of
+muscle strength as predictive factors for the risk of ACL reinjury: a
+retrospective cohort study of athletes after ACLR. Appl Sci.
+2021;11(8):3498. doi:10.3390/app11083498
+9. Büttner C, Lisee C, Bjornsen E, et al. Bilateral waveform analysis of gait
+biomechanics presurgery to 12 months following ACL reconstruction
+832 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 11 ---
+compared to controls. J Orthop Res. 2025;43(2):322–336. doi:10.1002/
+jor.26001
+10. Davis-Wilson HC, Pfeiffer SJ, Johnston CD, et al. Bilateral gait 6 and
+12 months post-anterior cruciate ligament reconstruction compared
+with controls. Med Sci Sports Exerc. 2020;52(4):785–794. doi:10.
+1249/MSS.0000000000002208
+11. Garcia SA, Brown SR, Koje M, Krishnan C, Palmieri-Smith RM.
+Gait asymmetries are exacerbated at faster walking speeds in individ-
+uals with acute anterior cruciate ligament reconstruction. J Orthop
+Res. 2022;40(1):219–230. doi:10.1002/jor.25117
+12. Garcia SA, Kahan S, Gallegos J, Balza I, Krishnan C, Palmieri-Smith
+RM. Walking speed differentially affects lower extremity biomechan-
+ics in individuals with anterior cruciate ligament reconstruction com-
+pared to uninjured controls. Clin Biomech (Bristol). 2023;108:106059.
+doi:10.1016/j.clinbiomech.2023.106059
+13. Kong L, Yang T, Wang Q, et al. ACLD patients exhibit additional
+knee kinematic asymmetries at the speed level of healthy subjects.
+Front Bioeng Biotechnol. 2022;10:930722. doi:10.3389/fbioe.2022.
+930722
+14. Noehren B, Wilson H, Miller C, Lattermann C. Long-term gait devia-
+tions in anterior cruciate ligament-reconstructed females. Med Sci Sports
+Exerc. 2013;45(7):1340–1347. doi:10.1249/MSS.0b013e318285c6b6
+15. Urseï M, Briot J, Scandella M, de Gauzy JS, Accadbled F. Changes in
+gait patterns after anterior cruciate ligament reconstruction in chil-
+dren. Int Orthop. 2024;48(6):1517–1523. doi:10.1007/s00264-024-
+06108-5
+16. Slater LV, Hart JM, Kelly AR, Kuenze CM. Progressive changes in
+walking kinematics and kinetics after anterior cruciate ligament
+injury and reconstruction: a review and meta-analysis. J Athl Train.
+2017;52(9):847–860. doi:10.4085/1062-6050-52.6.06
+17. Pataky TC. Generalized n-dimensional biomechanical ﬁeld analysis
+using statistical parametric mapping. J Biomech. 2010;43(10):1976–
+1982. doi:10.1016/j.jbiomech.2010.03.008
+18. Neal K, Williams JR, Alfayyadh A, et al. Knee joint biomechanics
+during gait improve from 3 to 6 months after anterior cruciate liga-
+ment reconstruction. J Orthop Res. 2022;40(9):2025–2038. doi:10.
+1002/jor.25250
+19. Yona T, Kamel N, Cohen-Eick G, Ovadia I, Fischer A. One-dimen-
+sion statistical parametric mapping in lower limb biomechanical anal-
+ysis: a systematic scoping review. Gait Posture. 2024;109:133–146.
+doi:10.1016/j.gaitpost.2024.01.018
+20. Dewig DR, Mills HR, Evans-Pickett A, Pietrosimone BG, Troy
+Blackburn J. Aberrant gait biomechanics in individuals with ACL
+reconstruction are magniﬁed during treadmill walking. J Biomech.
+2022;134:110989. doi:10.1016/j.jbiomech.2022.110989
+21. Pamukoff DN, Holmes SC, Garcia SA, Vakula MN, Shumski EJ,
+Mofﬁt TJ. Inﬂuence of body mass index and anterior cruciate liga-
+ment reconstruction on gait biomechanics. J Orthop Res.
+2023;41(5):994–1003. doi:10.1002/jor.25451
+22. Nijmeijer EM, Heuvelmans P, Bolt R, Gokeler A, Otten E,
+Benjaminse A. Concurrent validation of the Xsens IMU system of
+lower-body kinematics in jump-landing and change-of-direction
+tasks. J Biomech. 2023;154:111637. doi:10.1016/j.jbiomech.2023.
+111637
+23. Nüesch C, Ismailidis P, Koch D, et al. Assessing site speciﬁcity of
+osteoarthritic gait kinematics with wearable sensors and their associa-
+tion with Patient Reported Outcome Measures (PROMs): knee versus
+hip osteoarthritis. Sensors (Basel). 2021;21(16):5363. doi:10.3390/
+s21165363
+24. Lakens D. Sample size justiﬁcation. Collabra Psychol. 2022;8(1):33267.
+doi:10.1525/collabra.33267
+25. von Elm E, Altman DG, Egger M, Pocock SJ, Gøtzsche PC,
+Vandenbroucke JP; STROBE Initiative. The Strengthening the
+Reporting of Observational Studies in Epidemiology (STROBE) state-
+ment: guidelines for reporting observational studies. Ann Intern Med.
+2007;147(8):573–577. doi:10.7326/0003-4819-147-8-200710160-00010
+26. Schepers M, Giuberti M, Bellusci G. Xsens MVN: Consistent Track-
+ing of Human Motion Using Inertial Sensing. XSENS Technologies
+BV; 2018. Accessed January 20, 2025. https://www.movella.com/
+hubfs/Downloads/Whitepapers/MVN_Whitepaper.pdf
+27. Al-Amri M, Nicholas K, Button K, Sparkes V, Sheeran L, Davies JL.
+Inertial measurement units for clinical movement analysis: reliability
+and concurrent validity. Sensors (Basel). 2018;18(3):719. doi:10.
+3390/s18030719
+28. Brinkerhoff SA, Murrah WM, Hutchison Z, Miller M, Roper JA.
+Words matter: instructions dictate “self-selected” walking speed in
+young adults. Gait Posture. 2022;95:223–226. doi:10.1016/j.gaitpost.
+2019.07.379
+29. Benjamini Y, Hochberg Y. Controlling the false discovery rate: a
+practical and powerful approach to multiple testing. J R Stat Soc
+Series B Stat Methodol. 1995;57(1):289–300. doi:10.1111/j.2517-
+6161.1995.tb02031.x
+30. Knobel RJ, Ito N, Arhos EK, Capin JJ, Buchanan TS,
+Snyder-Mackler L. Patients walking faster after anterior cruciate liga-
+ment reconstruction have more gait asymmetry. Int J Sports Phys
+Ther. 2021;16(1):169–176. doi:10.26603/001c.18710
+31. Gao B, Zheng NN. Alterations in three-dimensional joint kinematics
+of anterior cruciate ligament-deﬁcient and -reconstructed knees dur-
+ing walking. Clin Biomech (Bristol). 2010;25(3):222–229. doi:10.
+1016/j.clinbiomech.2009.11.006
+32. Shabani B, Bytyqi D, Lustig S, Cheze L, Bytyqi C, Neyret P. Gait
+changes of the ACL-deﬁcient knee 3D kinematic assessment. Knee
+Surg Sports Traumatol Arthrosc. 2015;23(11):3259–3265. doi:10.
+1007/s00167-014-3169-0
+33. Williams JR, Neal K, Alfayyadh A, et al. Patellofemoral contact
+forces and knee gait mechanics 3 months after ACL reconstruction
+are associated with cartilage degradation 24 months after surgery.
+Osteoarthritis Cartilage. 2023;31(1):96–105. doi:10.1016/j.joca.
+2022.10.007
+34. Ferber R, Osternig LR, Woollacott MH, Wasielewski NJ, Lee JH.
+Gait mechanics in chronic ACL deﬁciency and subsequent repair.
+Clin Biomech (Bristol). 2002;17(4):274–285. doi:10.1016/S0268-
+0033(02)00016-5
+35. Georgoulis AD, Papadonikolakis A, Papageorgiou CD, Mitsou A,
+Stergiou N. Three-dimensional tibiofemoral kinematics of the ante-
+rior cruciate ligament-deﬁcient and reconstructed knee during walk-
+ing. Am J Sports Med. 2003;31(1):75–79. doi:10.1177/03635465030
+310012401
+36. Lai H, Chen X, Huang W, et al. Whether patients with anterior cruci-
+ate ligament reconstruction walking at a fast speed show more kine-
+matic asymmetries? Orthop Surg. 2024;16(4):864–872. doi:10.1111/
+os.14017
+37. Goetschius J, Hertel J, Saliba SA, Brockmeier SF, Hart JM. Gait bio-
+mechanics in anterior cruciate ligament-reconstructed knees at differ-
+ent time frames postsurgery. Med Sci Sports Exerc. 2018;50(11):
+2209–2216. doi:10.1249/MSS.0000000000001693
+38. Ghaffari A, Clasen PD, Boel RV, et al. Multivariable model for gait
+pattern differentiation in elderly patients with hip and knee osteoar-
+thritis: a wearable sensor approach. Heliyon. 2024;10(17):e36825.
+doi:10.1016/j.heliyon.2024.e36825
+39. Misu S, Tanaka S, Miura J, Ishihara K, Asai T, Nishigami T. Association
+of the degree of varus thrust during gait assessed by an inertial measure-
+ment unit with patient-reported outcome measures in knee osteoarthritis.
+Sensors (Basel). 2023;23(10):4578. doi:10.3390/s23104578
+40. James KA, Corrigan P, Lanois C, Huang CH, Davis IS, Stefanik JJ.
+Association of tibial acceleration during walking to pain and impact
+loading in adults with knee osteoarthritis. Clin Biomech (Bristol).
+2023;109:106097. doi:10.1016/j.clinbiomech.2023.106097
+41. Stoelben KJV, Pappas E, Mota CB. Lower extremity joint moments
+throughout gait at two speeds more than 4 years after ACL recon-
+struction. Gait Posture. 2019;70:347–354. doi:10.1016/j.gaitpost.
+2019.02.025
+Journal of Athletic Training 833
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 12 ---
+42. Ursei ME, Accadbled F, Scandella M, et al. Foot and ankle compen-
+sation for anterior cruciate ligament deﬁciency during gait in children.
+Orthop Traumatol Surg Res. 2020;106(1):179–183. doi:10.1016/j.
+otsr.2019.07.009
+43. King E, Richter C, Franklyn-Miller A, et al. Biomechanical but not
+timed performance asymmetries persist between limbs 9 months after
+ACL reconstruction during planned and unplanned change of direction.
+J Biomech. 2018;81:93–103. doi:10.1016/j.jbiomech.2018.09.021
+44. Padhye AA, Meardon SA, Kulas A, Willson J. Lower extremity joint
+contact force symmetry during walking and running, 2–7 years post-
+ACL reconstruction. J Orthop Res. 2024;42(5):1009–1019. doi:10.
+1002/jor.25751
+45. Bejek Z, Paróczai R, Illyés A, Kiss RM. The inﬂuence of walking
+speed on gait parameters in healthy people and in patients with osteo-
+arthritis. Knee Surg Sports Traumatol Arthrosc. 2006;14(7):612–622.
+doi:10.1007/s00167-005-0005-6
+Address correspondence to Arielle G. Fischer, PhD, Technion, Israel Institute of Technology, Haifa, 3200003, Israel. Address email to
+ariellef@technion.ac.il.
+Appendix
+Appendix Table 1. Baseline Rehabilitation Protocol
+First week postoperatively
+ Static quadriceps exercises in straightening.
+ Walking with crutches or walker while applying partial weight on the operated leg.
+ Wearing elastic socks and exercising calf muscles to avoid deep vein thrombosis.
+7–14 d postoperatively
+ Walking while fully stepping on the leg (can use crutches).
+ Exercising to improve range of movement.
+ After 2–3 wk, maximal recommended range of movement is 08–908.
+Weeks 2–3
+ Wall slides and heel slides exercises.
+ Static vastus medialis obliquus exercises sitting down.
+ Using rowing machine with minimal resistance and medium range of movement.
+Week 4
+ Bending exercises 08–1008 (avoid overstraightening).
+ Static bicycles with low resistance.
+ Up and down exercises with a low step.
+ Squat exercises up to 458–608.
+Week 8
+ Step machine.
+ Squat exercises.
+Week 10
+ Trampoline.
+Week 12
+ Achieving a range of movement of 08–1308 is recommended.
+ Advancing in strengthening quadriceps and hamstrings.
+3–6 mo
+ Increasing gradual activity.
+ Easy running starting in the 5th month.
+ Changing directions, accelerations, deceleration, running in figure of 8.
+ Preparing for a specific sport.
+After 6 mo
+ If everything is normal and the patient is confident to return to the specific sport, gradually exercise the specific sport.
+7–9 mo
+ Returning to the specific sport.
+834 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 13 ---
+Appendix Table 2. Characteristics of Participants at 5-mo Follow-Up and Participants Lost to Follow-Up at 5 mo
+Characteristic
+Participants at 5 mo Post-
+ACLR (n ¼ 18)
+Participants Lost to Follow-
+Up at 5 mo (n ¼ 22) Test Statistica
+P Value
+Sex, No. (%) v2
+1 (N ¼ 40) ¼ 2.39 .12
+Male 13 (72.2) 20 (90.9)
+Female 5 (27.8) 2 (9.1)
+Age, mean 6 SD, y 24.1 6 6.6 23.6 6 4.6 t38 ¼ 0.25 .80
+Height, mean 6 SD, m 1.76 6 0.10 1.76 6 0.10 t38 ¼ 0.09 .93
+Mass, mean 6 SD, kg 74.1 6 12.6 75.7 6 13.0 t38 ¼ 0.40 .68
+Body mass index, mean 6
+SD, kg/m2
+23.9 6 3.3 24.6 6 4.5 t38 ¼ 0.53 .60
+Injured limb, No. (%) v2
+1 (N ¼ 40) ¼ 0.60 .44
+Left 6 (33.3) 10 (45.5)
+Right 12 (66.7) 12 (54.5)
+Graft type, No. (%) v2
+3 (N ¼ 40) ¼ 1.94 .59
+Hamstrings 11 (61.1) 15 (68.2)
+Bone-patellar tendon-bone 3 (16.7) 5 (22.7)
+Quadriceps 3 (16.7) 2 (9.1)
+Allograft 1 (5.6) 0 (0)
+a
+Independent-samples t test or v2
+test of independence.
+Appendix Table 3. Description of Changes in the Hip Sagittal-Plane Movements Between the Different Time Points Pre-ACLR and Post-
+ACLR
+Pre-ACLR to 3 mo Post-ACLR 3 mo to 5 mo Post-ACLR Pre-ACLR to 5 mo Post-ACLR
+Walking Pace Angle Difference, Mean 6 SD, 8 P Value Difference, Mean 6 SD, 8 P Value Difference, Mean 6 SD, 8 P Value
+Slow Minimum 0.7 6 1.2 ..99 1.5 6 0.6 .12 2.2 6 1.2 .26
+Maximum 0.4 6 0.4 .83 0.4 6 0.5 ..99 0.1 6 0.5 ..99
+Normal Minimum 0.1 6 1.4 ..99 1.6 6 1.1 .50 1.7 6 1.0 .27
+Maximum 0.1 6 0.3 ..99 0.7 6 0.4 .36 0.6 6 0.4 .43
+Fast Minimum 1.0 6 1.5 ..99 1.1 6 1.1 .96 0.1 6 1.2 ..99
+Maximum 0.1 6 0.4 ..99 0.4 6 0.5 ..99 0.4 6 0.6 ..99
+Abbreviation: ACLR, anterior cruciate ligament reconstruction.
+Appendix Table 4. Description of Changes in the Ankle Sagittal-Plane Movements Between Time Points Pre-ACLR and Post-ACLR
+Pre-ACLR to 3 mo Post-ACLR 3 mo to 5 mo Post-ACLR Pre-ACLR to 5 mo Post-ACLR
+Walking Pace Angle Difference, Mean 6 SD, 8 P Value Difference, Mean 6 SD, 8 P Value Difference, Mean 6 SD, 8 P Value
+Slow Minimum 1.0 6 0.6 .40 1.8 6 0.8 .12 0.8 6 0.7 .83
+Maximum 0.2 6 0.8 ..99 0.3 6 1.0 ..99 0.6 6 1.0 ..99
+Normal Minimum 1.0 6 0.7 .51 1.8 6 0.8 .10 0.8 6 0.7 .91
+Maximum 0.1 6 0.8 ..99 0.3 6 0.9 ..99 0.1 6 0.8 ..99
+Fast Minimum 2.0 6 0.8 .06 1.9 6 1.1 .30 0.1 6 1.0 ..99
+Maximum 0.4 6 .08 ..99 0.6 6 1.4 ..99 1.1 6 1.3 ..99
+Abbreviation: ACLR, anterior cruciate ligament reconstruction.
+Journal of Athletic Training 835
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 14 ---
+Appendix Table 5. Hip Sagittal-Plane Movements While Walking at 3 Different Speeds at 3 Time Points Comparing the Involved Limb to the Contralateral Limb and a Healthy Cohort a
+Control (n ¼ 17) Pre-ACLR (n ¼ 40) 3 mo Post-ACLR (n ¼ 27) 5 mo Post-ACLR (n ¼ 18)
+Walking Pace Angle Left Limb, 8 Right Limb, 8 P Value Involved Limb, 8 Contralateral Limb, 8 P Value Involved Limb, 8 Contralateral Limb, 8 P Value Involved Limb, 8 Contralateral Limb, 8 P Value
+Slow Minimum 11.2 (27.6, 20.3) 11.7 (24.0, 5.1) .07 10.2 (20.2, 4.1) 10.3 (17.9, 0.6) .28 10.6 (17.8, 4.2) 10.7 (25.3, 4.3) .052 11.8 (21.0, 4.8) 13.3 (23.8, 5.9) .37
+Maximum 25.4 (6.5, 31.4) 26.7 (13.9, 32.1) .03 b
+24.6 (15.1, 34.9) 24.6 (16.0, 37.1) .28 24.3 (15.6, 32.1) 25.0 (16.5, 37.7) ,.001 b
+23.1 (15.4, 33.4) 23.3 (18.8, 36.6) .13
+Normal Minimum 13.2 (26.3, 8.1) 12.9 (24.8, 7.2) .08 11.8 (23.2, 4.85) 12 (24.6, 3.5) .20 11.9 (21.3, 2.2) 11.3 (27.4, 5.2) .03 b
+14.5 (21.0, 2.7) 13.9 (26.7, 14.3) .97
+Maximum 28.6 (12.6, 34.8) 29.9 (17.0, 35.2) .07 26.9 (18.6, 38.8) 27.4 (19.3, 41.5) .30 27.6 (18.1, 34.9) 27.9 (20.0, 39.7) ,.001 b
+26 (17.9, 35.2) 26.5 (22.4, 38.4) .14
+Fast Minimum 14.0 (28.5, 9.3) 13.6 (25.5, 9.4) .10 14.2 (26.9, 4.6) 13.4 (28.4, 2.3) .17 13 (23.7, 2.2) 13.6 (32.1, 7.4) .004 b
+15.4 (22.6, 3.6) 15.8 (29.7, 7.2) .054
+Maximum 34.3 (15.1, 42.4) 35.4 (16.7, 43.6) .02 b
+30.7 (18.5, 43.8) 30.2 (20.9, 44.6) .38 30.5 (18.9, 45.5) 31.4 (22.6, 44.1) .008 b
+31.5 (15.1, 46.2) 32.6 (18.8, 46.2) .13
+Abbreviation: ACLR, anterior cruciate ligament reconstruction.
+a
+Limb data are median (minimum, maximum).
+b
+Indicates a difference between the involved and contralateral limbs of the ACLR group or right and left limbs of the control group at a single time point. The comparisons were made using
+the exact Wilcoxon signed-rank test.
+Appendix Table 6. Ankle Sagittal-Plane Movements While Walking at 3 Different Speeds at 3 Time Points in Comparing the Involved Limb to the Contralateral Limb and a Healthy
+Cohort a
+Control (n ¼ 17) Pre-ACLR (n ¼ 40) 3 mo Post-ACLR (n ¼ 27) 5 mo Post-ACLR (n ¼ 18)
+Walking Pace Angle Left Limb, 8 Right Limb, 8 P Value Involved Limb, 8 Contralateral Limb, 8 P Value Involved Limb, 8 Contralateral Limb, 8 P Value Involved Limb, 8 Contralateral Limb, 8 P Value
+Slow Minimum 20.3 (44.7, 9.8) 17.4 (36.7, 7.5) .005 a
+13.4 (30.0, 1.0) 13.9 (27.1, 0.2) .86 b
+16.1 (27.0, 2.15) 18.6 (26.3, 5.4) .046 a,b
+17.1 (28.7, 7.6) 17.2 (27.6, 7.2) .50 a
+Maximum 14.0 (7.7, 17.9) 14.5 (4.5, 20.2) .43 15.5 (7.3, 21.8) 14.7 (7.4, 21.8) .59 b
+16.5 (11.6, 19.9) 14.8 (8.8, 19.0) .02 b,c
+15.5 (9.7, 21) 14.3 (11.0, 19.6) .11 b
+Normal Minimum 22.0 (44.0, 15.2) 21.2 (41.1, 12.4) .15 18.7 (33.8, 4.9) 18.2 (36.2, 16.9) .92 20.5 (38.9, 4.0) 22.2 (32.8, 9.2) .39 20.1 (35.1, 14.2) 22.1 (30.1, 11.0) .67
+Maximum 13.7 (10.6, 20.6) 14.8 (7.2, 21.1) .55 16.1 (7.2, 21) 14.9 (6.6, 20.6) .57 16.2 (10.7, 21.2) 14.4 (7.5, 18.8) .044 b
+15.4 (8.6, 20.6) 14.5 (8.1, 19.2) .30
+Fast Minimum 27.6 (46.7, 17.2) 24.8 (45.2, 17.8) .26 24.1 (46.5, 7.3) 23.4 (41.8, 13) .97 24.7 (36.9, 8.5) 28.7 (33.7, 14.7) .10 24.8 (30.1, 18.6) 27.6 (36.1, 18.9) .28
+Maximum 12.9 (5.5, 18.0) 13.0 (8.4, 19.3) .35 13.0 (6.8, 22.9) 13.1 (8.4, 19.9) .67 13.7 (6.9, 20.6) 12.9 (6.3, 17.7) .14 14.2 (8.6, 21.1) 12.3 (8.6, 17.3) .09
+a
+Limb data are median (minimum, maximum).
+b
+Indicates a difference between the involved and contralateral limbs of the ACLR group or right and left limbs of the control group at a single time point. Comparisons were made using
+the exact Wilcoxon signed-rank test.
+c
+Indicates a difference between the involved limb of the ACLR group at the chosen time and the left leg of the control group. Comparisons were made using the exact Mann-Whitney U
+test.
+836 Volume 60  Number 12  December 2025
+Downloaded from https://nata.kglmeridian.com at 2026-07-03 via free access
+
+--- PAGE 15 ---

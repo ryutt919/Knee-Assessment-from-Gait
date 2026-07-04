@@ -1,0 +1,1 @@
+{"provider":"codex","title":"테스트 논문","source_pdf":"fixture.pdf","source_summary_path":"fixture_summary.md","sections_checked":1,"issues_found":0,"overall_verdict":"신뢰 가능","overall_verdict_reason":"테스트 픽스처는 항상 통과","findings":[],"unverifiable_items":[]}

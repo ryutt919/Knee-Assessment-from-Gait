@@ -1,4 +1,5 @@
 .agent/
+.omc/
 # notebooks/ (분석용 노트북 유지)
 data/
 mds/

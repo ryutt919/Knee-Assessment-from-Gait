@@ -1,0 +1,1200 @@
+
+--- PAGE 1 ---
+IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025 4115
+Transfer Learning of Human Activities Based on
+IMU Sensors: A Review
+Sara Ashry , Supratim Das, Mahdie Rafiei , Jan Baumbach , and Linda Baumbach
+Abstract—This systematic review comprehensively scru-
+tinizes transfer learning (TL) methods applied to human
+activity recognition (HAR) using inertial measurement unit
+(IMU) data. Our objective is to provide a comprehensive
+resource for researchers and developers by summarizing the
+existing activities, feature extractions, and TL techniques in
+the related studies. Moreover, we identify research gaps in
+these categories, allowing research endeavors to address
+these gaps in the future. Our methodology follows the struc-
+ture of the preferred reporting items for systematic reviews
+and meta-analysis (PRISMA) statement by formulating pre-
+cise research questions, establishing search queries, and specifying inclusion and exclusion criteria for study selection.
+Finally, we extracted and summarized the existing activities, feature extractions, and TL techniques utilized in the
+included studies. We analyzed 447 studies from PubMed, ACM, and Scopus datasets, of which we ultimately selected
+33 pivotal studies that met our inclusion criteria. Overall, we found that TL has enhanced HAR performance by reusing
+pretrained models. However, it is important to carefully select relevant transfer information to avoid any potential adverse
+effects. We conclude that there is a lack of studies assessing specific activities, such as personal hygiene and elder
+care, using IMU sensors and TL. To improve signal representation, a combination of features based on activity nature
+is important. Aligning algorithms with activity nature is essential—simpler models like AlexNet are suitable for routine
+activities such as walking, while more complex models like DenseNet are better for intricate tasks like cleaning. Our
+review is a reference for advancing the understanding of TL’s potential of HAR using IMU data.
+Index Terms—Accelerometer, human activity recognition (HAR), inertial measurement unit (IMU) sensors, preferred
+reporting items for systematic reviews and meta-analyses (PRISMAs), systematic review, transfer learning (TL).
+NOMENCLATURE
+ADL Activity of daily living.
+HAR Human activity recognition.
+ML Machine learning.
+DL Deep learning.
+TL Transfer learning.
+FFT Fast Fourier transform.
+Received 29 August 2024; revised 21 November 2024;
+accepted 25 November 2024. Date of publication 9 December 2024;
+date of current version 31 January 2025. This work was supported
+by the Open Access Publication Fund of Hamburg University. The
+associate editor coordinating the review of this article and approving it
+for publication was Prof. Ling Pei. (Corresponding author: Sara Ashry.)
+This work involved human subjects or animals in its research. The
+authors confirm that all human/animal subject research procedures and
+protocols are exempt from review board approval.
+Sara Ashry is with the Computational Systems Biology Institute
+(CoSy.Bio), Hamburg University, 22761 Hamburg, Germany, and also
+with the Department of Computers and Systems, Electronic Research
+Institute, Cairo 12622, Egypt (e-mail: sara.ashry@ejust.edu.eg).
+Supratim Das, Mahdie Rafiei, and Jan Baumbach are with the Com-
+putational Systems Biology Institute (CoSy.Bio), Hamburg University,
+22761 Hamburg, Germany.
+Linda Baumbach is with the Institute for Health Economics and Health
+Services Research, University Hospital Hamburg-Eppendorf (UKE),
+20246 Hamburg, Germany, and also with the Center for Bioinformatics,
+University of Hamburg, 22761 Hamburg, Germany.
+Digital Object Identifier 10.1109/JSEN.2024.3510097
+JDA Joint distribution adaptation.
+CWT Continuous wavelet transform.
+DNN Deep neural network.
+ResNet Residual network.
+VAEs Variational autoencoders.
+PRISMA Preferred reporting items for systematic
+reviews and meta-analyses.
+Gyro Gyroscope.
+Mag Magnetometer.
+Acc Accelerometer.
+RMS Root mean square.
+DC Direct component.
+STD Standard deviation.
+HC Horizontal concatenation.
+AM Acceleration magnitude.
+GTB Gradient tree boosting.
+VGG Visual geometry group.
+TransEMDT Transfer learning embedded decision tree.
+I. INTRODUCTION
+HAR is a critical field within the realm of artificial
+intelligence and machine learning that focuses on the
+automatic identification and classification of human activities
+based on sensory data [1]. HAR systems utilize a variety
+1558-1748 © 2024 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See https://www.ieee.org/publications/rights/index.html for more information.
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 2 ---
+4116 IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025
+of sensors, with IMUs, which consist of accelerometers and
+gyroscopes, being particularly valuable for capturing human
+motion [1]. The importance of HAR plays a pivotal role
+in monitoring and understanding human behavior; among
+various applications, such as in healthcare, it is used to
+monitor patient activity, aiding in remote patient care and fall
+detection [2]. Also, HAR helps track and analyze athletes’
+performance in sports and fitness, improving training regi-
+mens [3]. It aids in evaluating athletes’ movements, offering
+valuable insights for coaching. HAR also contributes to smart
+home appliances, improving energy efficiency and comfort [4],
+while also empowering individuals with disabilities through
+assistive technologies, making daily tasks more accessible by
+responding to specific gestures. It improves worker safety and
+productivity by detecting working hours and behavior [5].
+In security and surveillance, HAR becomes a critical tool for
+identifying suspicious behavior in public spaces [6].
+While traditional machine learning and deep learning have
+achieved significant success and have been applied in many
+practical applications [7], [8], they exhibit limitations in
+specific real-world scenarios. Ideally, deep learning thrives
+when there is an abundance of labeled training data sharing
+the same distribution as the test data. However, in numerous
+scenarios, gathering sufficient real-world training data proves
+to be costly, time-consuming, or even unfeasible. For example,
+collecting IMU-labeled data for rare or unpredictable activities
+like fall detection in the elderly can be challenging due to
+the infrequency of such events. Similarly, gathering IMU data
+for monitoring worker safety makes it difficult to obtain a
+sufficiently large and representative dataset. To address this
+challenge, semi-supervised learning provides a partial solution
+by reducing the dependence on massive, labeled data [9]. Typ-
+ically, a semi-supervised approach necessitates only a limited
+set of labeled data while leveraging unlabeled data to enhance
+accuracy. However, in some instances, procuring unlabeled
+data remains challenging, often resulting in unsatisfactory
+outcomes for traditional models.
+TL is presented as a promising learning methodology
+focused on knowledge transfer between domains that offers
+a compelling solution to the problem [8], [10], [11]. TL can
+leverage knowledge gained from one task to improve perfor-
+mance on a different but related task [12]. In the context
+of HAR, TL involves using pretrained models on large
+datasets to initialize or adapt models for activity recogni-
+tion tasks. These techniques help address challenges such
+as limited labeled data in HAR. The roots of TL can
+be traced back to educational psychology, particularly the
+generalization theory of transfer by psychologist Judd [13].
+According to this theory, transferring knowledge from one
+situation to another hinges on the generalization of experience.
+Crucially, a connection between two learning activities is
+essential for transfer to occur, as shown in Fig. 1. In practical
+terms, individuals who have learned to play the violin may
+pick up the piano faster than others because both instru-
+ments share common knowledge, inspired by the human
+ability to transfer knowledge across domains, as visualized
+in Fig. 2.
+Fig. 1. Examples of TL across different domains include skill transitions
+such as riding a bicycle to driving a scooter, handwriting to keyboard
+typing, playing the violin to the piano, and walking to running.
+Fig. 2. TL of different scenarios of somehow similar human activities
+such as driving a car to drive a motorbike, manual to digital payment,
+and skateboarding activity to other types of skating.
+TL leverages a model pretrained on one dataset to accelerate
+learning and improve performance on a different, but related,
+dataset. TL employs various approaches: One is fine-tuning,
+where pretrained models like CNNs or RNNs are adapted to
+new HAR tasks by freezing the weights of the pretrained
+model and then modifying and training the final layers on
+the target HAR dataset, as demonstrated [14], [15]. Another
+approach is transferred feature extraction, where pretrained
+models extract meaningful representations from IMU data to
+improve accuracy. Additionally, multitask learning involves
+training a model on multiple related tasks simultaneously to
+harness shared knowledge, thereby enhancing performance.
+Moreover, domain adaptation aims to reduce discrepancies
+between the source and target domains, further improving
+effectiveness.
+However, transferred knowledge does not always yield
+positive results for new tasks. Success largely depends on
+the degree of commonality between domains; if common-
+alities and similarities are rare, knowledge transfer may
+fail [16], [17]. For instance, learning to ride a bicycle does not
+expedite learning to play the piano [18]. Additionally, similar-
+ities between domains do not consistently facilitate learning,
+as sometimes they can be misleading. A practical example is
+the challenge faced by Spanish speakers when learning French
+despite the linguistic similarities. Speaking Spanish does not
+guarantee fluency in French due to significant differences
+in vocabulary, conjugation, pronunciation, and usage [18].
+In psychology, this phenomenon is termed negative transfer,
+and in the context of TL, it is also referred to as negative
+transfer [18], [19]. The occurrence of negative transfer hinges
+on various factors, including the relevance between the source
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 3 ---
+ASHRY et al.: TRANSFER LEARNING OF HUMAN ACTIVITIES BASED ON IMU SENSORS: A REVIEW 4117
+Fig. 3. Summary of TL problems and approaches [22].
+and target domains and the learner’s ability to identify transfer-
+able and advantageous knowledge components across domains
+[20], [21].
+A summary of TL problems and approaches is presented
+in Fig. 3 [22]. Broadly speaking, TL, based on domain
+discrepancies, can be categorized into homogeneous and het-
+erogeneous TL [22]. Homogeneous TL techniques are tailored
+for scenarios where domains share the same feature space,
+such as recognizing walking in an indoor environment and
+jogging/running outdoors based on the same set of sensors
+(accelerometers and gyroscopes). On the other hand, het-
+erogeneous TL deals with scenarios where domains possess
+distinct feature spaces, such as one domain using smart-
+phone accelerometer data, while another uses smartwatch
+gyroscope and heart rate data. In addition to distribution
+adaptation, heterogeneous TL requires adaptation of feature
+spaces, rendering it more complex than homogeneous TL.
+In TL, transudative transfer focuses on applying knowledge
+to specific, closely related target tasks, while inductive trans-
+fer is about using knowledge from the source to enhance
+learning across a wider and more diverse range of target
+tasks. TL approaches can be categorized into instance-based
+(selecting relevant source instances for the target domain),
+feature-based (aligning features between domains, either sym-
+metrically or asymmetrically), parameter-based (transferring
+learned model parameters), and relational-based methods
+(transferring knowledge of data relationships) as shown
+in Fig. 3.
+Motivations and Rationale of Applying TL in HAR: TL
+has emerged as a focal point in HAR for many compelling
+reasons, primarily centering around its potential to enhance
+accuracy and performance in HAR applications [23]. This
+shift toward TL provides a host of benefits, addressing various
+challenges and limitations encountered in traditional HAR
+approaches, such as the need for extensive labeled data, and
+the limited ability of models to generalize across diverse
+activities and users. In summary, TL enhances data efficiency
+and training speed by reusing pretrained models, making it
+effective for small datasets and varied environments. It aids in
+domain adaptation, improves model generalization, and saves
+resources. Additionally, it addresses the curse of dimensional-
+ity in high-dimensional data and reduces reliance on training
+models through fine-tuning pretrained ones, increasing HAR
+models’ applicability.
+Main message and contributions:
+1) We systematically summarize TL approaches for
+HAR based on IMU sensors for 33 studies, which
+may support researchers in selecting appropriate
+TL approaches in practice.
+2) We found that there is a scarcity of research studies
+evaluating specific human activities collected via
+IMU sensors and classified using TL, such as
+holding items, personal hygiene, playing musical
+instruments, gardening, caregiving for children, and
+so on.
+3) Furthermore, we highlight the challenges in TL
+algorithms and feature extraction techniques (e.g.,
+the complexity or simplicity of the algorithm
+design and their potential performance across var-
+ious activities and the challenge of transferring
+features that accurately encapsulate a broad spec-
+trum of activities). These insights may inform
+future research directions, guiding researchers
+toward areas requiring further investigation in the
+context of HAR based on IMU.
+The objective of this review is to comprehensively summa-
+rize TL approaches for classifying human activities using IMU
+sensors such as accelerometers, including existing activities,
+data preprocessing, and feature extraction for researchers and
+developers (see the graphical abstract figure). Besides, we aim
+to highlight gaps in the existing studies related to the activ-
+ities, feature extraction, and TL techniques investigated and
+utilized. Therefore, we aim to answer the following research
+questions:
+A. What are common activities classified using TL tech-
+niques based on IMU, and which have not yet been classified?
+B. What feature extraction techniques have been used
+in studies related to HAR, and what are their respective
+limitations?
+C. Which TL algorithms have been applied to HAR, and
+what are their limitations?
+The rest of this article is organized as follows: Section II
+clarifies the systematic review methodology according to
+PRISMA. The results and discussion are provided in
+Section III. Recommendations to guide researchers are men-
+tioned in Section IV; review limitations are mentioned in
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 4 ---
+4118 IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025
+Section V, while the conclusion and future work are sum-
+marized in Section VI.
+II. METHODOLOGY
+This literature review is following the PRISMA guide-
+lines [24]. The studies were selected based on predefined
+inclusion criteria; a list of potentially relevant publications
+was included through the selection process of title and abstract
+screening and full-text screening.
+A. Eligibility Criteria
+The studies included in our review needed to match the
+following criteria.
+1) Peer-reviewed publication with abstract in the English
+language.
+2) Report on the performance of physical HAR, including
+sports and daily living activities, for example, movement
+actions such as walking, running, exercise, and so on.
+3) Include data collected from IMU sensors or the
+accelerometer.
+4) Use TL methods such as domain adaptation, pretrained
+models, feature transfer, fine-tuning, and so on.
+Studies were excluded if:
+1) the publication was in the form of an abstract only,
+a book, a newsletter, a report, and encyclopedias;
+2) the studies used wearable cameras—image or video,
+time-series data related to humidity sensors, Wi-Fi sig-
+nal, GPS, radar, light sensors, sound sensors, speech,
+or phonetic signals alone without IMU, and so on;
+3) studies used robots to imitate human activities;
+4) studies focused on nonphysical human activities such
+as thinking, learning, communication, mental simulation
+and visualization, self-awareness, and bio-signals such
+as heart rate, blood pressure, and so on;
+5) studies lacked adequate information about the method-
+ology, dataset used, and results of performance TL in
+physical HAR.
+B. Information Sources
+Relevant articles were searched in PubMed, Scopus, and
+ACM Digital without limitation in publication date. No gray
+literature was searched.
+C. Search Strategy
+Our search contained four subqueries, which were com-
+bined with an AND operation. The main search terms of the
+queries were: 1) activity recognition, 2) IMU data, 3) TL, and
+4) human. The main search queries are provided in Table I.
+More details about the search terms used to decide, if to
+include an article or not, are mentioned in the Excel sheet.1
+1https://docs.google.com/spreadsheets/d/1DjcxIwuZ6dyD-
+meR70aqtXcZ0knkiUkeKcXQDsooPwY/edit?usp=sharing
+TABLE I
+MAIN SEARCH QUERY COMBINATION FOR DATASETS SEARCH
+D. Search Process
+The search was performed by the first author of this
+publication on September 14, 2023. In the PubMed database,
+we searched and downloaded data using the search option
+title and abstract. In the ACM search strategy, the available
+option on the website is to search by title or abstract only.
+There is no option to search by title and abstract together. So,
+we searched by title, then by abstract, and later combined
+the results using Endnote software. In Scopus, there is a
+limitation on the number of Boolean operators—a maximum
+of eight, so we searched and downloaded data by devel-
+oping a Python code using Scopus El-Sevier API https://
+github.com/SaraAshryMhmd/Systematic_Review/tree/main.
+E. Screening and Selection Process
+The relevance of the article was evaluated first by title and
+abstract and then by full-text screening for each identified
+publication. This procedure was performed for each publi-
+cation independently by the first author (Sara Ashry) and
+subsequently carried out independently by the second and third
+co-authors (Supratim Das and Mahdie Rafiei). Discrepancies
+between co-authors were resolved through discussion.
+F. Data Extraction
+Of the included articles, the following information was
+extracted: authors, datasets, and activities including type of
+environment, sensors used and their location, number of par-
+ticipants and sample size, methodology and TL approach used,
+features extracted technique, the outcome of each research, key
+points, and limitations of studies.
+III. RESULTS AND DISCUSSION
+The process of selecting studies is visualized in the
+PRISMA flowchart in Fig. 4. Here, we summarize the
+33 included studies from 447 publications that identified HAR
+based on IMU sensors. The underlying datasets, activities,
+environment, sensors, number of participants, methodology
+and TL approach, features extracted technique, the outcome
+of each research, key points, and limitations of the included
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 5 ---
+ASHRY et al.: TRANSFER LEARNING OF HUMAN ACTIVITIES BASED ON IMU SENSORS: A REVIEW 4119
+Fig. 4. PRISMA flowchart of the study based on inclusion and
+exclusion.
+Fig. 5. Distribution of the articles by year of publication.
+studies are presented in Table I in the supplementary file.2
+Below, after giving a broad overview of the included studies,
+we present the activities used in these studies, the features
+extracted, and the TL methodologies applied in tabular form.
+The number of relevant publications per year increased in
+the second half of the observed ten-year time interval. Thus,
+the growing relevance of this review’s scope is confirmed
+(see Fig. 5). The peaks in 2021 followed by 2023. Through
+the 33 publications included in this review, 23 articles are
+published in 16 different journals, where Sensors Journal is
+the dominant journal among the publications, besides ten
+papers are published in conference proceedings. In total, over
+100 unique authors were involved in writing the 33 contribu-
+tions. Their countries of affiliation are spread worldwide over
+15 countries. None of the authors has participated in writing
+more than two publications.
+In the following paragraphs, we answer our posed research
+questions.
+A. What are common activities classified using TL tech-
+niques based on IMU, and which activities have not yet been
+classified?
+Within the entire literature corpus, ADL activities are most
+often represented, with the focus on locomotion [3], [10],
+[11], [14], [15], [25], [26], [27], [28], [29], [30], [31], [32],
+2https://docs.google.com/spreadsheets/d/1DjcxIwuZ6dyD-meR70aqtXcZ0
+knkiUkeKcXQDsooPwY/edit?usp=sharing
+[33], [34], [35], [36], [37], [38], [39], [40], [41], [42], [43],
+[44], as shown in Table II. Twenty-five publications aim to
+recognize the associated activities such as walking, running,
+standing, and climbing stairs. Followed by seven papers
+dealing with Household Chores Activities such as cooking,
+ironing, opening/closing doors or fridge or drawer, cleaning
+table, and toggle a switch in [8], ironing, vacuum clean-
+ing [27], [42], reaching to shelf, and reaching to drawer [10],
+followed by sports and exercises with five occurrences, such as
+warm-up, cool down [32], Beach volleyball, Frisbee sport [45],
+rope jumping, and running [27], as well as exercises such as
+squats, deadlifts, lunges, single-leg squats, tuck jumps [39],
+and boxing [26].
+In addition to single publications on bathroom activities
+including dressing, undressing, brushing teeth, using the toilet,
+washing face, and washing hands [46], followed by transporta-
+tion, hand gestures, work-related activities, health monitoring
+activities [11], and child activities [28]. Noticeably, more
+complex activities that require greater effort for recording
+and labeling are represented less than simple ones, such as
+locomotion. This is because the method of TL-HAR is the
+focus of most publications using public datasets for evalua-
+tion. Most public datasets prioritize the collection of easily
+recordable daily activities, as outlined in Table II provided in
+the supplementary document file.3
+Exploring the realms of untouched activities by IMU sen-
+sors using TL could vastly enhance our understanding of
+human activity. Activities not yet studied and could be gath-
+ered via IMU sensors and classified using TL, encompass the
+following.
+1) Human daily life activities include using mobile phones,
+shopping, holding items on hands and shoulders, and
+household chores such as cooking (stirring, chopping,
+and packing), cleaning (dusting, mopping, doing laun-
+dry, washing dishes, and cleaning the bed). House
+gardening activities (planting flowers or vegetables,
+watering plants, and pruning). Personal hygiene activ-
+ities (showering, scrub body, hair oil massage, skin
+care activities, combing hair, applying deodorant, using
+perfume, nail clipping, etc.).
+2) Leisure activities include indoor activities (reading
+books, sewing, crocheting, crafting, playing musical
+instruments, video gaming, and board games) as well as
+fitness activities (weightlifting, basketball, tennis, kick-
+ball, badminton, kickboxing, taekwondo, and squash),
+outdoor sports activities (archery, obstacle courses,
+parkour, rock climbing, cricket, skateboarding, fencing,
+horseback riding, and skydiving), in addition to water
+sports (swimming, water aerobics, water skiing, rowing,
+and canyoning), and others such as dancing (Zumba,
+salsa, etc.).
+3) Health monitoring activities include taking medicine
+on time, monitoring the sleep cycle, tracking physical
+symptoms of diseases, and detecting eating habits.
+3https://docs.google.com/document/d/1Nnw4ptamwViNhVWhcWg3Fe1vD
+hM1_4d6/edit?usp=sharing&ouid=113728544728428088441&rtpof=true&sd
+=true
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 6 ---
+4120 IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025
+TABLE II
+ACTIVITIES THAT HAVE BEEN INVESTIGATED IN THE INCLUDED STUDIES OF THIS REVIEW
+4) Others include taking care of children’s activities (hold-
+ing a baby, changing diapers, pushing a stroller),
+assisting elderly family members, and pet-care activities,
+in addition to home maintenance (repairing appliances,
+changing light bulbs, painting walls, and home dec-
+orating). Hard work tasks such as construction work,
+building paving, street cleaning services, and using tools
+like hammers, screwdrivers, drillers, and so on.
+Beyond these categories mentioned above, many other com-
+plex activities create a diverse range of human endeavors. IMU
+sensors could help improve the accuracy of recognizing all
+these activities using advanced learning models.
+B. What feature extraction techniques have been used
+in studies related to HAR, and what are their respective
+limitations?
+Feature extraction for HAR-TL is an important stage.
+It allows data to be represented compactly, which helps with
+later classification stages. In this review, the feature extraction
+techniques used in the included studies have been summarized
+in Table III with their citations in each included paper in our
+study. We have categorized them into the following subcate-
+gories, each playing a crucial role in supporting TL models
+for HAR.
+1) Time-domain features (TDFs) capture the waveform
+characteristics of the signal directly from the raw data.
+These features include statistical measures such as mean,
+variance, skewness, and entropy, as well as temporal
+patterns like zero-crossing rate and rms [53]. They are
+especially useful in TL models where the activities
+across different datasets share similar temporal patterns.
+For instance, features like mean and variance can be
+transferred to recognize similar activities through differ-
+ent databases, thereby supporting the generalization of
+the model.
+2) Frequency-domain features (FDFs) focus on the periodic
+structure of the signal. For instance, Fourier transform
+(e.g., FFT) is applied to raw signals to estimate the
+spectral density, capturing the signal’s frequency compo-
+nents [54], [55]. These features include spectral centroid,
+signal energy, and frequency range. FDFs are crucial for
+identifying consistent patterns across different datasets,
+even when the time-domain representations differ. These
+features enhance the robustness of TL models by captur-
+ing invariant spectral properties that are common across
+different activities or sensor setups. This makes them
+particularly valuable for models that need to generalize
+across varied conditions.
+3) Automated features, such as those extracted from CNNs,
+automatically learn to capture complex temporal and
+spatial dependencies in the data, recognizing intricate
+patterns over time and within the IMU signals [56], [57].
+Automated features are at the forefront of HAR due to
+their ability to eliminate the need for manual feature
+engineering. These features are highly adaptable and
+transferable, making them a recommended choice for TL
+models as they improve the model’s performance with
+minimal fine-tuning and make the model easier for new
+tasks or environments with different characteristics [58].
+4) Other techniques such as principal component analysis
+(PCA), spectrograms, and kernel-based methods offer
+further abstraction or transformation of the data. These
+methods often simplify or highlight specific aspects of
+the signal that are useful for TL. These techniques
+provide additional layers of feature refinement. For
+example, PCA can reduce dimensionality while retaining
+the most important features [59], making TL models
+more efficient and focused. Spectrograms transform
+time-series data into a time–frequency representation,
+capturing how frequency components evolve over time
+and analyzing complex patterns that are not apparent
+in the raw data which help in highlighting unique
+signatures of different activities [60].
+There are some limitations of features that are used to
+recognize human activities using IMU sensors via TL, which
+primarily stem from the challenge of transferring features
+that encapsulate a broad spectrum of activities. The inher-
+ent complexity and variability of human movements pose
+considerable obstacles, affecting the system’s performance
+in accurately capturing and generalizing across the diverse
+range of human activities [61]. Features learned from daily
+activities may not generalize well to athletic or industrial
+settings due to differences in the environment and activity
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 7 ---
+ASHRY et al.: TRANSFER LEARNING OF HUMAN ACTIVITIES BASED ON IMU SENSORS: A REVIEW 4121
+TABLE III
+FEATURES THAT HAVE BEEN INVESTIGATED DURING THE STUDIES INCLUDED IN THIS REVIEW
+execution. Disparities in sensor modalities, such as transferring
+learning from accelerometers or gyroscopes to other sensors.
+One of the present challenges is that certain features pertinent
+to one may not apply to the other. Moreover, the sequential
+nature of IMU time-series data necessitates capturing temporal
+dependencies, which requires models specifically designed for
+this purpose; otherwise, performance may suffer [62], [63].
+The expansion of feature sets heightens models’ susceptibility
+to overfit the specific characteristics of the training data.
+This overfitting compromises the model’s ability to generalize,
+reducing its effectiveness when dealing with new data. Con-
+sequently, the predictive performance could have a notable
+diminish in the real-world data, where data variability is
+the norm. Furthermore, features extracted via deep learning
+models are often opaque and not easily understandable, which
+can be problematic when it is important to know how the
+model makes its decisions [64]. Lastly, if the features of the
+pretrained model do not match the new task, performance may
+suffer unless the model is carefully adapted.
+C. Which TL algorithms have been applied to HAR, and
+what are their limitations?
+The models that have been investigated during the studies
+included in this review are summarized in Table IV and
+categorized as follows.
+1) Supervised learning used for TL like basic feed-forward
+networks are pretrained on analogous datasets that
+are effectively repurposed for IMU signal analysis for
+simpler tasks [52]. Additionally, traditional machine
+learning models like SVMs and Random Forests provide
+a solid foundation for classification tasks. These models
+benefit from being pretrained on related datasets, which
+enhances their performance on new, similar tasks [28],
+[34], [39], [40], [41]. For instance, pretrained SVMs
+can classify IMU signals with improved accuracy when
+fine-tuned on task-specific data.
+2) Self-supervised and representative learning relevant
+to TL like contrastive learning which leverages the
+distinctiveness of activity patterns in IMU signals,
+enhancing model performance without requiring labeled
+data [26], [65]. For example, contrastive learning dis-
+tinguishes sensor activities by mapping similar data
+closer in the feature space and pushing dissimilar data
+apart [66]. In TL, this pretraining enhances the model’s
+ability to generalize and adapt to new tasks, especially
+when labeled data is limited in the target domain.
+Autoencoders, including variational autoencoders, are
+a key technique in representation learning, which falls
+under self-supervised learning. They are used for inte-
+grating multidomain data and extracting latent features,
+thereby facilitating model adaptation and enhancing TL
+across various tasks [67].
+3) CNN-based TL: pretrained CNN models like
+ResNet, AlexNet, EfficientNet, MobileNet, DenseNet,
+SqueezeNet, GoogleNet, and VGG-16 have been
+utilized [68]. ResNet stands out with its residual blocks
+that enable the training of exceptionally deep networks,
+thereby significantly enhancing task performance [11],
+[42]. Similarly, AlexNet laid the groundwork with its
+convolutional layers [10], [11], paving the way for more
+intricate architectures like EfficientNet, which optimizes
+model scaling to balance efficiency with accuracy [3].
+MobileNet offers an ideal solution for applications
+demanding lightweight models with its depth with
+separable convolutions that streamline complexity
+without diminishing performance [25]. In a different
+approach, DenseNet fosters feature propagation by
+interconnecting each layer to every other, reducing the
+need for numerous parameters [11]. SqueezeNet further
+compresses model size through its innovative squeeze
+and expands layers while maintaining a competitive
+performance level [29]. GoogleNet’s inception modules,
+which process multiple convolutions in parallel, allow
+for capturing a wider range of features, a technique
+further refined by VGG-16’s focus on increasing
+network depth [14]. Beyond these, other CNN
+architectures utilize pretrained models on expansive
+datasets, transferring the learned features to smaller,
+task-specific datasets with final layer adjustments [36].
+4) Sequence and hybrid models for TL like LSTM and
+CNN-LSTM models. The LSTM networks were adept
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 8 ---
+4122 IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025
+TABLE IV
+METHODS OR PRETRAINED MODELS THAT HAVE BEEN INVESTIGATED DURING THE STUDIES INCLUDED IN THIS REVIEW
+at managing and capturing temporal dependencies in
+sequential IMU signals [52] and sometimes combined
+with CNNs to form hybrid models that exploit spatial
+and temporal feature extraction capabilities [30], [47].
+5) Generative models for TL, such as GANs, play a crucial
+role in augmenting training data by generating synthetic
+samples, thereby enhancing the robustness of the TL
+process in IMU signal analysis [8], [69]. For example,
+GANs can simulate rare or edge-case scenarios that are
+underrepresented in the original dataset, enabling models
+to better handle diverse and unexpected inputs during
+real-world TL applications.
+6) Domain adaptation techniques for TL such as the inno-
+vative IPL-JPDA technique integrate domain adaptation
+with improved pseudo-labeling to refine the alignment
+between the source and target domains. This approach
+optimizes the TL process, making models more effec-
+tive in new environments [31]. For example, IPL-JPDA
+adapts models from one type of IMU data to related
+sensor data by enhancing domain alignment.
+The challenges of applying TL methods to IMU sensor
+data in HAR are multifaceted. Supervised learning approaches,
+such as basic feed-forward networks, may not fully capture the
+complexity of IMU signals related to intricate activities such
+as complex obstacle course races. In addition to traditional
+machine learning models such as SVMs and random forests,
+often struggle to capture the nuanced features of IMU data as
+effectively as deep learning counterparts and they may require
+extensive fine-tuning to perform effectively [70].
+Self-supervised methods like contrastive learning, which
+relies on high-quality contrastive data pairs, can be limited
+when the source and target domains are somehow differ-
+ent [71]. Autoencoders, including variational autoencoders,
+are valuable for extracting latent features and integrating
+multidomain data but may not always generate optimal fea-
+tures in the absence of sufficient labeled data [72], [73].
+CNN-based models, such as AlexNet and ResNet, face chal-
+lenges with feature redundancy and alignment with IMU data.
+AlexNet, although it is a pioneering model, may not capture
+the complex features of new IMU data of real-world parkour
+or skydiving due to the model’s simpler architecture [74].
+While ResNet is beneficial for its ability to learn deep features
+through residual learning, it can sometimes lead to redundancy
+in feature learning [75], and ResNet may not always align
+with the target domain, leading to suboptimal transfer of
+knowledge. EfficientNet requires intricate balancing to prevent
+computational overload [76], a critical factor when dealing
+with the limited computational resources often associated with
+IMU data processing. MobileNet [77], optimized for mobile
+devices, might not extract features with the required level for
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 9 ---
+ASHRY et al.: TRANSFER LEARNING OF HUMAN ACTIVITIES BASED ON IMU SENSORS: A REVIEW 4123
+the activity recognition tasks. DenseNet’s densely connected
+layers can significantly increase computational demands, com-
+plicating the adaptation process in TL to new domains [78].
+Similarly, SqueezeNet’s limited feature representation further
+complicates their adaptation to IMU data. GoogleNet’s incep-
+tion modules and VGG-16’s depth could lead to overfitting and
+are computationally intensive [79], which might hinder their
+effective deployment in TL for IMU sensors, where model
+adaptability is key.
+Sequence models, including LSTMs and CNN-LSTM
+hybrids, are adept at managing temporal dependencies but
+can struggle with vanishing gradients and increased compu-
+tational complexity [80]. Generative models such as GANs,
+while powerful for augmenting training data, require careful
+tuning to generate useful synthetic samples that are diverse
+and representative enough to prevent issues such as mode
+collapse and domain gap, which could otherwise impair model
+performance [81].
+The advanced domain adaptation technique IPL-JPDA
+improves alignment between the source and target domains but
+may not address all sensor-specific challenges, such as sensor
+positioning and orientation [31]. These challenges highlight
+the need for strategic model selection and adaptation to
+ensure effective TL and accurate activity recognition in IMU
+sensor-based HAR applications.
+We can summarize that TL involves some hurdles, such
+as dealing with diverse data due to variations in sensors,
+placements, and human activities behaviors, which makes
+adapting models across different domains challenging. Real-
+time processing requirements add complexity, as models need
+to balance accuracy with efficiency. So, these challenges
+require a strategic approach to model selection and adaptation
+to ensure effective knowledge transfer and accurate activity
+recognition using IMU sensors.
+IV. RECOMMENDATIONS
+By adopting the following recommendations, we believe
+that activity recognition systems using TL and IMU sensors
+can achieve notable improvements in accuracy and efficiency.
+We suggest the following strategies: aligning algorithms with
+specific activity types, selecting features based on the nature of
+the activities, choosing algorithms that handle the variability
+and complexity of human activities efficiently in real-time
+applications, and validating models alongside collecting rel-
+evant robust datasets. Below, we explain the rationale behind
+each recommendation as follows.
+1) Align algorithms with activity types: for simple activities
+like walking or standing, use models such as AlexNet
+or SqueezeNet due to their efficiency in handling repet-
+itive patterns. For complex activities involving rapid or
+intricate movements, such as exercise or sports (com-
+plex obstacle course races or skydiving, for example),
+employ advanced models like ResNet, which is effi-
+cient in recognizing complex patterns, or DenseNet,
+which is effective for capturing detailed activity pat-
+terns like cooking or cleaning. In health monitoring
+activities, using sequence models like LSTM or hybrid
+CNN-LSTM that specialize in detecting subtle changes
+is crucial for precise health monitoring and rehabilita-
+tion exercises. For efficiency considerations in real-time
+applications, we suggest using lightweight models like
+MobileNet, which are well-suited for mobile plat-
+forms and simple activities due to their computational
+efficiency.
+2) Feature selection based on activity nature: we present
+a few examples to guide feature selection based on
+the specific characteristics of the activity. Time-domain
+features could be helpful for basic activity recognition
+tasks such as walking, standing, sitting, or lying down,
+particularly when the activities have distinct, consistent
+time patterns, and the signal characteristics do not
+change rapidly. Frequency-domain features are useful
+for activities where periodicity is key, such as rhythmic
+movements in sports (e.g., running, cycling, etc.) or
+repetitive household chores. As, they can capture the
+regular, repetitive patterns of these activities. Time–
+frequency-domain features for activities that involve
+transitions or a mix of movements at different speeds,
+(e.g., sit-to-stand) or activities that involve a mix of fast
+and slow components (e.g., dancing). To improve signal
+representation, a blend of handcrafted features—such
+as autocorrelation, median, entropy, and instantaneous
+frequency—could be employed [1]. Automated features
+based on deep learning are suitable for recognizing
+highly complex activities where manual feature extrac-
+tion might miss important patterns, such as mixed sports
+activities (complex obstacle course races), rehabilitation
+exercises, or multimodal activities involving different
+body parts, activities with sequential patterns like free
+handwriting on papers or walls. Generally, combining
+features from different domains can provide a more
+comprehensive representation of the signal, improving
+the accuracy of activity recognition. For example, inte-
+grating time and frequency with automated features
+allows capturing a wide range of activities with both
+simple and complex patterns.
+3) Algorithm Selection: considering the variability and
+complexity of human activities when choosing TL
+algorithms. Models like ResNet and EfficientNet offer
+robust performance for diverse activities but may face
+overfitting or computational issues. Simpler models may
+not capture detailed features required for complex activ-
+ities. Thus, balancing each algorithm’s strengths and
+limitations is crucial for effective activity recognition.
+4) Model Validation and Dataset Collection: Validate TL
+models across a wide range of similar activities to
+ensure robustness and generalization. When collecting
+new datasets, include diverse participants with varying
+nationalities, body structures, and health conditions to
+improve dataset diversity and applicability to real-world
+scenarios.
+V. REVIEW LIMITATIONS
+Our review has a few limitations. First, we only included
+studies published in English, which could have a biased impact
+on the analysis. High-quality surveys are typically published in
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 10 ---
+4124 IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025
+English in high-impact journals, potentially excluding relevant
+findings from other languages or less accessible sources.
+Second, considering the rapid pace of research publication,
+we might miss recent updates after searching databases and
+selecting articles for this study, which could extend our latest
+findings.
+Third, the screening process for both title–abstract and
+full-text was initially carried out by the first author (Sara
+Ashry) and subsequently conducted independently by the
+second and third co-authors (Supratim Das and Mahdie Rafiei),
+thereby enhancing the study’s robustness, the data extraction
+from the included articles was solely performed by one author
+(Sara Ashry), potentially led to minor errors. Overall, even
+though we were careful, there is still a chance of human error
+and bias when selecting studies and extracting information for
+this review, though it is small.
+VI. CONCLUSION
+This systematic review has examined 33 selected studies
+of TL in HAR based on IMU data. We not only provided
+insights into the activities covered, feature extraction tech-
+niques, and methodologies employed but also discussed the
+gaps in the three aforementioned categories. Besides, pro-
+viding recommendations on how to get the benefits of TL
+by carefully selecting transfer information relevant to specific
+HAR challenges. For instance, while transferring knowledge
+from recognizing walking to identifying running can enhance
+performance, applying the same transfer to activities like
+brushing teeth may yield poor results due to divergent contexts
+and features. It is better to take into consideration matching the
+complexity of activities with appropriate algorithms; simpler
+models like AlexNet may suffice for routine tasks like walking,
+while more complex activities like cooking, cleaning, and
+intricate sports may necessitate deeper models like DenseNet.
+In summary, our review shall serve as a guideline and refer-
+ence for TL used in HAR with IMU data, aiming for more
+effective models, and serves as a roadmap for future research,
+highlighting the need to address the shortcomings mentioned
+in the article such as the activities that have not classified yet
+and limitation of TL algorithms.
+REFERENCES
+[1] S. Ashry, T. Ogawa, and W. Gomaa, “CHARM-Deep: Continuous human
+activity recognition model based on deep neural network using IMU
+sensors of smartwatch,” IEEE Sensors J., vol. 20, no. 15, pp. 8757–8770,
+Aug. 2020.
+[2] F. Serpush, M. B. Menhaj, B. Masoumi, and B. Karasfi, “Wearable
+sensor-based human activity recognition in the smart healthcare system,”
+Comput. Intell. Neurosci., vol. 2022, pp. 1–31, Feb. 2022.
+[3] K. K. Sahoo, R. Ghosh, S. Mallik, A. Roy, P. K. Singh, and Z. Zhao,
+“Wrapper-based deep feature optimization for activity recognition in
+the wearable sensor networks of healthcare systems,” Sci. Rep., vol. 13,
+no. 1, p. 965, Jan. 2023.
+[4] S. Alghamdi, E. Fadel, and N. Alowidi, “Recognizing activities of
+daily living using 1D convolutional neural networks for efficient smart
+homes,” Int. J. Adv. Comput. Sci. Appl., vol. 12, no. 1, pp. 313–323,
+2021.
+[5] B. Sherafat et al., “Automated methods for activity recognition of con-
+struction workers and equipment: State-of-the-Art review,” J. Construct.
+Eng. Manage., vol. 146, no. 6, Jun. 2020, Art. no. 03120002.
+[6] R. K. Tripathi, A. S. Jalal, and S. C. Agrawal, “Suspicious human
+activity recognition: A review,” Artif. Intell. Rev., vol. 50, no. 2,
+pp. 283–339, Aug. 2018.
+[7] M. Stojchevska, M. De Brouwer, M. Courteaux, F. Ongenae, and
+S. Van Hoecke, “From lab to real world: Assessing the effectiveness of
+human activity recognition and optimization through personalization,”
+Sensors, vol. 23, no. 10, p. 4606, May 2023.
+[8] Y.-C. Fan, Y.-H. Tseng, and C.-Y. Wen, “A novel deep neural network
+method for HAR-based team training using body-worn inertial sensors,”
+Sensors, vol. 22, no. 21, p. 8507, Nov. 2022.
+[9] H. M. Gomes, M. Grzenda, R. Mello, J. Read, M. H. Le Nguyen, and
+A. Bifet, “A survey on semi-supervised learning for delayed partially
+labelled data streams,” ACM Comput. Surv., vol. 55, no. 4, pp. 1–42,
+Apr. 2023.
+[10] B. A. Mohammed Hashim and R. Amutha, “Deep transfer learning
+based human activity recognition by transforming IMU data to image
+domain using novel activity image creation method,” J. Intell. Fuzzy
+Syst., vol. 43, no. 3, pp. 2883–2890, Jul. 2022.
+[11] A. Nouriani, R. McGovern, and R. Rajamani, “Activity recognition using
+a high gain observer and spectrograms,” in Proc. Amer. Control Conf.
+(ACC), May 2023, pp. 2246–2251.
+[12] S. J. Pan, “Transfer learning,” Learning, vol. 21, pp. 1–2, Jan. 2020.
+[13] C. H. Judd, “The relation of spatial intelligence,” Educ. Rev., vol. 36,
+pp. 28–42, Jan. 1908.
+[14] S. Kobayashi and T. Hasegawa, “Smartphone-based estimation of side-
+walk surface type via deep learning,” Sensors Mater., vol. 33, no. 1,
+p. 35, 2021.
+[15] K. Yaguchi et al., “Human activity recognition using multi-input CNN
+model with FFT spectrograms,” in Adjunct Proc. ACM Int. Joint Conf.
+Pervasive Ubiquitous Comput. Proc. ACM Int. Symp. Wearable Comput.,
+Sep. 2020, pp. 364–367.
+[16] M. Osman, “Positive transfer and negative transfer/antilearning of
+problem-solving skills.,” J. Experim. Psychol., Gen., vol. 137, no. 1,
+pp. 97–115, 2008.
+[17] Z. Wang, Z. Dai, B. Póczos, and J. G. Carbonell, “Characterizing
+and avoiding negative transfer,” in Proc. Conf. Comput. Vis. Pattern
+Recognit., Jun. 2019, pp. 11293–11302.
+[18] F. Zhuang et al., “A comprehensive survey on transfer learning,” Proc.
+IEEE, vol. 109, no. 1, pp. 43–76, Jul. 2020.
+[19] N. Arya. (2022). Transfer Learning. [Online]. Available:
+https://www.kdnuggets.com/2022/01/transfer-learning.html
+[20] S. J. Pan and Q. Yang, “A survey on transfer learning,” IEEE Trans.
+Knowl. Data Eng., vol. 22, no. 10, pp. 1345–1359, Oct. 2009.
+[21] K. Weiss, T. M. Khoshgoftaar, and D. Wang, “A survey of transfer
+learning,” J. Big data, vol. 3, no. 1, pp. 1–40, May 2016.
+[22] M. Iman, H. R. Arabnia, and K. Rasheed, “A review of deep transfer
+learning and recent advancements,” Technologies, vol. 11, no. 2, p. 40,
+Mar. 2023.
+[23] J. Yang, Y. Xu, H. Cao, H. Zou, and L. Xie, “Deep learning and
+transfer learning for device-free human activity recognition: A survey,”
+J. Automat. Intell., vol. 1, no. 1, Dec. 2022, Art. no. 100007.
+[24] M. J. Page et al., “The PRISMA 2020 statement: An updated guideline
+for reporting systematic reviews,” BMJ, vol. 372, p. 71, Mar. 2021.
+[25] Y. Celik, M. F. Aslan, K. Sabanci, S. Stuart, W. L. Woo, and A. Godfrey,
+“Improving inertial sensor-based activity recognition in neurological
+populations,” Sensors, vol. 22, no. 24, p. 9891, Dec. 2022.
+[26] S. R. Taghanaki, M. Rainbow, and A. Etemad, “Self-supervised human
+activity recognition with localized time-frequency contrastive repre-
+sentation learning,” IEEE Trans. Hum.-Mach. Syst., vol. 53, no. 6,
+pp. 1027–1037, Dec. 2023.
+[27] N. Varshney, B. Bakariya, and A. K. S. Kushwaha, “Human activity
+recognition using deep transfer learning of cross position sensor based
+on vertical distribution of data,” Multimedia Tools Appl., vol. 81, no. 16,
+pp. 22307–22322, Jul. 2022.
+[28] J. Li, P. Kang, T. Tan, and P. B. Shull, “Transfer learning improves
+accelerometer-based child activity recognition via subject-independent
+adult-domain adaption,” IEEE J. Biomed. Health Informat., vol. 26,
+no. 5, pp. 2086–2095, May 2022.
+[29] B. Ataseven, A. Madani, B. Semiz, and M. E. Gursoy, “Physical
+activity recognition using deep transfer learning with convolutional
+neural networks,” in Proc. IEEE Int. Conf. Dependable, Autonomic
+Secure Comput., Int. Conf. Pervasive Intel. Comput., Int. Conf. Cloud
+Big Data Comput., Int. Conf. Cyber Sci. Technol. Congr. (DASC/Pi-
+Com/CBDCom/CyberSciTech), Sep. 2022, pp. 1–6.
+[30] M. D. Hssayeni, J. Jimenez-Shahed, M. A. Burack, and B. Ghoraani,
+“Ensemble deep model for continuous estimation of unified Parkinson’s
+disease rating scale III,” Biomed. Eng. OnLine, vol. 20, no. 1, pp. 1–20,
+Dec. 2021.
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 11 ---
+ASHRY et al.: TRANSFER LEARNING OF HUMAN ACTIVITIES BASED ON IMU SENSORS: A REVIEW 4125
+[31] Z. Fu, X. He, E. Wang, J. Huo, J. Huang, and D. Wu, “Personalized
+human activity recognition based on integrated wearable sensor and
+transfer learning,” Sensors, vol. 21, no. 3, p. 885, Jan. 2021.
+[32] M. Kirchhof, L. Schmid, C. Reining, M. T. Hompel, and M. Pauly,
+“Chances of interpretable transfer learning for human activity recogni-
+tion in warehousing,” in Proc. 12th Int. Conf. Comput. Logistics (ICCL),
+Enschede, The Netherlands. Cham, Switzerland: Springer, Sep. 2021,
+pp. 163–177.
+[33] F. Xiao et al., “A deep learning method for complex human activity
+recognition using virtual wearable sensors,” in Proc. Int. Conf. Spatial
+Data Intell. Cham, Switzerland: Springer, Jan. 2020, pp. 261–270.
+[34] M. Graña, M. Aguilar-Moreno, J. De Lope Asiain, I. B. Araquistain,
+and X. Garmendia, “Improved activity recognition combining inertial
+motion sensors and electroencephalogram signals,” Int. J. Neural Syst.,
+vol. 30, no. 10, Oct. 2020, Art. no. 2050053.
+[35] S.-J. Wei, B. Zhang, X.-W. Tan, X.-G. Zhao, and D. Ye, “A real-time
+human activity recognition approach with generalization performance,”
+in Proc. 39th Chin. Control Conf. (CCC), Jul. 2020, pp. 6334–6339.
+[36] E. Garcia-Ceja, M. Riegler, A. K. Kvernberg, and J. Torresen, “User-
+adaptive models for activity and emotion recognition using deep transfer
+learning and data augmentation,” User Model. User-Adapted Interact.,
+vol. 30, no. 3, pp. 365–393, Jul. 2020.
+[37] M. Nutter, C. H. Crawford, and J. Ortiz, “Design of novel deep
+learning models for real-time human activity recognition with mobile
+phones,” in Proc. Int. Joint Conf. Neural Netw. (IJCNN), Mar. 2018,
+pp. 1–8.
+[38] B. Chikhaoui, F. Gouineau, and M. Sotir, “A CNN based transfer
+learning model for automatic activity recognition from accelerometer
+sensors,” in Proc. Int. Conf. Mach. Learn. Data Mining Pattern Recog-
+nit., New York, NY, USA. Cham, Switzerland: Springer, Jan. 2018,
+pp. 302–315.
+[39] J. J. Dominguez Veiga, M. O’Reilly, D. Whelan, B. Caulfield,
+and T. E. Ward, “Feature-free activity classification of inertial sen-
+sor data with machine vision techniques: Method, development,
+and evaluation,” JMIR mHealth uHealth, vol. 5, no. 8, p. e115,
+Aug. 2017.
+[40] W.-Y. Deng, Q.-H. Zheng, and Z.-M. Wang, “Cross-person activity
+recognition using reduced kernel extreme learning machine,” Neural
+Netw., vol. 53, pp. 1–7, May 2014.
+[41] P. Kang, J. Li, B. Fan, S. Jiang, and P. B. Shull, “Wrist-worn hand ges-
+ture recognition while walking via transfer learning,” IEEE J. Biomed.
+Health Informat., vol. 26, no. 3, pp. 952–961, Mar. 2022.
+[42] N. Daniel and I. Klein, “INIM: Inertial images construction with
+applications to activity recognition,” Sensors, vol. 21, no. 14, p. 4787,
+Jul. 2021.
+[43] N. Maray, A. H. Ngu, J. Ni, M. Debnath, and L. Wang, “Transfer
+learning on small datasets for improved fall detection,” Sensors, vol. 23,
+no. 3, p. 1105, Jan. 2023.
+[44] N. Naghavi and E. Wade, “Towards real-time prediction of freezing of
+gait in patients with Parkinson’s disease: A novel deep one-class classi-
+fier,” IEEE J. Biomed. Health Informat., vol. 26, no. 4, pp. 1726–1736,
+Apr. 2022.
+[45] J. Link, T. Perst, M. Stoeve, and B. M. Eskofier, “Wearable sensors
+for activity recognition in ultimate frisbee using convolutional neural
+networks and transfer learning,” Sensors, vol. 22, no. 7, p. 2560,
+Mar. 2022.
+[46] M. Shang, Y. Zhang, A. Y. Ali Amer, I. D’Haeseleer, and B. Vanrumste,
+“Bathroom activities monitoring for older adults by a wrist-mounted
+accelerometer using a hybrid deep learning model,” in Proc. 43rd
+Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC), Nov. 2021,
+pp. 7112–7115.
+[47] V. Farrahi, U. Muhammad, M. Rostami, and M. Oussalah, “AccNet24:
+A deep learning framework for classifying 24-hour activity behaviours
+from wrist-worn accelerometer data under free-living environments,” Int.
+J. Med. Informat., vol. 172, Apr. 2023, Art. no. 105004.
+[48] C. Drumm-Boyd. Activities of Daily Living. Accessed: Apr. 20, 2021.
+[Online]. Available: https://www.payingforseniorcare.com/activities-of-
+daily-living
+[49] Y. Cao, F. Li, H. Chen, X. Liu, S. Yang, and Y. Wang, “Leveraging
+wearables for assisting the elderly with dementia in handwashing,” IEEE
+Trans. Mobile Comput., vol. 22, no. 11, pp. 6554–6570, 2022.
+[50] Z. Hu, Y. Zhang, T. Yu, and S. Pan, “VMA: Domain Variance-
+and modality-aware model transfer for fine-grained occupant activity
+recognition,” in Proc. 21st ACM/IEEE Int. Conf. Inf. Process. Sensor
+Netw. (IPSN), May 2022, pp. 259–270.
+[51] L. Pei et al., “MARS: Mixed virtual and real wearable sensors for
+human activity recognition with multidomain deep learning model,”
+IEEE Internet Things J., vol. 8, no. 11, pp. 9383–9396, Jun. 2021.
+[52] M. D. Schmidt, T. Glasmachers, and I. Iossifidis, “The concepts of
+muscle activity generation driven by upper limb kinematics,” Biomed.
+Eng. OnLine, vol. 22, no. 1, p. 63, Jun. 2023.
+[53] S. K. Chaurasia and S. R. N. Reddy, “Impact of time domain features &
+inertial sensors on activity recognition using randomized selection,” in
+Proc. Int. Conf. Comput., Commun., Intell. Syst. (ICCCIS), Feb. 2021,
+pp. 744–750.
+[54] K. Jun, “Human activity recognition using Fourier transform inspired
+deep learning combination model,” Int. J. Sensors, Wireless Commun.
+Control, vol. 9, no. 1, pp. 16–31, Jul. 2019.
+[55] S. Rosati, G. Balestra, and M. Knaflitz, “Comparison of different sets of
+features for human activity recognition by wearable sensors,” Sensors,
+vol. 18, no. 12, p. 4189, Nov. 2018.
+[56] F. Cruciani et al., “Feature learning for human activity recognition using
+convolutional neural networks: A case study for inertial measurement
+unit and audio data,” CCF Trans. Pervasive Comput. Interact., vol. 2,
+no. 1, pp. 18–32, Mar. 2020.
+[57] F. Li, K. Shirahama, M. A. Nisar, L. Köping, and M. Grzegorzek,
+“Comparison of feature learning methods for human activity recog-
+nition using wearable sensors,” Sensors, vol. 18, no. 2, p. 679,
+Feb. 2018.
+[58] Y. Tang, L. Zhang, F. Min, and J. He, “Multiscale deep feature learning
+for human activity recognition using wearable sensors,” IEEE Trans.
+Ind. Electron., vol. 70, no. 2, pp. 2106–2116, Feb. 2023.
+[59] M. Kumar, P. Gautam, and V. B. Semwal, “Dimensionality reduction-
+based discriminatory classification of human activity recognition using
+machine learning,” in Proc. 3rd Int. Conf. Comput., Commun., Cyber-
+Secur. (IC4S). Cham, Switzerland: Springer, Jul. 2022, pp. 581–593.
+[60] M. Sassi, M. S. Haleem, and L. Pecchia, “Spectrogram-based approach
+with convolutional neural network for human activity classification,”
+in Proc. Medit. Conf. Med. Biol. Eng. Comput. Cham, Switzerland:
+Springer, 2023, pp. 387–401.
+[61] Y. Himeur et al., “Next-generation energy systems for sustainable smart
+cities: Roles of transfer learning,” Sustain. Cities Soc., vol. 85, Oct. 2022,
+Art. no. 104059.
+[62] G. Iglesias, E. Talavera, Á. González-Prieto, A. Mozo, and
+S. Gómez-Canaval, “Data augmentation techniques in time series
+domain: A survey and taxonomy,” Neural Comput. Appl., vol. 35, no. 14,
+pp. 10123–10145, Mar. 2023.
+[63] S.-I. Ao and H. Fayek, “Continual deep learning for time series
+modeling,” Sensors, vol. 23, no. 16, p. 7167, Aug. 2023.
+[64] V. Hassija et al., “Interpreting black-box models: A review on explain-
+able artificial intelligence,” Cognit. Comput., vol. 16, no. 1, pp. 45–74,
+Jan. 2024.
+[65] T. Chen, S. Kornblith, M. Norouzi, and G. E. Hinton, “A simple
+framework for contrastive learning of visual representations,” in Proc.
+37th Int. Conf. Mach. Learn., vol. 119, 2020, pp. 1597–1607.
+[66] A. Jaiswal, A. R. Babu, M. Z. Zadeh, D. Banerjee, and F. Makedon,
+“A survey on contrastive self-supervised learning,” Technologies, vol. 9,
+no. 1, p. 2, Dec. 2020.
+[67] Y. Bengio, A. Courville, and P. Vincent, “Representation learning:
+A review and new perspectives,” IEEE Trans. Pattern Anal. Mach. Intell.,
+vol. 35, no. 8, pp. 1798–1828, Aug. 2013.
+[68] Mathwork. CNN-Based TL. Accessed: 2024. [Online]. Available: https://
+www.mathworks.com/help/deeplearning/ug/pretrained-convolutional-
+neural-networks.html
+[69] A. Antoniou, A. Storkey, and H. Edwards, “Data augmentation genera-
+tive adversarial networks,” 2017, arXiv:1711.04340.
+[70] C. Hou, “A study on IMU-based human activity recognition using
+deep learning and traditional machine learning,” in Proc. 5th Int. Conf.
+Comput. Commun. Syst. (ICCCS), May 2020, pp. 225–234.
+[71] C. He, X. Li, Y. Xia, J. Tang, J. Yang, and Z. Ye, “Addressing the
+overfitting in partial domain adaptation with self-training and contrastive
+learning,” IEEE Trans. Circuits Syst. Video Technol., vol. 34, no. 3,
+pp. 1532–1545, Mar. 2024.
+[72] P. Singhal, R. Walambe, S. Ramanna, and K. Kotecha, “Domain adap-
+tation: Challenges, methods, datasets, and applications,” IEEE Access,
+vol. 11, pp. 6973–7020, 2023.
+[73] A. Rahate, R. Walambe, S. Ramanna, and K. Kotecha, “Multimodal
+co-learning: Challenges, applications with datasets, recent advances and
+future directions,” Inf. Fusion, vol. 81, pp. 203–239, May 2022.
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 12 ---
+4126 IEEE SENSORS JOURNAL, VOL. 25, NO. 3, 1 FEBRUARY 2025
+[74] M. Zahangir Alom et al., “The history began from AlexNet: A compre-
+hensive survey on deep learning approaches,” 2018, arXiv:1803.01164.
+[75] W. Xu, Y.-L. Fu, and D. Zhu, “ResNet and its application to medical
+image processing: Research progress and challenges,” Comput. Methods
+Programs Biomed., vol. 240, Oct. 2023, Art. no. 107660.
+[76] B. Espejo-Garcia, I. Malounas, N. Mylonas, A. Kasimati, and S. Fountas,
+“Using EfficientNet and transfer learning for image-based diagnosis of
+nutrient deficiencies,” Comput. Electron. Agricult., vol. 196, May 2022,
+Art. no. 106868.
+[77] N. S. Sanjay and A. Ahmadinia, “MobileNet-tiny: A deep neural
+network-based real-time object detection for Rasberry pi,” in Proc. 18th
+IEEE Int. Conf. Mach. Learn. Appl. (ICMLA), Dec. 2019, pp. 647–652.
+[78] M. A. Wakili et al., “Classification of breast cancer histopathological
+images using DenseNet and transfer learning,” Comput. Intell. Neurosci.,
+vol. 2022, pp. 1–31, Oct. 2022.
+[79] P. Aswathy, Siddhartha, and D. Mishra, “Deep GoogLeNet features for
+visual object tracking,” in Proc. IEEE 13th Int. Conf. Ind. Inf. Syst.
+(ICIIS), Dec. 2018, pp. 60–66.
+[80] Z. Xu. LSTM CHallenges. Accessed: Mar. 18, 2024. [Online].
+Available: https://www.baeldung.com/cs/lstm-vanishing-gradient-
+prevention#:~:text=While%20Long%20Short%2DTerm%20Memory,
+their%20own%20set%20of%20challenges
+[81] S. Sankaranarayanan, Y. Balaji, C. D. Castillo, and R. Chellappa, “Gen-
+erate to adapt: Aligning domains using generative adversarial networks,”
+in Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit., Jun. 2018,
+pp. 8503–8512.
+Sara Ashry received the M.Sc. and Ph.D.
+degrees from the CSE Department, Egypt-
+Japan University of Science and Technology
+(E-JUST), Alexandria, Egypt, in 2017 and 2020,
+respectively.
+She has held research fellowships at Waseda
+University, Shinjuku, Japan, and Halmstad Uni-
+versity, Halmstad, Sweden, in 2018 and 2019,
+respectively. She was a Lecturer with Fayoum
+University, Faiyum, Egypt. She is a Researcher
+with the Electronic Research Institute (ERI),
+Cairo, Egypt. She is a Researcher with the CoSy.Bio Institute, University
+of Hamburg, Hamburg, Germany. Her research interests include human
+activity recognition, deep learning, transfer learning, IMU sensors, the
+Internet of Things (IoT), large language models (LLM), data engineering,
+and review methodologies.
+Supratim Das received the dual B.S. and M.Sc.
+degrees from the Indian Institute of Science
+Education and Research (IISER) Pune, Pune,
+India, in June 2022. He is pursuing the Ph.D.
+degree with the CoSy.Bio Institute, Hamburg
+University, Hamburg, Germany. His background
+is in life sciences and data sciences. During
+the M.Sc. thesis, he worked on genomic data
+enhancement using deep learning.
+He is currently working on physical activity
+recognition using federated learning and transfer
+learning. His research interests include the interdisciplinary areas of
+biology, machine learning, federated learning, and physical activities.
+Mahdie Rafiei received the M.Sc. degree in
+computer science from QIAU, Qazvin, Iran,
+in 2021. She is pursuing the Ph.D. degree
+with the CoSy.Bio Institute, Hamburg University,
+Hamburg, Germany. Her master’s thesis focused
+on the research of recommender systems using
+machine learning techniques.
+She is also working on a PhysioAI project
+that aims to assess and enhance AI-powered
+multimodal tools for measuring physical activity
+in osteoarthritis treatment. She is particularly
+interested in deep learning, transfer learning, and federated learning.
+Throughout her studies, she worked for over five years in tech compa-
+nies as a Web Developer.
+Jan Baumbach received the Ph.D. degree
+from Bielefeld University, Bielefeld, Germany,
+in 2008.
+He has been the Chair of Experimental
+Bioinformatics with the Technical University
+of Munich, Munich, Germany; a Research
+Group Leader with the Max Planck Institute
+for Informatics, Saarbrücken, Germany; and a
+Postdoctoral Fellow with the Algorithms Group
+of Richard Karp, University of California at
+Berkeley, Berkeley, CA, USA. He is the Director
+of the CoSy.Bio Institute, University of Hamburg, Hamburg, Germany,
+since January 2021. Part-time, he is also leading the Computa-
+tional Biomedicine Group, University of Southern Denmark, Odense,
+Denmark. His research interests include computational biology, big data
+analytics, and machine learning.
+Linda Baumbach received the M.Sc. degree
+in physiotherapy and the Ph.D. degree in
+health science from the University of Southern
+Denmark, Odense, Denmark, in 2015 and 2020,
+respectively.
+She was a Postdoctoral Fellow with the Univer-
+sity Medical Center Hamburg-Eppendorf (UKE),
+Hamburg, Germany. She is currently a Scientific
+Researcher with the Center of Bioinformat-
+ics, University of Hamburg, Hamburg. She is
+a distinguished professional in health science,
+physiotherapy, and physical activities. Her research interests include the
+treatment of knee osteoarthritis in primary care and recognizing physical
+human activities. With a strong academic foundation including system-
+atic review methodologies, she is dedicated to advancing healthcare
+practices.
+Authorized licensed use limited to: Seoul National Univ of Science & Tech (SNUT). Downloaded on May 26,2026 at 11:24:21 UTC from IEEE Xplore. Restrictions apply.
+
+--- PAGE 13 ---

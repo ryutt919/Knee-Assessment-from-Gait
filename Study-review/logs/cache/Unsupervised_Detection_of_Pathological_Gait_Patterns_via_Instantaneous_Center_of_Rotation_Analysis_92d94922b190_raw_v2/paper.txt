@@ -1,0 +1,1391 @@
+
+--- PAGE 1 ---
+Academic Editor: Claudio Belvedere
+Received: 12 February 2026
+Revised: 13 April 2026
+Accepted: 17 April 2026
+Published: 19 April 2026
+Copyright: © 2026 by the authors.
+LicenseeMDPI, Basel, Switzerland.
+Thisarticle is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license.
+Article
+Unsupervised Detection of Pathological Gait Patterns via
+Instantaneous Center of Rotation Analysis
+Ludwin Molina Arias * and Magdalena Smoleń
+Department of Biocybernetics and Biomedical Engineering, Faculty of Electrical Engineering, Automatics,
+Computer Science and Biomedical Engineering, AGH University of Krakow, 30 Mickiewicza Avenue,
+30-059 Krakow, Poland; msmolen@agh.edu.pl
+* Correspondence: arias@agh.edu.pl
+Abstract
+This study introduces a novel unsupervised framework, ICR-LLS, for detecting pathologi-
+cal gait patterns using instantaneous center of rotation (ICR) trajectories of the shank in
+the sagittal plane. ICR trajectories were computed from two-dimensional kinematic data
+captured at the lateral femoral epicondyle and lateral malleolus for both shanks, producing
+four-dimensional multivariate time series for each gait trial. Pairwise trajectory dissimilari-
+ties were quantified using circularly aligned Dynamic Time Warping (DTW), preserving
+temporal and spatial structure. The resulting dissimilarity matrix was embedded into a
+three-dimensional space using a force-directed network layout, enabling intuitive visualiza-
+tion of inter-subject gait relationships. Density-based clustering (DBSCAN), enhanced with
+a consensus-based ensemble approach, was employed to automatically identify clusters
+representing typical (healthy) gait patterns and outliers corresponding to pathological
+deviations. The framework is evaluated on a public dataset comprising individuals with
+Parkinson’s disease (PD) and healthy controls, achieving a normalized mutual information
+(NMI) of 0.449 and a Separation-to-Compactness Ratio (SCR) of 6.754, indicating a mean-
+ingful cluster structure. In addition, classification-oriented metrics yield an accuracy of
+90%, sensitivity of 70%, and specificity of 96.7%, supporting the method’s effectiveness in
+distinguishing pathological gait. By combining minimal 2D kinematic inputs with unsuper-
+vised learning, ICR-LLS provides an interpretable framework for the exploratory analysis
+of gait variability, and although further validation is required, the findings suggest that
+ICR trajectories may serve as a meaningful biomechanical descriptor for characterizing
+pathological locomotion.
+Keywords: pathological gait; Parkinson’s disease; instantaneous center of rotation; 2D
+kinematics; unsupervised clustering; Dynamic Time Warping
+1. Introduction
+Parkinson’s disease (PD) is a chronic and progressive neurodegenerative disorder that
+primarily affects motor function. It is caused by the degeneration of dopaminergic neurons
+in the substantia nigra, leading to hallmark motor symptoms such as tremor, rigidity,
+bradykinesia, and postural instability. Among these, gait disturbances and impaired
+postural control are particularly prominent and often appear early in the disease course,
+even before other symptoms become fully evident [1].
+To monitor PD progression, clinicians frequently rely on standardized rating scales.
+The Hoehn and Yahr scale classifies PD severity into five stages based on motor symptoms
+Appl. Sci. 2026, 16, 3976 https://doi.org/10.3390/app16083976
+
+--- PAGE 2 ---
+Appl. Sci. 2026, 16, 3976 2 of 24
+and functional independence [2], while the Unified Parkinson’s Disease Rating Scale
+(UPDRS) provides a more detailed multidimensional assessment, including motor function,
+cognitive and emotional changes, activities of daily living, and treatment side effects, with
+higher scores indicating more severe impairment [3]. Although these tools are widely used
+in clinical settings, they are inherently subjective and may lack the sensitivity to capture
+early or subtle motor impairments.
+A distinct motor manifestation of PD is the so-called parkinsonian gait, characterized
+by a stooped posture, reduced arm swing, stumbling steps, and overall instability [4]. These
+gait abnormalities not only reflect the severity of motor dysfunction, but also contribute
+significantly to the risk of falls. It is estimated that approximately 70% of PD patients
+experience at least one fall annually, and 39% suffer recurrent falls. Importantly, recurrent
+falls are associated with a median survival of just six years [5]. Beyond causing physical
+injuries such as fractures, falls also lead to fear of falling again, increased caregiver burden,
+more frequent hospital visits, and gradual loss of independence.
+Given the central role of gait dysfunction in PD, gait analysis has emerged as a valuable
+tool for both diagnosis and disease monitoring. By quantifying changes in spatiotemporal
+parameters such as stride length, gait speed, and variability, it is possible to detect subtle
+motor deficits that may not be apparent during a clinical examination [6]. As a result,
+gait analysis is increasingly being used to complement traditional assessment methods,
+providing objective information on the functional impact of the disease and supporting the
+development of targeted interventions.
+Although standard spatiotemporal metrics provide useful information, locomotion
+disorders, particularly in neurodegenerative conditions such as PD, often involve a complex
+interplay of neurological and musculoskeletal impairments, including involuntary move-
+ments, partial paralysis, and balance deficits [7]. These complexities highlight the need
+for analytical methods capable of distinguishing pathological gait patterns from normal
+ones with greater precision. Traditional approaches often rely on the comparison of key
+gait parameters with normative datasets obtained from healthy controls [8]. For basic
+measurements such as walking speed or step length, simple numerical comparisons may
+be sufficient. However, as the dimensionality and variability of gait data increase, more
+advanced analytical tools are required.
+To address this challenge, researchers have explored various strategies aimed at
+capturing the complexity of gait dynamics. An approach involves the use of geometric
+distance-based similarity metrics to analyze multidimensional gait data. For instance,
+Lee et al. [9] collected data using sensors placed on the head, waist, and legs as participants
+engaged in daily activities such as walking, standing, and climbing stairs. Their method
+used these measurements to compute gait similarity and detect deviations from typical
+movement patterns. In a related effort, Ramakrishnan et al. [10] proposed a Comprehensive
+Gait Asymmetry Metric (CGAM), which applies a modified Mahalanobis distance to
+examine gait features derived from both motion capture and force plate data. Their results
+demonstrated that CGAM is effective in identifying asymmetries, offering a more sensitive
+assessment of gait abnormalities than conventional metrics.
+Another widely used strategy involves skeletal modeling, in which simplified repre-
+sentations of the human body are created by tracking anatomical landmarks over time [11].
+These models allow for the computation of frame-by-frame distance metrics or statistical
+descriptors, such as covariance matrices of joint angles, to identify deviations from typical
+movement patterns. For instance, Khokhlova et al. proposed a classification framework
+based on flexion angles obtained from Kinect data, using the K-nearest neighbors algorithm
+to detect abnormalities without requiring prior segmentation of the gait cycle [12].
+https://doi.org/10.3390/app16083976
+
+--- PAGE 3 ---
+Appl. Sci. 2026, 16, 3976 3 of 24
+With the increasing availability of high-dimensional gait data, machine learning tech-
+niqueshavegainedprominenceintheclassificationofpathologicalmovements. Algorithms
+such as neural networks [13], support vector machines [14], and random forests [15] have
+achieved a strong performance in distinguishing between healthy and impaired gait, espe-
+cially in applications related to PD and post-stroke rehabilitation [16]. These models are
+capable of handling both binary classification problems (e.g., healthy versus pathological)
+and multiclass problems involving multiple neurological conditions [17]. Beyond classi-
+fication, other approaches have focused on modeling the temporal dynamics of gait. For
+instance, Chen et al. [18] proposed a method that integrates hidden Markov models with
+machine learning techniques to capture and recognize abnormal gait patterns over time,
+providing a more nuanced understanding of gait variability in neurological disorders.
+While supervised models are powerful, they rely on labeled data and may not gen-
+eralize well to new or ambiguous cases. In contrast, unsupervised learning methods can
+reveal hidden structures in gait data without the need for predefined categories [19,20]. Sev-
+eral studies have applied clustering techniques to characterize gait. Chantraine et al. [21]
+employed a dual clustering strategy to capture knee movement trajectories across mul-
+tiple planes, allowing for a detailed characterization of joint dynamics. Similarly, Mul-
+roy et al. [22] applied non-hierarchical clustering to classify stroke patients based on
+spatiotemporal and kinematic gait features observed during the recovery process, revealing
+different rehabilitation trajectories between subgroups of patients. These unsupervised
+approaches demonstrate the potential of clustering to capture meaningful distinctions in
+motor function.
+Despite significant advances in gait analysis, some biomechanical parameters remain
+insufficiently studied. One of these is the instantaneous center of rotation (ICR), which
+defines the point around which a segment rotates at a specific instant in time. The ICR
+has been widely used in biomechanical research to study joint stability [23], the relation-
+ship between tissue abnormalities and mechanical changes, and lumbar spine mechanics,
+particularly in relation to load-dependent variations during lifting tasks [24]. However,
+its application to gait analysis, especially for capturing continuous segmental rotations
+during locomotion, has been largely neglected. Prior studies have primarily focused on
+isolated joint mechanics or specific motor tasks without addressing the dynamic evolution
+of the ICR throughout the gait cycle. To our knowledge, no research has yet examined the
+trajectories of ICR in the lower extremities as markers of gait dysfunction. This represents
+an important gap, as ICR trajectories may offer valuable insights into intersegmental co-
+ordination and subtle motor control deficits during walking, which are characteristic of
+PD-related gait impairments.
+Building on this gap, our previous study [25] introduced ICR trajectories as a mean-
+ingful biomechanical descriptor to assess gait dynamics. Motivated by these findings, the
+present study proposes an unsupervised framework to detect pathological gait patterns by
+analyzing the ICR trajectories of the shank in the sagittal plane. Using pairwise dissimilarity
+measures, ICR trajectories are embedded into a 3D space via a self-organizing algorithm,
+creating a topological representation of gait similarity. Subsequent cluster analysis uncov-
+ers groups of consistent gait patterns and isolates outliers that may potentially indicate
+pathological gait. The proposed methodology, named Instantaneous Center of Rotation
+of Lower Limb Segments (ICR-LLS), is validated on publicly available kinematic datasets
+to distinguish Parkinsonian gait from healthy controls. By leveraging this underutilized
+biomechanical descriptor, the proposed ICR-LLS methodology offers a novel, data-driven
+framework to improve the detection of subtle motor control impairments in PD through an
+unsupervised learning approach without relying on labeled data.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 4 ---
+Appl. Sci. 2026, 16, 3976 4 of 24
+2. ICR-LLS Methodology
+An overview of the ICR-LLS methodology is presented in Figure 1. The framework
+uses ICR trajectories of the shank in the sagittal plane during gait as input data and applies
+data-driven techniques to uncover intrinsic gait patterns and group trials with similar
+kinematic behavior.
+Acquisition of gait-related
+kinematic data
+Computation of shank
+ICR trajectories
+Computation of
+dissimilarity matrix
+Use of selforganization
+method
+Clustering
+Gait Trials
+Gait Trials
+Shank ICR
+Figure 1. Flow chart of the ICR-LLS methodology illustrating the main processing stages.
+The following subsections describe each stage of the framework in detail.
+2.1. Computation of Shank ICR Trajectories
+During walking, the center of mass (CoM) of the body progresses along the direction
+of locomotion, while individual skeletal segments undergo planar motion resulting from
+the combined translation and rotation of rigid bodies. For a segment that undergoes planar
+motion, its instantaneous kinematic behavior can be fully described by its ICR, defined as
+the point in the plane about which the segment is momentarily rotating at a given instant.
+To determine the ICR of a body segment, it is necessary to estimate the instantaneous
+velocity vectors of two distinct points on the segment. From each point a straight line
+perpendicular to its corresponding velocity vector is constructed. These perpendicular
+lines originate at the locations of the selected points and represent all possible positions of
+the instantaneous center of rotation consistent with the observed motion. The intersection
+of the two perpendicular lines uniquely defines the ICR at that instant, as illustrated in
+Figure 2.
+Shank ICR
+A
+B
+VA
+VB
+Perpendicular
+lines to the
+velocity vectors
+Thigh
+Shank
+Foot
+Figure 2. Determination of the ICR for the shank segment.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 5 ---
+Appl. Sci. 2026, 16, 3976 5 of 24
+The computational procedure for estimating ICR trajectories follows the methodology
+described in our previous work [25]. Building on these findings, the present study focuses
+on the shank segment, as its ICR trajectory provides a compact representation of lower-limb
+motion that integrates both rotational and translational components of segmental dynamics.
+Unlike conventional joint angles or segment orientations, which describe motion at individ-
+ual joints, the shank ICR captures relative intersegmental motion, thereby summarizing
+coordination patterns across the lower limb.
+Using preprocessed gait data, including the positions and velocities of markers placed
+at the lateral femoral epicondyle and the lateral malleolus, the ICR trajectories of both
+shanks were calculated in the sagittal plane for each gait trial. For a given trial, a multivari-
+ate time series was constructed by concatenating the horizontal and vertical components of
+the ICR trajectories of the left and right shanks. As a result, each gait trial is represented as
+a four-dimensional time-series matrix, capturing the spatiotemporal evolution of shank
+rotation throughout the gait cycle.
+S(i) =
+
+
+
+
+
+
+
+ICRSH
+rx (1) ICRSH
+ry (1) ICRSH
+lx (1) ICRSH
+ly (1)
+ICRSH
+rx (2) ICRSH
+ry (2) ICRSH
+lx (2) ICRSH
+ly (2)
+. . .
+. . .
+. . .
+. . .
+ICRSH
+rx (n) ICRSH
+ry (n) ICRSH
+lx (n) ICRSH
+ly (n)
+
+
+
+
+
+
+
+(1)
+where i refers to the gait trial of a given subject, ICRSH
+rx and ICRSH
+ry correspond to the ICR
+trajectories of the right shank along the x and y axes, respectively, and ICRSH
+lx and ICRSH
+ly
+correspond to the ICR trajectories of the left shank along the x and y axes, respectively.
+2.2. Pairwise Comparison of ICR Trajectories
+A higher degree of variability between two gait-related time-series is associated with
+an increased likelihood that at least one of the corresponding gait patterns exhibits atypical
+or pathological characteristics. Consequently, pairwise comparisons between multivariate
+ICR trajectories were made in the time domain to quantify gait dissimilarity.
+In the proposed pipeline, ICR trajectories are compared without amplitude normaliza-
+tion, thereby preserving their original spatial scale. To account for temporal misalignments
+arising from stride-to-stride variability, each pair of trajectories is first circularly aligned
+using cross-correlation.
+Let X = [x1,...,xN] and Y = [y1,...,yN] denote two multivariate ICR trajectories of
+equal length N, where each sample xn,yn ∈ R4 represents the horizontal and vertical ICR
+components of the left and right shanks at time step n.
+The circular cross-correlation RXY(τ) is defined as follows:
+RXY(τ) =
+1
+N
+N
+∑
+n=1
+x∗
+n yn+τ τ = 0,1,..., N (2)
+where ·∗ denotes the complex conjugate and τ is the lag.
+The optimal lag τ∗ that maximizes RXY(τ) is then used to align Y to X via a circu-
+lar shift:
+y
+aligned
+n = yn+τ∗ n = 1,..., N (3)
+Following circular time alignment, trajectory dissimilarity is quantified using Dynamic
+Time Warping (DTW), which accommodates non-linear temporal deformations while
+preserving the spatial structure of the trajectories.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 6 ---
+Appl. Sci. 2026, 16, 3976 6 of 24
+Forsequences X andYaligned, thecumulativeDTWdistancematrix D(i, j) isrecursively
+defined as follows:
+D(i, j) = ∥xi − y
+aligned
+j ∥2
++min
+
+  
+  
+D(i −1, j)
+D(i, j −1)
+D(i −1, j −1)
+i, j = 1,..., N (4)
+where ∥ · ∥2 denotes the Euclidean norm in R4, ensuring that all four components of each
+sample are taken into account.
+The optimal warping path W = {(ik, jk)}K
+k=1 is obtained by backtracking from
+D(N, N) to D(1,1) along the minimal cumulative cost path.
+The DTW distance between the trajectories is then calculated as the sum of squared
+Euclidean distances along the warping path:
+dDTW(X,Y) =
+K
+∑
+k=1
+∥xik
+− yjk
+∥2
+(5)
+This combination of circular alignment and DTW compensates for global phase shifts
+prior to assessing trajectory dissimilarity, yielding a robust measure that preserves the
+original spatial scale of the ICR trajectories.
+All pairwise DTW distances are assembled into a symmetric dissimilarity matrix.
+M =
+
+
+
+
+
+
+0 d12 ... d1N
+d21 0 ... d2N
+. . .
+. . .
+...
+. . .
+dN1 dN2 ... 0
+
+
+
+
+
+
+(6)
+where dij denotes the DTW-based dissimilarity between gait trials i and j.
+2.3. Embedding of ICR Trajectories in a Low-Dimensional Space
+The gait data were modeled as a fully connected weighted network, where each
+node represents an individual gait trial, and edge weights encode pairwise DTW-based
+dissimilarities. To obtain an interpretable low-dimensional representation, a force-directed
+layout algorithm was employed to embed the data in a Euclidean space [26].
+Within this framework, nodes are treated as physical particles subjected to repulsive
+and attractive forces, both defined as functions of pairwise dissimilarity dij between gait
+trials i and j and their current spatial positions x(i) and x(j).
+The magnitude of the repulsive force between nodes i and j is defined as:
+fr(i, j) =
+CK2
+∥x(i) − x(j)∥
+eαdij (7)
+while the magnitude of the attractive force is given by:
+fa(i, j) =
+∥x(i) − x(j)∥2
+K
+e
+γ
+dij (8)
+where C controls the strength of repulsion, K denotes the natural spring length, and α and
+γ are tuning parameters that regulate the influence of dissimilarity. Both forces act along
+the unit vector connecting nodes i and j, ensuring that the interactions are directionally
+consistent in the embedding space.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 7 ---
+Appl. Sci. 2026, 16, 3976 7 of 24
+Due to the fully connected nature of the network, every pair of nodes simultaneously
+experiences both attractive and repulsive interactions. Through iterative position updates,
+the system evolves toward a configuration that minimizes the overall potential energy,
+computed as the sum of squared forces acting on all nodes.
+The resulting embedding preserves the relational structure encoded in the dissimilar-
+ity matrix: gait trials exhibiting higher similarity are positioned closer together, whereas
+more dissimilar trials are spatially separated. This low-dimensional representation, there-
+fore, provides an intuitive and unsupervised visualization of the relationships among
+gait patterns.
+2.4. Cluster Analysis
+To identify latent structures within the low-dimensional representation of the gait-
+related data, Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+is applied to the resulting embedding. DBSCAN detects dense regions of points while
+explicitly modeling noise, making it well suited to identify atypical gait patterns without
+requiring a predefined number of clusters [27].
+Within this framework, the clustering procedure is designed to identify a compact
+reference group representing typical (healthy) gait patterns, while trials that exhibit patho-
+logical or atypical gait are treated as outliers. These outliers capture deviations from
+normative behavior rather than forming a uniform pathological category, reflecting the
+inherent heterogeneity of gait disorders.
+Cluster performance was quantitatively evaluated using Normalized Mutual Informa-
+tion (NMI), which measures the agreement between cluster assignments L = {l1,...,lN}
+and known clinical labels G = {g1,..., gN}, and is given by:
+NMI(L,G) =
+2 MI(L,G)
+H(L) + H(G)
+(9)
+where MI(L,G) denotes mutual information and H(·) denotes Shannon entropy. The NMI
+values range from 0, indicating that there is no correspondence, to 1, representing perfect
+alignment with the truth of the ground.
+In addition to evaluating agreement with external labels, the internal structure of
+the clusters was examined using the Separation-to-Compactness Ratio (SCR). This metric
+captures both the cohesion of individual clusters and the distinction between different
+clusters. Specifically, the compactness of a cluster Ck is defined as the average distance of its
+members to the centroid of the cluster, while the separation between clusters is quantified
+as the minimum Euclidean distance between the centroids of all pairs of clusters:
+Compactnessk =
+1
+|Ck| ∑
+xi∈Ck
+∥xi − µk∥2
+(10)
+Separationk =
+1
+|O| ∑
+xj∈O
+∥xj − µk∥2
+(11)
+where xi represents a data point within the cluster Ck, xj represents a data point in the set
+of outliers O, µk is the centroid of the cluster Ck, |Ck| denotes the number of points in that
+cluster and |O| denotes the number of outliers.
+The SCR is then expressed as:
+SCR =
+Separationk
+Compactnessk
+(12)
+https://doi.org/10.3390/app16083976
+
+--- PAGE 8 ---
+Appl. Sci. 2026, 16, 3976 8 of 24
+High SCR values indicate compact and well separated clusters, providing a label-
+independent assessment of cluster quality.
+It is important to note that, in this study, DBSCAN is formulated as an anomaly
+detection approach in which healthy controls form a unique dominant cluster (k = 1)
+and pathological cases are primarily identified as outliers. Within this framework, SCR
+quantifies the separation between outliers and healthy clusters in relation to their internal
+compactness, providing a meaningful indicator of abnormality despite the presence of
+noise points.
+3. Case Study
+3.1. Dataset
+To evaluate the proposed framework, two publicly available gait datasets were em-
+ployed. This section describes the original characteristics of the datasets as provided by
+their respective authors; the specific selection of participants and the variables used in this
+study are detailed in the subsequent subsection.
+The first dataset [28] was obtained from the Laboratory of Biomechanics and Motor
+Control at the Federal University of ABC (Brazil) and includes gait recordings from 26 in-
+dividuals diagnosed with PD, with a mean age of 66.3 years. During data acquisition,
+participants walked on a 20-m walkway at a comfortable, self-selected speed while motion
+was captured using a 12-camera Raptor-4 system (Motion Analysis Corp., Rohnert Park,
+CA, USA) operating at 150 Hz. A total of 44 reflective markers were placed according to the
+recommendations of the International Society of Biomechanics (ISB), including 26 markers
+on the lower limbs and 18 on the upper body. Each participant performed 20 walking
+trials across two sessions: one in the dopaminergic ON state and one after at least 12 h of
+withdrawal from medication (OFF state).
+The second dataset [29] was provided by the Multidisciplinary Motor Center Antwerp
+(MMCA) and includes gait recordings from a heterogeneous cohort of 138 neurologically
+intact individuals (aged 21 to 86 years) and 50 individuals post-stroke (aged 19 to 85 years).
+Motion capture was performed using an 8-camera Vicon T10 (Vicon Motion Systems Ltd,
+Oxford, UK) system operating at 100 Hz.
+3.2. Data Processing
+To allow a comparative analysis between groups, data from 30 neurologically intact
+healthy participants and 10 individuals diagnosed with PD in the OFF medication state
+were selected from the original datasets. The primary inclusion criterion was to ensure
+comparable demographic distributions between groups, particularly in terms of age, to
+minimize possible confounding effects. The healthy group spans an age range of 52 to
+86 years, while the PD group spans 44 to 81 years, with substantial overlap between
+distributions. Sex was not used as a stratification variable.
+From the MMCA dataset, only neurologically intact participants were retained, while
+all post-stroke individuals were excluded from further analysis.
+Table 1 summarizes the demographic and anthropometric characteristics of all par-
+ticipants included in the study, including age, gender, body mass, height, and body mass
+index (BMI), as well as their corresponding clinical state (Healthy or PD).
+Raw motion capture data, stored in C3D format, were imported into the open-source
+software Mokka 0.6.2 (INRIA, France) for initial visualization and quality inspection. The
+Sagittal-plane coordinates of the anatomical markers were subsequently exported and
+processed in MATLAB R2025b (MathWorks, Natick, MA, USA). Figure 3 shows the set of
+markers included in the selected datasets.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 9 ---
+Appl. Sci. 2026, 16, 3976 9 of 24
+Table 1. Sample demographics.
+ID Age [Years] Gender Body Mass [Kg] Height [cm] BMI [Kg/m2] State
+1 86 M 64.00 158.0 25.64 Healthy
+2 85 F 78.00 150.0 34.67 Healthy
+3 85 F 69.00 151.0 30.27 Healthy
+4 84 F 50.00 145.0 23.79 Healthy
+5 82 F 62.00 155.5 25.63 Healthy
+6 82 F 72.00 160.0 28.13 Healthy
+7 81 M 76.00 170.0 26.30 Healthy
+8 80 F 70.00 154.0 29.52 Healthy
+9 82 F 62.00 155.5 25.63 Healthy
+10 76 M 79.00 175.0 25.80 Healthy
+11 79 M 83.00 164.5 30.67 Healthy
+12 75 M 89.00 166.5 32.10 Healthy
+13 73 F 64.00 160.5 24.83 Healthy
+14 72 F 69.00 160.5 26.79 Healthy
+15 67 M 74.00 169.0 25.91 Healthy
+16 66 F 57.00 163.5 21.32 Healthy
+17 65 M 95.00 175.0 31.02 Healthy
+18 64 F 75.00 158.0 30.05 Healthy
+19 62 F 80.00 156.5 32.65 Healthy
+20 60 F 66.00 158.0 26.44 Healthy
+21 60 F 85.00 164.5 31.42 Healthy
+22 58 M 79.00 171.5 26.86 Healthy
+23 58 M 97.00 183.5 28.82 Healthy
+24 55 F 58.00 163.5 21.70 Healthy
+25 55 M 67.00 168.5 23.60 Healthy
+26 55 M 66.00 179.5 20.49 Healthy
+27 53 F 72.00 165.5 26.29 Healthy
+28 52 F 62.00 156.0 25.48 Healthy
+29 55 F 48.00 156.5 19.61 Healthy
+30 51 F 57.00 163.0 21.48 Healthy
+31 58 M 69.00 168.0 24.46 PD
+32 44 F 53.30 157.0 21.62 PD
+33 60 M 92.45 179.0 28.86 PD
+34 81 M 65.65 154.5 27.50 PD
+35 53 M 77.20 167.0 27.67 PD
+36 46 M 61.50 171.0 21.04 PD
+37 57 M 57.70 173.5 19.17 PD
+38 50 M 73.60 176.0 23.75 PD
+39 62 M 57.40 166.5 20.71 PD
+40 63 M 63.85 158.5 25.41 PD
+Two anatomical landmarks, the lateral femoral epicondyle and the lateral malleolus,
+were selected bilaterally due to their consistent presence across biomechanical models in
+both datasets. Gait cycles were segmented using the vertical displacement of the hip marker
+as a reference. Each gait cycle exhibits three local minima in the vertical hip trajectory
+corresponding to key events of the stride. These minima were automatically detected by
+analyzing the slope of the trajectory, allowing for precise identification of the boundaries
+of the gait cycle. Then each segmented cycle was interpolated to 200 samples to ensure
+temporal consistency between cycles. Within each cycle, marker trajectories were averaged
+to obtain representative motion patterns. The numerical differentiation of these averaged
+trajectories yielded marker velocities, which were subsequently smoothed using a moving
+average filter over three samples and then used to compute the ICR trajectories of the shank
+following the procedure described in Section 2.1.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 10 ---
+Appl. Sci. 2026, 16, 3976 10 of 24
+(a) (b)
+Figure 3. Processing of the kinematic data contained in the selected data sets using Mokka. (a) Iso-
+metric view. (b) Sagittal Plane.
+To remove the dependence of the ICR trajectories on the global reference frame used
+during the gait trials, the ICR trajectories were expressed relative to the center of mass of
+the body (COM), producing normalized trajectories defined as follows:
+ICRN = ICR − COM (13)
+In this representation, values close to zero indicate that the instantaneous center of
+rotation is located near the COM.
+3.3. Results
+3.3.1. Shank ICR Trajectories
+Figure 4 shows the preprocessed shank ICR trajectories in Cartesian coordinates for
+five individuals with PD and five healthy controls, randomly selected. Each trajectory
+represents the average behavior over multiple gait cycles for both the left and right legs
+during overground walking trials. The graph scales were adjusted to emphasize the specific
+shape of the trajectory.
+0 50 100
+Horizontal ICR Position [a.u.]
+−10
+−5
+0
+5
+10
+(a)
+Healthy
+PD
+0 50 100
+Horizontal ICR Position [a.u.]
+−10
+−5
+0
+5
+10
+(b)
+Healthy
+PD
+Normalized time [%]
+0 50 100
+Vertical ICR Position [a.u.]
+−50
+0
+50
+(c)
+Healthy
+PD
+Normalized time [%]
+0 50 100
+Vertical ICR Position [a.u.]
+−50
+0
+50
+(d)
+Healthy
+PD
+Figure 4. Comparison of shank ICR trajectories. (a) Horizontal axis—left leg. (b) Horizontal
+axis—right leg. (c) Vertical axis—left leg. (d) Vertical axis—right leg.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 11 ---
+Appl. Sci. 2026, 16, 3976 11 of 24
+Vertical ICR values reach substantially larger magnitudes than horizontal values,
+particularly in subjects with PD. In these participants, several peaks exceed the range
+displayed, reflecting higher amplitudes compared to healthy controls. Additionally, in both
+groups, there are portions of the gait cycle in which the ICR approaches zero, indicating
+that it is located near the center of mass of the body.
+Although the overall trajectory patterns are broadly similar between the groups, PD
+subjects exhibit more pronounced asymptotic patterns and greater variability, especially
+along the vertical axis. These observations suggest a reduced rotational excursion of the
+shank in PD, reflecting a more rigid lower-limb movement compared to healthy controls.
+3.3.2. Dissimilarity Matrix
+Figure 5 shows the dissimilarity matrix computed from pairwise comparisons of the ICR
+trajectories of the shank for individuals with and without PD using DTW-based dissimilarity.
+Gait Trials
+Gait Trials
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Figure5. DissimilaritymatrixofshankICRtrajectoriescomputedusingDTW-basedpairwisecomparisons.
+The matrix reveals patterns that partially support the initial hypothesis of the study.
+Comparisons among healthy controls, located in the upper-left corner, are predominantly
+of a cool color, indicating a high similarity in gait patterns. Comparisons between healthy
+controls and PD patients, represented in off-diagonal blocks (lower-left and upper-right
+corners), show warmer colors, reflecting greater divergence between the two groups. In
+particular, comparisons among PD patients, in the lower-right corner, exhibit the warmest
+colors, indicating substantial variability within this group despite a common diagnosis.
+This suggests that while some PD patients show gait patterns similar to healthy controls,
+others show pronounced deviations, highlighting the presence of outliers and heterogeneity
+in pathological gait.
+3.3.3. Self-Organized Network
+The DTW-based dissimilarity matrix was employed to construct a force-directed
+self-organizing network in which each node represents an individual gait trial. The net-
+work embedding was generated using MATLAB’s built-in force-directed layout algorithm,
+which determines node positions through an iterative force-relaxation process. This im-
+plementation follows the general force-directed principles outlined in the previous section
+https://doi.org/10.3390/app16083976
+
+--- PAGE 12 ---
+Appl. Sci. 2026, 16, 3976 12 of 24
+while internally handling model parameters and numerical settings within the optimized
+computational framework of MATLAB.
+Two network representations were obtained: a two-dimensional layout and a three-
+dimensional layout, as illustrated in Figure 6. In both cases, node positions were computed
+through an iterative simulation consisting of 3,000,000 iterations, providing a stable and
+well-structured spatial organization of the network.
+Figure 6. Self-organized network representation of gait trials. (a) Two-dimensional embedding.
+(b) Three-dimensional embedding.
+Both embeddings demonstrate a clear separation between the groups. In the two-
+dimensional layout, nodes corresponding to healthy gait trials form a compact cluster,
+reflecting low intra-group variability. Gait trials performed by individual with PD are
+usually located outside of this central cluster and often appear as outliers; although some
+form smaller subgroups, indicating partial similarity between certain patients.
+Given the pronounced differentiation evident in the two-dimensional embedding and
+the compactness of the healthy cluster, subsequent analyzes focus on the two-dimensional
+layout, which offers a simpler and equally informative representation of the relationships
+between gait trials.
+3.3.4. Clustering
+To automate the detection of natural groupings in gait data, we applied density-based
+clustering using the DBSCAN algorithm on the DTW-derived graph.
+A systematic grid search was performed to explore the effects of two DBSCAN hyper-
+parameters: the neighborhood radius (ε) and the minimum number of points per cluster
+(MinPts). Each configuration was evaluated using NMI and SCR, excluding trivial solutions
+that consist of a single cluster with no separation. Figure 7 shows the resulting performance
+grid and reveals a clear inverse relationship between NMI and SCR: parameter settings
+that maximize agreement with the ground truth do not necessarily yield the most compact
+and well-separated clusters.
+This inverse trend suggests that clusters with higher internal cohesion and separation
+may not recognize all individuals from the same clinical group, particularly in heteroge-
+neous PD samples. Based on the grid search, we identified configurations that maximized
+NMI and SCR separately, serving as representatives for further cluster inspection.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 13 ---
+Appl. Sci. 2026, 16, 3976 13 of 24
+(a)
+MinPts
+3 4 5 6
+"
+0.15
+0.17
+0.19
+0.21
+0.23
+0.25
+0.27
+0.29
+0.31
+0.33
+0.35
+0.37
+0.39
+0.41
+0.43
+0.45
+0.47
+0.49
+0.51
+0.53
+0.55
+0.57
+0.59
+0.61
+0.63
+0.65
+0.67
+0.69
+0.71
+0.73
+0.75
+0.77
+0.79
+0.81
+0.83
+0.85
+0.87
+0.89
+0.91
+0.93
+0.95
+0.97
+0.99
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+(b)
+MinPts
+3 4 5 6
+"
+0.15
+0.17
+0.19
+0.21
+0.23
+0.25
+0.27
+0.29
+0.31
+0.33
+0.35
+0.37
+0.39
+0.41
+0.43
+0.45
+0.47
+0.49
+0.51
+0.53
+0.55
+0.57
+0.59
+0.61
+0.63
+0.65
+0.67
+0.69
+0.71
+0.73
+0.75
+0.77
+0.79
+0.81
+0.83
+0.85
+0.87
+0.89
+0.91
+0.93
+0.95
+0.97
+0.99
+5.5
+6
+6.5
+7
+7.5
+8
+8.5
+9
+9.5
+Figure 7. DBSCAN hyperparameter grid search results: (a) NMI and (b) SCR.
+Figure 8 shows the DBSCAN clustering result for the configuration achieving the
+highest NMI (ε = 0.18, MinPts = 5). The clusters correspond well to the clinical labels,
+featuring a compact healthy cluster and correctly identifying outliers with atypical gait
+patterns of PD. Misclassifications occur mainly among patients with PD, reflecting the
+heterogeneity of pathological gait, and a few healthy controls were also misclassified.
+F1
+F 2
+(a)
+Healthy
+PD
+F1
+F 2
+(b)
+Cluster 1
+Outliers
+Figure 8. DBSCAN clustering outcome using hyperparameters that maximize NMI: (a) ground-truth
+labels, (b) identified clusters.
+Figure 9 shows the clusters obtained from the configuration that maximized SCR
+(ε = 1,MinPts = 3). Although clusters exhibit greater internal cohesion and separation,
+several subjects in PD groups are not fully recognized, reflecting the trade-off between
+cluster compactness and agreement with clinical labels.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 14 ---
+Appl. Sci. 2026, 16, 3976 14 of 24
+F1
+F 2
+(a)
+Healthy
+PD
+F1
+F 2
+(b)
+Cluster 1
+Outliers
+Figure 9. DBSCAN clustering outcome using hyperparameters that maximize SCR: (a) ground-truth
+labels, (b) identified clusters. Compactness and separation are improved, but some clinical labels are
+not fully captured.
+To improve cluster robustness and mitigate hyperparameter sensitivity, we applied a
+consensus-based ensemble approach. DBSCAN was repeatedly applied across the hyper-
+parameter grid and a co-association matrix was computed, indicating the fraction of runs
+in which each pair of subjects was assigned to the same cluster. Hierarchical agglomerative
+clustering was then applied to the co-association matrix to derive the final consensus
+clustering. Figure 10 shows the resulting co-association matrix.
+Gait Trials
+Gait Trials
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+Figure 10. Co-association matrix obtained from repeated DBSCAN runs. High co-association values
+indicate consistently clustered healthy controls, whereas the more heterogeneous gait patterns of PD
+participants result in lower and more variable co-association values.
+The consensus clustering effectively stabilized cluster assignments, particularly for
+healthy controls, while isolating pathological gait patterns as outliers. Figure 11 shows the
+resulting clusters and outliers.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 15 ---
+Appl. Sci. 2026, 16, 3976 15 of 24
+F1
+F 2
+(a)
+Healthy
+PD
+F1
+F 2
+(b)
+Cluster 1
+Outliers
+Figure 11. DBSCAN consensus clustering outcome: (a) ground-truth labels, (b) identified clusters. A
+balanced solution, where the most of healthy controls form a coherent cluster, while PD subjects are
+predominantly detected as outliers.
+3.4. Performance Evaluation of the ICR-LLS Methodology
+To assess the performance of the proposed ICR-LLS methodology, a benchmarking
+strategy was adopted. Since most existing studies on Parkinsonian gait analysis rely on
+supervised classification models trained on labeled data, a direct comparison with the
+proposed unsupervised framework is not straightforward. To address this, two complemen-
+tary evaluation approaches were considered. First, the clustering results were evaluated
+using standard classification metrics, allowing comparison with supervised methods re-
+ported in the literature. Second, to provide a more direct and methodologically consistent
+comparison, a baseline analysis was conducted on the same dataset using conventional
+gait features within the same clustering framework.
+3.4.1. Benchmark Against Supervised Learning Methods Reported in the Literature
+For the purpose of comparison with supervised learning approaches, clustering out-
+comes are mapped to clinical labels and evaluated using standard classification metrics.
+Within this framework, pathological subjects are treated as anomalies (outliers), while
+healthy controls define the reference group (normal). Consequently, true positives corre-
+spond to pathological subjects correctly identified as outliers, true negatives to healthy
+controls correctly assigned to the main cluster, false positives to healthy controls incorrectly
+labeled as pathological, and false negatives to pathological subjects that remain within the
+healthy cluster.
+Confusion matrices are computed for the three analyzed configurations: (i) maximum
+NMI, (ii) maximum SCR, and (iii) consensus solution. Figure 12 presents the correspond-
+ing results.
+(a)
+28 2
+2 8
+Predicted Class
+Healthy PD
+True Class
+Healthy PD
+5
+10
+15
+20
+25
+(b)
+30 0
+8 2
+Predicted Class
+Healthy PD
+True Class
+Healthy PD
+0
+5
+10
+15
+20
+25
+30
+(c)
+29 1
+3 7
+Predicted Class
+Healthy PD
+True Class
+Healthy PD
+5
+10
+15
+20
+25
+Figure 12. Confusion matrices comparing clustering outcomes with ground-truth labels for healthy
+and PD subjects. (a) Max NMI. (b) Max SCR. (c) Consensus approach.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 16 ---
+Appl. Sci. 2026, 16, 3976 16 of 24
+Table 2 summarizes the quantitative performance of the three configurations.
+Table 2. Clustering performance metrics for the evaluated configurations.
+Case NMI SCR Sn (%) Sp (%) Acc (%) Precision (%) F1-Score
+Max NMI 0.451 6.229 80.00 93.33 90.00 80.00 80.00
+Max SCR 0.220 9.654 20.00 100.00 80.00 100.00 33.33
+Consensus 0.449 6.754 70.00 96.70 90.00 87.50 77.80
+Maximizing NMI yields the highest agreement with clinical labels, resulting in bal-
+anced performance with high accuracy (90%) and sensitivity (80%) and good specificity
+(93.3%). However, this configuration does not explicitly prioritize separation between the
+main cluster and outliers.
+In contrast, maximization of SCR promotes highly compact and well-separated struc-
+tures, but at the expense of detection performance, as reflected by very low sensitivity
+(20%) and reduced accuracy (80%). Although specificity and precision reach their maxi-
+mum values (100% and 100%, respectively), the low F1-score (33.3%) indicates a strong
+bias towards correctly identifying the majority (healthy) class while failing to detect most
+pathological cases.
+The consensus configuration provides the best trade-off between both criteria. It
+achieves strong agreement with clinical labels (NMI = 0.449) while preserving structural
+organization (SCR = 6.754). This results in robust overall performance, with high accu-
+racy (90%), good sensitivity (70%), high specificity (96.7%) and the best balance between
+precision (87.5%) and F1-score (77.8%).
+Table 3 situates the performance of the proposed ICR-LLS methodology in the context
+of previous studies that addressed the classification of PD based on gait data.
+Table 3. Comparison of the ICR-LLS methodology results with previous studies on PD classification
+Authors Acc. (%) Sn. (%) Sp. (%) F1-Score (%) Gait-Related Data
+[30] 74.3 81.60 73.80 no provided GRFs
+[31] 91.20 91.71 89.92 no provided GRFs
+[32] 88.80 88.90 82.20 no provided GRFs
+[33] 98.00 99.10 95.70 98.00 GRFs
+[34] 99.00 97.80 99.50 no provided GRFs
+[35] 98.80 98.92 98.63 no provided GRFs
+[36] 98.61 no provided no provided no provided GRFs
+[37] 97.00 no provided no provided no provided GRFs
+[38] 97.22 98.22 95.86 no provided GRFs
+[39] 99.22 98.04 100 99.00 GRFs
+[40] 99.5 98.70 99.10 99.00 GRFs
+[41] 86.40 96.30 96.30 no provided 3D kinematics
+[42] 98.10 no provided no provided no provided 3D kinematics
+[43] 93.75 no provided no provided no provided 3D kinematics
+[44] 94.89 90.72 100 70.00 3D kinematics
+[45] 95.40 86.74 95.52 89.00 3D kinematics
+[46] 82.70 83.80 82.10 no provided 3D kinematics
+ICR-LLS methodology 90.00 70.00 96.70 77.80 ICR trajectories
+Compared to previous studies, higher performance values are generally reported, par-
+ticularly in terms of accuracy and sensitivity, with many methods exceeding 95%. However,
+these approaches are predominantly based on supervised learning and rely on ground
+reaction forces or three dimensional kinematic data, whereas the proposed methodology
+operates using a reduced set of kinematic inputs within an unsupervised framework.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 17 ---
+Appl. Sci. 2026, 16, 3976 17 of 24
+3.4.2. Benchmark Against Conventional Gait Feature Representations
+For a fair comparison, the same dataset was analyzed using a conventional gait repre-
+sentation based on joint kinematics. Instead of ICR trajectories, knee joint flexion/extension
+angles from both lower extremities were considered, as they provide a representative
+description of the gait dynamics of the sagittal-plane, analogous to the ICR representation
+based on the shank.
+From these signals, conventional spatiotemporal and kinematic features were ex-
+tracted, including maximum knee flexion, range of motion (ROM), cadence of both lower
+limbs. Subsequently, the same clustering framework was applied using DBSCAN. As in
+the proposed methodology, a grid search was performed on the DBSCAN parameters, eval-
+uating both NMI and SCR to identify optimal configurations, and a consensus strategy was
+employed to obtain a robust solution. The grid search identified ε = 3.4 with MinPts = 3 as
+the optimal configuration to maximize NMI, while the optimal configuration of SCR was
+obtained at ε = 0.85 with MinPts = 3.
+Figure 13 shows the clustering structure obtained in the PCA-reduced feature space.
+Although a degree of class separability can be observed between healthy controls and PD
+subjects, the resulting configuration exhibits a markedly weaker discriminative structure
+compared to the proposed representation. Notably, a non-negligible number of PD subjects
+are embedded within the region primarily associated with the healthy cluster, which signif-
+icantly complicates their identification as outliers. Furthermore, the cluster corresponding
+to healthy controls does not display a well-defined compact geometry; instead, it suggests
+the presence of intra-cluster heterogeneity, as evidenced by the emergence of two partially
+separable subregions within the same cluster.
+PCA1 (56.9%)
+PCA2 (23.2%)
+(a)
+Healthy
+PD
+PCA1 (56.9%)
+PCA2 (23.2%)
+(b)
+Cluster 1
+Outliers
+Figure 13. DBSCAN consensus clustering outcome using conventional gait-based features: (a) ground
+truth labels, (b) identified clusters. Healthy controls form a compact cluster, while PD subjects are
+predominantly detected as outliers.
+Finally, Table 4 summarizes the quantitative results of the benchmark between the
+proposed ICR-LLS methodology and the conventional baseline based on gait features
+in all the evaluated configurations. Since both methods are unsupervised, a direct com-
+parison using clustering validity metrics is possible. In addition, classification-oriented
+performance measures have been reported to provide a more comprehensive evaluation
+of the ability of each approach to separate healthy and pathological gait patterns in an
+anomaly-detection setting.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 18 ---
+Appl. Sci. 2026, 16, 3976 18 of 24
+Table 4. Performance comparison between ICR-LLS methodology and the conventional gait feature-
+based approach.
+Metric
+ICR-LLS Methodology Conventional Gait Feature-Based Approach
+Max NMI Max SCR Consensus Max NMI Max SCR Consensus
+NMI 0.451 0.220 0.449 0.367 0.004 0.101
+SCR 6.229 9.654 6.754 3.363 9.100 3.014
+Acc. (%) 90.00 80.00 90.00 85.00 52.70 77.50
+Sp. (%) 93.33 100.00 96.70 100.00 6.70 90.00
+Sn. (%) 80.00 20.00 70.00 40.00 90.00 40.00
+F1-score (%) 80.00 33.33 77.80 57.10 38.30 47.10
+The baseline based on conventional gait features consistently underperforms the pro-
+posed ICR-LLS approach in all configurations. The Max NMI solution achieves moderate
+agreement with clinical labels (NMI = 0.367) and high specificity (100.0%), but limited
+sensitivity (40.0%), indicating a bias toward correctly identifying healthy controls while not
+detecting a substantial portion of pathological cases. In contrast, the Max SCR configuration
+prioritizes structural separation (SCR = 9.100) at the expense of clinical relevance, resulting
+in very low specificity (6.7%) and accuracy (27.5%), as well as a reduced F1-score (38.3%),
+suggesting an unstable and clinically non-interpretable clustering solution. The consensus
+configuration provides a more balanced behavior, improving overall robustness (77.5%)
+and specificity (90.0%), but still exhibits limited sensitivity (40.0%) and a lower F1-score
+(47.1%) compared to the ICR-LLS method.
+These results indicate that, under the same clustering framework, the baseline using
+conventional gait features yields weaker separability and reduced robustness, while the
+proposed ICR-LLS representation consistently provides a more balanced detection of
+pathological patterns and a more stable healthy cluster structure.
+4. Discussion
+The results of this study demonstrate that the ICR-LLS methodology effectively cap-
+tures clinically relevant differences in gait patterns between individuals with PD and
+healthy controls, providing both quantitative and qualitative insight into locomotor alter-
+ations. Analysis of ICR trajectories (Figure 4) revealed that PD subjects exhibit increased
+vertical displacement amplitudes, asymmetrical trajectories and, in some cases, asymptotic
+trajectory shapes, as well as irregular phase timing. The presence of asymptotic behavior is
+particularly meaningful from a biomechanical perspective, as it arises when the segment
+undergoes predominantly translational motion with a reduced rotational component. This
+condition is consistent with increased joint stiffness, particularly in the knee, where limited
+flexion and extension reduce rotational excursion and cause the shank to behave more as a
+rigid segment. These features are consistent with well-documented motor impairments
+in PD, including rigidity, bradykinesia, and impaired intersegmental coordination. Since
+the ICR reflects both rotational and translational components of segment motion, these
+alterations indicate a change in coordinated lower-limb mechanics rather than isolated
+joint abnormalities.
+In contrast, healthy controls exhibit smoother, more periodic, and spatially consistent
+trajectories with lower intragroup variability, reflecting stable intersegmental coordination
+and efficient biomechanical control. This contrast highlights the ability of ICR trajectories
+to encode underlying biomechanical constraints and neuromuscular control strategies
+associated with both normal and pathological gait.
+These observations are further supported by the DTW-based dissimilarity matrix
+(Figure 5), where healthy controls consistently present low pairwise dissimilarities, indi-
+cating homogeneous gait patterns. In contrast, PD participants exhibit higher intra-group
+https://doi.org/10.3390/app16083976
+
+--- PAGE 19 ---
+Appl. Sci. 2026, 16, 3976 19 of 24
+variability, reflecting the heterogeneous manifestation of the disease. In particular, some
+individuals show gait patterns close to normality, while others show pronounced devia-
+tions, suggesting that PD-related gait impairment exists along a continuum rather than as a
+strictly binary condition.
+Theself-organizedlow-dimensionalnetworklayoutprovidesanintuitivevisualization
+of these differences (Figure 6). Healthy controls form a compact cluster, reflecting highly
+uniform gait patterns, while PD subjects are more dispersed, forming small subgroups or
+appearing as outliers. This dispersion highlights the ability of ICR-LLS to detect gait devia-
+tions and to identify subpopulations of PD patients whose gait remains partially preserved.
+Such granularity is difficult to achieve with conventional binary classification approaches
+and supports the use of unsupervised representations for exploratory gait analysis.
+Clustering analyzes using DBSCAN highlight an inherent trade-off between intrinsic
+cluster structure and external agreement with clinical labels. From a methodological perspec-
+tive, optimizing for NMI favors solutions that align with known diagnostic categories, which
+in this controlled setting results in a dominant healthy cluster and subjects with PD primarily
+identified as outliers. However, in unsupervised clinical scenarios, where ground-truth labels
+areunavailable, thevalidityoftheclustermustbebasedoninternalstructure-basedcriteria. In
+this context, metrics such as the SCR provide a more appropriate assessment of cluster quality,
+as they quantify cohesion and separation independently of clinical annotations. Nevertheless,
+maximizing SCR alone may bias the solution toward globally compact structures, potentially
+reducing sensitivity to subtle or early-stage gait abnormalities by favoring homogeneous
+cluster formation over the detection of rare deviations.
+This trade-off between structural compactness and sensitivity to atypical patterns mo-
+tivates the use of a consensus-based clustering strategy. By aggregating multiple DBSCAN
+solutions across parameter settings, the proposed approach mitigates hyperparameter sen-
+sitivity and stabilizes cluster assignments. Importantly, this ensemble formulation allows
+the method to maintain robustness in identifying consistent patterns of gait deviation while
+maintaining sensitivity to heterogeneous pathological manifestations, which is essential in
+unsupervised clinical analysis where disease boundaries are not explicitly defined.
+To contextualize these findings, Table 5 summarizes clinical scores (UPDRS-II, UPDRS-II
+walking subscore, UPDRS-III, UPDRS-III walking subscore and Hoehn & Yahr stage) for sub-
+jects with PD during OFF-state walking trials, along with their ICR-LLS classification results.
+Table 5. Clinical characteristics of subjects with medically diagnosed PD in the OFF medication state
+and corresponding classification outcomes obtained using the ICR-LLS methodology.
+Subject UPDRS-II UPDRS-II (Walking) UPDRS-III UPDRS-III (Walking) H&Y ICR-LLS Diagnosis
+31 13 2 27 2 3 Healthy
+32 11 3 16 2 2 PD
+33 6 2 15 1 3 Healthy
+34 7 1 28 2 3 PD
+35 4 0 23 0 2 PD
+36 10 2 6 1 2 PD
+37 5 1 24 1 2 PD
+38 8 2 22 1 2 PD
+39 4 1 26 2 2 Healthy
+40 4 1 26 0 2 PD
+Analysis of Table 5 indicates that inconsistencies between clinical diagnosis and ICR-
+LLS assignments are predominantly observed in participants with mild gait impairments.
+Specifically, subjects 31, 33, and 39 were assigned to the healthy cluster despite a clinical
+diagnosis of PD. These individuals exhibit relatively low UPDRS-II and UPDRS-III walking
+https://doi.org/10.3390/app16083976
+
+--- PAGE 20 ---
+Appl. Sci. 2026, 16, 3976 20 of 24
+subscores (1–2), indicating subtle gait alterations. Their Hoehn & Yahr stages (2–3) cor-
+respond to mild-to-moderate disease severity, suggesting that their kinematic deviations
+during OFF-state walking were not sufficiently pronounced to be detected as pathological
+by the ICR-LLS framework. In contrast, subjects correctly classified as PD, including 32,
+34, 35, 36, 37, 38, and 40, showed more pronounced gait deviations that were effectively
+captured by the ICR-LLS methodology.
+To assess whether the structures identified from the ICR trajectories during gait exhibit
+statistically significant differences in clinical variables, we employed the Mann–Whitney
+U test, a non-parametric method suitable for comparing two independent groups when
+normality cannot be assumed. Although the ICR-LLS framework inherently produces
+a dominant cluster (corresponding to healthy controls) and a set of outliers (primarily
+associated with PD), for statistical analysis these subsets are interpreted as two distinct
+groups. This allows a review of whether the distributions of clinical variables differ
+significantly between the normative cluster and the anomalous population detected.
+The analysis did not reveal significant differences between the groups for age
+(p = 0.0558) and BMI (p = 0.1010), indicating that the separation is not driven by de-
+mographic factors. In contrast, statistically significant differences were observed for clinical
+measures associated with motor impairment in PD, including UPDRS-II (p < 0.001),
+UPDRS-III (p < 0.001), UPDRS-II walking (p = 0.0001), UPDRS-III walking (p = 0.0015)
+and Hoehn & Yahr stage (p < 0.001).
+These findings demonstrate that, although derived from an unsupervised anomaly
+detection framework, the partition induced by ICR-based clustering aligns with clinically
+significant differences in the severity of motor symptoms. In this sense, the combination
+of a dominant cluster and outliers can be interpreted as an implicit separation between
+normative and pathological gait patterns.
+Most previous studies (Table 3) report very high accuracy, sensitivity, and speci-
+ficity, often exceeding 95%, particularly those relying on ground reaction forces or three-
+dimensional kinematics. These results reflect the strong discriminative power of high-
+dimensional biomechanical features combined with supervised learning frameworks opti-
+mized for classification. By contrast, the ICR-LLS methodology adopts a fundamentally
+different approach. Rather than relying on GRFs or high-dimensional 3D kinematics, it
+analyzes two-dimensional shank ICR trajectories using unsupervised, data-driven methods.
+Despite reduced data dimensionality and the absence of supervised training, the method
+achieves high specificity (96.7%) and a competitive F1-score (77.8%), indicating a strong
+ability to correctly identify healthy controls while maintaining a balanced trade-off between
+precision and recall in detecting pathological gait patterns associated with PD.
+The moderate sensitivity (70%) reflects the intrinsic trade-off of the proposed anomaly-
+detection framework. In contrast to supervised classifiers that often maximize overall
+accuracy, ICR-LLS prioritizes the reliable identification of the normative (healthy) gait
+pattern, which results in fewer false positives but a higher number of false negatives.
+Analysis of misclassified participants reveals that these individuals exhibit only subtle
+gait deviations in clinical assessments, placing them near the boundary between normal
+and pathological locomotion. This suggests that the method is conservative in labeling
+pathological cases, focusing on clear deviations from typical gait behavior.
+A direct comparison with a conventional gait feature-based baseline further highlights
+the contribution of the proposed representation. By applying the same clustering frame-
+work (DBSCAN algorithm) to standard sagittal-plane features, the resulting clusters can be
+directly contrasted with those derived from ICR trajectories, allowing a rigorous assessment
+of their relative ability to discriminate between PD and healthy controls. As presented in
+Table 4, the conventional gait feature-based approach consistently underperformed the
+https://doi.org/10.3390/app16083976
+
+--- PAGE 21 ---
+Appl. Sci. 2026, 16, 3976 21 of 24
+ICR-LLS method, exhibiting weaker separability. This is also illustrated in Figure 13, where
+several gait trials from individuals with PD appear highly intermingled with the control
+group, making them difficult to separate using clustering methods.
+From a practical perspective, ICR-LLS offers important advantages in terms of applica-
+bility and interpretability. Unlike GRF-based methods that require force plates or 3D motion
+capture systems, the proposed framework relies on a limited number of sagittal-plane land-
+marks, allowing compatibility with simplified acquisition systems such as monocular
+video setups. This facilitates deployment in clinical and outpatient settings and supports
+longitudinal monitoring. Additionally, the self-organized network representation provides
+an intuitive visualization of gait variability, capturing the heterogeneity inherent in PD
+without imposing rigid class boundaries.
+Nevertheless, several limitations should be acknowledged. The exclusive focus on
+2D shank kinematics may not fully capture multi-planar or compensatory movements,
+potentially limiting sensitivity for certain gait phenotypes. In addition, current validation
+is restricted to a controlled scenario involving healthy controls and individuals with PD.
+Extending the framework to other neurological conditions, such as stroke or multiple
+sclerosis, introduces additional complexity, as these populations exhibit high intra-class
+variability and may not conform to a single-cluster-plus-outliers structure. Therefore,
+generalization to multi-pathology scenarios remains an open challenge and an important
+direction for future research.
+Future work will focus on integrating additional biomechanical features, extending
+the framework to larger and more heterogeneous datasets, and exploring longitudinal
+analyzes to support early detection and personalized disease monitoring.
+5. Conclusions
+This study introduced and evaluated a novel unsupervised learning framework, ICR-
+LLS, designed to detect pathological gait patterns using instantaneous center of rotation
+trajectories derived from minimal two-dimensional kinematic data. The central aim was to
+determine whether subtle and overt gait deviations could be captured without relying on
+high-dimensional signals such as ground reaction forces or full 3D motion capture. To this
+end, the proposed methodology integrates four sequential components: computation of
+shank ICR trajectories, pairwise comparison through DTW-based dissimilarity measures,
+embedding of inter-subject relationships into a self-organized low-dimensional space, and
+density-based clustering using DBSCAN, followed by quantitative evaluation.
+When applied to a publicly available dataset, the framework differentiated between
+Parkinsonian and healthy gait patterns, achieving an NMI of 0.449 and an SCR of 6.754,
+indicating a well-structured clustering organization. For benchmarking purposes, standard
+classification metrics were also calculated, yielding an accuracy of 90%, a sensitivity of 70%,
+and a specificity of 96.7%. Misclassifications were predominantly observed in individuals
+with mild motor symptoms, as reflected in lower UPDRS-II scores, suggesting that the
+method is sensitive to the gradation of gait alterations rather than to strict binary diagnostic
+categories. These results indicate that ICR trajectories capture biomechanical variability
+associated with PD, particularly in more pronounced cases, while also highlighting the
+challenges inherent in detecting subtle early-stage deviations.
+Beyond the specific application to PD, this work establishes a methodological founda-
+tion for investigating gait patterns through unsupervised analysis of compact kinematic
+descriptors. By combining interpretability, scalability, and modest acquisition requirements
+compatible with single-camera setups, the ICR-LLS framework may support future research
+aimed at objective gait characterization across neurological and musculoskeletal conditions.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 22 ---
+Appl. Sci. 2026, 16, 3976 22 of 24
+Nevertheless, further validation in larger, clinically heterogeneous cohorts is necessary
+before considering translational or clinical implementation.
+Author Contributions: Conceptualization, L.M.A. and M.S.; methodology, L.M.A.; software, L.M.A.;
+validation, L.M.A. and M.S.; formal analysis, L.M.A. and M.S.; investigation, M.S.; resources, L.M.A.
+and M.S.; data curation, L.M.A. and M.S.; writing—original draft preparation, L.M.A. and M.S.;
+writing—review and editing, L.M.A. and M.S.; visualization, L.M.A.; supervision, L.M.A. and M.S.;
+project administration, L.M.A. and M.S.; funding acquisition, L.M.A. All authors have read and
+agreed to the published version of the manuscript.
+Funding: This research project was partly supported by the “Excellence Initiative—Research Univer-
+sity” program for the AGH University of Krakow, and by the AGH University of Krakow as part of
+the statutory research project No. 16.16.120.773.
+Data Availability Statement: The data presented in this study are openly available in A public
+data set of walking full-body kinematics and kinetics in individuals with Parkinson’s disease at
+10.3389/fnins.2023.992585, and A full-body motion capture gait dataset of 138 able-bodied adults
+across the life span and 50 stroke survivors that can be found: https://www.nature.com/articles/s4
+1597-023-02767-y, accessed on 16 April 2026, reference number [28,29].
+Conflicts of Interest: The authors declare no conflicts of interest.
+References
+1. Marsden, C.D. Parkinson’s disease. J. Neurol. Neurosurg. Psychiatry 1994, 57, 672–681. [CrossRef]
+2. Hoehn, M.M.; Yahr, M.D. Parkinsonism: Onset, progression and mortality. Neurology 1967, 17, 427–427. [CrossRef]
+3. Movement Disorder Society Task Force on Rating Scales for Parkinson’s Disease. The Unified Parkinson’s Disease Rating Scale
+(UPDRS): Status and recommendations. Mov. Disord. 2003, 18, 738–750. [CrossRef]
+4. Guo, Y.; Yang, J.; Liu, Y.; Chen, X.; Yang, G.Z. Detection and assessment of Parkinson’s disease based on gait analysis: A survey.
+Front. Aging Neurosci. 2022, 14, 916971. [CrossRef]
+5. Allen, N.E.; Schwarzel, A.K.; Canning, C.G. Recurrent Falls in Parkinson’s Disease: A Systematic Review. Park. Dis. 2013,
+2013, 906274. [CrossRef]
+6. Kim, S.M.; Kim, D.H.; Yang, Y.; Ha, S.W.; Han, J.H. Gait Patterns in Parkinson’s Disease with or without Cognitive Impairment.
+Dement. Neurocogn. Disord. 2018, 17, 57. [CrossRef]
+7. Kim, W.; Kim, Y. Abnormal Gait Recognition based on Integrated Gait Features in Machine Learning. In Proceedings of the 2021
+IEEE 45th Annual Computers, Software, and Applications Conference (COMPSAC); IEEE: New York, NY, USA, 2021; pp. 1683–1688.
+[CrossRef]
+8. Holden, M.K.; Gill, K.M.; Magliozzi, M.R. Gait Assessment for Neurologically Impaired Patients. Phys. Ther. 1986, 66, 1530–1539.
+[CrossRef]
+9. Lee, S.; Shin, S. Gait Signal Analysis with Similarity Measure. Sci. World J. 2014, 2014, 136018. [CrossRef]
+10. Ramakrishnan, T.; Lahiff, C.A.; Reed, K.B. Comparing Gait with Multiple Physical Asymmetries Using Consolidated Metrics.
+Front. Neurorobot. 2018, 12, 2. [CrossRef]
+11. Wang, Y.; Zou, Q.; Tang, Y.; Wang, Q.; Ding, J.; Wang, X.; Shi, C.J. SAIL: A Deep-Learning-Based System for Automatic Gait
+Assessment from TUG Videos. IEEE Trans. Hum.-Mach. Syst. 2022, 52, 110–122. [CrossRef]
+12. Khokhlova, M.; Migniot, C.; Dipanda, A. Kinematic Covariance Based Abnormal Gait Detection. In Proceedings of the 14th
+International Conference on Signal-Image Technology & Internet-Based Systems (SITIS); IEEE: New York, NY, USA, 2018; pp. 691–696.
+[CrossRef]
+13. Kidziński, Ł.; Yang, B.; Hicks, J.L.; Rajagopal, A.; Delp, S.L.; Schwartz, M.H. Deep neural networks enable quantitative movement
+analysis using single-camera videos. Nat. Commun. 2020, 11, 4054. [CrossRef]
+14. Khera, P.; Kumar, N. Role of machine learning in gait analysis: A review. J. Med. Eng. Technol. 2020, 44, 441–467. [CrossRef]
+15. Bayat, A.; Bayat, A.H.; Ghasemi, A.S. Classifying Human Walking Patterns using Accelerometer Data from Smartphone. Int. J.
+Comput. Sci. Mob. Comput. 2017, 612, 78–83.
+16. Cicirelli, G.; Impedovo, D.; Dentamaro, V.; Marani, R.; Pirlo, G.; D’Orazio, T.R. Human Gait Analysis in Neurodegenerative
+Diseases: A Review. IEEE J. Biomed. Health Inform. 2022, 26, 229–242. [CrossRef]
+17. Wang, L.; Sun, Y.; Li, Q.; Liu, T.; Yi, J. Two Shank-Mounted IMUs-Based Gait Analysis and Classification for Neurological Disease
+Patients. IEEE Robot. Autom. Lett. 2020, 5, 1970–1976. [CrossRef]
+https://doi.org/10.3390/app16083976
+
+--- PAGE 23 ---
+Appl. Sci. 2026, 16, 3976 23 of 24
+18. Chen, M.; Huang, B.; Xu, Y. Human Abnormal Gait Modeling via Hidden Markov Model. In Proceedings of the 2007 International
+Conference on Information Acquisition (ICIA), Jeju, Republic of Korea, 8–11 July 2007; pp. 517–522. [CrossRef]
+19. Kim, H.; Kim, Y.H.; Kim, S.J.; Choi, M.T. Gait Clustering Analysis in Patients after Stroke using Gait Kinematics Data. In
+Proceedings of the 2021 21st International Conference on Control, Automation and Systems (ICCAS), Jeju, Republic of Korea,
+12–15 October 2021; pp. 1405–1409. [CrossRef]
+20. Molina Arias, L.; Smoleń, M. Comparative Evaluation of ECG and Motion Signals in the Context of Activity Recognition and
+Human Identification. Sensors 2025, 25, 6040. [CrossRef]
+21. Chantraine, F.; Schreiber, C.; Pereira, J.A.C.; Kaps, J.; Dierick, F. Classification of Stiff-Knee Gait Kinematic Severity after Stroke
+Using Retrospective k-Means Clustering Algorithm. J. Clin. Med. 2022, 11, 6270. [CrossRef]
+22. Mulroy, S.; Gronley, J.; Weiss, W.; Newsam, C.; Perry, J. Use of cluster analysis for gait pattern classification of patients in the early
+and late recovery phases following stroke. Gait Posture 2003, 18, 114–125. [CrossRef]
+23. Montgomery, S.C.; Moorehead, J.D.; Davidson, J.S.; Lowe, D.; Dangerfield, P.H. A new technique for measuring the rotational
+axis pathway of a moving knee. Knee 1998, 5, 289–295. [CrossRef]
+24. Aiyangar, A.; Zheng, L.; Anderst, W.; Zhang, X. Instantaneous centers of rotation for lumbar segmental extension in vivo. J.
+Biomech. 2017, 52, 113–121. [CrossRef]
+25. Iwaniec, M.; Molina Arias, L.; Iwaniec, J. Characterization of Human Gait by Means of the Trajectory of the Instantaneous Centers
+of Rotation of Lower Limb Segments in the Sagittal Plane. IEEE Access 2025, 13, 27438–27448. [CrossRef]
+26. Meyers, A.; Buqammaz, M.; Yang, H. Cross-recurrence analysis for pattern matching of multidimensional physiological signals.
+Chaos 2020, 30, 123125. [CrossRef]
+27. Gao, C.X.; Dwyer, D.; Zhu, Y.; Smith, C.L.; Du, L.; Filia, K.M.; Bayer, J.; Menssink, J.M.; Wang, T.; Bergmeir, C.; et al. An overview
+of clustering methods with guidelines for application in mental health research. Psychiatry Res. 2023, 327, 115265. [CrossRef]
+28. Shida, T.K.F.; Costa, T.M.; de Oliveira, C.E.N.; de Castro Treza, R.; Hondo, S.M.; Los Angeles, E.; Bernardo, C.; dos Santos de
+Oliveira, L.; de Jesus Carvalho, M.; Coelho, D.B. A public data set of walking full-body kinematics and kinetics in individuals
+with Parkinson’s disease. Front. Neurosci. 2023, 17, 992585. [CrossRef]
+29. Van Criekinge, T.; Saeys, W.; Truijen, S.; Vereeck, L.; Sloot, L.H.; Hallemans, A. A full-body motion capture gait dataset of 138
+able-bodied adults across the life span and 50 stroke survivors. Sci. Data 2023, 10, 852. [CrossRef]
+30. Lee, S.H.; Lim, J.S. Parkinson’s disease classification using gait characteristics and wavelet-based feature extraction. Expert Syst.
+Appl. 2012, 39, 7338–7344. [CrossRef]
+31. Daliri, M.R. Chi-square distance kernel of the gaits for the diagnosis of Parkinson’s disease. Biomed. Signal Process. Control 2013,
+8, 66–70. [CrossRef]
+32. Ertuğrul, Ö.F.; Kaya, Y.; Tekin, R.; Almalı, M.N. Detection of Parkinson’s disease by Shifted One Dimensional Local Binary
+Patterns from gait. Expert Syst. Appl. 2016, 56, 156–163. [CrossRef]
+33. Açıcı, K.; Erdaş, Ç.B.; Aşuroğlu, T.; Toprak, M.K.; Erdem, H.; Oğul, H. A Random Forest Method to Detect Parkinson’s Disease
+via Gait Analysis. In Engineering Applications of Neural Networks; Springer International Publishing: Berlin/Heidelberg, Germany,
+2017; Volume 744, pp. 609–619. [CrossRef]
+34. Aşuroğlu, T.; Açıcı, K.; Erdaş, Ç.B.; Toprak, M.K.; Erdem, H.; Oğul, H. Parkinson’s disease monitoring from gait analysis via
+foot-worn sensors. Biocybern. Biomed. Eng. 2018, 38, 760–772. [CrossRef]
+35. Zeng, W.; Liu, F.; Wang, Q.; Wang, Y.; Ma, L.; Zhang, Y. Parkinson’s disease classification using gait analysis via deterministic
+learning. Neurosci. Lett. 2016, 633, 268–278. [CrossRef]
+36. Zhao, A.; Qi, L.; Li, J.; Dong, J.; Yu, H. A hybrid spatio-temporal model for detection and severity rating of Parkinson’s disease
+from gait data. Neurocomputing 2018, 315, 1–8. [CrossRef]
+37. Noella, R.S.N.; Gupta, D.; Priyadarshini, J. Diagnosis of Parkinson’s disease using Gait Dynamics and Images. Procedia Comput.
+Sci. 2019, 165, 428–434. [CrossRef]
+38. Ghaderyan, P.; Fathi, G. Inter-limb time-varying singular value: A new gait feature for Parkinson’s disease detection and stage
+classification. Measurement 2021, 177, 109249. [CrossRef]
+39. Liu, X.; Li, W.; Liu, Z.; Du, F.; Zou, Q. A dual-branch model for diagnosis of Parkinson’s disease based on the independent and
+joint features of the left and right gait. Appl. Intell. 2021, 51, 7221–7232. [CrossRef]
+40. Aşuroğlu, T.; Oğul, H. A deep learning approach for parkinson’s disease severity assessment. Health Technol. 2022, 12, 943–953.
+[CrossRef]
+41. Ricciardi, C.; Amboni, M.; Santis, C.D.; Improta, G.; Volpe, G.; Iuppariello, L.; Ricciardelli, G.; D’Addio, G.; Vitale, C.; Barone, P.;
+et al. Using gait analysis’ parameters to classify Parkinsonism: A data mining approach. Comput. Methods Programs Biomed. 2019,
+180, 105033. [CrossRef]
+42. Park, H.; Shin, S.; Youm, C.; Cheon, S.M.; Lee, M.; Noh, B. Classification of Parkinson’s disease with freezing of gait based on 360°
+turning analysis using 36 kinematic features. J. Neuroeng. Rehabil. 2021, 18, 177. [CrossRef]
+https://doi.org/10.3390/app16083976
+
+--- PAGE 24 ---
+Appl. Sci. 2026, 16, 3976 24 of 24
+43. Ajay, J.; Song, C.; Wang, A.; Langan, J.; Li, Z.; Xu, W. A pervasive and sensor-free Deep Learning system for Parkinsonian gait
+analysis. In Proceedings of the 2018 IEEE EMBS International Conference on Biomedical & Health Informatics (BHI); IEEE: New York,
+NY, USA, 2018; pp. 108–111. [CrossRef]
+44. Guayacán, L.C.; Martínez, F. Visualising and quantifying relevant parkinsonian gait patterns using 3D convolutional network. J.
+Biomed. Inform. 2021, 123, 103935. [CrossRef] [PubMed]
+45. Sun, H.; Ye, Q.; Xia, Y. Predicting freezing of gait in patients with Parkinson’s disease by combination of Manually-Selected and
+deep learning features. Biomed. Signal Process. Control 2024, 88, 105639. [CrossRef]
+46. Zhang, Y.; Yan, W.; Yao, Y.; Ahmed, J.B.; Tan, Y.; Gu, D. Prediction of Freezing of Gait in Patients With Parkinson’s Disease by
+Identifying Impaired Gait Patterns. IEEE Trans. Neural Syst. Rehabil. Eng. 2020, 28, 591–600. [CrossRef]
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+https://doi.org/10.3390/app16083976
+
+--- PAGE 25 ---

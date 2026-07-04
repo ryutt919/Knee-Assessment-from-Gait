@@ -1,0 +1,1092 @@
+
+--- PAGE 1 ---
+Alexander Gustavsson
+Camille Neeter
+Pia Thomeé
+Karin Grävare Silbernagel
+Jesper Augustsson
+Roland Thomeé
+Jon Karlsson
+A test battery for evaluating hop performance
+in patients with an ACL injury and patients
+who have undergone ACL reconstruction
+Received: 14 February 2005
+Accepted: 9 August 2005
+Published online: 9 March 2006
+ Springer-Verlag 2006
+Abstract The purpose of this study
+was to develop a test battery of hop
+tests with high ability to discriminate
+(i.e. high test–retest reliability, sen-
+sitivity, speciﬁcity and accuracy)
+between the hop performance of the
+injured and the uninjured side in
+patients with an ACL injury and in
+patients who have undergone ACL
+reconstruction. Five hop tests were
+analysed: three maximum single hop
+tests and two hop tests while devel-
+oping fatigue. Fifteen healthy sub-
+jects performed the ﬁve hop tests on
+three separate occasions in a test–
+retest design. Thirty patients, mean
+11 months after an ACL injury and
+35 patients, mean 6 months after
+ACL reconstruction were tested.
+ICC values ranged from 0.85 to 0.97
+for the ﬁve hop tests, indicating that
+all the tests had high test–retest
+reliability. Sixty-seven percent to
+100% of the healthy subjects had
+normal symmetry (i.e. <10% side-
+to-side diﬀerence) in the ﬁve hop
+tests. Abnormal symmetry in the ﬁve
+hop tests ranged from 43 to 77% for
+patients with an ACL injury and
+from 51 to 86% for patients who
+had undergone ACL reconstruction
+respectively. The three tests with the
+highest ability to discriminate hop
+performance were chosen for the test
+battery; they were the vertical jump,
+the hop for distance and the side
+hop. The test battery revealed a high
+level of sensitivity and accuracy in
+patients with an ACL injury (87 and
+84%) and in patients who had
+undergone ACL reconstruction (91
+and 88%), when at least one of the
+three tests was classiﬁed as abnor-
+mal. To summarise, the test battery
+consisting of both maximum single
+hop performances: the vertical jump
+and the hop for distance and hop
+performance while developing fati-
+gue: the side hop, produced high
+test–retest reliability, sensitivity and
+accuracy. Further, the test battery
+produced higher values compared
+with any of the three hop tests indi-
+vidually revealing that only one out
+of ten patients had restored hop
+performance 11 months after an
+ACL injury and 6 months after ACL
+reconstruction. It is concluded that
+this test battery showed a high abil-
+ity to discriminate between the hop
+performance of the injured and the
+uninjured side both in patients with
+an ACL injury and in patients who
+have undergone ACL reconstruc-
+tion.
+Keywords Anterior cruciate
+ligament Æ Knee Æ Rehabilitation Æ
+Hop test
+DOI 10.1007/s00167-006-0045-6
+Knee Surg Sports Traumatol Arthrosc
+(2006) 14: 778–788 SPORTS MEDICINE
+A. Gustavsson Æ C. Neeter
+P. Thomeé Æ K. Grävare Silbernagel
+J. Augustsson Æ R. Thomeé Æ J. Karlsson
+Department of Orthopaedics,
+Sahlgrenska University Hospital,
+Göteborg University, Göteborg, Sweden
+A. Gustavsson Æ C. Neeter
+P. Thomeé Æ K. Grävare Silbernagel
+J. Augustsson Æ R. Thomeé
+Sportrehab – Physical Therapy and Sports
+Medicine Clinic, Göteborg, Sweden
+A. Gustavsson (&)
+Department of Orthopaedics, Lundberg
+Laboratory for Human Muscle Function
+and Movement Analysis, Sahlgrenska
+University Hospital, 413 45 Göteborg,
+Sweden
+E-mail:
+alexander.gustavsson@orthop.gu.se
+Tel.: +46-31-426891
+Fax: +46-31-416816
+
+--- PAGE 2 ---
+Introduction
+One diﬃcult challenge in the rehabilitation of anterior
+cruciate ligament (ACL) injury and reconstruction is to
+determine when it is safe to return to strenuous physical
+activities. Single-leg hop tests are commonly used to
+evaluate functional performance after an ACL injury
+[1–7] or reconstruction [8–19]. To some degree, hop tests
+have been able to discriminate between the hop perfor-
+mance of the injured and uninjured side in patients with
+an ACL injury and between controls and patients [1, 2,
+4, 7, 10]. There is also some evidence that single-leg hop
+tests are important when trying to predict whether pa-
+tients will have future diﬃculty in terms of recurrent
+knee instability after an ACL injury [3].
+The ratio between the involved and uninvolved leg
+has been the most frequently reported criterion for
+determining normal or abnormal hop test scores [1–6,
+8–10, 13, 15, 17–21]. It has been suggested that the
+normal ratio in healthy subjects is greater than or equal
+to 85% [1, 21] or 90% [10, 20].
+Several hop tests are described in the literature,
+including various single-leg hop tests for distance, time
+[1–6, 8–11, 13–21] and height [1, 13, 15, 20, 21]. The
+evaluation of functional outcome after an ACL injury
+is often limited to only one test, the single-leg hop for
+distance [9, 14, 17, 18]. However, the reported sensi-
+tivity for detecting functional limitations associated
+with ACL deﬁciency with the single-leg hop for dis-
+tance test is relatively low, ranging from 38 to 52%
+[4, 5, 7]. Noyes et al. [5] combined two horizontal hop
+tests, a single-leg hop for distance and a timed hop in
+order to increase the sensitivity. Itoh et al. [4] argued
+that hop tests should involve more twisting and cutting
+movements and evaluated the ﬁgure-of-eight hop test,
+the up–down hop test and the side hop test. When
+these three tests and the single-leg hop for distance test
+were combined in a test battery, a sensitivity of 82%
+was obtained. Sports injuries often tend to occur at the
+end of a sporting event, when a participant is fatigued
+[22–24]. None of the tests recommended by either
+Noyes et al. [5] or Itoh et al. [4] is, however, per-
+formed under fatigued conditions. Augustsson et al. [8]
+reported an improved sensitivity level when testing hop
+performance under fatigued conditions. All patients in
+the study by Augustsson et al. [8] were classiﬁed,
+11 months after ACL reconstruction, as having normal
+hop capacity when performing a single leg hop for
+distance non-fatigued. After a fatiguing quadriceps
+muscle exercise only one-third of the patients were
+classiﬁed as having normal hop performance.
+The purpose of this study was to develop a test battery
+of hop tests with a high ability to discriminate (i.e. high
+test–retest reliability, sensitivity, speciﬁcity and accuracy)
+between the hop performance of the injured and the
+uninjured side in patients with an ACL injury and in
+patients who have undergone ACL reconstruction.
+We hypothesise that a test battery evaluating diﬀerent
+hop qualities, i.e. maximum single hop performance, as
+well as hop performance while developing fatigue, will
+increase the opportunity to detect discrepancies in hop
+performance (i.e. increase the test sensitivity) compared
+with using only a single hop test.
+Materials and methods
+Subjects
+Three groups of subjects participated in this study,
+healthy individuals, patients with an ACL injury and
+patients who had undergone ACL reconstruction.
+The patients physical activity levels prior to their
+ACL injury and at the test occasion were documented
+using the Tegner score [25]. The Tegner score is an
+activity grading scale, where activities of daily living,
+recreation, competitive sports and work are graded
+numerically from 1 to 10. One represents the least
+strenuous knee activity and ten is hard strenuous knee
+activity such as rugby and international soccer. The
+score was modiﬁed in the year 2000 but this version has
+not been published. The modiﬁed version was used in
+the present study with the permission of the authors. To
+complement the Tegner score with the subjects’ intensity
+and frequency in participation in physical activity a four
+grade physical activity scale was constructed, using a
+validated score for elderly people [26] as a model. After
+discussions in an expert group consisting of experienced
+physical therapists and orthopaedic surgeons good face
+validity of the new physical activity scale was assured.
+On the physical activity scale the subjects made their
+own judgment on how vigorously and frequent they
+participated in physical activity at the present time as
+well as prior to their knee injury. The four grades in this
+physical activity scale were:
+1. Hardly any physical activity at all.
+2. Light physical activity a few hours a week.
+3. Somewhat strenuous physical activity 2–3 h a week.
+4. Hard strenuous physical activity on a regular basis.
+A convenience sample of nine male and six female
+healthy subjects were recruited. The subjects had no
+history of back, hip, knee or ankle dysfunction and were
+tested on three separate occasions in a test–retest design.
+Thirty patients, 18 males and 12 females, with an
+ACL injury were tested. An interval of 4–44 months
+elapsed between the index knee injury and the test
+occasion. The inclusion criteria consisted of a positive
+anterior drawer and Lachman’s test, performed by
+779
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 3 ---
+experienced orthopaedic surgeons and veriﬁed by the
+patient’s physiotherapist, history of knee injury and
+subjective giving way, no acute pain or swelling and no
+prior surgical procedure in either leg.
+Thirty-ﬁve patients, 25 males and 10 females, who
+had undergone ACL reconstruction, were tested. The
+patients were included in this study if they met the
+following criteria, no acute pain or swelling and no
+prior surgical procedure in either leg. The operated
+patients were tested 6 months after ACL reconstruc-
+tion. Descriptive data for all subjects are presented in
+Table 1.
+All patients in this study were recruited from the
+same physiotherapy clinic and underwent supervised
+physiotherapy according to a criterion based protocol.
+The patients trained two to three sessions per week
+(initially combined with a home based program). Wet-
+vest training and functional group training were oﬀered
+as additional sessions. Full immediate weight bearing
+was allowed post operatively. Early range of motion
+exercises was encouraged. Both closed and open kinetic
+chain exercises were used to restore muscle strength of
+lower extremity muscles. Also neuromuscular training
+(balance, proprioception and plyometric exercises) were
+incorporated with gradually increased load and com-
+plexity.
+Prior to any testing, written informed consent forms
+were signed by all the participants. Approval for the
+study was obtained from the Human Ethics Committee
+at Göteborg University, Sweden.
+Procedure
+The healthy subjects performed ﬁve single-leg hop tests
+in both legs at three diﬀerent test sessions in a test–retest
+design. An interval of 3–13 days elapsed between test
+occasion 1 and 2 and an interval of 3–19 days between
+test occasion 2 and 3. Subjects were asked not to par-
+ticipate in strenuous physical activities the day before
+testing. For the healthy subjects, the order of the tests
+and the leg that was ﬁrst tested were randomised,
+whereas the test order was pre-determined for the pa-
+tients. The patients performed the tests in the same order
+as they are presented. The practice and test trials were
+performed using the uninjured leg ﬁrst, followed by the
+injured leg. The patients were thoroughly familiarised at
+the physiotherapy clinic prior to the test session. All the
+tests were supervised by the same test leader. Verbal
+encouragement was used and athletic footwear were
+standardised.
+Before testing, the subjects completed a warm-up
+consisting of 5 min of stationary cycling, two times 10
+squats, two times 10 toe rises and warm-up jumps.
+The following single-leg hop tests were used: (1) ver-
+tical jump, (2) hop for distance, (3) drop jump followed
+by a double hop for distance, (4) square hop and (5) side
+hop. The tests were chosen on the basis of hop tests
+commonly described in the literature [1–6, 8–21], as well
+as clinical experience, and were designed to reﬂect various
+hop qualities. The tests should also be easy to administer
+in a clinical setting. The subjects performed three to ﬁve
+practice trials followed by three maximum approved trials
+for the vertical jump, the hop for distance and the drop
+jump, followed by a double hop for distance. However, if
+the subjects increased their hop performance in all three
+hops, additional hops were performed until no increase
+was seen. The square hop and the side hop were tested
+once. Three minutes of rest were used between each hop
+test. The best trial for each leg in each test was used for
+data analysis. The hop tests were videotaped for sub-
+sequent control of test procedures.
+Table 1 Descriptive characteristics of healthy subjects and patients
+Age (years) Height
+(cm)
+Weight
+(kg)
+Tegner
+before
+injury
+PAS
+before
+injury
+Tegner at
+test occasion
+PAS at test
+occasion
+Weeks
+injury/op-test
+Healthy subjects
+Male (n=9) 29±5 181±6 84±10
+Female (n=6) 26±4 168±8 61±6
+All subjects (n=15) 28±4 175±9 75±14
+ACL injury
+Male (n=18) 28±7 181±8 91±17 7.5 (2.0) 4.0 (1.0) 4.0 (2.2) 2.5 (1.0) 50±48
+Female (n=12) 36±8 167±5 71±12 4.5 (3.5) 3.0 (1.0) 3.0 (1.0) 3.0 (1.0) 45±35
+All subjects (n=30) 31±9 175±9 83±18 7.0 (3.0) 3.0 (1.0) 4.0 (1.2) 3.0 (1.0) 48±43
+ACL reconstruction
+Male (n=25) 27±8 180±8 81±11 8.0 (2.0) 3.0 (1.0) 4.0 (3.5) 3.0 (1.5) 28±2
+Female (n=10) 27±7 167±5 60±5 7.0 (2.5) 3.5 (1.0) 3.0 (1.0) 3.0 (1.0) 28±2
+All subjects (n=35) 27±7 177±10 75±13 8.0 (2.0) 3.0 (1.0) 4.0 (2.0) 3.0 (1.0) 28±2
+All values are expressed as means (±SD), except for Tegner activity score and Physical Activity Scale (PAS), which is expressed as median
+values (interquartile range)
+780
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 4 ---
+Hop tests
+Vertical jump (Fig. 1a)
+The vertical jump test was performed as a counter-
+movement jump. The starting position was an upright
+position with the hands placed behind the back. The
+subjects quickly bent their knee as much as desired and
+then immediately jumped upwards, attempting to max-
+imise the height jumped. A computerised system (Mus-
+cleLab, Ergotest Technology) using a ﬁeld of infrared
+light (approximately 10 mm above the ﬂoor), serving as
+a ‘‘contact mat’’, made it possible to measure the ﬂight
+time. The system then converted the ﬂight time into
+jump height in centimetres.
+Hop for distance (Fig. 1b)
+The subjects stood on the test leg and then hopped as far
+as possible and landed on the same leg. Free leg swing
+was allowed. The hands were placed behind the back.
+The subjects were instructed to perform a controlled,
+balanced landing and to keep the landing foot in place
+(i.e. no extra hops were allowed) until (2–3 s) the test
+leader had registered the landing position. Failure to do
+so resulted in a disqualiﬁed hop. The distance was
+measured in centimetres from the toe at the push-oﬀ to
+the heel where the subject landed.
+Drop jump followed by a double hop for distance
+(Fig. 1c)
+The starting position was standing on the leg to be tested
+on a box, at a height of 30 cm, with the hands behind the
+back. Forty-ﬁve centimetres in front of the box, a strip of
+tape marked the starting line. The subjects jumped down
+on one leg, without crossing or touching the starting line,
+and then immediately performed two one-legged maxi-
+mum hops forward. The subjects were instructed to
+Fig. 1 Five single leg hop tests
+were used: a vertical jump,
+b hop for distance, c drop jump
+followed by a double hop for
+distance, d square hop and
+e side hop
+781
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 5 ---
+perform a controlled, balanced landing and to keep the
+landing foot in place (i.e. no extra hops were allowed)
+until (2–3 s) the test leader had registered the landing
+position. Failure to do so resulted in a disqualiﬁed hop.
+The distance was measured in centimetres from the
+starting line to the heel where the subject landed.
+Square hop (Fig. 1d)
+The subjects stood on the leg to be tested, with their
+hands behind their back, outside a 40·40 cm square
+marked with tape on the ﬂoor. A 10 cm frame was also
+marked around the square with tape. For the right leg,
+the subjects were instructed to jump clockwise in and out
+of the square as many times as possible during a period of
+30 s. The number of successful jumps performed, with-
+out touching the taped frame, was recorded. Touching
+the taped frame was recorded as an error and, if more
+than 25% of the jumps had errors, a second trial of 30 s
+was performed after a 3-min rest period. For the left leg,
+the subject performed the test in a counter-clockwise
+mode. This test was modiﬁed from Östenberg et al. [21].
+Side hop (Fig. 1e)
+For the side hop test, the subjects stood on the test leg,
+with their hands behind their back, and jumped from side
+to side between two parallel strips of tape, placed 40 cm
+apart on the ﬂoor. The subjects were instructed to jump
+as many times as possible during a period of 30 s. The
+number of successful jumps performed, without touching
+the tape, was recorded. Touching the tape was recorded
+as an error and, if more than 25% of the jumps had
+errors, a second trial of 30 s was performed after a 3-min
+rest period. This test was modiﬁed from Itoh et al. [4].
+Statistical analysis
+Test–retest analysis was determined by an intraclass
+correlation coeﬃcient (ICC) with a 95% conﬁdence
+interval (CI) [27]. The methodological error in percent
+was calculated according to the formula [28]:
+[e/m]  100 = % difference between test
+e the square root of [
+P
+(d2
+)/2n]
+d diﬀerence between tests
+n number of subjects
+m mean value.
+The mean and standard deviation were calculated for
+the jump tests.
+Wilcoxon’s signed rank test was used for dependent
+values and the Mann–Whitney U test was used for
+independent values. The Spearman Rank was used to
+study the relationship between dependent variables. The
+level of signiﬁcance was set at P £ 0.05.
+The lower limb symmetry index (LSI) was calculated
+to determine whether a side-to-side leg diﬀerence was
+classiﬁed as normal or abnormal. The LSI is deﬁned as
+the ratio of the involved limb score and the uninvolved
+limb score expressed in per cent (involved/unin-
+volved · 100 = LSI). In this study, an LSI greater than
+or equal to 90% [10, 20] was classiﬁed as normal.
+Sensitivity, speciﬁcity and accuracy were calculated
+for the ﬁve hop tests and for the test battery using the
+following deﬁnitions.
+Sensitivity (= number of patients classiﬁed as
+abnormal/total number of patients) expresses the per-
+centage probability that the tests would demonstrate an
+abnormal LSI in the patients [29].
+Speciﬁcity (= number of healthy subjects classiﬁed as
+normal/total number of healthy subjects) expresses the
+percentage probability that the tests would demonstrate
+a normal LSI in the normal subjects [29].
+Accuracy (= number of patients classiﬁed as
+abnormal + number of healthy subjects classiﬁed as
+normal/total number of patients and healthy subjects) is
+deﬁned as the percentage probability that the tests
+would demonstrate a normal LSI in the normal subjects
+and an abnormal LSI in the patients [29].
+A factor analysis with a principal axis factoring,
+varimax rotation, and for two factors was applied for
+evaluation of the structure of the test battery.
+Results
+Test–retest reliability for the ﬁve hop tests
+Signiﬁcant diﬀerences were found between test occasion
+1 and 2 for male subjects and for male and female
+subjects combined in the hop for distance (P=0.02) and
+the square hop (P=0.001). A signiﬁcant diﬀerence was
+also found between test occasion 1 and 2 for all subjects
+in the side hop (P=0.01). No signiﬁcant diﬀerences were
+found between test occasion 2 and 3 in any of the ﬁve
+hop tests, as shown in Table 2.
+The ICC, 95% CI and methodological error in per-
+cent and in absolute values are presented in Table 2. In
+the ﬁve tests, the ICC between test occasion 2 and 3
+ranged from 0.85 to 0.97 and the methodological error
+ranged from 3 to 6%.
+Comparison of hop performance between healthy male
+and female subjects
+A comparison between healthy male and female sub-
+jects’ hop performance in the ﬁve hop tests on test
+782
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 6 ---
+occasion 3 is presented in Table 3. Signiﬁcant diﬀer-
+ences were found between males and females in the
+vertical jump (P=0.03), the hop for distance (P=0.03)
+and the drop jump followed by a double hop for
+distance (P=0.01) but not in the square hop and the
+side hop. No signiﬁcant diﬀerence was, however, found
+in any of the tests when comparing the absolute values
+for side-to-side diﬀerence in males and females. Fur-
+ther analyses were therefore conducted, regardless of
+gender.
+Hop performance in patients
+A signiﬁcant diﬀerence between the injured and unin-
+jured side was found in all the hop tests except for the
+square hop tests in patients with an ACL injury and in
+all the tests in patients who had undergone ACL
+reconstruction (Table 4).
+Comparison of hop performance between healthy
+subjects and patients
+Patients with an ACL injury and patients who had
+undergone ACL reconstruction had a signiﬁcantly larger
+side-to-side diﬀerence in all the tests except for the
+square hop compared with healthy subjects (Table 5).
+The results of the square hop test did not reveal a sig-
+niﬁcant diﬀerence between healthy subjects and patients
+when comparing the side-to-side diﬀerence.
+A normal LSI for the ﬁve hop tests ranged from 67 to
+100% in the healthy subjects, from 23 to 57% in the
+patients with an ACL injury and from 14 to 49% in the
+Table 2 Test–retest reliability between test occasion 1 and 2 (Test1–2) and test occasion 2 and 3 (Test2–3)
+Test P-value ICC 95% CI Methodological error
+% cm or jumps
+Vertical jump (cm)
+Male (n=9) Test1–2 0.08 0.83 0.61–0.93 8 1.4
+Test2–3 0.85 0.95 0.88–0.98 4 0.7
+Female (n=6) Test1–2 0.72 0.95 0.84–0.99 5 0.7
+Test2–3 0.82 0.97 0.90–0.99 4 0.6
+All subjects (n=15) Test1–2 0.11 0.89 0.79–0.95 7 1.2
+Test1–2 0.94 0.97 0.93–0.98 4 0.6
+Hop for distance (cm)
+Male (n=9) Test1–2 0.02 0.91 0.78–0.97 3 4.2
+Test2–3 0.20 0.86 0.67–0.95 3 4.6
+Female (n=6) Test1–2 0.35 0.88 0.64–0.96 3 4.7
+Test2–3 0.08 0.98 0.93–0.99 2 2.1
+All subjects (n=15) Test1–2 0.02 0.94 0.88–0.97 3 4.3
+Test2–3 0.07 0.95 0.90–0.98 3 3.7
+Drop jump followed by a double hop for distance (cm)
+Male (n=9) Test1–2 0.07 0.80 0.54–0.92 3 9.6
+Test2–3 0.41 0.85 0.65–0.94 3 9.6
+Female (n=6) Test1–2 0.43 0.67 0.19–0.89 6 15.0
+Test2–3 0.13 0.91 0.73–0.97 3 8.3
+All subjects (n=15) Test1–2 0.07 0.85 0.72–0–93 4 12.1
+Test2–3 0.13 0.93 0.85–0.96 3 8.7
+Square hop (jumps)
+Male (n=9) Test1–2 0.00 0.64 0.18–0.87 13 6.9
+Test2–3 0.09 0.78 0.50–0.91 5 3.1
+Female (n=6) Test1–2 0.06 0.55 0.01–0.85 12 6.9
+Test2–3 0.48 0.89 0.67–0.97 5 3.2
+All subjects (n=15) Test1–2 0.00 0.58 0.25–0.78 13 6.9
+Test2–3 0.08 0.85 0.71–0.93 5 3.1
+Side hop (jumps)
+Male (n=9) Test1–2 0.06 0.72 0.39–0.88 9 4.5
+Test2–3 0.61 0.78 0.51–0.91 5 3.0
+Female (n=6) Test1–2 0.10 0.87 0.62–0.96 14 5.5
+Test2–3 0.58 0.95 0.83–0.98 8 3.5
+All subjects (n=15) Test1–2 0.01 0.87 0.75.0.94 10 4.8
+Test2–3 0.95 0.93 0.87–0.97 6 3.2
+P-values, intraclass correlation coeﬃcients (ICC), 95% conﬁdence intervals (CI) and the methodological errors are given in percent and in
+absolute values
+783
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 7 ---
+patients who had undergone ACL reconstruction
+(Fig. 2).
+Sensitivity, speciﬁcity and accuracy of the ﬁve hop tests
+Table 6 shows the sensitivity, speciﬁcity and accuracy of
+the ﬁve hop tests. Sensitivity ranged from 43 to 77% in
+the patients with an ACL injury. Sensitivity in the pa-
+tients who had undergone ACL reconstruction ranged
+from 51 to 86%. Speciﬁcity ranged from 67 to 100% in
+the ﬁve hop tests. Accuracy ranged from 58 to 80% in
+the patients with an ACL injury. Accuracy in the pa-
+tients who had undergone ACL reconstruction ranged
+from 56 to 86%.
+Correlation between the ﬁve hop tests
+The correlation in healthy subjects and patients ranged
+from rs=0.70 to rs=0.94 (P=0.01) between the three
+maximum hop tests (vertical jump, hop for distance and
+drop jump followed by a double hop for distance). The
+correlation in healthy subjects and patients ranged from
+rs=0.72 to rs=0.92 (P=0.01) between the two endur-
+ance hop tests (square hop and side hop). The correla-
+tion between the three maximum hop tests and the two
+endurance hop tests ranged from rs=0.29 to rs=0.57
+(P=0.05) in the healthy subjects and from rs=0.62 to
+rs=0.88 (P=0.01) in the patients.
+Factor analysis on the ﬁve hop tests
+The factor analysis on the healthy subjects as wells as the
+factor analysis on the patients divided the ﬁve hop tests
+in factor one: maximal hop tests (vertical jump, hop for
+distance and drop jump followed by a double hop for
+distance) and factor two: endurance hop tests (square
+hop and side hop).
+The test battery
+The following three tests were chosen for the test bat-
+tery: (1) the vertical jump, (2) the hop for distance and
+(3) the side hop.
+Among healthy subjects, 3 of 15 (20%) were classiﬁed
+as abnormal in at least one of the three tests in the test
+battery. Among patients with an ACL injury, 12 of 30
+(40%) obtained abnormal LSI values in all three tests
+and 4 of 30 (13%) obtained normal values in all three
+tests. Twenty-six of 30 (87%) patients with an ACL in-
+jury obtained abnormal LSI values in at least one of the
+three tests. Among patients who had undergone ACL
+reconstruction, 19 of 35 (54%) obtained abnormal LSI
+values in all three tests and three of 35 (9%) obtained
+normal values in all three tests. Thirty-two of 35 (91%)
+patients who had undergone ACL reconstruction ob-
+tained abnormal values in at least one of the three tests.
+The sensitivity of the test battery, i.e. identifying a
+patient as abnormal when at least one of the three tests
+produced an abnormal LSI value, was 87% in the pa-
+tients with an ACL injury and 91% in the patients who
+had undergone ACL reconstruction. The accuracy of the
+test battery, i.e. identifying a healthy subject as normal
+when all three tests produced a normal LSI value and
+identifying a patient as abnormal when at least one of
+the three tests produced an abnormal LSI value, was
+found to be 84 and 88% respectively.
+The square hop was not chosen due to its inability to
+discriminate between the side-to-side diﬀerence in heal-
+thy subjects and patients (Table 5). The square hop also
+showed the lowest speciﬁcity (67%) and accuracy (58
+and 56%) of the ﬁve hop tests. The correlation with the
+side hop ranged from rs=0.72 to rs=0.92 (P=0.01) for
+Table 4 Means, standard
+deviations (SD) in the ﬁve hop
+tests in patients with ACL
+injury and patients who have
+undergone ACL reconstruction
+(ACL recon.)
+P-values between the injured
+and the uninjured sides are
+given
+Test ACL injury (n=30) P-value ACL recon (n=35) P-value
+Injured Uninjured Injured Uninjured
+Vertical jump (cm) 11.5±5.4 14.5±5.4 0.05 13.3±5.0 17.5±4.6 <0.00
+Hop for distance (cm) 115±39 135±29 <0.04 128±28 148±23 <0.00
+Drop jump followed by
+a double hop for distance (cm)
+225±83 270±55 <0.03 253±56 297±48 <0.00
+Square hop (jumps) 38±18 46±15 NS 49±17 57±12 <0.03
+Side hop (jumps) 28±17 39±16 <0.01 39±16 49±13 <0.00
+Table 3 Means, standard deviations (SD) in the ﬁve hop tests on
+test occasion 3 for the right and left leg
+Test All subjects
+(n=15)
+Male
+(n=9)
+Female
+(n=6)
+P-value
+Vertical jump (cm) 16.7±3.7 18.1±3.3 15.0±3.7 <0.03
+Hop for distance (cm) 151±16 160±11 137±13 <0.01
+Drop jump followed
+by a double hop
+for distance (cm)
+304±34 320±27 281±30 <0.01
+Square hop (jumps) 62±7 62±6 60±9 NS
+Side hop (jumps) 50±13 55±6 41±16 NS
+P-values between males and females among healthy subjects are
+given (NS=not signiﬁcant)
+784
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 8 ---
+all subjects, indicating a strong relationship between the
+two endurance hop tests.
+The drop jump followed by a double hop for distance
+was not chosen due to its high correlation with the sin-
+gle-leg hop for distance (rs>0,80, P=0.01), accuracy
+similar to that of the hop for distance in the patients
+with an ACL injury (62 vs. 69%) and identical to that
+for the patients who had undergone ACL reconstruction
+(74%). We therefore concluded that the drop jump fol-
+lowed by a double hop for distance and the hop for
+distance were equal and measured the same ability.
+Discussion
+The principal ﬁnding in this study was that a test bat-
+tery, consisting of the vertical jump, the hop for distance
+and the side hop tests, had a high ability to discriminate
+between the hop performance of the injured and the
+uninjured side both in patients 11 months after an ACL
+injury and in patients 6 months after ACL reconstruc-
+tion. The test battery may help in the process of deciding
+whether and when patients can safely return to strenu-
+Table 6 Results for sensitivity, speciﬁcity and accuracy in the ﬁve hop tests for healthy subjects (n=15), patients with ACL injury (n=30)
+and patients who have undergone ACL reconstruction (n=35)
+Vertical jump Hop for distance Drop jump followed by
+a double hop for distance
+Square hop Side hop
+Sensitivity (%)
+ACL injury 67 53 43 53 77
+ACL recon. 86 63 63 51 69
+Speciﬁcity (%)
+Healthy subjects 87 100 100 67 87
+Accuracy (%)
+ACL injury 73 69 62 58 80
+ACL recon. 86 74 74 56 74
+P-values for comparisons between healthy subjects and patients with ACL injury and ACL reconstruction (ACL recon.) are given
+Table 5 Means, standard deviations (SD) for side-to-side diﬀerence in the ﬁve hop tests
+Test Healthy subjects (n=15) ACL injury (n=30) P-value ACL recon. (n=35) P-value
+Vertical jump (cm) 1.2±1.4 3.0±2.5 <0.01 4.3±2.8 <0.01
+Hop for distance (cm) 6±4 21±24 <0.05 20±11 <0.01
+Drop jump followed by a
+double hop for distance (cm)
+8±7 45±62 <0.01 44±32 <0.01
+Square hop (jumps) 4±3 7±12 NS 8±9 NS
+Side hop (jumps) 4±3 11±9 <0.05 10±9 <0.05
+47%
+57%
+47%
+23%
+37% 37%
+49%
+67%
+87%
+100% 100%
+87%
+33% 34%
+14%
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+Vertical jump Hop for distance Drop jump followed
+by a double hop for
+distance
+Square hop Side hop
+Healthy
+ACL injury
+ACL recon.
+Fig. 2 The percentage of
+healthy subjects (n=15) and
+patients with ACL injury
+(n=30) and ACL reconstruc-
+tion (ACL recon.) (n=35) clas-
+siﬁed as normal in the ﬁve hop
+tests
+785
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 9 ---
+ous physical activities after an ACL injury or recon-
+struction. The test battery has, however, to be studied in
+prospective randomised trails to be able to draw deﬁnite
+conclusions on its actual ability to contribute to the
+decision making process.
+Single-leg hop tests are commonly used to study knee
+function in patients with an ACL injury and are de-
+signed to reﬂect the demands of a high level of physical
+activity [1–6, 8–21]. In the literature it is argued that by
+using a variety of hop tests, diﬀerent hop qualities can be
+evaluated and thereby increase the opportunity to detect
+discrepancies in hop performance (i.e. increase the test
+sensitivity) [1, 4, 5, 16]. The importance of hop perfor-
+mance testing of patients after ACL reconstruction in a
+fatigued state has also been advocated [8]. In the present
+study three diﬀerent maximum hop tests and two
+endurance hop tests were used.
+The diﬀerence between the three maximum hop tests
+and the two endurance hop tests is reﬂected by the
+correlation between the two types of hop tests, indicat-
+ing a fair to moderate [30] degree of relationship
+(rs=0.29–0.57) in the healthy subjects. Östenberg et al.
+[21] reported similar correlations between the square
+hop and the vertical jump (r=0.12) and the single-leg
+hop for distance (r=0.38). The results indicate that the
+two types of hop tests measure diﬀerent aspects of
+jumping ability, which is further conﬁrmed by the factor
+analysis on the ﬁve hop tests. Patients with an ACL
+injury had, however, a strong relationship (rs=0.82–
+0.88) between the two types of hop tests. One explana-
+tion could be that the patients with ACL injury in this
+study are not as homogeneous a group as the patients
+who had undergone ACL reconstruction, especially in
+terms of the interval between the index injury and the
+test occasion and in the diversity of the functional deﬁ-
+cits.
+During the two endurance hop tests, square hop and
+side hop, the patients performed as many jumps as
+possible during a period of 30 s, thereby demanding
+knee stability while developing muscle fatigue. The side
+hop test used by Itoh et al. [4] was modiﬁed not only by
+increasing the test duration from less than 2 to 30 s but
+also by increasing the distance the patients were required
+to jump from 30 to 40 cm. This could explain the higher
+sensitivity of 77% for the side-hop test found in the
+present study compared with the 44% in the study by
+Itoh et al. [4]. The reported sensitivity in these studies
+should, however, be compared with caution, due to
+diﬀerent populations in terms of the time between the
+injury and the test occasion, for example. In this study, a
+sensitivity of 53% at a 90% LSI cut-oﬀ score in the
+single-leg hop for distance in the patients with an ACL
+injury was noted, which is in accordance with Noyes
+et al. [5] and Itoh et al. [4], who observed a sensitivity of
+52 and 42%, respectively, at an 85% LSI cut-oﬀ score.
+In a study by Barber et al. [1], many of the healthy
+subjects scored outside the normal lower limb symmetry
+range in the vertical jump and speciﬁcity was as low as
+48% at 90% LSI). This is considerably diﬀerent from
+the speciﬁcity of 87% in the present study, which is a
+more acceptable result. One explanation for this diﬀer-
+ence in results could be due to the fact that Barber et al.
+[1] used the jump-and-reach method, which has in an-
+other previous study showed poor reliability [coeﬃcient
+of variation (CV) of 9.9%] [20].
+The ICC values ranged from 0.85 to 0.97 for the ﬁve
+diﬀerent hop tests, indicating that all the tests had high
+reliability. The importance of familiarisation needs to be
+mentioned, as a signiﬁcant increase in performance was
+seen between test occasion 1 and 2 in the hop for dis-
+tance and in the square hop. The diﬀerence may be the
+result of a learning process. The patients therefore
+practiced and were thoroughly familiarised at the
+physical therapy clinic before the test occasions.
+The test–retest result in the vertical jump (ICC 0.97)
+is in agreement with those reported by Wilson et al. [31]
+and Manske et al. [32], who obtained ICC values of 0.97
+and 0.98 using other apparatus. Several authors have
+described and tested the reliability of the single-leg hop
+for distance in healthy subjects [7, 14, 32] and patients
+after an ACL injury [10, 14]. ICC values ranging from
+0.89 and 0.97 are reported [14, 32]. These results agree
+with the ICC value of 0.95 in this study.
+The square hop and the side hop were generally
+performed only once by the healthy subjects. Despite
+this fact, the tests showed high reliability for both the
+square hop (ICC 0.85) and the side hop (ICC 0.93).
+Three of the patients, who had errors in more than 25%
+of the jumps, in one of the two tests, made a second
+attempt. To minimise the eﬀect of fatigue, 3 min of rest
+were given before the second attempt. The number of
+trials was limited in order to control the fatigue eﬀects
+that were induced and to reduce the total time of the test
+battery.
+The results of the present study revealed no diﬀer-
+ence between males and females in the side-to-side
+comparison in any of the tests. Patients can therefore
+be evaluated on an individual basis, regardless of
+gender. This is also in accordance with previous studies
+[1, 4, 20].
+An LSI of both 85 and 90% has been advocated to
+assess whether a hop test is normal or abnormal [1, 3, 8,
+10, 20, 21]. Fitzgerald et al. [3] described a decision-
+making scheme for returning patients with an ACL in-
+jury to a high level of physical activity. Patients suc-
+cessfully returning to pre-injury levels of activity had a
+mean hop test score of 95%, compared with the mean of
+85% in the patients who failed rehabilitation. On the
+basis of this, an LSI of 90% was chosen as the cut-oﬀ
+score in this study.
+786
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 10 ---
+The square hop test used by Östenberg et al. [21] was
+modiﬁed in the present study. In order to force the pa-
+tients to perform more demanding jumps, the volume of
+the square was increased. Although good reliability
+(ICC 0.85) was obtained in the square hop test, this test
+was not able to discriminate healthy subjects from pa-
+tients. It was therefore concluded that the test was not
+optimal when it came to evaluating patients with an
+ACL injury or patients who had undergone ACL
+reconstruction. A new test, the drop jump followed by a
+double hop for distance, was designed for additional
+demands. This test is characterised by high intensity with
+regard to deceleration and acceleration forces. Even
+though the intention was to design a new, more
+demanding hop test, this was not supported by the re-
+sults. The drop jump followed by a double hop for
+distance showed a strong correlation with the more
+established hop for distance test. The sensitivity and
+accuracy were not in favour of the newly designed test.
+To summarise, a test battery consisting of the vertical
+jump, the hop for distance and the side hop produced
+the most information. It could also be regarded as
+advantageous in the clinical setting to use a test battery
+comprising three tests, instead of four or ﬁve tests.
+It is worrying to note that only one out of ten patients
+were classiﬁed as normal (i.e. having >90% hop
+performance on the injured side compared with the
+uninjured side) 11 months after an ACL injury and
+6 months after ACL reconstruction, as it is now
+customary to allow a return to full sports activities
+6 months after ACL reconstruction [33, 34], with some
+authors advocating a return to sports as early as
+4 months post-operatively [35, 36].
+Conclusion
+The test battery consisting of both maximum single hop
+performances: the vertical jump and the hop for distance
+and hop performance while developing fatigue: the side
+hop, produced high test–retest reliability, sensitivity and
+accuracy. Further, the test battery produced higher
+values compared with any of the three hop tests indi-
+vidually, revealing that only one out of ten patients had
+restored hop performance 11 months after an ACL in-
+jury and 6 months after ACL reconstruction. It is con-
+cluded that this test battery showed a high ability to
+discriminate between the hop performance of the injured
+and the uninjured side both in patients with an ACL
+injury and in patients who have undergone ACL
+reconstruction.
+Acknowledgments This study was supported by grants from the
+Swedish Centre for Research in Sports and Research and The
+Local Research and Development Council for Gothenburg and
+Southern Bohuslän Sweden.
+References
+1. Barber SD, Noyes FR, Mangine RE,
+McCloskey JW, Hartman W (1990)
+Quantitative assessment of functional
+limitations in normal and anterior cru-
+ciate ligament-deﬁcient knees. Clin
+Orthop 255:204–214
+2. Eastlack ME, Axe MJ, Snyder-Mackler
+L (1999) Laxity, instability, and func-
+tional outcome after ACL injury: copers
+versus noncopers. Med Sci Sports Exerc
+31:210–215
+3. Fitzgerald GK, Axe MJ,
+Snyder-Mackler L (2000) A decision-
+making scheme for returning patients to
+high-level activity with nonoperative
+treatment after cruciate ligament
+rupture. Knee Surg Sports Traumatol
+Arthrosc 8:76–82
+4. Itoh H, Kurosaka M, Yoshiya S,
+Ichihashi N, Mizuno K (1998) Evalua-
+tion of functional deﬁcits determined by
+four diﬀerent hop tests in patients with
+anterior cruciate ligament deﬁciency.
+Knee Surg Sports Traumatol Arthrosc
+6:241–245
+5. Noyes FR, Barber SD, Mangine RE
+(1991) Abnormal lower limb symmetry
+determined by function hop tests after
+anterior cruciate ligament rupture. Am
+J Sports Med 19:513–518
+6. Rudolph KS, Axe MJ, Snyder-Mackler
+L (2000) Dynamic stability after ACL
+injury: who can hop? Knee Surg Sports
+Traumatol Arthrosc 8:262–269
+7. Tegner Y, Lysholm J, Lysholm M,
+Gillquist J (1986) A performance test to
+monitor rehabilitation and evaluate
+anterior cruciate ligament injuries. Am J
+Sports Med 14:156–159
+8. Augustsson J (2004) Ability of a new
+hop test to determine functional deﬁcits
+after anterior cruciate ligament recon-
+struction. Knee Surg Sports Traumatol
+Arthrosc 12:350–356
+9. Jerre R, Ejerhed L, Wallmon A, Kartus
+J, Brandsson S, Karlsson J (2001)
+Functional outcome of anterior cruciate
+ligament reconstruction in recreational
+and competitive athletes. Scand J Med
+Sci Sports 11:342–346
+10. Juris PM, Phillips EM, Dalpe C,
+Edwards C, Gotlin RS, Kane DJ (1997)
+A dynamic test of lower extremity
+function following anterior cruciate lig-
+ament reconstruction and rehabilita-
+tion. J Orthop Sports Phys Ther 26:184–
+191
+11. Keays SL, Bullock-Saxton J, Keays AC,
+Newcombe P (2001) Muscle strength
+and function before and after anterior
+cruciate ligament reconstruction using
+semitendinosus and gracilis. The Knee
+8:229–234
+12. Liu-Ambrose T, Taunton JE,
+MacIntyre D, McConkey P, Khan KM
+(2003) The eﬀects of proprioceptive or
+strength training on the neuromuscular
+function of the ACL reconstructed
+knee: a randomized clinical trail. Scand
+J Med Sci Sports 13:115–123
+787
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 11 ---
+13. Pantano KJ, Irrgang JJ, Burdett R,
+Delitto A, Harner C, Fu FH (2000) A
+pilot study on the relationship between
+physical impairment and activity
+restriction in persons with anterior cru-
+ciate ligament reconstruction at long-
+term follow-up. Knee Surg Sports
+Traumatol Arthrosc 9:369–378
+14. Paterno MV, Greenberger HB (1996)
+The test–retest reliability of a one legged
+hop for distance in young adults with
+and without ACL reconstruction. Iso-
+kinet Exerc Sci 6:1–6
+15. Petschnig R, Baron R, Albrecht M
+(1998) The relationship between isoki-
+netic quadriceps strength test and hop
+tests for distance and one-legged verti-
+cal jump test following anterior cruciate
+ligament reconstruction. J Orthop
+Sports Phys Ther 28:23–31
+16. Risberg MA, Ekeland A (1994) Assess-
+ment of functional tests after anterior
+cruciate ligament surgery. J Orthop
+Sports Phys Ther 19:212–217
+17. Ross MD, Irrgang JJ, Denegar CR,
+McCloy CM, Unangst ET (2002) The
+relationship between participation
+restrictions and selected clinical mea-
+sures following anterior cruciate liga-
+ment reconstruction. Knee Surg Sports
+Traumatol Arthrosc 10:10–19
+18. Sernert N, Kartus J, Köhler K, Stener
+S, Larsson J, Eriksson B, Karlsson J
+(1999) Analysis of subjective, objective
+and functional examination tests after
+anterior cruciate ligament reconstruc-
+tion. A follow up of 527 patients. Knee
+Surg Sports Traumatol Arthrosc 7:160–
+165
+19. Wilk KE, Romaniello WT, Soscia SM,
+Arrigo CA, Andrews JR (1994) The
+relationship between subjective knee
+scores, isokinetic testing, and functional
+testing in the ACL-reconstructed knee. J
+Orthop Sports Phys Ther 20:60–71
+20. Risberg MA, Holm I, Ekeland A (1995)
+Reliability of functional knee tests in
+normal athletes. Scand J Med Sci Sports
+5:24–28
+21. Östenberg A, Roos E, Ekdahl C, Roos
+H (1998) Isokinetic knee extensor
+strength and functional performance in
+healthy female soccer players. Scand J
+Med Sci Sports 8:257–264
+22. Dugan SA, Frontera WR (2000) Muscle
+fatigue and muscle injury. Phys Med
+Rehabil Clin N Am 11:385–403
+23. Feagin JA Jr, Lambert KL, Cunning-
+ham RR, Anderson LM, Riegel J, King
+PH, Van Genderen L (1987) Consider-
+ation of the anterior cruciate ligament
+injury in skiing. Clin Orthop 216:13–18
+24. Östenberg A, Roos H (2000) Injury risk
+factors in female European football. A
+prospective study of 123 players during
+one season. Scand J Med Sci Sports
+10:279–285
+25. Tegner Y, Lysholm J (1985) Rating
+system in the evaluation of knee liga-
+ment injuries. Clin Orthop 198:43–49
+26. Grimby G (1986) Physical activity and
+muscle training in the elderly. Acta Med
+Scand 711(Suppl.):233–237
+27. Shrout PE, Fleiss JL (1979) Intraclass
+Correlations: uses in assessing rater
+reliability. Psychol Bull 86:420–428
+28. Dahlberg G (1940) Statistical methods
+for medical and biological students.
+Allen and Unwin, London
+29. Altman DG (1991) Practical statistics
+for medical research. Chapman & Hall,
+London, pp 410–411
+30. Portney LG, Watkins MP (2000)
+Foundations of clinical research: appli-
+cations to practice, 2nd edn. Prentice-
+Hall, New Jersey, pp 494–495
+31. Wilson GJ, Newton RU, Murphy AJ,
+Humphries BJ (1993) The optimal
+training load for the development of
+athletic performance. Med Sci Sports
+Exerc 11:1279–1286
+32. Manske RC, Smith B, Wyatt F (2003)
+Test–retest reliability of lower extremity
+functional tests after a closed kinetic
+chain isokinetic testing bout. J Sports
+Rehabil 12:119–132
+33. MacDonald PB, Hedden D, Pacin O,
+Huebert D (1995) Eﬀects of an acceler-
+ated rehabilitation program after ante-
+rior cruciate ligament reconstruction
+with combined semitendinosus-gracilis
+autograft and a ligament augmentation
+device. Am J Sports Med 23:588–592
+34. Shelbourne KD, Nitz PA (1991) The
+O’Donoghue triad revisited. Combined
+knee injuries involving anterior cruciate
+and medial collateral ligament tears.
+Am J Sports Med 19:474–477
+35. De Carlo M, Shelbourne KD, Oneacre
+K (1999) Rehabilitation program for
+both knees when the contralateral
+autogenous patellar tendon graft is used
+for primary anterior cruciate ligament
+reconstruction: a case study. J Orthop
+Sports Phys Ther 29:144–153
+36. Howell S, Taylor M (1996) Brace-free
+rehabilitation, with early return to
+activity, for knees reconstructed with a
+double-looped semitendinosus and
+gracilis graft. J Bone Joint Surg Am
+78:814–825
+788
+14337347, 2006, 8, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1007/s00167-006-0045-6 by Seoul National University Of, Wiley Online Library on [08/04/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PAGE 12 ---
