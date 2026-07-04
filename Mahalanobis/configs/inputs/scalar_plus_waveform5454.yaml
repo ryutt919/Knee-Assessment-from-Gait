@@ -1,0 +1,10 @@
+name: scalar_plus_waveform5454
+pipeline_version: "3.1"
+role: comparator
+aggregation: cycle_mean_then_equal_trial_mean
+unit: session
+feature_count: 5859
+blocks:
+  scalar: 405
+  waveform: 5454
+block_normalization: equal_total_variance

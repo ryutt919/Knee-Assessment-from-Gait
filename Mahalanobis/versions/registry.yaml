@@ -1,0 +1,17 @@
+versions:
+  - version: "2.0.0"
+    git_tag: mahalanobis-v2.0.0
+    entrypoint: Mahalanobis/run_pipeline.py
+    pipeline_version: "2.0"
+    artifact_schema: "2.0"
+    status: legacy_supported
+  - version: "3.1.0"
+    branch: mahalanobis/v3.1-scalar-primary
+    entrypoint: Mahalanobis/run_pipeline.py
+    pipeline_version: "3.1"
+    artifact_schema: "3.1.0"
+    profiles:
+      - scalar_clean_multispeed
+      - scalar_plus_gvs54
+      - scalar_plus_waveform5454
+    status: development

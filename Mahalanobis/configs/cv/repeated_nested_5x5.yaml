@@ -1,0 +1,7 @@
+name: repeated_nested_5x5
+outer_folds: 5
+outer_repeats: 5
+inner_folds: 3
+split_unit: biological_identity
+stratification: ACL_vs_HA
+pair_policy: ACLD_and_ACLR_same_fold

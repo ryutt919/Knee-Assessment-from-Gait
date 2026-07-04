@@ -1,0 +1,10 @@
+name: scalar_plus_gvs54
+pipeline_version: "3.1"
+role: comparator
+aggregation: cycle_mean_then_equal_trial_mean
+unit: session
+feature_count: 459
+blocks:
+  scalar: 405
+  gvs54: 54
+reference_policy: outer_or_inner_training_HA_only

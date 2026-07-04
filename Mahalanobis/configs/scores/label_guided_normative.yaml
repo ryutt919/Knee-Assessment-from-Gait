@@ -1,0 +1,6 @@
+name: label_guided_normative
+reference: training_HA_only
+distance: PCA_LedoitWolf_Mahalanobis
+calibration: robust_log_HA_leave_one_out
+normality_score: "100 - 10 * overall_z_deviation"
+selection_metric: identity_balanced_ROC_AUC
