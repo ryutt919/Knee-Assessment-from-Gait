@@ -144,7 +144,13 @@ def test_tiny_core_pipeline_writes_complete_artifacts(tmp_path: Path):
         result, diagnostics = engine.run_profile(features, profile, splits, artifact, 2, 1, 42)
         scores[profile] = result
         assert len(result) == len(features.metadata)
-        assert np.isfinite(result[["raw_distance", "overall_z_deviation", "normality_score"]]).all().all()
+        assert np.isfinite(result[[
+            "raw_distance", "overall_z_deviation", "normality_score",
+            "gvs_raw_gps", "slow_gvs_distance", "normal_gvs_distance", "fast_gvs_distance",
+            "legacy_speed_rms",
+        ]]).all().all()
+        assert (result["legacy_speed_rms"] >= 0).all()
+        assert any((result[f"{speed}_signed_deviation"] < 0).any() for speed in engine.SPEEDS)
         assert len(diagnostics) == 2
     summary = engine.summarize(scores, artifact, 20, 42)
     assert set(summary["profile"]) == set(engine.PROFILES)

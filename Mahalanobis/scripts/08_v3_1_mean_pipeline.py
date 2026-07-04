@@ -232,6 +232,42 @@ def _gvs(waveforms: np.ndarray, reference: np.ndarray) -> np.ndarray:
     return np.sqrt(np.mean(np.square(waveforms - reference[None, ...]), axis=-1)).reshape(len(waveforms), -1)
 
 
+def waveform_explanatory_distances(waveforms: np.ndarray, reference: np.ndarray) -> dict[str, np.ndarray]:
+    """Raw GPS/GVS subdomains; these never enter the scalar primary total."""
+    tensor = np.sqrt(np.mean(np.square(waveforms - reference[None, ...]), axis=-1))
+    output = {"gvs_raw_gps": np.sqrt(np.mean(np.square(tensor), axis=(1, 2, 3)))}
+    for speed_idx, speed in enumerate(SPEEDS):
+        output[f"{speed}_gvs_distance"] = np.sqrt(np.mean(np.square(tensor[:, speed_idx]), axis=(1, 2)))
+    for domain, indices in {
+        "hip": np.arange(0, 3), "knee": np.arange(3, 6), "ankle": np.arange(6, 9),
+    }.items():
+        output[f"{domain}_gvs_distance"] = np.sqrt(np.mean(np.square(tensor[:, :, :, indices]), axis=(1, 2, 3)))
+    bilateral = waveforms.mean(axis=2) - reference.mean(axis=1)[None, ...]
+    output["bilateral_gvs_distance"] = np.sqrt(np.mean(np.square(bilateral), axis=(1, 2, 3)))
+    asymmetry = (waveforms[:, :, 0] - waveforms[:, :, 1]) - (reference[:, 0] - reference[:, 1])[None, ...]
+    output["asymmetry_gvs_distance"] = np.sqrt(np.mean(np.square(asymmetry), axis=(1, 2, 3)))
+    return output
+
+
+def _loo_speed_calibration(waveforms: np.ndarray, ha_indices: np.ndarray) -> dict[str, tuple[float, float]]:
+    values = {speed: [] for speed in SPEEDS}
+    for held_out in ha_indices:
+        keep = ha_indices[ha_indices != held_out]
+        reference = waveforms[keep].mean(axis=0)
+        distances = waveform_explanatory_distances(waveforms[[held_out]], reference)
+        for speed in SPEEDS:
+            values[speed].append(float(distances[f"{speed}_gvs_distance"][0]))
+    calibration = {}
+    for speed, raw in values.items():
+        logged = np.log(np.maximum(np.asarray(raw), EPSILON))
+        center = float(np.median(logged))
+        scale = float(1.4826 * np.median(np.abs(logged - center)))
+        if not np.isfinite(scale) or scale < 1e-8:
+            raise ValueError(f"HA LOO speed calibration is degenerate: {speed}")
+        calibration[speed] = (center, scale)
+    return calibration
+
+
 def profile_blocks(
     features: SessionFeatures,
     profile: str,
@@ -481,8 +517,21 @@ def run_profile(
         fold_scores["raw_distance"] = raw
         fold_scores["overall_z_deviation"] = z
         fold_scores["normality_score"] = 100.0 - 10.0 * z
-        if reference is not None:
-            fold_scores["gvs_raw_gps"] = np.sqrt(np.mean(np.square(_gvs(features.waveforms[val_idx], reference)), axis=1))
+        explanation_reference = features.waveforms[ha_idx].mean(axis=0)
+        explanation = waveform_explanatory_distances(features.waveforms[val_idx], explanation_reference)
+        for name, values in explanation.items():
+            fold_scores[name] = values
+        speed_calibration = _loo_speed_calibration(features.waveforms, ha_idx)
+        speed_z_columns = []
+        for speed in SPEEDS:
+            column = f"{speed}_signed_deviation"
+            raw_speed = fold_scores[f"{speed}_gvs_distance"].to_numpy()
+            speed_center, speed_scale = speed_calibration[speed]
+            fold_scores[column] = (np.log(np.maximum(raw_speed, EPSILON)) - speed_center) / speed_scale
+            speed_z_columns.append(column)
+        fold_scores["legacy_speed_rms"] = np.sqrt(
+            np.mean(np.square(fold_scores[speed_z_columns].to_numpy()), axis=1)
+        )
         score_rows.append(fold_scores)
         diagnostics.append({
             "profile": profile, "repeat": repeat, "outer_fold": fold,
@@ -492,6 +541,7 @@ def run_profile(
             "covariance_rank": model.rank_, "condition_number": model.condition_,
             "ha_loo_log_center": center, "ha_loo_log_scale": scale,
             "ha_loo_distance_min": float(loo.min()), "ha_loo_distance_max": float(loo.max()),
+            "explanation_reference": "outer-training HA mean waveform",
         })
         contribution_rows.append(_top_contributions(
             features.metadata, model, blocks, val_idx, repeat, fold, profile,
@@ -499,7 +549,7 @@ def run_profile(
         with (profile_dir / "models" / f"repeat{repeat}_fold{fold}.pkl").open("wb") as handle:
             pickle.dump({
                 "model": model, "params": params, "profile": profile,
-                "ha_reference_waveform": reference,
+                "ha_reference_waveform": explanation_reference,
                 "ha_log_center": center, "ha_log_scale": scale,
                 "scalar_schema": features.scalar_names,
             }, handle)
@@ -515,9 +565,13 @@ def run_profile(
 
 def _average_repeats(scores: pd.DataFrame) -> pd.DataFrame:
     keys = ["profile", "subject_id", "biological_identity", "group"]
-    columns = ["raw_distance", "overall_z_deviation", "normality_score"]
-    if "gvs_raw_gps" in scores:
-        columns.append("gvs_raw_gps")
+    columns = [
+        "raw_distance", "overall_z_deviation", "normality_score", "gvs_raw_gps",
+        *(f"{speed}_gvs_distance" for speed in SPEEDS),
+        *(f"{domain}_gvs_distance" for domain in ("hip", "knee", "ankle", "bilateral", "asymmetry")),
+        *(f"{speed}_signed_deviation" for speed in SPEEDS),
+        "legacy_speed_rms",
+    ]
     return scores.groupby(keys, as_index=False, observed=True)[columns].mean()
 
 
