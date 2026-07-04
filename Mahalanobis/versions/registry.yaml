@@ -1,11 +1,12 @@
 versions:
   - version: "2.0.0"
-    git_tag: mahalanobis-v2.0.0
+    local_git_tag: mahalanobis-v2.0.0
     branch: mahalanobis/v2-legacy
     entrypoint: Mahalanobis/run_pipeline.py
     pipeline_version: "2.0"
     artifact_schema: "2.0"
     status: legacy_supported
+    note: "Remote rollback uses the legacy branch; the older disconnected tag remains local-only."
   - version: "3.1.0"
     branch: main
     development_branch: mahalanobis/v3.1-scalar-primary

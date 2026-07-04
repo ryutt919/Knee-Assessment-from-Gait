@@ -5,7 +5,7 @@
 ### Mahalanobis 샌드박스 개요
 - **목적**: 관절각도 cycle waveform으로 HA 대비 gait deviation을 계산하고 실제 Mahalanobis quadratic form을 직접 분해
 - **위치**: `Walking/Mahalanobis/`
-- **상태**: v1 산출물은 legacy로 보존한다. v2는 `mahalanobis/v2-legacy`와 `mahalanobis-v2.0.0` tag에서 재현한다. v3.1은 `main`으로 승격됐고 `mahalanobis/v3.1-scalar-primary` 개발 브랜치도 동일 커밋을 유지한다. Mean-only session representation, scalar405 고정 primary, scalar+GVS54와 scalar+waveform5454 comparator, pair-aware repeated nested CV, HA LOO calibration과 direct D² contribution을 구현했다. 실제 36-session dry end-to-end 및 manifest 재현 검증을 통과했으며 full repeated run은 별도 실행이 필요하다.
+- **상태**: v1 산출물은 legacy로 보존한다. v2 원격 재현은 `mahalanobis/v2-legacy`, 로컬 재현은 기존 `mahalanobis-v2.0.0` tag도 사용할 수 있다. 분리된 과거 tag 계보의 GitHub 대용량 제한 때문에 tag는 로컬 전용이다. v3.1은 `main`으로 승격됐고 `mahalanobis/v3.1-scalar-primary` 개발 브랜치도 동일 커밋을 유지한다. Mean-only session representation, scalar405 고정 primary, scalar+GVS54와 scalar+waveform5454 comparator, pair-aware repeated nested CV, HA LOO calibration과 direct D² contribution을 구현했다. 실제 36-session dry end-to-end 및 manifest 재현 검증을 통과했으며 full repeated run은 별도 실행이 필요하다.
 
 ### v3.1 Mean-only Input Profiles
 - **Current value/logic**: `cycle mean → trial mean → equal trial mean`으로 한 session당 한 행을 만든다. `scalar_clean_multispeed` 405개가 출판 primary이며 `scalar_plus_gvs54` 459개와 `scalar_plus_waveform5454` 5,859개는 추가 가치 comparator다. Primary는 결과를 본 뒤 교체하지 않는다.
@@ -135,4 +135,4 @@
 | 2026-07-02 12:43 | Mahalanobis 감사 보고서 설명 확장 | subject-mean·shared Optuna·종단 identity·거리 계산·속도·clipping·fold 불균형 설명 추가; IMU 전체결측 34 ID/305 trial/3,427 stride 표와 P0–P2 개선 구현·검증 기준 상세화 |
 | 2026-07-04 00:25 | Mahalanobis v2 고도화 | matched joint-only cohort, identity nested CV, mean/inverse balance flag, 속도별·total score, run-scoped artifacts, direct D² contribution, dry end-to-end 검증 추가 |
 | 2026-07-04 17:24 | Mahalanobis v3.1 mean-only scalar primary | scalar405 primary와 GVS54/waveform5454 fusion comparator, identity-balanced repeated nested CV, paired ΔAUC, strict side contract, HA side-swap sensitivity, version registry와 manifest 재현 구현; 실제 12 ACL/12 HA identity dry E2E 및 15 tests 통과 |
-| 2026-07-04 17:37 | Mahalanobis v3.1 main 승격 | v3.1을 `main` current로 승격하고 v3 직전 main `eac10aa`를 `mahalanobis/v2-legacy`로 보존; v3.1 개발 브랜치와 annotated v2 tag 유지 |
+| 2026-07-04 17:37 | Mahalanobis v3.1 main 승격 | v3.1을 `main` current로 승격하고 v3 직전 main `eac10aa`를 원격 `mahalanobis/v2-legacy`로 보존; v3.1 개발 브랜치 유지; 과거 분리 이력의 대용량 제한으로 annotated v2 tag는 로컬 전용 유지 |
